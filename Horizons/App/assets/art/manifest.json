@@ -599,6 +599,70 @@
           "w": 462,
           "h": 261
         }
+      },
+      {
+        "id": "outfit-7",
+        "label": "Coral bomber",
+        "group": "outfit",
+        "src": "assets/art/avatar-expansion-outfit-7.png",
+        "atlas": {
+          "width": 659,
+          "height": 413
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 659,
+          "h": 413
+        }
+      },
+      {
+        "id": "outfit-8",
+        "label": "Navy stripes",
+        "group": "outfit",
+        "src": "assets/art/avatar-expansion-outfit-8.png",
+        "atlas": {
+          "width": 661,
+          "height": 397
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 661,
+          "h": 397
+        }
+      },
+      {
+        "id": "outfit-9",
+        "label": "Lavender sweatshirt",
+        "group": "outfit",
+        "src": "assets/art/avatar-expansion-outfit-9.png",
+        "atlas": {
+          "width": 665,
+          "height": 396
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 665,
+          "h": 396
+        }
+      },
+      {
+        "id": "outfit-10",
+        "label": "Olive overshirt",
+        "group": "outfit",
+        "src": "assets/art/avatar-expansion-outfit-10.png",
+        "atlas": {
+          "width": 661,
+          "height": 408
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 661,
+          "h": 408
+        }
       }
     ],
     "hair": [
@@ -696,6 +760,102 @@
           "y": 531,
           "w": 516,
           "h": 463
+        }
+      },
+      {
+        "id": "hair-7",
+        "label": "Cropped fade",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-7.png",
+        "atlas": {
+          "width": 459,
+          "height": 232
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 459,
+          "h": 232
+        }
+      },
+      {
+        "id": "hair-8",
+        "label": "Swept quiff",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-8.png",
+        "atlas": {
+          "width": 469,
+          "height": 232
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 469,
+          "h": 232
+        }
+      },
+      {
+        "id": "hair-9",
+        "label": "High ponytail",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-9.png",
+        "atlas": {
+          "width": 447,
+          "height": 439
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 447,
+          "h": 439
+        }
+      },
+      {
+        "id": "hair-10",
+        "label": "Sleek low bun",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-10.png",
+        "atlas": {
+          "width": 1043,
+          "height": 493
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 1043,
+          "h": 493
+        }
+      },
+      {
+        "id": "hair-11",
+        "label": "Twin braids",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-11.png",
+        "atlas": {
+          "width": 394,
+          "height": 439
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 394,
+          "h": 439
+        }
+      },
+      {
+        "id": "hair-12",
+        "label": "Loose curls",
+        "group": "hair",
+        "src": "assets/art/avatar-expansion-hair-12.png",
+        "atlas": {
+          "width": 462,
+          "height": 439
+        },
+        "frame": {
+          "x": 0,
+          "y": 0,
+          "w": 462,
+          "h": 439
         }
       },
       {

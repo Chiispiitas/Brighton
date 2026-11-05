@@ -55,4 +55,6 @@ This audit governs the companion app. The book's existing audit remains authorit
 
 - Hide the Avatar base selector. Preserve the saved base internally when displaying/editing profiles; skin, clothes, hair, eyewear and earned pins remain selectable. Do not overwrite an existing base merely because its selector is hidden.
 
+- The avatar wardrobe has twelve hair styles plus No hair, and ten outfits. Append new stable IDs; preserve saved selections and make every style available to both bases. Register each new ImageGen layer against the face and neckline, then inspect complete busts across skins and eyewear at full and navigation sizes. Keep ponytails, braids and curls inside the portrait without hiding the eyes or detaching collars from the neck.
+
 - In practice activities, honor the assigned cast member and choose a pose that suits reading, travel or welcoming. Give topic illustrations the full picture space instead of automatically adding Pico beside them. Keep the same contextual illustration during answer feedback; results and games also use their activity’s cast member. Never default every lesson question or success screen to Pico.

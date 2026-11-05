@@ -1,6 +1,6 @@
-import {lessonArt} from './lesson-art.js?v=cast1';
+import {lessonArt} from './lesson-art.js?v=wardrobe1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=cast1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=wardrobe1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 

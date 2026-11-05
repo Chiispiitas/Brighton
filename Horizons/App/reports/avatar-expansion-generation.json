@@ -1,0 +1,89 @@
+{
+  "mode": "built-in image_gen",
+  "sourceHairAtlas": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-c099ac35-1400-4035-89cb-1697612efab4.png",
+  "hairAtlasPrompt": "Edit this six-hairstyle sheet into a production-ready FLAT2D avatar hair sprite sheet,3columns by2rows. The six styles are cropped fade, quiff, ponytail, bun, braids, curls. CRITICAL: reproduce as simple flat computer-drawn clipart SOLID COLOR FILL polygons like a flat UI icon. The preview has unwanted gradients; REMOVE THEM COMPLETELY. Every primary hair shape must use exactly ONE solid uniform color with zero interior color change. NO darker edges, NO lighter centers, NO highlights, NO shadows, NO lighting, NO texture, NO3D rendering or volume. No border strokes. Also shrink the bun on the bottom-left hairstyle to a tiny compact topknot, about one-quarter of the cap width, so its total height above the forehead opening is only one-third of the cap width. Keep haircap broad; do not make the face opening tiny. All face openings must be transparently empty (NO faces, ears, necks or skin). Other5silhouettes stay recognizable. Each complete hairstyle inside equal cell with wide transparent gutters. Background and face openings truly TRANSPARENT. The6maincolors are #292929, #493024, #5A3021, #292929, #7C2E1D, #61301B. Ties coral/orange. No text, no grid, no labels. Hair only, entirely flat2D solid geometric shapes.",
+  "sourceLowBun": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-1c96503f-306f-4005-b2d3-df9bf5865c4e.png",
+  "lowBunPrompt": "Create ONE flat2D hairstyle sprite, front view, hairstyle only. A feminine sleek LOW SIDE BUN: broad shallow smooth black cap shaped to fit a rounded-square avatar head, neatly swept hair and tiny compact oval bun beside the right temple, NOT above the head. The cap and tiny bun form a single wide shallow silhouette. Aspect ratio3:1 width:height. High forehead opening and short temple ends; completely empty transparent face area underneath. This is a flat avatar UI component like a solid SVG silhouette. Use ONE uniform solid #292929 color, no gradients, no color variation, no lighting, no3D, no shading, no shadows, no borders, no outlines, no texture. No face, skin, ears, neck, head, clothes or text. Center complete hair with transparent margins, transparent background. Do not include a tall bun; wide lowcap only.",
+  "operations": "Lossless extraction of generated alpha sprites; uniform scale and position registration only. No code-painted artwork.",
+  "counts": {
+    "newHair": 6,
+    "newOutfits": 4,
+    "totalHair": 12,
+    "totalOutfits": 10
+  },
+  "labels": {
+    "hair7": "Cropped fade",
+    "hair8": "Swept quiff",
+    "hair9": "High ponytail",
+    "hair10": "Sleek low bun",
+    "hair11": "Twin braids",
+    "hair12": "Loose curls"
+  },
+  "outfitGenerationReport": "reports/avatar-expansion-outfits-final-generation.json",
+  "assets": [
+    {
+      "id": "hair-7",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-7.png",
+      "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a"
+    },
+    {
+      "id": "hair-8",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-8.png",
+      "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221"
+    },
+    {
+      "id": "hair-9",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-9.png",
+      "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6"
+    },
+    {
+      "id": "hair-10",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-10.png",
+      "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05"
+    },
+    {
+      "id": "hair-11",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-11.png",
+      "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31"
+    },
+    {
+      "id": "hair-12",
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-12.png",
+      "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4"
+    },
+    {
+      "id": "outfit-7",
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-7.png",
+      "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a"
+    },
+    {
+      "id": "outfit-8",
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-8.png",
+      "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb"
+    },
+    {
+      "id": "outfit-9",
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-9.png",
+      "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059"
+    },
+    {
+      "id": "outfit-10",
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-10.png",
+      "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+    }
+  ],
+  "nativeSources": [
+    {
+      "path": "assets/art/avatar-expansion-hair-flat-v1.png",
+      "prompt": "Edit this six-hairstyle sheet into a production-ready FLAT2D avatar hair sprite sheet,3columns by2rows. The six styles are cropped fade, quiff, ponytail, bun, braids, curls. CRITICAL: reproduce as simple flat computer-drawn clipart SOLID COLOR FILL polygons like a flat UI icon. The preview has unwanted gradients; REMOVE THEM COMPLETELY. Every primary hair shape must use exactly ONE solid uniform color with zero interior color change. NO darker edges, NO lighter centers, NO highlights, NO shadows, NO lighting, NO texture, NO3D rendering or volume. No border strokes. Also shrink the bun on the bottom-left hairstyle to a tiny compact topknot, about one-quarter of the cap width, so its total height above the forehead opening is only one-third of the cap width. Keep haircap broad; do not make the face opening tiny. All face openings must be transparently empty (NO faces, ears, necks or skin). Other5silhouettes stay recognizable. Each complete hairstyle inside equal cell with wide transparent gutters. Background and face openings truly TRANSPARENT. The6maincolors are #292929, #493024, #5A3021, #292929, #7C2E1D, #61301B. Ties coral/orange. No text, no grid, no labels. Hair only, entirely flat2D solid geometric shapes."
+    },
+    {
+      "path": "assets/art/avatar-expansion-low-bun-source.png",
+      "prompt": "Create ONE flat2D hairstyle sprite, front view, hairstyle only. A feminine sleek LOW SIDE BUN: broad shallow smooth black cap shaped to fit a rounded-square avatar head, neatly swept hair and tiny compact oval bun beside the right temple, NOT above the head. The cap and tiny bun form a single wide shallow silhouette. Aspect ratio3:1 width:height. High forehead opening and short temple ends; completely empty transparent face area underneath. This is a flat avatar UI component like a solid SVG silhouette. Use ONE uniform solid #292929 color, no gradients, no color variation, no lighting, no3D, no shading, no shadows, no borders, no outlines, no texture. No face, skin, ears, neck, head, clothes or text. Center complete hair with transparent margins, transparent background. Do not include a tall bun; wide lowcap only."
+    },
+    {
+      "path": "assets/art/avatar-expansion-clothes-flat-v2.png",
+      "prompt": "Use case: precise-object-edit. Input is a shape guide for a4sprite clothes atlas. Redraw these same4garments in same2by2order/position as a COMPLETELY FLAT illustration. Keep silhouettes and design, simplify all detail. No shading whatsoever. Every single region must have UNIFORM SOLID COLOR, flat as if cut from one piece of colored card. Eliminate central highlights, corner darkening, all gradients, no noise. Coral bomber main red one uniform hex#FF5A52; cream tee#FFEBC7; navy stripe#1D345C; lavender body#B47CE5; purple neck band#7F47B2; olive main#687D38, lapels#7E9045. Flat color regions only. Transparent U-shaped neck hole on each garment; NO body, no skin. Entire background between/around clothes must be genuinely TRANSPARENT including neck holes. No shadows, glow, outline, light, texture, glossy effects, no text.2x2 atlas, equal cells, native rasterPNG."
+    }
+  ]
+}

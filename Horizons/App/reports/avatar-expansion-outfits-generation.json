@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-05T01:03:13.990Z",
+  "reference": "assets/art/avatar-static-clothes-v1.png",
+  "assets": [
+    {
+      "id": "outfit-7",
+      "prompt": "Use case: stylized-concept. Asset type: one static flat clothing layer for a friendly avatar customizer. Input image 1 is a STYLE/GEOMETRY reference sheet only, not an edit target. Generate ONE coral bomber jacket worn open over a warm cream crewneck shirt, front-facing upper-chest bust ONLY. Clothes without any body, skin, neck, head, hands, face or hair. Broad gently rounded shoulders taper very slightly to a straight horizontal cropped bottom. Centered rounded U-shaped neckline must be genuinely transparent (no skin patch) so a separate head and short neck can fit. Minimal solid coral jacket, cream shirt, one small simple coral collar, simple zipper detail; no pockets necessary. Clean solid geometric color regions like a polished flat language-learning avatar. Garment height about 0.62 of its width, centered isolated with generous transparent margins; entire shoulder silhouette visible. Completely flat: no shadows of any kind, no gradients, no glow, no lighting, no texture, no outlines/borders, no modeling, no highlights, no text, no symbols. Use TRUE TRANSPARENT alpha background, including inside neck opening. No animation frames. Native PNG.",
+      "sourcePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a936-3315-71c3-b63f-e9de6ac5173c\\exec-1cf0bb65-0470-401c-8b2f-aae047fc9225.png",
+      "savedPath": "Horizons/App/assets/art/avatar-expansion-outfit-7.png",
+      "toolMode": "built-in image_gen",
+      "transparentBackground": true
+    },
+    {
+      "id": "outfit-8",
+      "prompt": "Use case: stylized-concept. Asset type: ONE still clothing layer for a friendly avatar customizer. Input image1 is a STYLE/GEOMETRY reference sheet only. Generate only the garment described below, front-facing upper-chest bust. Absolutely no body, skin, neck, head, hands, face or hair. Broad gently rounded shoulders taper slightly to a straight horizontal cropped bottom. Rounded U neckline genuinely transparent, no skin patch, so separate head with short neck fits. Garment height about0.62 of width, centered isolated with generous transparent margin and entire shoulder silhouette visible. Style: very simple geometric SOLID COLORS, clean flat language-learning avatar. No shadows of any kind, no gradients, no glow, no lighting, no texture, no outlines/borders, no modeling, no highlights, no text or symbols. TRUE TRANSPARENT background including inside neck opening. Native PNG. Subject: A navy-and-warm-cream broadly horizontal-striped crewneck tee. Four or five broad horizontal stripes, symmetrical front bust, clear navy round neck trim. No logos.",
+      "sourcePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a936-3315-71c3-b63f-e9de6ac5173c\\exec-3c97c826-3dfe-4e10-b9d8-81326531e348.png",
+      "savedPath": "Horizons/App/assets/art/avatar-expansion-outfit-8.png",
+      "toolMode": "built-in image_gen",
+      "transparentBackground": true
+    },
+    {
+      "id": "outfit-9",
+      "prompt": "Use case: stylized-concept. Asset type: ONE still clothing layer for a friendly avatar customizer. Input image1 is a STYLE/GEOMETRY reference sheet only. Generate only the garment described below, front-facing upper-chest bust. Absolutely no body, skin, neck, head, hands, face or hair. Broad gently rounded shoulders taper slightly to a straight horizontal cropped bottom. Rounded U neckline genuinely transparent, no skin patch, so separate head with short neck fits. Garment height about0.62 of width, centered isolated with generous transparent margin and entire shoulder silhouette visible. Style: very simple geometric SOLID COLORS, clean flat language-learning avatar. No shadows of any kind, no gradients, no glow, no lighting, no texture, no outlines/borders, no modeling, no highlights, no text or symbols. TRUE TRANSPARENT background including inside neck opening. Native PNG. Subject: A lavender crewneck sweatshirt. Solid lavender main color, slightly deeper purple simple round neck band, no other decoration or patterns.",
+      "sourcePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a936-3315-71c3-b63f-e9de6ac5173c\\exec-2d8088b9-df78-4b06-aa85-3d77e0044902.png",
+      "savedPath": "Horizons/App/assets/art/avatar-expansion-outfit-9.png",
+      "toolMode": "built-in image_gen",
+      "transparentBackground": true
+    },
+    {
+      "id": "outfit-10",
+      "prompt": "Use case: stylized-concept. Asset type: ONE still clothing layer for a friendly avatar customizer. Input image1 is a STYLE/GEOMETRY reference sheet only. Generate only the garment described below, front-facing upper-chest bust. Absolutely no body, skin, neck, head, hands, face or hair. Broad gently rounded shoulders taper slightly to a straight horizontal cropped bottom. Rounded U neckline genuinely transparent, no skin patch, so separate head with short neck fits. Garment height about0.62 of width, centered isolated with generous transparent margin and entire shoulder silhouette visible. Style: very simple geometric SOLID COLORS, clean flat language-learning avatar. No shadows of any kind, no gradients, no glow, no lighting, no texture, no outlines/borders, no modeling, no highlights, no text or symbols. TRUE TRANSPARENT background including inside neck opening. Native PNG. Subject: An olive green collared overshirt worn open over a warm cream crewneck tee. Simple two angular olive lapels and a few small dark olive circular buttons. Warm cream central tee panel. No pockets or logos.",
+      "sourcePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a936-3315-71c3-b63f-e9de6ac5173c\\exec-b95fc9d2-8d5e-42e0-a12a-2573827d5863.png",
+      "savedPath": "Horizons/App/assets/art/avatar-expansion-outfit-10.png",
+      "toolMode": "built-in image_gen",
+      "transparentBackground": true
+    }
+  ],
+  "flattenedAtlas": {
+    "prompt": "Use case: precise-object-edit. EDIT TARGETS input images1\u20134 are the four separate avatar clothes layers. Return ONE 2-column by2-row sprite atlas, ONE of each garment in input order left-to-right top-to-bottom: coral bomber/cream tee; navy cream stripe tee; lavender crewneck; olive open overshirt/cream tee. Preserve their garment shape, proportions, centered transparent U neck holes, straight horizontal bases, and simple color details. CRITICAL CHANGE: flatten ALL interior color regions completely. This is strict flat cut-paper colored geometry: every coral region one identical SOLID RGB coral, cream regions one solid warm cream, navy stripes one solid navy, lavender body one solid lavender, olive body one solid olive. Remove every trace of vignette, dither, light, gradient, brightness variation, paper/grain/noise/texture, shadows, glow, shading or modeling. No outlines. Lapels and collars are separate SIMPLE solid-color shapes, not shading. Raster equivalent of minimal vector fills, but native PNG. Absolutely no heads, neck/skin/hands/body or accessories added, no text or numbers, no decorations. Generous transparent margins/gutters between each of4full isolated garments; never touch. Real transparent alpha background outside silhouettes and in neck holes. 1536x1024 landscape atlas with equal768x512 cells. Make apparel simple and polished, no 3D.",
+    "sourcePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a936-3315-71c3-b63f-e9de6ac5173c\\exec-b6afe865-18d6-43b6-971a-c3e04d8e3e81.png",
+    "savedPath": "Horizons/App/assets/art/avatar-expansion-clothes-flat-v1.png",
+    "toolMode": "built-in image_gen",
+    "transparentBackground": true,
+    "layout": "2x2 in outfit7,8,9,10order",
+    "review": "Shape and alpha pass. Subtle color variation persists; parent final visual approval required."
+  },
+  "note": "Initial generation candidates. Project paths now contain lossless extracted final sprites from avatar-expansion-clothes-flat-v2.png; initial native candidates remain at their sourcePath locations."
+}

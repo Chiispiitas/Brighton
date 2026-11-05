@@ -1,0 +1,1080 @@
+{
+  "date": "2026-11-05T01:17:23.196Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "baselineCommit": "64ea45a",
+  "baselineCache": "horizons-companion-cast-v14",
+  "currentCache": "horizons-companion-wardrobe-v15",
+  "scope": "Actual committed previous static runtime and service-worker Cache Storage installed, then replaced through the real update/activate/controller lifecycle by the expanded static wardrobe release. Reserved isolated QA profile011; no activity awards or profile saves.",
+  "sourceReference": {
+    "kind": "working-tree",
+    "comparison": "Exact working-tree source and binary bytes."
+  },
+  "currentSourceHashes": {
+    "index.html": "2e0283302e1cc919c6be2156b0b2c2a5400e8ff6f6126d3547893206755aa27f",
+    "manifest.webmanifest": "55db46a4c79dfd20a17e7c3027fc7424e6d7cf7a239a94cb6104f6a230e4533b",
+    "styles/app.css": "c1603bf9d1f5d73385435ff0ee2b0b3888c433ee346100fd12a9055690bac1c0",
+    "src/app.js": "11cc09d40031b98cc1de8af825d7b41f73fbc8576011e22430632330fc673a37",
+    "src/art.js": "87888285509ace044d5d5de743ca9224d5493fe0622e1ff1dbdc697d760434e4",
+    "src/avatar-static.js": "f72eabcae043c28b01cdc19254d1b43996be39fc07d77fe3c931929bcedcd9ce",
+    "service-worker.js": "caf2e3e62bb7ffc175524803838c8b17fce9cef1e6c261e035a7e08df82c05b8",
+    "assets/art/manifest.json": "c5d856eb4dc493df4d20827dc1e4d41fac931395f06e7d25a0da567818e01662",
+    "assets/art/avatar-static-v1.frames.json": "e47ded0f67b145afd4de32e5439b5533359e55edc55d48f175970890992d2cf1",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-expansion-outfit-7.png": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+    "assets/art/avatar-expansion-outfit-8.png": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+    "assets/art/avatar-expansion-outfit-9.png": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+    "assets/art/avatar-expansion-outfit-10.png": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-expansion-hair-7.png": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+    "assets/art/avatar-expansion-hair-8.png": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+    "assets/art/avatar-expansion-hair-9.png": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+    "assets/art/avatar-expansion-hair-10.png": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+    "assets/art/avatar-expansion-hair-11.png": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+    "assets/art/avatar-expansion-hair-12.png": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+    "assets/art/avatar-eyewear-v2.png": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1"
+  },
+  "steps": [
+    {
+      "name": "old-worker-and-exact-old-art-really-installed",
+      "cacheNames": [
+        "horizons-companion-cast-v14"
+      ],
+      "controller": true,
+      "oldArtHash": "52bfaf6cbe0e82323c49df1c6a26659b7d33d11a810585a5cd05c1e04815a770",
+      "pass": true
+    },
+    {
+      "name": "new-static-worker-activated-and-old-cache-removed",
+      "cacheNames": [
+        "horizons-companion-wardrobe-v15"
+      ],
+      "pass": true
+    },
+    {
+      "name": "all-expanded-choices-present-and-new-hair-outfit-selected-without-saving",
+      "choices": {
+        "hair": 13,
+        "outfit": 10,
+        "body": 0
+      },
+      "wardrobe": {
+        "draft": {
+          "body": "male",
+          "skin": "warm",
+          "outfit": "outfit-10",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none",
+          "hairColor": "brown"
+        },
+        "parts": [
+          {
+            "part": "head",
+            "source": "assets/art/avatar-static-heads-v2.png"
+          },
+          {
+            "part": "clothes",
+            "source": "assets/art/avatar-expansion-outfit-10.png"
+          },
+          {
+            "part": "hair",
+            "source": "assets/art/avatar-expansion-hair-12.png"
+          }
+        ],
+        "uniformRasterScale": true,
+        "animations": 0
+      },
+      "pass": true
+    },
+    {
+      "name": "current-static-source-and-art-loaded-after-real-update",
+      "runningAnimations": 0,
+      "legacySystems": 0,
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "wardrobe1"
+        },
+        {
+          "path": "src/lesson-art.js",
+          "version": "wardrobe1"
+        },
+        {
+          "path": "src/api-client.js",
+          "version": null
+        },
+        {
+          "path": "src/art.js",
+          "version": "wardrobe1"
+        },
+        {
+          "path": "src/avatar-static.js",
+          "version": "wardrobe1"
+        }
+      ],
+      "stills": [
+        {
+          "selector": ".character[data-character=pico]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "initialSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "readySha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "afterSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=mina]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "initialSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "readySha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "afterSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=alex]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "initialSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "readySha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "afterSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=jo]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "initialSha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+          "readySha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+          "afterSha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": "#avatar-preview [data-avatar-static]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 425.5859375,
+                "y": 469.5703125,
+                "width": 163.90625,
+                "height": 101.15625,
+                "left": "0px",
+                "top": "0px"
+              },
+              {
+                "x": 389.1640625,
+                "y": 294.2109375,
+                "width": 236.75,
+                "height": 224.953125,
+                "left": "0px",
+                "top": "0px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 425.5859375,
+                "y": 469.5703125,
+                "width": 163.90625,
+                "height": 101.15625,
+                "left": "0px",
+                "top": "0px"
+              },
+              {
+                "x": 389.1640625,
+                "y": 294.2109375,
+                "width": 236.75,
+                "height": 224.953125,
+                "left": "0px",
+                "top": "0px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 425.5859375,
+                "y": 469.5703125,
+                "width": 163.90625,
+                "height": 101.15625,
+                "left": "0px",
+                "top": "0px"
+              },
+              {
+                "x": 389.1640625,
+                "y": 294.2109375,
+                "width": 236.75,
+                "height": 224.953125,
+                "left": "0px",
+                "top": "0px"
+              }
+            ]
+          },
+          "initialSha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+          "readySha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+          "afterSha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        }
+      ],
+      "loadedNativePNGs": [
+        {
+          "path": "assets/art/ui-static-v1.png",
+          "url": "assets/art/ui-static-v1.png",
+          "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-outfit-7.png",
+          "url": "assets/art/avatar-expansion-outfit-7.png",
+          "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-7.png",
+          "url": "assets/art/avatar-expansion-hair-7.png",
+          "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-8.png",
+          "url": "assets/art/avatar-expansion-hair-8.png",
+          "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-9.png",
+          "url": "assets/art/avatar-expansion-hair-9.png",
+          "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-outfit-8.png",
+          "url": "assets/art/avatar-expansion-outfit-8.png",
+          "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-outfit-9.png",
+          "url": "assets/art/avatar-expansion-outfit-9.png",
+          "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-10.png",
+          "url": "assets/art/avatar-expansion-hair-10.png",
+          "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-11.png",
+          "url": "assets/art/avatar-expansion-hair-11.png",
+          "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-hair-12.png",
+          "url": "assets/art/avatar-expansion-hair-12.png",
+          "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-expansion-outfit-10.png",
+          "url": "assets/art/avatar-expansion-outfit-10.png",
+          "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-eyewear-v2.png",
+          "url": "assets/art/avatar-eyewear-v2.png",
+          "sha256": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-clothes-v1.png",
+          "url": "assets/art/avatar-static-clothes-v1.png",
+          "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-hair-v1.png",
+          "url": "assets/art/avatar-static-hair-v1.png",
+          "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-heads-v2.png",
+          "url": "assets/art/avatar-static-heads-v2.png",
+          "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-pico-v2.png",
+          "url": "assets/art/cast-static-pico-v2.png",
+          "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-mina-v2.png",
+          "url": "assets/art/cast-static-mina-v2.png",
+          "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-jo-v3.png",
+          "url": "assets/art/cast-static-jo-v3.png",
+          "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-alex-v3.png",
+          "url": "assets/art/cast-static-alex-v3.png",
+          "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "redundant"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "limits": [
+    "Chromium/Edge only. This verifies a real returning-browser service worker and Cache Storage upgrade, not every browser engine or CDN.",
+    "Old runtime requests are served from committed repository blobs during the baseline phase; API requests continue to the actual backend.",
+    "No session values, raw codes or personal details are logged.",
+    "Static pixel, native-byte and uniform-scale checks establish cache and rendering behavior. They do not replace direct visual review of the final avatar composition."
+  ],
+  "pass": true,
+  "status": "PASS",
+  "phase": "complete",
+  "readinessProofs": [
+    {
+      "selector": ".character[data-character=pico]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "initialSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "readySha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "afterSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=mina]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "initialSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "readySha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "afterSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=alex]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "initialSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "readySha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "afterSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=jo]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "initialSha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+      "readySha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+      "afterSha256": "740d5d749b8a42bb42b80d92d5db9cc20d60778a19b1f7770934c175865d5e5d",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": "#avatar-preview [data-avatar-static]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 425.5859375,
+            "y": 469.5703125,
+            "width": 163.90625,
+            "height": 101.15625,
+            "left": "0px",
+            "top": "0px"
+          },
+          {
+            "x": 389.1640625,
+            "y": 294.2109375,
+            "width": 236.75,
+            "height": 224.953125,
+            "left": "0px",
+            "top": "0px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 425.5859375,
+            "y": 469.5703125,
+            "width": 163.90625,
+            "height": 101.15625,
+            "left": "0px",
+            "top": "0px"
+          },
+          {
+            "x": 389.1640625,
+            "y": 294.2109375,
+            "width": 236.75,
+            "height": 224.953125,
+            "left": "0px",
+            "top": "0px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 425.5859375,
+            "y": 469.5703125,
+            "width": 163.90625,
+            "height": 101.15625,
+            "left": "0px",
+            "top": "0px"
+          },
+          {
+            "x": 389.1640625,
+            "y": 294.2109375,
+            "width": 236.75,
+            "height": 224.953125,
+            "left": "0px",
+            "top": "0px"
+          }
+        ]
+      },
+      "initialSha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+      "readySha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+      "afterSha256": "7ed057d0d5f311ac3d9ab73e33048b625d089de64cd13deafd0d2854c02879c9",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    }
+  ],
+  "changedSources": []
+}

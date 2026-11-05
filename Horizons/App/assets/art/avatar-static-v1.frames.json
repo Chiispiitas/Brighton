@@ -490,6 +490,82 @@
         "w": 180,
         "z": 3
       }
+    },
+    "outfit-7": {
+      "src": "assets/art/avatar-expansion-outfit-7.png",
+      "atlas": {
+        "width": 659,
+        "height": 413
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 659,
+        "h": 413
+      },
+      "position": {
+        "x": 70,
+        "y": 200.5053,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-8": {
+      "src": "assets/art/avatar-expansion-outfit-8.png",
+      "atlas": {
+        "width": 661,
+        "height": 397
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 661,
+        "h": 397
+      },
+      "position": {
+        "x": 70,
+        "y": 204.3979,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-9": {
+      "src": "assets/art/avatar-expansion-outfit-9.png",
+      "atlas": {
+        "width": 665,
+        "height": 396
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 665,
+        "h": 396
+      },
+      "position": {
+        "x": 70,
+        "y": 204.8045,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-10": {
+      "src": "assets/art/avatar-expansion-outfit-10.png",
+      "atlas": {
+        "width": 661,
+        "height": 408
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 661,
+        "h": 408
+      },
+      "position": {
+        "x": 70,
+        "y": 200.5855,
+        "w": 180,
+        "z": 3
+      }
     }
   },
   "hair": {
@@ -604,6 +680,120 @@
         "x": 31.0,
         "y": 15.5,
         "w": 258,
+        "z": 4
+      }
+    },
+    "hair-7": {
+      "src": "assets/art/avatar-expansion-hair-7.png",
+      "atlas": {
+        "width": 459,
+        "height": 232
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 459,
+        "h": 232
+      },
+      "position": {
+        "x": 67.0,
+        "y": 44.9935,
+        "w": 186,
+        "z": 4
+      }
+    },
+    "hair-8": {
+      "src": "assets/art/avatar-expansion-hair-8.png",
+      "atlas": {
+        "width": 469,
+        "height": 232
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 469,
+        "h": 232
+      },
+      "position": {
+        "x": 60.0,
+        "y": 32.0341,
+        "w": 200,
+        "z": 4
+      }
+    },
+    "hair-9": {
+      "src": "assets/art/avatar-expansion-hair-9.png",
+      "atlas": {
+        "width": 447,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 447,
+        "h": 439
+      },
+      "position": {
+        "x": 62.7517,
+        "y": 0,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-10": {
+      "src": "assets/art/avatar-expansion-hair-10.png",
+      "atlas": {
+        "width": 1043,
+        "height": 493
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 1043,
+        "h": 493
+      },
+      "position": {
+        "x": 68.0805,
+        "y": 47.8869,
+        "w": 214,
+        "z": 4
+      }
+    },
+    "hair-11": {
+      "src": "assets/art/avatar-expansion-hair-11.png",
+      "atlas": {
+        "width": 394,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 394,
+        "h": 439
+      },
+      "position": {
+        "x": 45.0,
+        "y": 23,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-12": {
+      "src": "assets/art/avatar-expansion-hair-12.png",
+      "atlas": {
+        "width": 462,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 439
+      },
+      "position": {
+        "x": 30.0,
+        "y": 8,
+        "w": 260,
         "z": 4
       }
     }

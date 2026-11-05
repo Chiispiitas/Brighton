@@ -1,0 +1,2982 @@
+{
+  "date": "2026-11-05T01:14:19.479Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "sourceReference": {
+    "kind": "working-tree"
+  },
+  "sourceHashes": {
+    "src/avatar-static.js": "f72eabcae043c28b01cdc19254d1b43996be39fc07d77fe3c931929bcedcd9ce",
+    "assets/art/avatar-static-v1.frames.json": "43039906659d24c98ab4d477773830c94eed6fc314962c4ac3e67a67153fe951",
+    "assets/art/manifest.json": "c5d856eb4dc493df4d20827dc1e4d41fac931395f06e7d25a0da567818e01662",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-expansion-outfit-7.png": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+    "assets/art/avatar-expansion-outfit-8.png": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+    "assets/art/avatar-expansion-outfit-9.png": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+    "assets/art/avatar-expansion-outfit-10.png": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-expansion-hair-7.png": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+    "assets/art/avatar-expansion-hair-8.png": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+    "assets/art/avatar-expansion-hair-9.png": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+    "assets/art/avatar-expansion-hair-10.png": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+    "assets/art/avatar-expansion-hair-11.png": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+    "assets/art/avatar-expansion-hair-12.png": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+    "assets/art/avatar-eyewear-v2.png": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+  },
+  "scope": "New hairstyles and clothes in the actual static portrait renderer. Both bases and every skin; every new hair with the three supported eyewear styles. No API or profile writes.",
+  "proofs": [
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-1.png",
+      "sha256": "757f8a6b4db811f3b2764a4f5cad0aca8772dcd713b87f72ebcebe2241114b49",
+      "cases": [
+        {
+          "id": "male-s1-hair7",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-hair8",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-hair9",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-hair10",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-hair11",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-hair12",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair7",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair8",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair9",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair10",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair11",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-hair12",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-s1-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s1-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s1-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s1-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s1-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s1-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s2-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-2.png",
+      "sha256": "b473385dc44b5147563c8d3fb18a328fccf0ff793a1b9eb1bc571c80a1352330",
+      "cases": [
+        {
+          "id": "male-s3-hair7",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-hair8",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-hair9",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-hair10",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-hair11",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-hair12",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair7",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair8",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair9",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair10",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair11",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-hair12",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-s3-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s3-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s3-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s3-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s3-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s3-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s4-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-3.png",
+      "sha256": "e174411f53f2301885c651805bf27e6563a38fefdac303f8b5b096a0e1722d08",
+      "cases": [
+        {
+          "id": "male-s5-hair7",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-hair8",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-hair9",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-hair10",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-hair11",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-hair12",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair7",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair8",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair9",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair10",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair11",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-hair12",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-s5-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s5-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s5-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s5-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s5-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s5-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-s6-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-4.png",
+      "sha256": "9d180b175110ae25b640f28d741a596f1b39a483558cfdc7df8f7db3aedfe657",
+      "cases": [
+        {
+          "id": "female-s1-hair7",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-hair8",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-hair9",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-hair10",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-hair11",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-hair12",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair7",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair8",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair9",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair10",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair11",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-hair12",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-s1-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s1-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s1-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s1-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s1-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s1-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s2-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-5.png",
+      "sha256": "762ac2b6b7232d78cd798c75dbc86abb1b619987e40f4c0d54ee98a98971590d",
+      "cases": [
+        {
+          "id": "female-s3-hair7",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-hair8",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-hair9",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-hair10",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-hair11",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-hair12",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair7",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair8",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair9",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair10",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair11",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-hair12",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-s3-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s3-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s3-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s3-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s3-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s3-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s4-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "hair",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\hair-sheet-6.png",
+      "sha256": "97b8ee91514ff035a3c26f11e2e296984619a00d6146934c382e3ff89062d610",
+      "cases": [
+        {
+          "id": "female-s5-hair7",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-hair8",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-hair9",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-hair10",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-hair11",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-hair12",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair7",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-7",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair8",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-8",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair9",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-9",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair10",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-10",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair11",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-11",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-hair12",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-1",
+          "hair": "hair-12",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-s5-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s5-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s5-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s5-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s5-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s5-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair7",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair8",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair9",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair10",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair11",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-s6-hair12",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "outfits",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\outfits-sheet-1.png",
+      "sha256": "dc8cc0e7e44f51b9ab4f2d2cf24041b98062ece3db6f780927c465426674d2b6",
+      "cases": [
+        {
+          "id": "male-s1-outfit7",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-outfit8",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-outfit9",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s1-outfit10",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-outfit7",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-outfit8",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-outfit9",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s2-outfit10",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-outfit7",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-outfit8",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-outfit9",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s3-outfit10",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-s1-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s1-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s1-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s1-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s2-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s2-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s2-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s2-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s3-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s3-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s3-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s3-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "outfits",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\outfits-sheet-2.png",
+      "sha256": "884df6537398756b5cd54047649bbae30454d6c8ffc869f14a10c0c6294faa2d",
+      "cases": [
+        {
+          "id": "male-s4-outfit7",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-outfit8",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-outfit9",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s4-outfit10",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-outfit7",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-outfit8",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-outfit9",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s5-outfit10",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-outfit7",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-outfit8",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-outfit9",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-s6-outfit10",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-s4-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s4-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s4-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s4-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s5-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s5-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s5-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s5-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s6-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s6-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s6-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "male-s6-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "outfits",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\outfits-sheet-3.png",
+      "sha256": "a2c1a9744a806d305ac5db0c3eee8d82c6fe0f07ce1706ab4178c208ddc4620a",
+      "cases": [
+        {
+          "id": "female-s1-outfit7",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-outfit8",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-outfit9",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s1-outfit10",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-outfit7",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-outfit8",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-outfit9",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s2-outfit10",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-outfit7",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-outfit8",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-outfit9",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s3-outfit10",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-s1-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s1-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s1-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s1-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s2-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s2-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s2-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s2-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s3-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s3-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s3-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s3-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "outfits",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\outfits-sheet-4.png",
+      "sha256": "6bfa35d4f5c0c6d4157d6efde00947b1af104912514b5aa1aa9b6c32077b26b2",
+      "cases": [
+        {
+          "id": "female-s4-outfit7",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-outfit8",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-outfit9",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s4-outfit10",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-outfit7",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-outfit8",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-outfit9",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s5-outfit10",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-outfit7",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-7",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-outfit8",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-8",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-outfit9",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-9",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-s6-outfit10",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-10",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-s4-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s4-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s4-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s4-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s5-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s5-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s5-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s5-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s6-outfit7",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s6-outfit8",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s6-outfit9",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          },
+          {
+            "case": "female-s6-outfit10",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "pass": true
+          }
+        ],
+        "images": 72,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "eyewear",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\eyewear-sheet-1.png",
+      "sha256": "ac2028ddbc00260e2fe5867e70776f659a56fbd644cfba50900baacf54d6f9fe",
+      "cases": [
+        {
+          "id": "male-hair7-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair7-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair7-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair8-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair8-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair8-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair9-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair9-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair9-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair10-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair10-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair10-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-3",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-hair7-glasses1",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-hair7-glasses2",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-hair7-glasses3",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "male-hair8-glasses1",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-hair8-glasses2",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-hair8-glasses3",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "male-hair9-glasses1",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-hair9-glasses2",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-hair9-glasses3",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "male-hair10-glasses1",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-hair10-glasses2",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "male-hair10-glasses3",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          }
+        ],
+        "images": 96,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "eyewear",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\eyewear-sheet-2.png",
+      "sha256": "47133cdb1951dc07293695a68735508f59db9d09c9aeb2e26da572d078d23c3a",
+      "cases": [
+        {
+          "id": "male-hair11-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair11-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair11-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair12-glasses1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair12-glasses2",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair12-glasses3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair7-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair7-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair7-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-7",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair8-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair8-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair8-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-8",
+          "accessory": "accessory-3",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-hair11-glasses1",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-hair11-glasses2",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-hair11-glasses3",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "male-hair12-glasses1",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "male-hair12-glasses2",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "male-hair12-glasses3",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-hair7-glasses1",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-hair7-glasses2",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-hair7-glasses3",
+            "left": 60.43572984749456,
+            "right": 259.56427015250546,
+            "top": 45.88885484749456,
+            "pass": true
+          },
+          {
+            "case": "female-hair8-glasses1",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-hair8-glasses2",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          },
+          {
+            "case": "female-hair8-glasses3",
+            "left": 60.42643923240938,
+            "right": 259.1471215351812,
+            "top": 32.45768923240938,
+            "pass": true
+          }
+        ],
+        "images": 96,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    },
+    {
+      "group": "eyewear",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\eyewear-sheet-3.png",
+      "sha256": "ff48df5d4028514361f28ed4d07d73112e5560b36feb6d219afa9bd4a98d351a",
+      "cases": [
+        {
+          "id": "female-hair9-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair9-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair9-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-9",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair10-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair10-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair10-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-10",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair11-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair11-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair11-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-11",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair12-glasses1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair12-glasses2",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-2",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair12-glasses3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-7",
+          "hair": "hair-12",
+          "accessory": "accessory-3",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "female-hair9-glasses1",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-hair9-glasses2",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-hair9-glasses3",
+            "left": 63.26454138702461,
+            "right": 292.2354586129754,
+            "top": 1.029082774049217,
+            "pass": true
+          },
+          {
+            "case": "female-hair10-glasses1",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-hair10-glasses2",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-hair10-glasses3",
+            "left": 61.42364273729626,
+            "right": 290.7620895254075,
+            "top": 48.79864273729626,
+            "pass": true
+          },
+          {
+            "case": "female-hair11-glasses1",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-hair11-glasses2",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-hair11-glasses3",
+            "left": 45.58375634517766,
+            "right": 274.4162436548223,
+            "top": 24.16751269035533,
+            "pass": true
+          },
+          {
+            "case": "female-hair12-glasses1",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-hair12-glasses2",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          },
+          {
+            "case": "female-hair12-glasses3",
+            "left": 31.125541125541126,
+            "right": 289.43722943722946,
+            "top": 8.562770562770563,
+            "pass": true
+          }
+        ],
+        "images": 96,
+        "loaded": true,
+        "uniform": true,
+        "animations": 0,
+        "ready": true
+      }
+    }
+  ],
+  "errors": [],
+  "checks": [
+    {
+      "name": "All new sources loaded at a uniform scale and new hair painted extents fit the portrait canvas",
+      "cases": 156,
+      "pass": true
+    },
+    {
+      "name": "Still images remain unchanged after waiting, hover, focus and inert legacy control methods",
+      "pass": true
+    }
+  ],
+  "limits": [
+    "Chromium/Edge renderer only.",
+    "Structural painted clipping and uniform scaling do not establish style, natural attachment or visual fit; those require direct independent contact-sheet review.",
+    "The avatar is intentionally an upper-chest bust; lower clothing clipping is not treated as a defect.",
+    "Miniatures are 44 by 56 CSS pixels, alongside full 320px composed busts."
+  ],
+  "structuralPass": true,
+  "pass": false,
+  "visualVerdict": "BLOCKED: hair-7 shows pale triangular temple gaps; inspect smaller screen-left notch on hair-10.",
+  "sourceStable": true,
+  "loadedByteBinding": {
+    "files": [
+      {
+        "file": "src/avatar-static.js",
+        "expected": "f72eabcae043c28b01cdc19254d1b43996be39fc07d77fe3c931929bcedcd9ce",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "f72eabcae043c28b01cdc19254d1b43996be39fc07d77fe3c931929bcedcd9ce"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-v1.frames.json",
+        "expected": "43039906659d24c98ab4d477773830c94eed6fc314962c4ac3e67a67153fe951",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "43039906659d24c98ab4d477773830c94eed6fc314962c4ac3e67a67153fe951"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/manifest.json",
+        "expected": "c5d856eb4dc493df4d20827dc1e4d41fac931395f06e7d25a0da567818e01662",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "c5d856eb4dc493df4d20827dc1e4d41fac931395f06e7d25a0da567818e01662"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-heads-v2.png",
+        "expected": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-clothes-v1.png",
+        "expected": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-7.png",
+        "expected": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-8.png",
+        "expected": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-9.png",
+        "expected": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-10.png",
+        "expected": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-hair-v1.png",
+        "expected": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-7.png",
+        "expected": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-8.png",
+        "expected": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-9.png",
+        "expected": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-10.png",
+        "expected": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-11.png",
+        "expected": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-12.png",
+        "expected": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-eyewear-v2.png",
+        "expected": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/ui-static-v1.png",
+        "expected": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+          }
+        ]
+      }
+    ],
+    "pass": true
+  },
+  "status": "VISUAL_REVIEW_BLOCKED",
+  "independentVisualReview": {
+    "reviewer": "avatar_extension_review subagent",
+    "method": "Directly viewed every composed browser contact sheet via view_image, including all156 large busts and miniature strips. Structural pass was not treated as visual approval.",
+    "sheetsViewed": [
+      "hair-sheet-1.png",
+      "hair-sheet-2.png",
+      "hair-sheet-3.png",
+      "hair-sheet-4.png",
+      "hair-sheet-5.png",
+      "hair-sheet-6.png",
+      "outfits-sheet-1.png",
+      "outfits-sheet-2.png",
+      "outfits-sheet-3.png",
+      "outfits-sheet-4.png",
+      "eyewear-sheet-1.png",
+      "eyewear-sheet-2.png",
+      "eyewear-sheet-3.png"
+    ],
+    "approvedGroups": [
+      "all48outfit-skin-base cases",
+      "all36eyewear alignment cases, except hair7/10 temple fit noted separately",
+      "hair8/9/11/12 allskins/bases",
+      "all miniatures structurally fit and recognizable"
+    ],
+    "issues": [
+      {
+        "id": "hair7-temples",
+        "severity": "blocking",
+        "detail": "Bilateral bright pale triangles between textured crop and temples, conspicuous on skin5/6 for both bases.",
+        "proof": "hair-sheet-3.png"
+      },
+      {
+        "id": "hair10-left-temple",
+        "severity": "minor-inspect",
+        "detail": "Much smaller pale notch at screen-left temple for sleek lowbun.",
+        "proof": "eyewear-sheet-3.png"
+      }
+    ],
+    "otherFindings": "No detached collars or necks, clipped hair, stretched layers, unsupported hand fragments, cast shadows or outlines in reviewed composites. Broad curls and braids have coherent silhouettes. Eye-centered eyewear fits."
+  }
+}

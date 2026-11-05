@@ -1,0 +1,59 @@
+{
+  "status": "LOCAL_VISUAL_AND_PERSISTENCE_PASS_PUBLICATION_PENDING",
+  "pass": false,
+  "baseline": "64ea45a",
+  "counts": {
+    "newHair": 6,
+    "newOutfits": 4,
+    "totalHair": 12,
+    "hairChoicesIncludingNone": 13,
+    "totalOutfits": 10
+  },
+  "newHair": {
+    "masculine": [
+      "Cropped fade",
+      "Swept quiff"
+    ],
+    "feminine": [
+      "High ponytail",
+      "Sleek low bun",
+      "Twin braids",
+      "Loose curls"
+    ]
+  },
+  "newOutfits": [
+    "Coral bomber",
+    "Navy stripes",
+    "Lavender sweatshirt",
+    "Olive overshirt"
+  ],
+  "local": {
+    "artwork": "reports/avatar-expansion-proof-final2.json",
+    "composedCases": 156,
+    "independentVisualApproval": true,
+    "persistence": "reports/avatar-expansion-persistence-final.json",
+    "persistenceChecks": 9,
+    "responsiveScreens": 46,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "originalQAProfileRestored": true,
+    "contentTests": 15,
+    "sitewideReport": "reports/avatar-expansion-browser-final.json",
+    "sitewideScreens": 295,
+    "sitewideChecks": 11,
+    "sitewidePass": true
+  },
+  "generation": "reports/avatar-expansion-generation.json",
+  "contentAudioOrBackendChanged": false,
+  "notes": [
+    "Existing hair and clothing IDs, saved base, accessories and XP rewards preserved.",
+    "All new styles remain available to both avatar bases.",
+    "Native ImageGen alpha sprites; complete static busts without animation.",
+    "Stillness checks require exact geometry, styles, asset identity and zero timelines, with at most1/255 antialiased edge rounding; software-rasterized occupation proofs are byte-identical."
+  ],
+  "diagnostic": "reports/occupation-dialog-still-diagnostic.json"
+}
