@@ -2,8 +2,9 @@ import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=motion1'
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
-export function closePathBubble(){if(bubble.matches(':popover-open'))bubble.hidePopover();}
+export function closePathBubble(){bubble.getAnimations().forEach(a=>a.cancel());if(bubble.matches(':popover-open'))bubble.hidePopover();}
 export function openPathBubble(content,anchor,event){
+ bubble.getAnimations().forEach(a=>a.cancel());
  bubble.innerHTML=content.replace('id="dialog-title"','id="path-bubble-title"');bubble.setAttribute('aria-labelledby','path-bubble-title');bubble.showPopover();
  const a=anchor?.getBoundingClientRect(),x=event?.clientX||a?.left+a?.width/2||innerWidth/2,y=event?.clientY||a?.bottom||100,r=bubble.getBoundingClientRect();
  const left=Math.max(12,Math.min(x-r.width/2,innerWidth-r.width-12)),below=y+18+r.height<innerHeight-12;

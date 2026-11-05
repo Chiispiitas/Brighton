@@ -57,6 +57,8 @@ try{
     assert.equal(await page.locator('dialog[open]').count(),0);
     const rect=await bubble.boundingBox();assert.ok(rect.x>=0&&rect.x+rect.width<=width+1&&rect.y>=0);
     await shot('bubble-'+width);await page.keyboard.press('Escape');assert.equal(await bubble.count(),0);
+    await node.click();await page.keyboard.press('Escape');await node.click();await still();
+    const rapidBox=await bubble.boundingBox();assert.ok(rapidBox.x>=0&&rapidBox.x+rapidBox.width<=width+1,'rapid reopening stays in viewport');await page.keyboard.press('Escape');
     await node.focus();await page.keyboard.press('Enter');assert.equal(await bubble.count(),1);await page.keyboard.press('Escape');
     await node.click();await page.mouse.click(width-3,400);assert.equal(await bubble.count(),0);
     await node.click();await page.evaluate(()=>window.scrollBy(0,24));await page.waitForTimeout(100);assert.equal(await bubble.count(),0);
