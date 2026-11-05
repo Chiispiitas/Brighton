@@ -1,0 +1,401 @@
+{
+  "pass": true,
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "baseline": "5f4c7d5b5f4dac3f701139884e6c21d4a528fe6e",
+  "themes": [
+    {
+      "lesson": "1A",
+      "props": "",
+      "tiles": [
+        "./assets/art/lesson-props-v1/greetings.png",
+        "./assets/art/lesson-area-tiles-v1/cafe-cups.png"
+      ],
+      "wildlife": 1
+    },
+    {
+      "lesson": "1B",
+      "props": "",
+      "tiles": [
+        "./assets/art/lesson-props-v1/jobs.png",
+        "./assets/art/lesson-area-tiles-v1/work-bag.png"
+      ],
+      "wildlife": 1
+    },
+    {
+      "lesson": "1C",
+      "props": "",
+      "tiles": [
+        "./assets/art/lesson-props-v1/countries.png",
+        "./assets/art/lesson-area-tiles-v1/globe.png"
+      ],
+      "wildlife": 1
+    },
+    {
+      "lesson": "1D",
+      "props": "",
+      "tiles": [
+        "./assets/art/lesson-props-v1/personal.png",
+        "./assets/art/lesson-area-tiles-v1/postbox.png"
+      ],
+      "wildlife": 1
+    }
+  ],
+  "decorationsBefore": 28,
+  "decorationsAfter": 12,
+  "decorativeReductionPercent": 57.1,
+  "placements": [
+    {
+      "width": 320,
+      "id": "topic-1a-greetings"
+    },
+    {
+      "width": 320,
+      "id": "topic-1a-alphabet"
+    },
+    {
+      "width": 320,
+      "id": "topic-1a-numbers"
+    },
+    {
+      "width": 320,
+      "id": "topic-1a-be"
+    },
+    {
+      "width": 320,
+      "id": "listen-1a"
+    },
+    {
+      "width": 320,
+      "id": "read-1a"
+    },
+    {
+      "width": 320,
+      "id": "topic-1b-jobs"
+    },
+    {
+      "width": 320,
+      "id": "topic-1b-articles"
+    },
+    {
+      "width": 320,
+      "id": "topic-1b-contractions"
+    },
+    {
+      "width": 320,
+      "id": "listen-1b"
+    },
+    {
+      "width": 320,
+      "id": "read-1b"
+    },
+    {
+      "width": 320,
+      "id": "topic-1c-countries"
+    },
+    {
+      "width": 320,
+      "id": "topic-1c-adjectives"
+    },
+    {
+      "width": 320,
+      "id": "topic-1c-be"
+    },
+    {
+      "width": 320,
+      "id": "listen-1c"
+    },
+    {
+      "width": 320,
+      "id": "read-1c"
+    },
+    {
+      "width": 320,
+      "id": "topic-1d-details"
+    },
+    {
+      "width": 320,
+      "id": "topic-1d-questions"
+    },
+    {
+      "width": 320,
+      "id": "topic-1d-capitals"
+    },
+    {
+      "width": 320,
+      "id": "listen-1d"
+    },
+    {
+      "width": 320,
+      "id": "read-1d"
+    },
+    {
+      "width": 390,
+      "id": "topic-1a-greetings"
+    },
+    {
+      "width": 390,
+      "id": "topic-1a-alphabet"
+    },
+    {
+      "width": 390,
+      "id": "topic-1a-numbers"
+    },
+    {
+      "width": 390,
+      "id": "topic-1a-be"
+    },
+    {
+      "width": 390,
+      "id": "listen-1a"
+    },
+    {
+      "width": 390,
+      "id": "read-1a"
+    },
+    {
+      "width": 390,
+      "id": "topic-1b-jobs"
+    },
+    {
+      "width": 390,
+      "id": "topic-1b-articles"
+    },
+    {
+      "width": 390,
+      "id": "topic-1b-contractions"
+    },
+    {
+      "width": 390,
+      "id": "listen-1b"
+    },
+    {
+      "width": 390,
+      "id": "read-1b"
+    },
+    {
+      "width": 390,
+      "id": "topic-1c-countries"
+    },
+    {
+      "width": 390,
+      "id": "topic-1c-adjectives"
+    },
+    {
+      "width": 390,
+      "id": "topic-1c-be"
+    },
+    {
+      "width": 390,
+      "id": "listen-1c"
+    },
+    {
+      "width": 390,
+      "id": "read-1c"
+    },
+    {
+      "width": 390,
+      "id": "topic-1d-details"
+    },
+    {
+      "width": 390,
+      "id": "topic-1d-questions"
+    },
+    {
+      "width": 390,
+      "id": "topic-1d-capitals"
+    },
+    {
+      "width": 390,
+      "id": "listen-1d"
+    },
+    {
+      "width": 390,
+      "id": "read-1d"
+    },
+    {
+      "width": 768,
+      "id": "topic-1a-greetings"
+    },
+    {
+      "width": 768,
+      "id": "topic-1a-alphabet"
+    },
+    {
+      "width": 768,
+      "id": "topic-1a-numbers"
+    },
+    {
+      "width": 768,
+      "id": "topic-1a-be"
+    },
+    {
+      "width": 768,
+      "id": "listen-1a"
+    },
+    {
+      "width": 768,
+      "id": "read-1a"
+    },
+    {
+      "width": 768,
+      "id": "topic-1b-jobs"
+    },
+    {
+      "width": 768,
+      "id": "topic-1b-articles"
+    },
+    {
+      "width": 768,
+      "id": "topic-1b-contractions"
+    },
+    {
+      "width": 768,
+      "id": "listen-1b"
+    },
+    {
+      "width": 768,
+      "id": "read-1b"
+    },
+    {
+      "width": 768,
+      "id": "topic-1c-countries"
+    },
+    {
+      "width": 768,
+      "id": "topic-1c-adjectives"
+    },
+    {
+      "width": 768,
+      "id": "topic-1c-be"
+    },
+    {
+      "width": 768,
+      "id": "listen-1c"
+    },
+    {
+      "width": 768,
+      "id": "read-1c"
+    },
+    {
+      "width": 768,
+      "id": "topic-1d-details"
+    },
+    {
+      "width": 768,
+      "id": "topic-1d-questions"
+    },
+    {
+      "width": 768,
+      "id": "topic-1d-capitals"
+    },
+    {
+      "width": 768,
+      "id": "listen-1d"
+    },
+    {
+      "width": 768,
+      "id": "read-1d"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1a-greetings"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1a-alphabet"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1a-numbers"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1a-be"
+    },
+    {
+      "width": 1440,
+      "id": "listen-1a"
+    },
+    {
+      "width": 1440,
+      "id": "read-1a"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1b-jobs"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1b-articles"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1b-contractions"
+    },
+    {
+      "width": 1440,
+      "id": "listen-1b"
+    },
+    {
+      "width": 1440,
+      "id": "read-1b"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1c-countries"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1c-adjectives"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1c-be"
+    },
+    {
+      "width": 1440,
+      "id": "listen-1c"
+    },
+    {
+      "width": 1440,
+      "id": "read-1c"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1d-details"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1d-questions"
+    },
+    {
+      "width": 1440,
+      "id": "topic-1d-capitals"
+    },
+    {
+      "width": 1440,
+      "id": "listen-1d"
+    },
+    {
+      "width": 1440,
+      "id": "read-1d"
+    }
+  ],
+  "keptTrailHeight": 308,
+  "landmarks": 4,
+  "distinctAreaTiles": true,
+  "decorationsClearIslands": true,
+  "portraitAboveDetailsBelow": true,
+  "hoverArrowsAndBoundaries": true,
+  "verticalWheel": true,
+  "mouseDrag": true,
+  "nativeTouchSwipe": true,
+  "nativePinchZoomAllowed": true,
+  "clickOnlyAvatar": true,
+  "reducedMotion": true,
+  "actions": [
+    "getSession"
+  ],
+  "errors": [],
+  "failed": []
+}

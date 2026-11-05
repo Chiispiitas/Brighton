@@ -1,0 +1,341 @@
+{
+  "scope": "Four isolated reusable lesson object tiles. No scenery panels.",
+  "baseline": "5f4c7d5b5f4dac3f701139884e6c21d4a528fe6e",
+  "reviewer": "Root agent; no independent reviewer",
+  "calls": [
+    {
+      "assetId": "lesson-area-cafe-cups-v1",
+      "tile": "cafe-cups",
+      "tool": "built-in ImageGen",
+      "intent": "generate",
+      "transparentBackground": true,
+      "prompt": "Use case: isolated reusable game decoration tile for the Horizons companion learning map. Image 1 R01 is the mandatory brand palette and flat rendering reference, not an edit target. Image 2 R02 is the mandatory cast shape-language reference only: do NOT depict a character. Image 3 R07 is the mandatory native prop and landmark style reference, not a scenery layout to copy. Produce ONE isolated complete small inanimate object tile for 1A New friends. Two small cafe mugs side by side, one warm coral and one mustard yellow, simple complete handles, tiny dark coffee ovals. A friendly meeting over coffee. No steam wisps or saucers.. Centered complete silhouette with at least 18 percent empty margin on every side, clear at 50-65 CSS pixels, front/slightly elevated three-quarter view matching the simple native Horizons props. Restrained large geometric shapes; flat solid opaque colors; clean native raster edges. TRUE transparent background outside the object only. NO characters, faces, eyes, animals, landscape, ground, floor, terrain slab, connected scenery, path, trees, decorative confetti, text, letters, border, outline, cast shadow, glow, gradient, modeled lighting, texture or tiny fussy details. This is a standalone reusable tile, not a scene or chunk of environment. Keep the transparent background and every solid interior genuinely opaque.",
+      "inputCount": 3,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4ca9cb5a-c347-459e-a6a6-5b867aa77b80.png",
+      "verdict": "Rejected: cup glow/filled handles or globe edge speckles. See isolated opaque-background repair.",
+      "nativeRepositoryCopy": "docs/lesson-area-tiles/rejected/cafe-cups-native-v1.png",
+      "nativeSha256": "fa8d2cb92d692753191756eef769690e74e3f903be5c5a5507f7efb54214dd0c",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "colorMode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-initial.json"
+    },
+    {
+      "assetId": "lesson-area-work-bag-v1",
+      "tile": "work-bag",
+      "tool": "built-in ImageGen",
+      "intent": "generate",
+      "transparentBackground": true,
+      "prompt": "Use case: isolated reusable game decoration tile for the Horizons companion learning map. Image 1 R01 is the mandatory brand palette and flat rendering reference, not an edit target. Image 2 R02 is the mandatory cast shape-language reference only: do NOT depict a character. Image 3 R07 is the mandatory native prop and landmark style reference, not a scenery layout to copy. Produce ONE isolated complete small inanimate object tile for 1B What's your job?. One small navy doctor work bag with a cream plus symbol, rounded rectangular body, complete short top handle and simple warm-yellow clasp. No tiny tools or surrounding objects.. Centered complete silhouette with at least 18 percent empty margin on every side, clear at 50-65 CSS pixels, front/slightly elevated three-quarter view matching the simple native Horizons props. Restrained large geometric shapes; flat solid opaque colors; clean native raster edges. TRUE transparent background outside the object only. NO characters, faces, eyes, animals, landscape, ground, floor, terrain slab, connected scenery, path, trees, decorative confetti, text, letters, border, outline, cast shadow, glow, gradient, modeled lighting, texture or tiny fussy details. This is a standalone reusable tile, not a scene or chunk of environment. Keep the transparent background and every solid interior genuinely opaque.",
+      "inputCount": 3,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-147afc25-b773-4089-b506-7b91d6abc490.png",
+      "verdict": "Selected: complete isolated object; preserve native alpha and RGB.",
+      "nativeRepositoryCopy": "assets/art/lesson-area-tiles-v1/work-bag-native-v1.png",
+      "nativeSha256": "60a09d12bd94b2ad3731f59e5fc28667b576d4456934b520e8b112c8190ffce2",
+      "dimensions": [
+        1402,
+        1122
+      ],
+      "colorMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-initial.json"
+    },
+    {
+      "assetId": "lesson-area-globe-v1",
+      "tile": "globe",
+      "tool": "built-in ImageGen",
+      "intent": "generate",
+      "transparentBackground": true,
+      "prompt": "Use case: isolated reusable game decoration tile for the Horizons companion learning map. Image 1 R01 is the mandatory brand palette and flat rendering reference, not an edit target. Image 2 R02 is the mandatory cast shape-language reference only: do NOT depict a character. Image 3 R07 is the mandatory native prop and landmark style reference, not a scenery layout to copy. Produce ONE isolated complete small inanimate object tile for 1C Where are you from?. One small teal globe on a simple warm-yellow stand, simplified broad cream land shapes, complete circular globe and short solid base. No country borders, latitude lines, labels or compass.. Centered complete silhouette with at least 18 percent empty margin on every side, clear at 50-65 CSS pixels, front/slightly elevated three-quarter view matching the simple native Horizons props. Restrained large geometric shapes; flat solid opaque colors; clean native raster edges. TRUE transparent background outside the object only. NO characters, faces, eyes, animals, landscape, ground, floor, terrain slab, connected scenery, path, trees, decorative confetti, text, letters, border, outline, cast shadow, glow, gradient, modeled lighting, texture or tiny fussy details. This is a standalone reusable tile, not a scene or chunk of environment. Keep the transparent background and every solid interior genuinely opaque.",
+      "inputCount": 3,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd029086-5773-4516-8699-0fd4080622c0.png",
+      "verdict": "Rejected: cup glow/filled handles or globe edge speckles. See isolated opaque-background repair.",
+      "nativeRepositoryCopy": "docs/lesson-area-tiles/rejected/globe-native-v1.png",
+      "nativeSha256": "b447e400c48c62aad6ea5a05318c33ebe253b11d23a9d4d97d9570f5b6cf739f",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "colorMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-initial.json"
+    },
+    {
+      "assetId": "lesson-area-postbox-v1",
+      "tile": "postbox",
+      "tool": "built-in ImageGen",
+      "intent": "generate",
+      "transparentBackground": true,
+      "prompt": "Use case: isolated reusable game decoration tile for the Horizons companion learning map. Image 1 R01 is the mandatory brand palette and flat rendering reference, not an edit target. Image 2 R02 is the mandatory cast shape-language reference only: do NOT depict a character. Image 3 R07 is the mandatory native prop and landmark style reference, not a scenery layout to copy. Produce ONE isolated complete small inanimate object tile for 1D Let's fill in a form. One small teal freestanding postbox with a warm coral rounded cap, simple dark navy mail slot and short solid stand and base. One small cream blank envelope motif. No text or numbers.. Centered complete silhouette with at least 18 percent empty margin on every side, clear at 50-65 CSS pixels, front/slightly elevated three-quarter view matching the simple native Horizons props. Restrained large geometric shapes; flat solid opaque colors; clean native raster edges. TRUE transparent background outside the object only. NO characters, faces, eyes, animals, landscape, ground, floor, terrain slab, connected scenery, path, trees, decorative confetti, text, letters, border, outline, cast shadow, glow, gradient, modeled lighting, texture or tiny fussy details. This is a standalone reusable tile, not a scene or chunk of environment. Keep the transparent background and every solid interior genuinely opaque.",
+      "inputCount": 3,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4667a375-7930-4fc4-b773-0c7554991537.png",
+      "verdict": "Selected: complete isolated object; preserve native alpha and RGB.",
+      "nativeRepositoryCopy": "assets/art/lesson-area-tiles-v1/postbox-native-v1.png",
+      "nativeSha256": "7df0f98ad66984564f1d73bcc2d4e973275dff33805191e49a62734a5d779dca",
+      "dimensions": [
+        1312,
+        1199
+      ],
+      "colorMode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-initial.json"
+    },
+    {
+      "assetId": "lesson-area-cafe-cups-opaque-repair-v2",
+      "tile": "cafe-cups",
+      "tool": "built-in ImageGen",
+      "intent": "edit",
+      "transparentBackground": false,
+      "prompt": "Repair this isolated Horizons object tile. Inputs 1 R01, 2 R02 and 3 R07 are mandatory brand/native-shape references, not targets. Input 4 is the exact generated object to repair. Preserve the recognizable subject, large simple shape, colors and complete silhouette. Remove ALL glow, halo, shadow, translucent haze, gradient, scattered crumbs and edge speckles. Use only flat solid opaque fills with clean crisp native raster edges. IMPORTANT: render on a completely UNIFORM OPAQUE saturated magenta #ff00ff background, including intentional empty holes and openings. No transparency in this output. No magenta pixels inside solid object regions. No floor, ground, scene, text, labels or extra objects. Keep generous 18 percent background margin around the entire isolated object. The two mugs must each have a complete OPEN curved handle; the handle holes show the exact uniform magenta background. Keep coral and yellow mug bodies with dark navy coffee ovals. No steam.",
+      "inputCount": 4,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4ca9cb5a-c347-459e-a6a6-5b867aa77b80.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4ca9cb5a-c347-459e-a6a6-5b867aa77b80.png",
+          "sha256": "fa8d2cb92d692753191756eef769690e74e3f903be5c5a5507f7efb54214dd0c"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-94cd369e-b06a-4a4e-b426-e7a1bc8c5e65.png",
+      "verdict": "Selected opaque magenta-background repair for documented mechanical extraction.",
+      "nativeRepositoryCopy": "assets/art/lesson-area-tiles-v1/cafe-cups-native-v2.png",
+      "nativeSha256": "ddeac9f6d68b3a9a00ca850c998012097cc92b51f72737a7404c13238a619191",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "colorMode": "RGB",
+      "alphaRange": null,
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-repair.json"
+    },
+    {
+      "assetId": "lesson-area-globe-opaque-repair-v2",
+      "tile": "globe",
+      "tool": "built-in ImageGen",
+      "intent": "edit",
+      "transparentBackground": false,
+      "prompt": "Repair this isolated Horizons object tile. Inputs 1 R01, 2 R02 and 3 R07 are mandatory brand/native-shape references, not targets. Input 4 is the exact generated object to repair. Preserve the recognizable subject, large simple shape, colors and complete silhouette. Remove ALL glow, halo, shadow, translucent haze, gradient, scattered crumbs and edge speckles. Use only flat solid opaque fills with clean crisp native raster edges. IMPORTANT: render on a completely UNIFORM OPAQUE saturated magenta #ff00ff background, including intentional empty holes and openings. No transparency in this output. No magenta pixels inside solid object regions. No floor, ground, scene, text, labels or extra objects. Keep generous 18 percent background margin around the entire isolated object. Keep the simple teal globe, broad cream land shapes and warm yellow stand with its complete short solid base. The narrow opening between globe and stand is clean uniform magenta, with NO yellow flecks.",
+      "inputCount": 4,
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd029086-5773-4516-8699-0fd4080622c0.png"
+      ],
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+          "archivedReference": "docs/lesson-area-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/lesson-area-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1",
+          "archivedReference": "docs/lesson-area-tiles/inputs/07-scenes-vocabulary-ui.png"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd029086-5773-4516-8699-0fd4080622c0.png",
+          "sha256": "b447e400c48c62aad6ea5a05318c33ebe253b11d23a9d4d97d9570f5b6cf739f"
+        }
+      ],
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-46dcac70-bb87-4d6e-a688-578386bf8eb8.png",
+      "verdict": "Selected opaque magenta-background repair for documented mechanical extraction.",
+      "nativeRepositoryCopy": "assets/art/lesson-area-tiles-v1/globe-native-v2.png",
+      "nativeSha256": "6b645d5a1db0b579ea05d02506ebb1d9e7f4aa891960078ff65eaacc73e3bd16",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "colorMode": "RGB",
+      "alphaRange": null,
+      "referencePackSnapshot": "docs/lesson-area-tiles/inputs/reference-pack-repair.json"
+    }
+  ],
+  "tileset": "assets/art/lesson-area-tiles-v1/tileset.json",
+  "alphaAndSizeReview": "docs/lesson-area-tiles/alpha-and-size-review.png",
+  "uiReview": "docs/lesson-area-tiles/areas-review.png",
+  "sourceRecording": "20261105-2230-23.7319334.mp4",
+  "changes": {
+    "staticTilesPerLesson": 2,
+    "wildlifePerLesson": 1,
+    "totalDecorationsBefore": 28,
+    "totalDecorationsAfter": 12,
+    "landmarksKept": 4,
+    "landmarkArtworkSizeCss": [
+      108,
+      112
+    ],
+    "trailHeightCss": 308,
+    "islandIdsPreserved": true
+  },
+  "review": {
+    "verdict": "Selected native isolated props read clearly at map scale; cup glow and globe edge crumbs rejected, repaired on opaque key backgrounds, then mechanically extracted. White/paper/navy and full map views inspected by root.",
+    "independentReviewer": false,
+    "physicalTouchDevice": "Not checked; native Chromium touch emulation used."
+  }
+}

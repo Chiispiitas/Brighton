@@ -1,0 +1,22 @@
+{
+  "asset_id": "lesson-area-globe-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Use case: isolated reusable game decoration tile for the Horizons companion learning map. Image 1 R01 is the mandatory brand palette and flat rendering reference, not an edit target. Image 2 R02 is the mandatory cast shape-language reference only: do NOT depict a character. Image 3 R07 is the mandatory native prop and landmark style reference, not a scenery layout to copy. Produce ONE isolated complete small inanimate object tile for 1C Where are you from?. One small teal globe on a simple warm-yellow stand, simplified broad cream land shapes, complete circular globe and short solid base. No country borders, latitude lines, labels or compass.. Centered complete silhouette with at least 18 percent empty margin on every side, clear at 50-65 CSS pixels, front/slightly elevated three-quarter view matching the simple native Horizons props. Restrained large geometric shapes; flat solid opaque colors; clean native raster edges. TRUE transparent background outside the object only. NO characters, faces, eyes, animals, landscape, ground, floor, terrain slab, connected scenery, path, trees, decorative confetti, text, letters, border, outline, cast shadow, glow, gradient, modeled lighting, texture or tiny fussy details. This is a standalone reusable tile, not a scene or chunk of environment. Keep the transparent background and every solid interior genuinely opaque.",
+  "lesson": "1C Where are you from?",
+  "output": "assets/art/lesson-area-tiles-v1/globe.png",
+  "acceptance": [
+    "complete isolated silhouette",
+    "true alpha outside",
+    "solid opaque interior",
+    "native flat style",
+    "legible at 50-65px",
+    "no scenery or extra text"
+  ]
+}

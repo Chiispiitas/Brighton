@@ -1,0 +1,93 @@
+{
+  "tiles": [
+    {
+      "id": "cafe-cups",
+      "nativeSource": "cafe-cups-native-v2.png",
+      "nativeDimensions": [
+        1536,
+        1024
+      ],
+      "nativeSha256": "ddeac9f6d68b3a9a00ca850c998012097cc92b51f72737a7404c13238a619191",
+      "file": "cafe-cups.png",
+      "cropBox": [
+        232,
+        272,
+        1250,
+        798
+      ],
+      "dimensions": [
+        1018,
+        526
+      ],
+      "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad",
+      "method": "Established magenta-key extraction: min(R,B)>1.3*G+15; RGB unchanged; alpha bbox crop."
+    },
+    {
+      "id": "work-bag",
+      "nativeSource": "work-bag-native-v1.png",
+      "nativeDimensions": [
+        1402,
+        1122
+      ],
+      "nativeSha256": "60a09d12bd94b2ad3731f59e5fc28667b576d4456934b520e8b112c8190ffce2",
+      "file": "work-bag.png",
+      "cropBox": [
+        282,
+        232,
+        1108,
+        894
+      ],
+      "dimensions": [
+        826,
+        662
+      ],
+      "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9",
+      "method": "Geometric crop around visible alpha silhouette (>=128), padded by 8 pixels. Original RGBA inside crop unchanged; excludes distant barely visible margin specks."
+    },
+    {
+      "id": "globe",
+      "nativeSource": "globe-native-v2.png",
+      "nativeDimensions": [
+        1254,
+        1254
+      ],
+      "nativeSha256": "6b645d5a1db0b579ea05d02506ebb1d9e7f4aa891960078ff65eaacc73e3bd16",
+      "file": "globe.png",
+      "cropBox": [
+        266,
+        153,
+        960,
+        1113
+      ],
+      "dimensions": [
+        694,
+        960
+      ],
+      "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5",
+      "method": "Established magenta-key extraction: min(R,B)>1.3*G+15; RGB unchanged; alpha bbox crop."
+    },
+    {
+      "id": "postbox",
+      "nativeSource": "postbox-native-v1.png",
+      "nativeDimensions": [
+        1312,
+        1199
+      ],
+      "nativeSha256": "7df0f98ad66984564f1d73bcc2d4e973275dff33805191e49a62734a5d779dca",
+      "file": "postbox.png",
+      "cropBox": [
+        371,
+        251,
+        926,
+        976
+      ],
+      "dimensions": [
+        555,
+        725
+      ],
+      "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3",
+      "method": "Geometric crop around visible alpha silhouette (>=128), padded by 8 pixels. Original RGBA inside crop unchanged; excludes distant barely visible margin specks."
+    }
+  ],
+  "rule": "Isolated reusable object sprites only. No redrawing, recoloring, scene panels or stretched sprites."
+}

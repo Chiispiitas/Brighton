@@ -58,3 +58,15 @@
 .bird-rig{display:block;position:relative;width:100%;height:100%;transform-origin:center}
 .bird-rig img{position:absolute;object-fit:contain;max-width:none;pointer-events:none}
 .bird-body{width:100%;left:0;bottom:0;z-index:1}.bird-near{width:51%;left:7%;bottom:23%;transform-origin:88% 86%;z-index:2}.bird-far{width:37%;left:30%;bottom:49%;transform-origin:78% 90%}
+
+/* Two distinct lesson objects and one local wildlife accent leave the route open. */
+.overworld-map .area-prop{top:auto;bottom:20px;height:54px;width:58px}
+.overworld-map .area-prop-0{left:31%}
+.overworld-map .area-prop-1{left:65%;width:60px;height:55px;bottom:16px}
+.overworld-map .lesson-2 .area-prop-0{left:29%}
+.overworld-map .lesson-3 .area-prop-1{left:67%}
+.overworld-map .lesson-4 .area-prop-1{width:45px;height:62px;bottom:15px}
+.overworld-map .world-fauna{left:11%;right:auto;top:auto;bottom:36px}
+.overworld-map .world-bird{width:30px;height:25px}
+.overworld-map .world-butterfly{width:22px;height:23px}
+.overworld-map .landmark-art{width:108px;height:112px}

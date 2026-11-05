@@ -1,0 +1,37 @@
+{
+  "pass": true,
+  "asset_id": "lesson-area-globe-opaque-repair-v2",
+  "input_count": 4,
+  "input_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd029086-5773-4516-8699-0fd4080622c0.png"
+  ],
+  "inputs": [
+    {
+      "role": "reference",
+      "id": "R01",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "role": "reference",
+      "id": "R02",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "role": "reference",
+      "id": "R07",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
+    },
+    {
+      "role": "edit target",
+      "path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd029086-5773-4516-8699-0fd4080622c0.png",
+      "sha256": "b447e400c48c62aad6ea5a05318c33ebe253b11d23a9d4d97d9570f5b6cf739f"
+    }
+  ],
+  "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+}

@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest map cleanup: wildlife is reduced from8 to4 accents, one per lesson: birds in1A/1C and butterflies in1B/1D, locally hovering in the lower decoration lane. The two bird rigs retain rotation-only wing flaps; no new motion or anatomy was authored. All existing reduced-motion, visibility and disposal rules apply. Pico/avatar motion is unchanged. Older assertions requiring four bird rigs/eight wildlife elements are historical.
+
 Latest milestone audio: saved lesson rounds and newly earned island crowns have distinct native ElevenLabs cues. Audio is independent of reduced motion, shares remembered sound-effects mute, and adds no character motion. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md).
 
 Latest exercise audio: finite answer feedback now has local ElevenLabs correct/wrong cues and a remembered mute button. No character or motion changes. Sound provenance and reproduction process: [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md).

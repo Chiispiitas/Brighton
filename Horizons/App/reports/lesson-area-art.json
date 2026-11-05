@@ -1,0 +1,58 @@
+{
+  "pass": true,
+  "builtInCalls": 6,
+  "maximumInputsInAnyCall": 4,
+  "nativeSourcesPreserved": true,
+  "archivedReferencesMatchActualInputs": true,
+  "runtimeTiles": [
+    {
+      "id": "cafe-cups",
+      "nativeRgbPreserved": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "dimensions": [
+        1018,
+        526
+      ]
+    },
+    {
+      "id": "work-bag",
+      "nativeRgbPreserved": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "dimensions": [
+        826,
+        662
+      ]
+    },
+    {
+      "id": "globe",
+      "nativeRgbPreserved": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "dimensions": [
+        694,
+        960
+      ]
+    },
+    {
+      "id": "postbox",
+      "nativeRgbPreserved": true,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "dimensions": [
+        555,
+        725
+      ]
+    }
+  ],
+  "review": "Root visually inspected isolated native/alpha/size and separate integrated map views. No independent reviewer."
+}

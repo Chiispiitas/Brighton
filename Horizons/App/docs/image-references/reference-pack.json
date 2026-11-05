@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T22:08:25.847Z",
-  "sourceCommit": "66b3714d311322014fe8dabb888a1467fecbd772",
+  "createdAt": "2026-11-05T22:47:49.935Z",
+  "sourceCommit": "5f4c7d5b5f4dac3f701139884e6c21d4a528fe6e",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "31670f8d9a81b6b23eb7799e31a50497d56b82b024d0b8b18e2cbd8b077f58e3"
+      "sha256": "3fc0642d37c425ea218c618091544b3f27d4568e4e4ab33825fba2e8dd9f4f27"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "0b100cc13ed708cd1a7ed6dbb9640d13a670ab35553370b5dbcc7f1fb7705362"
+      "sha256": "a13e751e53c906a5ccae416e5cd2b049ab215115ab4f6dc0727ce1fb842c0d1c"
     },
     {
       "file": "styles/app.css",
@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "ba96c07befac43b14a13d516eb7b4e83c6337700e2679aeac93747fad231804a"
+      "sha256": "4a9386eead24e7f5e383352a5d4f033fdd9ab81d44b9a17bf2d5cdcf1c601853"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -164,6 +164,26 @@
     {
       "file": "assets/art/overworld-tiles-v1/grass.png",
       "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d"
+    },
+    {
+      "file": "assets/art/lesson-area-tiles-v1/tileset.json",
+      "sha256": "a1c77fe634d399d213f7ca506e99bac26d6aade0bce9809565604698164e8fe4"
+    },
+    {
+      "file": "assets/art/lesson-area-tiles-v1/cafe-cups.png",
+      "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+    },
+    {
+      "file": "assets/art/lesson-area-tiles-v1/work-bag.png",
+      "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9"
+    },
+    {
+      "file": "assets/art/lesson-area-tiles-v1/globe.png",
+      "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+    },
+    {
+      "file": "assets/art/lesson-area-tiles-v1/postbox.png",
+      "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3"
     }
   ],
   "references": [
@@ -207,7 +227,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
     }
   ]
 }

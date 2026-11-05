@@ -1,5 +1,24 @@
 # Unit 1 overworld: New Friends Town
 
+## Current sparse lesson areas — 5 November 2026
+
+The supplied 4.27-second recording showed repetitive tree/bush/grass dressing and two wildlife accents per lesson competing with the islands and buildings. The active route now uses **two distinct topic props and one wildlife accent per lesson**:12 decorative elements in total, down from28 (57.1% fewer). Four native landmark buildings remain; their visible artwork is108×112px rather than120×124px. Hit targets and island state badges remain unchanged. The path keeps its308px height, smooth S geometry and21 stable activity IDs.
+
+| Area | Reused native prop | New isolated tile | Wildlife |
+| --- | --- | --- | --- |
+| 1A New friends | Address book and pencil | Cafe cups | Bird |
+| 1B What's your job? | Chef hat and spoon | Work bag | Butterfly |
+| 1C Where are you from? | Travel map and compass | Globe | Bird |
+| 1D Let's fill in a form | Keys | Postbox | Butterfly |
+
+The lower decoration lane leaves the route, moving portrait and headings open. Each area has its own topic dressing; do not default to repeating the same plants across lessons. The existing plant assets remain available in the library but are no longer rendered or precached for this map. There are no whole-scene panels, terrain chunks, new text labels or helper messages. The plain paper surface, accepted island colors, minimal details, side arrows, vertical wheel and touch/mouse navigation remain.
+
+![Four reviewed lesson areas](lesson-area-tiles/areas-review.png)
+
+All four new tiles used built-in ImageGen with the mandatory R01/R02/R07 images actually attached (three inputs each). Two outputs needed isolated opacity/edge repairs using the exact targets (four inputs each). Native bytes and rejected results are retained; only documented alpha extraction, geometric cropping and uniform display scaling were applied. [Exact prompts and provenance](lesson-area-tiles/production-record.json), [native/crop mapping](../assets/art/lesson-area-tiles-v1/tileset.json), [background/size review](lesson-area-tiles/alpha-and-size-review.png). Root reviewed the sources and a separate integrated map comparison; no independent reviewer is claimed.
+
+`tools/lesson-area-proof.mjs` passes all84 island/portrait/detail placements at320/390/768/1440px, decoration clearance, unique per-lesson mappings, unchanged trail/IDs, no scrollbar or added helper copy, hover/end arrows, vertical wheel, mouse drag, native touch swipe, click-only avatar and reduced motion. Its backend calls are intercepted and restricted to a fictional getSession response; no learner records are used or written. See `reports/lesson-area-proof.json`. Cache lesson-areas-v55; queries areas1. Physical-device testing remains outside this browser-emulation evidence.
+
 Latest correction: bird wings flap using ROTATION ONLY (-35 to55 degrees); no wing squash, stretch or skew and no whole-bird scaling. Saved player portrait changes island only on explicit island activation (mouse/touch click or equivalent keyboard activation), never on hover/focus/leave or auto-retargeting while scrolling. Scrolling the selected island out of view hides the portrait until it returns; it does not select another island. Initial placement is allowed. Hover arrows and other accepted controls remain.
 
 Latest interaction/art update: mouse hovering an arrow scrolls until leave, as well as press/hold. Reached ends hide arrows; a real adjacent implemented unit turns its boundary into an explicit Go to Unit button (never auto-activate on hover). Unit registry currently contains only Unit 1. Avatar previews stay on fully visible islands; building names removed. Lesson-specific isolated native object tiles are reused. Bird now has separate ImageGen body/near/far wings, transform-only flaps with squash/stretch smear moments and local hover motion; butterfly also hovers locally. Reduced motion, hidden/offscreen pause and disposal apply to every wing loop. Older fixed-eight-animation / release-while-hover assertions are superseded.

@@ -1,0 +1,15 @@
+{
+  "asset_id": "lesson-area-globe-opaque-repair-v2",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-cd029086-5773-4516-8699-0fd4080622c0.png"
+  ],
+  "prompt": "Repair this isolated Horizons object tile. Inputs 1 R01, 2 R02 and 3 R07 are mandatory brand/native-shape references, not targets. Input 4 is the exact generated object to repair. Preserve the recognizable subject, large simple shape, colors and complete silhouette. Remove ALL glow, halo, shadow, translucent haze, gradient, scattered crumbs and edge speckles. Use only flat solid opaque fills with clean crisp native raster edges. IMPORTANT: render on a completely UNIFORM OPAQUE saturated magenta #ff00ff background, including intentional empty holes and openings. No transparency in this output. No magenta pixels inside solid object regions. No floor, ground, scene, text, labels or extra objects. Keep generous 18 percent background margin around the entire isolated object. Keep the simple teal globe, broad cream land shapes and warm yellow stand with its complete short solid base. The narrow opening between globe and stand is clean uniform magenta, with NO yellow flecks.",
+  "output": "assets/art/lesson-area-tiles-v1/globe-native-v2.png"
+}

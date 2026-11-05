@@ -1,13 +1,13 @@
-import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=milestones1';
-import {requestAvatarFeedback} from './avatar-motion.js?v=milestones1';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=milestones1';
-import {mountOverworld} from './overworld-motion.js?v=milestones1';
+import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=areas1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
+import {mountOverworld} from './overworld-motion.js?v=areas1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=milestones1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=milestones1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=areas1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=areas1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=milestones1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=areas1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -103,11 +103,11 @@ function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);
  const place=['Café','Market','Travel pavilion','Town hall'][index];
  const stops=nodes.map((node,i)=>{const t=i/Math.max(1,nodes.length-1),y=50-Math.sin(t*2*Math.PI)*Math.sin(t*Math.PI)*18.75,mastered=!!progress().islands?.[node.id]?.mastered,landmark=i===nodes.length-1,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${landmark?'landmark-stop':''} ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''} ${mastered?'mastered':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-t:${t};--path-y:${y}%" aria-label="${esc(lesson.id+' · '+(landmark?place+' · ':'')+node.title+(mastered?' · Mastered':nodeIsComplete(node)?' · Completed':''))}" aria-haspopup="dialog"><span class="stop-orb">${landmark?`<img class="landmark-art" src="./assets/art/overworld-unit1-v1/landmark-${index}.png" alt=""><span class="landmark-state">${icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span>`:icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span></button>`;}).join('');
- return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><div class="world-zone-caption"><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2></div>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" style="--path-count:${nodes.length}" aria-label="${esc(lesson.id)} activities">${worldTiles(index)}<svg class="trail-line" aria-hidden="true"><path class="trail-bed"/><path class="trail-route"/><path class="trail-extension-bed"/><path class="trail-extension"/></svg>${stops}<span class="world-fauna world-bird" data-fauna="bird" aria-hidden="true"><span class="bird-rig"><img class="bird-far" src="./assets/art/bird-hover-v1/wing-far.png" alt=""><img class="bird-body" src="./assets/art/bird-hover-v1/body.png" alt=""><img class="bird-near" src="./assets/art/bird-hover-v1/wing-near.png" alt=""></span></span><span class="world-fauna world-butterfly" data-fauna="butterfly" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/butterfly.png" alt=""></span></div></section>`;
+ return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><div class="world-zone-caption"><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2></div>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" style="--path-count:${nodes.length}" aria-label="${esc(lesson.id)} activities">${worldTiles(index)}<svg class="trail-line" aria-hidden="true"><path class="trail-bed"/><path class="trail-route"/><path class="trail-extension-bed"/><path class="trail-extension"/></svg>${stops}${index%2===0?'<span class="world-fauna world-bird" data-fauna="bird" aria-hidden="true"><span class="bird-rig"><img class="bird-far" src="./assets/art/bird-hover-v1/wing-far.png" alt=""><img class="bird-body" src="./assets/art/bird-hover-v1/body.png" alt=""><img class="bird-near" src="./assets/art/bird-hover-v1/wing-near.png" alt=""></span></span>':'<span class="world-fauna world-butterfly" data-fauna="butterfly" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/butterfly.png" alt=""></span>'}</div></section>`;
 }
 function worldTiles(index){
- const names=[index%2?'tree-slender':'tree-round',index%2?'bush':'bush-flowers','flowers','grass'];
- return `<img class="world-tile lesson-prop" src="./assets/art/lesson-props-v1/${['greetings','jobs','countries','personal'][index]}.png" alt="" aria-hidden="true">`+names.map((name,i)=>`<img class="world-tile tile-${i}" src="./assets/art/overworld-tiles-v1/${name}.png" alt="" aria-hidden="true" draggable="false">`).join('');
+ const props=[['greetings','cafe-cups'],['jobs','work-bag'],['countries','globe'],['personal','postbox']][index];
+ return props.map((name,i)=>`<img class="world-tile lesson-prop area-prop area-prop-${i}" data-area-prop="${name}" src="./assets/art/${i?'lesson-area-tiles-v1':'lesson-props-v1'}/${name}.png" alt="" aria-hidden="true" draggable="false">`).join('');
 }
 function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
