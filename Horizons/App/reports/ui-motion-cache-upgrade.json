@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-05T04:04:42.594Z",
+  "date": "2026-11-05T04:11:27.788Z",
   "base": "http://127.0.0.1:8898/Horizons/App/",
   "baseline": "f971ca04e99437dc6861d5a567eafae86d8e3012",
   "sourceRef": "working-tree",
@@ -40,8 +40,8 @@
         "src/app.js?v=motion1",
         "src/studio-ui.js?v=motion1",
         "src/ui-motion.js?v=motion1",
-        "src/lesson-art.js?v=colors1",
         "src/api-client.js",
+        "src/lesson-art.js?v=colors1",
         "src/art.js?v=colors1"
       ],
       "pass": true
@@ -85,15 +85,15 @@
       "fromServiceWorker": true
     },
     {
-      "file": "src/studio-ui.js",
-      "query": "?v=motion1",
-      "sha256": "895683e69ee9bc3b9500181b5cb624af4fbec0a240021c78204087910c1f488f",
-      "fromServiceWorker": true
-    },
-    {
       "file": "src/ui-motion.js",
       "query": "?v=motion1",
       "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "query": "?v=motion1",
+      "sha256": "5ce544d088908246677a7563083401752cb054c5ebdc373dc9e8f7e6a4dc19f4",
       "fromServiceWorker": true
     },
     {
@@ -182,7 +182,7 @@
     {
       "file": "src/studio-ui.js",
       "query": "?v=motion1",
-      "sha256": "895683e69ee9bc3b9500181b5cb624af4fbec0a240021c78204087910c1f488f"
+      "sha256": "5ce544d088908246677a7563083401752cb054c5ebdc373dc9e8f7e6a4dc19f4"
     },
     {
       "file": "src/ui-motion.js",
@@ -242,5 +242,5 @@
   ],
   "changedSources": [],
   "status": "PASS",
-  "runtimeRevision": "c96e598f54d7a061187f852ea5aba9f98bdf003e"
+  "runtimeRevision": "ed2e4d463d0f9fb4ae0aa15cadef60e1c8bde6d7"
 }

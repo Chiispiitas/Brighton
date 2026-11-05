@@ -1,9 +1,9 @@
 {
-  "date": "2026-11-05T04:06:18.810Z",
-  "revision": "c96e598f54d7a061187f852ea5aba9f98bdf003e",
+  "date": "2026-11-05T04:11:47.660Z",
+  "revision": "ed2e4d463d0f9fb4ae0aa15cadef60e1c8bde6d7",
   "runtimeSources": {
     "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
-    "src/studio-ui.js": "895683e69ee9bc3b9500181b5cb624af4fbec0a240021c78204087910c1f488f",
+    "src/studio-ui.js": "5ce544d088908246677a7563083401752cb054c5ebdc373dc9e8f7e6a4dc19f4",
     "src/app.js": "d5909f59b932b354a2f2801abf7b14c628177c2f1985356c6bdcc707d5ca25fe",
     "styles/app.css": "1b94fab50a13c9d156f912822ae39ee1d952065ced7377c16aa2e865be702739",
     "index.html": "a39a1f75088e014ca539eabe3992cf2ca22d6c128ff78f585060192cc931d476",
@@ -76,10 +76,11 @@
   "limits": [
     "Edge/Chromium only. Token movement uses a small DOM fixture with the production motion hooks. Visual verdict recorded after screenshot review."
   ],
+  "rapidBubbleReopening": true,
   "visualReview": {
     "reviewer": "Codex root",
     "pass": true,
-    "scope": "Direct inspection of full-size mobile and desktop screenshots plus all-width overview; accepted layout, bubble fit, tab highlight, bust crop and control spacing retained. No independent reviewer claimed.",
+    "scope": "Direct full-size mobile/desktop screenshot and all-width montage review; accepted layout and native character art retained.",
     "screenshots": "C:/Users/David/Documents/Codex/2026-11-04/horizons-ui-motion"
   }
 }
