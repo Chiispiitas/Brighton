@@ -1,0 +1,429 @@
+{
+  "tool": "built-in ImageGen",
+  "status": "accepted separate-part architecture; root-agent visual review",
+  "retired": "avatar-motion-v1 whole-head expression swaps violate the faceless-head process; no longer active",
+  "generations": [
+    {
+      "asset": "blank",
+      "toolOutputPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6f303069-3000-476a-b915-50861bd72ec5.png",
+      "savedNative": "assets\\art\\avatar-face-v2\\blank-native.png",
+      "sha256": "2cd57dc9e71c6f9f7ada913780bba87011a197ea3671f4492c51fe925a30d5d0",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "nativeBackground": "opaque magenta; separated mechanically in derivatives",
+      "brief": {
+        "asset_id": "avatar-face-v2-blank",
+        "kind": "avatar",
+        "intent": "edit",
+        "reference_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06"
+        ],
+        "target_paths": [
+          "assets/art/avatar-round-v3/heads.png"
+        ],
+        "reference_bundles": [
+          {
+            "ids": [
+              "R03",
+              "R04"
+            ],
+            "path": "docs/avatar-face-v2/base-hair-reference.png"
+          }
+        ],
+        "prompt": "Asset: truly blank faceless avatar head bases. Image1 R01 brand; Image2 full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 EXACT CURRENT ROUNDED HEAD ATLAS edit target. Preserve the exact1536x1024 four-column three-row twelve-head grid, each head location, outline, ears, neck, all six skin colors in same order repeated for both bases. Remove EVERY facial feature from ALL twelve heads: NO eyes, pupils, eyebrows, nose, mouth or expression marks. Fill removed features seamlessly with the correct surrounding flat skin tone. This is the entire actual blank head, NOT patches to cover eyes. Preserve natural rounder outline, exact neck and original size. Pure fully opaque solid vivid magenta #FF00FF background outside complete heads, opaque head interiors. No texture, glow, gradient, shadow, lighting or text. Do not draw expressions. Keep generous gutters between same-position heads."
+      },
+      "preflight": {
+        "pass": true,
+        "asset_id": "avatar-face-v2-blank",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference bundle",
+            "ids": [
+              "R03",
+              "R04"
+            ],
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+            "sha256": "a7d3836d7b37fcd601a843a2900df3cf7179a3f7c724862d4665289ab36eadc9"
+          },
+          {
+            "role": "reference",
+            "id": "R05",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+            "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
+          },
+          {
+            "role": "reference",
+            "id": "R06",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+            "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png",
+            "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "asset": "features",
+      "toolOutputPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-543cc76e-8681-4c1f-b43c-8a98a54140e6.png",
+      "savedNative": "assets\\art\\avatar-face-v2\\features-native.png",
+      "sha256": "cfb5073f479c08c453d35a396ff851f09e84ecbd24f343fc03e84409c4e80914",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "nativeBackground": "opaque magenta; separated mechanically in derivatives",
+      "brief": {
+        "asset_id": "avatar-face-v2-features",
+        "kind": "avatar",
+        "intent": "edit",
+        "reference_ids": [
+          "R01",
+          "R03",
+          "R04",
+          "R05",
+          "R06"
+        ],
+        "target_paths": [
+          "assets/art/avatar-round-v3/heads.png"
+        ],
+        "reference_bundles": [
+          {
+            "ids": [
+              "R03",
+              "R04"
+            ],
+            "path": "docs/avatar-face-v2/base-hair-reference.png"
+          }
+        ],
+        "prompt": "Asset: separate native facial-expression and blinking-eye sprite parts for exact Horizons avatars. Image1 R01 brand; Image2 full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 exact current face atlas for identity/feature shape, an edit target. Generate facial features ONLY, no head, skin, ears, neck, hair or backing patches. One regular3-column2-row sprite atlas with complete isolated parts centered in each equal square cell and generous empty margins: top-left ONE left open white oval eye WITHOUT pupil; top-middle ONE right open white oval eye WITHOUT pupil; top-right ONE navy round pupil matching current eye pupil. Bottom-left the pair of eyebrows plus nose and smiling mouth in their SAME relative positions as original face, but no eyes; bottom-middle ONE PAIR of gently curved closed navy eyelids, spaced like original eyes; bottom-right empty. Match existing friendly eyebrow thickness, warm orange nose, navy smile, eye shapes, no reinvention. All parts separate and opaque. Uniform perfectly flat vivid magenta #FF00FF background for mechanical extraction. NO white sheet, labels, borders, skin patches, heads, glow, gradient, shadows, blur or texture. These actual separate sprites will sit above a truly blank head and pupils will move inside masked eye whites."
+      },
+      "preflight": {
+        "pass": true,
+        "asset_id": "avatar-face-v2-features",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference bundle",
+            "ids": [
+              "R03",
+              "R04"
+            ],
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+            "sha256": "a7d3836d7b37fcd601a843a2900df3cf7179a3f7c724862d4665289ab36eadc9"
+          },
+          {
+            "role": "reference",
+            "id": "R05",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+            "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
+          },
+          {
+            "role": "reference",
+            "id": "R06",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+            "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png",
+            "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    }
+  ],
+  "recipe": "tools/prepare-avatar-face-v2.py",
+  "parts": {
+    "eye-left": {
+      "nativeRegion": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "trim": [
+        191,
+        178,
+        321,
+        338
+      ],
+      "size": [
+        130,
+        160
+      ]
+    },
+    "eye-right": {
+      "nativeRegion": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "trim": [
+        192,
+        178,
+        321,
+        338
+      ],
+      "size": [
+        129,
+        160
+      ]
+    },
+    "pupil": {
+      "nativeRegion": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "trim": [
+        216,
+        218,
+        296,
+        297
+      ],
+      "size": [
+        80,
+        79
+      ]
+    },
+    "brow-left": {
+      "nativeRegion": [
+        70,
+        610,
+        235,
+        680
+      ],
+      "trim": [
+        27,
+        19,
+        144,
+        53
+      ],
+      "size": [
+        117,
+        34
+      ]
+    },
+    "brow-right": {
+      "nativeRegion": [
+        280,
+        610,
+        435,
+        680
+      ],
+      "trim": [
+        18,
+        19,
+        135,
+        53
+      ],
+      "size": [
+        117,
+        34
+      ]
+    },
+    "nose": {
+      "nativeRegion": [
+        225,
+        725,
+        285,
+        827
+      ],
+      "trim": [
+        9,
+        18,
+        53,
+        90
+      ],
+      "size": [
+        44,
+        72
+      ]
+    },
+    "mouth": {
+      "nativeRegion": [
+        170,
+        840,
+        345,
+        910
+      ],
+      "trim": [
+        20,
+        13,
+        153,
+        52
+      ],
+      "size": [
+        133,
+        39
+      ]
+    },
+    "lid-left": {
+      "nativeRegion": [
+        590,
+        720,
+        760,
+        790
+      ],
+      "trim": [
+        23,
+        19,
+        143,
+        54
+      ],
+      "size": [
+        120,
+        35
+      ]
+    },
+    "lid-right": {
+      "nativeRegion": [
+        790,
+        720,
+        950,
+        790
+      ],
+      "trim": [
+        13,
+        19,
+        134,
+        54
+      ],
+      "size": [
+        121,
+        35
+      ]
+    }
+  },
+  "derivatives": [
+    "magenta alpha key and edge matte removal",
+    "crop/trim native features",
+    "accepted palette registration of native alpha shapes including clean white eyes",
+    "original rounded silhouette intersection",
+    "original neck seam below chin retained"
+  ],
+  "invariants": "All saved IDs and original head/costume/hair/eyewear metadata remain unchanged. No whole-head blink frame.",
+  "activeFiles": [
+    {
+      "file": "assets\\art\\avatar-face-v2\\blank-heads.png",
+      "sha256": "f1fdcd9c6d3462be4efc9cd977474648bfafeef00dee007d2990f2f3f5dd626e",
+      "dimensions": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\brow-left.png",
+      "sha256": "3a04a64a0ece9a083b2f0415e4d3739d484b37b70636783177a9c8b2dbefc4e6",
+      "dimensions": [
+        117,
+        34
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\brow-right.png",
+      "sha256": "a1b64e4ea1421596ce6e485d03ea6a04a3be15aeab04fcc2b56bf129093a691b",
+      "dimensions": [
+        117,
+        34
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\eye-left.png",
+      "sha256": "74d16f38ba259e8aa1ee26b62da59ec8b3365c592a100396345b3004b6b35016",
+      "dimensions": [
+        130,
+        160
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\eye-right.png",
+      "sha256": "bb1294965bec197fdd92ac6bab6a37727a7ea1a98960d2cd79b3cfa0ea7746c1",
+      "dimensions": [
+        129,
+        160
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\lid-left.png",
+      "sha256": "d9e8a3830730896daae8eeb8de9c059c612008bc9bcea2f9400b4109a01f1773",
+      "dimensions": [
+        120,
+        35
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\lid-right.png",
+      "sha256": "544ec01ea5edcafaeee4a1664a8017c44db238b96741336d484f195b34326c3b",
+      "dimensions": [
+        121,
+        35
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\mouth.png",
+      "sha256": "41c14a6401b94e09283a1d856f69638a7a9789fa671290b988fdcc366c35eafc",
+      "dimensions": [
+        133,
+        39
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\nose.png",
+      "sha256": "b25b4f0ad54271232c8500cf718e1c23ac56367fd384530aaf22fb28ee8a6caf",
+      "dimensions": [
+        44,
+        72
+      ]
+    },
+    {
+      "file": "assets\\art\\avatar-face-v2\\pupil.png",
+      "sha256": "1af9ba3e613acb88ce2ba384e7291db02c2924eeff366065375098353514fbea",
+      "dimensions": [
+        80,
+        79
+      ]
+    }
+  ],
+  "limits": "Very similar reconstruction, not pixel identical; generated white-eye proportions differ slightly. No independent human approval claimed."
+}

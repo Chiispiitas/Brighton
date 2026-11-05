@@ -1,0 +1,25 @@
+{
+  "asset_id": "avatar-face-v2-features",
+  "kind": "avatar",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "target_paths": [
+    "assets/art/avatar-round-v3/heads.png"
+  ],
+  "reference_bundles": [
+    {
+      "ids": [
+        "R03",
+        "R04"
+      ],
+      "path": "docs/avatar-face-v2/base-hair-reference.png"
+    }
+  ],
+  "prompt": "Asset: separate native facial-expression and blinking-eye sprite parts for exact Horizons avatars. Image1 R01 brand; Image2 full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 exact current face atlas for identity/feature shape, an edit target. Generate facial features ONLY, no head, skin, ears, neck, hair or backing patches. One regular3-column2-row sprite atlas with complete isolated parts centered in each equal square cell and generous empty margins: top-left ONE left open white oval eye WITHOUT pupil; top-middle ONE right open white oval eye WITHOUT pupil; top-right ONE navy round pupil matching current eye pupil. Bottom-left the pair of eyebrows plus nose and smiling mouth in their SAME relative positions as original face, but no eyes; bottom-middle ONE PAIR of gently curved closed navy eyelids, spaced like original eyes; bottom-right empty. Match existing friendly eyebrow thickness, warm orange nose, navy smile, eye shapes, no reinvention. All parts separate and opaque. Uniform perfectly flat vivid magenta #FF00FF background for mechanical extraction. NO white sheet, labels, borders, skin patches, heads, glow, gradient, shadows, blur or texture. These actual separate sprites will sit above a truly blank head and pupils will move inside masked eye whites."
+}

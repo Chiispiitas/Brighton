@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-05T18:15:15.470Z",
+  "sourceCommit": "9db29f3311bc9dfcac588d98f5c35beab495b3c7",
+  "maximumImageInputs": 7,
+  "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
+  "sources": [
+    {
+      "file": "assets/art/manifest.json",
+      "sha256": "ca0b1811696122054bd9cfe8c4f652f3c79fce0a21cfe6c4edb8a6614999e485"
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "sha256": "650ea658c579f99ce7b883840b0eb9b7dfc1b51c536c0940df32e7986f94ceea"
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "57e93520663497ba05b4faf55000312ac859951ddbda4c777fc138f7bfdba781"
+    },
+    {
+      "file": "src/avatar-static.js",
+      "sha256": "ae01618c21bbd1b26faf1907c447ae6ef5bd12bd1f0ecd308091b54b9665606d"
+    },
+    {
+      "file": "styles/app.css",
+      "sha256": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c"
+    },
+    {
+      "file": "styles/horizontal-path.css",
+      "sha256": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d"
+    },
+    {
+      "file": "styles/overworld.css",
+      "sha256": "ba96c07befac43b14a13d516eb7b4e83c6337700e2679aeac93747fad231804a"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-0.png",
+      "sha256": "79297819220e90572face8d52d9d9753bcf31c9de589cc8ac1be10f5f4471a2b"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-1.png",
+      "sha256": "e7ec453ce9718f8852a9df3ae2964453190234df93c2bc140d9b87ab4a2be8bf"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-2.png",
+      "sha256": "9b054bf208b5991ea587c38381aab6539df49be2b59554048d5e231b48ca71e4"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-3.png",
+      "sha256": "fbb8d2ed5c25901826714aee5dd00ee5fa3de9afff81fee51389ef8124f6bef0"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/bird.png",
+      "sha256": "8b0f8da6cda2c2acc0bf16c85a1a1e2e2ce3bbdd4e41a4a7eb78ba5a0cd86654"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/butterfly.png",
+      "sha256": "50e0fbee6a12da9dd74cff509f43ea3f576250be9009f1c723fdfee45d5b3f1e"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/body.png",
+      "sha256": "4ba58b35c10a27d527c72c09d03dd81f87f8f9c03c55c223eba05c69d7e94e1c"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/wing-near.png",
+      "sha256": "d275c705744a9f3628e5acf6aaa3b065a4c936c988a632880a81ff7756001630"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/wing-far.png",
+      "sha256": "b73b523a55fe6c56f520751553cff2ad6df60bac2bf3830b122697cfc5087fc8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/greetings.png",
+      "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/jobs.png",
+      "sha256": "03fa23bfb6ac2a113e0679f2c5fc226dabc8d56fbeb0c136d80b976751172ec8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/countries.png",
+      "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/personal.png",
+      "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tileset.json",
+      "sha256": "1816d97069965574898272de89a80e19d58cd2615fa30ae2ad0e0055babc6f1a"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tree-round.png",
+      "sha256": "77c0c52eb52e77525c1f0c504a8ab45e9af8103c8df9c255a32b414f8098d982"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tree-slender.png",
+      "sha256": "7f14df7a7365b6c6e60a20b5ef7bae84cc0f43c544ed36370d651e4195f69b9f"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/bush.png",
+      "sha256": "a72b68a9bd687927b92c5e0b440fcf5f5c45f580cf4572e982f88e14fb6b1237"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/bush-flowers.png",
+      "sha256": "145cbf9921039330ea7a029d17e1b6895e921ea6781a42a08ab859bef2b62cad"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/flowers.png",
+      "sha256": "ff13d75db6947ca9b1a30f9272a925b99277d69a78ae04edf184db7b0b48b518"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/grass.png",
+      "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d"
+    }
+  ],
+  "references": [
+    {
+      "id": "R01",
+      "file": "01-brand.png",
+      "title": "Horizons brand and flat rendering",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "id": "R02",
+      "file": "02-cast.png",
+      "title": "Recurring cast",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "id": "R03",
+      "file": "03-avatar-bases.png",
+      "title": "Avatar bases and skin tones",
+      "sha256": "32bd59fabdff62a8b8ba5546d56f542dd4ebe1ded91509acdee61b75c32bd1dc"
+    },
+    {
+      "id": "R04",
+      "file": "04-hairstyles.png",
+      "title": "Approved hairstyles",
+      "sha256": "52663cef4a4d64610b3690d8cebf242041efd339f64c845c02bed061a5eddd53"
+    },
+    {
+      "id": "R05",
+      "file": "05-wardrobe.png",
+      "title": "Approved wardrobe",
+      "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
+    },
+    {
+      "id": "R06",
+      "file": "06-accessories-and-colors.png",
+      "title": "Accessories and customization",
+      "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+    },
+    {
+      "id": "R07",
+      "file": "07-scenes-vocabulary-ui.png",
+      "title": "Scenes vocabulary and interface art",
+      "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
+    }
+  ],
+  "sourceRuntimeRevision": "cd8e3c281b3c2fc074d0f7a5e569019e06d90e7b"
+}

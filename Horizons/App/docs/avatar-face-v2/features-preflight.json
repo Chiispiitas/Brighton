@@ -1,0 +1,47 @@
+{
+  "pass": true,
+  "asset_id": "avatar-face-v2-features",
+  "input_count": 5,
+  "input_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png"
+  ],
+  "inputs": [
+    {
+      "role": "reference",
+      "id": "R01",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "role": "reference bundle",
+      "ids": [
+        "R03",
+        "R04"
+      ],
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-face-v2\\base-hair-reference.png",
+      "sha256": "a7d3836d7b37fcd601a843a2900df3cf7179a3f7c724862d4665289ab36eadc9"
+    },
+    {
+      "role": "reference",
+      "id": "R05",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+      "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
+    },
+    {
+      "role": "reference",
+      "id": "R06",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+      "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+    },
+    {
+      "role": "edit target",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png",
+      "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3"
+    }
+  ],
+  "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+}

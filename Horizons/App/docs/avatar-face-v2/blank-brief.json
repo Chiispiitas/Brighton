@@ -1,0 +1,25 @@
+{
+  "asset_id": "avatar-face-v2-blank",
+  "kind": "avatar",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "target_paths": [
+    "assets/art/avatar-round-v3/heads.png"
+  ],
+  "reference_bundles": [
+    {
+      "ids": [
+        "R03",
+        "R04"
+      ],
+      "path": "docs/avatar-face-v2/base-hair-reference.png"
+    }
+  ],
+  "prompt": "Asset: truly blank faceless avatar head bases. Image1 R01 brand; Image2 full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 EXACT CURRENT ROUNDED HEAD ATLAS edit target. Preserve the exact1536x1024 four-column three-row twelve-head grid, each head location, outline, ears, neck, all six skin colors in same order repeated for both bases. Remove EVERY facial feature from ALL twelve heads: NO eyes, pupils, eyebrows, nose, mouth or expression marks. Fill removed features seamlessly with the correct surrounding flat skin tone. This is the entire actual blank head, NOT patches to cover eyes. Preserve natural rounder outline, exact neck and original size. Pure fully opaque solid vivid magenta #FF00FF background outside complete heads, opaque head interiors. No texture, glow, gradient, shadow, lighting or text. Do not draw expressions. Keep generous gutters between same-position heads."
+}
