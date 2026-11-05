@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T19:03:21.071Z",
-  "sourceCommit": "03647fc3981a1c8e34d5b582c3cb5ddaded623fa",
+  "createdAt": "2026-11-05T20:11:03.201Z",
+  "sourceCommit": "d846cd868010f5d9da39dbe40b1cb396e235d5f1",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "9f8cc1c748464fb9f5d384f576ef393824b0fab1223aa29e4d6d0a7768601393"
+      "sha256": "92438f2cb0f6e81bb7e37e8de082e6d00c5b012585714deb0144ca8720ac3234"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "9f6e3e5812078bccc9ea4eafd9bab42482190e34dffc0af45c42597f9dc66baf"
+      "sha256": "bc99b46e1dcd697d337382ebc14345bf82b5b419db8106e8b0683f58a7519517"
     },
     {
       "file": "styles/app.css",
@@ -95,7 +95,7 @@
     },
     {
       "file": "src/avatar-motion.js",
-      "sha256": "a37291116dfd96ea33c4e1db0f5c3dc143cc7f5ea921d4d983da8d76c8120e4e"
+      "sha256": "a06e163b9fc0e4ca937cdea382742723bae874c07c56bfe18aa41f296884ff19"
     },
     {
       "file": "assets/art/avatar-face-v2/blank-heads.png",
@@ -171,7 +171,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
     },
     {
       "id": "R02",
@@ -195,7 +195,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "242fa0dafabfab87360b633fab6bf4cdc02b476a4a66cee022e3608bbf15044d"
+      "sha256": "d8b28a1bcfed7e1acfc6da61c9f3a597e89d4fcf6e69fecbc873396ed2e63140"
     },
     {
       "id": "R06",

@@ -19,7 +19,7 @@ async function sample(root,time){
  return root.evaluate(el=>{
   const bg=el.closest('#avatar-preview')||el;
   const box=bg.getBoundingClientRect(),stage=el.querySelector('.hzn-avatar-idle').getBoundingClientRect();
-  return {background:{x:box.x,y:box.y,w:box.width,h:box.height,transform:getComputedStyle(bg).transform,animations:bg.getAnimations().length},
+  return {artHeight:stage.height,background:{x:box.x,y:box.y,w:box.width,h:box.height,transform:getComputedStyle(bg).transform,animations:bg.getAnimations().length},
    head:el.querySelector('[data-static-part=head] img').src,
    face:getComputedStyle(el.querySelector('.hzn-avatar-face')).transform,
    pupil:getComputedStyle(el.querySelector('[data-face-part=pupil]')).transform,
@@ -41,7 +41,7 @@ for(const width of widths){
  const player=page.locator('.path-player [data-avatar-static]');
  const p0=await sample(player,0),p1=await sample(player,1600),p2=await sample(player,3700),pb=await sample(player,4210),p3=await sample(player,4500);
  assert.deepEqual(p0.background,p1.background);assert.deepEqual(p0.background,p2.background);assert.deepEqual(p0.background,pb.background);
- assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);
+ assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));assert.ok(p1.artHeight/p0.artHeight>1.005,'breathing visibly changes avatar height');assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);
  assert.equal(pb.blink,'closed');assert.equal(pb.eyesHidden,true);assert.equal(pb.lidsHidden,false);assert.equal(p3.blink,'open');
  for(const s of [p0,p1,p2,pb,p3]){assert.equal(s.head,p0.head);assert.ok(s.head.endsWith('/avatar-face-v2/blank-heads.png'));assert.ok(s.oldStillHidden&&s.pupilMask&&s.mask!=='none'&&s.opaque&&!s.opacityTracks);}
  await page.locator('[data-route=profile]:visible').first().click();await page.locator('#avatar-preview [data-avatar-motion=minimal]').waitFor();

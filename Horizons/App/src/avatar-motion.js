@@ -8,7 +8,7 @@ export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,
  mounts.get(element)?.dispose();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),input=new AbortController();
  let disposed=false,visible=false,ready=false,raf=0,idleAnimation,effect;
- const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.18/3.2}cqw,${y*.18/3.2}cqw)`;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
+ const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.4/3.2}cqw,${y*.4/3.2}cqw)`;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
  const reset=()=>{eyes.hidden=false;closed.hidden=true;gaze();frame.dataset.avatarBlink='open';};
  const draw=()=>{
   if(disposed)return;
@@ -26,7 +26,7 @@ export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,
   if(disposed)return;
   if(reduced.matches){idleAnimation?.cancel();idleAnimation=null;effect?.cancel();reset();frame.dataset.avatarMotion='reduced';return;}
   if(!ready||!visible||document.hidden){idleAnimation?.pause();effect?.cancel();reset();return;}
-  idleAnimation??=idle.animate([{transform:'scale(.997,.995)'},{transform:'scale(1)'},{transform:'scale(.997,.995)'}],{duration:5200,iterations:Infinity,easing:'ease-in-out'});
+  idleAnimation??=idle.animate([{transform:'scale(.994,.98)'},{transform:'scale(1)'},{transform:'scale(.994,.98)'}],{duration:5200,iterations:Infinity,easing:'ease-in-out'});
   idleAnimation.play();frame.dataset.avatarMotion='minimal';draw();
  };
  const bounce=kind=>{
