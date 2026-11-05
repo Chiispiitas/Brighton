@@ -1,0 +1,1705 @@
+{
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "samples": [
+    {
+      "width": 320,
+      "path": [
+        {
+          "background": {
+            "x": 146,
+            "y": 460.484375,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.788470141698,
+                142.01918585173195
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.9999529086003,
+                142.01918585173195
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.3960418701171875,
+          "eyeWidth": 6.4493408203125,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 146,
+            "y": 460.484375,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.073125, -0.014625)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.738449390625,
+                141.42918111088153
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                192.95000532089713,
+                141.42918111088153
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.4000701904296875,
+          "eyeWidth": 6.457000732421875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 146,
+            "y": 460.484375,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.073125, 0.020475)",
+          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                129.83847399113134,
+                142.84524233601138
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                187.05004666019443,
+                142.84524233601138
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.399566650390625,
+          "eyeWidth": 6.4560546875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 146,
+            "y": 460.484375,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0602983, 0.0168835)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -901.1756094748226,
+                -2846.974633901386
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -901.1756094748226,
+                -2846.974633901386
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 146,
+            "y": 460.484375,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0114258, 0.00319922)",
+          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.32753882134705,
+                142.14818806698452
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.53904027438892,
+                142.14818806698452
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.3967742919921875,
+          "eyeWidth": 6.45074462890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "editor": [
+        {
+          "background": {
+            "x": 45,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.89129801185248,
+                142.15217515234616
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                190.08694934675535,
+                142.15217515234616
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 15.032882690429688,
+          "eyeWidth": 28.570289611816406,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 45,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.323438, -0.0646875)",
+          "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.84130693411493,
+                141.56219543633114
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                193.03696555207733,
+                141.56219543633114
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 15.05072021484375,
+          "eyeWidth": 28.604209899902344,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 45,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.266704, 0.0746772)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -63.179438117021306,
+                -234.08879330499354
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -63.179438117021306,
+                -234.08879330499354
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "bounce": {
+        "background": {
+          "x": 45,
+          "y": 166.75,
+          "w": 230,
+          "h": 230,
+          "transform": "none",
+          "animations": 0
+        },
+        "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+        "face": "matrix(1, 0, 0, 1, 0.323438, -0.0646875)",
+        "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+        "blink": "open",
+        "eyesHidden": false,
+        "lidsHidden": true,
+        "oldStillHidden": true,
+        "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+        "restingPupils": [
+          {
+            "actual": [
+              135.84130402764646,
+              141.56217306942634
+            ],
+            "expected": [
+              132.92481095734055,
+              142.1990015979455
+            ]
+          },
+          {
+            "actual": [
+              193.0369679414797,
+              141.56217306942634
+            ],
+            "expected": [
+              190.1275390374788,
+              142.20095963731086
+            ]
+          }
+        ],
+        "eyeLogicalWidth": 39.877300613496935,
+        "pupilWidth": 14.996414184570312,
+        "eyeWidth": 28.500930786132812,
+        "pupilMask": true,
+        "opaque": true,
+        "opacityTracks": false
+      }
+    },
+    {
+      "width": 390,
+      "path": [
+        {
+          "background": {
+            "x": 150,
+            "y": 424.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.788470141698,
+                142.01918585173195
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.9999529086003,
+                142.01918585173195
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.3960418701171875,
+          "eyeWidth": 6.4493408203125,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 150,
+            "y": 424.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.073125, -0.014625)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.738449390625,
+                141.42918111088153
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                192.95000532089713,
+                141.42918111088153
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.4000701904296875,
+          "eyeWidth": 6.457000732421875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 150,
+            "y": 424.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.073125, 0.020475)",
+          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                129.83847399113134,
+                142.84524233601138
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                187.05004666019443,
+                142.84524233601138
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.399566650390625,
+          "eyeWidth": 6.4560546875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 150,
+            "y": 424.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0602983, 0.0168835)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -925.8541120207486,
+                -2625.5501764039527
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -925.8541120207486,
+                -2625.5501764039527
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 150,
+            "y": 424.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0114258, 0.00319922)",
+          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.32753882134705,
+                142.14818806698452
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.53904027438892,
+                142.14818806698452
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.3967742919921875,
+          "eyeWidth": 6.45074462890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "editor": [
+        {
+          "background": {
+            "x": 80,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.89129801185248,
+                142.15217515234616
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                190.08694934675535,
+                142.15217515234616
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 15.032882690429688,
+          "eyeWidth": 28.570281982421875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 80,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.323438, -0.0646875)",
+          "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.84130693411493,
+                141.56219543633114
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                193.03696555207733,
+                141.56219543633114
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 15.05072021484375,
+          "eyeWidth": 28.604217529296875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 80,
+            "y": 166.75,
+            "w": 230,
+            "h": 230,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.266704, 0.0746772)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -111.99994253306278,
+                -234.08879330499354
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -111.99994253306278,
+                -234.08879330499354
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "bounce": {
+        "background": {
+          "x": 80,
+          "y": 166.75,
+          "w": 230,
+          "h": 230,
+          "transform": "none",
+          "animations": 0
+        },
+        "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+        "face": "matrix(1, 0, 0, 1, 0.323438, -0.0646875)",
+        "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+        "blink": "open",
+        "eyesHidden": false,
+        "lidsHidden": true,
+        "oldStillHidden": true,
+        "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+        "restingPupils": [
+          {
+            "actual": [
+              135.84130402764646,
+              141.56217306942634
+            ],
+            "expected": [
+              132.92481095734055,
+              142.1990015979455
+            ]
+          },
+          {
+            "actual": [
+              193.0369679414797,
+              141.56217306942634
+            ],
+            "expected": [
+              190.1275390374788,
+              142.20095963731086
+            ]
+          }
+        ],
+        "eyeLogicalWidth": 39.877300613496935,
+        "pupilWidth": 14.996414184570312,
+        "eyeWidth": 28.500930786132812,
+        "pupilMask": true,
+        "opaque": true,
+        "opacityTracks": false
+      }
+    },
+    {
+      "width": 768,
+      "path": [
+        {
+          "background": {
+            "x": 350,
+            "y": 470.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.78842305029832,
+                142.01918585173195
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.9999529086003,
+                142.01918585173195
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.396026611328125,
+          "eyeWidth": 6.4493408203125,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 350,
+            "y": 470.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.073125, -0.014625)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.73848216175537,
+                141.42918111088153
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                192.95002469368075,
+                141.42918111088153
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.40008544921875,
+          "eyeWidth": 6.457000732421875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 350,
+            "y": 470.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.073125, 0.020475)",
+          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                129.83839764223558,
+                142.84524233601138
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                187.05003075396007,
+                142.84524233601138
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.399566650390625,
+          "eyeWidth": 6.4560546875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 350,
+            "y": 470.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0602983, 0.0168835)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -2159.779239317054,
+                -2909.8387079662916
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -2159.779239317054,
+                -2909.8387079662916
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 350,
+            "y": 470.65625,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0114258, 0.00319922)",
+          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.32749174020154,
+                142.14818806698452
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.53908735553443,
+                142.14818806698452
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.396759033203125,
+          "eyeWidth": 6.45074462890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "editor": [
+        {
+          "background": {
+            "x": 220,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.9032139576506,
+                142.1774263922377
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                190.09674447280588,
+                142.1774263922377
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 20.267120361328125,
+          "eyeWidth": 38.509124755859375,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 220,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.435937, -0.0871875)",
+          "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.85322065069843,
+                141.58740390357653
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                193.04676660721674,
+                141.58740390357653
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 20.29119873046875,
+          "eyeWidth": 38.554840087890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 220,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.359471, 0.100652)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -228.089202400607,
+                -212.3186179754308
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -228.089202400607,
+                -212.3186179754308
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "bounce": {
+        "background": {
+          "x": 220,
+          "y": 203.75,
+          "w": 310,
+          "h": 310,
+          "transform": "none",
+          "animations": 0
+        },
+        "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+        "face": "matrix(1, 0, 0, 1, 0.435937, -0.0871875)",
+        "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+        "blink": "open",
+        "eyesHidden": false,
+        "lidsHidden": true,
+        "oldStillHidden": true,
+        "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+        "restingPupils": [
+          {
+            "actual": [
+              135.85321780884615,
+              141.5873883761378
+            ],
+            "expected": [
+              132.92481095734055,
+              142.1990015979455
+            ]
+          },
+          {
+            "actual": [
+              193.04677094699568,
+              141.5873883761378
+            ],
+            "expected": [
+              190.1275390374788,
+              142.20095963731086
+            ]
+          }
+        ],
+        "eyeLogicalWidth": 39.877300613496935,
+        "pupilWidth": 20.21795654296875,
+        "eyeWidth": 38.415679931640625,
+        "pupilMask": true,
+        "opaque": true,
+        "opacityTracks": false
+      }
+    },
+    {
+      "width": 1440,
+      "path": [
+        {
+          "background": {
+            "x": 414,
+            "y": 499.78125,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.78842305029832,
+                142.01909147961325
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.9999529086003,
+                142.01909147961325
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.396026611328125,
+          "eyeWidth": 6.4493408203125,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 414,
+            "y": 499.78125,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.073125, -0.014625)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.73848216175537,
+                141.42936948169182
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                192.95002469368075,
+                141.42936948169182
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.40008544921875,
+          "eyeWidth": 6.457000732421875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 414,
+            "y": 499.78125,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.073125, 0.020475)",
+          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                129.83839764223558,
+                142.84514812775816
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                187.05003075396007,
+                142.84514812775816
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.399566650390625,
+          "eyeWidth": 6.4560546875,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 414,
+            "y": 499.78125,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0602983, 0.0168835)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -2554.6352800518716,
+                -3089.8366097435337
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -2554.6352800518716,
+                -3089.8366097435337
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 414,
+            "y": 499.78125,
+            "w": 52,
+            "h": 52,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.0114258, 0.00319922)",
+          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.32749174020154,
+                142.14828240471593
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                189.53908735553443,
+                142.14828240471593
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 3.396759033203125,
+          "eyeWidth": 6.45074462890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "editor": [
+        {
+          "background": {
+            "x": 284,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                132.9032139576506,
+                142.1774263922377
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                190.09674447280588,
+                142.1774263922377
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 20.267120361328125,
+          "eyeWidth": 38.509124755859375,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 284,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, 0.435937, -0.0871875)",
+          "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+          "blink": "open",
+          "eyesHidden": false,
+          "lidsHidden": true,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                135.85322065069843,
+                141.58740390357653
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                193.04676660721674,
+                141.58740390357653
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 20.29119873046875,
+          "eyeWidth": 38.554840087890625,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        },
+        {
+          "background": {
+            "x": 284,
+            "y": 203.75,
+            "w": 310,
+            "h": 310,
+            "transform": "none",
+            "animations": 0
+          },
+          "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "face": "matrix(1, 0, 0, 1, -0.359471, 0.100652)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
+          "oldStillHidden": true,
+          "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+          "restingPupils": [
+            {
+              "actual": [
+                -294.3230744571907,
+                -212.3186179754308
+              ],
+              "expected": [
+                132.92481095734055,
+                142.1990015979455
+              ]
+            },
+            {
+              "actual": [
+                -294.3230744571907,
+                -212.3186179754308
+              ],
+              "expected": [
+                190.1275390374788,
+                142.20095963731086
+              ]
+            }
+          ],
+          "eyeLogicalWidth": 39.877300613496935,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
+          "pupilMask": true,
+          "opaque": true,
+          "opacityTracks": false
+        }
+      ],
+      "bounce": {
+        "background": {
+          "x": 284,
+          "y": 203.75,
+          "w": 310,
+          "h": 310,
+          "transform": "none",
+          "animations": 0
+        },
+        "head": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+        "face": "matrix(1, 0, 0, 1, 0.435937, -0.0871875)",
+        "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+        "blink": "open",
+        "eyesHidden": false,
+        "lidsHidden": true,
+        "oldStillHidden": true,
+        "mask": "url(\"https://exams.bebrighton.net/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
+        "restingPupils": [
+          {
+            "actual": [
+              135.85321780884615,
+              141.5873883761378
+            ],
+            "expected": [
+              132.92481095734055,
+              142.1990015979455
+            ]
+          },
+          {
+            "actual": [
+              193.04677094699568,
+              141.5873883761378
+            ],
+            "expected": [
+              190.1275390374788,
+              142.20095963731086
+            ]
+          }
+        ],
+        "eyeLogicalWidth": 39.877300613496935,
+        "pupilWidth": 20.21795654296875,
+        "eyeWidth": 38.415679931640625,
+        "pupilMask": true,
+        "opaque": true,
+        "opacityTracks": false
+      }
+    }
+  ],
+  "separateGeneratedBlankAndFeatures": true,
+  "naturalClockBlink": true,
+  "pupilLogicalWidth": 21,
+  "neutralPupilsMatchAcceptedStill": true,
+  "fixedBackgroundThroughIdleAndBounce": true,
+  "containedPupils": true,
+  "opaque": true,
+  "missingSpriteFallback": true,
+  "errors": []
+}

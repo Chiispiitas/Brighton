@@ -1,0 +1,45 @@
+{
+  "runtimeRevision": "441704d3dc63764aca436746768bcb4851f53929",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pagesRun": 42090254698,
+  "pass": true,
+  "hostedMatchedFiles": 448,
+  "bookSourceRecordingsUnchanged": 12,
+  "cache": "horizons-companion-avatar-face-v43",
+  "entryQuery": "face3",
+  "facelessHeadAndSeparateGeneratedSprites": true,
+  "wholeHeadExpressionsRetired": true,
+  "fixedBackgroundDuringIdleAndFeedback": true,
+  "defaultEyes": "accepted-still white bounds and native pupil centroids per base/skin; subtle inward rest",
+  "pupilLogicalWidth": 21,
+  "increaseFromFirstSeparatedRigPercent": 16.6667,
+  "gaze": "pupils +/-2.5 logical px, face at18% of pupil displacement, masked",
+  "blinkMs": 140,
+  "idleCycleMs": 5200,
+  "responsiveWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "costumeCombinations": 240,
+  "nativeMetadataAndSavedIDsUnchanged": true,
+  "clickOnlyTargeting": true,
+  "reducedMotionAndLifecycle": true,
+  "reports": [
+    "reports/avatar-face-proof-hosted.json",
+    "reports/avatar-motion-proof-hosted.json",
+    "reports/avatar-motion-costumes-hosted.json",
+    "reports/avatar-cache-proof-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "backendChanges": false,
+  "realLearnerWrites": false,
+  "review": "Root inspected native parts, blank/still/neutral/blink/gaze reconstruction, current costume boards, dense controlled-clock preview frames and hosted neutral. No independent approval claimed.",
+  "limits": [
+    "Edge/Chromium synthetic fixtures; no physical-phone/Safari/Firefox claim",
+    "Controlled document.hidden event and seeded expired-cache worker-installation check; no full previous-worker upgrade simulation",
+    "Preview is200 controlled-clock actual-renderer frames at30fps; not a performance benchmark",
+    "Very similar reconstruction, not pixel identical"
+  ]
+}
