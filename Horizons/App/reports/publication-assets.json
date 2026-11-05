@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T03:46:13.316828+00:00",
+  "date": "2026-11-05T04:16:56.558169+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "c13649631ed3f3a2eafd6297713d8fa5a1d92022",
-  "checkedFiles": 349,
+  "revision": "bab9321099b57a25ffb4ccc15852330696bcdaa8",
+  "checkedFiles": 350,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -2348,7 +2348,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 1599,
-      "sha256": "a9e32ea7049c8fde1cacca052f73421b3336b7d872a394587eb1cd22d0212f9e",
+      "sha256": "a39a1f75088e014ca539eabe3992cf2ca22d6c128ff78f585060192cc931d476",
       "matchesCommittedBytes": true
     },
     {
@@ -2361,8 +2361,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1827,
-      "sha256": "02047784ee69435452faf1df2d0e0e93b6d5cbcc06d8915845de10239ff3e211",
+      "bytes": 1861,
+      "sha256": "d7c124fb4e6545fc99fc6cdfa5bf17239afc9556fe13921991907fb75907d68a",
       "matchesCommittedBytes": true
     },
     {
@@ -2375,8 +2375,8 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 54685,
-      "sha256": "e80f69771f894b885892f4fcb2b8b332c5ee08f730f766f51f64b92e4b1e9d98",
+      "bytes": 55050,
+      "sha256": "a18bcf7c1e99bb42795cbf622d5c125e486ab2fbdd9c25eff2d6135d485feb20",
       "matchesCommittedBytes": true
     },
     {
@@ -2438,15 +2438,22 @@
     {
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
-      "bytes": 5431,
-      "sha256": "45fdc26d59685be8c2bdfcdcc8321a3fc41876d76ccf9d7757440da126ac0f38",
+      "bytes": 5966,
+      "sha256": "263671d1651e473e2f483a51dccad23927011e59ce2cb8c19072264f0cd6e984",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/src/ui-motion.js",
+      "status": 200,
+      "bytes": 7397,
+      "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 90191,
-      "sha256": "b39ebc8604f89783d10f0f4d25be32f90b08bcdd9cccdbae2a1b79c20d5f1d0d",
+      "bytes": 92386,
+      "sha256": "94ad833c29f1e60192d57ade478c7cdc9895e53a4acd97b21e2208f5846abdfe",
       "matchesCommittedBytes": true
     }
   ]

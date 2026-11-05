@@ -1,0 +1,87 @@
+{
+  "date": "2026-11-05T04:16:30.221Z",
+  "revision": "bab9321099b57a25ffb4ccc15852330696bcdaa8",
+  "runtimeSources": {
+    "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+    "src/studio-ui.js": "263671d1651e473e2f483a51dccad23927011e59ce2cb8c19072264f0cd6e984",
+    "src/app.js": "a18bcf7c1e99bb42795cbf622d5c125e486ab2fbdd9c25eff2d6135d485feb20",
+    "styles/app.css": "94ad833c29f1e60192d57ade478c7cdc9895e53a4acd97b21e2208f5846abdfe",
+    "index.html": "a39a1f75088e014ca539eabe3992cf2ca22d6c128ff78f585060192cc931d476",
+    "service-worker.js": "d7c124fb4e6545fc99fc6cdfa5bf17239afc9556fe13921991907fb75907d68a"
+  },
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 390,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 768,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 1440,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    }
+  ],
+  "progressFill": true,
+  "answerFeedback": true,
+  "tokenMovement": true,
+  "memory": true,
+  "reducedMotion": true,
+  "midFlightReducedMotion": true,
+  "api": "Synthetic session only; real API requests intercepted; no profile/attempt writes",
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only. Token movement uses a small DOM fixture with the production motion hooks. Visual verdict recorded after screenshot review."
+  ],
+  "runtimeSourceBinding": "Exact committed/hosted bytes verified by reports/publication-assets.json",
+  "rapidBubbleReopening": true,
+  "visualReview": {
+    "reviewer": "Codex root",
+    "pass": true,
+    "scope": "Direct hosted mobile profile and desktop pressed-button/bubble inspection; full local all-width screenshot review. Character art, hair crop, compact path and accepted layout remain intact. No independent reviewer claimed.",
+    "screenshots": "C:/Users/David/Documents/Codex/2026-11-04/horizons-ui-motion-hosted"
+  }
+}

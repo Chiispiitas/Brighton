@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-05T04:17:35.248578+00:00",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "publicationRevision": "bab9321099b57a25ffb4ccc15852330696bcdaa8",
+  "lastRuntimeCommit": "ed2e4d4",
+  "deployment": {
+    "id": 41966311471,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Chiispiitas/Brighton/actions/runs/41966311471"
+  },
+  "pass": true,
+  "hostedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "hostedFilesMatch": 350,
+  "bookRecordingsMatch": 12,
+  "cacheUpgrade": "Actual committed v19 installed, updated to v20; old cache removed and new loaded/cached bytes match commit.",
+  "characters": "Static, including avatar preview; no animated container holds a character.",
+  "reducedMotion": "No motion; active JavaScript feedback cancelled when preference changes.",
+  "profileOrAttemptWrites": false,
+  "backendDeployment": false,
+  "newIllustrations": false,
+  "referencePack": "Rebuilt all seven sheets. R01 visually inspected; R02\u2013R07 unchanged. Six preflight tests passed.",
+  "limits": [
+    "Edge/Chromium only.",
+    "UI tests use an intercepted fictional session; no real learner data or backend writes.",
+    "Token travel has an isolated fixture exercising production render hooks.",
+    "Subsequent evidence-only commit preserves these exact runtime bytes."
+  ]
+}
