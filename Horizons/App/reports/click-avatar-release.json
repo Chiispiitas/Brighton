@@ -1,0 +1,40 @@
+{
+  "runtimeRevision": "ae37cb9e10917c3614cf7051efb50d5f256fcdb7",
+  "pass": true,
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "91d4dfa6a14c36dd8d301b0c3daac53a11bf48961983b175696202d161d026ba",
+      "matches": true
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "342beacf0afbf9fb98d2f1221592ce022d43172c241d97c93705c5d1cc86e342",
+      "matches": true
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "167fa411e4bdad018b8543202d7f47bfaf8c9625fb97af30a009dbeb0a7c4710",
+      "matches": true
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "06be0019b907d96a9c3bb0cb42f3af5f692d70689d9eba2c5bc240c9dca0a652",
+      "matches": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "sha256": "fa12a45427ceb0e108dd000cb485189d0896667eda4b5ab822dab1ccd77d0d76",
+      "matches": true
+    },
+    {
+      "file": "src/overworld-motion.js",
+      "sha256": "53c0f725b19ffb09f10e1c1269cd234b14f9e9b756ef1b098d41a08034c689f3",
+      "matches": true
+    }
+  ],
+  "proof": "reports/click-avatar-proof-hosted.json",
+  "nativeArtChanged": false,
+  "backendChanged": false,
+  "realLearnerWrites": false
+}
