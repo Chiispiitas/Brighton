@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest navigation correction runtime a15618cd79419fd98ff89e960f2edff156a76dec is published on both branches; Pages 42058505416 succeeded. Hosted proof reports/overworld-navigation.json passes. Normal vertical wheel, held arrows, native swipe/mouse drag, no extra map heading/tagline/instruction messages. Cache v34, queries overworld3. Older wheel-conversion instructions/reports below are superseded.
+
 Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v34; queries overworld3.
 
 Overworld runtime 9a29911c85976856b30813fe3e27c9420046b65c is published on both branches; Pages run 42055395675 succeeded. Hosted world/cache/Pico checks pass, with exact parity for 414 runtime/native files. See reports/overworld-release.json. Later evidence-only commits preserve this runtime.

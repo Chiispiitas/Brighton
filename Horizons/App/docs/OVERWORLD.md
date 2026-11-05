@@ -41,3 +41,5 @@ Runtime 9a29911c85976856b30813fe3e27c9420046b65c is live. [Pages run 42055395675
 ## Corrected navigation verification
 
 `tools/overworld-navigation-proof.mjs` verifies native vertical page wheel without sideways movement, accelerating held arrows and release, mouse drag without opening activities, native mobile touch swipe, and absence of removed messages. Earlier v32 wheel-conversion assertions are historical. No new artwork or learning/backend changes.
+
+Navigation correction published: runtime a15618cd79419fd98ff89e960f2edff156a76dec, [Pages run 42058505416](https://github.com/Chiispiitas/Brighton/actions/runs/42058505416) succeeded. Hosted native vertical wheel, accelerating hold/release, mouse drag, blur cancellation, touch swipe, pinch-zoom preservation and removed-copy checks passed. All seven changed runtime files match hosted bytes. [Navigation proof](../reports/overworld-navigation.json). Existing v32 wheel-conversion reports are historical. No printed-book/backend/native-art changes.

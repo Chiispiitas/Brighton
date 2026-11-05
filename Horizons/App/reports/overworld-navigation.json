@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-05T15:46:39.495Z",
-  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "date": "2026-11-05T15:51:00.165Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
   "pass": true,
   "nativeVerticalWheel": true,
   "heldArrowAccelerationAndRelease": true,
@@ -9,5 +9,46 @@
   "nativePinchZoomAllowed": true,
   "touchSwipe": true,
   "removedMessages": true,
-  "errors": []
+  "errors": [],
+  "runtimeRevision": "a15618cd79419fd98ff89e960f2edff156a76dec",
+  "pagesRun": 42058505416,
+  "pagesConclusion": "success",
+  "verifiedHostedSources": [
+    {
+      "file": "index.html",
+      "sha256": "54ee8098f21f585bc111dc25f3129f247d7a5109169421631e79941a8b7e2bb6",
+      "matches": true
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "ecac542094b917e35032b4f7b7d4aea159b5f6cbcea88dbfd1cbc907df43d760",
+      "matches": true
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "a747f48583a23257c9ef632830f5b16e01b7dafe030614c063c90e1422c444f5",
+      "matches": true
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "606cbff7e494aae3b219f54820ccc1c5b2fac71bc0d5c27169256fbb74aac08b",
+      "matches": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "sha256": "cc6a3f881e90d9341aaec70a6a64aa4ddbb6e734a2c2a77168fc1b3af60984a1",
+      "matches": true
+    },
+    {
+      "file": "src/overworld-motion.js",
+      "sha256": "8f8e32263716603fed9c24dc06645bf0db10f486153a271d2f6d48d7c3d4dace",
+      "matches": true
+    },
+    {
+      "file": "styles/overworld.css",
+      "sha256": "7b4bff005ca14fe21c5f51e792377ea4b7efcd2d2de1d79ca2e5a9572aa960f7",
+      "matches": true
+    }
+  ],
+  "review": "Independent source and composed desktop/mobile approval by /root/overworld_qa; synthetic Edge/Chromium only, no physical device or learner writes."
 }
