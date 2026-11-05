@@ -1,0 +1,32 @@
+Continue the Brighton Horizons companion website project from this handoff. Do not start a new app or redesign accepted work.
+
+Read these files first in the existing repository:
+1. Horizons/App/docs/SESSION-HANDOFF.md
+2. Horizons/App/APP-AUDIT.md
+3. Horizons/App/docs/IMAGE-PRODUCTION.md
+4. Horizons/App/docs/image-references/reference-pack.json
+
+Repository: https://github.com/Chiispiitas/Brighton
+Local checkout: C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton
+App: Horizons/App/
+Working branch: codex/horizons-companion-app
+Publication branch: main
+Live URL: https://exams.bebrighton.net/Horizons/App/
+
+The attached handoff bundle includes the audits, seven PNG reference sheets, validator, examples and verification context. It does not contain credentials or the complete source checkout. Obtain current source from the repository above and preserve any existing local changes.
+
+Important current decisions:
+- A1 Unit 1 is implemented in the app; the printed book's Units 1–8 are separate.
+- Keep the accepted compact snake path, non-modal island speech bubbles and floating Unit/XP/streak indicators.
+- Desktop sidebar has Learn and Practise only. Bottom shortcut keeps the profile picture, name and My profile. Mobile retains Profile. No header player picture.
+- Use English interface text, Spanish A1 vocabulary cues and typed answers by default. Listening must not reveal its answer and must offer I can't listen now.
+- Avatar options are tabbed, with saved hair/background colors and a round bust crop that preserves full hair. The explorer jacket has two lapels; navy/lavender/olive necklines were lowered.
+- Characters are static. Only a brief non-looping avatar-selection bounce and ImageGen sparkle are allowed; respect reduced motion.
+- New art requires actual attached mandatory reference images before ImageGen. Maximum seven image inputs TOTAL, including edit targets. Run the preflight and attach its returned paths; do not merely mention filenames.
+- Preserve native ImageGen art and stable saved IDs. Do not revive abandoned articulated animation.
+- Tests/reports can encode older instructions. The handoff identifies a stale no-sidebar-avatar assertion; latest user instruction wins.
+- Do not copy credentials, use real learner records for QA, or modify the printed book/backend as a side effect of a visual correction.
+
+Repeated {"detail":"Bad Request"} messages caused this session transfer. Their origin was not established; successful live app checks are recorded. Identify the actual failing operation if it recurs rather than guessing or restarting the project.
+
+Verify current HEAD, remote main and the live route. Read the full handoff for exact runtime paths, backend identity, tests, reports, deployment history and remaining verification limits. Confirm that the context is loaded, then wait for my next requested change without asking me to repeat the history.

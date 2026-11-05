@@ -1,0 +1,57 @@
+{
+  "preparedLocalDate": "2026-11-04",
+  "timezone": "America/Bogota",
+  "repository": "https://github.com/Chiispiitas/Brighton",
+  "checkout": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton",
+  "appPath": "Horizons/App",
+  "workingBranch": "codex/horizons-companion-app",
+  "publicationBranch": "main",
+  "snapshotBeforeHandoffCommit": "c13649631ed3f3a2eafd6297713d8fa5a1d92022",
+  "lastRuntimeChange": "b2b062e245b758e217b9abe80c0b88c0cdbb37ec",
+  "liveURL": "https://exams.bebrighton.net/Horizons/App/",
+  "cache": "horizons-companion-colors-v19",
+  "coverage": {
+    "level": "A1",
+    "unit": 1,
+    "lessons": [
+      "1A",
+      "1B",
+      "1C",
+      "1D"
+    ],
+    "visiblePathNodes": 21,
+    "vocabularyModels": 142,
+    "smallWordSets": 23
+  },
+  "entryDocuments": [
+    "docs/SESSION-HANDOFF.md",
+    "APP-AUDIT.md",
+    "docs/IMAGE-PRODUCTION.md",
+    "docs/NEW-CHAT-PROMPT.txt"
+  ],
+  "referencePack": "docs/image-references/reference-pack.json",
+  "maximumImageInputsIncludingTargets": 7,
+  "backend": {
+    "siteId": "09fbb304-3799-4b3a-8ec6-4a7097167f00",
+    "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+    "deploymentId": "87b9875d-a8dd-4337-a952-bde6d3e9e977",
+    "sourceRevision": "670211bb13c3563605f42dedbedd29cc00d97cda",
+    "tests": 32,
+    "liveChecks": 26
+  },
+  "verified": {
+    "runtimeFilesMatchingHosted": 349,
+    "bookRecordings": 12,
+    "publicationReport": "reports/publication-assets.json",
+    "comparisonRevision": "c13649631ed3f3a2eafd6297713d8fa5a1d92022"
+  },
+  "knownLimits": [
+    "Bad Request origin was not established.",
+    "Historical no-sidebar-avatar assertions are superseded by restored bottom shortcut picture.",
+    "Full interaction reports predate the latest sidebar-only correction.",
+    "Browser evidence is Edge/Chromium only.",
+    "Untracked Python caches were deliberately excluded.",
+    "No unfinished feature request is being delegated; read context then await user direction."
+  ],
+  "secretsIncluded": false
+}
