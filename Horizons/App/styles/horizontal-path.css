@@ -1,0 +1,31 @@
+/* The accepted compact Horizons design, with its unit trail turned sideways. */
+.learning-path{max-width:100%;margin-top:28px}
+.path-scroll-toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;max-width:100%;margin-bottom:10px;color:var(--muted);font-size:12px}
+.path-scroll-buttons{display:flex;gap:8px;flex:none}
+.path-scroll-buttons .round-button{width:44px;height:44px;background:var(--pink-soft);color:var(--pink)}
+.path-scroll-buttons .round-button:disabled{opacity:.4;cursor:default}
+.path-pan-prev>.icon,.path-pan-prev>.generated-icon{transform:rotate(180deg)}
+.horizontal-path-scroll{position:relative;overflow-x:auto;overflow-y:hidden;width:100%;max-width:100%;padding:8px 0 14px;scrollbar-color:#d991ae var(--pink-soft);scrollbar-width:thin;scroll-padding-inline:24px;overscroll-behavior-x:contain;isolation:isolate}
+.horizontal-path-scroll:focus-visible{outline-offset:3px}
+.horizontal-path-track{position:relative;display:flex;align-items:flex-start;gap:28px;width:max-content;min-width:100%;padding:0 16px}
+.learning-path .horizontal-path-track>.path-lesson{position:relative;flex:none;width:max-content;max-width:none;margin:0;padding:0}
+.horizontal-path-track .lesson-landmark{width:100%;max-width:612px;min-height:82px;padding:0;gap:18px;margin:0}
+.horizontal-path-track .lesson-landmark>h2{max-width:430px}
+.horizontal-path-track .lesson-trail{position:relative;display:block;width:calc((var(--path-count) - 1)*104px + 92px);height:320px;min-height:320px;gap:0;padding:0;margin:0;isolation:isolate}
+.horizontal-path-track .lesson-trail .path-stop{position:absolute;left:calc(46px + (100% - 92px)*var(--path-t) - 44px);top:calc(var(--path-y) - 44px);width:88px;max-width:88px;height:88px;min-height:88px;margin:0;padding:10px 0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0}
+.horizontal-path-track .lesson-trail .stop-orb{width:62px;height:62px;flex:none}
+.horizontal-path-track .trail-line{inset:0;width:100%;height:100%;overflow:visible}
+.horizontal-path-track .trail-line path{stroke-width:14px}
+.horizontal-path-track .path-lesson:not(:last-child) .lesson-trail:after{content:'';position:absolute;top:calc(50% - 7px);left:100%;width:28px;height:14px;background:#f8edf1;z-index:-1}
+.horizontal-path-track .trail-decoration{position:absolute;left:22%;top:230px;width:115px;max-width:115px;height:84px;object-fit:contain;margin:0;pointer-events:none;mix-blend-mode:multiply;z-index:-1}
+.path-player{position:absolute;top:0;left:0;width:56px;display:flex;flex-direction:column;align-items:center;gap:1px;pointer-events:none;z-index:4}
+.path-player>.avatar{width:52px;height:52px;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--pink-soft)}
+.path-player-caption{display:block;color:var(--pink);background:var(--paper);border-radius:6px;padding:1px 6px;font-size:11px;font-weight:800;line-height:1.4}
+@media(max-width:680px){
+ .learning-path{margin-top:24px}.path-scroll-toolbar{font-size:12px;gap:10px}.horizontal-path-track{padding:0 10px}
+ .horizontal-path-track .lesson-landmark{min-height:78px;gap:13px}.horizontal-path-track .lesson-landmark>h2{font-size:21px}
+ .horizontal-path-track .lesson-trail .path-stop{width:88px;height:88px;max-width:88px;min-height:88px;padding:10px 0}
+ .horizontal-path-track .lesson-trail .stop-orb{width:58px;height:58px}
+ .horizontal-path-track .trail-decoration{top:230px;height:84px;left:22%;width:115px}
+}
+@media(prefers-reduced-motion:reduce){.horizontal-path-scroll{scroll-behavior:auto}}

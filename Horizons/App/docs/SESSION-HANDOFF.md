@@ -1,6 +1,6 @@
 # Horizons website session handoff
 
-Current layout: colorful book-led lesson collection, horizontal sticky masthead, visible activity names/types and real book page references. Sidebar, winding path and floating progress overlays retired under the 5 November authorial redesign request. The user then asked to retain playfulness and accept some Duolingo similarity; keep lively Horizons colors and mastery feedback. All activity IDs, backend behavior and Pico animation are retained. Cache fieldguide-v30; entry queries fieldguide1. See LAYOUT-REDESIGN.md and current APP-AUDIT.md.
+Current layout: restore the exact pre-fieldguide compact design, changing only the trail to a horizontally scrollable unit route. Same sidebar/mobile navigation, compact Pico hero, island states and minimal popovers. Four lessons sit side by side; saved user avatar marks current/selected activity. The book-led fieldguide experiment was superseded by the user's later request. Cache horizontal-v31, entry queries horizontal1. See HORIZONTAL-PATH.md and current APP-AUDIT.md.
 
 Current animation rule: Pico has no fading/transparency transitions. Sprite visibility switches instantly at full opacity; movement uses transforms. One 8-second idle then 6-second inspection. Cache pico-v29, queries pico6. See the rewritten ANIMATION-AUDIT.md for the current from-scratch workflow, active sprite inventory and refreshed reference boards/14-second preview. Earlier trial details are in ANIMATION-AUDIT-HISTORY.md.
 

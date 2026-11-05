@@ -47,7 +47,7 @@ try{
   assert.equal(state.inspect,inspect,'inspect '+time);assert.equal(state.neutral,!inspect,'neutral '+time);assert.equal(state.eyes,!inspect&&!blink,'eyes '+time);assert.equal(state.blink,blink,'blink '+time);
  }
  await sample(0);await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).forEach(a=>a.play()));await page.waitForTimeout(8200);
- await page.evaluate(()=>scrollTo(0,1000));await page.waitForTimeout(200);assert.equal(await page.locator('.hero-pico').getAttribute('data-motion-paused'),'true');
+ await page.evaluate(()=>{document.body.style.minHeight='2200px';scrollTo(0,1000);});await page.waitForTimeout(200);assert.equal(await page.locator('.hero-pico').getAttribute('data-motion-paused'),'true');
  assert.ok(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).every(a=>a.playState==='paused')));
  await page.evaluate(()=>scrollTo(0,0));await page.waitForTimeout(250);assert.ok(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).every(a=>a.playState==='running')));
  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>document.querySelector('.hero-pico')?.dataset.bannerMotion==='reduced');

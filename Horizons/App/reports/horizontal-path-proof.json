@@ -1,0 +1,740 @@
+{
+  "date": "2026-11-05T14:27:10.662Z",
+  "sourceRevision": "baa8c65c49056cda0b28965ff3401f7dc51aafe7",
+  "revision": "baa8c65c49056cda0b28965ff3401f7dc51aafe7",
+  "uncommittedRuntime": true,
+  "runtimeSources": {
+    "src/app.js": "70d5d4780bcb82f88e2897e81c5866d43645f183bd0552ee6f14792847c361cd",
+    "src/studio-ui.js": "8e30268c13ce6dcd56e1e6f9179b239739e8f33e669eb3aacb7a757731e2e1de",
+    "src/pico-banner-motion.js": "35dad1cc1dd99d363e48ec1cf84bc92dfadcdae59979e5c051d6e83a173d698b",
+    "styles/app.css": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c",
+    "styles/horizontal-path.css": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d",
+    "index.html": "3774cf2e2cc3fca243ccd4884750dc98776642bc987335067f8499e7de95d5c9",
+    "service-worker.js": "a95d3bd82ecea957ed8a491fb0fc08c0c8b4cf5310a9e7c1122bf91a0e3b7355"
+  },
+  "baselineDesignRevision": "0058c04fd7209a3a959427aecf56cf038c1b71c1",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "islands": 21,
+      "baselineNavigation": true,
+      "singleHorizontalMap": true,
+      "lessonsReachable": [
+        "1A",
+        "1B",
+        "1C",
+        "1D"
+      ],
+      "keyboardScroll": true,
+      "keyboardPopover": true,
+      "noLabels": true,
+      "masteryAndCompletion": true,
+      "avatarTraveller": true,
+      "connectorGeometry": [
+        {
+          "count": 6,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 559.984375,
+          "orbs": [
+            {
+              "x": 72,
+              "y": 658.484375
+            },
+            {
+              "x": 176,
+              "y": 624.9375
+            },
+            {
+              "x": 280,
+              "y": 624.9375
+            },
+            {
+              "x": 384,
+              "y": 692.015625
+            },
+            {
+              "x": 488,
+              "y": 692.015625
+            },
+            {
+              "x": 592,
+              "y": 658.484375
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 712,
+              "y": 658.484375
+            },
+            {
+              "x": 816,
+              "y": 616.046875
+            },
+            {
+              "x": 920,
+              "y": 658.484375
+            },
+            {
+              "x": 1024,
+              "y": 700.90625
+            },
+            {
+              "x": 1128,
+              "y": 658.484375
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1248,
+              "y": 658.484375
+            },
+            {
+              "x": 1352,
+              "y": 616.046875
+            },
+            {
+              "x": 1456,
+              "y": 658.484375
+            },
+            {
+              "x": 1560,
+              "y": 700.90625
+            },
+            {
+              "x": 1664,
+              "y": 658.484375
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1784,
+              "y": 658.484375
+            },
+            {
+              "x": 1888,
+              "y": 616.046875
+            },
+            {
+              "x": 1992,
+              "y": 658.484375
+            },
+            {
+              "x": 2096,
+              "y": 700.90625
+            },
+            {
+              "x": 2200,
+              "y": 658.484375
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "profileDraft": true,
+      "noPageOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 390,
+      "islands": 21,
+      "baselineNavigation": true,
+      "singleHorizontalMap": true,
+      "lessonsReachable": [
+        "1A",
+        "1B",
+        "1C",
+        "1D"
+      ],
+      "keyboardScroll": true,
+      "keyboardPopover": true,
+      "noLabels": true,
+      "masteryAndCompletion": true,
+      "avatarTraveller": true,
+      "connectorGeometry": [
+        {
+          "count": 6,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 559.984375,
+          "orbs": [
+            {
+              "x": 76,
+              "y": 622.65625
+            },
+            {
+              "x": 180,
+              "y": 589.109375
+            },
+            {
+              "x": 284,
+              "y": 589.109375
+            },
+            {
+              "x": 388,
+              "y": 656.1875
+            },
+            {
+              "x": 492,
+              "y": 656.1875
+            },
+            {
+              "x": 596,
+              "y": 622.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 716,
+              "y": 622.65625
+            },
+            {
+              "x": 820,
+              "y": 580.21875
+            },
+            {
+              "x": 924,
+              "y": 622.65625
+            },
+            {
+              "x": 1028,
+              "y": 665.078125
+            },
+            {
+              "x": 1132,
+              "y": 622.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1252,
+              "y": 622.65625
+            },
+            {
+              "x": 1356,
+              "y": 580.21875
+            },
+            {
+              "x": 1460,
+              "y": 622.65625
+            },
+            {
+              "x": 1564,
+              "y": 665.078125
+            },
+            {
+              "x": 1668,
+              "y": 622.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1788,
+              "y": 622.65625
+            },
+            {
+              "x": 1892,
+              "y": 580.21875
+            },
+            {
+              "x": 1996,
+              "y": 622.65625
+            },
+            {
+              "x": 2100,
+              "y": 665.078125
+            },
+            {
+              "x": 2204,
+              "y": 622.65625
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "profileDraft": true,
+      "noPageOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 768,
+      "islands": 21,
+      "baselineNavigation": true,
+      "singleHorizontalMap": true,
+      "lessonsReachable": [
+        "1A",
+        "1B",
+        "1C",
+        "1D"
+      ],
+      "keyboardScroll": true,
+      "keyboardPopover": true,
+      "noLabels": true,
+      "masteryAndCompletion": true,
+      "avatarTraveller": true,
+      "connectorGeometry": [
+        {
+          "count": 6,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 559.984375,
+          "orbs": [
+            {
+              "x": 282,
+              "y": 672.65625
+            },
+            {
+              "x": 386,
+              "y": 639.109375
+            },
+            {
+              "x": 490,
+              "y": 639.109375
+            },
+            {
+              "x": 594,
+              "y": 706.1875
+            },
+            {
+              "x": 698,
+              "y": 706.1875
+            },
+            {
+              "x": 802,
+              "y": 672.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 922,
+              "y": 672.65625
+            },
+            {
+              "x": 1026,
+              "y": 630.21875
+            },
+            {
+              "x": 1130,
+              "y": 672.65625
+            },
+            {
+              "x": 1234,
+              "y": 715.078125
+            },
+            {
+              "x": 1338,
+              "y": 672.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1458,
+              "y": 672.65625
+            },
+            {
+              "x": 1562,
+              "y": 630.21875
+            },
+            {
+              "x": 1666,
+              "y": 672.65625
+            },
+            {
+              "x": 1770,
+              "y": 715.078125
+            },
+            {
+              "x": 1874,
+              "y": 672.65625
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1994,
+              "y": 672.65625
+            },
+            {
+              "x": 2098,
+              "y": 630.21875
+            },
+            {
+              "x": 2202,
+              "y": 672.65625
+            },
+            {
+              "x": 2306,
+              "y": 715.078125
+            },
+            {
+              "x": 2410,
+              "y": 672.65625
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "profileDraft": true,
+      "noPageOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 1440,
+      "islands": 21,
+      "baselineNavigation": true,
+      "singleHorizontalMap": true,
+      "lessonsReachable": [
+        "1A",
+        "1B",
+        "1C",
+        "1D"
+      ],
+      "keyboardScroll": true,
+      "keyboardPopover": true,
+      "noLabels": true,
+      "masteryAndCompletion": true,
+      "avatarTraveller": true,
+      "connectorGeometry": [
+        {
+          "count": 6,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 559.984375,
+          "orbs": [
+            {
+              "x": 346,
+              "y": 701.78125
+            },
+            {
+              "x": 450,
+              "y": 668.234375
+            },
+            {
+              "x": 554,
+              "y": 668.234375
+            },
+            {
+              "x": 658,
+              "y": 735.3125
+            },
+            {
+              "x": 762,
+              "y": 735.3125
+            },
+            {
+              "x": 866,
+              "y": 701.78125
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 986,
+              "y": 701.78125
+            },
+            {
+              "x": 1090,
+              "y": 659.34375
+            },
+            {
+              "x": 1194,
+              "y": 701.78125
+            },
+            {
+              "x": 1298,
+              "y": 744.203125
+            },
+            {
+              "x": 1402,
+              "y": 701.78125
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 1522,
+              "y": 701.78125
+            },
+            {
+              "x": 1626,
+              "y": 659.34375
+            },
+            {
+              "x": 1730,
+              "y": 701.78125
+            },
+            {
+              "x": 1834,
+              "y": 744.203125
+            },
+            {
+              "x": 1938,
+              "y": 701.78125
+            }
+          ]
+        },
+        {
+          "count": 5,
+          "leftToRight": true,
+          "touch": true,
+          "startDistance": 0,
+          "endDistance": 0,
+          "length": 464.4565734863281,
+          "orbs": [
+            {
+              "x": 2058,
+              "y": 701.78125
+            },
+            {
+              "x": 2162,
+              "y": 659.34375
+            },
+            {
+              "x": 2266,
+              "y": 701.78125
+            },
+            {
+              "x": 2370,
+              "y": 744.203125
+            },
+            {
+              "x": 2474,
+              "y": 701.78125
+            }
+          ]
+        }
+      ],
+      "practice": true,
+      "profileDraft": true,
+      "noPageOverflow": true,
+      "otherCharactersStatic": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "map-start-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-start-320.png",
+      "sha256": "9cfbf7e4f358b43eec431783f2836e8e883298343c457a7262b066b5221858a1"
+    },
+    {
+      "name": "map-end-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-end-320.png",
+      "sha256": "553c3aab1207868c9df74e0576a02c199b03115b03261f01c6a789d941f03041"
+    },
+    {
+      "name": "details-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\details-320.png",
+      "sha256": "6d528a4b6dea8fd7a189e96ebcd1d7a0506d00ecc27415f76ab91e181664c93e"
+    },
+    {
+      "name": "practice-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\practice-320.png",
+      "sha256": "ae9df13703a0435acd28431c4012ed65c9eb7210275d819559edab2faf0b2f1c"
+    },
+    {
+      "name": "profile-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\profile-320.png",
+      "sha256": "bff8f3289b60b7b7b3d9616f9a11af322a9e69573495e398a0a705c2ff92ced6"
+    },
+    {
+      "name": "map-start-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-start-390.png",
+      "sha256": "1d406d70c025ec2be1a9aff21ca6804cf3782bdd3348c695c730805e835365f9"
+    },
+    {
+      "name": "map-end-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-end-390.png",
+      "sha256": "f9eb99ca2a653bbe2d04e3452fef48b52d828747f3821db0da77c71d4ffeee67"
+    },
+    {
+      "name": "details-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\details-390.png",
+      "sha256": "819fb752ae78ee000df43ded3450343ecadc02f2a9114e41348084a7b82b2b31"
+    },
+    {
+      "name": "practice-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\practice-390.png",
+      "sha256": "d1ef7a6d7885d604fbe1c3e3b72c72d7ce3c31e8aefda592730537792ead0c45"
+    },
+    {
+      "name": "profile-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\profile-390.png",
+      "sha256": "cbe2707827ba75b5b4fdc42d727435f5d8ede9bb2470013fab47f848d6fd64ca"
+    },
+    {
+      "name": "map-start-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-start-768.png",
+      "sha256": "3849f952e3bf8c26d43d208bd2ca4a1e2b6b877896651d559e8a7304567e2feb"
+    },
+    {
+      "name": "map-end-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-end-768.png",
+      "sha256": "c5ebb04ef011d7f8776c15ab31b53459723b961cce83e31b68876b0cf32108f9"
+    },
+    {
+      "name": "details-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\details-768.png",
+      "sha256": "c61f45c83c632d01959625d3fcc4f49674c9b32c7cbe3b3a8bfb4c856c6efd7c"
+    },
+    {
+      "name": "practice-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\practice-768.png",
+      "sha256": "6602796806eadd4e7ebf807d0c4290c6122c1b781018488f8d547db5d937a89c"
+    },
+    {
+      "name": "profile-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\profile-768.png",
+      "sha256": "a1a84dbb075c45d5ef9f762b903d352a4daa5e4fd8703f39c3fd905f53bdb432"
+    },
+    {
+      "name": "map-start-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-start-1440.png",
+      "sha256": "49a88ab56a221d438062e1183fed0eb2bfcb3a639d8575f90c7e7614e3535be5"
+    },
+    {
+      "name": "map-end-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\map-end-1440.png",
+      "sha256": "b87ff574d2721bbe424a188ab9a5fc0b70b92140a94b2c061174c89bc3ae6b6d"
+    },
+    {
+      "name": "details-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\details-1440.png",
+      "sha256": "497d63f8f06ac773668caa5f9345d7fbe60f35826c4c781fd1ce5d1c0aa881d0"
+    },
+    {
+      "name": "practice-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\practice-1440.png",
+      "sha256": "f7882b7d1f8b9fd32801051d489df2674b7c18426ca2a77d177010fe72205ec1"
+    },
+    {
+      "name": "profile-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\profile-1440.png",
+      "sha256": "cba6ff5f4305776d6af052f439228b87625a994c241afd494474f755c3f688eb"
+    },
+    {
+      "name": "typed-practice",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\typed-practice.png",
+      "sha256": "5084d1a07182e238371b3591fbc283cbbd9c2be5efda7930582b52845b3c5b16"
+    },
+    {
+      "name": "reduced-motion",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-horizontal\\proof\\reduced-motion.png",
+      "sha256": "70309ba4d286b29637042230c28a9a2eb28d82c6642da32abfb19be0c17663ce"
+    }
+  ],
+  "picoMarkerPreserved": true,
+  "staticProfileAvatarTraveller": true,
+  "typedSpanish": true,
+  "listeningSkip": true,
+  "profileSaveReload": "Intercepted in-memory fixture only",
+  "reducedNativePico": true,
+  "apiActions": [
+    "getSession",
+    "updateProfile",
+    "getSession"
+  ],
+  "realLearnerWrites": false,
+  "realBackendRequests": false,
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only",
+    "Synthetic API fixture; no claim of new backend persistence/grading validation",
+    "Geometry compares SVG screen endpoints to actual orb centers",
+    "Field-guide reports are archived trial evidence, not acceptance criteria"
+  ]
+}

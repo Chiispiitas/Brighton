@@ -1,0 +1,21 @@
+{
+  "reviewer": "Codex subagent /root/layout_review",
+  "verdict": "PASS",
+  "reviewed": [
+    "map-start-1440.png",
+    "map-start-390.png",
+    "map-end-390.png"
+  ],
+  "findings": [
+    "Pre-fieldguide compact design restored",
+    "Single horizontally scrollable 21-island route",
+    "Native saved-avatar traveller follows selection, preserves full hair and stays outside button touch area",
+    "Connector endpoints follow orb centers",
+    "Keyboard/pan/profile/practice/listening/reduced-Pico checks pass"
+  ],
+  "scope": "Final local layout in Edge/Chromium with synthetic intercepted API state",
+  "limits": [
+    "Not physical-phone/Safari/Firefox verification",
+    "Profile save/reload only in-memory fixture, no real learner writes"
+  ]
+}

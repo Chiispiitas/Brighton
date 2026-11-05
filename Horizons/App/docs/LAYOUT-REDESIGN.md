@@ -1,3 +1,5 @@
+> Superseded experiment. The user subsequently requested the exact previous compact design with only a horizontal path and a saved-avatar traveller. Current behavior is documented in [HORIZONTAL-PATH.md](HORIZONTAL-PATH.md). The text/reports below apply to the fieldguide trial only.
+
 # Horizons layout revision — 5 November 2026
 
 The user authorized site-changing layout decisions to give Horizons a more distinct identity, then clarified: “Not SO quiet. accept some similarity with Duolingo.” The resulting direction is a colorful companion workbook: recognizably playful, organized around book lessons rather than a winding game path.

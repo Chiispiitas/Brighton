@@ -1,4 +1,4 @@
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=fieldguide1';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=horizontal1';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
@@ -13,12 +13,15 @@ export function openPathBubble(content,anchor,event){
  if(event?.detail===0)bubble.querySelector('button')?.focus();
 }
 bubble.addEventListener('click',event=>{const start=event.target.closest('[data-start-path]');if(start){closePathBubble();const button=document.createElement('button');button.dataset.startActivity=start.dataset.startPath;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
-window.addEventListener('scroll',()=>{closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
+function scrollState(){const hero=document.querySelector('.learn-hero');document.body.classList.toggle('path-scrolled',!!hero&&hero.getBoundingClientRect().bottom<24);}
+window.addEventListener('scroll',()=>{scrollState();closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
 export function enhanceShell(xp,streak,icon,avatar={},manifest={}){
  tabResize?.disconnect();
  closePathBubble();
- const metrics=document.querySelector('.journal-metrics');
- if(metrics)metrics.innerHTML='<span class="journal-stat"><b>'+streak+'</b><span>day streak</span></span><span class="journal-stat"><b>'+xp+'</b><span>XP collected</span></span>';
+ const header=document.querySelector('.topbar');
+ const metrics='<span class="metric">'+icon('spark')+'<b>'+streak+'</b><span>'+(streak===1?'day':'days')+'</span></span><span class="metric">'+icon('star')+'<b>'+xp+'</b><span>XP</span></span>';
+ if(header&&!header.querySelector('.topbar-metrics')){const stats=document.createElement('div');stats.className='topbar-metrics';stats.setAttribute('aria-label','Streak and XP');stats.innerHTML=metrics;header.insertBefore(stats,header.querySelector('.top-avatar'));}
+ const workspace=document.querySelector('.workspace');if(workspace&&document.querySelector('.learn-hero')){const floating=document.createElement('div');floating.className='path-floating';floating.innerHTML='<span class="floating-unit">Unit 1</span><div class="floating-metrics" aria-label="Streak and XP">'+metrics+'</div>';workspace.append(floating);}scrollState();
  const options=document.querySelector('.avatar-options');if(!options)return;
  document.querySelector('.avatar-studio-spark')?.remove();const preview=document.querySelector('#avatar-preview');preview.style.background=manifest.avatar?.background?.find(c=>c.id===avatar.background)?.swatch||'#fff1dc';const sparkle=document.createElement('img');sparkle.src=new URL('../assets/art/avatar-change-sparkles-v1.png',import.meta.url).href;sparkle.className='avatar-change-spark';sparkle.alt='';preview.append(sparkle);
  const panels=[...options.querySelectorAll('fieldset')],tabs=document.createElement('div');tabs.className='avatar-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','Avatar options');
