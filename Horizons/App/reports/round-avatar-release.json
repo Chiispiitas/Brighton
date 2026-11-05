@@ -1,0 +1,20 @@
+{
+  "runtimeRevision": "4f195a56a07815b98e96693629360619d13c065d",
+  "pass": true,
+  "combinations": 240,
+  "costumes": 10,
+  "bases": 2,
+  "skinTones": 6,
+  "hostedMatchedFiles": 432,
+  "reports": [
+    "reports/round-avatar-proof-hosted.json",
+    "reports/publication-assets.json",
+    "docs/rounder-avatar/pixel-invariants.json"
+  ],
+  "review": "Root viewed all costume/hair/glasses grids and actual live profile; neckline and anchor metadata unchanged, original RGB and neck RGBA verified exact.",
+  "realLearnerWrites": false,
+  "backendChanges": false,
+  "limits": [
+    "Synthetic Edge rendering, root review; no physical-device/independent review claim"
+  ]
+}

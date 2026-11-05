@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T17:29:34.572101+00:00",
+  "date": "2026-11-05T17:53:20.692167+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "5b9361aef7650c2dca372456ca6eec41ee0c79fa",
-  "checkedFiles": 430,
+  "revision": "4f195a56a07815b98e96693629360619d13c065d",
+  "checkedFiles": 432,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -546,6 +546,20 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/avatar-round-v3/heads.png",
+      "status": 200,
+      "bytes": 1400212,
+      "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-round-v3/mask-native.png",
+      "status": 200,
+      "bytes": 609299,
+      "sha256": "15eae9c897a92fd17906da54d41aab5bfc1344aa42ff49f2aed479f62e1b8ea9",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/avatar-static-clothes-v1.png",
       "status": 200,
       "bytes": 1251353,
@@ -597,8 +611,8 @@
     {
       "path": "Horizons/App/assets/art/avatar-static-v1.frames.json",
       "status": 200,
-      "bytes": 19192,
-      "sha256": "e74f95119e7c64925b6e760a6f0698a127518fdd83808c016e40e5cf565b324a",
+      "bytes": 19180,
+      "sha256": "a72cd52a9281671de29d6b7565820cfa7f27049ad85e86777301ece6f5b14538",
       "matchesCommittedBytes": true
     },
     {
@@ -1052,8 +1066,8 @@
     {
       "path": "Horizons/App/assets/art/manifest.json",
       "status": 200,
-      "bytes": 31178,
-      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9",
+      "bytes": 31170,
+      "sha256": "6abf71a01f0e60183a90173c7aefe17fcab3465fe06b1ae4f5ab0d88778bfa43",
       "matchesCommittedBytes": true
     },
     {
@@ -2873,7 +2887,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 3227,
-      "sha256": "0245f2c49bb80e9b83d7b1664e9a6351507f5a62488e4c31b0653ebba49d2b13",
+      "sha256": "6550abc4f33d817a21e0958b4953984631baa3b150a6fe23b02c95bb88564bd3",
       "matchesCommittedBytes": true
     },
     {
@@ -2886,8 +2900,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 3578,
-      "sha256": "097c5fa4afbbe5f4a26abc58e82e447e935e82d23da8998653bf70d00ffaf4f9",
+      "bytes": 3616,
+      "sha256": "afaa4cc1a29e2f990efb5fee4f73eca57c19d6fa8ba66a75e71a29b810272209",
       "matchesCommittedBytes": true
     },
     {
@@ -2900,15 +2914,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60784,
-      "sha256": "afc389c4d1c83952ae2d20db8431c6d469b8d92129e8e57897287d5b3d5a6438",
+      "bytes": 60668,
+      "sha256": "5b228c364f2960db53a5132c29ec2624766d4b8f428c0ba7ef8cc3bf5dd7f7b5",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 8069,
-      "sha256": "cf2ba4d636dc324595b6af85ab32e64c5cfca11fd06b904f2b5341f83c0b9031",
+      "bytes": 8067,
+      "sha256": "38f125aa43b0223153b7457f99ac967f51ce06a1bd353444374802c6b999fb42",
       "matchesCommittedBytes": true
     },
     {
@@ -2921,8 +2935,8 @@
     {
       "path": "Horizons/App/src/avatar-static.js",
       "status": 200,
-      "bytes": 5396,
-      "sha256": "a503b49b234eb23b1e615039499a2d9c8855946d87bac3afc7ab2a57b0e67597",
+      "bytes": 5395,
+      "sha256": "0679de196d3f14baae4a651014ae86aeaf9c7216dda4e65df6991dd55ebe08d5",
       "matchesCommittedBytes": true
     },
     {
@@ -2949,8 +2963,8 @@
     {
       "path": "Horizons/App/src/overworld-motion.js",
       "status": 200,
-      "bytes": 7208,
-      "sha256": "9531a367d062e6421f6efb8bd552a8474daefc549b97e2319566fcb168c05331",
+      "bytes": 5973,
+      "sha256": "53c0f725b19ffb09f10e1c1269cd234b14f9e9b756ef1b098d41a08034c689f3",
       "matchesCommittedBytes": true
     },
     {
@@ -2978,7 +2992,7 @@
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
       "bytes": 7488,
-      "sha256": "95b8967801d05e26b49bc215f00df0a3954da702760436bb1b88078376f332f3",
+      "sha256": "4c4b2209b83f38c8c254c240b3956405cac3f816d927ebfbd3efc220928494fc",
       "matchesCommittedBytes": true
     },
     {

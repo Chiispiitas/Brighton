@@ -249,5 +249,22 @@
         1005
       ]
     }
-  ]
+  ],
+  "maskThreshold": 128,
+  "resample": "LANCZOS mask registration only",
+  "faceInsetsFromFrame": [
+    32,
+    3,
+    32,
+    29
+  ],
+  "earOuterStripsRelativeY": [
+    94,
+    165
+  ],
+  "neckXFractions": [
+    0.38,
+    0.62
+  ],
+  "alphaComposition": "minimum(original alpha, registered mask) on face; original alpha in native outer ear strips and neck; zero elsewhere. Original RGB retained everywhere."
 }
