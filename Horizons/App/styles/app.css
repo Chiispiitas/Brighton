@@ -352,3 +352,33 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 @media(max-width:600px){.answer-footer.feedback-correct,.answer-footer.feedback-gentle{padding:18px 16px;gap:14px;flex-wrap:wrap;border-radius:20px;margin-bottom:16px}.answer-footer .answer-feedback{flex-basis:100%;gap:12px}.answer-feedback-icon{width:42px;height:42px}.answer-feedback-icon svg{width:23px;height:23px}.answer-feedback .answer-feedback-copy>b{font-size:21px}.answer-feedback .answer-feedback-copy>p{font-size:16px!important}.answer-footer.feedback-correct>.primary-button,.answer-footer.feedback-gentle>.primary-button{margin-left:auto;min-width:130px}}
 
 .feedback-sound-toggle{position:relative;flex:none;width:36px;height:36px}.feedback-sound-toggle .icon{width:22px;height:22px}.feedback-sound-toggle.muted:after{content:'';position:absolute;width:27px;height:2px;background:var(--ink);transform:rotate(-45deg);border-radius:2px;pointer-events:none}@media(max-width:480px){.activity-header{gap:12px}}
+
+/* Keep short rounds steady when feedback/audio controls appear; long tasks stay scrollable. */
+html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
+.activity-page{padding-bottom:16px}
+.activity-page .question-body{padding-bottom:12px}
+.pronunciation-slot{min-height:44px}
+.listening-alternative-slot{margin-top:8px}
+.listening-alternative-slot>.skip-audio{margin-top:0}
+.answer-dock{min-height:132px;display:flex;align-items:flex-end;flex-shrink:0;margin-top:auto;pointer-events:none}
+.activity-page:not([data-answer-state=unanswered]) .answer-dock{position:sticky;bottom:0;z-index:8}
+.activity-page .answer-footer{width:100%;min-height:110px;margin:0;padding-bottom:18px;position:static;pointer-events:auto}
+.activity-page[data-answer-state=unanswered] .answer-footer{align-items:flex-end}
+@media(max-width:600px){.answer-dock{min-height:196px}}
+@media(max-height:760px){
+ .activity-page{padding-top:18px}
+ .activity-page .activity-header{margin-bottom:16px}
+ .activity-page .question-cue{margin-top:10px}
+ .activity-page .question-body>.question-scene{height:clamp(64px,calc(100svh - 520px),128px);margin:12px 0}
+ .activity-page .question-scene>.question-character{height:100%;max-height:100%}
+ .activity-page .question-scene.topic-scene .question-image{height:100%;max-height:100%}
+}
+.result-page{padding:clamp(14px,3svh,30px) 23px 20px;animation:none!important}
+.result-page .result-character{flex:none;height:clamp(100px,calc(50svh - 120px),265px);margin:6px 0 8px}
+.result-page h1{font-size:clamp(29px,5svh,41px);line-height:1.2}
+.result-page>p{margin-top:12px}
+.result-page .result-stats{margin:20px 0 8px}
+.result-page .result-actions{margin-top:16px;gap:12px;flex-direction:row}
+.result-page .result-actions>.primary-button{width:auto;max-width:100%;min-height:48px;padding:13px 18px}
+.completion-error p{max-width:440px}
+@media(max-height:650px){.activity-page .question-body>.question-scene{margin:6px 0}}

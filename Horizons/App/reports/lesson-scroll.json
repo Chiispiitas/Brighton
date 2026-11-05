@@ -1,0 +1,104 @@
+{
+  "pass": true,
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "samples": [
+    {
+      "width": 1440,
+      "height": 900,
+      "correct": true,
+      "scrollHeight": 900
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "correct": false,
+      "scrollHeight": 900
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "correct": true,
+      "scrollHeight": 768
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "correct": false,
+      "scrollHeight": 768
+    },
+    {
+      "width": 1170,
+      "height": 628,
+      "correct": true,
+      "scrollHeight": 628
+    },
+    {
+      "width": 1170,
+      "height": 628,
+      "correct": false,
+      "scrollHeight": 628
+    },
+    {
+      "width": 1024,
+      "height": 576,
+      "correct": true,
+      "scrollHeight": 576
+    },
+    {
+      "width": 1024,
+      "height": 576,
+      "correct": false,
+      "scrollHeight": 576
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "correct": true,
+      "scrollHeight": 844
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "correct": false,
+      "scrollHeight": 844
+    },
+    {
+      "width": 390,
+      "height": 650,
+      "correct": true,
+      "scrollHeight": 650
+    },
+    {
+      "width": 390,
+      "height": 650,
+      "correct": false,
+      "scrollHeight": 650
+    },
+    {
+      "width": 320,
+      "height": 576,
+      "correct": true,
+      "scrollHeight": 576
+    },
+    {
+      "width": 320,
+      "height": 576,
+      "correct": false,
+      "scrollHeight": 576
+    }
+  ],
+  "typedAnswerPositionStable": true,
+  "choiceAndOrderStable": true,
+  "listeningControlsStable": true,
+  "longReadingAccessible": true,
+  "feedbackMotionNoOverflow": true,
+  "brandedLoaderBeforeResults": true,
+  "noSavingText": true,
+  "resultsOnlyAfterSave": true,
+  "resultsStartAtTop": true,
+  "saveFailureHidesResults": true,
+  "retrySameAttempt": true,
+  "lateSaveDoesNotStealRoute": true,
+  "fixture": "Synthetic session, question state and held saveAttempt responses only; real renderer, grading, save/retry and CSS. No learner records or actual backend writes.",
+  "errors": []
+}

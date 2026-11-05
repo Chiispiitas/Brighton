@@ -1,0 +1,74 @@
+{
+  "pass": true,
+  "baseline": "c8b7fb3f343b87e1f2991804b7726d710fd65487",
+  "cache": "horizons-companion-lesson-flow-v57",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "src/app.js?v=flow1",
+      "status": 200,
+      "sha256": "fe8f2369340509f2496b534c8f0733bb8c19abc3f3f0da2398288a144496b386"
+    },
+    {
+      "path": "styles/app.css?v=flow1",
+      "status": 200,
+      "sha256": "936dd7971741b4594fc87f217fcc5e9c60387a43eb7740372800e33fe0e42188"
+    },
+    {
+      "path": "styles/overworld.css?v=areas2",
+      "status": 200,
+      "sha256": "f0bd8f9abdf0c3e3b963b73955dc09e6303e44b6ed424af2b570abe352346545"
+    },
+    {
+      "path": "src/feedback-sound.js?v=areas1",
+      "status": 200,
+      "sha256": "6bddfd17c0d7386f126a0582cf7baf1fe7aad20dc2b304935dd4a594ec1cd9f7"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/cafe-cups.png",
+      "status": 200,
+      "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/work-bag.png",
+      "status": 200,
+      "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/globe.png",
+      "status": 200,
+      "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/postbox.png",
+      "status": 200,
+      "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3"
+    },
+    {
+      "path": "assets/audio/feedback-v1/correct.mp3",
+      "status": 200,
+      "sha256": "993cd9258129338ef708f07277f62298597025d0c3daa57b5a399c838a8c7d9b",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/feedback-v1/wrong.mp3",
+      "status": 200,
+      "sha256": "7aabb61c1f1974bc27c12df194497fd17d0faeb96e85ea2fc108776d898db44e",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/milestones-v1/lesson-complete.mp3",
+      "status": 200,
+      "sha256": "3fe328b108de40266ca432780459705909f2cfa54ff52c2db9035c8c91aa6231",
+      "duration": 1.36
+    },
+    {
+      "path": "assets/audio/milestones-v1/island-mastered.mp3",
+      "status": 200,
+      "sha256": "32efcba28136dc824c621ec61cf2bdf1207925229790fb635046a36d7b9390b6",
+      "duration": 1.88
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v57. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+}

@@ -1,5 +1,16 @@
 # Interface motion
 
+## Current lesson and result flow — 5 November 2026
+
+The 20261105-2236-31.1423238.mp4 recording shows a scrollbar appearing after answer feedback/word playback is added; the accompanying results image shows actions below the fold. Synthetic reproduction at1170×628 measured66px of checked-answer overflow and100px of result overflow. The revised layout fits both states at the tested desktop/mobile sizes down to320×576, with a stable answer position and no unnecessary document scroll. See reports/lesson-scroll.json; the baseline measurement is reports/lesson-scroll-baseline.json.
+
+A transparent reserved answer dock leaves room for the existing green/coral feedback panel without enlarging that panel. A44px pronunciation slot prevents Play audio from changing the question height after checking. Listening alternatives also retain their space after grading. The lesson-only stable scrollbar gutter prevents horizontal shifts when a genuinely longer question requires scrolling. Short-height spacing and the character/illustration container adapt without stretching native artwork. Long passages, longer explanations and genuinely small viewports retain normal document scrolling; overflow is not hidden. Feedback docks to the viewport on long checked questions. New questions, the loading screen and saved results reset to the top; checking an answer does not.
+
+Completion uses the existing boot-screen wordmark and orange loading dot while the attempt is being saved. The app marks this state aria-busy=true, with an accessible Loading results label and no visible Saving text or premature scores/actions. Results render only after success. The saved note is omitted. Failure shows an alert/retry screen, and retry retains the original attempt ID and loading behavior. Existing completion/mastery sound routing, mute and late-response route protection remain. The whole result-page arrival transform is disabled to avoid moving a viewport-height box (and its static character); finite text/control feedback remains.
+
+The result illustration scales to available height (100–265px), with responsive spacing and naturally wrapping actions. The same native character and scores remain. No cast expressions, image assets, map geometry, curriculum or backend behavior changed.
+
+
 Milestone audio now accompanies saved lesson rounds and newly earned island crowns, with one cue per result and crown priority. Existing motion and character rules are unchanged. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md) for generation and playback details.
 
 Answer sounds supplement the existing finite feedback motion. Native ElevenLabs cues, independent mute and playback rules are recorded in [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md); reduced motion remains an independent preference.

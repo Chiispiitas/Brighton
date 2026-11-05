@@ -1,5 +1,7 @@
 # Horizons answer sound production
 
+Latest Results flow: the branded boot loader stays visible until save confirmation, and completion/mastery cues play with the revealed saved Results page. A failed save remains silent and exposes retry; the original attempt is reused. The milestone regression proof now waits for the saved result state and tests browser-route navigation during loading. Cue files, levels, preferences and mastery comparison remain unchanged.
+
 ## Current lesson and mastery cues — 5 November 2026
 
 Two additional native cues were generated through the authenticated ElevenLabs API, model `eleven_text_to_sound_v3`, prompt influence 0.3, looping off, MP3 44.1kHz/128kbps. The existing protected credential was loaded only for the generation requests; no credential was copied into this repository. The accepted correct/wrong files remain unchanged.
