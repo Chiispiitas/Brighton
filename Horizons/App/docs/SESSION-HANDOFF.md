@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest modular runtime 13ab5f769cc47b39bf39cade28b3e724262fde56 is published on both branches; Pages run42066986191 succeeded. Trail308px, sparse reusable tiles, NO whole-environment panels; portrait ABOVE, details BELOW. Hosted 84-placement/navigation/Start checks pass, 421-file parity. See reports/minimal-overworld-release.json. Older world-panel and opposite-placement instructions below are superseded. Cache tiles-v35; entry queries tiles1.
+
 Latest environment rule (5 November): do not generate or display whole environment panels, landscape chunks or precomposed neighborhoods for the overworld. Retire the large v32 scenery panels. Use a sparse reusable tile set: individual complete trees and small bush/flower/grass tiles, independently placed with open space. Single native building landmarks may remain individual sprites. Keep the path 30% shorter (440px to 308px). Latest placement correction: player portrait ABOVE the island/building, activity details BELOW. No added headings/taglines/instruction messages; native vertical wheel and hold/swipe controls remain.
 
 Latest navigation correction runtime a15618cd79419fd98ff89e960f2edff156a76dec is published on both branches; Pages 42058505416 succeeded. Hosted proof reports/overworld-navigation.json passes. Normal vertical wheel, held arrows, native swipe/mouse drag, no extra map heading/tagline/instruction messages. Cache v34, queries overworld3. Older wheel-conversion instructions/reports below are superseded.

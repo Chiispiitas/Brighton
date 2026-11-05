@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T15:34:45.542296+00:00",
+  "date": "2026-11-05T16:46:26.423486+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "9a29911c85976856b30813fe3e27c9420046b65c",
-  "checkedFiles": 414,
+  "revision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
+  "checkedFiles": 421,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -1068,6 +1068,55 @@
       "status": 200,
       "bytes": 911586,
       "sha256": "f67508766e595ac941113cab53c6f15f25ed7adb636467c0354cb9533a2abd63",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/bush-flowers.png",
+      "status": 200,
+      "bytes": 103878,
+      "sha256": "145cbf9921039330ea7a029d17e1b6895e921ea6781a42a08ab859bef2b62cad",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/bush.png",
+      "status": 200,
+      "bytes": 70229,
+      "sha256": "a72b68a9bd687927b92c5e0b440fcf5f5c45f580cf4572e982f88e14fb6b1237",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/flowers.png",
+      "status": 200,
+      "bytes": 103565,
+      "sha256": "ff13d75db6947ca9b1a30f9272a925b99277d69a78ae04edf184db7b0b48b518",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/grass.png",
+      "status": 200,
+      "bytes": 66639,
+      "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/plants-native-v2.png",
+      "status": 200,
+      "bytes": 1293230,
+      "sha256": "6fa7e805c335dca137729a919d30afde834c5abf3e3d09ee272383b2fa75a1a9",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/tree-round.png",
+      "status": 200,
+      "bytes": 86707,
+      "sha256": "77c0c52eb52e77525c1f0c504a8ab45e9af8103c8df9c255a32b414f8098d982",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/overworld-tiles-v1/tree-slender.png",
+      "status": 200,
+      "bytes": 104421,
+      "sha256": "7f14df7a7365b6c6e60a20b5ef7bae84cc0f43c544ed36370d651e4195f69b9f",
       "matchesCommittedBytes": true
     },
     {
@@ -2767,8 +2816,8 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 3243,
-      "sha256": "67ba1d7805dda80b538c8f1b253bcdfbcdc2813fa2715d248deef8ecbd46eee1",
+      "bytes": 3227,
+      "sha256": "83d531e1952af3f2e8f0e08fd715bf2378c5cb5eafe1bb41db736bac81120c9e",
       "matchesCommittedBytes": true
     },
     {
@@ -2781,8 +2830,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 3232,
-      "sha256": "edd89045cd69892ea50c690676cec24f987837d4e1fd50856646e0e018251754",
+      "bytes": 3245,
+      "sha256": "e026b0354cb20afd02a54b4afe6d4881df67783666b9d586e0211db381c15fd8",
       "matchesCommittedBytes": true
     },
     {
@@ -2795,15 +2844,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60466,
-      "sha256": "b87861c4f7834250682e96941d6fb5f332f0b2c33e1e4eb99fcc8f21b1109a80",
+      "bytes": 59941,
+      "sha256": "c6448cdc15afc8538b127431173abe114656ecfdd8b17f2b0e9b8f35fd50fd11",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 8073,
-      "sha256": "f106a5c89b8aaa385b23b942a6e212858008e0a037b139df61ebf95a30968937",
+      "bytes": 8069,
+      "sha256": "fb458e03fd7484f697f83f944dd549989e8c1d1de8a95cd0cc84ef347bcfcdec",
       "matchesCommittedBytes": true
     },
     {
@@ -2844,8 +2893,8 @@
     {
       "path": "Horizons/App/src/overworld-motion.js",
       "status": 200,
-      "bytes": 4007,
-      "sha256": "41372adcec3ed9af7961e84a7c442aeb90572a4f14856ee2cf0e893a8d4120f8",
+      "bytes": 5923,
+      "sha256": "8f8e32263716603fed9c24dc06645bf0db10f486153a271d2f6d48d7c3d4dace",
       "matchesCommittedBytes": true
     },
     {
@@ -2872,8 +2921,8 @@
     {
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
-      "bytes": 5969,
-      "sha256": "58588a6054441f5a1992eb64e5f7ff3fd47fbbd2408030a73a51ec1fb3067f5a",
+      "bytes": 7488,
+      "sha256": "9fd3834069ffd485f51e5c96318c9168061bdc4d6da655eb5f6404016504eb8a",
       "matchesCommittedBytes": true
     },
     {
@@ -2900,8 +2949,8 @@
     {
       "path": "Horizons/App/styles/overworld.css",
       "status": 200,
-      "bytes": 5128,
-      "sha256": "cc11448cbdaf524f7dd290b5a88279cc1d93b5a93a2535f584ec0f98a755962f",
+      "bytes": 4946,
+      "sha256": "00f6727a382feeb238214d803b45ad10d30076a2b21e63b8c32be64f94a4c846",
       "matchesCommittedBytes": true
     }
   ]

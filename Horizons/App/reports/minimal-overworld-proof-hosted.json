@@ -1,0 +1,2495 @@
+{
+  "date": "2026-11-05T16:46:28.280Z",
+  "revision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
+  "uncommittedRuntime": false,
+  "scope": "complete",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "tileSelector": ".world-tile",
+  "runtimeSources": {
+    "src/app.js": "b7185d59816b1b4b96df8a3c8ecb571cb33e5c56525cae2450c09c6e874a1292",
+    "src/studio-ui.js": "a29c127ebf91a789ae5617afdc63a510f12b37f59f96b68dcc71dfaba7b58536",
+    "src/overworld-motion.js": "8ab2be41828fa7e3464e9a9dcfc9017d6761aa275f4bd6949881a184c1c5942d",
+    "styles/horizontal-path.css": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d",
+    "styles/overworld.css": "0df51bc64b49d33bf5146d3d374fba26294e751fa5abba10163dc3c78a2542c2",
+    "index.html": "06eafc5791b6025570d034c5bf978944a24b542af102c1241fa21fbe58154e4a",
+    "service-worker.js": "9a5b7541f9724293f6a8c745bd1f0eb112789a3e02e8b9b4c12e85af6f520ecd"
+  },
+  "checks": [
+    {
+      "width": 320,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 76,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 12,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 92,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 479.1875,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 579.1875,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 401.1875,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 479.1875,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 579.1875,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 401.1875,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 495.765625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 595.765625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 417.765625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 495.765625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 595.765625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 417.765625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 96,
+            "y": 408.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 330.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 470.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 570.640625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 392.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 96,
+            "y": 408.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 330.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 491.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 591.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 413.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 470.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 570.640625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 392.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 491.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 591.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 413.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 96,
+            "y": 408.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 330.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 491.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 591.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 413.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 470.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 570.640625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 392.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 136,
+            "y": 408.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 68,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 172,
+            "y": 330.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 80,
+            "y": 495.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 12,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 96,
+            "y": 417.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 478.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 578.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 400.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 478.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 578.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 400.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 495.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 495.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 131,
+            "y": 407.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 329.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 495.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 469.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 569.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 391.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 495.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 131,
+            "y": 407.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 329.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 490.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 590.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 412.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 469.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 569.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 391.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 490.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 590.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 412.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 131,
+            "y": 407.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 329.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 490.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 590.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 412.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 469.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 569.8125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 391.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 495.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 496.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 596.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 418.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 202,
+            "y": 407.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 138,
+            "y": 595.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 238,
+            "y": 329.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 280,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 204,
+            "y": 702.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 296,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 412,
+            "y": 570.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 336,
+            "y": 670.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 428,
+            "y": 492.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 570.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 670.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 492.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 634.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 734.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 556.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 634.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 734.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 556.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 415,
+            "y": 526.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 714.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 448.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 561.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 661.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 483.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 643.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 743.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 565.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 415,
+            "y": 526.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 714.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 448.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 561.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 661.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 483.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 643.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 743.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 565.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 415,
+            "y": 526.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 714.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 448.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 561.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 661.8125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 483.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 602.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 702.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 524.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 458,
+            "y": 643.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 382,
+            "y": 743.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 474,
+            "y": 565.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 570,
+            "y": 526.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 514,
+            "y": 714.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 606,
+            "y": 448.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 344,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 268,
+            "y": 731.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 360,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 476,
+            "y": 599.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 400,
+            "y": 699.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 492,
+            "y": 521.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 608,
+            "y": 599.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 532,
+            "y": 699.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 624,
+            "y": 521.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 740,
+            "y": 664.0625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 664,
+            "y": 764.0625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 756,
+            "y": 586.0625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 664.0625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 764.0625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 586.0625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 766,
+            "y": 555.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 743.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 477.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 731.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 590.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 690.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 512.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 731.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 672.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 772.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 594.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 766,
+            "y": 555.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 743.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 477.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 731.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 590.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 690.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 512.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 731.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 672.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 772.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 594.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 766,
+            "y": 555.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 743.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 477.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 731.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 832,
+            "y": 590.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 756,
+            "y": 690.9375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 848,
+            "y": 512.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 964,
+            "y": 631.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 888,
+            "y": 731.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 980,
+            "y": 553.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 1096,
+            "y": 672.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 1020,
+            "y": 772.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 1112,
+            "y": 594.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 1208,
+            "y": 555.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 1152,
+            "y": 743.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 1244,
+            "y": 477.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "landscape": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 280,
+            "y": 123.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 204,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 296,
+            "y": 45.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 453,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 397,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 489,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 646,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 590,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 682,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ],
+      "popoverBelow": true,
+      "rapidReselection": true,
+      "escapeDuringPlacement": true,
+      "temporarySpacerCleanup": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "minimal-start-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-start-320.png",
+      "sha256": "b53a26a800d9a6e243771df1ffc32502337ec316b4b14223edbd2d7a655504e5"
+    },
+    {
+      "name": "minimal-details-320-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-320-topic-1a-greetings.png",
+      "sha256": "e7f24e4415a29b9bb47840c4f8d4fc505e67d20d73bbc550edfcc5b48cbb5ae9"
+    },
+    {
+      "name": "minimal-details-320-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-320-read-1a.png",
+      "sha256": "c7511b1d55d6fb4bad777e03734e3e458476dbc49b5a3dfd0bdd69a5db2f7647"
+    },
+    {
+      "name": "minimal-details-320-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-320-read-1b.png",
+      "sha256": "7bddafd4cf588355b547f26801abf2bcb7c5811e978f3df9e9f43974eed66eae"
+    },
+    {
+      "name": "minimal-details-320-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-320-listen-1d.png",
+      "sha256": "6d633f62c6bd4dd2f1fe6514084c70283f5a7b1799add4cdde6271bcc51c3ed1"
+    },
+    {
+      "name": "minimal-details-320-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-320-read-1d.png",
+      "sha256": "6a2e83d5a69a9e64a75dfd73ffff6b3e3aa4ec8014b1cb7651a23c336aa7f313"
+    },
+    {
+      "name": "minimal-end-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-end-320.png",
+      "sha256": "3cc41933a3ccdee4b99a34f91589b1676a2bce47e95b2d29701b37fa114f2fc5"
+    },
+    {
+      "name": "minimal-start-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-start-390.png",
+      "sha256": "9f9fe3e8bdad4420f854275a02637b6720dc78cf6e0dae530c12fb3a034cdbf3"
+    },
+    {
+      "name": "minimal-details-390-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-390-topic-1a-greetings.png",
+      "sha256": "7ffdd3719bd2fb88014663428bc817776d1b75001ee9bcaade7aefd62113e734"
+    },
+    {
+      "name": "minimal-details-390-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-390-read-1a.png",
+      "sha256": "bb73140b989046ef2b998a56a6d71d0b8ffe928532825fe1e6ba0e68fc78eb3c"
+    },
+    {
+      "name": "minimal-details-390-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-390-read-1b.png",
+      "sha256": "d5315e9183351aa0b037823f8ed4c380f3856a310d162947e0f04582637c9986"
+    },
+    {
+      "name": "minimal-details-390-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-390-listen-1d.png",
+      "sha256": "4061c60969465fb1dd1a03b4520870dc6937db670558fc5d6f4b6e183da56a6f"
+    },
+    {
+      "name": "minimal-details-390-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-390-read-1d.png",
+      "sha256": "644501440578ef6b9a17b5fb3d53fc0b9c9b335c1e99a01e8a21a571db27c5d6"
+    },
+    {
+      "name": "minimal-end-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-end-390.png",
+      "sha256": "db1e64856304b6dac343d7f0a95c7ddc72308893d752fb2443a34e6479698169"
+    },
+    {
+      "name": "minimal-start-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-start-768.png",
+      "sha256": "9d9f0a04836e375ef585af9d1a20bd1511c9e93d6ee2729cb4a8b7c09a6a5185"
+    },
+    {
+      "name": "minimal-details-768-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-768-topic-1a-greetings.png",
+      "sha256": "ddad0a83ca4a8d4343af08ce27c9597f36a320e55ab3ec3bfdaea6c17ffd27e0"
+    },
+    {
+      "name": "minimal-details-768-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-768-read-1a.png",
+      "sha256": "9cd4c12719e6a5453c7970a76cf8de327b2b1ad1783c5c67f1c31690b3617bb6"
+    },
+    {
+      "name": "minimal-details-768-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-768-read-1b.png",
+      "sha256": "605fe0ca07797584db3be11682f55525bf889a4db77693dc215398ed222bbcd6"
+    },
+    {
+      "name": "minimal-details-768-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-768-listen-1d.png",
+      "sha256": "bd4ec774b2b70cffd5a4053929a1d9be063c28b31790f21a2c599662bb02b8fb"
+    },
+    {
+      "name": "minimal-details-768-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-768-read-1d.png",
+      "sha256": "b78bc850ba5a2acb8adea9e07aa18a556a68a27d3b6343bbf9f3a72997c1232a"
+    },
+    {
+      "name": "minimal-end-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-end-768.png",
+      "sha256": "0f64b5a6226d3b5cd90309c8cb9ded8ce28b734670b4393a26f80d103a15845f"
+    },
+    {
+      "name": "minimal-start-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-start-1440.png",
+      "sha256": "c8e75168621da79757491193adeb57bfbbc7b00673e270935ab65d27c1cef71a"
+    },
+    {
+      "name": "minimal-details-1440-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-1440-topic-1a-greetings.png",
+      "sha256": "c8bbc11a7d8753b48cc9e21084e723447c22b4f3303a77c5eecc20b2c5843741"
+    },
+    {
+      "name": "minimal-details-1440-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-1440-read-1a.png",
+      "sha256": "cade8e74fec0d288bce310ab7d0b692fac95401d08b839f93e3a386bc7065e17"
+    },
+    {
+      "name": "minimal-details-1440-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-1440-read-1b.png",
+      "sha256": "93b3e5e8e4c0785264daa920dfc23b305da54647ed2eff2c624298e618229ef0"
+    },
+    {
+      "name": "minimal-details-1440-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-1440-listen-1d.png",
+      "sha256": "a51dbb53537398496a42b91a42870921925efbcf4d07b8c35ae64b0302111c5b"
+    },
+    {
+      "name": "minimal-details-1440-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-1440-read-1d.png",
+      "sha256": "6eb03d82af5e2b5ccf50365ad12b31fb460eadc5af3c327e38a9f6afe05c9d6f"
+    },
+    {
+      "name": "minimal-end-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-end-1440.png",
+      "sha256": "509e8b443d51ab131aafc2feeeec94ecee4d53c4c14471318db8cbfab56c1258"
+    },
+    {
+      "name": "minimal-details-landscape-844x390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-hosted\\minimal-details-landscape-844x390.png",
+      "sha256": "3a43869bb614a1600eb4ec5161e6ac46551d88f9d7f8a443adec47e67346b996"
+    }
+  ],
+  "obsoleteSceneRequests": [],
+  "imageResponses": [
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/butterfly.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "177927"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/grass.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "66639"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/bird.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "157303"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/tree-slender.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "104421"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/tree-round.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "86707"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/bush-flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/landmark-3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "233430"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/bush.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "70229"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/landmark-2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "208067"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/cast-static-pico-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "561246"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/landmark-0.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "236880"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-tiles-v1/flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103565"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/ui-static-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "847743"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/overworld-unit1-v1/landmark-1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "225391"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "43376"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "16885"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44360"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "36227"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "50754"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/pupils-native.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "4444"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "3184"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44286"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-expansion-hair-9.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "169344"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-jacket-lapels-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "256980"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-static-heads-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1444728"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/avatar-static-clothes-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1251353"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/cast-static-alex-v3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "676780"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "https://exams.bebrighton.net/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    }
+  ],
+  "requestFailures": [],
+  "brokenImagesSeen": [],
+  "apiActions": [
+    "getSession"
+  ],
+  "realBackendRequests": false,
+  "realLearnerWrites": false,
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only; no physical-device claim",
+    "Fictional intercepted session; no real learner/API writes",
+    "Temporary page bottom padding permits real vertical wheel check",
+    "Navigation touch swipe is separately covered by overworld-navigation-proof.mjs"
+  ]
+}

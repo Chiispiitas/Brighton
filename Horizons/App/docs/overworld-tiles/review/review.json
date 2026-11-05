@@ -7,6 +7,8 @@
     "Codex /root/layout_review (read-only geometry and lifecycle)"
   ],
   "screens": [
+    "hosted-minimal-details-1440-topic-1a-greetings.png",
+    "hosted-minimal-details-390-read-1d.png",
     "minimal-details-1440-topic-1a-greetings.png",
     "minimal-details-390-read-1d.png",
     "minimal-details-landscape-844x390.png",
@@ -26,5 +28,7 @@
     "Synthetic Edge/Chromium fixtures",
     "No real learner/backend writes",
     "At very short landscape heights the above-building portrait may scroll beyond viewport while building/details remain usable; map does not clip it."
-  ]
+  ],
+  "hostedRuntimeRevision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
+  "hostedReview": "Root viewed live desktop and mobile landmark/details captures; same sparse objects, native full-hair portrait above and details below."
 }

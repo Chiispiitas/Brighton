@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-05T16:48:19.926763+00:00",
+  "runtimeRevision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pagesRun": 42066986191,
+  "pagesConclusion": "success",
+  "trailHeightBefore": 440,
+  "trailHeightAfter": 308,
+  "trailHeightReductionPercent": 30,
+  "mapSurfaceHeightBefore": 554,
+  "mapSurfaceHeightAfter": 388,
+  "activeDecorationTiles": 16,
+  "uniquePlantSprites": 6,
+  "wholeScenePanelsRequested": 0,
+  "playerPosition": "above full island/building",
+  "detailsPosition": "below full island/building, including label clearance",
+  "testedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "popupGeometryCases": 84,
+  "additionalLandscapeViewport": [
+    844,
+    390
+  ],
+  "rapidReselectionEscapeAndSpacerCleanup": true,
+  "nativeWheelHeldArrowsDragAndTouchSwipe": true,
+  "startButtonTypedSpanishSmoke": true,
+  "hostedMatchedFiles": 421,
+  "existingBookRecordings": 12,
+  "retiredSceneryBytes": 6265959,
+  "reusableTilesBytes": 535439,
+  "sceneryBytesReductionPercent": 91.5,
+  "imageGenCalls": 2,
+  "maximumImageInputsUsed": 4,
+  "nativeOriginalsUnchanged": true,
+  "backendChanges": false,
+  "printedBookChanges": false,
+  "realLearnerWrites": false,
+  "cache": "horizons-companion-tiles-v35",
+  "entryQuery": "tiles1",
+  "reports": [
+    "reports/minimal-overworld-proof-hosted.json",
+    "reports/minimal-overworld-navigation-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "limits": [
+    "Edge/Chromium only; no physical-device claim",
+    "Fictional intercepted session; no real learner/API writes",
+    "Temporary page bottom padding permits real vertical wheel check",
+    "Navigation touch swipe is separately covered by overworld-navigation-proof.mjs",
+    "Very short landscape may require portrait to scroll beyond viewport while the island/details remain usable; map does not clip it."
+  ],
+  "pass": true
+}
