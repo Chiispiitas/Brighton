@@ -1,11 +1,11 @@
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=hover1';
-import {mountOverworld} from './overworld-motion.js?v=hover1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=hover2';
+import {mountOverworld} from './overworld-motion.js?v=hover2';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=hover1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=hover1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=hover2';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=hover2';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=hover1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=hover2';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -117,7 +117,7 @@ function pathDetails(id,anchor,event){
 function positionPathPlayer(id){
  const track=app.querySelector('.horizontal-path-track'),marker=track?.querySelector('.path-player');
  if(!marker)return;
- let stop=[...track.querySelectorAll('[data-path-node]')].find(el=>el.dataset.pathNode===id)||track.querySelector('[data-path-node]');const region=track.parentElement,view=region.getBoundingClientRect(),isVisible=el=>{const r=el.getBoundingClientRect();return r.left>=view.left-1&&r.right<=view.right+1;};if(!stop||!isVisible(stop))stop=[...track.querySelectorAll('.path-stop')].find(isVisible);marker.hidden=!stop;if(!stop)return;const orb=stop.querySelector('.stop-orb');
+ let stop=[...track.querySelectorAll('[data-path-node]')].find(el=>el.dataset.pathNode===id)||track.querySelector('[data-path-node]');const region=track.parentElement,view=region.getBoundingClientRect(),isVisible=el=>{const r=el.getBoundingClientRect();return r.left>=view.left-1&&r.right<=view.right+1;};if(!marker.dataset.positioned&&(!stop||!isVisible(stop)))stop=[...track.querySelectorAll('.path-stop')].find(isVisible);marker.hidden=!stop||!isVisible(stop);if(marker.hidden)return;const orb=stop.querySelector('.stop-orb');
  const r=orb.getBoundingClientRect(),target=stop.getBoundingClientRect(),box=track.getBoundingClientRect();marker.dataset.currentNode=stop.dataset.pathNode;
  marker.style.transform=`translate(${r.left-box.left+r.width/2-28}px,${target.top-box.top-marker.offsetHeight-8}px)`;requestAnimationFrame(()=>{if(marker.isConnected)marker.dataset.positioned='true';});
 }
@@ -164,7 +164,7 @@ function render() {
   setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
   refreshArtwork(app);
   enhanceMotion(app,motionBefore);
-  const region=app.querySelector('.overworld-map');if(region)disposeOverworld=mountOverworld(region,{onPreview:id=>positionPathPlayer(id),onLeave:()=>{const marker=region.querySelector('.path-player');positionPathPlayer(state.pathFocusId||marker?.dataset.selectedNode);}});
+  const region=app.querySelector('.overworld-map');if(region)disposeOverworld=mountOverworld(region);
   requestAnimationFrame(layoutPaths);document.fonts.ready.then(layoutPaths);
 }
 function findChunkActivity(id) {return allActivities.find(a=>a.chunkIds?.includes(id)&&['quiz','vocabulary'].includes(a.type));}

@@ -1,7 +1,7 @@
 // Decorative world motion and map input only. No learner state or anatomy edits.
 const mounts=new WeakMap();
 
-export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
+export function mountOverworld(region){
  if(!region)return()=>{};
  if(mounts.has(region))return mounts.get(region);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -55,19 +55,6 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  listen(window,'pointerup',endDrag);listen(window,'pointercancel',endDrag);
  listen(region,'click',event=>{if(suppressClick){suppressClick=false;event.preventDefault();event.stopImmediatePropagation();}},{capture:true});
  listen(region,'dragstart',event=>event.preventDefault());
- const preview=event=>{
-  if(event.type==='pointerover'&&event.pointerType==='touch')return;
-  const stop=event.target.closest?.('.path-stop[data-path-node]');
-  if(!stop||!region.contains(stop)||stop.contains(event.relatedTarget))return;
-  const box=region.getBoundingClientRect(),r=stop.getBoundingClientRect();if(r.left<box.left||r.right>box.right||r.top<0||r.bottom>innerHeight)return;
-  onPreview(stop.dataset.pathNode);
- };
- const leave=event=>{
-  if(event.type==='pointerleave'&&event.pointerType==='touch')return;
-  if(event.type==='focusout'&&region.contains(event.relatedTarget))return;
-  onLeave();
- };
-
  function flightFrames(kind,index){
   const frames=[],steps=48,amplitude=kind==='butterfly'?38:65;
   for(let i=0;i<=steps;i++){
@@ -75,7 +62,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
    // Closed local flight loop; full-opacity PNGs provide all anatomy.
    const x=(kind==='bird'?3:8)*Math.sin(angle),y=8*(Math.cos(angle)-1)+3*Math.sin(angle*2);
    const rotate=(kind==='butterfly'?7:3)*Math.sin(angle)+(index%2?1:-1);
-   const scale=kind==='butterfly'?`scaleX(${wing})`:`scaleY(${i%2?.94:1})`;
+   const scale=kind==='butterfly'?`scaleX(${wing})`:'';
    frames.push({offset:t,transform:`translate(${x}px,${y}px) rotate(${rotate}deg) ${scale}`});
   }
   return frames;
@@ -93,7 +80,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
     // Explicit shared document clock plus a deterministic phase offset.
     animation.startTime=clock-(index*1379)%duration;
     if(kind==='bird')for(const wing of img.querySelectorAll('.bird-near,.bird-far')){
-     const flap=wing.animate([{transform:'rotate(-20deg) scale(1,1)'},{transform:'rotate(25deg) scale(1.12,.38) skewX(16deg)',offset:.42},{transform:'rotate(38deg) scale(1.2,.18) skewX(-12deg)',offset:.5},{transform:'rotate(-28deg) scale(.95,1.08)',offset:.75},{transform:'rotate(-20deg) scale(1,1)'}],{duration:620,iterations:Infinity,easing:'ease-in-out'});wing.__flight=flap;
+     const flap=wing.animate([{transform:'rotate(-35deg)'},{transform:'rotate(55deg)',offset:.5},{transform:'rotate(-35deg)'}],{duration:620,iterations:Infinity,easing:'ease-in-out'});wing.__flight=flap;
     }
     return animation;
    });
@@ -103,10 +90,6 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  };
  const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting===true;sync();},{threshold:.01});
  observer.observe(region);
- region.addEventListener('pointerover',preview);
- region.addEventListener('pointerleave',leave);
- region.addEventListener('focusin',preview);
- region.addEventListener('focusout',leave);
  reduced.addEventListener('change',sync);
  document.addEventListener('visibilitychange',sync);
 
@@ -114,10 +97,6 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
   if(disposed)return;disposed=true;
   observer.disconnect();animations.forEach(a=>a.cancel());animations=[];
   stopPan();input.abort();drag=null;
-  region.removeEventListener('pointerover',preview);
-  region.removeEventListener('pointerleave',leave);
-  region.removeEventListener('focusin',preview);
-  region.removeEventListener('focusout',leave);
   reduced.removeEventListener('change',sync);
   document.removeEventListener('visibilitychange',sync);
   mounts.delete(region);
