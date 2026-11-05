@@ -1,0 +1,84 @@
+{
+  "tool": "built-in ImageGen",
+  "nativeToolPath": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-a45fb949-a11e-4133-b17e-489d5c9523b3.png",
+  "savedNative": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\mask-native.png",
+  "nativeSha256": "15eae9c897a92fd17906da54d41aab5bfc1344aa42ff49f2aed479f62e1b8ea9",
+  "savedHeads": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png",
+  "brief": {
+    "asset_id": "avatar-rounder-face-mask-v1",
+    "kind": "avatar",
+    "intent": "edit",
+    "reference_ids": [
+      "R01",
+      "R03",
+      "R04",
+      "R05",
+      "R06"
+    ],
+    "target_paths": [
+      "assets/art/avatar-static-heads-v2.png"
+    ],
+    "prompt": "Asset: alpha silhouette mask for slightly rounder Horizons avatar faces. Image1 R01 brand; Image2 contains complete R03 face geometry above complete R04 hair registration; Image3 R05 costume necklines; Image4 R06 glasses/colors; Image5 exact current head atlas edit target. Deliver ONLY ONE pure white filled face silhouette on a perfectly solid pure black background. No facial features, ears, hair, neck, outline, shadow, glow, gradients or text. Shape: a softly rounded square, a little rounder than the current faces, NOT an ellipse or circle. Keep a broad nearly straight forehead and gently straight cheek middles, but increase the corner radius subtly, especially along the cheeks/jaw. Width:height ratio 262:239. Corner radius about 65px at that natural size, current corners roughly40px; gently continuous curvature. Center this complete flat white silhouette in a square canvas with generous black margins. This mask will ONLY trim the old face corners inward; existing actual eyes, brows, nose, smile, ears and neck pixels will be retained and registered exactly. It must preserve full cheek width at eye level and a broad central chin/neck join. No portrait, no skin colors, no sample head grid, just one clean mask.",
+    "reference_bundles": [
+      {
+        "ids": [
+          "R03",
+          "R04"
+        ],
+        "path": "docs/rounder-avatar/base-and-hair-reference.png"
+      }
+    ]
+  },
+  "actualAttachedInputs": {
+    "pass": true,
+    "asset_id": "avatar-rounder-face-mask-v1",
+    "input_count": 5,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\rounder-avatar\\base-and-hair-reference.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-static-heads-v2.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference bundle",
+        "ids": [
+          "R03",
+          "R04"
+        ],
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\rounder-avatar\\base-and-hair-reference.png",
+        "sha256": "c4cb311c2e0b6fdffadca63450bc262bc390a276b37ee8453871d26612920baf"
+      },
+      {
+        "role": "reference",
+        "id": "R05",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+        "sha256": "3510bfa2edb2988843e333d0430908b9a48786351049472723d3f6d9b228a7d1"
+      },
+      {
+        "role": "reference",
+        "id": "R06",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+        "sha256": "5d4972dab0e70ab4dae69dceee238ccae7ea135d814e555fcb530c1ba4a2a812"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-static-heads-v2.png",
+        "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "rejectedOperation": "Initial six-path ImageGen call rejected before generation: tool currently accepts at most five paths. All five mandatory references retained by losslessly stacking R03/R04; preflight verifies exact full sheet pixels. Five paths then attached, including exact target.",
+  "maskRegistration": "Generated main face region cropped [252,211,1000,943], white silhouette threshold, mask resampled to each existing face extent. Only alpha changes; actual head RGB never resized/recolored. Native ear/neck pixels restored.",
+  "invariants": "All costume/hair/accessory/badge metadata, head frames, positions and eye anchors exactly unchanged; saved IDs preserved.",
+  "review": "Root inspected all120 bald+costume and120 hair/glasses+costume composed cases, no neck gap or collar/hair/glasses fit defect found.",
+  "limits": "Automated Edge renderer and root visual review, no independent or physical-device claim."
+}

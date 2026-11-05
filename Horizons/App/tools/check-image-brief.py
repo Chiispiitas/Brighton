@@ -62,6 +62,27 @@ def check(brief):
         if not path.is_file() or path.suffix.lower() not in (".png", ".jpg", ".jpeg", ".webp"):
             raise ValueError("Edit target must be an existing local image: " + str(path))
         inputs.append({"role": "edit target", "path": str(path), "sha256": digest(path)})
+    # Lossless reference bundles preserve every mandatory sheet when a tool has a tighter input cap.
+    for bundle in brief.get("reference_bundles", []):
+        from PIL import Image
+        ids = bundle["ids"]
+        if len(ids) < 2 or len(set(ids)) != len(ids) or any(r not in refs for r in ids):
+            raise ValueError("Bundle needs distinct selected reference IDs.")
+        sheets = [Image.open(PACK_DIR / indexed[r]["file"]).convert("RGBA") for r in ids]
+        expected = Image.new("RGBA", (max(im.width for im in sheets), sum(im.height for im in sheets)))
+        y = 0
+        for im in sheets:
+            expected.paste(im, (0, y)); y += im.height
+        path = (APP / bundle["path"]).resolve()
+        actual = Image.open(path).convert("RGBA")
+        if actual.size != expected.size or actual.tobytes() != expected.tobytes():
+            raise ValueError("Reference bundle must preserve exact full-sheet pixels, in listed vertical order.")
+        positions = [j for j,item in enumerate(inputs) if item.get("id") in ids]
+        if len(positions) != len(ids):
+            raise ValueError("Reference bundles must not overlap.")
+        position = min(positions)
+        inputs = [item for j,item in enumerate(inputs) if j not in positions]
+        inputs.insert(position, {"role":"reference bundle", "ids":ids, "path":str(path), "sha256":digest(path)})
     if len({i["path"] for i in inputs}) != len(inputs):
         raise ValueError("Do not supply duplicate images as separate input roles.")
     return {"pass": True, "asset_id": brief["asset_id"], "input_count": len(inputs),

@@ -1,0 +1,25 @@
+{
+  "asset_id": "avatar-rounder-face-mask-v1",
+  "kind": "avatar",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "target_paths": [
+    "assets/art/avatar-static-heads-v2.png"
+  ],
+  "prompt": "Asset: alpha silhouette mask for slightly rounder Horizons avatar faces. Image1 R01 brand; Image2 contains complete R03 face geometry above complete R04 hair registration; Image3 R05 costume necklines; Image4 R06 glasses/colors; Image5 exact current head atlas edit target. Deliver ONLY ONE pure white filled face silhouette on a perfectly solid pure black background. No facial features, ears, hair, neck, outline, shadow, glow, gradients or text. Shape: a softly rounded square, a little rounder than the current faces, NOT an ellipse or circle. Keep a broad nearly straight forehead and gently straight cheek middles, but increase the corner radius subtly, especially along the cheeks/jaw. Width:height ratio 262:239. Corner radius about 65px at that natural size, current corners roughly40px; gently continuous curvature. Center this complete flat white silhouette in a square canvas with generous black margins. This mask will ONLY trim the old face corners inward; existing actual eyes, brows, nose, smile, ears and neck pixels will be retained and registered exactly. It must preserve full cheek width at eye level and a broad central chin/neck join. No portrait, no skin colors, no sample head grid, just one clean mask.",
+  "reference_bundles": [
+    {
+      "ids": [
+        "R03",
+        "R04"
+      ],
+      "path": "docs/rounder-avatar/base-and-hair-reference.png"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "source": "assets/art/avatar-static-heads-v2.png",
+  "mask": "assets/art/avatar-round-v3/mask-native.png",
+  "maskFaceCrop": [
+    252,
+    211,
+    1000,
+    943
+  ],
+  "operation": "ImageGen silhouette registration to existing face bounds; mask only changes alpha. All source RGB, central facial features, ears and neck retained; no facial pixels rescaled. Frames/positions/eyeCenters unchanged.",
+  "heads": [
+    {
+      "frame": {
+        "x": 29,
+        "y": 52,
+        "w": 327,
+        "h": 271
+      },
+      "faceBox": [
+        61,
+        55,
+        324,
+        294
+      ],
+      "neckBox": [
+        153,
+        294,
+        232,
+        323
+      ]
+    },
+    {
+      "frame": {
+        "x": 413,
+        "y": 52,
+        "w": 326,
+        "h": 271
+      },
+      "faceBox": [
+        445,
+        55,
+        707,
+        294
+      ],
+      "neckBox": [
+        537,
+        294,
+        615,
+        323
+      ]
+    },
+    {
+      "frame": {
+        "x": 797,
+        "y": 52,
+        "w": 327,
+        "h": 271
+      },
+      "faceBox": [
+        829,
+        55,
+        1092,
+        294
+      ],
+      "neckBox": [
+        921,
+        294,
+        1000,
+        323
+      ]
+    },
+    {
+      "frame": {
+        "x": 1181,
+        "y": 52,
+        "w": 326,
+        "h": 271
+      },
+      "faceBox": [
+        1213,
+        55,
+        1475,
+        294
+      ],
+      "neckBox": [
+        1305,
+        294,
+        1383,
+        323
+      ]
+    },
+    {
+      "frame": {
+        "x": 29,
+        "y": 395,
+        "w": 327,
+        "h": 268
+      },
+      "faceBox": [
+        61,
+        398,
+        324,
+        634
+      ],
+      "neckBox": [
+        153,
+        634,
+        232,
+        663
+      ]
+    },
+    {
+      "frame": {
+        "x": 413,
+        "y": 395,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        445,
+        398,
+        707,
+        634
+      ],
+      "neckBox": [
+        537,
+        634,
+        615,
+        663
+      ]
+    },
+    {
+      "frame": {
+        "x": 797,
+        "y": 395,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        829,
+        398,
+        1091,
+        634
+      ],
+      "neckBox": [
+        921,
+        634,
+        999,
+        663
+      ]
+    },
+    {
+      "frame": {
+        "x": 1181,
+        "y": 395,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        1213,
+        398,
+        1475,
+        634
+      ],
+      "neckBox": [
+        1305,
+        634,
+        1383,
+        663
+      ]
+    },
+    {
+      "frame": {
+        "x": 29,
+        "y": 735,
+        "w": 326,
+        "h": 270
+      },
+      "faceBox": [
+        61,
+        738,
+        323,
+        976
+      ],
+      "neckBox": [
+        153,
+        976,
+        231,
+        1005
+      ]
+    },
+    {
+      "frame": {
+        "x": 413,
+        "y": 737,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        445,
+        740,
+        707,
+        976
+      ],
+      "neckBox": [
+        537,
+        976,
+        615,
+        1005
+      ]
+    },
+    {
+      "frame": {
+        "x": 797,
+        "y": 737,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        829,
+        740,
+        1091,
+        976
+      ],
+      "neckBox": [
+        921,
+        976,
+        999,
+        1005
+      ]
+    },
+    {
+      "frame": {
+        "x": 1181,
+        "y": 737,
+        "w": 326,
+        "h": 268
+      },
+      "faceBox": [
+        1213,
+        740,
+        1475,
+        976
+      ],
+      "neckBox": [
+        1305,
+        976,
+        1383,
+        1005
+      ]
+    }
+  ]
+}

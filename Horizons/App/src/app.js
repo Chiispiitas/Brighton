@@ -1,11 +1,11 @@
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=hover2';
-import {mountOverworld} from './overworld-motion.js?v=hover2';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=round1';
+import {mountOverworld} from './overworld-motion.js?v=round1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=hover2';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=hover2';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=round1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=round1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=hover2';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=round1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 

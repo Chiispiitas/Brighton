@@ -1,25 +1,25 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T17:34:14.084Z",
-  "sourceCommit": "46ed5bb07d5b75c437d69a1c57ab1e31c5db0a21",
+  "createdAt": "2026-11-05T17:48:04.749Z",
+  "sourceCommit": "65acdf204842b9a1a7f039b2799099b7fe86cc5a",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
     {
       "file": "assets/art/manifest.json",
-      "sha256": "bd7c378a0deb4718415207e2612e038e35c785fe9f8c0ac33857fb6d16df2610"
+      "sha256": "ca0b1811696122054bd9cfe8c4f652f3c79fce0a21cfe6c4edb8a6614999e485"
     },
     {
       "file": "assets/art/avatar-static-v1.frames.json",
-      "sha256": "a36be43633b532d9eed7300c4ac6933d6c7bdfb13f9c7fd4df221046905ab33c"
+      "sha256": "650ea658c579f99ce7b883840b0eb9b7dfc1b51c536c0940df32e7986f94ceea"
     },
     {
       "file": "src/art.js",
-      "sha256": "de292da89352496a3aca43db9410de8e61c24b9e0db5fa8b120b999cebfc0a8d"
+      "sha256": "19ef22fe9a175a9886af7fcd2897d02e2655062b3b094503dbb662d4e456d44a"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "555db0ffef37967ad82b822a472ff633af5440d19f51f5e4f2e732e873636ccc"
+      "sha256": "00eb49fbd704ef45548be1e45b09546ecb4dfe2658aed585809bdb516d47311f"
     },
     {
       "file": "styles/app.css",
@@ -131,25 +131,25 @@
       "id": "R03",
       "file": "03-avatar-bases.png",
       "title": "Avatar bases and skin tones",
-      "sha256": "34a3c79f085cd925f19f7f5e28b259dd293dcc493c605f1123f9c7868e2e5499"
+      "sha256": "32bd59fabdff62a8b8ba5546d56f542dd4ebe1ded91509acdee61b75c32bd1dc"
     },
     {
       "id": "R04",
       "file": "04-hairstyles.png",
       "title": "Approved hairstyles",
-      "sha256": "c7b262895cf3ff8074b3fbdb429e1af803cb7a49b4c133d8887da4ba6d66f4e2"
+      "sha256": "52663cef4a4d64610b3690d8cebf242041efd339f64c845c02bed061a5eddd53"
     },
     {
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "3510bfa2edb2988843e333d0430908b9a48786351049472723d3f6d9b228a7d1"
+      "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
     },
     {
       "id": "R06",
       "file": "06-accessories-and-colors.png",
       "title": "Accessories and customization",
-      "sha256": "5d4972dab0e70ab4dae69dceee238ccae7ea135d814e555fcb530c1ba4a2a812"
+      "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
     },
     {
       "id": "R07",
@@ -157,7 +157,5 @@
       "title": "Scenes vocabulary and interface art",
       "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
     }
-  ],
-  "reviewNote": "Existing approved raster art unchanged; source metadata rebuilt for rotation-only and click-only runtime.",
-  "sourceRuntimeRevision": "ae37cb9e10917c3614cf7051efb50d5f256fcdb7"
+  ]
 }
