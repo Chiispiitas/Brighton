@@ -43,7 +43,7 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 
 ## Validation and maintenance
 
-Current learning evidence: [compact browser checks](reports/compact-learning-browser.json), [returning-browser upgrade](reports/compact-learning-cache-upgrade.json), and [live backend checks](backend/reports/live-compact-learning.json). The [published asset parity](reports/publication-assets.json) records the last verified hosted revision. Earlier [static release](reports/static-release.json) evidence covers the retained artwork. Structural fit, zero running animation, and actual visual approval are reported separately. Browser coverage is Edge/Chromium; other engines are not claimed as tested.
+Current evidence: [compact release](reports/compact-learning-release.json), [local browser checks](reports/compact-learning-browser.json), [hosted browser checks](reports/compact-learning-browser-hosted.json), [hosted returning-browser upgrade](reports/compact-learning-cache-upgrade-hosted.json), and [live backend checks](backend/reports/live-compact-learning.json). The [published asset parity](reports/publication-assets.json) records the verified runtime revision. Earlier [static release](reports/static-release.json) evidence covers the retained artwork. Structural fit, zero running animation, and actual visual approval are reported separately. Browser coverage is Edge/Chromium; other engines are not claimed as tested.
 
 The [app audit](APP-AUDIT.md) records the static design decision and supersedes previous motion requirements. Failed native examples are retained outside active runtime mappings. Existing [content coverage](reports/content-coverage.json), [learning checks](reports/learning-browser.json), [backend checks](backend/reports/live-backend.json) and [profile/reward checks](backend/reports/live-profile.json) describe the learning/access contracts.
 
@@ -52,6 +52,6 @@ The [app audit](APP-AUDIT.md) records the static design decision and supersedes 
 - Browser checks use reserved isolated example profiles. Public example001 remains for learners.
 - Keep every canonical `.mjs` module synchronized with `backend/scripts/sync-content.mjs` before content/backend redeployment. Audio alternative IDs and the original generation seed must travel with submitted attempts so the server grades the questions actually shown.
 
-Credentials, dependencies and unrelated book changes stay excluded. The abandoned selective-animation pass is preserved separately in Git stash d935ff2b4abb68181a6bca3a6d4661f81a2a43da; the last published baseline is bbd859f.
+Credentials, dependencies and unrelated book changes stay excluded. Release reports identify their exact runtime revision and reversible baseline; older motion reports remain historical evidence.
 
 The eyewear correction replaces the mixed accessory list with None, round glasses, rectangular glasses and sunglasses. New ImageGen art and exact prompts: [eyewear provenance](assets/art/avatar-eyewear.provenance.json). Lens positions follow each native face’s eye centers. Retired bag/scarf/backpack slots4–6 display as None; other profile fields are preserved. Slots1–3 are the current eyewear choices. The old static-release reports describe the preceding accessory set; current evidence is in [eyewear review](reports/eyewear-review.json).

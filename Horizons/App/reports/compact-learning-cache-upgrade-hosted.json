@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-05T02:09:52.432Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "baseline": "6e12858",
+  "sourceRef": "d237698f45436ce72778b1f0496da5dd62cd3120",
+  "oldCache": "horizons-companion-wardrobe-v15",
+  "newCache": "horizons-companion-compact-v16",
+  "scope": "Real v15 service worker and cached old runtime installed from the committed baseline, then upgraded through update/activate/controller lifecycle to the compact release. No login, profile edits, or activity attempts.",
+  "steps": [
+    {
+      "name": "Previous worker and exact cached runtime installed",
+      "cacheNames": [
+        "horizons-companion-wardrobe-v15"
+      ],
+      "controller": true,
+      "oldAppHash": "deda9024db8c63e0be359b4ff8d371fb9f4ed27de3004870b8e85c2dbe4b26ba",
+      "pass": true
+    },
+    {
+      "name": "New worker activated and previous cache removed",
+      "cacheNames": [
+        "horizons-companion-compact-v16"
+      ],
+      "pass": true
+    },
+    {
+      "name": "New interface and canonical modules loaded after the update",
+      "title": "Horizons Practice",
+      "modules": [
+        "src/app.js?v=compact1",
+        "src/lesson-art.js?v=compact1",
+        "src/api-client.js",
+        "src/art.js?v=compact1"
+      ],
+      "pass": true
+    }
+  ],
+  "lifecycle": [
+    {
+      "event": "worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "worker-state",
+      "state": "activated"
+    }
+  ],
+  "runtimeErrors": [],
+  "bindingErrors": [],
+  "loaded": [
+    {
+      "file": "styles/app.css",
+      "query": "?v=compact1",
+      "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=compact1",
+      "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=compact1",
+      "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+      "fromServiceWorker": true
+    }
+  ],
+  "pass": true,
+  "cacheBinding": [
+    {
+      "file": "src/avatar-static.js",
+      "query": "?v=compact1",
+      "sha256": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c"
+    },
+    {
+      "file": "styles/app.css",
+      "query": "?v=compact1",
+      "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69"
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=compact1",
+      "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12"
+    },
+    {
+      "file": "src/api-client.js",
+      "query": "",
+      "sha256": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b"
+    },
+    {
+      "file": "src/lesson-art.js",
+      "query": "?v=compact1",
+      "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6"
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=compact1",
+      "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2"
+    },
+    {
+      "file": "content/source-banks.mjs",
+      "query": "",
+      "sha256": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87"
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+    }
+  ],
+  "changedSources": [],
+  "status": "PASS"
+}

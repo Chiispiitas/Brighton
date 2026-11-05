@@ -1,0 +1,1849 @@
+{
+  "date": "2026-11-05T02:09:52.677Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "sourceReference": "d237698f45436ce72778b1f0496da5dd62cd3120",
+  "sourceHashes": {
+    "index.html": "e495b7fe8613577927ddc1846ead1139ecd8bab0e0dae5881c76cd4cd8755643",
+    "styles/app.css": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69",
+    "service-worker.js": "5f0fbcc4163c217d8e4d78638c85ac7dc8f81e99f41123087b02d690915141c9",
+    "src/api-client.js": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b",
+    "src/app.js": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12",
+    "src/art.js": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2",
+    "src/avatar-rig.js": "597c4bbc97cdd4dac112915ee87e9ae6e52dcd55a018c4981378cde0045d2df8",
+    "src/avatar-static.js": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c",
+    "src/cast-rig.js": "8b723443ab456329d7ae909fe404b05fc170ccb8baba12b7f1f612df8c254bf8",
+    "src/companion-rig.js": "2954cc181b9e7f5006e08ac275c55739ffde54d5f5ec229c2958e12445356a21",
+    "src/lesson-art.js": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6",
+    "src/pico-articulated.js": "9c2f829913d9620ea1f29b87cefad678d42de8893262eac38f489c15132e25f0",
+    "src/pico-rig.js": "1266753ab3adbdd0d4eb0c3f1055f151a360f0c7f043063e6d33a10183632310",
+    "content/answer-matching.mjs": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+    "content/engine.mjs": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38",
+    "content/source-banks.mjs": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87",
+    "content/translations.mjs": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+    "content/unit1.mjs": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+  },
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "checks": [
+    {
+      "name": "Welcome has direct sign-in wording and static complete artwork",
+      "pass": true,
+      "details": {
+        "widths": 4
+      }
+    },
+    {
+      "name": "Real isolated QA session opens",
+      "pass": true,
+      "details": {
+        "signedIn": true
+      }
+    },
+    {
+      "name": "Only main topics and two games appear as compact bare islands",
+      "pass": true,
+      "details": {
+        "pathNodes": 21,
+        "lessons": 4,
+        "widths": 4
+      }
+    },
+    {
+      "name": "One tap shows details; keyboard and Start work for every public node",
+      "pass": true,
+      "details": {
+        "nodes": 21,
+        "widths": 4
+      }
+    },
+    {
+      "name": "Simple routes, profile labels and Spanish word bank fit every width",
+      "pass": true,
+      "details": {
+        "widths": 4,
+        "hiddenProgress": true
+      }
+    },
+    {
+      "name": "Typed grammar grades wrong and correct answers and saves via the real backend",
+      "pass": true,
+      "details": {
+        "answered": 8,
+        "activityId": "topic-1a-be",
+        "saveStatus": 200,
+        "audioReplaced": false,
+        "mixedVariantsVerified": false,
+        "restoredAfterReload": true
+      }
+    },
+    {
+      "name": "Mid-round audio alternative preserves earlier audio answers and saves mixed variants",
+      "pass": true,
+      "details": {
+        "answered": 8,
+        "activityId": "listen-1a",
+        "saveStatus": 200,
+        "audioReplaced": true,
+        "mixedVariantsVerified": true
+      }
+    },
+    {
+      "name": "Number listening hides digit cues and offers a typed Spanish alternative",
+      "pass": true,
+      "details": {
+        "questionCount": 8,
+        "answerCueHidden": true,
+        "typedAlternative": true,
+        "matchingPairs": 6,
+        "saved": {
+          "answered": 8,
+          "activityId": "mix-listening",
+          "saveStatus": 200,
+          "audioReplaced": true,
+          "mixedVariantsVerified": false
+        }
+      }
+    },
+    {
+      "name": "A second device restores the same saved profile and attempts",
+      "pass": true,
+      "details": {
+        "sameProfile": true
+      }
+    }
+  ],
+  "screens": [
+    {
+      "name": "welcome-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\welcome-320.png"
+    },
+    {
+      "name": "welcome-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\welcome-390.png"
+    },
+    {
+      "name": "welcome-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\welcome-768.png"
+    },
+    {
+      "name": "welcome-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\welcome-1440.png"
+    },
+    {
+      "name": "learn-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\learn-320.png"
+    },
+    {
+      "name": "learn-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\learn-390.png"
+    },
+    {
+      "name": "learn-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\learn-768.png"
+    },
+    {
+      "name": "learn-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\learn-1440.png"
+    },
+    {
+      "name": "node-topic-1a-greetings-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1a-greetings-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1a-greetings-390.png"
+    },
+    {
+      "name": "node-topic-1a-greetings-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1a-greetings-390.png"
+    },
+    {
+      "name": "node-topic-1a-greetings-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-greetings-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-alphabet-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1a-alphabet-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1a-alphabet-390.png"
+    },
+    {
+      "name": "node-topic-1a-alphabet-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1a-alphabet-390.png"
+    },
+    {
+      "name": "node-topic-1a-alphabet-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-alphabet-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-numbers-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1a-numbers-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1a-numbers-390.png"
+    },
+    {
+      "name": "node-topic-1a-numbers-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1a-numbers-390.png"
+    },
+    {
+      "name": "node-topic-1a-numbers-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-numbers-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-be-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1a-be-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1a-be-390.png"
+    },
+    {
+      "name": "node-topic-1a-be-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1a-be-390.png"
+    },
+    {
+      "name": "node-topic-1a-be-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1a-be-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1a-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-listen-1a-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-listen-1a-390.png"
+    },
+    {
+      "name": "node-listen-1a-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-listen-1a-390.png"
+    },
+    {
+      "name": "node-listen-1a-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1a-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1a-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-read-1a-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-read-1a-390.png"
+    },
+    {
+      "name": "node-read-1a-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-read-1a-390.png"
+    },
+    {
+      "name": "node-read-1a-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1a-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-jobs-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1b-jobs-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1b-jobs-390.png"
+    },
+    {
+      "name": "node-topic-1b-jobs-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1b-jobs-390.png"
+    },
+    {
+      "name": "node-topic-1b-jobs-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-jobs-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-articles-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1b-articles-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1b-articles-390.png"
+    },
+    {
+      "name": "node-topic-1b-articles-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1b-articles-390.png"
+    },
+    {
+      "name": "node-topic-1b-articles-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-articles-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-contractions-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1b-contractions-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1b-contractions-390.png"
+    },
+    {
+      "name": "node-topic-1b-contractions-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1b-contractions-390.png"
+    },
+    {
+      "name": "node-topic-1b-contractions-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1b-contractions-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1b-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-listen-1b-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-listen-1b-390.png"
+    },
+    {
+      "name": "node-listen-1b-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-listen-1b-390.png"
+    },
+    {
+      "name": "node-listen-1b-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1b-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1b-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-read-1b-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-read-1b-390.png"
+    },
+    {
+      "name": "node-read-1b-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-read-1b-390.png"
+    },
+    {
+      "name": "node-read-1b-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1b-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-countries-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1c-countries-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1c-countries-390.png"
+    },
+    {
+      "name": "node-topic-1c-countries-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1c-countries-390.png"
+    },
+    {
+      "name": "node-topic-1c-countries-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-countries-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-adjectives-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1c-adjectives-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1c-adjectives-390.png"
+    },
+    {
+      "name": "node-topic-1c-adjectives-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1c-adjectives-390.png"
+    },
+    {
+      "name": "node-topic-1c-adjectives-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-adjectives-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-be-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1c-be-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1c-be-390.png"
+    },
+    {
+      "name": "node-topic-1c-be-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1c-be-390.png"
+    },
+    {
+      "name": "node-topic-1c-be-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1c-be-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1c-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-listen-1c-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-listen-1c-390.png"
+    },
+    {
+      "name": "node-listen-1c-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-listen-1c-390.png"
+    },
+    {
+      "name": "node-listen-1c-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1c-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1c-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-read-1c-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-read-1c-390.png"
+    },
+    {
+      "name": "node-read-1c-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-read-1c-390.png"
+    },
+    {
+      "name": "node-read-1c-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1c-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-details-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1d-details-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1d-details-390.png"
+    },
+    {
+      "name": "node-topic-1d-details-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1d-details-390.png"
+    },
+    {
+      "name": "node-topic-1d-details-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-details-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-questions-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1d-questions-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1d-questions-390.png"
+    },
+    {
+      "name": "node-topic-1d-questions-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1d-questions-390.png"
+    },
+    {
+      "name": "node-topic-1d-questions-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-questions-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-capitals-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-topic-1d-capitals-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1d-capitals-390.png"
+    },
+    {
+      "name": "node-topic-1d-capitals-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-topic-1d-capitals-390.png"
+    },
+    {
+      "name": "node-topic-1d-capitals-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-topic-1d-capitals-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1d-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-listen-1d-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-listen-1d-390.png"
+    },
+    {
+      "name": "node-listen-1d-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-listen-1d-390.png"
+    },
+    {
+      "name": "node-listen-1d-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-listen-1d-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1d-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "details-read-1d-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-read-1d-390.png"
+    },
+    {
+      "name": "node-read-1d-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\node-read-1d-390.png"
+    },
+    {
+      "name": "node-read-1d-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "node-read-1d-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0
+    },
+    {
+      "name": "practice-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\practice-320.png"
+    },
+    {
+      "name": "profile-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\profile-320.png"
+    },
+    {
+      "name": "bank-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\bank-320.png"
+    },
+    {
+      "name": "word-dialog-320",
+      "width": 320,
+      "scrollWidth": 320,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\word-dialog-320.png"
+    },
+    {
+      "name": "practice-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\practice-390.png"
+    },
+    {
+      "name": "profile-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\profile-390.png"
+    },
+    {
+      "name": "bank-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\bank-390.png"
+    },
+    {
+      "name": "word-dialog-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\word-dialog-390.png"
+    },
+    {
+      "name": "practice-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\practice-768.png"
+    },
+    {
+      "name": "profile-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\profile-768.png"
+    },
+    {
+      "name": "bank-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\bank-768.png"
+    },
+    {
+      "name": "word-dialog-768",
+      "width": 768,
+      "scrollWidth": 768,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\word-dialog-768.png"
+    },
+    {
+      "name": "practice-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\practice-1440.png"
+    },
+    {
+      "name": "profile-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\profile-1440.png"
+    },
+    {
+      "name": "bank-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\bank-1440.png"
+    },
+    {
+      "name": "word-dialog-1440",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\word-dialog-1440.png"
+    },
+    {
+      "name": "details-topic-1a-be-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-topic-1a-be-390.png"
+    },
+    {
+      "name": "graded-typed-0",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-typed-0.png"
+    },
+    {
+      "name": "graded-typed-1",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-typed-1.png"
+    },
+    {
+      "name": "typed-result-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\typed-result-390.png"
+    },
+    {
+      "name": "details-listen-1a-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\details-listen-1a-390.png"
+    },
+    {
+      "name": "graded-fallback-0",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-fallback-0.png"
+    },
+    {
+      "name": "graded-fallback-1",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-fallback-1.png"
+    },
+    {
+      "name": "fallback-result-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\fallback-result-390.png"
+    },
+    {
+      "name": "number-listening-no-leak-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\number-listening-no-leak-390.png"
+    },
+    {
+      "name": "number-listening-alternative-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\number-listening-alternative-390.png"
+    },
+    {
+      "name": "graded-fallback-0",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-fallback-0.png"
+    },
+    {
+      "name": "graded-fallback-1",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\graded-fallback-1.png"
+    },
+    {
+      "name": "number-listening-saved-result-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\number-listening-saved-result-390.png"
+    },
+    {
+      "name": "spanish-matching-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\spanish-matching-390.png"
+    },
+    {
+      "name": "second-device-learn-390",
+      "width": 390,
+      "scrollWidth": 390,
+      "unloaded": [],
+      "deformed": [],
+      "animations": 0,
+      "avatarErrors": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-compact-learning-hosted\\second-device-learn-390.png"
+    }
+  ],
+  "failures": [],
+  "runtimeErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "api": [
+    {
+      "action": "redeem",
+      "status": 200
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200
+    },
+    {
+      "action": "getSession",
+      "status": 200
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200
+    },
+    {
+      "action": "redeem",
+      "status": 200
+    }
+  ],
+  "scope": "Actual compact path, English interface with Spanish vocabulary cues, typed retrieval, audio fallback and real isolated QA session. No public demo or profile writes.",
+  "limits": [
+    "Chromium/Edge only.",
+    "Every public path node opens at four screen widths; typed grammar, a mixed original-audio/alternative round, and a custom Number listening fallback mix are completed through the real backend.",
+    "Hidden archived activities are preserved but are not expected to appear as path islands."
+  ],
+  "pass": true,
+  "loadedByteBinding": {
+    "files": [
+      {
+        "file": "styles/app.css",
+        "expected": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "5135202180c7280f9b8b83a9535f8c1ed5c83455228d1908069de22f1b098a69"
+          }
+        ]
+      },
+      {
+        "file": "src/api-client.js",
+        "expected": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "35bb6a40209aeb8612e8d4c73d2d1c8257417535e4efb43525f540ced1f3340b"
+          }
+        ]
+      },
+      {
+        "file": "src/app.js",
+        "expected": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "a31092ac4b15fce0d36b71ef643ff75a1418211f41932b0c096202f5edfd5a12"
+          }
+        ]
+      },
+      {
+        "file": "src/art.js",
+        "expected": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "9d7d0316770a981f8944143e69975d9315ed20b522630d8a3656890eda194cb2"
+          }
+        ]
+      },
+      {
+        "file": "src/avatar-rig.js",
+        "expected": "597c4bbc97cdd4dac112915ee87e9ae6e52dcd55a018c4981378cde0045d2df8",
+        "observations": []
+      },
+      {
+        "file": "src/avatar-static.js",
+        "expected": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "67671273533573ee8a4102947f4ff78d66f85a1a8a0e647e2978338c5838de0c"
+          }
+        ]
+      },
+      {
+        "file": "src/cast-rig.js",
+        "expected": "8b723443ab456329d7ae909fe404b05fc170ccb8baba12b7f1f612df8c254bf8",
+        "observations": []
+      },
+      {
+        "file": "src/companion-rig.js",
+        "expected": "2954cc181b9e7f5006e08ac275c55739ffde54d5f5ec229c2958e12445356a21",
+        "observations": []
+      },
+      {
+        "file": "src/lesson-art.js",
+        "expected": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6"
+          },
+          {
+            "status": 200,
+            "query": "?v=compact1",
+            "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6"
+          }
+        ]
+      },
+      {
+        "file": "src/pico-articulated.js",
+        "expected": "9c2f829913d9620ea1f29b87cefad678d42de8893262eac38f489c15132e25f0",
+        "observations": []
+      },
+      {
+        "file": "src/pico-rig.js",
+        "expected": "1266753ab3adbdd0d4eb0c3f1055f151a360f0c7f043063e6d33a10183632310",
+        "observations": []
+      },
+      {
+        "file": "content/answer-matching.mjs",
+        "expected": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+          }
+        ]
+      },
+      {
+        "file": "content/engine.mjs",
+        "expected": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+          }
+        ]
+      },
+      {
+        "file": "content/source-banks.mjs",
+        "expected": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "347db9a0567a81d879566a964092ef97309d6fcae85eb698d8e675803cb57b87"
+          }
+        ]
+      },
+      {
+        "file": "content/translations.mjs",
+        "expected": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+          }
+        ]
+      },
+      {
+        "file": "content/unit1.mjs",
+        "expected": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "pass": true
+  },
+  "changedSources": [],
+  "status": "PASS"
+}

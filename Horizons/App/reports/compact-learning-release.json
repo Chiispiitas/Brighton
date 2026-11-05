@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-05 02:11:57 UTC",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "runtimeRevision": "d237698f45436ce72778b1f0496da5dd62cd3120",
+  "reversibleBaseline": "6e12858",
+  "pages": {
+    "workflowRun": 41952883144,
+    "conclusion": "success"
+  },
+  "backend": {
+    "deploymentId": "87b9875d-a8dd-4337-a952-bde6d3e9e977",
+    "sourceRevision": "670211bb13c3563605f42dedbedd29cc00d97cda",
+    "unitTests": 32,
+    "liveChecks": 26,
+    "pass": true
+  },
+  "content": {
+    "tests": 25,
+    "visiblePathIslands": 21,
+    "lessonIds": [
+      "1A",
+      "1B",
+      "1C",
+      "1D"
+    ],
+    "vocabularyEntries": 142,
+    "interfaceLanguage": "English",
+    "vocabularyCueLanguage": "Spanish",
+    "pass": true
+  },
+  "browser": {
+    "engine": "Edge/Chromium",
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "localLayoutStates": 144,
+    "hostedLayoutStates": 144,
+    "allPublicNodesOpened": true,
+    "typedGrammarSave": true,
+    "midRoundAudioFallbackSave": true,
+    "customListeningMixSave": true,
+    "crossDeviceRestoration": true,
+    "sourceByteBinding": true,
+    "noStretchedImages": true,
+    "noOverflow": true,
+    "noRunningAnimations": true,
+    "noBrowserErrors": true,
+    "pass": true
+  },
+  "cacheUpgrade": {
+    "baselineCache": "horizons-companion-wardrobe-v15",
+    "currentCache": "horizons-companion-compact-v16",
+    "local": true,
+    "hosted": true,
+    "exactCommittedBytes": true,
+    "pass": true
+  },
+  "publication": {
+    "checkedFiles": 346,
+    "bookSourceRecordings": 12,
+    "allMatchCommittedBytes": true,
+    "pass": true
+  },
+  "scope": [
+    "Removed Learn sidebar and Progress navigation/page; retained stored history.",
+    "Plain functional copy and My profile heading.",
+    "Bare path islands open accessible details and Start.",
+    "Main path uses core lesson topics and two listening/reading games per lesson.",
+    "Spanish vocabulary cues, matching and typed-answer defaults.",
+    "Shared anchored answer matching with explicit short/full-form and capitalization rules.",
+    "Listening hides answer cues and supports replayable non-audio alternatives.",
+    "Existing static native artwork and private profiles preserved."
+  ],
+  "evidence": [
+    "compact-learning-browser.json",
+    "compact-learning-browser-hosted.json",
+    "compact-learning-cache-upgrade.json",
+    "compact-learning-cache-upgrade-hosted.json",
+    "publication-assets.json",
+    "../backend/reports/live-compact-learning.json"
+  ],
+  "limits": [
+    "App content remains A1 Unit 1; A1-wide teaching rules are documented for future units.",
+    "Browser verification covers Edge/Chromium, not Firefox or Safari.",
+    "Old archived activity IDs remain compatible but are no longer all displayed as path islands."
+  ],
+  "pass": true
+}
