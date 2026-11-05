@@ -326,5 +326,5 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .pico-banner-head{transform-origin:120px 267px;z-index:0}
 .pico-banner-body{z-index:1}
 .pico-banner-map{transform-origin:126px 327px;z-index:2}
-.pico-banner-blink{opacity:0}
+.hero-pico .pico-banner-stage [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.hero-pico .pico-banner-stage{display:none!important}}

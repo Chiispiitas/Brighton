@@ -109,3 +109,7 @@ V4 runtime e5999ddc50b913973713ece2d0447843f48c4628 is live. Hosted four-width p
 ## Inspection frequency correction (current)
 
 The latest request changes the schedule to one 8-second idle followed by the unchanged 6-second map inspection: 14 seconds total. Expression sprites, motion amplitudes and pause/reduced-motion behavior are unchanged. Cache v28, entry queries pico5.
+
+## Opaque animation rule (current)
+
+No fades or opacity interpolation in Pico animation. Expressions and eye states switch instantly through discrete sprite visibility at full opacity. A single frame callback reads the shared motion clock and switches hidden attributes atomically. Open eyes explicitly hide during both blink and inspection. The callback stops offscreen, in hidden tabs and under reduced motion, and is cancelled on disposal. Neutral and inspection features switch together. All motion uses transforms; native transparent backgrounds and antialiased sprite edges remain. Existing 8-second idle plus 6-second inspection schedule is unchanged. Cache v29, queries pico6. QA probes both sides of every swap and former fade windows to reject fractional opacity, opacity tracks and overlapping facial states.

@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Current animation rule: Pico has no fading/transparency transitions. Sprite visibility switches instantly at full opacity; movement uses transforms. One 8-second idle then 6-second inspection. Cache pico-v29, queries pico6. See ANIMATION-AUDIT.md final section.
+
 Current Pico rendering: v4 faceless ImageGen head with separate transparent expression sprites. V3 skin-patch compositing is retired. Motion unchanged. Cache pico-v27, queries pico4. See ANIMATION-AUDIT.md current v4 section and faceless-production-record.json.
 
 Latest animation revision: face-contained blink, native pupil glances and a springy closer map inspection after four eight-second idle loops. New generated raised-brow/squinted/no-smile expression. Cache pico-v26, queries pico3. See ANIMATION-AUDIT.md v3 section and check-production-record.json.

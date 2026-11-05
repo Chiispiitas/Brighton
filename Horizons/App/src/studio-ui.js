@@ -1,4 +1,4 @@
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=pico5';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=pico6';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
