@@ -1,5 +1,6 @@
 import {activityById,wordById,chunkById,lessonById,lessons as lessonDefinitions} from '../content/unit1.mjs';
 import {getActivityQuestions,buildQuiz,getMatchingPairs,checkAnswer,normalizeAnswer} from '../content/engine.mjs';
+import {summarizeIslands} from '../content/island-mastery.mjs';
 const enc=new TextEncoder();
 export const COLLECTIONS={codes:'HzIssuedCodes',claims:'HzClaims',profiles:'HzProfiles',sessions:'HzSessions',attempts:'HzAttempts',throttle:'HzThrottle'};
 export const BOOKS={
@@ -45,7 +46,7 @@ export function aggregateProgress(events,now,timeZone){
  }
  const days=[...active].sort(),daySet=new Set(days);let streak=0,walk=daySet.has(today)?today:previousDay(today);while(daySet.has(walk)){streak++;walk=previousDay(walk);}let bestStreak=0,run=0,prev=null;for(const d of days){run=prev&&previousDay(d)===prev?run+1:1;bestStreak=Math.max(bestStreak,run);prev=d;}
  const nodeDone=id=>{if(complete.has(id))return true;const node=activityById[id];if(node?.kind!=='topic')return false;const oldIds=[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)];return oldIds.length>0&&oldIds.every(id=>complete.has(id));};
- return{xp,streak,bestStreak,todayXp:daily[today]||0,completedActivities:[...complete],completedLessons:lessonDefinitions.filter(lesson=>(lesson.pathNodeIds||lesson.activityIds).every(nodeDone)).map(lesson=>lesson.id),wordStats:words,lessons,attempts:events.length,activeDays:days,dailyXp:daily,reviewItems:Object.values(words).filter(x=>!x.mastered&&(!x.lastCorrect||x.incorrect>0)).map(x=>x.itemId),lastActivityId:last?.activityId||null,lastLessonId:last?.lessonId||null,lastBookId:last?.bookId||null};
+ return{...summarizeIslands(events,words),xp,streak,bestStreak,todayXp:daily[today]||0,completedActivities:[...complete],completedLessons:lessonDefinitions.filter(lesson=>(lesson.pathNodeIds||lesson.activityIds).every(nodeDone)).map(lesson=>lesson.id),wordStats:words,lessons,attempts:events.length,activeDays:days,dailyXp:daily,reviewItems:Object.values(words).filter(x=>!x.mastered&&(!x.lastCorrect||x.incorrect>0)).map(x=>x.itemId),lastActivityId:last?.activityId||null,lastLessonId:last?.lessonId||null,lastBookId:last?.bookId||null};
 }
 function cleanAttempt(raw,now){
  if(!object(raw))fail(400,'INVALID_ATTEMPT','Please try that practice round again.');

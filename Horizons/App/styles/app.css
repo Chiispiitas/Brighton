@@ -304,3 +304,17 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .lesson-trail .path-stop{height:108px}
 .trail-decoration{left:57%;top:88px;width:34%;height:145px}
 @media(max-width:680px){.learning-path .lesson-landmark{padding-right:0;min-height:78px}.lesson-trail .path-stop{height:100px}.trail-decoration{top:85px;left:57%;width:39%;height:120px}}
+
+/* Compact island details and earned mastery. */
+.path-bubble{width:240px;padding:14px 16px;border-radius:18px}
+.island-bubble-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.path-bubble .island-bubble-heading h2{font-size:18px;line-height:1.25;letter-spacing:-.025em;padding-top:4px}
+.island-bubble-heading .round-button{width:44px;height:44px;min-width:44px;min-height:44px;background:transparent}
+.island-bubble-heading .round-button .icon{width:18px;height:18px}
+.island-bubble-progress{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 12px}
+.path-bubble .primary-button{min-height:44px;padding:9px 14px;border-radius:13px;font-size:13px}
+.lesson-trail .path-stop.mastered .stop-orb{background:#ffd24a;color:#714808}
+.lesson-trail .path-stop.mastered:hover .stop-orb{background:#ffd26b}
+.mastered .stop-orb>.icon{width:29px;height:29px;stroke-width:2;fill:#ffe398}
+.lesson-crown{display:flex;color:#a56708;background:#fff0bd;border-radius:50%;padding:8px;margin-left:auto}
+.lesson-crown .icon{fill:#ffd568;width:28px;height:28px}

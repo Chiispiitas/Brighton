@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-05T05:01:06.170Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "pass": true,
+  "checks": [
+    {
+      "width": 320,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 390,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 768,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 1440,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    }
+  ],
+  "roundsToMaster": 4,
+  "unseenWordsPrioritized": true,
+  "wrongAndCorrectSaved": true,
+  "completionBeforeMastery": true,
+  "reload": true,
+  "secondDeviceSession": true,
+  "backend": "Actual application with isolated in-memory store, no real CMS writes",
+  "limits": [
+    "Edge/Chromium only"
+  ]
+}

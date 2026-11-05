@@ -1,5 +1,6 @@
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=curve2';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=curve2';
+import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=mastery1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=mastery1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
 import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=colors1';
@@ -14,6 +15,7 @@ let toastTimer;
 let wordPlayer;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons = {
+ crown:'<path d="m3 6 4 4 5-7 5 7 4-4-2 13H5Z"/><path d="M5 16h14"/>',
  home:'<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',
  practice:'<path d="M5 3h14v18H5Z"/><path d="M8 7h8M8 11h6M8 15h4"/>',
  progress:'<path d="M4 19V9m8 10V3m8 16v-6M2 21h20"/>',
@@ -90,17 +92,18 @@ function home(){
  if(!hasBookAccess())return accessPage();
  if(!isA1Book())return `<section class="coming-book"><h1>${esc(bookTitle(activeBook()))}</h1>${characterMarkup('pico','coming-pico')}<p>Activities for this book are not available yet.</p><button class="primary-button" data-action="books">Choose a book ${icon('book')}</button></section>`;
  const next=pathNodes.find(node=>!nodeIsComplete(node))||pathNodes[0];
- return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><nav class="lesson-jumps" aria-label="Jump to a lesson">${allLessons.map(lesson=>`<button data-jump="${esc(lesson.id)}">${esc(lesson.id)}</button>`).join('')}</nav>${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</section>`;
+ return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</section>`;
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);
- const stops=nodes.map((node,i)=>{const x=50-Math.sin(i*2*Math.PI/Math.max(1,nodes.length-1))*18,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-x:${x}%" aria-label="${esc(lesson.id+' · '+node.title)}" aria-haspopup="dialog"><span class="stop-orb">${icon(nodeIsComplete(node)?'check':symbol)}</span></button>`;}).join('');
- return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2></div><div class="lesson-trail" aria-label="${esc(lesson.id)} activities"><svg class="trail-line" aria-hidden="true"><path/></svg>${stops}<img class="trail-decoration" src="./assets/art/trail-${['greetings','jobs','countries','personal'][index]}-v1.png" alt="" aria-hidden="true"></div></section>`;
+ const stops=nodes.map((node,i)=>{const x=50-Math.sin(i*2*Math.PI/Math.max(1,nodes.length-1))*18,mastered=!!progress().islands?.[node.id]?.mastered,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''} ${mastered?'mastered':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-x:${x}%" aria-label="${esc(lesson.id+' · '+node.title+(mastered?' · Mastered':nodeIsComplete(node)?' · Completed':''))}" aria-haspopup="dialog"><span class="stop-orb">${icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span></button>`;}).join('');
+ return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" aria-label="${esc(lesson.id)} activities"><svg class="trail-line" aria-hidden="true"><path/></svg>${stops}<img class="trail-decoration" src="./assets/art/trail-${['greetings','jobs','countries','personal'][index]}-v1.png" alt="" aria-hidden="true"></div></section>`;
 }
 function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
- const count=getActivityQuestions(node.id,{seed:0,count:8}).length;
- openPathBubble(`<div class="dialog-heading"><span class="eyebrow">LESSON ${esc(node.lessonId)}</span><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><h2 id="dialog-title">${esc(node.title)}</h2><div class="path-node-meta">${node.wordCount?`<span>${node.wordCount} words</span>`:''}<span>${count} questions</span><span>${node.estimatedMinutes||3} min</span></div><button class="primary-button full-width" data-start-path="${esc(node.id)}">Start ${icon('arrow')}</button>`,anchor,event);
+ const status=progress().islands?.[id],done=nodeIsComplete(node),mastered=!!status?.mastered;
+ const count=selectIslandQuestions(node,progress(),{seed:0}).length;
+ openPathBubble(`<div class="island-bubble-heading"><h2 id="dialog-title">${esc(node.title)}</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p class="island-bubble-progress" title="Master each item with three unaided correct answers and at least 75% accuracy.">${mastered?'Mastered':`${status?.masteredCount||0}/${status?.total||masteryTargets[id]?.length||0} mastered`} · ${count} questions</p><button class="primary-button full-width" data-start-path="${esc(node.id)}">${mastered?'Practise again':done?'Continue':'Start'} ${icon('arrow')}</button>`,anchor,event);
 }
 function layoutPaths(){
  for(const trail of app.querySelectorAll('.lesson-trail')){
@@ -150,9 +153,9 @@ function startActivity(id) {
   if (!activity) {notify('Choose an activity.');return route('practice');}
   if (['memory','matching','countries','opposites'].includes(activity.type)) return startGame(activity.type==='memory'?'memory':'matching',activity);
   const seed=Date.now();let questions;
-  try {questions=getActivityQuestions(id,{count:8,seed});} catch(error) {console.error(error);notify('Unable to open this activity. Please try again.');return;}
+  try {questions=selectIslandQuestions(activity,progress(),{count:8,seed});} catch(error) {console.error(error);notify('Unable to open this activity. Please try again.');return;}
   const mode=activity.type==='grammar'?'grammar':activity.type==='review'?'mixed':'vocabulary';
-  beginQuiz(questions,{...activity,mode,activityId:id,count:8,seed},activity.title || 'Practice');
+  beginQuiz(questions,{...activity,mode,activityId:id,count:512,seed},activity.title || 'Practice');
 }
 function startQuiz(options,title='Vocabulary') {
   if(!requirePracticeAccess())return;
@@ -329,7 +332,7 @@ on('click','[data-action]',async(_,target)=>{
     case'hint':state.active.hintUsed=true;return render();
     case'finish-game':return finishActivity();
     case'back-to-path':stopAudio();state.active=null;return route('learn');
-    case'play-again':{const previous=state.active.previous;state.active=null;if(previous.kind==='quiz'){const options={...previous.options,audioFallbackQuestionIds:[],audioEnabled:previous.audioDisabled?false:previous.options.audioEnabled};if(options.activityId&&allActivities.some(item=>item.id===options.activityId)){const seed=Date.now(),questions=getActivityQuestions(options.activityId,{...options,seed});return beginQuiz(questions,{...options,seed},previous.title);}return startQuiz(options,previous.title);}return startGame(previous.kind,previous.options);}
+    case'play-again':{const previous=state.active.previous;state.active=null;if(previous.kind==='quiz'){const options={...previous.options,audioFallbackQuestionIds:[],audioEnabled:previous.audioDisabled?false:previous.options.audioEnabled};if(options.activityId&&allActivities.some(item=>item.id===options.activityId)){const seed=Date.now(),questions=pathNodeById[options.activityId]?selectIslandQuestions(pathNodeById[options.activityId],progress(),{...options,count:8,seed}):getActivityQuestions(options.activityId,{...options,seed});return beginQuiz(questions,{...options,seed},previous.title);}return startQuiz(options,previous.title);}return startGame(previous.kind,previous.options);}
     case'retry-save':{const result=state.active;if(result.saving)return;result.saving=true;result.error=null;render();try{const response=await api.saveAttempt(result.attempt);setSession(response);result.saved=true;result.earnedXp=Math.max(0,xp()-result.oldXp);}catch(issue){result.error=issue.message;}result.saving=false;return render();}
     case'leave-activity':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Leave practice?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>This round will not be saved.</p><div class="dialog-actions"><button class="primary-button" data-dialog-close>Continue</button><button class="text-button" data-leave-confirm>Back to lessons</button></div>`);
     case'sign-out':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Sign out?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>You can sign in again with your book code.</p><div class="dialog-actions"><button class="primary-button" data-signout-confirm>Sign out</button><button class="text-button" data-dialog-close>Cancel</button></div>`);

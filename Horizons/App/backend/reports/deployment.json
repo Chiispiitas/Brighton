@@ -3,9 +3,9 @@
   "appId": "ed2f1865-9249-46cd-b82e-37e2e844a870",
   "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
   "dashboard": "https://manage.wix.com/dashboard/09fbb304-3799-4b3a-8ec6-4a7097167f00",
-  "deploymentId": "87b9875d-a8dd-4337-a952-bde6d3e9e977",
-  "sourceRevision": "670211bb13c3563605f42dedbedd29cc00d97cda",
-  "unitTests": 32,
+  "deploymentId": "32611cc2-cdaa-4c78-8968-b9dd7681530f",
+  "sourceRevision": "b9bec307cd90a7a8d249b56c6a317d3bdb5d2dce",
+  "unitTests": 35,
   "shippedActivityReconstructions": 61,
   "verifiedAt": "2026-11-05T02:03:56.594813+00:00",
   "privateCollections": [
@@ -48,5 +48,6 @@
   },
   "customListeningRegistered": true,
   "customListeningLiveQuestionsPerRound": 12,
-  "spanishAlphabetNameCues": true
+  "spanishAlphabetNameCues": true,
+  "masteryLiveReport": "reports/live-island-mastery.json"
 }

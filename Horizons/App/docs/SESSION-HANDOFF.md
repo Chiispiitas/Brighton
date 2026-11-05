@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest continuation: compact island popovers, no lesson-jump shortcuts, server-derived island and lesson crowns, unseen/unmastered-first rounds capped at eight items. Cache horizons-companion-mastery-v23; entry queries mastery1. Backend deployment 32611cc2-cdaa-4c78-8968-b9dd7681530f, source b9bec307cd90a7a8d249b56c6a317d3bdb5d2dce. See content/island-mastery.mjs and backend/reports/live-island-mastery.json.
+
 Latest correction: remove cast beside lesson headings; relocate islands onto a broader, gentler analytic S. Cache horizons-companion-curve-v22; entry queries curve2.
 
 Latest continuation: smoother tangent-continuous lesson S trails, four native ImageGen inanimate lesson decorations, name Horizons, and a 1200×630 Open Graph/WhatsApp share card. Cache is horizons-companion-trail-v21; entry queries trail1. See docs/trail-art/ for prompts, inputs and provenance, and reports/trail-proof.json for UI verification.

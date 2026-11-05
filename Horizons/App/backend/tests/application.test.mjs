@@ -91,3 +91,41 @@ test('Compact lesson completion uses visible topics and games, without requiring
  const legacyIds=nodeIds.flatMap(id=>{const node=activityById[id];return node.kind==='topic'?[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)]:[id]});
  const legacy=aggregateProgress(legacyIds.map(activityId=>({...base,activityId})),'2026-11-04T12:00:00.000Z','America/Guayaquil');assert.deepEqual(legacy.completedLessons,[lesson.id]);assert.equal(legacy.xp,0);assert.deepEqual(Object.keys(legacy.wordStats),[]);assert.ok(!legacy.completedActivities.some(id=>id.startsWith('topic-')));
 });
+
+// Mastery extends existing server-graded events; no client mastery flag is trusted.
+import {selectIslandQuestions,masteryTargets} from '../src/content/island-mastery.mjs';
+test('Island rounds cover unseen words, retain completion and earn crowns across devices',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.id==='topic-1a-greetings');let progress=session.progress,firstIds;
+ assert.equal(masteryTargets[node.id].length,10);
+ for(let round=0;round<10&&!progress.islands[node.id].mastered;round++){
+  const options={seed:'island-'+round,count:512},qs=selectIslandQuestions(node,progress,{seed:options.seed});
+  if(round===0){assert.equal(qs.length,8);firstIds=new Set(qs.map(q=>q.wordIds[0]));}
+  if(round===1)assert.equal(qs.slice(0,2).filter(q=>!firstIds.has(q.wordIds[0])).length,2);
+  const attempt={id:'island-coverage-'+round,activityId:node.id,quizOptions:options,answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))};
+  const saved=await f.call('saveAttempt',{attempt},session.token);assert.equal(saved.status,200);progress=saved.progress;
+  if(round===0){assert.ok(progress.completedActivities.includes(node.id));assert.equal(progress.islands[node.id].mastered,false);}
+  const retry=await f.call('saveAttempt',{attempt},session.token);assert.deepEqual(retry.progress.islands,progress.islands);assert.equal(retry.attempt.awardedXp,0);
+ }
+ assert.equal(progress.islands[node.id].mastered,true);assert.equal(progress.islands[node.id].masteredCount,10);
+ const second=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.deepEqual(second.progress.islands,progress.islands);
+});
+test('Every island and lesson can be mastered; silent alternatives cannot crown audio',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});let latest;
+ for(const node of pathNodes)for(let round=0;round<3;round++){
+  const qs=getActivityQuestions(node.id,{seed:0,count:512});latest=await f.call('saveAttempt',{attempt:{id:'master-all-'+node.id+'-'+round,activityId:node.id,quizOptions:{seed:0,count:512},answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))}},session.token);assert.equal(latest.status,200,node.id);
+ }
+ assert.deepEqual(latest.progress.masteredLessons,['1A','1B','1C','1D']);
+ const clean=await fixture(),user=await clean.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.type==='listening');
+ for(let round=0;round<3;round++){
+  const qs=getActivityQuestions(node.id,{seed:0,count:512,audioEnabled:false});latest=await clean.call('saveAttempt',{attempt:{id:'silent-not-crown-'+round,activityId:node.id,quizOptions:{seed:0,audioEnabled:false},answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))}},user.token);
+ }
+ assert.equal(latest.progress.islands[node.id].mastered,false);
+});
+
+test('Hinted grammar and forged mastery flags do not grant skill crowns',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.type==='grammar');let latest;
+ for(let round=0;round<3;round++){
+  const qs=getActivityQuestions(node.id,{seed:0,count:512});latest=await f.call('saveAttempt',{attempt:{id:'hinted-grammar-'+round,activityId:node.id,mastered:true,quizOptions:{seed:0,count:512},answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer,hintUsed:true,masteryEligible:true}))}},session.token);
+ }
+ assert.equal(latest.status,200);assert.equal(latest.progress.islands[node.id].mastered,false);assert.equal(latest.progress.islands[node.id].masteredCount,0);
+});

@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-05T05:00:06.921Z",
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "pass": true,
+  "initialMastered": false,
+  "checks": [
+    {
+      "round": 1,
+      "questions": 8,
+      "mastered": 0,
+      "total": 10,
+      "duplicateSafe": true
+    },
+    {
+      "round": 2,
+      "questions": 8,
+      "mastered": 0,
+      "total": 10,
+      "duplicateSafe": true,
+      "unseenFromFirstRound": 2
+    },
+    {
+      "round": 3,
+      "questions": 8,
+      "mastered": 3,
+      "total": 10,
+      "duplicateSafe": true
+    },
+    {
+      "round": 4,
+      "questions": 7,
+      "mastered": 10,
+      "total": 10,
+      "duplicateSafe": true
+    }
+  ],
+  "secondDeviceRestore": true,
+  "profileWrites": false,
+  "isolatedExampleFixture": true,
+  "limits": [
+    "Learning writes restricted to reserved synthetic QA example; no real learner records used."
+  ]
+}

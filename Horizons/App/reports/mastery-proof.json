@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-05T04:56:45.902Z",
+  "revision": "b224d1a0f706195d28dc8527f777ed49fc8709b2",
+  "runtimeSources": {
+    "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+    "src/studio-ui.js": "f8c5f138cda7743bd9183adc0b6de39ddc8bbbe25fe576307680f3605d6312a5",
+    "src/app.js": "f13e82d63351eccc58dc109c3dde27db42a2ded6f4bb5872b5b5576e84760157",
+    "styles/app.css": "42604e8d31ff815697dd7cf467c720bc5a0512fd3779ad5aa74223fbfc189e31",
+    "index.html": "eb02fd1bd127304626dad011b7d59fba8c56f65ff695d32cf91147e7b3aeb9c2",
+    "service-worker.js": "2d4f31f55c13b81a31c754a002bf872cdaf7ced03b8caf5a0c93865aa0466e4c"
+  },
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 390,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 768,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 1440,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    }
+  ],
+  "progressFill": true,
+  "answerFeedback": true,
+  "tokenMovement": true,
+  "memory": true,
+  "reducedMotion": true,
+  "midFlightReducedMotion": true,
+  "api": "Synthetic session only; real API requests intercepted; no profile/attempt writes",
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only. Token movement uses a small DOM fixture with the production motion hooks. Visual verdict recorded after screenshot review."
+  ]
+}
