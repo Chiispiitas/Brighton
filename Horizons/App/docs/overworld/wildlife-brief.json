@@ -1,0 +1,12 @@
+{
+  "asset_id": "unit1-overworld-wildlife-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Asset: ONE small wildlife sprite strip for the Horizons New Friends Town game map. Image1 R01 brand palette; Image2 R02 simple native style reference ONLY; Image3 R07 object rendering. Two completely separate cutouts side by side with wide transparent gap: LEFT a charming tiny sky-blue bird flying right, coral beak, two simple wings, fully connected body, friendly black dot eye. RIGHT a small yellow/coral butterfly with paired symmetrical wings and tiny navy body. Native flat solid simple filled shapes. Recognizable at 20-36px. Whole silhouettes including wing tips inside their respective half. TRUE transparent background, fully opaque colors inside. No shadow/glow/gradient/texture/outline, no text, no collage framing, no other objects or characters. These sprites will move gently around the overworld."
+}

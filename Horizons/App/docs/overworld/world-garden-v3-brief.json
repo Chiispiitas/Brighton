@@ -1,0 +1,14 @@
+{
+  "asset_id": "unit1-world-garden-opaque-v3",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/overworld-unit1-v1/world-garden-native.png"
+  ],
+  "prompt": "Image1 R01 brand palette, image2 R02 native style only (no people), image3 R07 environment style, image4 exact travel garden scenery target. Recreate this same beautiful game-map scene with the boat pond at upper left, globe garden sculpture, travel pavilion at upper right, trees and flowers. Keep framing and positions. CRITICAL DIFFERENCE: ENTIRE IMAGE MUST BE FULLY OPAQUE, rectangular full-canvas art, NO ALPHA ANYWHERE. Fill the whole central open ground with one FLAT clean pale warm cream color #fff0d0. It must be completely solid, with NO gray mark, NO hole, NO blur, NO gradient, NO shading, NO transparent patch. Behind upper tree contours use solid light green #e4edca canvas background. Preserve scenery and crisp filled shapes, no lettering, no markers, no interface, no characters, no shadow. This is an opaque map background, not a cutout."
+}

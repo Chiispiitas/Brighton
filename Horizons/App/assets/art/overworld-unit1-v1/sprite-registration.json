@@ -1,0 +1,92 @@
+[
+  {
+    "file": "landmark-0.png",
+    "source": "landmarks-native.png",
+    "sourceBox": [
+      0,
+      0,
+      646,
+      608
+    ],
+    "dimensions": [
+      519,
+      517
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  },
+  {
+    "file": "landmark-1.png",
+    "source": "landmarks-native.png",
+    "sourceBox": [
+      646,
+      0,
+      1293,
+      608
+    ],
+    "dimensions": [
+      544,
+      467
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  },
+  {
+    "file": "landmark-2.png",
+    "source": "landmarks-native.png",
+    "sourceBox": [
+      0,
+      608,
+      646,
+      1217
+    ],
+    "dimensions": [
+      560,
+      503
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  },
+  {
+    "file": "landmark-3.png",
+    "source": "landmarks-native.png",
+    "sourceBox": [
+      646,
+      608,
+      1293,
+      1217
+    ],
+    "dimensions": [
+      555,
+      496
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  },
+  {
+    "file": "bird.png",
+    "source": "wildlife-native.png",
+    "sourceBox": [
+      0,
+      0,
+      1086,
+      724
+    ],
+    "dimensions": [
+      573,
+      471
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  },
+  {
+    "file": "butterfly.png",
+    "source": "wildlife-native.png",
+    "sourceBox": [
+      1086,
+      0,
+      2172,
+      724
+    ],
+    "dimensions": [
+      609,
+      411
+    ],
+    "operation": "Connected alpha selection and crop; no redrawn pixels"
+  }
+]

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T14:25:33.635Z",
-  "sourceCommit": "baa8c65c49056cda0b28965ff3401f7dc51aafe7",
+  "createdAt": "2026-11-05T15:19:18.214Z",
+  "sourceCommit": "13bcc6e04ed08354faa9a366f3d907127d1d734b",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "e9828a99cc630c0ab2a1c3406e63955beeb393f27f72d1bda8eb51ce5509be45"
+      "sha256": "86fa64bc377e8c8c90081c62c097db6a8b61292f6d10f1ad1328870cfe339b65"
     },
     {
       "file": "src/avatar-static.js",
@@ -28,6 +28,50 @@
     {
       "file": "styles/horizontal-path.css",
       "sha256": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d"
+    },
+    {
+      "file": "styles/overworld.css",
+      "sha256": "e9cff594ee960183fea3be6af160e8f5de3b8974aeca25073da7298d571181ab"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/welcome-park-native.png",
+      "sha256": "116763035d82883ff989c6eee5eb237c4f8d8edb70272222a07a5a85321274b0"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/jobs-market-native.png",
+      "sha256": "1e301ef4b40db05e3c0e6e7da4d14ed3993be6bf53b639dfe1b39336178f3894"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/world-garden-native-v3.png",
+      "sha256": "d4876792de880a075eb6c88fda6684f082962cdb1c78fe6d572e8aa6c10de99b"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/town-hall-native.png",
+      "sha256": "053af116cc60772647b84dc8b7408fa67c2dddd665825dd08686b1803a2f09e0"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-0.png",
+      "sha256": "79297819220e90572face8d52d9d9753bcf31c9de589cc8ac1be10f5f4471a2b"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-1.png",
+      "sha256": "e7ec453ce9718f8852a9df3ae2964453190234df93c2bc140d9b87ab4a2be8bf"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-2.png",
+      "sha256": "9b054bf208b5991ea587c38381aab6539df49be2b59554048d5e231b48ca71e4"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-3.png",
+      "sha256": "fbb8d2ed5c25901826714aee5dd00ee5fa3de9afff81fee51389ef8124f6bef0"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/bird.png",
+      "sha256": "8b0f8da6cda2c2acc0bf16c85a1a1e2e2ce3bbdd4e41a4a7eb78ba5a0cd86654"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/butterfly.png",
+      "sha256": "50e0fbee6a12da9dd74cff509f43ea3f576250be9009f1c723fdfee45d5b3f1e"
     }
   ],
   "references": [
@@ -35,7 +79,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
     },
     {
       "id": "R02",
@@ -71,8 +115,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+      "sha256": "f0fe0643707aaf9a5a6afdbd333ac9690d3b2ad23cfb986c004889fdae7e0992"
     }
-  ],
-  "sourceRuntimeRevision": "3aa9764e3ef436e06fb479c0e8fcb4d2aee7e4cb"
+  ]
 }

@@ -1,0 +1,506 @@
+{
+  "scope": "Horizons A1 Unit1 New Friends Town",
+  "calls": [
+    {
+      "assetId": "unit1-overworld-welcome-park-v1",
+      "brief": "welcome-park-brief.json",
+      "prompt": "Asset: Horizons Unit 1 New Friends Town video-game overworld scenery layer. Image1 R01 brand palette/flat rendering; Image2 R02 cast identity/style only, DO NOT include characters; Image3 R07 native environment/objects style. Wide landscape composition, cheerful inviting illustrated game map, slightly elevated 3/4 view, simple clean filled shapes matching Horizons native art. A rich cohesive environment, no outlines, no shadows, no gradients or modeled lighting, no texture, no labels/text/UI. Transparent background outside the scenery shapes. Objects/roofs/trees fully solid opaque. Keep a BROAD EMPTY horizontal winding-trail corridor across the middle at 50-65 percent image height, extending left edge to right edge: no objects in that corridor, it will carry interactive level nodes. Place taller scenery/buildings in the back upper half; small flowers, bushes and tiny rocks in the foreground lower edge. Complete objects in frame, safe margins. Do NOT draw any paths, circles, level markers, avatar, animals, interface, signs with text, characters, borders or frames. This is an environment layer, not a website mockup. District: Welcome Park. A sunny village green with a pink-roof friendly cottage/cafe toward the upper right, curved leafy trees, wooden park bench, colorful flower beds, small welcome arch toward upper left, playful stepping-garden grass shapes. Pale fresh greens, coral, magenta and warm cream. Cozy and fun, lots of charming environmental detail without cluttering the empty middle corridor.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2e7d6200-4fb4-46bb-974c-48c710e36b76.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/welcome-park-native.png",
+      "sha256": "116763035d82883ff989c6eee5eb237c4f8d8edb70272222a07a5a85321274b0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    },
+    {
+      "assetId": "unit1-overworld-jobs-market-v1",
+      "brief": "jobs-market-brief.json",
+      "prompt": "Asset: Horizons Unit 1 New Friends Town video-game overworld scenery layer. Image1 R01 brand palette/flat rendering; Image2 R02 cast identity/style only, DO NOT include characters; Image3 R07 native environment/objects style. Wide landscape composition, cheerful inviting illustrated game map, slightly elevated 3/4 view, simple clean filled shapes matching Horizons native art. A rich cohesive environment, no outlines, no shadows, no gradients or modeled lighting, no texture, no labels/text/UI. Transparent background outside the scenery shapes. Objects/roofs/trees fully solid opaque. Keep a BROAD EMPTY horizontal winding-trail corridor across the middle at 50-65 percent image height, extending left edge to right edge: no objects in that corridor, it will carry interactive level nodes. Place taller scenery/buildings in the back upper half; small flowers, bushes and tiny rocks in the foreground lower edge. Complete objects in frame, safe margins. Do NOT draw any paths, circles, level markers, avatar, animals, interface, signs with text, characters, borders or frames. This is an environment layer, not a website mockup. District: Makers Market. Friendly village shops: a tiny bakery with striped amber awning and bread display, a teal workshop, planters and tools arranged around upper edges, market crates in foreground corners. A nice lively little town square, warm amber and teal roofs, leafy trees and flower patches, the middle corridor completely open.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-b712d895-c10b-4348-ae2d-d5c0973bde02.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/jobs-market-native.png",
+      "sha256": "1e301ef4b40db05e3c0e6e7da4d14ed3993be6bf53b639dfe1b39336178f3894",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    },
+    {
+      "assetId": "unit1-overworld-landmarks-v1",
+      "brief": "landmarks-brief.json",
+      "prompt": "Asset: one 2x2 landmark sprite atlas for Horizons New Friends Town video-game map. Image1 R01 brand; Image2 R02 cast style ONLY (no characters); Image3 R07 environment style. FOUR clearly SEPARATE complete buildings on TRUE TRANSPARENT background, each centered in its own equal quadrant with wide empty gutters, no touching and no terrain connecting them. Top left: coral pink-roof cozy cafe cottage with welcoming doorway. Top right: amber market/bakery with striped awning. Bottom left: teal-roof small travel pavilion with a tiny globe motif. Bottom right: peach and magenta town hall with two short castle-like friendly towers and little golden flags. View slightly elevated frontal 3/4, recognizable at 100px. Entire roofs/flags/buildings inside cells. Solid opaque walls/windows. Flat playful native Horizons shapes, no outlines, no shadows, no gradients or modeled lighting, no lettering, no UI circles, no characters, no backdrop, no grid lines, no labels. These buildings will be actual clickable final levels; give each a clear entrance at bottom center.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-22812c5a-ecfb-4263-a509-fc85645326be.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/landmarks-native.png",
+      "sha256": "8ae1203626195a114bbd43f1a47f4a153ccd4f99a40c93398198aa419666ff14",
+      "dimensions": [
+        1293,
+        1217
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    },
+    {
+      "assetId": "unit1-overworld-world-garden-v1",
+      "brief": "world-garden-brief.json",
+      "prompt": "Asset: Horizons Unit 1 New Friends Town video-game overworld scenery layer. Image1 R01 brand palette/flat rendering; Image2 R02 cast identity/style only, DO NOT include characters; Image3 R07 native environment/objects style. Wide landscape composition, cheerful inviting illustrated game map, slightly elevated 3/4 view, simple clean filled shapes matching Horizons native art. A rich cohesive environment, no outlines, no shadows, no gradients or modeled lighting, no texture, no labels/text/UI. Transparent background outside the scenery shapes. Objects/roofs/trees fully solid opaque. Keep a BROAD EMPTY horizontal winding-trail corridor across the middle at 50-65 percent image height, extending left edge to right edge: no objects in that corridor, it will carry interactive level nodes. Place taller scenery/buildings in the back upper half; small flowers, bushes and tiny rocks in the foreground lower edge. Complete objects in frame, safe margins. Do NOT draw any paths, circles, level markers, avatar, animals, interface, signs with text, characters, borders or frames. This is an environment layer, not a website mockup. District: Travel Garden. A tiny blue travel pavilion/station toward upper right, little harbor pond with a simple cream sailboat toward upper left, a globe sculpture in a planted corner, curved trees and colorful pennant details without text, reed/flower patches at foreground corners. Teal, pale aqua, leafy green and coral. Keep the whole central corridor empty.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd648b9a-6883-446d-b306-d0f4d7de2e3e.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/world-garden-native.png",
+      "sha256": "2239a6d414a33d2a5846fb4da7e9b4a23dcba133f2d7ed3d783fb536a4242b29",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": false,
+      "verdict": "Rejected: blotchy/erased central ground; not in active mappings"
+    },
+    {
+      "assetId": "unit1-overworld-town-hall-v1",
+      "brief": "town-hall-brief.json",
+      "prompt": "Asset: Horizons Unit 1 New Friends Town video-game overworld scenery layer. Image1 R01 brand palette/flat rendering; Image2 R02 cast identity/style only, DO NOT include characters; Image3 R07 native environment/objects style. Wide landscape composition, cheerful inviting illustrated game map, slightly elevated 3/4 view, simple clean filled shapes matching Horizons native art. A rich cohesive environment, no outlines, no shadows, no gradients or modeled lighting, no texture, no labels/text/UI. Transparent background outside the scenery shapes. Objects/roofs/trees fully solid opaque. Keep a BROAD EMPTY horizontal winding-trail corridor across the middle at 50-65 percent image height, extending left edge to right edge: no objects in that corridor, it will carry interactive level nodes. Place taller scenery/buildings in the back upper half; small flowers, bushes and tiny rocks in the foreground lower edge. Complete objects in frame, safe margins. Do NOT draw any paths, circles, level markers, avatar, animals, interface, signs with text, characters, borders or frames. This is an environment layer, not a website mockup. District: Friends Town Hall. A beautiful little welcoming peach/cream civic hall with magenta roof and two friendly short towers toward upper right, broad doorway and little amber flags; flowering gardens, rounded trees and celebration bunting above the back edge. This is the final neighborhood, warm and celebratory, not a fortress or combat setting. Keep the middle corridor fully empty.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-775e165b-d021-4141-83db-322660653bc2.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/town-hall-native.png",
+      "sha256": "053af116cc60772647b84dc8b7408fa67c2dddd665825dd08686b1803a2f09e0",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    },
+    {
+      "assetId": "unit1-overworld-wildlife-v1",
+      "brief": "wildlife-brief.json",
+      "prompt": "Asset: ONE small wildlife sprite strip for the Horizons New Friends Town game map. Image1 R01 brand palette; Image2 R02 simple native style reference ONLY; Image3 R07 object rendering. Two completely separate cutouts side by side with wide transparent gap: LEFT a charming tiny sky-blue bird flying right, coral beak, two simple wings, fully connected body, friendly black dot eye. RIGHT a small yellow/coral butterfly with paired symmetrical wings and tiny navy body. Native flat solid simple filled shapes. Recognizable at 20-36px. Whole silhouettes including wing tips inside their respective half. TRUE transparent background, fully opaque colors inside. No shadow/glow/gradient/texture/outline, no text, no collage framing, no other objects or characters. These sprites will move gently around the overworld.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d6f5e4a3-ede2-4fde-827a-886a8ce26a6c.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/wildlife-native.png",
+      "sha256": "1a89ea83e2a7b08d8f41c5251b9ec0abfafb6655b0ede7f65703cc0549669ed7",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    },
+    {
+      "assetId": "unit1-world-garden-ground-repair-v2",
+      "brief": "world-garden-v2-brief.json",
+      "prompt": "Image1 R01 brand, Image2 R02 cast style only (no people), Image3 R07 environment style, Image4 EXACT travel garden environment edit target. Repair ONLY the blotchy partially transparent patch in the middle of the cream open ground area. Make the whole central cream ground area fully opaque, smooth and FLAT UNIFORM pale warm cream, with no gray blur, no hole, no translucency, no shading, no gradient. Preserve every building, tree, pond, boat, globe, flower, grass edge and exact framing/positions. Preserve transparency ONLY outside the upper scenery silhouettes. No new objects, text, paths or UI. This is a precision alpha/ground repair of the same native game scenery.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\overworld-unit1-v1\\world-garden-native.png",
+          "sha256": "2239a6d414a33d2a5846fb4da7e9b4a23dcba133f2d7ed3d783fb536a4242b29"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\overworld-unit1-v1\\world-garden-native.png"
+      ],
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6af74c61-1987-432f-88d6-dafccf143514.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/world-garden-rejected-v2.png",
+      "sha256": "66cf958134a15dc4232a0d87c1026974d9304c800062e0155ff6f02cbed08b9c",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": false,
+      "verdict": "Rejected: blotchy/erased central ground; not in active mappings"
+    },
+    {
+      "assetId": "unit1-world-garden-opaque-v3",
+      "brief": "world-garden-v3-brief.json",
+      "prompt": "Image1 R01 brand palette, image2 R02 native style only (no people), image3 R07 environment style, image4 exact travel garden scenery target. Recreate this same beautiful game-map scene with the boat pond at upper left, globe garden sculpture, travel pavilion at upper right, trees and flowers. Keep framing and positions. CRITICAL DIFFERENCE: ENTIRE IMAGE MUST BE FULLY OPAQUE, rectangular full-canvas art, NO ALPHA ANYWHERE. Fill the whole central open ground with one FLAT clean pale warm cream color #fff0d0. It must be completely solid, with NO gray mark, NO hole, NO blur, NO gradient, NO shading, NO transparent patch. Behind upper tree contours use solid light green #e4edca canvas background. Preserve scenery and crisp filled shapes, no lettering, no markers, no interface, no characters, no shadow. This is an opaque map background, not a cutout.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": false,
+      "preflightPassedBeforeCall": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\overworld-unit1-v1\\world-garden-native.png",
+          "sha256": "2239a6d414a33d2a5846fb4da7e9b4a23dcba133f2d7ed3d783fb536a4242b29"
+        }
+      ],
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\overworld-unit1-v1\\world-garden-native.png"
+      ],
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-203a1d74-41e1-4f5f-a272-32f42f1effff.png",
+      "repositoryNative": "assets/art/overworld-unit1-v1/world-garden-native-v3.png",
+      "sha256": "d4876792de880a075eb6c88fda6684f082962cdb1c78fe6d572e8aa6c10de99b",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected after native and composed world review"
+    }
+  ],
+  "maximumImageInputs": 7,
+  "nativeFilesUntouched": true,
+  "spriteRecipe": "tools/prepare-overworld-sprites.py",
+  "spriteRegistration": "assets/art/overworld-unit1-v1/sprite-registration.json",
+  "activeAssets": [
+    {
+      "file": "assets/art/overworld-unit1-v1/welcome-park-native.png",
+      "sha256": "116763035d82883ff989c6eee5eb237c4f8d8edb70272222a07a5a85321274b0",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/jobs-market-native.png",
+      "sha256": "1e301ef4b40db05e3c0e6e7da4d14ed3993be6bf53b639dfe1b39336178f3894",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/world-garden-native-v3.png",
+      "sha256": "d4876792de880a075eb6c88fda6684f082962cdb1c78fe6d572e8aa6c10de99b",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/town-hall-native.png",
+      "sha256": "053af116cc60772647b84dc8b7408fa67c2dddd665825dd08686b1803a2f09e0",
+      "dimensions": [
+        1672,
+        941
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/bird.png",
+      "sha256": "8b0f8da6cda2c2acc0bf16c85a1a1e2e2ce3bbdd4e41a4a7eb78ba5a0cd86654",
+      "dimensions": [
+        573,
+        471
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/butterfly.png",
+      "sha256": "50e0fbee6a12da9dd74cff509f43ea3f576250be9009f1c723fdfee45d5b3f1e",
+      "dimensions": [
+        609,
+        411
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-0.png",
+      "sha256": "79297819220e90572face8d52d9d9753bcf31c9de589cc8ac1be10f5f4471a2b",
+      "dimensions": [
+        519,
+        517
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-1.png",
+      "sha256": "e7ec453ce9718f8852a9df3ae2964453190234df93c2bc140d9b87ab4a2be8bf",
+      "dimensions": [
+        544,
+        467
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-2.png",
+      "sha256": "9b054bf208b5991ea587c38381aab6539df49be2b59554048d5e231b48ca71e4",
+      "dimensions": [
+        560,
+        503
+      ]
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-3.png",
+      "sha256": "fbb8d2ed5c25901826714aee5dd00ee5fa3de9afff81fee51389ef8124f6bef0",
+      "dimensions": [
+        555,
+        496
+      ]
+    }
+  ],
+  "rejectedFiles": [
+    "world-garden-native.png",
+    "world-garden-rejected-v2.png"
+  ],
+  "review": "Native raw images inspected; world/landmarks viewed in composed app by root and Codex subagent /root/overworld_qa. Garden V3 replaces both rejected alpha attempts. Minor native color variation retained; no code-painted substitute imagery.",
+  "archivedReferenceInputs": [
+    {
+      "file": "docs/overworld/inputs/01-brand.png",
+      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+    },
+    {
+      "file": "docs/overworld/inputs/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "file": "docs/overworld/inputs/07-scenes-vocabulary-ui.png",
+      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+    }
+  ]
+}

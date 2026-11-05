@@ -125,3 +125,7 @@ Limits: Edge/Chromium automation; controlled hidden-document event fixture. No p
 ## Carry-forward package
 
 Carry this audit, image-production guide, reference manifests/boards, native baseline, selected raw parts, briefs/provenance, preparation recipes, renderer, proof scripts and source-bound reports. Rejected parts, skin-patch expressions, four-idle timing, fades and abandoned articulated rigs remain historical; they must not become new production instructions. Adapt motion to the newly requested action while preserving these process/quality rules.
+
+## Overworld motion extension
+
+The latest request separately authorizes saved-avatar hover/focus travel and decorative bird/butterfly flight. They use full-opacity transforms, native generated cutouts, reduced-motion static states and offscreen/hidden-tab pause/disposal. No new articulated avatar anatomy or other cast animation is authorized. Pico's rig and timing are unchanged. See [OVERWORLD.md](OVERWORLD.md), [new art provenance](overworld/production-record.json), src/overworld-motion.js and the source-bound overworld reports. Exact old reference inputs are archived before R07 was refreshed with the new scenery.

@@ -160,3 +160,7 @@ Publish through the website process audit. Keep a reversible baseline and verify
 ## Scoped animation exception
 
 The user reopened animation for Unit 1 banner Pico only. New parts still require this preflight and actual references. The separate ANIMATION-AUDIT.md governs reconstruction-first acceptance, mechanical masking/registration, motion, fallback, independent review and release. This does not authorize old rig reuse or motion elsewhere.
+
+## Overworld imagery
+
+R07 now includes the selected Unit 1 environments, building landmarks and wildlife cutouts. The map theme/production records are in OVERWORLD.md and docs/overworld/production-record.json. New environment art uses the same mandatory scene references and seven-total input cap. If transparent generation erases walkable ground, reject it and change to an intentionally opaque scene rather than keeping a hole or repeatedly retrying the same alpha approach. Native outputs remain untouched; atlas sprites use recorded mechanical alpha selection/crops.

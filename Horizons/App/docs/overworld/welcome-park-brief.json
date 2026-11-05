@@ -1,0 +1,12 @@
+{
+  "asset_id": "unit1-overworld-welcome-park-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Asset: Horizons Unit 1 New Friends Town video-game overworld scenery layer. Image1 R01 brand palette/flat rendering; Image2 R02 cast identity/style only, DO NOT include characters; Image3 R07 native environment/objects style. Wide landscape composition, cheerful inviting illustrated game map, slightly elevated 3/4 view, simple clean filled shapes matching Horizons native art. A rich cohesive environment, no outlines, no shadows, no gradients or modeled lighting, no texture, no labels/text/UI. Transparent background outside the scenery shapes. Objects/roofs/trees fully solid opaque. Keep a BROAD EMPTY horizontal winding-trail corridor across the middle at 50-65 percent image height, extending left edge to right edge: no objects in that corridor, it will carry interactive level nodes. Place taller scenery/buildings in the back upper half; small flowers, bushes and tiny rocks in the foreground lower edge. Complete objects in frame, safe margins. Do NOT draw any paths, circles, level markers, avatar, animals, interface, signs with text, characters, borders or frames. This is an environment layer, not a website mockup. District: Welcome Park. A sunny village green with a pink-roof friendly cottage/cafe toward the upper right, curved leafy trees, wooden park bench, colorful flower beds, small welcome arch toward upper left, playful stepping-garden grass shapes. Pale fresh greens, coral, magenta and warm cream. Cozy and fun, lots of charming environmental detail without cluttering the empty middle corridor."
+}

@@ -1,3 +1,5 @@
+> Current enhancement: the horizontal route is now the Unit 1 game overworld described in [OVERWORLD.md](OVERWORLD.md), including wheel conversion, hover traveller, buildings and animated wildlife. This document records the underlying horizontal-path release; avatar-above/static-marker statements below are historical.
+
 # Horizontal unit path — current layout
 
 The user superseded the fieldguide redesign and requested the exact earlier compact design, changing only the trail to a horizontal path inspired by their world-map clip. They then requested that the path character be the learner's avatar. The fieldguide design and its reports are historical, not current presentation requirements.

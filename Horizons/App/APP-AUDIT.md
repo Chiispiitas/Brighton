@@ -73,7 +73,9 @@ The Learn page has no promotional right sidebar, daily-invitation card or word-c
 - Mobile navigation retains Profile access.
 - Page headers contain the book switcher and authoritative XP/streak amounts, without a player-avatar picture.
 - Preserve the previous compact design. The latest layout request replaces only the vertical trail with one horizontally scrollable unit route, using gentle sideways S bends and continuous joins through the same island centers. Four lessons sit side by side in the same order. Keep all activity IDs, orb states, headers, native inanimate decorations, sidebar, compact hero and popovers.
-- Use the learner's saved native avatar as a static traveller marker above the selected/current activity. Reuse their saved hair/clothes/colors; do not invent new anatomy or a walking rig. Keep it clear of the full touch target.
+- Unit 1 is New Friends Town: native ImageGen park/café, jobs market, travel garden and town hall scenery. The final activity of each lesson is a native building landmark with the same ID and completion/mastery states.
+- The saved native avatar bubble travels below the route on hover and keyboard focus, without starting activities or changing progress. Click/tap still selects and opens the compact details. Reuse saved hair/clothes/colors; no new articulated walking anatomy. Keep the bubble clear of full normal/building hit areas.
+- Normal mouse wheel down moves right and up moves left inside the overworld. Preserve zoom and native horizontal gestures; return unconsumed scrolling to the page at horizontal endpoints. Do not hijack wheel input outside the map.
 - Support manual swipe/scroll, keyboard access and optional left/right panning controls. Do not turn the buttons into lesson-jump shortcuts or hijack ordinary vertical scrolling. No body-wide horizontal overflow.
 - Islands have no permanent title/count/duration/step labels. Tap or keyboard activation opens a small non-modal speech bubble at the island/cursor.
 - The bubble contains the name, count, duration and Start. Keep it within the viewport, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.
@@ -96,7 +98,7 @@ Date of birth is optional and private. A future social feature is a separate pro
 
 ### Motion and accessibility
 
-All characters and avatars stay static except Unit 1 banner Pico, whose existing faceless reading rig and no-fade rules are governed by [ANIMATION-AUDIT.md](docs/ANIMATION-AUDIT.md). The path traveller reuses the learner's static native avatar; it marks selection without articulated motion.
+Unit 1 banner Pico keeps the approved faceless reading rig and no-fade rules in [ANIMATION-AUDIT.md](docs/ANIMATION-AUDIT.md). The latest overworld request additionally permits the saved-avatar bubble to glide on hover/focus and decorative bird/butterfly flight/wing-squeeze loops. These use transforms at full opacity, pause offscreen/hidden and become static with reduced motion. Other cast and avatar anatomy remain static; no articulated walking rig is introduced. See [OVERWORLD.md](docs/OVERWORLD.md).
 
 The 4 November video-reference request authorizes finite interface motion: button presses, badge/selection feedback, sliding tab highlights, section text entrances, path-bubble pop-ins, progress fills and answer-tile movement. Preserve the accepted layout and flat visual identity. Do not animate characters or containers holding them; the earlier whole-avatar preview bounce is now removed. The existing native ImageGen sparkle may reveal briefly after an avatar option changes. All feedback must settle, never loop, and respect reduced motion, including cancelling active feedback if that preference changes. See [UI-MOTION.md](docs/UI-MOTION.md).
 

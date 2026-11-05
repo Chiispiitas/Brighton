@@ -1,0 +1,14 @@
+{
+  "asset_id": "unit1-world-garden-ground-repair-v2",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/overworld-unit1-v1/world-garden-native.png"
+  ],
+  "prompt": "Image1 R01 brand, Image2 R02 cast style only (no people), Image3 R07 environment style, Image4 EXACT travel garden environment edit target. Repair ONLY the blotchy partially transparent patch in the middle of the cream open ground area. Make the whole central cream ground area fully opaque, smooth and FLAT UNIFORM pale warm cream, with no gray blur, no hole, no translucency, no shading, no gradient. Preserve every building, tree, pond, boat, globe, flower, grass edge and exact framing/positions. Preserve transparency ONLY outside the upper scenery silhouettes. No new objects, text, paths or UI. This is a precision alpha/ground repair of the same native game scenery."
+}

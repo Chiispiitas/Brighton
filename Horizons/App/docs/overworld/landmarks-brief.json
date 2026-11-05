@@ -1,0 +1,12 @@
+{
+  "asset_id": "unit1-overworld-landmarks-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Asset: one 2x2 landmark sprite atlas for Horizons New Friends Town video-game map. Image1 R01 brand; Image2 R02 cast style ONLY (no characters); Image3 R07 environment style. FOUR clearly SEPARATE complete buildings on TRUE TRANSPARENT background, each centered in its own equal quadrant with wide empty gutters, no touching and no terrain connecting them. Top left: coral pink-roof cozy cafe cottage with welcoming doorway. Top right: amber market/bakery with striped awning. Bottom left: teal-roof small travel pavilion with a tiny globe motif. Bottom right: peach and magenta town hall with two short castle-like friendly towers and little golden flags. View slightly elevated frontal 3/4, recognizable at 100px. Entire roofs/flags/buildings inside cells. Solid opaque walls/windows. Flat playful native Horizons shapes, no outlines, no shadows, no gradients or modeled lighting, no lettering, no UI circles, no characters, no backdrop, no grid lines, no labels. These buildings will be actual clickable final levels; give each a clear entrance at bottom center."
+}

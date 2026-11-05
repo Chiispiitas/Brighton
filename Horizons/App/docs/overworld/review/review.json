@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-05T15:24:28.764589+00:00",
+  "reviewers": [
+    "Codex root",
+    "Codex subagent /root/overworld_qa"
+  ],
+  "scope": "Native generated art and final composed desktop/mobile app, synthetic state only",
+  "checks": [
+    "Native originals byte-identical to ImageGen files, exact source hashes in production-record.json",
+    "Eight calls used three/four actual image inputs, mandatory R01/R02/R07 preserved in archived input sheets",
+    "Travel Garden v1/v2 rejected for center/alpha defects; opaque V3 accepted",
+    "Four final clickable native building landmarks, consistent native art crop, visible crown/check states",
+    "Saved avatar bubble below island hit targets, full hair preserved",
+    "Final 390px view no heading/floating Unit indicator collision",
+    "No fades in new world fauna or marker movement; reduced motion static",
+    "Landmark accessible names include their visible place labels for voice control"
+  ],
+  "screens": [
+    "garden-review-1440.png",
+    "world-details-390.png",
+    "world-end-1440.png",
+    "world-reduced-motion.png",
+    "world-start-1440.png",
+    "world-start-390.png"
+  ],
+  "limits": [
+    "Edge/Chromium desktop emulation, not physical device or Safari/Firefox",
+    "Only Unit 1 has implemented curriculum/theme",
+    "Generated art retains minor native color variation; no code repainting"
+  ],
+  "independentApproval": "PASS after landmark visible-place accessible-name correction; no remaining material regression/accessibility/lifecycle issue",
+  "rootProvenance": "All eight native originals match exact ImageGen outputs; active assets and archived reference hashes verified"
+}
