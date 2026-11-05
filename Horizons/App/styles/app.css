@@ -186,3 +186,8 @@ button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform
 
 /* Leave clear space below the title before Pico's ears on small screens. */
 @media(max-width:680px){.hero-pico{height:166px;width:114px;bottom:14px}.hero-copy>p{max-width:calc(100% - 110px)}}
+
+/* One continuous serpentine trail, in the same reading/tab order as the activities. */
+.lesson-trail{display:flex;flex-direction:column;gap:6px;padding:12px 0 18px}
+.lesson-trail .path-stop{position:relative;left:calc(var(--path-x) - 90px);flex:none;width:180px;max-width:180px;height:136px;margin:0;grid-area:auto}
+@media(max-width:680px){.lesson-trail .path-stop{left:calc(var(--path-x) - 75px);width:150px;max-width:150px;height:136px}.lesson-trail .stop-label b{font-size:12px}}

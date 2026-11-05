@@ -15,7 +15,7 @@ This audit governs the companion app. The book's existing audit remains authorit
 ## Static visual design
 
 - The current edition is entirely still. This supersedes earlier articulated, blink, gesture, float and pose-sequence requirements. No autonomous animation, CSS keyframes, picture transitions, hover movement, blinking, breathing, bobbing, parallax or animation runtime may be active. Choosing an avatar option or answering a question may replace the still image immediately.
-- Preserve the Horizons wordmark, supplied M PLUS Rounded1c and lively magenta, orange, navy, teal and warm-white identity. Keep the open minimal interface and compact symmetrical lesson path.
+- Preserve the Horizons wordmark, supplied M PLUS Rounded1c and lively magenta, orange, navy, teal and warm-white identity. Keep the open minimal interface and symmetrical serpentine lesson path.
 - Use newly generated complete ImageGen stills for the recurring cast, occupations, avatar layers and scene illustrations. Keep native PNGs, genuine alpha, prompts and provenance. Do not substitute hand-drawn character vectors or turn old animation frames into the replacement art.
 - Illustrations use simple solid-color geometric shapes. No outlines, borders, cast/ground/drop shadows, modeled shading, gradients, glossy highlights, lighting, texture or3D effects. Inspect them on the real page background at normal and enlarged size. A structural size check does not establish stylistic quality.
 - Pico, Mina, Alex and Jo retain their identities and welcoming faces. Pico has two separate gentle eyebrows. Use a small set of purposeful complete poses suited to reading, welcoming, exploring and success, without showing animation between them.
@@ -50,3 +50,5 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Curate accessories for the actual portrait crop. The current selection is None, round glasses, rectangular glasses and sunglasses. Bags, scarves, hats and oversized headphones are retired.
 - Fit eyewear to the measured eye centers for each native base/skin; use one uniform scale and genuinely transparent clear lenses. Check all hairstyles, both bases, clothing and small navigation portraits.
 - Retired saved accessory IDs render as None and select None in the editor; do not silently reinterpret a retired bag as a new face accessory. Other saved profile fields remain intact. The remaining supported IDs1–3 now name the three reviewed eyewear choices.
+
+- Learning paths use one activity per row, evenly spaced along mirrored left/center/right curves. Keep the SVG connector through orb centers, preserve activity and keyboard order, and keep labels inside the viewport without overlap.
