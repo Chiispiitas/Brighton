@@ -1,5 +1,30 @@
 # Interface motion
 
+## Current exercise feedback — 5 November 2026
+
+The latest exercise feedback uses a prominent green or coral result panel, a check/cross badge, explicit **Correct!**/**Not quite** text, and a matching Continue button. Wrong results label the correct answer and show an existing explanation when supplied. Correct-answer arrays are displayed as words separated by spaces. Results remain until the user continues; grading, mastery, rewards and listening privacy are unchanged. The panel stays visible on long exercises, and keyboard focus moves to Continue without forcing a page scroll.
+
+| Element | Current finite motion |
+| --- | --- |
+| Result panel |14px rise,260ms |
+| Correct badge | Scale.55→1.15→1 with small rotation,420ms |
+| Incorrect badge | Scale.8→1.05→1,420ms |
+| Continue |3px press/rise/settle,340ms |
+| Wrong typed answer, choice or sentence container | Brief horizontal nudge−5/+4/−2/0px,300ms |
+| Correct progress track | Vertical pulse1→1.3→1,380ms; earned progress is not changed |
+
+The feedback controls animate; cast artwork does not. Word tiles keep their neutral stone color. Reduced motion shows the same clear result instantly and cancels UI effects. No sounds, auto-advance, generated art or new character motion were added.
+
+The user's `20261105-2107-06.8411436.mp4` supplied the result-strip/check/cross/button inspiration. It was inspected through contact frames; its character, language content and branding are not reused. [Desktop correct preview](exercise-feedback/1440-correct.png) and [mobile wrong preview](exercise-feedback/390-wrong.png) are synthetic actual-renderer captures.
+
+[exercise-feedback-proof.mjs](../tools/exercise-feedback-proof.mjs) exercises actual grading/rendering with injected fictional question state. [Local report](../reports/exercise-feedback.json): correct/wrong typed answers at320/390/768/1440px, choice/order results, neutral tiles, visible feedback on long mobile content, focus, finite motion, static cast, reduced motion and no listening-answer reveal before grading. No real learner records. Edge/Chromium only; no physical-device or screen-reader approval claimed.
+
+A tile interaction regression was also fixed: pointer capture now begins only after a drag crosses its threshold, leaving ordinary tile clicks functional. Native drag paths and click/keyboard alternatives remain.
+
+Current cache: `horizons-companion-answer-feedback-v52`; queries:`feedback1`. The original v20 source/release notes below are historical. Avatar/Pico/bird rules are maintained separately in [ANIMATION-AUDIT.md](ANIMATION-AUDIT.md).
+
+
+
 Requested 4 November 2026 (America/Bogota), using the supplied 37-second Duolingo recording `20261105-0334-38.7016913.mp4` as a motion reference. The reference informs timing and interaction, not a redesign or a copy of its styling. No character animation is authorized.
 
 ## Behavior

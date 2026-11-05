@@ -333,3 +333,20 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .avatar-option[data-avatar-group="hair"] .avatar-option-art{filter:brightness(0)!important}
 
 .sentence-answer>button,.sentence-tokens>button{background:#e9e6df;color:var(--ink);border:1px solid #d4d0c6;box-shadow:0 2px 0 #d4d0c6;touch-action:none;cursor:grab}.sentence-tokens>button:disabled{cursor:default}.sentence-answer{min-height:95px}
+
+/* A clear result band for every checked exercise; controls stay in normal flow. */
+.answer-footer.feedback-correct,.answer-footer.feedback-gentle{--result-ink:#246b3f;--result-fill:#e7f5e9;--result-edge:#c4e4cd;background:var(--result-fill);border:1px solid var(--result-edge);border-radius:24px;padding:22px 24px;margin-bottom:24px;gap:20px;position:sticky;bottom:0;z-index:8}
+.answer-footer.feedback-gentle{--result-ink:#ad3d34;--result-fill:#fff0e9;--result-edge:#efcbbf}
+.answer-footer .answer-feedback{display:flex;gap:16px;align-items:flex-start;min-width:0;flex:1}
+.answer-feedback-icon{display:flex;align-items:center;justify-content:center;width:54px;height:54px;flex:none;border-radius:50%;background:white;color:var(--result-ink);box-shadow:0 3px 0 var(--result-edge)}
+.answer-feedback-icon svg{width:28px;height:28px}
+.answer-feedback-copy{min-width:0;overflow-wrap:anywhere}
+.answer-feedback .answer-feedback-copy>b{display:block;font-size:24px;font-weight:900;color:var(--result-ink);line-height:1.3;margin-bottom:5px}
+.answer-feedback-copy>small{display:block;font-size:12px;font-weight:800;color:var(--result-ink);margin:7px 0 3px}
+.answer-feedback .answer-feedback-copy>p{font-size:17px!important;line-height:1.5;color:var(--ink);font-weight:700}
+.answer-feedback .answer-feedback-copy>.answer-explanation{font-size:13px!important;font-weight:400;margin-top:7px}
+.answer-footer.feedback-correct>.primary-button,.answer-footer.feedback-gentle>.primary-button{background:var(--result-ink);color:white;box-shadow:0 4px 0 color-mix(in srgb,var(--result-ink),black 22%);min-width:138px}
+.activity-page[data-answer-state=correct] .typed-answer{outline:2px solid #459563;outline-offset:2px}
+.activity-page[data-answer-state=incorrect] .typed-answer{outline:2px solid #cf6a57;outline-offset:2px}
+.activity-page[data-answer-state=correct] .sentence-answer{outline:2px solid #459563;outline-offset:2px}
+@media(max-width:600px){.answer-footer.feedback-correct,.answer-footer.feedback-gentle{padding:18px 16px;gap:14px;flex-wrap:wrap;border-radius:20px;margin-bottom:16px}.answer-footer .answer-feedback{flex-basis:100%;gap:12px}.answer-feedback-icon{width:42px;height:42px}.answer-feedback-icon svg{width:23px;height:23px}.answer-feedback .answer-feedback-copy>b{font-size:21px}.answer-feedback .answer-feedback-copy>p{font-size:16px!important}.answer-footer.feedback-correct>.primary-button,.answer-footer.feedback-gentle>.primary-button{margin-left:auto;min-width:130px}}

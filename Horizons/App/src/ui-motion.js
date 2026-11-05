@@ -82,7 +82,16 @@ export function enhanceMotion(root, before) {
   if (track && before.track !== undefined && before.track !== track.style.width) {
     animateUI(track,[{width:before.track},{width:track.style.width}],{duration:360});
   }
-  if (!before.feedback && root.querySelector('.answer-feedback')) arrive(root.querySelector('.answer-feedback'));
+  const result=root.querySelector('.answer-feedback');
+  if (!before.feedback && result) {
+    const correct=!!result.closest('.feedback-correct'),footer=result.closest('.answer-footer');
+    animateUI(footer,[{transform:'translateY(14px)'},{transform:'translateY(0)'}],{duration:260});
+    animateUI(result.querySelector('.answer-feedback-icon'),correct?[{transform:'scale(.55) rotate(-15deg)'},{transform:'scale(1.15) rotate(5deg)',offset:.65},{transform:'scale(1) rotate(0)'}]:[{transform:'scale(.8)'},{transform:'scale(1.05)',offset:.6},{transform:'scale(1)'}],{duration:420});
+    animateUI(footer.querySelector('.primary-button'),[{transform:'translateY(3px)'},{transform:'translateY(-2px)',offset:.6},{transform:'translateY(0)'}],{duration:340});
+    const response=root.querySelector('#typed-answer,.sentence-answer,.answer-option.incorrect');
+    if(!correct)animateUI(response,[{transform:'translateX(0)'},{transform:'translateX(-5px)',offset:.2},{transform:'translateX(4px)',offset:.4},{transform:'translateX(-2px)',offset:.7},{transform:'translateX(0)'}],{duration:300});
+    else animateUI(root.querySelector('.activity-track'),[{transform:'scaleY(1)'},{transform:'scaleY(1.3)',offset:.45},{transform:'scaleY(1)'}],{duration:380});
+  }
   if (!changedScreen) {
     for (const control of root.querySelectorAll(keyedControls)) {
       const previous = before.controls.get(controlKey(control));
@@ -91,7 +100,7 @@ export function enhanceMotion(root, before) {
         animateUI(control,[{transform:'scaleX(.86)'},{transform:'scaleX(1)'}],{duration:220});
       } else if (control.matches('.chunk-option')) {
         animateUI(control.querySelector('.chunk-check'),[{transform:'scale(.75)'},{transform:'scale(1.12)',offset:.65},{transform:'scale(1)'}]);
-      } else if (control.matches('.selected,.matched,.correct')) {
+      } else if (control.matches('.selected,.matched,.correct')&&!control.matches('.incorrect')) {
         animateUI(control,[{transform:'scale(.97)'},{transform:'scale(1.025)',offset:.65},{transform:'scale(1)'}]);
       }
     }

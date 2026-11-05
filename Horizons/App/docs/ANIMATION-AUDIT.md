@@ -1,5 +1,8 @@
 # Horizons animation production audit
 
+Latest exercise feedback: result-panel, badge, button, answer nudge and progress pulse are finite interface motion only; see [UI-MOTION.md](UI-MOTION.md). Cast and avatar animation contracts remain unchanged.
+
+
 Latest editor feedback: first look-around begins after500ms, easing to its first pose at1900ms; the existing20-second varied gaze pattern is retained. Each avatar option change (skin, clothes, hair, eyewear, badge, hair color or background) triggers an immediate140ms eye-only blink alongside customization feedback, including changes queued while art loads. Reduced motion remains neutral with no feedback animation. Face/glasses tracking, fixed background, immediate lesson entry and stable path scroll remain. Cache avatar-editor-v49; queries look2.
 
 

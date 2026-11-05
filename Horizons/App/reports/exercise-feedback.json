@@ -1,0 +1,51 @@
+{
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "pass": true,
+  "reference": "20261105-2107-06.8411436.mp4",
+  "samples": [
+    {
+      "width": 320,
+      "correct": true
+    },
+    {
+      "width": 320,
+      "correct": false
+    },
+    {
+      "width": 390,
+      "correct": true
+    },
+    {
+      "width": 390,
+      "correct": false
+    },
+    {
+      "width": 768,
+      "correct": true
+    },
+    {
+      "width": 768,
+      "correct": false
+    },
+    {
+      "width": 1440,
+      "correct": true
+    },
+    {
+      "width": 1440,
+      "correct": false
+    }
+  ],
+  "typedChoiceAndOrder": true,
+  "neutralTiles": true,
+  "clearCorrection": true,
+  "longExerciseFeedbackVisible": true,
+  "keyboardFocus": true,
+  "finiteMotion": true,
+  "staticCast": true,
+  "reducedMotion": true,
+  "listeningAnswerHidden": true,
+  "fixture": "Synthetic question state injected into actual app module; actual gradeCurrent/checkAnswer and renderer exercised; no learner records",
+  "errors": [],
+  "failedRequests": []
+}

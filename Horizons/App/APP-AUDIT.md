@@ -1,5 +1,8 @@
 # Horizons website process audit
 
+Exercise feedback: prominent green/coral result panel with check/cross, explicit Correct!/Not quite text and labeled correct answer. Existing explanations are shown for wrong answers. Finite success badge/progress pop or brief wrong-answer nudge, plus responsive Continue button; reduced motion uses immediate static states. Neutral draggable tiles, accepted grading/mastery, listening privacy and static cast stay intact. Cache answer-feedback-v52; queries feedback1.
+
+
 Word-order questions: neutral stone tiles, pointer dragging into the answer, reordering within it and dragging back to the bank. Mouse/pen/touch supported; click/keyboard button activation remains. Checked answers lock tile changes. Cache word-tiles-v51; queries order1.
 
 
