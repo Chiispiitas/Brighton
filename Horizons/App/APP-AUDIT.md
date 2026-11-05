@@ -54,3 +54,5 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Learning paths use one activity per row, evenly spaced along mirrored left/center/right curves. Keep the SVG connector through orb centers, preserve activity and keyboard order, and keep labels inside the viewport without overlap.
 
 - Hide the Avatar base selector. Preserve the saved base internally when displaying/editing profiles; skin, clothes, hair, eyewear and earned pins remain selectable. Do not overwrite an existing base merely because its selector is hidden.
+
+- In practice activities, honor the assigned cast member and choose a pose that suits reading, travel or welcoming. Give topic illustrations the full picture space instead of automatically adding Pico beside them. Keep the same contextual illustration during answer feedback; results and games also use their activity’s cast member. Never default every lesson question or success screen to Pico.

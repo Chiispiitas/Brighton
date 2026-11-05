@@ -1,0 +1,30 @@
+{
+  "status": "LOCAL_PASS_PUBLICATION_PENDING",
+  "pass": false,
+  "activityScreensReviewedStructurally": 48,
+  "companions": {
+    "mina": 16,
+    "pico": 7,
+    "alex": 12,
+    "jo": 9
+  },
+  "visualKinds": {
+    "cast": 40,
+    "topic": 3,
+    "game": 4,
+    "situation": 1
+  },
+  "browserReport": "reports/lesson-art-browser.json",
+  "directlyViewed": [
+    "activity-quiz-1b-jobs-town-390",
+    "activity-read-1c-390",
+    "activity-listen-1d-390"
+  ],
+  "rules": [
+    "Use the declared activity companion; choose reading/map/welcome pose for context.",
+    "Topic art stands alone with full available image space.",
+    "Hotel picture supplies already-stated context, not the country/name listening answers.",
+    "Feedback preserves the contextual art; results and games use the assigned cast."
+  ],
+  "contentOrAudioChanged": false
+}

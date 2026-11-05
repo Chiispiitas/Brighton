@@ -193,3 +193,6 @@ button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform
 @media(max-width:680px){.lesson-trail .path-stop{left:calc(var(--path-x) - 75px);width:150px;max-width:150px;height:136px}.lesson-trail .stop-label b{font-size:12px}}
 
 .lesson-trail .path-stop:hover .stop-orb{transform:none!important}
+
+.question-scene.topic-scene .question-image{width:240px;height:150px;max-width:100%;margin:0}
+@media(max-width:680px){.question-scene.topic-scene .question-image{width:210px;height:128px;max-width:100%}}

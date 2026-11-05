@@ -37,8 +37,8 @@ export function rasterMarkup(asset,cls='',alt=''){
  }
  return `<img class="${esc(cls)}" data-static-art src="${esc(assetURL(source))}" alt="${esc(alt)}" draggable="false" ${asset.loading==='eager'?'':'loading="lazy"'}>`;
 }
-export function characterMarkup(name,cls='',mood='idle'){
- const posture=choosePosture(name,cls,mood),pose=manifest.postures?.[name]?.[posture]||Object.values(manifest.postures?.[name]||{})[0];if(!pose)return '';
+export function characterMarkup(name,cls='',mood='idle',postureOverride){
+ const posture=postureOverride||choosePosture(name,cls,mood),pose=manifest.postures?.[name]?.[posture]||Object.values(manifest.postures?.[name]||{})[0];if(!pose)return '';
  return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-posture="${esc(posture)}" data-anatomy-source="complete-static-render" role="img" aria-label="${esc(name[0].toUpperCase()+name.slice(1))}, your study companion">${rasterMarkup(pose,'character-art posture-art','')}</span>`;
 }
 function choosePosture(name,cls,mood){
