@@ -1,24 +1,19 @@
 /* Unit 1: New Friends Town. Environment art is native ImageGen PNG, not code-drawn scenery. */
-.overworld-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:20px;margin:0 0 18px}
-.overworld-heading .eyebrow{color:var(--pink);font-size:10px!important;margin-bottom:5px;letter-spacing:.12em}
-.overworld-heading h2{font-size:27px;line-height:1.2}
-.world-map-note{font-size:12px;color:var(--muted);max-width:220px;text-align:right;line-height:1.7}
-.overworld-map{background:#e4edca;border-radius:26px;padding:12px 0 16px;scrollbar-color:#75a572 #d1e4b6;outline-offset:4px}
+.overworld-map{background:#f2f5e9;border-radius:26px;padding:8px 0 10px;scrollbar-color:#75a572 #d1e4b6;outline-offset:4px}
 .overworld-map .horizontal-path-track{gap:0;padding:0 22px}
 .overworld-map .path-lesson{overflow:visible}
-.overworld-map .lesson-landmark{max-width:none;min-height:86px;padding:6px 24px 0;gap:14px;position:relative;z-index:5}
-.world-zone-caption{min-width:0}.world-zone-caption h2{font-size:22px;line-height:1.3}.world-zone-caption small{display:block;margin-top:5px;color:#48684e;font-size:12px!important;line-height:1.4;font-weight:700}
+.overworld-map .lesson-landmark{max-width:none;min-height:62px;padding:6px 24px 0;gap:14px;position:relative;z-index:5}
+.world-zone-caption{min-width:0}.world-zone-caption h2{font-size:22px;line-height:1.3}
 .overworld-map .lesson-marker{width:55px;height:55px;font-size:22px}
-.overworld-map .lesson-trail{width:calc((var(--path-count) - 1)*132px + 164px);height:440px;min-height:440px;overflow:visible}
-.world-scenery{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center center;pointer-events:none;z-index:-3}
+.overworld-map .lesson-trail{width:calc((var(--path-count) - 1)*132px + 164px);height:308px;min-height:308px;overflow:visible}
 .overworld-map .lesson-trail .path-stop{left:calc(82px + (100% - 164px)*var(--path-t) - 44px);z-index:3}
 .overworld-map .stop-orb{background:#ffcb57;color:#8b5717;border:3px solid #fff3cf}
 .overworld-map .completed .stop-orb{background:var(--pink);color:white;border-color:#f6c3d8}
 .overworld-map .mastered .stop-orb{background:#ffd650;border-color:#fff3b0;color:#886418}
 .overworld-map .game-stop .stop-orb{background:#fff5dc;color:var(--pink);border-radius:18px}
 .overworld-map .trail-line{z-index:-1}
-.overworld-map .trail-line path{stroke:#d9ac62;stroke-width:18px;stroke-linecap:round;fill:none}
-.overworld-map .trail-line .trail-bed,.overworld-map .trail-line .trail-extension-bed{stroke:#fff2d2;stroke-width:29px}
+.overworld-map .trail-line path{stroke:#d9ac62;stroke-width:14px;stroke-linecap:round;fill:none}
+.overworld-map .trail-line .trail-bed,.overworld-map .trail-line .trail-extension-bed{stroke:#fff2d2;stroke-width:23px}
 .overworld-map .path-lesson:not(:last-child) .lesson-trail:after{display:none}
 .overworld-map .lesson-trail .landmark-stop{left:calc(82px + (100% - 164px)*var(--path-t) - 64px);top:calc(var(--path-y) - 120px);width:128px;max-width:128px;height:152px;min-height:152px;padding:0;border-radius:14px}
 .overworld-map .landmark-stop .stop-orb{position:absolute;left:33px;bottom:1px;width:62px;height:62px;background:#ffd27b;border-color:#fff6d7;overflow:visible}
@@ -31,15 +26,21 @@
 .overworld-map .path-player[data-positioned=true]{transition:transform 440ms cubic-bezier(.22,.75,.28,1)}
 .overworld-map .path-player>.avatar{background:#fff6d9;outline:3px solid #fffefa;outline-offset:0}
 .overworld-map .path-player-caption{color:#315e45;background:#fff7e5}
-.overworld-map .path-player:before{content:'';width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:7px solid #fffefa;margin-bottom:-1px}
+.overworld-map .path-player:before{content:'';width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:7px solid #fffefa;position:absolute;bottom:-7px}
 .world-fauna{position:absolute;display:block;pointer-events:none;z-index:2;width:34px;height:30px}
 .world-fauna>img{display:block;width:100%;height:100%;object-fit:contain;pointer-events:none;transform-origin:center center;opacity:1}
 .world-bird{left:18%;top:38px;width:34px;height:28px}.world-butterfly{right:30%;bottom:53px;width:24px;height:25px}
 .overworld-map .lesson-2 .world-bird{left:45%;top:57px}.overworld-map .lesson-3 .world-butterfly{right:18%;bottom:40px}.overworld-map .lesson-4 .world-bird{left:16%;top:48px}
-@media(max-width:680px){.overworld-heading{gap:12px;align-items:flex-start}.overworld-heading h2{font-size:24px}.world-map-note{display:none}.overworld-map{border-radius:22px}.overworld-map .lesson-landmark{min-height:86px;padding-left:22px}.world-zone-caption h2{font-size:21px}.overworld-map .lesson-trail .stop-orb{width:58px;height:58px}.overworld-map .landmark-stop .stop-orb{width:62px;height:62px}.overworld-map .path-player{width:56px}.overworld-map .path-player>.avatar{width:52px;height:52px}}
+@media(max-width:680px){.overworld-map{border-radius:22px}.overworld-map .lesson-landmark{min-height:62px;padding-left:22px}.world-zone-caption h2{font-size:21px}.overworld-map .lesson-trail .stop-orb{width:58px;height:58px}.overworld-map .landmark-stop .stop-orb{width:62px;height:62px}.overworld-map .path-player{width:56px}.overworld-map .path-player>.avatar{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.overworld-map .path-player[data-positioned=true]{transition:none}.world-fauna>img{animation:none!important;transition:none!important}}
 
 .path-scroll-toolbar{justify-content:flex-end}
 .overworld-map{touch-action:auto; -webkit-overflow-scrolling:touch;cursor:grab}
 .overworld-map.is-dragging{cursor:grabbing;user-select:none}
 .path-scroll-buttons button{touch-action:none;user-select:none}
+
+.world-tile{position:absolute;object-fit:contain;max-width:none;pointer-events:none;z-index:-2}
+.world-tile.tile-0{left:32%;bottom:12px;width:66px;height:86px}
+.world-tile.tile-1{left:64%;bottom:14px;width:48px;height:32px}
+.world-tile.tile-2{left:10%;bottom:16px;width:30px;height:29px}
+.world-tile.tile-3{left:51%;top:14px;width:25px;height:23px}

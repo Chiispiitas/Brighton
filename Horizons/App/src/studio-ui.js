@@ -1,20 +1,43 @@
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=overworld3';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=tiles1';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
-export function closePathBubble(){bubble.getAnimations().forEach(a=>a.cancel());if(bubble.matches(':popover-open'))bubble.hidePopover();}
-export function openPathBubble(content,anchor,event){
- bubble.getAnimations().forEach(a=>a.cancel());
- bubble.innerHTML=content.replace('id="dialog-title"','id="path-bubble-title"');bubble.setAttribute('aria-labelledby','path-bubble-title');bubble.showPopover();
- const a=anchor?.getBoundingClientRect(),x=event?.clientX||a?.left+a?.width/2||innerWidth/2,y=event?.clientY||a?.bottom||100,r=bubble.getBoundingClientRect();
- const left=Math.max(12,Math.min(x-r.width/2,innerWidth-r.width-12)),below=y+18+r.height<innerHeight-12;
- bubble.style.left=left+'px';bubble.style.top=(below?y+18:Math.max(12,y-r.height-18))+'px';bubble.dataset.side=below?'below':'above';bubble.style.setProperty('--tip-x',Math.max(20,Math.min(x-left,r.width-20))+'px');
- markControls(bubble);bubble.getAnimations().forEach(a=>a.cancel());bubble.style.transformOrigin=`${x-left}px ${below?'0%':'100%'}`;animateUI(bubble,[{opacity:0,transform:'scale(.92)'},{opacity:1,transform:'scale(1.015)',offset:.7},{opacity:1,transform:'scale(1)'}],{duration:240});
- if(event?.detail===0)bubble.querySelector('button')?.focus();
+let bubbleRequest=0,bubblePreparing=false,bubbleSpace;
+export function closePathBubble(){
+ ++bubbleRequest;bubblePreparing=false;bubbleSpace?.remove();bubbleSpace=null;
+ bubble.getAnimations().forEach(a=>a.cancel());if(bubble.matches(':popover-open'))bubble.hidePopover();
 }
+export async function openPathBubble(content,anchor,event){
+ closePathBubble();const request=++bubbleRequest;bubblePreparing=true;
+ bubble.innerHTML=content.replace('id="dialog-title"','id="path-bubble-title"');bubble.setAttribute('aria-labelledby','path-bubble-title');
+ bubble.style.visibility='hidden';bubble.showPopover();
+ const measured=bubble.getBoundingClientRect(),viewport=window.visualViewport;
+ const nav=document.querySelector('.mobile-nav'),navRect=nav?.getBoundingClientRect();
+ const viewportBottom=(viewport?.offsetTop||0)+(viewport?.height||innerHeight)-12;
+ const safeBottom=Math.min(navRect?.height?navRect.top-12:Infinity,viewportBottom);
+ const original=anchor?.getBoundingClientRect();if(!original){closePathBubble();return;}
+ const gap=anchor.classList.contains('landmark-stop')?36:12;
+ const overflow=Math.max(0,original.bottom+gap+measured.height-safeBottom);
+ if(overflow){
+  const max=Math.max(0,document.documentElement.scrollHeight-innerHeight),needed=Math.max(0,scrollY+overflow-max);
+  if(needed){bubbleSpace=document.createElement('div');bubbleSpace.setAttribute('aria-hidden','true');bubbleSpace.style.height=(needed+2)+'px';bubbleSpace.style.pointerEvents='none';document.body.append(bubbleSpace);}
+  window.scrollBy({top:overflow,behavior:'instant'});
+ }
+ // Spacer removal can queue a scroll even when this new island needs no extra room.
+ await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+ if(request!==bubbleRequest||!anchor.isConnected||!bubble.matches(':popover-open'))return;
+ const a=anchor.getBoundingClientRect(),r=bubble.getBoundingClientRect(),x=a.left+a.width/2;
+ const left=Math.max(12,Math.min(x-r.width/2,innerWidth-r.width-12));
+ bubble.style.left=left+'px';bubble.style.top=(a.bottom+gap)+'px';bubble.dataset.side='below';bubble.style.setProperty('--tip-x',Math.max(20,Math.min(x-left,r.width-20))+'px');
+ bubblePreparing=false;bubble.style.visibility='visible';
+ markControls(bubble);bubble.getAnimations().forEach(a=>a.cancel());bubble.style.transformOrigin=`${x-left}px 0%`;animateUI(bubble,[{transform:'scale(.92)'},{transform:'scale(1.015)',offset:.7},{transform:'scale(1)'}],{duration:240});
+ if(event?.detail===0)bubble.querySelector('button')?.focus({preventScroll:true});
+}
+bubble.addEventListener('toggle',()=>{if(!bubble.matches(':popover-open'))closePathBubble();});
+window.addEventListener('keydown',event=>{if(event.key==='Escape')closePathBubble();});
 bubble.addEventListener('click',event=>{const start=event.target.closest('[data-start-path]');if(start){closePathBubble();const button=document.createElement('button');button.dataset.startActivity=start.dataset.startPath;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
 function scrollState(){const hero=document.querySelector('.learn-hero');document.body.classList.toggle('path-scrolled',!!hero&&hero.getBoundingClientRect().bottom<24);}
-window.addEventListener('scroll',()=>{scrollState();closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
+window.addEventListener('scroll',()=>{scrollState();if(!bubblePreparing)closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
 export function enhanceShell(xp,streak,icon,avatar={},manifest={}){
  tabResize?.disconnect();
  closePathBubble();

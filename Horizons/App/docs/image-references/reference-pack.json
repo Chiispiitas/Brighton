@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T15:45:59.196Z",
-  "sourceCommit": "b181a7690603c3d3f8f9793398cd86f87cff04f4",
+  "createdAt": "2026-11-05T16:33:56.859Z",
+  "sourceCommit": "f2c949863bd902c5b142b5dc47cc551d3a102f0b",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "1d4b68a3e0e69da691f12c50f3c5fb0d988fe8c20412605c89bb1c60d00f6c08"
+      "sha256": "523a41dd5b15a17936f727b2dbca51ba8c201bac44d6176feee73fcd86d4a7dd"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,23 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "19965cc20d8d720d27d3fb08019e51152d5f14f3245423099f33588613e942bd"
-    },
-    {
-      "file": "assets/art/overworld-unit1-v1/welcome-park-native.png",
-      "sha256": "116763035d82883ff989c6eee5eb237c4f8d8edb70272222a07a5a85321274b0"
-    },
-    {
-      "file": "assets/art/overworld-unit1-v1/jobs-market-native.png",
-      "sha256": "1e301ef4b40db05e3c0e6e7da4d14ed3993be6bf53b639dfe1b39336178f3894"
-    },
-    {
-      "file": "assets/art/overworld-unit1-v1/world-garden-native-v3.png",
-      "sha256": "d4876792de880a075eb6c88fda6684f082962cdb1c78fe6d572e8aa6c10de99b"
-    },
-    {
-      "file": "assets/art/overworld-unit1-v1/town-hall-native.png",
-      "sha256": "053af116cc60772647b84dc8b7408fa67c2dddd665825dd08686b1803a2f09e0"
+      "sha256": "0df51bc64b49d33bf5146d3d374fba26294e751fa5abba10163dc3c78a2542c2"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -72,6 +56,34 @@
     {
       "file": "assets/art/overworld-unit1-v1/butterfly.png",
       "sha256": "50e0fbee6a12da9dd74cff509f43ea3f576250be9009f1c723fdfee45d5b3f1e"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tileset.json",
+      "sha256": "1816d97069965574898272de89a80e19d58cd2615fa30ae2ad0e0055babc6f1a"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tree-round.png",
+      "sha256": "77c0c52eb52e77525c1f0c504a8ab45e9af8103c8df9c255a32b414f8098d982"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/tree-slender.png",
+      "sha256": "7f14df7a7365b6c6e60a20b5ef7bae84cc0f43c544ed36370d651e4195f69b9f"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/bush.png",
+      "sha256": "a72b68a9bd687927b92c5e0b440fcf5f5c45f580cf4572e982f88e14fb6b1237"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/bush-flowers.png",
+      "sha256": "145cbf9921039330ea7a029d17e1b6895e921ea6781a42a08ab859bef2b62cad"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/flowers.png",
+      "sha256": "ff13d75db6947ca9b1a30f9272a925b99277d69a78ae04edf184db7b0b48b518"
+    },
+    {
+      "file": "assets/art/overworld-tiles-v1/grass.png",
+      "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d"
     }
   ],
   "references": [
@@ -115,9 +127,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "f0fe0643707aaf9a5a6afdbd333ac9690d3b2ad23cfb986c004889fdae7e0992"
+      "sha256": "ee99b7f2ead017bf435441355038c405881ff2306ea23513974287c594e0e151"
     }
-  ],
-  "sourceRuntimeRevision": "a15618cd79419fd98ff89e960f2edff156a76dec",
-  "sourceCommitNote": "sourceCommit records the checkout base at sheet creation; sourceRuntimeRevision binds included sources to the published correction."
+  ]
 }

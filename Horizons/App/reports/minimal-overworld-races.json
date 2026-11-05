@@ -1,0 +1,321 @@
+{
+  "date": "2026-11-05T16:39:29.589Z",
+  "revision": "f2c949863bd902c5b142b5dc47cc551d3a102f0b",
+  "uncommittedRuntime": true,
+  "scope": "popup-races-only",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "tileSelector": ".world-tile",
+  "runtimeSources": {
+    "src/app.js": "b7185d59816b1b4b96df8a3c8ecb571cb33e5c56525cae2450c09c6e874a1292",
+    "src/studio-ui.js": "a29c127ebf91a789ae5617afdc63a510f12b37f59f96b68dcc71dfaba7b58536",
+    "src/overworld-motion.js": "8ab2be41828fa7e3464e9a9dcfc9017d6761aa275f4bd6949881a184c1c5942d",
+    "styles/horizontal-path.css": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d",
+    "styles/overworld.css": "0df51bc64b49d33bf5146d3d374fba26294e751fa5abba10163dc3c78a2542c2",
+    "index.html": "06eafc5791b6025570d034c5bf978944a24b542af102c1241fa21fbe58154e4a",
+    "service-worker.js": "9a5b7541f9724293f6a8c745bd1f0eb112789a3e02e8b9b4c12e85af6f520ecd"
+  },
+  "checks": [
+    {
+      "width": 844,
+      "height": 390,
+      "landscape": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 280,
+            "y": 123.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 204,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 296,
+            "y": 45.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 453,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 397,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 489,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 646,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 590,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 682,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ],
+      "popoverBelow": true,
+      "rapidReselection": true,
+      "escapeDuringPlacement": true,
+      "temporarySpacerCleanup": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "minimal-details-landscape-844x390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\minimal-overworld-proof\\minimal-details-landscape-844x390.png",
+      "sha256": "ea0e80e236ab3324fedfcc9eb72fa97d2d68ec89ec22308f5b4f7f77c7e52296"
+    }
+  ],
+  "obsoleteSceneRequests": [],
+  "imageResponses": [
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/ui-static-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "847743"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/cast-static-pico-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "561246"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/tree-round.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "86707"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/bush-flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103565"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/grass.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "66639"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-0.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "236880"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/bird.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "157303"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/butterfly.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "177927"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/tree-slender.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "104421"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/bush.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "70229"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "225391"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "208067"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "233430"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "50754"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "36227"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "3184"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/pupils-native.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "4444"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "16885"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "43376"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44360"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44286"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-static-heads-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1444728"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-static-clothes-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1251353"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-jacket-lapels-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "256980"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-expansion-hair-9.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "169344"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/cast-static-alex-v3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "676780"
+    }
+  ],
+  "requestFailures": [],
+  "brokenImagesSeen": [],
+  "apiActions": [
+    "getSession"
+  ],
+  "realBackendRequests": false,
+  "realLearnerWrites": false,
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only; no physical-device claim",
+    "Fictional intercepted session; no real learner/API writes",
+    "Temporary page bottom padding permits real vertical wheel check",
+    "Navigation touch swipe is separately covered by overworld-navigation-proof.mjs"
+  ]
+}

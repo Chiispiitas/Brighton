@@ -1,5 +1,7 @@
 # Horizons website process audit
 
+Latest environment rule (5 November): do not generate or display whole environment panels, landscape chunks or precomposed neighborhoods for the overworld. Retire the large v32 scenery panels. Use a sparse reusable tile set: individual complete trees and small bush/flower/grass tiles, independently placed with open space. Single native building landmarks may remain individual sprites. Keep the path 30% shorter (440px to 308px). Latest placement correction: player portrait ABOVE the island/building, activity details BELOW. No added headings/taglines/instruction messages; native vertical wheel and hold/swipe controls remain.
+
 Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v34; queries overworld3.
 
 Version 1 · Governing process · 4 November 2026
@@ -75,12 +77,12 @@ The Learn page has no promotional right sidebar, daily-invitation card or word-c
 - Mobile navigation retains Profile access.
 - Page headers contain the book switcher and authoritative XP/streak amounts, without a player-avatar picture.
 - Preserve the previous compact design. The latest layout request replaces only the vertical trail with one horizontally scrollable unit route, using gentle sideways S bends and continuous joins through the same island centers. Four lessons sit side by side in the same order. Keep all activity IDs, orb states, headers, native inanimate decorations, sidebar, compact hero and popovers.
-- Unit 1 is New Friends Town: native ImageGen park/café, jobs market, travel garden and town hall scenery. The final activity of each lesson is a native building landmark with the same ID and completion/mastery states.
-- The saved native avatar bubble travels below the route on hover and keyboard focus, without starting activities or changing progress. Click/tap still selects and opens the compact details. Reuse saved hair/clothes/colors; no new articulated walking anatomy. Keep the bubble clear of full normal/building hit areas.
+- Unit 1 uses a sparse modular overworld: independently placed tree/bush/flower/grass tiles on a flat surface; no generated whole-neighborhood panels. Trail height308px (30% shorter). Final activities retain individual native building sprites and the same IDs/completion/mastery states.
+- The saved native avatar bubble travels ABOVE each island/building on hover/focus; compact activity details open BELOW it. Both clear the complete hit target. Click/tap selects details; preview movement never starts or saves an activity. Reuse saved hair/clothes/colors, with no articulated walking anatomy.
 - Mouse wheel stays native and vertical. Use held arrows, swipe or mouse drag for horizontal map travel. No extra map heading, tagline or wheel/swipe/hover instruction messages.
 - Support manual swipe/scroll, keyboard access and optional left/right panning controls. Do not turn the buttons into lesson-jump shortcuts or hijack ordinary vertical scrolling. No body-wide horizontal overflow.
 - Islands have no permanent title/count/duration/step labels. Tap or keyboard activation opens a small non-modal speech bubble at the island/cursor.
-- The bubble contains the name, count, duration and Start. Keep it within the viewport, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.
+- The bubble contains the name, count, duration and Start. Keep it below the island and clear of the portrait; create room by scrolling the page first when needed, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.
 - When the Learn hero scrolls out of view, show a compact fixed Unit banner and a separate XP/streak bubble. For future units, derive the number from content rather than copying Unit 1.
 - Floating indicators must not cover the current task, navigation or popover.
 

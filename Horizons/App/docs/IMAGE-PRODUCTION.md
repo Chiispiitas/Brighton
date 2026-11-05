@@ -1,5 +1,7 @@
 # Horizons image production guide
 
+Latest environment rule (5 November): do not generate or display whole environment panels, landscape chunks or precomposed neighborhoods for the overworld. Retire the large v32 scenery panels. Use a sparse reusable tile set: individual complete trees and small bush/flower/grass tiles, independently placed with open space. Single native building landmarks may remain individual sprites. Keep the path 30% shorter (440px to 308px). Latest placement correction: player portrait ABOVE the island/building, activity details BELOW. No added headings/taglines/instruction messages; native vertical wheel and hold/swipe controls remain.
+
 This is the mandatory production process for website imagery. It applies to new images, edits, extra cast poses, avatar items, vocabulary pictures, scenes, icons and decorative accents. It accompanies the [website process audit](../APP-AUDIT.md).
 
 ## 1 The seven reference files
@@ -164,3 +166,9 @@ The user reopened animation for Unit 1 banner Pico only. New parts still require
 ## Overworld imagery
 
 R07 now includes the selected Unit 1 environments, building landmarks and wildlife cutouts. The map theme/production records are in OVERWORLD.md and docs/overworld/production-record.json. New environment art uses the same mandatory scene references and seven-total input cap. If transparent generation erases walkable ground, reject it and change to an intentionally opaque scene rather than keeping a hole or repeatedly retrying the same alpha approach. Native outputs remain untouched; atlas sprites use recorded mechanical alpha selection/crops.
+
+## Modular overworld production
+
+For environment decoration, generate complete isolated reusable tiles, never a whole landscape or district panel. Plan a small equal-cell atlas with generous margins (or independent tiles), a transparent/clean removable background, and only the specific tree/plant objects needed. Assemble sparse placements in the app; keep the route and portraits clear. A tile set does not justify baking terrain, paths, buildings or connected foreground into a single image. Individual building/activity sprites remain separate. Existing pedagogical illustrations are not permission to generate overworld scenery panels.
+
+The current six-piece plant atlas used the built-in ImageGen tool, preflighted R01/R02/R07 (three inputs); a glow-defective first output was rejected. Its exact target plus those references (four inputs total) were attached for an opaque background repair. tools/prepare-overworld-tiles.py performs only documented color-key alpha extraction and per-cell cropping. Native originals, exact prompts, actual input paths/hashes and archived reference PNGs are in docs/overworld-tiles/production-record.json. Review on white/paper/dark backgrounds and at actual map sizes; review portrait/details clearance across all islands and mobile/desktop widths.

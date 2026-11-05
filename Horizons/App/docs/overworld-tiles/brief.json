@@ -1,0 +1,12 @@
+{
+  "asset_id": "unit1-modular-plant-tiles-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Use case: stylized-concept. Asset: modular decoration tile set for Horizons web learning map. Image1 R01 brand palette and flat rendering reference. Image2 R02 cast style only; NO characters. Image3 R07 individual native object shape language; do not reproduce a scene or reference-sheet labels. Create ONE transparent PNG sprite atlas, exact 3 columns by 2 rows of equal square cells. Six completely SEPARATE standalone game decoration sprites, one centered fully inside each cell, generous 15 percent transparent margins and empty gutters, consistent slightly elevated front/three-quarter view. Top row: (1) one small simple round leafy tree with visible short trunk; (2) one small slender tree with two rounded leaf clusters and visible trunk; (3) one low plain rounded bush. Bottom row: (4) one low bush with three small coral flowers; (5) one tiny cluster of three cream/coral flowers with short stems; (6) one short grass tuft with three leaves. Flat solid filled geometric shapes, clean native raster edges, restrained simple silhouettes, Horizons green/teal, coral, warm cream palette. Actual fully transparent background. Solid opaque sprite interiors. NO terrain slabs, ground patches, scene, landscape, horizon, buildings, path, UI, tile labels, gridlines, borders, text, characters, animals, shadow, gradient, lighting or texture. No connected scenery. These are small individually reusable modular tiles, not an environment image."
+}

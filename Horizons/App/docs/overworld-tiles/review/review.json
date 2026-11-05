@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-05T16:40:52.961470+00:00",
+  "approval": "PASS",
+  "reviewers": [
+    "Codex root",
+    "Codex /root/overworld_qa",
+    "Codex /root/layout_review (read-only geometry and lifecycle)"
+  ],
+  "screens": [
+    "minimal-details-1440-topic-1a-greetings.png",
+    "minimal-details-390-read-1d.png",
+    "minimal-details-landscape-844x390.png",
+    "minimal-start-1440.png",
+    "minimal-start-390.png"
+  ],
+  "artReview": "Opaque, clean isolated shapes on white/paper/navy; no exterior halo/magenta visible at display size. Minor native tonal variation retained. First glow output rejected.",
+  "integrationReview": "308px trail, sparse 16 decorative tiles, no whole-scene requests; player above full island/building; details below, clear of player/mobile navigation.",
+  "checks": [
+    "84 popup geometry cases at four widths",
+    "Short landscape and rapid selection/Escape/spacer cleanup",
+    "Native vertical wheel, held arrows, mouse drag and native touch swipe",
+    "Reduced motion and route/fauna disposal",
+    "No resource/image/page errors in final proof"
+  ],
+  "limits": [
+    "Synthetic Edge/Chromium fixtures",
+    "No real learner/backend writes",
+    "At very short landscape heights the above-building portrait may scroll beyond viewport while building/details remain usable; map does not clip it."
+  ]
+}

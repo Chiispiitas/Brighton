@@ -1,0 +1,222 @@
+{
+  "scope": "Modular sparse plant tiles; no environment panel",
+  "calls": [
+    {
+      "assetId": "unit1-modular-plant-tiles-v1",
+      "tool": "built-in ImageGen",
+      "prompt": "Use case: stylized-concept. Asset: modular decoration tile set for Horizons web learning map. Image1 R01 brand palette and flat rendering reference. Image2 R02 cast style only; NO characters. Image3 R07 individual native object shape language; do not reproduce a scene or reference-sheet labels. Create ONE transparent PNG sprite atlas, exact 3 columns by 2 rows of equal square cells. Six completely SEPARATE standalone game decoration sprites, one centered fully inside each cell, generous 15 percent transparent margins and empty gutters, consistent slightly elevated front/three-quarter view. Top row: (1) one small simple round leafy tree with visible short trunk; (2) one small slender tree with two rounded leaf clusters and visible trunk; (3) one low plain rounded bush. Bottom row: (4) one low bush with three small coral flowers; (5) one tiny cluster of three cream/coral flowers with short stems; (6) one short grass tuft with three leaves. Flat solid filled geometric shapes, clean native raster edges, restrained simple silhouettes, Horizons green/teal, coral, warm cream palette. Actual fully transparent background. Solid opaque sprite interiors. NO terrain slabs, ground patches, scene, landscape, horizon, buildings, path, UI, tile labels, gridlines, borders, text, characters, animals, shadow, gradient, lighting or texture. No connected scenery. These are small individually reusable modular tiles, not an environment image.",
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "inputCount": 3,
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c",
+          "archivedReference": "docs/overworld-tiles/inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/overworld-tiles/inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "b2e4c7e45b0afa249ebb339cdadd579b81da29da293f56851a24ed4a833c71fe",
+          "archivedReference": "docs/overworld-tiles/inputs/07-scenes-vocabulary-ui.png"
+        }
+      ],
+      "nativeToolPath": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-4d8f11ae-1243-41eb-b005-e8dedaf6e783.png",
+      "repositoryNative": "docs/overworld-tiles/rejected-glow-native.png",
+      "sha256": "09e1623b3685b6451ad64baacb5d447f32b76dd7e92c0f2d913718bdc3a869fd",
+      "status": "rejected: broad glow and translucent interiors"
+    },
+    {
+      "assetId": "unit1-modular-plant-tiles-flat-repair-v2",
+      "tool": "built-in ImageGen",
+      "prompt": "Asset: six separate small Horizons plant decoration tiles, not a scene. Images1 R01 brand; Image2 R02 style only NO characters; Image3 R07 isolated object style. Image4 is exact atlas to repair, an EDIT TARGET with BAD GLOW AND TRANSLUCENCY. Remove ALL glow, blur, shading, gradients, halos and partial opacity. Preserve six subjects, same 3-column 2-row equal square-cell registration and fully contained silhouettes with wide empty gutters: round tree, slender tree, plain bush, bush with three coral flowers, three-flower cluster, three-leaf grass tuft. Render every plant as simple FLAT SOLID COLOR vector-like filled shapes with clean antialiased edges, absolutely opaque interiors, no highlights or textured lighting. Deliberately output a FULLY OPAQUE image on perfectly uniform flat vivid chroma-magenta #FF00FF background (not transparent); it will be mechanically removed later. Every background pixel outside the six hard-edge silhouettes must be exactly the same solid magenta, no glow, shadow or color spill. No ground patches, landscape, connected scene, UI, labels, borders, grid lines, characters or extra objects. Match Horizons native rounded shape language with teal/green leaves, orange-brown trunks, coral/cream flowers. Keep complete separate sprites with transparent-margin equivalent space in every cell.",
+      "inputPathsAttached": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\overworld-tiles\\rejected-glow-native.png"
+      ],
+      "inputCount": 4,
+      "inputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c",
+          "archivedReference": "docs/overworld-tiles/repair-inputs/01-brand.png"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+          "archivedReference": "docs/overworld-tiles/repair-inputs/02-cast.png"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "b2e4c7e45b0afa249ebb339cdadd579b81da29da293f56851a24ed4a833c71fe",
+          "archivedReference": "docs/overworld-tiles/repair-inputs/07-scenes-vocabulary-ui.png"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\overworld-tiles\\rejected-glow-native.png",
+          "sha256": "09e1623b3685b6451ad64baacb5d447f32b76dd7e92c0f2d913718bdc3a869fd"
+        }
+      ],
+      "nativeToolPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-90073154-d834-41b8-8088-2ee47a2a9c67.png",
+      "repositoryNative": "assets/art/overworld-tiles-v1/plants-native-v2.png",
+      "sha256": "6fa7e805c335dca137729a919d30afde834c5abf3e3d09ee272383b2fa75a1a9",
+      "status": "selected: plain opaque key background, isolated complete shapes; native minor color variation retained"
+    }
+  ],
+  "tileRegistration": "assets/art/overworld-tiles-v1/tileset.json",
+  "nativeFilesUnchanged": true,
+  "activeTiles": [
+    {
+      "id": "tree-round",
+      "file": "tree-round.png",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        125,
+        111,
+        418,
+        451
+      ],
+      "dimensions": [
+        293,
+        340
+      ],
+      "sha256": "77c0c52eb52e77525c1f0c504a8ab45e9af8103c8df9c255a32b414f8098d982"
+    },
+    {
+      "id": "tree-slender",
+      "file": "tree-slender.png",
+      "sourceCell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        93,
+        100,
+        417,
+        451
+      ],
+      "dimensions": [
+        324,
+        351
+      ],
+      "sha256": "7f14df7a7365b6c6e60a20b5ef7bae84cc0f43c544ed36370d651e4195f69b9f"
+    },
+    {
+      "id": "bush",
+      "file": "bush.png",
+      "sourceCell": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        56,
+        199,
+        424,
+        423
+      ],
+      "dimensions": [
+        368,
+        224
+      ],
+      "sha256": "a72b68a9bd687927b92c5e0b440fcf5f5c45f580cf4572e982f88e14fb6b1237"
+    },
+    {
+      "id": "bush-flowers",
+      "file": "bush-flowers.png",
+      "sourceCell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        76,
+        139,
+        460,
+        403
+      ],
+      "dimensions": [
+        384,
+        264
+      ],
+      "sha256": "145cbf9921039330ea7a029d17e1b6895e921ea6781a42a08ab859bef2b62cad"
+    },
+    {
+      "id": "flowers",
+      "file": "flowers.png",
+      "sourceCell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        89,
+        118,
+        414,
+        410
+      ],
+      "dimensions": [
+        325,
+        292
+      ],
+      "sha256": "ff13d75db6947ca9b1a30f9272a925b99277d69a78ae04edf184db7b0b48b518"
+    },
+    {
+      "id": "grass",
+      "file": "grass.png",
+      "sourceCell": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        84,
+        146,
+        386,
+        387
+      ],
+      "dimensions": [
+        302,
+        241
+      ],
+      "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d"
+    }
+  ],
+  "placement": "Four independent sprites per lesson: one tree and three small plant pieces; no filled edge strips or continuous ground chunks.",
+  "quality": "Glow attempt rejected; opaque repair keyed/cropped. Selected art has clean silhouettes, opaque interiors and no exterior halo; minor native color variation remains. Inspect at actual 25\u201386px display size.",
+  "extractionTool": "tools/prepare-overworld-tiles.py",
+  "reviewBoard": "docs/overworld-tiles/alpha-review.png",
+  "composedReview": "Root inspected final desktop/mobile rendering; independent /root/overworld_qa inspected ordinary and building details below portraits."
+}

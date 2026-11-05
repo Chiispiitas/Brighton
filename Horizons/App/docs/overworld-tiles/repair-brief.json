@@ -1,0 +1,14 @@
+{
+  "asset_id": "unit1-modular-plant-tiles-flat-repair-v2",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "docs/overworld-tiles/rejected-glow-native.png"
+  ],
+  "prompt": "Asset: six separate small Horizons plant decoration tiles, not a scene. Images1 R01 brand; Image2 R02 style only NO characters; Image3 R07 isolated object style. Image4 is exact atlas to repair, an EDIT TARGET with BAD GLOW AND TRANSLUCENCY. Remove ALL glow, blur, shading, gradients, halos and partial opacity. Preserve six subjects, same 3-column 2-row equal square-cell registration and fully contained silhouettes with wide empty gutters: round tree, slender tree, plain bush, bush with three coral flowers, three-flower cluster, three-leaf grass tuft. Render every plant as simple FLAT SOLID COLOR vector-like filled shapes with clean antialiased edges, absolutely opaque interiors, no highlights or textured lighting. Deliberately output a FULLY OPAQUE image on perfectly uniform flat vivid chroma-magenta #FF00FF background (not transparent); it will be mechanically removed later. Every background pixel outside the six hard-edge silhouettes must be exactly the same solid magenta, no glow, shadow or color spill. No ground patches, landscape, connected scene, UI, labels, borders, grid lines, characters or extra objects. Match Horizons native rounded shape language with teal/green leaves, orange-brown trunks, coral/cream flowers. Keep complete separate sprites with transparent-margin equivalent space in every cell."
+}

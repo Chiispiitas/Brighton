@@ -1,0 +1,140 @@
+{
+  "nativeSource": "plants-native-v2.png",
+  "grid": [
+    3,
+    2
+  ],
+  "cellSize": [
+    512,
+    512
+  ],
+  "method": "Mechanical magenta-key alpha mask (min(R,B)>1.3*G+15) and per-cell trim. Visible RGB pixels unchanged; original native file unchanged. No drawn/recolored content.",
+  "tiles": [
+    {
+      "id": "tree-round",
+      "file": "tree-round.png",
+      "sourceCell": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        125,
+        111,
+        418,
+        451
+      ],
+      "dimensions": [
+        293,
+        340
+      ],
+      "sha256": "77c0c52eb52e77525c1f0c504a8ab45e9af8103c8df9c255a32b414f8098d982"
+    },
+    {
+      "id": "tree-slender",
+      "file": "tree-slender.png",
+      "sourceCell": [
+        512,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        93,
+        100,
+        417,
+        451
+      ],
+      "dimensions": [
+        324,
+        351
+      ],
+      "sha256": "7f14df7a7365b6c6e60a20b5ef7bae84cc0f43c544ed36370d651e4195f69b9f"
+    },
+    {
+      "id": "bush",
+      "file": "bush.png",
+      "sourceCell": [
+        1024,
+        0,
+        512,
+        512
+      ],
+      "trimBox": [
+        56,
+        199,
+        424,
+        423
+      ],
+      "dimensions": [
+        368,
+        224
+      ],
+      "sha256": "a72b68a9bd687927b92c5e0b440fcf5f5c45f580cf4572e982f88e14fb6b1237"
+    },
+    {
+      "id": "bush-flowers",
+      "file": "bush-flowers.png",
+      "sourceCell": [
+        0,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        76,
+        139,
+        460,
+        403
+      ],
+      "dimensions": [
+        384,
+        264
+      ],
+      "sha256": "145cbf9921039330ea7a029d17e1b6895e921ea6781a42a08ab859bef2b62cad"
+    },
+    {
+      "id": "flowers",
+      "file": "flowers.png",
+      "sourceCell": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        89,
+        118,
+        414,
+        410
+      ],
+      "dimensions": [
+        325,
+        292
+      ],
+      "sha256": "ff13d75db6947ca9b1a30f9272a925b99277d69a78ae04edf184db7b0b48b518"
+    },
+    {
+      "id": "grass",
+      "file": "grass.png",
+      "sourceCell": [
+        1024,
+        512,
+        512,
+        512
+      ],
+      "trimBox": [
+        84,
+        146,
+        386,
+        387
+      ],
+      "dimensions": [
+        302,
+        241
+      ],
+      "sha256": "147a7f31271fcc4092114e408a0d78d43ff278e2a513ff98b9487041a8d0307d"
+    }
+  ]
+}

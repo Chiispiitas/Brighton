@@ -1,10 +1,10 @@
-import {mountOverworld} from './overworld-motion.js?v=overworld3';
+import {mountOverworld} from './overworld-motion.js?v=tiles1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=overworld3';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=overworld3';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=tiles1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=tiles1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=overworld3';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=tiles1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -98,9 +98,13 @@ function home(){
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);
- const district=['welcome-park','jobs-market','world-garden','town-hall'][index],place=['Café','Market','Travel pavilion','Town hall'][index];
+ const place=['Café','Market','Travel pavilion','Town hall'][index];
  const stops=nodes.map((node,i)=>{const t=i/Math.max(1,nodes.length-1),y=50-Math.sin(t*2*Math.PI)*Math.sin(t*Math.PI)*18.75,mastered=!!progress().islands?.[node.id]?.mastered,landmark=i===nodes.length-1,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${landmark?'landmark-stop':''} ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''} ${mastered?'mastered':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-t:${t};--path-y:${y}%" aria-label="${esc(lesson.id+' · '+(landmark?place+' · ':'')+node.title+(mastered?' · Mastered':nodeIsComplete(node)?' · Completed':''))}" aria-haspopup="dialog"><span class="stop-orb">${landmark?`<img class="landmark-art" src="./assets/art/overworld-unit1-v1/landmark-${index}.png" alt=""><span class="landmark-state">${icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span>`:icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span>${landmark?`<span class="landmark-label">${place}</span>`:''}</button>`;}).join('');
- return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><div class="world-zone-caption"><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2><small>${['Welcome Park','Makers Market','Travel Garden','Friends Town Hall'][index]}</small></div>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" style="--path-count:${nodes.length}" aria-label="${esc(lesson.id)} activities"><img class="world-scenery" src="./assets/art/overworld-unit1-v1/${district}${district==='world-garden'?'-native-v3':'-native'}.png" alt="" aria-hidden="true"><svg class="trail-line" aria-hidden="true"><path class="trail-bed"/><path class="trail-route"/><path class="trail-extension-bed"/><path class="trail-extension"/></svg>${stops}<span class="world-fauna world-bird" data-fauna="bird" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/bird.png" alt=""></span><span class="world-fauna world-butterfly" data-fauna="butterfly" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/butterfly.png" alt=""></span></div></section>`;
+ return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><div class="world-zone-caption"><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2></div>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" style="--path-count:${nodes.length}" aria-label="${esc(lesson.id)} activities">${worldTiles(index)}<svg class="trail-line" aria-hidden="true"><path class="trail-bed"/><path class="trail-route"/><path class="trail-extension-bed"/><path class="trail-extension"/></svg>${stops}<span class="world-fauna world-bird" data-fauna="bird" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/bird.png" alt=""></span><span class="world-fauna world-butterfly" data-fauna="butterfly" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/butterfly.png" alt=""></span></div></section>`;
+}
+function worldTiles(index){
+ const names=[index%2?'tree-slender':'tree-round',index%2?'bush':'bush-flowers','flowers','grass'];
+ return names.map((name,i)=>`<img class="world-tile tile-${i}" src="./assets/art/overworld-tiles-v1/${name}.png" alt="" aria-hidden="true" draggable="false">`).join('');
 }
 function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
@@ -113,8 +117,8 @@ function positionPathPlayer(id){
  const track=app.querySelector('.horizontal-path-track'),marker=track?.querySelector('.path-player');
  if(!marker)return;
  const stop=[...track.querySelectorAll('[data-path-node]')].find(el=>el.dataset.pathNode===id)||track.querySelector('[data-path-node]'),orb=stop?.querySelector('.stop-orb');if(!orb)return;
- const r=orb.getBoundingClientRect(),box=track.getBoundingClientRect();marker.dataset.currentNode=stop.dataset.pathNode;
- marker.style.transform=`translate(${r.left-box.left+r.width/2-28}px,${r.top-box.top+r.height/2+68}px)`;requestAnimationFrame(()=>{if(marker.isConnected)marker.dataset.positioned='true';});
+ const r=orb.getBoundingClientRect(),target=stop.getBoundingClientRect(),box=track.getBoundingClientRect();marker.dataset.currentNode=stop.dataset.pathNode;
+ marker.style.transform=`translate(${r.left-box.left+r.width/2-28}px,${target.top-box.top-marker.offsetHeight-8}px)`;requestAnimationFrame(()=>{if(marker.isConnected)marker.dataset.positioned='true';});
 }
 function syncPathPan(){const region=app.querySelector('.horizontal-path-scroll');if(!region)return;const prev=app.querySelector('[data-path-pan="-1"]'),next=app.querySelector('[data-path-pan="1"]');if(prev)prev.disabled=region.scrollLeft<=1;if(next)next.disabled=region.scrollLeft+region.clientWidth>=region.scrollWidth-1;}
 function layoutPaths(){

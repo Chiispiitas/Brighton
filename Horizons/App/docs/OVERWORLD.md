@@ -1,10 +1,12 @@
 # Unit 1 overworld: New Friends Town
 
+Latest environment rule (5 November): do not generate or display whole environment panels, landscape chunks or precomposed neighborhoods for the overworld. Retire the large v32 scenery panels. Use a sparse reusable tile set: individual complete trees and small bush/flower/grass tiles, independently placed with open space. Single native building landmarks may remain individual sprites. Keep the path 30% shorter (440px to 308px). Latest placement correction: player portrait ABOVE the island/building, activity details BELOW. No added headings/taglines/instruction messages; native vertical wheel and hold/swipe controls remain.
+
 Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v34; queries overworld3.
 
 The user requested a video-game overworld on the existing horizontal path: normal mouse-wheel travel, thematic scenery, hover movement for the saved avatar, building landmarks and animated birds/butterflies. The compact Horizons shell, learning content and Pico banner remain.
 
-## Theme and artwork
+## Retired v32 theme and artwork record
 
 Unit 1's introductions become a friendly town: 1A Welcome Park/café, 1B Makers Market/jobs, 1C Travel Garden/harbor, and 1D Friends Town Hall/forms and personal details. Each lesson keeps its original title/activity IDs. The final activity in each lesson is a clickable building: café, bakery/market, travel pavilion and towered town hall. Completion/check and gold mastery/crown states remain visible on landmarks.
 
@@ -43,3 +45,11 @@ Runtime 9a29911c85976856b30813fe3e27c9420046b65c is live. [Pages run 42055395675
 `tools/overworld-navigation-proof.mjs` verifies native vertical page wheel without sideways movement, accelerating held arrows and release, mouse drag without opening activities, native mobile touch swipe, and absence of removed messages. Earlier v32 wheel-conversion assertions are historical. No new artwork or learning/backend changes.
 
 Navigation correction published: runtime a15618cd79419fd98ff89e960f2edff156a76dec, [Pages run 42058505416](https://github.com/Chiispiitas/Brighton/actions/runs/42058505416) succeeded. Hosted native vertical wheel, accelerating hold/release, mouse drag, blur cancellation, touch swipe, pinch-zoom preservation and removed-copy checks passed. All seven changed runtime files match hosted bytes. [Navigation proof](../reports/overworld-navigation.json). Existing v32 wheel-conversion reports are historical. No printed-book/backend/native-art changes.
+
+## Minimal modular revision
+
+The full-neighborhood v32 panels are retired from markup, cache core and positive reference sheets; their original files remain only as historical production evidence. Current decoration uses six reusable native plant tiles (two tree variants, bush, flowering bush, flowers and grass), four separately positioned pieces per lesson, on a flat UI surface. No precomposed ground image. Trail height is 308px instead of 440px; the lesson header is 62px, with only the real lesson title. Individual building sprites and decorative wildlife remain.
+
+Latest user positioning: measured saved-avatar portrait above the entire selected island/building; details below it, including landmark label clearance. On short screens the page moves to create room below and temporary nonvisual bottom space is removed when details close. Async opening is cancelled on Escape/navigation/reselection; it never flips above the island. Native wheel/held-arrow/swipe behavior stays as corrected.
+
+Current tile production: [exact prompts, attached inputs and native/derived paths](overworld-tiles/production-record.json); [composed/alpha review](overworld-tiles/review/review.json). Local full 84-placement proof, final focused race/landscape proof, and held-arrow/native swipe navigation proof passed. See reports/minimal-overworld-proof.json, reports/minimal-overworld-races.json and reports/minimal-overworld-navigation.json. Final hosted evidence is recorded after publication. Cache horizons-companion-tiles-v35; entry queries tiles1.
