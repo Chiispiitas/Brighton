@@ -1,5 +1,7 @@
 # Interface motion
 
+Answer sounds supplement the existing finite feedback motion. Native ElevenLabs cues, independent mute and playback rules are recorded in [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md); reduced motion remains an independent preference.
+
 ## Current exercise feedback — 5 November 2026
 
 The latest exercise feedback uses a prominent green or coral result panel, a check/cross badge, explicit **Correct!**/**Not quite** text, and a matching Continue button. Wrong results label the correct answer and show an existing explanation when supplied. Correct-answer arrays are displayed as words separated by spaces. Results remain until the user continues; grading, mastery, rewards and listening privacy are unchanged. The panel stays visible on long exercises, and keyboard focus moves to Continue without forcing a page scroll.

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T21:15:43.850Z",
-  "sourceCommit": "23a9172390f0c0d847ccd679d21ddc6e751ea11c",
+  "createdAt": "2026-11-05T21:35:04.788Z",
+  "sourceCommit": "a1a0f6144df669f1e429e869e7186771f252afdd",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,15 +15,15 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "8c414592af69f2cab3465d9a45838625a4ff9cd9509b91f9bb039ff6d561d324"
+      "sha256": "1015d2c3f7d88266e72054e613dfc27fbf99748b5ec1a2df7c5205efbc44e5be"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "e86d4fdcfc3d933c3276d36749690d4db10a90a50b725828796ad8098b5c2cea"
+      "sha256": "d41e40600499c81c6d6dd7653e000144a0f22390550ae3d27d03901dad7c421c"
     },
     {
       "file": "styles/app.css",
-      "sha256": "f1af76404d010c01144d4eda124a0f4a60a68aa72288fd1a2fb987af91628894"
+      "sha256": "f5c9092b6c273a3dd8b52fb9a199952d2c3a9adcbbce68d950727a95edb8df50"
     },
     {
       "file": "styles/horizontal-path.css",
@@ -171,7 +171,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
     },
     {
       "id": "R02",

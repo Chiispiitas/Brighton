@@ -1,0 +1,70 @@
+{
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "pass": true,
+  "decoded": [
+    {
+      "name": "correct",
+      "duration": 0.6865,
+      "sampleRate": 48000,
+      "channels": 2,
+      "peak": 0.6640514731407166
+    },
+    {
+      "name": "wrong",
+      "duration": 0.6865,
+      "sampleRate": 48000,
+      "channels": 2,
+      "peak": 0.5311506390571594
+    }
+  ],
+  "samples": [
+    {
+      "type": "text",
+      "correct": true
+    },
+    {
+      "type": "text",
+      "correct": false
+    },
+    {
+      "type": "choice",
+      "correct": true
+    },
+    {
+      "type": "choice",
+      "correct": false
+    },
+    {
+      "type": "order",
+      "correct": true
+    },
+    {
+      "type": "order",
+      "correct": false
+    }
+  ],
+  "blankAndSelectionSilent": true,
+  "oneCuePerGradedAnswer": true,
+  "rerenderSilent": true,
+  "nextStopsSound": true,
+  "leaveStopsSound": true,
+  "mutePersists": true,
+  "mutePreservesDraft": true,
+  "blockedPlaybackSafe": true,
+  "reducedMotionIndependent": true,
+  "listeningAnswerHidden": true,
+  "hiddenPageSilent": true,
+  "nativeGesturePlaybackCompleted": [
+    "correct",
+    "wrong"
+  ],
+  "headerWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "fixture": "Synthetic session and questions; real renderer, answer matching, gradeCurrent and local sound controller. Media play is spied to count calls, then both real HTML audio cues play to completion from Check clicks; files separately decoded in real browser.",
+  "errors": [],
+  "failed": []
+}

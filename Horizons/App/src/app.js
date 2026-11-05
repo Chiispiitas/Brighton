@@ -1,12 +1,13 @@
-import {requestAvatarFeedback} from './avatar-motion.js?v=feedback1';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=feedback1';
-import {mountOverworld} from './overworld-motion.js?v=feedback1';
+import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled} from './feedback-sound.js?v=sounds1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=sounds1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=sounds1';
+import {mountOverworld} from './overworld-motion.js?v=sounds1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=feedback1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=feedback1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=sounds1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=sounds1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=feedback1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=sounds1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -71,7 +72,7 @@ function route(target) {
   if (state.active && target !== 'activity') state.active = null;
   state.route = target; location.hash = target; render(); window.scrollTo({top:0,behavior:'instant'});
 }
-function stopAudio(){wordPlayer?.pause();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function stopAudio(){stopFeedbackSound();wordPlayer?.pause();if('speechSynthesis'in window)speechSynthesis.cancel();}
 function formatDate(value) {
   const date = new Date(value); return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('en',{day:'numeric',month:'short',year:'numeric'});
 }
@@ -198,7 +199,7 @@ function beginQuiz(questions,options,title) {
   render();schedulePreview();window.scrollTo({top:0,behavior:'instant'});
 }
 function schedulePreview(){const current=state.active;if(!current||current.kind!=='quiz'||!current.previewVisible)return;const index=current.index;setTimeout(()=>{if(state.active===current&&current.index===index){current.previewVisible=false;render();document.getElementById('typed-answer')?.focus();}},current.questions[index].previewMs||4500);}
-function activityHeader(title,index,total) {return `<header class="activity-header"><button class="round-button" data-action="leave-activity" aria-label="Leave practice">${icon('close')}</button><div><span class="activity-track"><i style="width:${Math.max(0,index/total*100)}%"></i></span><span class="activity-title">${esc(title)}</span></div><span class="activity-count">${index}/${total}</span></header>`;}
+function activityHeader(title,index,total) {return `<header class="activity-header"><button class="round-button" data-action="leave-activity" aria-label="Leave practice">${icon('close')}</button><div><span class="activity-track"><i style="width:${Math.max(0,index/total*100)}%"></i></span><span class="activity-title">${esc(title)}</span></div><span class="activity-count">${index}/${total}</span><button class="round-button feedback-sound-toggle ${feedbackSoundsEnabled()?'':'muted'}" data-action="toggle-feedback-sound" aria-label="${feedbackSoundsEnabled()?'Mute answer sounds':'Enable answer sounds'}" aria-pressed="${feedbackSoundsEnabled()}" title="${feedbackSoundsEnabled()?'Answer sounds on':'Answer sounds off'}">${icon('sound')}</button></header>`;}
 
 function renderActivity(){
  const a=state.active;
@@ -236,6 +237,7 @@ function gradeCurrent() {
   let feedback;
   try {feedback=checkAnswer(q,submitted);} catch {feedback={correct:false,expected:q.answer,feedback:q.explanation,wordIds:q.wordIds || []};}
   const serverSubmitted=q.type==='choice'?(q.choices.find(choice=>String(choice.id)===String(submitted))?.text || submitted):submitted;
+  stopAudio();playFeedbackSound(Boolean(feedback.correct));
   a.feedback=feedback;a.checked=true;a.answers.push({questionId:q.id,submitted:serverSubmitted,correct:Boolean(feedback.correct),wordIds:feedback.wordIds || [],hintUsed:a.hintUsed,masteryEligible:Boolean(feedback.masteryEligible)&&!a.hintUsed});
   render();app.querySelector('[data-action=next-question]')?.focus({preventScroll:true});
 }
@@ -305,7 +307,7 @@ function wordDialog(id) {
   const pictured=wordArt(word);
   showDialog(`<div class="dialog-heading"><span class="eyebrow">WORD BANK</span><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><h2 id="dialog-title" class="word-detail-title">${esc(word.term)}</h2>${pictured?rasterMarkup(pictured,'word-detail-image',word.term):''}<p class="word-meaning">${esc(word.spanish||word.meaning)}</p><p class="word-example">${esc(word.example || '')}</p>${state.audioManifest[word.id]||'speechSynthesis'in window?`<button class="secondary-button" data-speak="${esc(word.id)}">Play audio ${icon('sound')}</button>${state.audioManifest[word.id]?'':'<p class="quiet-note">Pronunciation uses this device’s English voice.</p>'}`:''}`,'word-dialog');
 }
-function speak(id) {const word=getWord(id);if(!word)return;if(state.audioManifest[id]){wordPlayer?.pause();wordPlayer=new Audio(assetURL(state.audioManifest[id].src));wordPlayer.play().catch(()=>notify('Tap again to hear the word.'));return;}if(!('speechSynthesis'in window))return;const utterance=new SpeechSynthesisUtterance(word.spoken || word.term);utterance.lang='en-US';utterance.rate=.85;const voice=speechSynthesis.getVoices().find(v=>v.lang==='en-US')||speechSynthesis.getVoices().find(v=>v.lang.startsWith('en'));if(voice)utterance.voice=voice;speechSynthesis.cancel();speechSynthesis.speak(utterance);}
+function speak(id) {const word=getWord(id);if(!word)return;stopFeedbackSound();if(state.audioManifest[id]){wordPlayer?.pause();wordPlayer=new Audio(assetURL(state.audioManifest[id].src));wordPlayer.play().catch(()=>notify('Tap again to hear the word.'));return;}if(!('speechSynthesis'in window))return;const utterance=new SpeechSynthesisUtterance(word.spoken || word.term);utterance.lang='en-US';utterance.rate=.85;const voice=speechSynthesis.getVoices().find(v=>v.lang==='en-US')||speechSynthesis.getVoices().find(v=>v.lang.startsWith('en'));if(voice)utterance.voice=voice;speechSynthesis.cancel();speechSynthesis.speak(utterance);}
 async function redeem(form) {
   if(state.busy)return;const button=form.querySelector('button[type=submit]');const error=form.querySelector('.form-error');const input=form.elements.code;
   state.busy=true;button.disabled=true;button.innerHTML='Opening your book…';error.textContent='';
@@ -382,7 +384,7 @@ on('click','[data-action]',async(_,target)=>{
     case'word-bank':return route('bank');case'practice-sets':return route('practice');
     case'select-all':state.selected=state.selected.size===allChunks.length?new Set():new Set(allChunks.map(chunk=>chunk.id));return render();
     case'mix-unit':state.selected=new Set(allChunks.map(chunk=>chunk.id));return route('practice');
-    case'skip-audio':return skipAudio();case'check-answer':return gradeCurrent();case'next-question':return nextQuestion();
+    case'toggle-feedback-sound':{const enabled=setFeedbackSoundsEnabled(!feedbackSoundsEnabled());target.setAttribute('aria-pressed',String(enabled));target.setAttribute('aria-label',enabled?'Mute answer sounds':'Enable answer sounds');target.title=enabled?'Answer sounds on':'Answer sounds off';target.classList.toggle('muted',!enabled);return;}case'skip-audio':return skipAudio();case'check-answer':return gradeCurrent();case'next-question':return nextQuestion();
     case'clear-sentence':state.active.order=[];return render();
     case'hint':state.active.hintUsed=true;return render();
     case'finish-game':return finishActivity();
@@ -403,7 +405,7 @@ on('click','[data-speak]',(_,target)=>speak(target.dataset.speak),dialog);
 on('click','[data-leave-confirm]',()=>{stopAudio();closeDialog();state.active=null;route('learn');},dialog);
 on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOut();}catch{}state.session=null;state.active=null;state.bookId=null;state.avatarDraft=null;location.hash='';render();},dialog);
 dialog.addEventListener('click',event=>{if(event.target===dialog){const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)closeDialog();}});
-window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile'].includes(hash)&&hash!==state.route){state.route=hash;state.active=null;render();window.scrollTo({top:0,behavior:'instant'});}});
+window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;render();window.scrollTo({top:0,behavior:'instant'});}});
 window.addEventListener('resize',layoutPaths);
 window.addEventListener('offline',()=>notify('You are offline.'));
 window.addEventListener('online',()=>notify('Connected.','success'));

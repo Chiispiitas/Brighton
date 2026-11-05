@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "baseline": "a1a0f6144df669f1e429e869e7186771f252afdd",
+  "cache": "horizons-companion-answer-sounds-v53",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "src/feedback-sound.js?v=sounds1",
+      "status": 200,
+      "sha256": "b978fe7e9f6d116a81ec935f037bd9d5d1d62f0b640295abd5a2e12f10231f20"
+    },
+    {
+      "path": "assets/audio/feedback-v1/correct.mp3",
+      "status": 200,
+      "sha256": "993cd9258129338ef708f07277f62298597025d0c3daa57b5a399c838a8c7d9b",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/feedback-v1/wrong.mp3",
+      "status": 200,
+      "sha256": "7aabb61c1f1974bc27c12df194497fd17d0faeb96e85ea2fc108776d898db44e",
+      "duration": 0.6865
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v53. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+}
