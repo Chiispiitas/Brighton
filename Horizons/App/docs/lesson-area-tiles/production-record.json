@@ -337,5 +337,31 @@
     "verdict": "Selected native isolated props read clearly at map scale; cup glow and globe edge crumbs rejected, repaired on opaque key backgrounds, then mechanically extracted. White/paper/navy and full map views inspected by root.",
     "independentReviewer": false,
     "physicalTouchDevice": "Not checked; native Chromium touch emulation used."
+  },
+  "placementRevision": {
+    "request": "Decorations above as well as below the path",
+    "upperObjectPerLesson": 1,
+    "lowerObjectPerLesson": 1,
+    "upperCssSlots": {
+      "1A": [
+        250,
+        14
+      ],
+      "1B": [
+        118,
+        18
+      ],
+      "1C": [
+        382,
+        18
+      ],
+      "1D": [
+        257,
+        10
+      ]
+    },
+    "notes": "Upper objects sit between portrait columns. Same native files, total decoration count and trail geometry. No new image generation.",
+    "cache": "lesson-areas-v56",
+    "stylesheetQuery": "areas2"
   }
 }

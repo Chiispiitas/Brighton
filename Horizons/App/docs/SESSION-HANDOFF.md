@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest placement correction: keep the same sparse lesson-specific artwork, but place one topic object above and one below each lesson trail. Upper positions vary by lesson and sit between island/portrait columns. No additional decorations or artwork generation. Cache lesson-areas-v56; overworld stylesheet query areas2 (existing modules stay areas1).
+
 Latest map cleanup: Unit1 now uses two distinct topic-object tiles and one wildlife accent per lesson (28→12 decorations); repetitive plants are retired from the route, preserved in the asset library. 1A cafe cups, 1B work bag, 1C globe, 1D postbox supplement their existing lesson props. Four native landmarks are slightly smaller;308px path, all21 islands, avatar/details, controls and sounds remain. Production/provenance: [lesson-area-tiles/production-record.json](lesson-area-tiles/production-record.json). Placement/control evidence: reports/lesson-area-proof.json. Cache lesson-areas-v55; queries areas1.
 
 Latest milestone sounds: native ElevenLabs v3 assets in assets/audio/milestones-v1; saved rounds play completion, newly earned server-confirmed island crowns play mastery instead. Shared remembered mute includes all four cues. New files, exact briefs, provenance, async-save handling and QA: [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md). Cache milestone-sounds-v54; queries milestones1.

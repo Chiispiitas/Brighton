@@ -1,7 +1,7 @@
 {
   "pass": true,
-  "baseline": "5f4c7d5b5f4dac3f701139884e6c21d4a528fe6e",
-  "cache": "horizons-companion-lesson-areas-v55",
+  "baseline": "34dee5245ab6db16a4b0ac45baac4039c646a26a",
+  "cache": "horizons-companion-lesson-areas-v56",
   "oldCacheRemoved": true,
   "offlineAssets": [
     {
@@ -10,9 +10,9 @@
       "sha256": "c8e61e72c2196f82c1644f33a43112bcc6c105c3593693e883b9a9c25a7f6b91"
     },
     {
-      "path": "styles/overworld.css?v=areas1",
+      "path": "styles/overworld.css?v=areas2",
       "status": 200,
-      "sha256": "4a9386eead24e7f5e383352a5d4f033fdd9ab81d44b9a17bf2d5cdcf1c601853"
+      "sha256": "f0bd8f9abdf0c3e3b963b73955dc09e6303e44b6ed424af2b570abe352346545"
     },
     {
       "path": "src/feedback-sound.js?v=areas1",
@@ -65,5 +65,5 @@
     }
   ],
   "errors": [],
-  "scope": "Real previous worker installed, then updated to v55. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+  "scope": "Real previous worker installed, then updated to v56. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
 }

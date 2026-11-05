@@ -9,7 +9,7 @@ await context.addCookies([{url:base,name:'hz_companion_session',value:'fictional
 const actions=[];await context.route('**/api/horizons',route=>{const action=route.request().postDataJSON().action;actions.push(action);assert.equal(action,'getSession');return route.fulfill({contentType:'application/json',body:JSON.stringify({profile:{displayName:'Map Explorer',avatar:{body:'female',skin:'skin-3',hair:'hair-9',outfit:'outfit-3',background:'bg-mint',hairColor:'color-auburn'}},books:[{id:'horizons-a1',level:'A1',status:'active',expiresAt:'2030-01-01T00:00:00Z'}],progress:{xp:1200,streak:4,completedActivityIds:pathNodes.slice(0,2).map(n=>n.id),islands:{[pathNodes[0].id]:{mastered:true,masteredCount:10,total:10}}}})});});
 if(before)for(const file of['src/app.js','styles/overworld.css'])await context.route('**/'+file+'?*',route=>route.fulfill({contentType:file.endsWith('.css')?'text/css':'text/javascript',body:execFileSync('git',['show',`${baseline}:Horizons/App/${file}`],{maxBuffer:64*1024*1024})}));
 const page=await context.newPage(),errors=[],failed=[];page.on('pageerror',e=>errors.push(e.message));page.on('requestfailed',r=>failed.push(r.url()));await page.goto(base);await page.locator('.overworld-map').waitFor();await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(im=>im.decode()));});
-await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(150);
+await page.locator('.path-player [data-face-rig=faceless-v2]').waitFor();await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(150);
 const map=page.locator('.overworld-map');await map.scrollIntoViewIfNeeded();await page.screenshot({path:out+`/desktop-${before?'before':'after'}.png`});
 const themes=[];
 for(let i=0;i<lessons.length;i++){
@@ -18,6 +18,7 @@ for(let i=0;i<lessons.length;i++){
 }
 if(before){assert.deepEqual(errors,[]);await browser.close();fs.writeFileSync(out+'/baseline.json',JSON.stringify({baseline,themes},null,2));console.log('Captured committed baseline for four lesson areas');process.exit(0);}
 assert.deepEqual(themes.map(t=>t.tiles.map(s=>path.basename(s))),[['greetings.png','cafe-cups.png'],['jobs.png','work-bag.png'],['countries.png','globe.png'],['personal.png','postbox.png']]);assert.equal(await page.locator('.world-tile').count(),8);assert.equal(await page.locator('.world-fauna').count(),4);assert.equal(await page.locator('.world-bird').count(),2);assert.equal(await page.locator('.world-butterfly').count(),2);assert.equal(await page.locator('.landmark-art').count(),4);assert.equal(await page.locator('.landmark-label').count(),0);assert.equal(await page.locator('.world-map-note,#world-help,.overworld-heading').count(),0);
+assert.ok(await page.locator('.lesson-trail').evaluateAll(trails=>trails.every(trail=>{const box=trail.getBoundingClientRect(),top=trail.querySelector('.area-prop-1').getBoundingClientRect(),bottom=trail.querySelector('.area-prop-0').getBoundingClientRect();return top.bottom<box.top+box.height/2&&bottom.top>box.top+box.height/2;})),'each lesson has one topic object above and one below');
 const overlap=(a,b)=>Math.min(a.right,b.right)>Math.max(a.left,b.left)+1&&Math.min(a.bottom,b.bottom)>Math.max(a.top,b.top)+1;
 const placements=[];
 for(const width of[320,390,768,1440]){
@@ -27,6 +28,7 @@ for(const width of[320,390,768,1440]){
   const geometry=await page.evaluate(id=>{const stop=document.querySelector(`.path-stop[data-path-node="${id}"]`),section=stop.closest('.path-lesson'),r=el=>{const b=el.getBoundingClientRect();return{left:b.left,right:b.right,top:b.top,bottom:b.bottom};};return{island:r(stop),player:r(document.querySelector('.path-player')),bubble:r(document.querySelector('#path-bubble')),decor:[...section.querySelectorAll('.world-tile,.world-fauna')].map(r),orbs:[...section.querySelectorAll('.stop-orb')].map(r),trailHeight:section.querySelector('.lesson-trail').offsetHeight};},node.id);
   assert.equal(geometry.trailHeight,308);assert.ok(geometry.player.bottom<=geometry.island.top-1,'portrait stays above island');assert.ok(geometry.bubble.top>=geometry.island.bottom+1,'details stay below island');assert.equal(overlap(geometry.player,geometry.bubble),false);assert.ok(geometry.bubble.left>=0&&geometry.bubble.right<=width+1);
   for(const decoration of geometry.decor)for(const orb of geometry.orbs)assert.equal(overlap(decoration,orb),false,'decorations clear every island');
+  for(const decoration of geometry.decor)assert.equal(overlap(decoration,geometry.player),false,'decorations clear the selected portrait');
   placements.push({width,id:node.id});
  }
  await page.keyboard.press('Escape');await map.evaluate(el=>el.scrollLeft=0);if(width===390)await page.screenshot({path:out+'/mobile-after.png'});
