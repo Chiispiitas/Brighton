@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Current Pico rendering: v4 faceless ImageGen head with separate transparent expression sprites. V3 skin-patch compositing is retired. Motion unchanged. Cache pico-v27, queries pico4. See ANIMATION-AUDIT.md current v4 section and faceless-production-record.json.
+
 Latest animation revision: face-contained blink, native pupil glances and a springy closer map inspection after four eight-second idle loops. New generated raised-brow/squinted/no-smile expression. Cache pico-v26, queries pico3. See ANIMATION-AUDIT.md v3 section and check-production-record.json.
 
 Latest exception: Unit 1 banner Pico may use the new ImageGen-generated-part reading rig. See docs/ANIMATION-AUDIT.md and docs/pico-banner-animation/production-record.json. Other cast/avatar art remains static. Current cache horizons-companion-pico-v24; entry queries pico1.

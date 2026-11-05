@@ -1,0 +1,91 @@
+{
+  "assetId": "pico-faceless-head-v1",
+  "scope": "Unit 1 banner Pico only",
+  "tool": "built-in ImageGen",
+  "prompt": "Image 1 R01 brand, Image 2 R02 Pico identity, Image 3 R07 style, Image 4 exact current isolated head edit target. Remove ALL facial features: eyes, pupils, eyebrows, nose, mouth and tongue. Produce the EXACT SAME head and neck, complete both ears, coral inner ears, peach head, same asymmetric silhouette and proportions, same pose. The face is entirely smooth blank peach skin, including the projecting muzzle, with NO feature or mark. Do not reshape the head or change the ears. Precision edit only erasing the facial features. Preserve exact input framing. Solid opaque skin inside silhouette, transparent outside. Flat colors no shading, no holes, no halo, no outlines, no extra anatomy. This faceless base will carry separate expression sprites.",
+  "preflightPassedBeforeCall": true,
+  "inputCount": 4,
+  "orderedInputs": [
+    {
+      "role": "reference",
+      "id": "R01",
+      "path": "docs/image-references/01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "role": "reference",
+      "id": "R02",
+      "path": "docs/image-references/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "role": "reference",
+      "id": "R07",
+      "path": "docs/image-references/07-scenes-vocabulary-ui.png",
+      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+    },
+    {
+      "role": "target",
+      "path": "assets/art/pico-banner-motion-v1/faceless-target.png",
+      "sha256": "7b0d617dedf676b195bd2862bfc89c101ed8030e14224878b8978c89c2e2ae28"
+    }
+  ],
+  "nativeGeneratedPath": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-331fd130-5886-4f07-bbed-3f4340ae22cc.png",
+  "repositoryNative": "assets/art/pico-banner-motion-v1/head-faceless-native-v1.png",
+  "nativeSha256": "96926829e9d35c9e31a2410cf00836c6dbc1efa23e238576c56ee48f763526e7",
+  "nativeDimensions": [
+    1051,
+    1497
+  ],
+  "recipe": "tools/prepare-pico-face-sprites.py",
+  "operations": "Connected alpha selection, uniform scale/translation for blank head; color-based alpha separation of existing native generated eyes, brows, nose, mouth, eyelids and inspection features. No skin patches in expression assets, no feature strokes drawn. Sclera excludes original pupils; their footprints use sampled white. Old patch compositing is retired, with files kept as historical evidence.",
+  "activeAssets": [
+    {
+      "file": "head-faceless-registered.png",
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106"
+    },
+    {
+      "file": "face-neutral-eyes.png",
+      "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff"
+    },
+    {
+      "file": "face-neutral-brows-mouth.png",
+      "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d"
+    },
+    {
+      "file": "face-nose.png",
+      "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132"
+    },
+    {
+      "file": "face-blink-eyelids.png",
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc"
+    },
+    {
+      "file": "face-inspect-features.png",
+      "sha256": "27db56a4cecb976d9db4825403d43ae738f9f823cdb71686455b888a28f2a6f2"
+    },
+    {
+      "file": "pupils-native.png",
+      "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c"
+    },
+    {
+      "file": "eyes-mask.png",
+      "sha256": "e9fa0e4f08c9532c6acfd866367ad8637828ded4e3088064a98497290db1ecb9"
+    }
+  ],
+  "featureSources": {
+    "neutral": "head-registered.png (original head-v2 ImageGen)",
+    "blink": "blink-registered.png (blink-native-v1 ImageGen)",
+    "inspect": "check-face-native-v2.png (ImageGen)"
+  },
+  "visualVerdict": "Root reviewed blank head and composed neutral/blink/inspection at canonical size. Very similar rest silhouette; not pixel-identical. No independent subagent approval for v4.",
+  "silhouetteIoU": 0.9767996028462684,
+  "expressionPeachEdgePixels": {
+    "face-neutral-eyes.png": 0,
+    "face-neutral-brows-mouth.png": 3,
+    "face-nose.png": 0,
+    "face-blink-eyelids.png": 0,
+    "face-inspect-features.png": 0
+  },
+  "exteriorSelection": "Inspection features are explicitly selected only in the eye/brow and mouth regions, excluding the native black exterior."
+}

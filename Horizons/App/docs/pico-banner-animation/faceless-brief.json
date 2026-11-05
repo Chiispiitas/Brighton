@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-faceless-head-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/faceless-target.png"
+  ],
+  "prompt": "Image 1 R01 brand, Image 2 R02 Pico identity, Image 3 R07 style, Image 4 exact current isolated head edit target. Remove ALL facial features: eyes, pupils, eyebrows, nose, mouth and tongue. Produce the EXACT SAME head and neck, complete both ears, coral inner ears, peach head, same asymmetric silhouette and proportions, same pose. The face is entirely smooth blank peach skin, including the projecting muzzle, with NO feature or mark. Do not reshape the head or change the ears. Precision edit only erasing the facial features. Preserve exact input framing. Solid opaque skin inside silhouette, transparent outside. Flat colors no shading, no holes, no halo, no outlines, no extra anatomy. This faceless base will carry separate expression sprites."
+}

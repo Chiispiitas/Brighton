@@ -1,5 +1,5 @@
 // New, isolated trial. All artwork comes from the documented ImageGen parts.
-// Feet/body stay fixed. Head/neck and map+both grips share one 8-second clock.
+// Feet/body stay fixed. Head/neck and map+both grips share one 38-second clock.
 const controllers=new WeakMap();
 const source=new URL('../assets/art/pico-banner-motion-v1/',import.meta.url);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -11,17 +11,22 @@ export function mountBannerPico(slot){
  const head=document.createElement('span');head.className='pico-banner-head pico-banner-layer';
  const body=document.createElement('img');body.className='pico-banner-body pico-banner-layer';body.src=new URL('body-registered.png',source).href;
  const map=document.createElement('img');map.className='pico-banner-map pico-banner-layer';map.src=new URL('map-registered.png',source).href;
- const open=document.createElement('img');open.src=new URL('head-look-base.png',source).href;
- const blink=document.createElement('img');blink.src=new URL('blink-registered.png',source).href;blink.className='pico-banner-blink';blink.style.transformOrigin='112px 172px';blink.style.transform='scale(1.5)';blink.style.clipPath='inset(162px 0 0 0)';
- const pupils=document.createElement('img');pupils.src=new URL('pupils-native.png',source).href;pupils.className='pico-banner-pupils';
- const expression=document.createElement('img');expression.src=new URL('check-face-registered.png',source).href;expression.className='pico-banner-expression';expression.style.opacity='0';
- const masks=['head-registered.png','eyes-mask.png'].map(file=>{const img=new Image();img.src=new URL(file,source).href;return img;});
- const face=document.createElement('span');face.className='pico-banner-face-mask';
- const eyes=document.createElement('span');eyes.className='pico-banner-eye-mask';
- const mask=(el,file)=>{el.style.cssText+=';position:absolute;inset:0;mask-image:url("'+new URL(file,source).href+'");mask-size:248px 582px;mask-repeat:no-repeat;';};
- mask(face,'head-registered.png');mask(eyes,'eyes-mask.png');eyes.append(pupils);face.append(blink,expression);
- for(const image of[body,map,open,blink,pupils,expression]){image.alt='';image.draggable=false;}
- head.append(open,eyes,face);stage.append(head,body,map);slot.append(stage);
+ const image=(file,className='')=>{const img=document.createElement('img');img.src=new URL(file,source).href;img.className=className;img.alt='';img.draggable=false;return img;};
+ const open=image('head-faceless-registered.png','pico-banner-faceless');
+ const blink=image('face-blink-eyelids.png','pico-banner-blink');blink.style.transformOrigin='112px 172px';blink.style.transform='scale(1.5)';
+ const pupils=image('pupils-native.png','pico-banner-pupils');
+ const expression=image('face-inspect-features.png','pico-banner-expression');expression.style.opacity='0';
+ const eyeWhites=image('face-neutral-eyes.png');
+ const neutralFeatures=image('face-neutral-brows-mouth.png');
+ const nose=image('face-nose.png');
+ const masks=['head-faceless-registered.png','eyes-mask.png'].map(file=>image(file));
+ const group=className=>{const el=document.createElement('span');el.className=className;el.style.cssText='position:absolute;inset:0';return el;};
+ const face=group('pico-banner-face-mask'),neutral=group('pico-banner-neutral'),eyes=group('pico-banner-open-eyes'),pupilMask=group('pico-banner-eye-mask');
+ const mask=(el,file)=>{el.style.cssText+=';mask-image:url("'+new URL(file,source).href+'");mask-size:248px 582px;mask-repeat:no-repeat;';};
+ mask(face,'head-faceless-registered.png');mask(pupilMask,'eyes-mask.png');pupilMask.append(pupils);eyes.append(eyeWhites,pupilMask);neutral.append(neutralFeatures,eyes,blink);face.append(nose,neutral,expression);
+ const images=[body,map,open,blink,pupils,expression,eyeWhites,neutralFeatures,nose,...masks];
+ for(const img of images){img.alt='';img.draggable=false;}
+ head.append(open,face);stage.append(head,body,map);slot.append(stage);
  let disposed=false,ready=false,visible=false,animations=[];
  const size=()=>{const r=slot.getBoundingClientRect();stage.style.setProperty('--pico-fit',Math.min(r.width/248,r.height/582));};
  const resize=new ResizeObserver(size);resize.observe(slot);size();
@@ -38,12 +43,15 @@ export function mountBannerPico(slot){
    const headIdle=[[0,headRest],[1920,'rotate(2.8deg)'],[2560,'rotate(2.8deg)'],[4000,headRest],[5920,'rotate(-1.2deg)'],[8000,headRest]];
    const mapIdle=[[0,mapRest],[1920,'translateY(1.6px) rotate(-.9deg)'],[4000,mapRest],[5920,'translateY(.8px) rotate(.6deg)'],[8000,mapRest]];
    const opacity=[];for(let loop=0;loop<4;loop++)for(const[t,v]of [[0,0],[2280,0],[2352,1],[2416,1],[2496,0],[5960,0],[6032,1],[6096,1],[6176,0],[8000,0]])opacity.push({offset:(loop*8000+t)/duration,opacity:v});opacity.push({offset:1,opacity:0});
+   const inspectOpacity=[{offset:0,opacity:0},{offset:32800/duration,opacity:0},{offset:33100/duration,opacity:1},{offset:36100/duration,opacity:1},{offset:36500/duration,opacity:0},{offset:1,opacity:0}];
    animations=[
     head.animate(track(headIdle,[[32400,'translateY(-3px) rotate(-2deg) scale(.98,1.02)'],[33300,'translateY(9px) rotate(7deg) scale(1.025,.975)'],[33700,'translateY(7px) rotate(6deg) scale(1,1)'],[35700,'translateY(7px) rotate(6deg) scale(1,1)'],[36800,'translateY(-2px) rotate(-1deg) scale(.99,1.01)'],[38000,headRest]]),timing),
     map.animate(track(mapIdle,[[32400,'translateY(4px) rotate(1deg) scale(.98)'],[33300,'translateY(-49px) rotate(-3deg) scale(.96,1.03)'],[33700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[35700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[36800,'translateY(2px) rotate(.5deg) scale(.99)'],[38000,mapRest]]),timing),
     blink.animate(opacity,timing),
     pupils.animate(track([[0,'translate(0,0)'],[1600,'translate(1px,1px)'],[3600,'translate(-2px,1px)'],[6200,'translate(1px,0)'],[8000,'translate(0,0)']],[[33000,'translate(0,2px)'],[37000,'translate(0,0)'],[38000,'translate(0,0)']]),timing),
-    expression.animate([{offset:0,opacity:0},{offset:32800/duration,opacity:0},{offset:33100/duration,opacity:1},{offset:36100/duration,opacity:1},{offset:36500/duration,opacity:0},{offset:1,opacity:0}],timing)
+    expression.animate(inspectOpacity,timing),
+    neutral.animate(inspectOpacity.map(f=>({...f,opacity:1-f.opacity})),timing),
+    eyes.animate(opacity.map(f=>({...f,opacity:1-f.opacity})),timing)
    ];
    // Explicit common start time avoids independent limb/timeline drift.
    const start=document.timeline.currentTime;for(const animation of animations)animation.startTime=start;
@@ -55,7 +63,7 @@ export function mountBannerPico(slot){
  reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
  const controller={get animations(){return animations;},dispose(){disposed=true;animations.forEach(a=>a.cancel());animations=[];resize.disconnect();intersection.disconnect();reduced.removeEventListener('change',sync);document.removeEventListener('visibilitychange',sync);stage.remove();if(fallback)fallback.hidden=false;if(originalSource)slot.dataset.anatomySource=originalSource;else delete slot.dataset.anatomySource;delete slot.dataset.bannerMotion;delete slot.dataset.motionPaused;controllers.delete(slot);}};
  controllers.set(slot,controller);
- controller.ready=Promise.all([body,map,open,blink,pupils,expression,...masks].map(image=>image.decode())).then(()=>{if(disposed||!slot.isConnected)return;ready=true;sync();}).catch(()=>{if(!disposed){stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='fallback';}});
+ controller.ready=Promise.all(images.map(image=>image.decode())).then(()=>{if(disposed||!slot.isConnected)return;ready=true;sync();}).catch(()=>{if(!disposed){stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='fallback';}});
  return controller;
 }
 export function unmountBannerPico(slot){controllers.get(slot)?.dispose();}

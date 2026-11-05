@@ -26,7 +26,7 @@ await context.addInitScript(()=>{
   const animate=Element.prototype.animate;
   Element.prototype.animate=function(frames,options){
     const protectedArt='.character,.avatar,[data-avatar-static]';
-    window.motionCalls.push({target:this.className?.baseVal??this.className,banner:!!this.closest('.hero-pico')&&this.matches('.pico-banner-head,.pico-banner-map,.pico-banner-blink,.pico-banner-pupils,.pico-banner-expression'),protected:!!this.closest(protectedArt)||!!this.querySelector(protectedArt),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,frames,duration:options?.duration});
+    window.motionCalls.push({target:this.className?.baseVal??this.className,banner:!!this.closest('.hero-pico')&&this.matches('.pico-banner-head,.pico-banner-map,.pico-banner-blink,.pico-banner-pupils,.pico-banner-expression,.pico-banner-neutral,.pico-banner-open-eyes'),protected:!!this.closest(protectedArt)||!!this.querySelector(protectedArt),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,frames,duration:options?.duration});
     return animate.call(this,frames,options);
   };
 });
