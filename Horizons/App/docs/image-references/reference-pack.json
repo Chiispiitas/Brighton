@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T20:51:12.435Z",
-  "sourceCommit": "a71d0ac0c1b923c46de2ddb873bdacba8c5b7d2b",
+  "createdAt": "2026-11-05T21:01:59.266Z",
+  "sourceCommit": "83dca3ee07524c16568ff218bc442d05116ccbd1",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "995592f6a68f7a6de50e53c0b43400ce39f1a5ad8202d96557f61c35a2204e9b"
+      "sha256": "e215044573054b44346dde85048890eb03658aa6943ff545ddaba5594bdad05c"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "9424a0c4da48dbb19502f2abb3cb199da03a4600b5b209cf5061df53919c7d90"
+      "sha256": "caba8d8a33b6cf02b0af667fcad4077882f6a804d7c38dd56748951def59001a"
     },
     {
       "file": "styles/app.css",
@@ -95,7 +95,7 @@
     },
     {
       "file": "src/avatar-motion.js",
-      "sha256": "421ecb345586314d05b7bf3b638cf13e845fc6dd29ab67260677404aa425bb01"
+      "sha256": "2baf85f71a620788ae8011f532782ec03c70a04b7cd504178602fedea629166c"
     },
     {
       "file": "assets/art/avatar-face-v2/blank-heads.png",
@@ -195,7 +195,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "d8b28a1bcfed7e1acfc6da61c9f3a597e89d4fcf6e69fecbc873396ed2e63140"
+      "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
     },
     {
       "id": "R06",

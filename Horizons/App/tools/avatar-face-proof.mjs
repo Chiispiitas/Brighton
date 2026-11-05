@@ -40,7 +40,7 @@ const widths=[320,390,768,1440],samples=[];
 for(const width of widths){
  await page.setViewportSize({width,height:1000});
  const player=page.locator('.path-player [data-avatar-static]');
- const rest=await sample(player,12000),down=await sample(player,25100),end=await sample(player,29000);const p0=await sample(player,0),p1=await sample(player,5800),p2=await sample(player,14600),pb=await sample(player,4210),p3=await sample(player,4500);
+ const rest=await sample(player,6500),down=await sample(player,15200),end=await sample(player,19000);const p0=await sample(player,0),p1=await sample(player,3300),p2=await sample(player,9200),pb=await sample(player,4210),p3=await sample(player,4500);
  assert.deepEqual(p0.background,p1.background);assert.deepEqual(p0.background,p2.background);assert.deepEqual(p0.background,pb.background);
  assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));const peak=await sample(player,2600);assert.ok(peak.artHeight/p0.artHeight>1.005,'breathing visibly changes avatar height');assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);assert.equal(rest.face,p0.face);assert.equal(end.face,p0.face);assert.notEqual(down.face,p1.face);
  assert.equal(pb.blink,'closed');assert.equal(pb.eyesHidden,true);assert.equal(pb.lidsHidden,false);assert.equal(p3.blink,'open');
@@ -73,5 +73,5 @@ if(process.env.HZ_RECORD_AVATAR){
  await v.close();fs.writeFileSync(videoDir+'/latest-path.txt',await p.video().path());
 }
 await browser.close();
-fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,glassesFollowFace:true,variedGazeCycleMs:30000,separateGeneratedBlankAndFeatures:true,naturalClockBlink:true,pupilLogicalWidth:21,neutralPupilsMatchAcceptedStill:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
+fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,glassesFollowFace:true,variedGazeCycleMs:20000,separateGeneratedBlankAndFeatures:true,naturalClockBlink:true,pupilLogicalWidth:21,neutralPupilsMatchAcceptedStill:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
 console.log('PASS separate blank/feature rig, gaze, masks, fixed backgrounds, opacity and fallback at four widths');

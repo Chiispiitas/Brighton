@@ -1,5 +1,11 @@
 # Horizons animation production audit
 
+Latest editor feedback: first look-around begins after500ms, easing to its first pose at1900ms; the existing20-second varied gaze pattern is retained. Each avatar option change (skin, clothes, hair, eyewear, badge, hair color or background) triggers an immediate140ms eye-only blink alongside customization feedback, including changes queued while art loads. Reduced motion remains neutral with no feedback animation. Face/glasses tracking, fixed background, immediate lesson entry and stable path scroll remain. Cache avatar-editor-v49; queries look2.
+
+
+Latest avatar gaze frequency: three varied glances every20 seconds (nine per minute),50% more frequent than the previous30-second schedule. Only pauses/holds are shortened;1.4–1.9-second transitions, face/glasses synchronization, breathing, blinking, resting eyes, fixed background and immediate lesson entry remain. Cache avatar-gaze-v48; module queries look1.
+
+
 Latest lesson-entry/path correction: no jump-in animation or entry delay; Start opens the selected activity immediately. Detail popovers reserve any required page space within the current learning path until the route changes; switching/dismissing details must not remove that space and clamp the page scroll upward. Minimal downward reveal remains when required to keep details below the island and clear of mobile navigation. Cache path-details-v47; module queries pathfix1.
 
 
@@ -37,7 +43,7 @@ The portrait background is stationary during breathing and customization/island 
 | [Current reference manifest](avatar-face-v2/reference-pack.json) | SHA256 inventory of current review artifacts; per-artifact source binding distinguishes older costume boards |
 | [Reconstruction/layer board](avatar-face-v2/reconstruction.png) | Accepted still, actual blank head, neutral assembly, separate eyelids and a glancing glasses example |
 | [Current neutral](avatar-face-v2/neutral.png), [blink](avatar-face-v2/blink.png) | Current synthetic editor captures |
-| [Glasses motion preview](avatar-face-v2/normal-speed-preview.mp4) |944 actual-renderer poses at 30fps:30-second gaze schedule,14 feedback frames and 30 settling frames;31.47 seconds total |
+| [Glasses motion preview](avatar-face-v2/normal-speed-preview.mp4) |644 actual-renderer poses at 30fps:20-second gaze schedule,14 feedback frames and 30 settling frames;21.47 seconds total |
 | [Preview contacts](avatar-face-v2/preview-frames.png), [capture metadata](avatar-face-v2/preview-capture.json) | Controlled-clock visual review, not a real-time performance benchmark |
 | [Costume board](avatar-face-v2/all-costumes.png), [hair/glasses board](avatar-face-v2/hair-glasses.png) | Current v46 hosted 240-composition closed-pose fit check; not a full gaze matrix |
 | [Original reference contacts](avatar-motion/reference-contact-0.png) | Part of the 598-frame/native30fps analysis of the user's20261105-1757-26.9073882.mp4 clip; timing inspiration, not generated anatomy |
@@ -69,25 +75,26 @@ The stationary portrait container contains a square stage, then an avatar-only f
 
 - Breathing:5200ms, ease-in-out, scale(.994,.98)→scale(1)→scale(.994,.98), pivot 50%/80%. This provides a visible rise/stretch without enlarging beyond the accepted crop or moving the background.
 - Blink: eye-only opaque swap at 4200–4340ms of each5200ms breathing period;140ms closed. Brows/nose/mouth and blank head remain unchanged.
+- Every avatar option change triggers an immediate140ms eye-only blink using the separate generated eyelids. Pending changes wait for sprite readiness; rapid changes restart the blink on the latest avatar. The feedback deadline uses the same paused animation clock, is cleared on reset/disposal, and is suppressed under reduced motion.
 - Customization feedback:420ms, avatar artwork rises1% and shrinks to.98, then settles.
 - Explicit island activation:460ms, artwork rises2% and shrinks to.96, then settles. Hover/focus/scroll never retarget the player.
 - Lesson entry: immediate activity start. The former 440ms jump, ghost portrait and delayed-entry cancellation flow are retired.
 
 ### Slower, varied look-around
 
-Gaze reads the same elapsed animation time as breathing/blinking, modulo 30000ms. Its period is independent of their 5200ms period. It is deterministic, not randomized. Each transition uses smoothstep easing; directions, amplitudes, hold lengths and rests differ. Pupils translate relative to the white eyes; the face and glasses move at 40% of that offset, up to 1 logical px horizontally. Masks remain in place throughout.
+Gaze reads the same elapsed animation time as breathing/blinking, modulo 20000ms. Its period is independent of their 5200ms period. It is deterministic, not randomized. Each transition uses smoothstep easing; directions, amplitudes, hold lengths and rests differ. Pupils translate relative to the white eyes; the face and glasses move at 40% of that offset, up to 1 logical px horizontally. Masks remain in place throughout.
 
-| Time in 30-second schedule | Action; pupil offset in logical px |
+| Time in 20-second schedule | Action; pupil offset in logical px |
 | --- | --- |
-|0–4.0s | Neutral rest |
-|4.0–5.4s /5.4–6.5s /6.5–8.2s | Ease to(2.5,−0.4), hold right/up, return |
-|8.2–12.4s | Neutral rest |
-|12.4–14.2s /14.2–15.3s /15.3–16.9s | Ease to(−1.9,−0.8), hold left/up, return |
-|16.9–23.2s | Neutral rest |
-|23.2–24.8s /24.8–25.7s /25.7–27.6s | Ease to(1.1,1.2), hold slight right/down, return |
-|27.6–30.0s | Neutral rest; joins the next cycle's initial rest |
+|0–0.5s | Neutral rest |
+|0.5–1.9s /1.9–2.7s /2.7–4.4s | Ease to(2.5,−0.4), hold right/up, return |
+|4.4–7.0s | Neutral rest |
+|7.0–8.8s /8.8–9.6s /9.6–11.2s | Ease to(−1.9,−0.8), hold left/up, return |
+|11.2–13.3s | Neutral rest |
+|13.3–14.9s /14.9–15.6s /15.6–17.5s | Ease to(1.1,1.2), hold slight right/down, return |
+|17.5–20.0s | Neutral rest; joins the next cycle's initial rest |
 
-There are three glances per 30 seconds, roughly six per minute, replacing two glances per 5.2 seconds. Transitions take1.4–1.9 seconds. The longer, varied gaze does not slow breathing or blinking. The31.47-second preview covers this gaze schedule and feedback, not the full combined phase repetition of the independent periods.
+There are three glances per 20 seconds, roughly nine per minute, replacing two glances per 5.2 seconds. Transitions take1.4–1.9 seconds. The longer, varied gaze does not slow breathing or blinking. The21.47-second preview covers this gaze schedule and feedback, not the full combined phase repetition of the independent periods.
 
 ### Accessibility and lifecycle
 
@@ -95,7 +102,7 @@ Only main editor/path instances mount avatar motion. Reduced motion cancels tran
 
 ## Verification and limits
 
-Current local [face proof](../reports/avatar-face-proof.json) covers 320/390/768/1440px, glasses/face transform agreement within numerical rounding, unequal glances, long neutral rests, original resting pupil positions, visible breathing, fixed background, one unchanging blank head, eye-only blink, masks, opacity 1 and missing-sprite fallback. [Motion/lifecycle proof](../reports/avatar-motion-proof.json) covers scope, static sidebar/thumbnails, click-only targeting, feedback, reduced motion, pause, immediate entry and cleanup. [Cache proof](../reports/avatar-cache-proof.json) installs v47, removes a synthetic expired v46 cache and checks new face assets; it is not a complete previous-worker update simulation.
+Current local [face proof](../reports/avatar-face-proof.json) covers 320/390/768/1440px, glasses/face transform agreement within numerical rounding, unequal glances, long neutral rests, original resting pupil positions, visible breathing, fixed background, one unchanging blank head, eye-only blink, masks, opacity 1 and missing-sprite fallback. [Motion/lifecycle proof](../reports/avatar-motion-proof.json) covers scope, static sidebar/thumbnails, click-only targeting, feedback, reduced motion, pause, immediate entry and cleanup. [Cache proof](../reports/avatar-cache-proof.json) installs v49 and removes a synthetic expired cache and checks new face assets; it is not a complete previous-worker update simulation.
 
 Current [hosted face checks](../reports/avatar-face-proof-hosted.json), [hosted lifecycle checks](../reports/avatar-motion-proof-hosted.json), [hosted costume checks](../reports/avatar-motion-costumes-hosted.json) and [hosted cache check](../reports/avatar-cache-proof-hosted.json) passed for v46. The 240-composition matrix covers the closed pose, both bases, six skins and ten costumes, with hair/glasses; it is not a 240-case full-gaze timeline. The 448-file [publication parity report](../reports/publication-assets.json) is bound to runtime 5f6218c. The [current release record](../reports/avatar-face-release.json) separates this from [preserved v44 evidence](../reports/avatar-face-release-v44.json).
 
@@ -189,7 +196,7 @@ Opt in only the authorized character/location. Fit the rig uniformly to the real
 
 ### 10. Review composed motion and test behavior
 
-Inspect neutral, actual extrema, blink, special face, return and loop seam, enlarged and at real app size. Review normal-speed playback covering every action. Avatar gaze repeats in 30 seconds while breathing/blinking repeat in 5.2 seconds; the 31.47-second preview covers a gaze schedule plus feedback, not the entire combined phase repetition. Test the actual route at 320/390/768/1440px: edge clearance, joints, grips, grounded body, face alignment and unwanted pixels. Probe before/at/after each expression switch and inside former fade windows. Reject fractional opacity or incompatible features visible together. Verify pupil containment, frequency, reduced motion, pause/resume, repeated navigation/disposal and missing assets/modules using fresh contexts. Use synthetic state, never real learner records. Name actual reviewers/scope; never imply human or independent approval that did not occur.
+Inspect neutral, actual extrema, blink, special face, return and loop seam, enlarged and at real app size. Review normal-speed playback covering every action. Avatar gaze repeats in 30 seconds while breathing/blinking repeat in 5.2 seconds; the 21.47-second preview covers a gaze schedule plus feedback, not the entire combined phase repetition. Test the actual route at 320/390/768/1440px: edge clearance, joints, grips, grounded body, face alignment and unwanted pixels. Probe before/at/after each expression switch and inside former fade windows. Reject fractional opacity or incompatible features visible together. Verify pupil containment, frequency, reduced motion, pause/resume, repeated navigation/disposal and missing assets/modules using fresh contexts. Use synthetic state, never real learner records. Name actual reviewers/scope; never imply human or independent approval that did not occur.
 
 ### 11. Publish and refresh the audit/reference set
 
@@ -205,3 +212,5 @@ Carry this audit, source-bound status, native originals, exact briefs/preflights
 The user’s20261105-2042-15.2403208.mp4 (5.70s,30fps) was inspected via23 contact frames at4fps. A1440×700 diagnostic reproduced scrollY oscillating156→176→156px when switching islands: closing details removed a temporary body spacer, clamping document scroll before the next reveal. The spacer now belongs to the current learning path and survives detail switching/dismissal. The same sequence stays156→176→176px. It leaves with the path on route/activity changes. A minimum downward reveal remains when needed; vertical wheel scrolling stays native.
 
 The lesson-entry jump helper and its asynchronous wait are removed. Start dispatches the selected activity immediately; no cloned portrait or deferred-entry cancellation remains. Selection/customization bounce, breathing, gaze, blinking and glasses tracking remain unchanged. [Current local regression](../reports/path-scroll-entry.json) covers27 selections at1440×700,1440×900 and390×844, dismissal, retained space, immediate activity entry and cleanup. Earlier jump-before-lesson and stale-entry-cancellation assertions are retired. No backend/book or real-learner changes.
+
+Current editor regression: [editor-feedback.json](../reports/editor-feedback.json) verifies a visible gaze offset within the first second and a blink/reopen for skin, clothes, hair, eyewear, badge, hair color and background changes, plus reduced-motion neutrality. No ImageGen/native sprite changes were required. Source updates are queued for publication; earlier hosted reports remain bound to their original revisions until refreshed.

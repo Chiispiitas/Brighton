@@ -1,5 +1,5 @@
-import {requestAvatarFeedback} from './avatar-motion.js?v=pathfix1';
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=pathfix1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=look2';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=look2';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);

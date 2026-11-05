@@ -7,17 +7,17 @@ export function requestAvatarFeedback(element,kind='select'){
 export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils,eyewear}){
  mounts.get(element)?.dispose();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),input=new AbortController();
- let disposed=false,visible=false,ready=false,raf=0,idleAnimation,effect;
+ let disposed=false,visible=false,ready=false,raf=0,idleAnimation,effect,feedbackBlinkUntil=0;
  const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.4/3.2}cqw,${y*.4/3.2}cqw)`;if(eyewear)eyewear.style.transform=face.style.transform;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
- const reset=()=>{eyes.hidden=false;closed.hidden=true;gaze();frame.dataset.avatarBlink='open';};
+ const reset=()=>{feedbackBlinkUntil=0;eyes.hidden=false;closed.hidden=true;gaze();frame.dataset.avatarBlink='open';};
  const draw=()=>{
   if(disposed)return;
   if(!visible||document.hidden||reduced.matches){sync();return;}
-  const t=(idleAnimation?.currentTime||0)%5200,blink=t>=4200&&t<4340;
+  const elapsed=idleAnimation?.currentTime||0,t=elapsed%5200,blink=(t>=4200&&t<4340)||elapsed<feedbackBlinkUntil;
   eyes.hidden=blink;closed.hidden=!blink;frame.dataset.avatarBlink=blink?'closed':'open';
   // Longer rests and slower, unequal glances; breathing/blinking retain their own period.
-  const lookTime=(idleAnimation?.currentTime||0)%30000;
-  const keys=[[0,0,0],[4000,0,0],[5400,2.5,-.4],[6500,2.5,-.4],[8200,0,0],[12400,0,0],[14200,-1.9,-.8],[15300,-1.9,-.8],[16900,0,0],[23200,0,0],[24800,1.1,1.2],[25700,1.1,1.2],[27600,0,0],[30000,0,0]];
+  const lookTime=(idleAnimation?.currentTime||0)%20000;
+  const keys=[[0,0,0],[500,0,0],[1900,2.5,-.4],[2700,2.5,-.4],[4400,0,0],[7000,0,0],[8800,-1.9,-.8],[9600,-1.9,-.8],[11200,0,0],[13300,0,0],[14900,1.1,1.2],[15600,1.1,1.2],[17500,0,0],[20000,0,0]];
   const next=keys.findIndex(k=>k[0]>lookTime),a=keys[Math.max(0,next-1)],b=keys[next]||keys.at(-1),u=(lookTime-a[0])/(b[0]-a[0]||1),e=u*u*(3-2*u);
   gaze(a[1]+(b[1]-a[1])*e,a[2]+(b[2]-a[2])*e);
   raf=requestAnimationFrame(draw);
@@ -35,6 +35,7 @@ export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,
   delete element.dataset.pendingAvatarFeedback;
   if(disposed||reduced.matches||document.hidden)return;
   effect?.cancel();const custom=kind==='customize';
+  if(custom){feedbackBlinkUntil=(idleAnimation?.currentTime||0)+140;eyes.hidden=true;closed.hidden=false;frame.dataset.avatarBlink='closed';}
   effect=feedback.animate([{transform:'translateY(0) scale(1)'},{transform:`translateY(${custom?'-1%':'-2%'}) scale(${custom?'.98':'.96'})`,offset:.38},{transform:'translateY(.3%) scale(.994,.99)',offset:.72},{transform:'translateY(0) scale(1)'}],{duration:custom?420:460,easing:'cubic-bezier(.2,.7,.3,1)'});
  };
  const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting===true;sync();if(visible&&element.dataset.pendingAvatarFeedback)bounce(element.dataset.pendingAvatarFeedback);},{threshold:.01});observer.observe(element);

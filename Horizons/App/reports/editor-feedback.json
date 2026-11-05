@@ -1,0 +1,19 @@
+{
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "pass": true,
+  "firstGlanceWithinOneSecond": true,
+  "groups": [
+    "skin",
+    "outfit",
+    "hair",
+    "accessory",
+    "badge",
+    "hairColor",
+    "background"
+  ],
+  "eachChangeBlinks": true,
+  "blinkReopens": true,
+  "reducedMotionNeutral": true,
+  "errors": [],
+  "failedRequests": []
+}
