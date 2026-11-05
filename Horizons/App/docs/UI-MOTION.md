@@ -1,5 +1,7 @@
 # Interface motion
 
+Latest loading fix: restore the existing orange dot's boot-hop animation on both startup and result-save loading screens. The legacy global animation:none!important rule had suppressed it. A scoped no-preference media rule restores only this indicator: vertical bounce/stretch at full opacity; reduced motion remains static. No character animation changes. Cache loading-bounce-v60; app.css query loading1, entry stays answer1.
+
 Latest exercise audio placement: Play audio now sits beside the suggested answer inside correct/incorrect feedback, below Correct!/Not quite. It plays the question's canonical target recording, independent of the user's typed answer (including accepted alternatives). It is absent before grading, and wraps beside long answers on small screens. Remove the former pronunciation slot below the input; the reserved feedback dock and listening alternative remain. Cache answer-audio-v59; entry/app.css queries answer1.
 
 ## Current lesson and result flow — 5 November 2026

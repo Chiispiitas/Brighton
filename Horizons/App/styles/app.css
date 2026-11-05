@@ -386,3 +386,6 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 /* Pronunciation belongs to the suggested answer, including accepted alternatives. */
 .answer-feedback-copy>.suggested-answer{display:flex;align-items:center;flex-wrap:wrap;column-gap:12px;row-gap:2px}
 .suggested-answer>.word-pronunciation{display:inline-flex;flex:none;padding:0 4px;color:var(--result-ink)}
+
+/* The shared loading indicator is independent of legacy character-motion rules. */
+@media(prefers-reduced-motion:no-preference){.boot-screen>.boot-dot{animation:boot-hop .8s ease-in-out infinite!important}}
