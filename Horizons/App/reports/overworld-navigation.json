@@ -1,10 +1,12 @@
 {
-  "date": "2026-11-05T15:40:47.122Z",
+  "date": "2026-11-05T15:46:39.495Z",
   "base": "http://127.0.0.1:8898/Horizons/App/",
   "pass": true,
   "nativeVerticalWheel": true,
   "heldArrowAccelerationAndRelease": true,
   "mouseDrag": true,
+  "blurCancelsDrag": true,
+  "nativePinchZoomAllowed": true,
   "touchSwipe": true,
   "removedMessages": true,
   "errors": []

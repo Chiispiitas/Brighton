@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T15:19:18.214Z",
-  "sourceCommit": "13bcc6e04ed08354faa9a366f3d907127d1d734b",
+  "createdAt": "2026-11-05T15:45:59.196Z",
+  "sourceCommit": "b181a7690603c3d3f8f9793398cd86f87cff04f4",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "86fa64bc377e8c8c90081c62c097db6a8b61292f6d10f1ad1328870cfe339b65"
+      "sha256": "1d4b68a3e0e69da691f12c50f3c5fb0d988fe8c20412605c89bb1c60d00f6c08"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "e9cff594ee960183fea3be6af160e8f5de3b8974aeca25073da7298d571181ab"
+      "sha256": "19965cc20d8d720d27d3fb08019e51152d5f14f3245423099f33588613e942bd"
     },
     {
       "file": "assets/art/overworld-unit1-v1/welcome-park-native.png",
@@ -117,7 +117,5 @@
       "title": "Scenes vocabulary and interface art",
       "sha256": "f0fe0643707aaf9a5a6afdbd333ac9690d3b2ad23cfb986c004889fdae7e0992"
     }
-  ],
-  "sourceRuntimeRevision": "9a29911c85976856b30813fe3e27c9420046b65c",
-  "sourceCommitNote": "sourceCommit records the checkout base at sheet creation; sourceRuntimeRevision binds the included overworld sources to the published runtime."
+  ]
 }

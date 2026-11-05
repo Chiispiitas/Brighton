@@ -40,6 +40,6 @@
 @media(prefers-reduced-motion:reduce){.overworld-map .path-player[data-positioned=true]{transition:none}.world-fauna>img{animation:none!important;transition:none!important}}
 
 .path-scroll-toolbar{justify-content:flex-end}
-.overworld-map{touch-action:pan-x pan-y; -webkit-overflow-scrolling:touch;cursor:grab}
+.overworld-map{touch-action:auto; -webkit-overflow-scrolling:touch;cursor:grab}
 .overworld-map.is-dragging{cursor:grabbing;user-select:none}
 .path-scroll-buttons button{touch-action:none;user-select:none}

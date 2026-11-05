@@ -34,8 +34,8 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
    region.scrollBy({left:Number(button.dataset.pathPan)*220,behavior:reduced.matches?'instant':'smooth'});
   });
  }
- listen(window,'blur',stopPan);
- listen(document,'visibilitychange',()=>{if(document.hidden)stopPan();});
+ listen(window,'blur',()=>{stopPan();endDrag();});
+ listen(document,'visibilitychange',()=>{if(document.hidden){stopPan();endDrag();}});
  // Touch uses native momentum scrolling; mouse users can also grab and drag.
  listen(region,'pointerdown',event=>{
   if(event.pointerType!=='mouse'||event.button!==0)return;
@@ -43,6 +43,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  });
  listen(window,'pointermove',event=>{
   if(!drag||event.pointerId!==drag.id)return;
+  if(!(event.buttons&1)){endDrag();return;}
   const distance=event.clientX-drag.x;
   if(Math.abs(distance)>8)drag.moved=true;
   if(drag.moved){event.preventDefault();region.scrollLeft=drag.left-distance;region.classList.add('is-dragging');}
