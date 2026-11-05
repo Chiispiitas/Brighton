@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest path correction: remove the user avatar/You marker from the lesson path, including its positioning and island-selection motion. Profile/sidebar avatars and avatar editing remain. Islands, details, artwork and scrolling controls are unchanged. This supersedes older path-player requirements and assertions. Cache no-path-avatar-v58; app entry query path1 (app.css remains flow1). Finish after relevant checks and pushing; do not wait for GitHub Pages unless explicitly requested.
+
 Latest lesson/results flow: fix short-screen overflow when feedback/Play audio appears; reserve an answer dock and pronunciation slot, adapt short-height spacing/illustrations, preserve natural scrolling for longer exercises. Saved Results fit shorter viewports and start at the top. During saveAttempt show the same Horizons boot wordmark/orange-dot loader, not a Results page with Saving text. A failed save shows retry controls without scores; a successful retry reuses the attempt ID and then reveals results and the appropriate cue. See reports/lesson-scroll.json and docs/UI-MOTION.md. Cache lesson-flow-v57; entry/app.css queries flow1.
 
 Latest placement correction: keep the same sparse lesson-specific artwork, but place one topic object above and one below each lesson trail. Upper positions vary by lesson and sit between island/portrait columns. No additional decorations or artwork generation. Cache lesson-areas-v56; overworld stylesheet query areas2 (existing modules stay areas1).

@@ -1,5 +1,4 @@
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
-import {requestAvatarFeedback} from './avatar-motion.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
 import {mountOverworld} from './overworld-motion.js?v=areas1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
@@ -97,7 +96,7 @@ function home(){
  if(!hasBookAccess())return accessPage();
  if(!isA1Book())return `<section class="coming-book"><h1>${esc(bookTitle(activeBook()))}</h1>${characterMarkup('pico','coming-pico')}<p>Activities for this book are not available yet.</p><button class="primary-button" data-action="books">Choose a book ${icon('book')}</button></section>`;
  const next=pathNodes.find(node=>!nodeIsComplete(node))||pathNodes[0];
- return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><div class="horizontal-path-scroll overworld-map" role="region" aria-label="New Friends Town overworld" tabindex="0"><div class="horizontal-path-track"><div class="path-player" data-current-node="${esc(state.pathFocusId||next.id)}" data-selected-node="${esc(state.pathFocusId||next.id)}">${avatarMarkup(profile().avatar,'avatar-path',name())}<span class="path-player-caption">You</span></div>${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</div></div><div class="path-scroll-toolbar"><div class="path-scroll-buttons"><button class="round-button path-pan-prev" data-path-pan="-1" aria-label="Scroll path left">${icon('arrow')}</button><button class="round-button" data-path-pan="1" aria-label="Scroll path right">${icon('arrow')}</button></div></div></section>`;
+ return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><div class="horizontal-path-scroll overworld-map" role="region" aria-label="New Friends Town overworld" tabindex="0"><div class="horizontal-path-track">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</div></div><div class="path-scroll-toolbar"><div class="path-scroll-buttons"><button class="round-button path-pan-prev" data-path-pan="-1" aria-label="Scroll path left">${icon('arrow')}</button><button class="round-button" data-path-pan="1" aria-label="Scroll path right">${icon('arrow')}</button></div></div></section>`;
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);
@@ -111,17 +110,9 @@ function worldTiles(index){
 }
 function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
- state.pathFocusId=id;const player=app.querySelector('.path-player');if(player)player.dataset.selectedNode=id;positionPathPlayer(id);requestAvatarFeedback(player?.querySelector('.avatar'),'select');
  const status=progress().islands?.[id],done=nodeIsComplete(node),mastered=!!status?.mastered;
  const count=selectIslandQuestions(node,progress(),{seed:0}).length;
  openPathBubble(`<div class="island-bubble-heading"><h2 id="dialog-title">${esc(node.title)}</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p class="island-bubble-progress" title="Master each item with three unaided correct answers and at least 75% accuracy.">${mastered?'Mastered':`${status?.masteredCount||0}/${status?.total||masteryTargets[id]?.length||0} mastered`} · ${count} questions</p><button class="primary-button full-width" data-start-path="${esc(node.id)}">${mastered?'Practice again':done?'Continue':'Start'} ${icon('arrow')}</button>`,anchor,event);
-}
-function positionPathPlayer(id){
- const track=app.querySelector('.horizontal-path-track'),marker=track?.querySelector('.path-player');
- if(!marker)return;
- let stop=[...track.querySelectorAll('[data-path-node]')].find(el=>el.dataset.pathNode===id)||track.querySelector('[data-path-node]');const region=track.parentElement,view=region.getBoundingClientRect(),isVisible=el=>{const r=el.getBoundingClientRect();return r.left>=view.left-1&&r.right<=view.right+1;};if(!marker.dataset.positioned&&(!stop||!isVisible(stop)))stop=[...track.querySelectorAll('.path-stop')].find(isVisible);marker.hidden=!stop||!isVisible(stop);if(marker.hidden)return;const orb=stop.querySelector('.stop-orb');
- const r=orb.getBoundingClientRect(),target=stop.getBoundingClientRect(),box=track.getBoundingClientRect();marker.dataset.currentNode=stop.dataset.pathNode;
- marker.style.transform=`translate(${r.left-box.left+r.width/2-28}px,${target.top-box.top-marker.offsetHeight-8}px)`;requestAnimationFrame(()=>{if(marker.isConnected)marker.dataset.positioned='true';});
 }
 function syncPathPan(){const region=app.querySelector('.horizontal-path-scroll');if(!region)return;for(const button of app.querySelectorAll('[data-path-pan]')){button.dataset.arrowMarkup||=button.innerHTML;const direction=Number(button.dataset.pathPan),edge=direction<0?region.scrollLeft<=1:region.scrollLeft+region.clientWidth>=region.scrollWidth-1;updateBoundary(button,edge,adjacentUnit(unitRoutes,course.unit,direction));}}
 
@@ -136,7 +127,7 @@ function layoutPaths(){
   // Flat extensions join neighbouring lesson trails without changing node endpoints.
   for(const path of svg.querySelectorAll('.trail-bed,.trail-route'))path.setAttribute('d',d);for(const path of svg.querySelectorAll('.trail-extension-bed,.trail-extension'))path.setAttribute('d',`M0,${first.y} L${first.x},${first.y} M${last.x},${last.y} L${rect.width},${last.y}`);svg.style.overflow='visible';
  }
- const marker=app.querySelector('.path-player');positionPathPlayer(state.pathFocusId||marker?.dataset.currentNode);syncPathPan();
+ syncPathPan();
 }
 function practice(){
  const selectedWords=state.selected.size?getWordsForChunks([...state.selected]):[];
@@ -354,7 +345,7 @@ async function saveProfile(form) {
 on('click','[data-route]',(event,target)=>{event.preventDefault();route(target.dataset.route);});
 on('click','[data-jump]',(_,target)=>document.getElementById(`lesson-${target.dataset.jump}`)?.closest('.path-lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'}));
 on('click','[data-start-chunk]',(_,target)=>startChunk(target.dataset.startChunk));
-app.addEventListener('scroll',event=>{if(event.target.matches?.('.horizontal-path-scroll')){closePathBubble();syncPathPan();positionPathPlayer(app.querySelector('.path-player')?.dataset.currentNode);}},{capture:true,passive:true});
+app.addEventListener('scroll',event=>{if(event.target.matches?.('.horizontal-path-scroll')){closePathBubble();syncPathPan();}},{capture:true,passive:true});
 on('click','[data-path-node]',(event,target)=>pathDetails(target.dataset.pathNode,target,event));
 on('click','[data-start-activity]',(_,target)=>startActivity(target.dataset.startActivity));
 on('click','[data-choice]',(_,target)=>{if(state.active?.checked)return;state.active.selected=target.dataset.choice;render();});
