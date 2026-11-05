@@ -1,6 +1,6 @@
-import {lessonArt} from './lesson-art.js?v=compact1';
+import {lessonArt} from './lesson-art.js?v=lapel1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=compact1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=lapel1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 

@@ -432,7 +432,28 @@
         "y": 212.974,
         "w": 180,
         "z": 3
-      }
+      },
+      "overlays": [
+        {
+          "src": "assets/art/avatar-jacket-lapels-v1.png",
+          "atlas": {
+            "width": 1662,
+            "height": 946
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1662,
+            "h": 946
+          },
+          "position": {
+            "x": 70,
+            "y": 212.974,
+            "w": 180,
+            "z": 3
+          }
+        }
+      ]
     },
     "outfit-4": {
       "src": "assets/art/avatar-static-clothes-v1.png",

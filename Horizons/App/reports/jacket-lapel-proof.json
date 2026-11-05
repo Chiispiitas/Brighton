@@ -1,0 +1,1195 @@
+{
+  "date": "2026-11-05T02:25:46.501Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "sourceReference": {
+    "kind": "working-tree"
+  },
+  "scope": "Narrow Explorer jacket lapel correction: actual static avatar renderer at320px and44x56px across both bases and six skins, selected hair/eyewear combinations, unchanged outfit2/4 comparisons and actual manifest raster thumbnails. No authentication, API calls or profile writes.",
+  "sourceHashes": {
+    "src/avatar-static.js": "b641e65694bcf48233f055bd5e8e7aa145f27ddceb94c57939e2ec57540fc606",
+    "src/art.js": "f0f22df3c798f1a66df2b3778ce2b5640a87092cbf758ea2ef514068118a1c9a",
+    "assets/art/avatar-static-v1.frames.json": "5001fc229608572442f767930a682bf8a5774f2a5382d81b6e20fa551cc0e6c4",
+    "assets/art/manifest.json": "aee516c4a6d53a201490aafe54b8a3c277551ff5ae3f3aa64e4db504409f9742",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-jacket-lapels-v1.png": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-eyewear-v2.png": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1"
+  },
+  "overlaySources": [
+    "assets/art/avatar-jacket-lapels-v1.png"
+  ],
+  "proofs": [
+    {
+      "group": "base-skin",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jacket-lapel\\base-skin.png",
+      "sha256": "f3077efed69ab2816e5eec210009bda953af37e3fc41001c2014c3b4ac30f811",
+      "cases": [
+        {
+          "id": "male-skin1-jacket",
+          "body": "male",
+          "skin": "skin-1",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-skin2-jacket",
+          "body": "male",
+          "skin": "skin-2",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-skin3-jacket",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-skin4-jacket",
+          "body": "male",
+          "skin": "skin-4",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-skin5-jacket",
+          "body": "male",
+          "skin": "skin-5",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-skin6-jacket",
+          "body": "male",
+          "skin": "skin-6",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin1-jacket",
+          "body": "female",
+          "skin": "skin-1",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin2-jacket",
+          "body": "female",
+          "skin": "skin-2",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin3-jacket",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin4-jacket",
+          "body": "female",
+          "skin": "skin-4",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin5-jacket",
+          "body": "female",
+          "skin": "skin-5",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-skin6-jacket",
+          "body": "female",
+          "skin": "skin-6",
+          "outfit": "outfit-3",
+          "hair": "none",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-skin1-jacket",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 259.38837920489294,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-skin1-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin1-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-skin2-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.96136886503068,
+            "bottom": 230.76504984662577,
+            "pass": true
+          },
+          {
+            "case": "male-skin2-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin2-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-skin3-jacket",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-skin3-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin3-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-skin4-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.96136886503068,
+            "bottom": 230.76504984662577,
+            "pass": true
+          },
+          {
+            "case": "male-skin4-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin4-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-skin5-jacket",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 68.68974579510703,
+            "bottom": 231.380877293578,
+            "pass": true
+          },
+          {
+            "case": "male-skin5-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin5-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-skin6-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "male-skin6-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-skin6-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin1-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "female-skin1-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin1-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin2-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "female-skin2-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin2-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin3-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-skin3-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin3-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin4-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "female-skin4-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin4-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin5-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "female-skin5-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin5-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-skin6-jacket",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 68.19162193251533,
+            "bottom": 231.3818059815951,
+            "pass": true
+          },
+          {
+            "case": "female-skin6-jacket",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-skin6-jacket",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          }
+        ],
+        "images": 76,
+        "loaded": true,
+        "uniform": true,
+        "ready": true,
+        "animations": 0,
+        "targetSlots": 24,
+        "targetOverlayPresent": true,
+        "comparisonOverlayAbsent": true,
+        "thumbnailOverlayPresent": true
+      }
+    },
+    {
+      "group": "compatibility",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jacket-lapel\\compatibility.png",
+      "sha256": "78187800c9af419fecad516fc3556ef68bbde15178be5f88a1344f01094ff8e8",
+      "cases": [
+        {
+          "id": "male-hair-1-accessory-1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-1",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair-1-accessory-3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-1",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair-6-accessory-1",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-6",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "male-hair-6-accessory-3",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-6",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair-1-accessory-1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-1",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair-1-accessory-3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-1",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair-6-accessory-1",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-6",
+          "accessory": "accessory-1",
+          "badge": "none"
+        },
+        {
+          "id": "female-hair-6-accessory-3",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-3",
+          "hair": "hair-6",
+          "accessory": "accessory-3",
+          "badge": "none"
+        },
+        {
+          "id": "male-outfit-2-comparison",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-2",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "male-outfit-4-comparison",
+          "body": "male",
+          "skin": "skin-3",
+          "outfit": "outfit-4",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-outfit-2-comparison",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-2",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        },
+        {
+          "id": "female-outfit-4-comparison",
+          "body": "female",
+          "skin": "skin-3",
+          "outfit": "outfit-4",
+          "hair": "hair-1",
+          "accessory": "none",
+          "badge": "none"
+        }
+      ],
+      "structural": {
+        "painted": [
+          {
+            "case": "male-hair-1-accessory-1",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-1",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-1",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-1",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-1",
+            "part": "eyewear",
+            "left": 84.640625,
+            "right": 235.609375,
+            "top": 109.234375,
+            "bottom": 170.40953804347825,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-3",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-3",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-3",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-3",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "male-hair-1-accessory-3",
+            "part": "eyewear",
+            "left": 87.140625,
+            "right": 233.234375,
+            "top": 110.453125,
+            "bottom": 168.9842748397436,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-1",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-1",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-1",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-1",
+            "part": "hair",
+            "left": 31.5,
+            "right": 288,
+            "top": 16,
+            "bottom": 246.5,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-1",
+            "part": "eyewear",
+            "left": 84.640625,
+            "right": 235.609375,
+            "top": 109.234375,
+            "bottom": 170.40953804347825,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-3",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-3",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-3",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-3",
+            "part": "hair",
+            "left": 31.5,
+            "right": 288,
+            "top": 16,
+            "bottom": 246.5,
+            "pass": true
+          },
+          {
+            "case": "male-hair-6-accessory-3",
+            "part": "eyewear",
+            "left": 87.140625,
+            "right": 233.234375,
+            "top": 110.453125,
+            "bottom": 168.9842748397436,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-1",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-1",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-1",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-1",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-1",
+            "part": "eyewear",
+            "left": 84.734375,
+            "right": 236.20312500000006,
+            "top": 110.53125,
+            "bottom": 171.90902173913042,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-3",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-3",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-3",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-3",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "female-hair-1-accessory-3",
+            "part": "eyewear",
+            "left": 87.25,
+            "right": 233.828125,
+            "top": 111.75,
+            "bottom": 170.47521033653845,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-1",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-1",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-1",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-1",
+            "part": "hair",
+            "left": 31.5,
+            "right": 288,
+            "top": 16,
+            "bottom": 246.5,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-1",
+            "part": "eyewear",
+            "left": 84.734375,
+            "right": 236.20312500000006,
+            "top": 110.53125,
+            "bottom": 171.90902173913042,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-3",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-3",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 213.35836038961043,
+            "bottom": 315.0466720779221,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-3",
+            "part": "clothes-overlay",
+            "left": 118.30324909747293,
+            "right": 201.80505415162455,
+            "top": 213.29365974729242,
+            "bottom": 282.93264891696754,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-3",
+            "part": "hair",
+            "left": 31.5,
+            "right": 288,
+            "top": 16,
+            "bottom": 246.5,
+            "pass": true
+          },
+          {
+            "case": "female-hair-6-accessory-3",
+            "part": "eyewear",
+            "left": 87.25,
+            "right": 233.828125,
+            "top": 111.75,
+            "bottom": 170.47521033653845,
+            "pass": true
+          },
+          {
+            "case": "male-outfit-2-comparison",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-outfit-2-comparison",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 215.31148538961043,
+            "bottom": 313.49330357142856,
+            "pass": true
+          },
+          {
+            "case": "male-outfit-2-comparison",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "male-outfit-4-comparison",
+            "part": "head",
+            "left": 60.61162079510703,
+            "right": 258.7767584097859,
+            "top": 67.47324159021407,
+            "bottom": 230.77599388379207,
+            "pass": true
+          },
+          {
+            "case": "male-outfit-4-comparison",
+            "part": "clothes",
+            "left": 70.39045553145336,
+            "right": 249.2190889370933,
+            "top": 216.8434110629067,
+            "bottom": 323.828226681128,
+            "pass": true,
+            "intentionalLowerBustCrop": true
+          },
+          {
+            "case": "male-outfit-4-comparison",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "female-outfit-2-comparison",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-outfit-2-comparison",
+            "part": "clothes",
+            "left": 70.3896103896104,
+            "right": 249.61038961038963,
+            "top": 215.31148538961043,
+            "bottom": 313.49330357142856,
+            "pass": true
+          },
+          {
+            "case": "female-outfit-2-comparison",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          },
+          {
+            "case": "female-outfit-4-comparison",
+            "part": "head",
+            "left": 60.613496932515346,
+            "right": 259.3865030674847,
+            "top": 66.95724693251533,
+            "bottom": 231.3744248466258,
+            "pass": true
+          },
+          {
+            "case": "female-outfit-4-comparison",
+            "part": "clothes",
+            "left": 70.39045553145336,
+            "right": 249.2190889370933,
+            "top": 216.8434110629067,
+            "bottom": 323.828226681128,
+            "pass": true,
+            "intentionalLowerBustCrop": true
+          },
+          {
+            "case": "female-outfit-4-comparison",
+            "part": "hair",
+            "left": 50.50228310502283,
+            "right": 268.9954337899543,
+            "top": 6.080408105022831,
+            "bottom": 167.3132848173516,
+            "pass": true
+          }
+        ],
+        "images": 108,
+        "loaded": true,
+        "uniform": true,
+        "ready": true,
+        "animations": 0,
+        "targetSlots": 16,
+        "targetOverlayPresent": true,
+        "comparisonOverlayAbsent": true,
+        "thumbnailOverlayPresent": true
+      }
+    }
+  ],
+  "errors": [],
+  "checks": [
+    {
+      "name": "Native static overlay appears in all corrected busts and the actual option thumbnail; comparison outfits have no overlay",
+      "cases": 24,
+      "renderSizes": [
+        "320x320",
+        "44x56"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Avatar and thumbnail pixels remain unchanged after wait, hover, focus and inert control calls",
+      "pass": true
+    }
+  ],
+  "limits": [
+    "Edge/Chromium only.",
+    "Structural bounds and uniform scaling do not prove visual fit; captured contact sheets require direct review.",
+    "The avatar is intentionally an upper-chest bust."
+  ],
+  "structuralPass": true,
+  "visualVerdict": "PASS: Direct independent review of both source-bound contact sheets confirms two coherent notched lapels, attached neck opening, preserved orange shirt and cream badge, fit across both bases and six skins, readable miniatures and natural long-hair overlap. Existing outfit4 comparison-only lower bust crop remains intentional.",
+  "pass": true,
+  "loadedByteBinding": {
+    "files": [
+      {
+        "file": "src/avatar-static.js",
+        "expected": "b641e65694bcf48233f055bd5e8e7aa145f27ddceb94c57939e2ec57540fc606",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "b641e65694bcf48233f055bd5e8e7aa145f27ddceb94c57939e2ec57540fc606"
+          }
+        ]
+      },
+      {
+        "file": "src/art.js",
+        "expected": "f0f22df3c798f1a66df2b3778ce2b5640a87092cbf758ea2ef514068118a1c9a",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "f0f22df3c798f1a66df2b3778ce2b5640a87092cbf758ea2ef514068118a1c9a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-v1.frames.json",
+        "expected": "5001fc229608572442f767930a682bf8a5774f2a5382d81b6e20fa551cc0e6c4",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "5001fc229608572442f767930a682bf8a5774f2a5382d81b6e20fa551cc0e6c4"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/manifest.json",
+        "expected": "aee516c4a6d53a201490aafe54b8a3c277551ff5ae3f3aa64e4db504409f9742",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "aee516c4a6d53a201490aafe54b8a3c277551ff5ae3f3aa64e4db504409f9742"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-heads-v2.png",
+        "expected": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-clothes-v1.png",
+        "expected": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-jacket-lapels-v1.png",
+        "expected": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-hair-v1.png",
+        "expected": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-eyewear-v2.png",
+        "expected": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+        "observations": [
+          {
+            "status": 200,
+            "sha256": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1"
+          }
+        ]
+      }
+    ],
+    "pass": true
+  },
+  "sourceStable": true,
+  "status": "PASS"
+}

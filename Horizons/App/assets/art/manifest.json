@@ -550,7 +550,22 @@
           "y": 186,
           "w": 462,
           "h": 263
-        }
+        },
+        "overlays": [
+          {
+            "src": "assets/art/avatar-jacket-lapels-v1.png",
+            "atlas": {
+              "width": 1662,
+              "height": 946
+            },
+            "frame": {
+              "x": 0,
+              "y": 0,
+              "w": 1662,
+              "h": 946
+            }
+          }
+        ]
       },
       {
         "id": "outfit-4",

@@ -5,7 +5,7 @@ const sourceBase=new URL('../assets/art/',import.meta.url);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export async function loadArt(){
  installRasterFit();
- try{const response=await fetch(new URL('manifest.json?compact=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
+ try{const response=await fetch(new URL('manifest.json?lapel=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
  return manifest;
 }
 export function artManifest(){return manifest;}
@@ -33,7 +33,8 @@ export function rasterMarkup(asset,cls='',alt=''){
  const frame=asset.frame||asset.bounds||asset.crop,atlas=asset.atlas;
  if(frame&&atlas?.width&&atlas?.height){
   const imageStyle=`width:${atlas.width/frame.w*100}%;height:${atlas.height/frame.h*100}%;left:${-frame.x/frame.w*100}%;top:${-frame.y/frame.h*100}%;`;
-  return `<span class="raster-frame ${esc(cls)}" data-raster-slot data-static-art data-native-width="${frame.w}" data-native-height="${frame.h}" style="aspect-ratio:${frame.w}/${frame.h}" role="img" aria-label="${esc(alt)}"><span class="raster-fit"><img src="${esc(assetURL(source))}" alt="" draggable="false" style="${imageStyle}"></span></span>`;
+  const overlays=(asset.overlays||[]).map(overlay=>{const f=overlay.frame,a=overlay.atlas,p=overlay.placement||{x:0,y:0,w:frame.w};if(!f||!a)return '';const scale=p.w/f.w;return `<img src="${esc(assetURL(overlay.src))}" alt="" draggable="false" style="width:${a.width*scale/frame.w*100}%;height:${a.height*scale/frame.h*100}%;left:${(p.x-f.x*scale)/frame.w*100}%;top:${(p.y-f.y*scale)/frame.h*100}%;">`;}).join('');
+  return `<span class="raster-frame ${esc(cls)}" data-raster-slot data-static-art data-native-width="${frame.w}" data-native-height="${frame.h}" style="aspect-ratio:${frame.w}/${frame.h}" role="img" aria-label="${esc(alt)}"><span class="raster-fit"><img src="${esc(assetURL(source))}" alt="" draggable="false" style="${imageStyle}">${overlays}</span></span>`;
  }
  return `<img class="${esc(cls)}" data-static-art src="${esc(assetURL(source))}" alt="${esc(alt)}" draggable="false" ${asset.loading==='eager'?'':'loading="lazy"'}>`;
 }
@@ -55,6 +56,6 @@ export function defaultAvatar(){return Object.fromEntries(avatarOptions().map(gr
 export function normalizeAvatar(avatar={}){return{...avatar,accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
- for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=compact1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
+ for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=lapel1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
 export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);}

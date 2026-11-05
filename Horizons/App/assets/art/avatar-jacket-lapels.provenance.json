@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-05T02:23:28.729968+00:00",
+  "intent": "precise-object-edit with native ImageGen collar extraction",
+  "tool": "built-in image_gen.imagegen",
+  "scope": "Only outfit-3 receives a two-lapel clothing overlay. Original body atlas, crop, position, orange shirt, badge and other wardrobe IDs remain unchanged.",
+  "generatedNativePath": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-7c7f705e-e0dc-4e86-aaf0-66a203db8226.png",
+  "workspaceCopy": "assets/art/avatar-jacket-lapels-v1.png",
+  "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce",
+  "mode": "RGBA",
+  "width": 1662,
+  "height": 946,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "nativeBytesPreserved": true,
+  "sourceAtlas": "assets/art/avatar-static-clothes-v1.png",
+  "sourceFrame": {
+    "x": 1037,
+    "y": 186,
+    "w": 462,
+    "h": 263
+  },
+  "portraitPosition": {
+    "x": 70,
+    "y": 212.974,
+    "w": 180,
+    "z": 3
+  },
+  "rejectedAttemptsReason": "Complete transparent-shirt edits produced unwanted transparent fabric regions and were excluded. The selected native collar-only overlay preserves the original shirt.",
+  "prompts": {
+    "opaquePrompt": "Edit this jacket image. The only design correction is to add the missing pointed LOWER LAPEL on the right, matching the notched lower lapel already on the left. Keep the original exact wide bust shape, dimensions, neck opening, shoulder slopes, hem, orange shirt and cream badge. Render the entire shirt and jacket SOLID AND OPAQUE against a pure solid white background. This is NOT a transparent image. White only outside the jacket silhouette and inside the shallow neck opening above the orange shirt. No dark background, no holes, no transparent or translucent fabric, no glowing edges. Keep the colors as simple flat solid teal, lighter teal collar flaps, orange shirt and cream badge. NO gradients, NO shading, NO texture, NO shadows. Complete teal-filled sides from shoulders to bottom, never a missing patch. The right lower collar must mirror the left lower collar shape. The garment nearly fills the wide landscape canvas, with only 2% white margins at left/right/top/bottom. No body, head, hands, skin, accessories or additional objects.",
+    "finalPrompt": "Extract ONLY the two lighter-teal notched jacket lapels from this image as one transparent PNG overlay. Keep their EXACT original shapes, size, pixel positions, spacing and colors on the same 1662 by 946 canvas. The two complete lapels each have an upper collar and a pointed lower flap. Remove the dark teal jacket body, orange shirt, cream badge and white background completely to transparency. Leave ONLY the TWO lighter teal lapels, solid opaque lighter teal with smooth edges. Do not redraw, move, enlarge, reshape, shade or outline the lapels. No other objects or pixels. This is a garment collar overlay, not a complete shirt."
+  }
+}

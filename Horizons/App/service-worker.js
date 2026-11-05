@@ -1,6 +1,6 @@
-const CACHE='horizons-companion-compact-v16';
+const CACHE='horizons-companion-lapel-v17';
 const BASE=new URL('./',self.location.href).pathname;
-const CORE=['./','./index.html','./styles/app.css?v=compact1','./src/app.js?v=compact1','./src/api-client.js','./src/lesson-art.js?v=compact1','./src/art.js?v=compact1','./src/avatar-static.js?v=compact1','./assets/art/avatar-static-v1.frames.json?compact=1','./assets/art/manifest.json?compact=1','./content/translations.mjs','./content/answer-matching.mjs','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
+const CORE=['./','./index.html','./styles/app.css?v=lapel1','./src/app.js?v=lapel1','./src/api-client.js','./src/lesson-art.js?v=lapel1','./src/art.js?v=lapel1','./src/avatar-static.js?v=lapel1','./assets/art/avatar-static-v1.frames.json?lapel=1','./assets/art/manifest.json?lapel=1','./content/translations.mjs','./content/answer-matching.mjs','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('horizons-companion-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
