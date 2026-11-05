@@ -11,10 +11,17 @@ export function mountBannerPico(slot){
  const head=document.createElement('span');head.className='pico-banner-head pico-banner-layer';
  const body=document.createElement('img');body.className='pico-banner-body pico-banner-layer';body.src=new URL('body-registered.png',source).href;
  const map=document.createElement('img');map.className='pico-banner-map pico-banner-layer';map.src=new URL('map-registered.png',source).href;
- const open=document.createElement('img');open.src=new URL('head-registered.png',source).href;
- const blink=document.createElement('img');blink.src=new URL('blink-registered.png',source).href;blink.className='pico-banner-blink';blink.style.transformOrigin='112px 172px';blink.style.transform='scale(1.5)';blink.style.clipPath='inset(164px 0 0 0)';
- for(const image of[body,map,open,blink]){image.alt='';image.draggable=false;}
- head.append(open,blink);stage.append(head,body,map);slot.append(stage);
+ const open=document.createElement('img');open.src=new URL('head-look-base.png',source).href;
+ const blink=document.createElement('img');blink.src=new URL('blink-registered.png',source).href;blink.className='pico-banner-blink';blink.style.transformOrigin='112px 172px';blink.style.transform='scale(1.5)';blink.style.clipPath='inset(162px 0 0 0)';
+ const pupils=document.createElement('img');pupils.src=new URL('pupils-native.png',source).href;pupils.className='pico-banner-pupils';
+ const expression=document.createElement('img');expression.src=new URL('check-face-registered.png',source).href;expression.className='pico-banner-expression';expression.style.opacity='0';
+ const masks=['head-registered.png','eyes-mask.png'].map(file=>{const img=new Image();img.src=new URL(file,source).href;return img;});
+ const face=document.createElement('span');face.className='pico-banner-face-mask';
+ const eyes=document.createElement('span');eyes.className='pico-banner-eye-mask';
+ const mask=(el,file)=>{el.style.cssText+=';position:absolute;inset:0;mask-image:url("'+new URL(file,source).href+'");mask-size:248px 582px;mask-repeat:no-repeat;';};
+ mask(face,'head-registered.png');mask(eyes,'eyes-mask.png');eyes.append(pupils);face.append(blink,expression);
+ for(const image of[body,map,open,blink,pupils,expression]){image.alt='';image.draggable=false;}
+ head.append(open,eyes,face);stage.append(head,body,map);slot.append(stage);
  let disposed=false,ready=false,visible=false,animations=[];
  const size=()=>{const r=slot.getBoundingClientRect();stage.style.setProperty('--pico-fit',Math.min(r.width/248,r.height/582));};
  const resize=new ResizeObserver(size);resize.observe(slot);size();
@@ -23,11 +30,20 @@ export function mountBannerPico(slot){
   if(reduced.matches){animations.forEach(a=>a.cancel());animations=[];stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='reduced';slot.dataset.anatomySource=originalSource||'complete-static-render';return;}
   stage.hidden=false;if(fallback)fallback.hidden=true;slot.dataset.bannerMotion='ready';slot.dataset.anatomySource='generated-parts-pico-banner-v1';
   if(!animations.length){
-   const timing={duration:8000,iterations:Infinity,easing:'linear'};
+   // Four complete eight-second idles, then a six-second closer inspection.
+   // One shared clock means pausing does not advance the idle counter.
+   const duration=38000,timing={duration,iterations:Infinity,easing:'linear'};
+   const track=(idle,action)=>{const frames=[];for(let loop=0;loop<4;loop++)for(const [t,value]of idle)frames.push({offset:(loop*8000+t)/duration,transform:value,easing:'ease-in-out'});for(const[t,value]of action)frames.push({offset:t/duration,transform:value,easing:'cubic-bezier(.34,1.3,.64,1)'});return frames;};
+   const headRest='translateY(0px) rotate(0deg) scale(1,1)',mapRest='translateY(0px) rotate(0deg) scale(1)';
+   const headIdle=[[0,headRest],[1920,'rotate(2.8deg)'],[2560,'rotate(2.8deg)'],[4000,headRest],[5920,'rotate(-1.2deg)'],[8000,headRest]];
+   const mapIdle=[[0,mapRest],[1920,'translateY(1.6px) rotate(-.9deg)'],[4000,mapRest],[5920,'translateY(.8px) rotate(.6deg)'],[8000,mapRest]];
+   const opacity=[];for(let loop=0;loop<4;loop++)for(const[t,v]of [[0,0],[2280,0],[2352,1],[2416,1],[2496,0],[5960,0],[6032,1],[6096,1],[6176,0],[8000,0]])opacity.push({offset:(loop*8000+t)/duration,opacity:v});opacity.push({offset:1,opacity:0});
    animations=[
-    head.animate([{transform:'rotate(0deg)',offset:0},{transform:'rotate(2.8deg)',offset:.24},{transform:'rotate(2.8deg)',offset:.32},{transform:'rotate(0deg)',offset:.5},{transform:'rotate(-1.2deg)',offset:.74},{transform:'rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
-    map.animate([{transform:'translateY(0px) rotate(0deg)',offset:0},{transform:'translateY(1.6px) rotate(-.9deg)',offset:.24},{transform:'translateY(0px) rotate(0deg)',offset:.5},{transform:'translateY(.8px) rotate(.6deg)',offset:.74},{transform:'translateY(0px) rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
-    blink.animate([{opacity:0,offset:0},{opacity:0,offset:.285},{opacity:1,offset:.294},{opacity:1,offset:.302},{opacity:0,offset:.312},{opacity:0,offset:.745},{opacity:1,offset:.754},{opacity:1,offset:.762},{opacity:0,offset:.772},{opacity:0,offset:1}],{...timing,easing:'linear'})
+    head.animate(track(headIdle,[[32400,'translateY(-3px) rotate(-2deg) scale(.98,1.02)'],[33300,'translateY(9px) rotate(7deg) scale(1.025,.975)'],[33700,'translateY(7px) rotate(6deg) scale(1,1)'],[35700,'translateY(7px) rotate(6deg) scale(1,1)'],[36800,'translateY(-2px) rotate(-1deg) scale(.99,1.01)'],[38000,headRest]]),timing),
+    map.animate(track(mapIdle,[[32400,'translateY(4px) rotate(1deg) scale(.98)'],[33300,'translateY(-49px) rotate(-3deg) scale(.96,1.03)'],[33700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[35700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[36800,'translateY(2px) rotate(.5deg) scale(.99)'],[38000,mapRest]]),timing),
+    blink.animate(opacity,timing),
+    pupils.animate(track([[0,'translate(0,0)'],[1600,'translate(1px,1px)'],[3600,'translate(-2px,1px)'],[6200,'translate(1px,0)'],[8000,'translate(0,0)']],[[33000,'translate(0,2px)'],[37000,'translate(0,0)'],[38000,'translate(0,0)']]),timing),
+    expression.animate([{offset:0,opacity:0},{offset:32800/duration,opacity:0},{offset:33100/duration,opacity:1},{offset:36100/duration,opacity:1},{offset:36500/duration,opacity:0},{offset:1,opacity:0}],timing)
    ];
    // Explicit common start time avoids independent limb/timeline drift.
    const start=document.timeline.currentTime;for(const animation of animations)animation.startTime=start;
@@ -39,7 +55,7 @@ export function mountBannerPico(slot){
  reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
  const controller={get animations(){return animations;},dispose(){disposed=true;animations.forEach(a=>a.cancel());animations=[];resize.disconnect();intersection.disconnect();reduced.removeEventListener('change',sync);document.removeEventListener('visibilitychange',sync);stage.remove();if(fallback)fallback.hidden=false;if(originalSource)slot.dataset.anatomySource=originalSource;else delete slot.dataset.anatomySource;delete slot.dataset.bannerMotion;delete slot.dataset.motionPaused;controllers.delete(slot);}};
  controllers.set(slot,controller);
- controller.ready=Promise.all([body,map,open,blink].map(image=>image.decode())).then(()=>{if(disposed||!slot.isConnected)return;ready=true;sync();}).catch(()=>{if(!disposed){stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='fallback';}});
+ controller.ready=Promise.all([body,map,open,blink,pupils,expression,...masks].map(image=>image.decode())).then(()=>{if(disposed||!slot.isConnected)return;ready=true;sync();}).catch(()=>{if(!disposed){stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='fallback';}});
  return controller;
 }
 export function unmountBannerPico(slot){controllers.get(slot)?.dispose();}

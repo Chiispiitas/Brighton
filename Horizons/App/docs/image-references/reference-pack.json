@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T05:42:53.125Z",
-  "sourceCommit": "336c6b2144381d4c6e3cc8e80fc37ee830416fc6",
+  "createdAt": "2026-11-05T12:24:17.941Z",
+  "sourceCommit": "adff6a836c7b4a65dc19c569ce878303861ead5c",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "2aefbdd2ea5a481b2d0aa5cc53b8ae0d89a6715179942e968103af695108b40f"
+      "sha256": "a08402c9a3a965347aec8762940717b8bc01efdb87550071c83fef8f31f3c5a5"
     },
     {
       "file": "src/avatar-static.js",
@@ -23,7 +23,7 @@
     },
     {
       "file": "styles/app.css",
-      "sha256": "54936539c1ec61f6b76e2414d574aa1118f88836cd375329ceb45cf3184ceadb"
+      "sha256": "80985a1c8b367f50f9a47f58a5ce59969d963763f0b2faccbc7cba898bd1297c"
     }
   ],
   "references": [
@@ -55,7 +55,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "3510bfa2edb2988843e333d0430908b9a48786351049472723d3f6d9b228a7d1"
+      "sha256": "aaf9abf104be1600019eb3bf51465f08ef00191ba37e8f6a55b7a33de1ba9ad5"
     },
     {
       "id": "R06",
@@ -67,9 +67,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
     }
-  ],
-  "sourceState": "Rebuilt after isolated banner motion integration. Native reference-board art is unchanged; retained the reviewed PNG bytes.",
-  "sourceRuntimeRevision": "a1fbc38c44b2a5b39783be1c9b2eacc658af0df0"
+  ]
 }

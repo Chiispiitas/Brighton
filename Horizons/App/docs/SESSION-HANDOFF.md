@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest animation revision: face-contained blink, native pupil glances and a springy closer map inspection after four eight-second idle loops. New generated raised-brow/squinted/no-smile expression. Cache pico-v26, queries pico3. See ANIMATION-AUDIT.md v3 section and check-production-record.json.
+
 Latest exception: Unit 1 banner Pico may use the new ImageGen-generated-part reading rig. See docs/ANIMATION-AUDIT.md and docs/pico-banner-animation/production-record.json. Other cast/avatar art remains static. Current cache horizons-companion-pico-v24; entry queries pico1.
 
 Pico runtime a1fbc38c44b2a5b39783be1c9b2eacc658af0df0 is published on both branches; Pages run 41975897079 succeeded. Local and hosted responsive/fallback/lifecycle checks and the v23→v24 cache upgrade passed. Publication parity covered 382 files. See reports/pico-banner-release.json for source-bound evidence and limits. Rejected initial generated parts and exact prompts are retained; the accepted reconstruction is very similar, not pixel-identical. Any later evidence-only commit preserves this runtime.

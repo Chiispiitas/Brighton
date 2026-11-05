@@ -81,3 +81,13 @@ The real v23→v24 service-worker upgrade passed with exact committed module/par
 ## Requested amplitude revision
 
 Movement doubled: head +2.8°/−1.2°; map −0.9°/+0.6°, vertical travel 1.6/0.8 logical pixels. Closed-eye sprite uniformly scaled 1.5 around (112,172), its eye-region center; the upper skin margin is clipped at logical y164 to preserve the original eyebrows. Native generated assets unchanged. Cache v25, entry queries pico2. Earlier approval/evidence above describes v1; this revision has fresh automated and sampled checks.
+
+## Map inspection, pupil motion and face containment (v3)
+
+The latest request adds a real head-alpha mask around the enlarged blink (scale 1.5, clipped above logical y162); the mask is on its parent, so it does not expand with the sprite. Native pupils are separated into a moving layer, clipped by their original eye whites. Small 1–2px glances scan the map. All six images and both masks must decode before replacing the native fallback.
+
+Four complete 8-second idle loops precede a 6-second closer inspection: 38 seconds total, one shared clock. The map anticipates down 4px, lifts approximately 49px, then settles at 45px. Its width compresses to .96 while its height expands to 1.03, keeping both paws within the banner. The head anticipates up 3px, dips 9px/7 degrees, then settles at 7px/6 degrees. It briefly stretches/squashes by up to 2.5%, returning to the unchanged rest pose. Body and feet remain fixed. Offscreen/hidden pauses preserve the cycle counter; reduced motion shows the original still.
+
+New expression: raised eyebrow, downward squint, closed neutral mouth, no smile. ImageGen attempt 1 was rejected for holes/halo. Attempt 2 supplies feature shapes; native sampled skin matching avoids a rectangular seam. [Production record](pico-banner-animation/check-production-record.json) preserves exact prompts, four actual attached inputs, hashes and selection reasons. [Recipe](../tools/prepare-pico-check.py) reproduces native pupil separation and expression registration. Earlier v1 independent approval does not extend to this larger motion; root reviewed its own current sampled frames.
+
+Local proof covers four widths, exact idle extrema, expression absent at 32 seconds/present at 35, 38-second shared timelines, mask bindings, fallback, pause/resume and disposal. Sampled blink/inspection/rest frames are preserved in pico-banner-animation/review/check-v3-*.png. Edge/Chromium only; no real learner data or backend changes. Cache v26; entry queries pico3.

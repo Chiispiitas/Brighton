@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-map-check-face-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/check-face-target.png"
+  ],
+  "prompt": "Image 1 R01 brand, image 2 R02 identity, image 3 R07 style, image 4 exact Pico face crop edit target. Precision expression edit: preserve this exact peach rabbit face crop framing, silhouette, skin colors, large coral nose position and navy palette. Change ONLY expression: one raised eyebrow, both eyes squinting downward to study a map closely, and a small CLOSED neutral mouth, absolutely NO smile, NO open mouth, NO tongue. Friendly puzzled concentration rather than anger. Flat solid shapes. Keep surrounding skin opaque and exact target crop framing; transparent outside existing face silhouette. Do not add ears, body, map, text, shadows or texture. This patch must align over the same existing face."
+}

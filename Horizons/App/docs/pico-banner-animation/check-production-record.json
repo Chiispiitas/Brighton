@@ -1,0 +1,68 @@
+{
+  "scope": "Unit 1 banner Pico only",
+  "inputCountPerCall": 4,
+  "preflightPassedBeforeBothCalls": true,
+  "orderedInputs": [
+    {
+      "role": "reference",
+      "id": "R01",
+      "path": "docs/image-references/01-brand.png",
+      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+    },
+    {
+      "role": "reference",
+      "id": "R02",
+      "path": "docs/image-references/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "role": "reference",
+      "id": "R07",
+      "path": "docs/image-references/07-scenes-vocabulary-ui.png",
+      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+    },
+    {
+      "role": "target",
+      "path": "assets/art/pico-banner-motion-v1/check-face-target.png",
+      "sha256": "811a2962e81148cad6f4a2374b87c1f5d80f1b4ab5e48154964982cde2b8a484"
+    }
+  ],
+  "calls": [
+    {
+      "brief": "check-face-brief.json",
+      "prompt": "Image 1 R01 brand, image 2 R02 identity, image 3 R07 style, image 4 exact Pico face crop edit target. Precision expression edit: preserve this exact peach rabbit face crop framing, silhouette, skin colors, large coral nose position and navy palette. Change ONLY expression: one raised eyebrow, both eyes squinting downward to study a map closely, and a small CLOSED neutral mouth, absolutely NO smile, NO open mouth, NO tongue. Friendly puzzled concentration rather than anger. Flat solid shapes. Keep surrounding skin opaque and exact target crop framing; transparent outside existing face silhouette. Do not add ears, body, map, text, shadows or texture. This patch must align over the same existing face.",
+      "native": "check-face-rejected-v1.png",
+      "sha256": "f9c14ebcf76631991fa31a32046fe40e3d5a7f776aeb0031f3498993fde0043d",
+      "selected": false,
+      "reason": "Rejected skin holes and shading"
+    },
+    {
+      "brief": "check-face-v2-brief.json",
+      "prompt": "Image 1 R01 brand, image 2 R02 identity, image 3 R07 style, image 4 exact Pico face crop edit target. Precision expression edit: preserve this exact peach rabbit face crop framing, silhouette, skin colors, large coral nose position and navy palette. Change ONLY expression: one raised eyebrow, both eyes squinting downward to study a map closely, and a small CLOSED neutral mouth, absolutely NO smile, NO open mouth, NO tongue. Friendly puzzled concentration rather than anger. Flat solid shapes. Keep surrounding skin opaque and exact target crop framing; transparent outside existing face silhouette. Do not add ears, body, map, text, shadows or texture. This patch must align over the same existing face. IMPORTANT: OPAQUE rectangular peach skin patch, no transparency anywhere, no holes, no shading or dark halo. Preserve exact original framing and nose. Only expression changes. Uniform flat skin.",
+      "native": "check-face-native-v2.png",
+      "sha256": "35bff0961cb36d16f3f36009aefd74dd30ab0446bf37e65b4ad7a397a8cfa863",
+      "selected": true,
+      "reason": "Selected feature shapes only; native skin sampled to remove seam"
+    }
+  ],
+  "recipe": "tools/prepare-pico-check.py",
+  "operations": "Mechanical native pupil separation, sampled sclera fill, original eye-alpha mask; ImageGen facial feature separation, native skin row-median color match and native nose preservation. No new feature strokes drawn. Raw generated files untouched.",
+  "activeAssets": [
+    {
+      "file": "head-look-base.png",
+      "sha256": "4c1a59ef24d154c1cd9191bf004a95815d7e5ee3d3dd0ed4682460aea7a626ef"
+    },
+    {
+      "file": "pupils-native.png",
+      "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c"
+    },
+    {
+      "file": "eyes-mask.png",
+      "sha256": "e9fa0e4f08c9532c6acfd866367ad8637828ded4e3088064a98497290db1ecb9"
+    },
+    {
+      "file": "check-face-registered.png",
+      "sha256": "99e20a69f9b9dfb981ed5caeedefa542e04d22d81ea710676b231f230e82b2fa"
+    }
+  ]
+}

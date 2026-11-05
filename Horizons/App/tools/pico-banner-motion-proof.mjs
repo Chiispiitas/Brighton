@@ -13,7 +13,7 @@ const sample=async time=>page.evaluate(time=>{const slot=document.querySelector(
 try{
  await page.goto(base);await page.locator(selector).waitFor();await page.waitForTimeout(700);
  assert.equal(await page.locator('.pico-banner-stage').count(),1);
- assert.equal(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).length),3);
+ assert.equal(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).length),5);
  assert.equal(await page.evaluate(()=>[...document.querySelectorAll('.character:not(.hero-pico),.avatar')].flatMap(el=>el.getAnimations({subtree:true})).length),0);
  // Capture actual responsive banner, then the same renderer enlarged for seam review.
  for(const width of [320,390,768,1440]){
@@ -24,10 +24,15 @@ try{
   await page.locator('.learn-hero').screenshot({path:path.join(out,'banner-'+width+'.png')});checks.push({width,fit:true,staticOtherCharacters:true});
  }
  await page.evaluate(()=>{const slot=document.querySelector('.hero-pico');slot.style.width='248px';slot.style.height='582px';slot.style.right='80px';document.querySelector('.learn-hero').style.minHeight='650px';});await page.waitForTimeout(150);
- for(const time of [0,1200,1920,2350,2400,2480,4000,5920,6080,8000]){
+ for(const time of [0,1200,1920,2350,2400,2480,4000,5920,6080,8000,32000,32400,33300,33700,35000,36800,38000]){
   await sample(time);if(time===1920||time===5920){const angle=await page.locator('.pico-banner-head').evaluate(el=>{const m=new DOMMatrix(getComputedStyle(el).transform);return Math.atan2(m.b,m.a)*180/Math.PI;});assert.ok(Math.abs(angle-(time===1920?2.8:-1.2))<.01,'actual head extremum');}assert.equal(await page.locator('.pico-banner-body').evaluate(el=>getComputedStyle(el).transform),'none');
   await page.locator('.hero-pico').screenshot({path:path.join(out,'frame-'+time+'.png')});
  }
+ await sample(32000);assert.equal(await page.locator('.pico-banner-expression').evaluate(el=>Number(getComputedStyle(el).opacity)),0);
+ await sample(35000);assert.equal(await page.locator('.pico-banner-expression').evaluate(el=>Number(getComputedStyle(el).opacity)),1);
+ assert.ok(await page.locator('.pico-banner-face-mask').evaluate(el=>getComputedStyle(el).maskImage.includes('head-registered.png')));
+ assert.ok(await page.locator('.pico-banner-eye-mask').evaluate(el=>getComputedStyle(el).maskImage.includes('eyes-mask.png')));
+ assert.ok(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).every(a=>a.effect.getTiming().duration===38000)));
  await sample(0);await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).forEach(a=>a.play()));await page.waitForTimeout(8200);
  await page.evaluate(()=>scrollTo(0,1000));await page.waitForTimeout(200);assert.equal(await page.locator('.hero-pico').getAttribute('data-motion-paused'),'true');
  assert.ok(await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).every(a=>a.playState==='paused')));
@@ -45,7 +50,7 @@ try{
  for(let i=0;i<3;i++){await page.locator('[data-route=learn]:visible').first().click();await page.locator(selector).waitFor();assert.equal(await page.locator('.pico-banner-stage').count(),1);await page.locator('[data-route=practice]:visible').first().click();}
  // Use fresh browser contexts so previously decoded image/module caches cannot
  // turn a simulated load failure into an unintended cache-hit success.
- for(const pattern of ['**/head-registered.png','**/pico-banner-motion.js*']){
+ for(const pattern of ['**/head-look-base.png','**/pico-banner-motion.js*']){
   const isolated=await browser.newContext({serviceWorkers:'block'});await isolated.addCookies([{url:base,name:'hz_companion_session',value:'fictional-banner-animation-fixture'}]);
   await isolated.route('**/api/horizons',r=>r.fulfill({contentType:'application/json',body:JSON.stringify(fixture)}));let aborted=false;
   await isolated.route(pattern,r=>{aborted=true;return r.abort();});const failedPage=await isolated.newPage();failedPage.on('pageerror',error=>errors.push(error.message));
@@ -53,6 +58,6 @@ try{
   assert.equal(await failedPage.locator('.hero-pico>.character-art').isVisible(),true);assert.equal(await failedPage.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).length),0);await isolated.close();
  }
  assert.deepEqual(errors,[]);
- fs.writeFileSync(process.env.HZ_PICO_REPORT||new URL('../reports/pico-banner-motion-proof.json',import.meta.url),JSON.stringify({date:new Date().toISOString(),revision:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),base,checks,headMapAndBlink:true,fixedBody:true,extremaCaptured:true,reducedNativeFallback:true,loadFailureFallback:true,offscreenPauseResume:true,hiddenDocumentEventFixture:true,rerenderDisposal:true,errors,pass:true,learnerWrites:false,limits:['Edge/Chromium only; frame review is recorded separately. Hidden-document event uses a controlled visibility fixture.']},null,2)+'\n');
+ fs.writeFileSync(process.env.HZ_PICO_REPORT||new URL('../reports/pico-banner-motion-proof.json',import.meta.url),JSON.stringify({date:new Date().toISOString(),revision:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),base,checks,headMapAndBlink:true,fourIdlesThenInspection:true,faceAndScleraMasks:true,fixedBody:true,extremaCaptured:true,reducedNativeFallback:true,loadFailureFallback:true,offscreenPauseResume:true,hiddenDocumentEventFixture:true,rerenderDisposal:true,errors,pass:true,learnerWrites:false,limits:['Edge/Chromium only; frame review is recorded separately. Hidden-document event uses a controlled visibility fixture.']},null,2)+'\n');
  console.log('PASS responsive banner rig, synchronized parts, offscreen/reduced motion and disposal');
 }catch(error){console.error(error);await page.screenshot({path:path.join(out,'failure.png')});process.exitCode=1;}finally{await context.close();await browser.close();}
