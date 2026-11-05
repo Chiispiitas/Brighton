@@ -1,0 +1,25 @@
+{
+  "asset_id": "avatar-closed-heads-v1",
+  "kind": "avatar",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "target_paths": [
+    "assets/art/avatar-round-v3/heads.png"
+  ],
+  "reference_bundles": [
+    {
+      "ids": [
+        "R03",
+        "R04"
+      ],
+      "path": "docs/avatar-motion/base-hair-reference.png"
+    }
+  ],
+  "prompt": "Asset: closed-eye full-head sprite variant for Horizons avatars. Image1 R01 brand; Image2 contains full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 EXACT active rounded native head atlas edit target. Preserve the exact 1536x1024 4-column 3-row twelve-head atlas layout, positions, six skin colors repeated across both bases, face silhouettes, ears, necks, brows, nose and smile. ONLY replace each pair of open white/black eyes with two gently curved closed navy eyelid strokes centered at the exact same eye centers. No eye whites or pupils visible. Do not move or resize heads, mouth, ears or neck. Keep all twelve heads complete and exactly registered to the source cells. Transparent background outside heads, opaque head interiors; no new glow, texture, shadows, gradients or blur. Native subtle colors must match the edit target. No text or grid lines. This will be an instantaneous whole-head blink frame under unchanged hair and glasses, not a skin patch."
+}

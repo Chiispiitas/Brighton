@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T17:48:04.749Z",
-  "sourceCommit": "65acdf204842b9a1a7f039b2799099b7fe86cc5a",
+  "createdAt": "2026-11-05T18:15:15.470Z",
+  "sourceCommit": "9db29f3311bc9dfcac588d98f5c35beab495b3c7",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "19ef22fe9a175a9886af7fcd2897d02e2655062b3b094503dbb662d4e456d44a"
+      "sha256": "57e93520663497ba05b4faf55000312ac859951ddbda4c777fc138f7bfdba781"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "00eb49fbd704ef45548be1e45b09546ecb4dfe2658aed585809bdb516d47311f"
+      "sha256": "ae01618c21bbd1b26faf1907c447ae6ef5bd12bd1f0ecd308091b54b9665606d"
     },
     {
       "file": "styles/app.css",
@@ -157,6 +157,5 @@
       "title": "Scenes vocabulary and interface art",
       "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
     }
-  ],
-  "sourceRuntimeRevision": "4f195a56a07815b98e96693629360619d13c065d"
+  ]
 }

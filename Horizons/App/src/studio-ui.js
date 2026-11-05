@@ -1,4 +1,5 @@
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=round1';
+import {requestAvatarFeedback,jumpAvatarIntoIsland} from './avatar-motion.js?v=avatar1';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=avatar1';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
@@ -35,7 +36,7 @@ export async function openPathBubble(content,anchor,event){
 }
 bubble.addEventListener('toggle',()=>{if(!bubble.matches(':popover-open'))closePathBubble();});
 window.addEventListener('keydown',event=>{if(event.key==='Escape')closePathBubble();});
-bubble.addEventListener('click',event=>{const start=event.target.closest('[data-start-path]');if(start){closePathBubble();const button=document.createElement('button');button.dataset.startActivity=start.dataset.startPath;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
+bubble.addEventListener('click',async event=>{const start=event.target.closest('[data-start-path]');if(start){if(start.disabled)return;start.disabled=true;const id=start.dataset.startPath,player=document.querySelector('.path-player .avatar'),island=[...document.querySelectorAll('.path-stop')].find(el=>el.dataset.pathNode===id)?.querySelector('.stop-orb');closePathBubble();if(!await jumpAvatarIntoIsland(player,island))return;const button=document.createElement('button');button.dataset.startActivity=start.dataset.startPath;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
 function scrollState(){const hero=document.querySelector('.learn-hero');document.body.classList.toggle('path-scrolled',!!hero&&hero.getBoundingClientRect().bottom<24);}
 window.addEventListener('scroll',()=>{scrollState();if(!bubblePreparing)closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
 export function enhanceShell(xp,streak,icon,avatar={},manifest={}){
@@ -52,4 +53,4 @@ export function enhanceShell(xp,streak,icon,avatar={},manifest={}){
  panels.forEach((panel,index)=>{const legend=panel.querySelector('legend'),first=panel.querySelector('[data-avatar-group]'),id=first?.dataset.avatarGroup||String(index);panel.id='avatar-panel-'+id;panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby','avatar-tab-'+id);legend.classList.add('sr-only');const tab=document.createElement('button');tab.type='button';tab.id='avatar-tab-'+id;tab.dataset.avatarTab=id;tab.textContent=legend.textContent;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',panel.id);tab.addEventListener('click',()=>select(id));tab.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const buttons=[...tabs.querySelectorAll('button')],i=buttons.indexOf(tab),n=event.key==='Home'?0:event.key==='End'?buttons.length-1:(i+(event.key==='ArrowRight'?1:-1)+buttons.length)%buttons.length;select(buttons[n].dataset.avatarTab);buttons[n].focus();});tabs.append(tab);});options.prepend(tabs);if(!panels.some(p=>p.id==='avatar-panel-'+selectedTab))selectedTab=tabs.firstElementChild?.dataset.avatarTab;select(selectedTab);
  tabResize=new ResizeObserver(()=>{if(tabs.isConnected)moveTabIndicator(tabs,tabs.querySelector('[aria-selected=true]'));});tabResize.observe(tabs);for(const tab of tabs.querySelectorAll('button'))tabResize.observe(tab);
 }
-export function avatarFeedback(){const spark=document.querySelector('#avatar-preview .avatar-change-spark');animateUI(spark,[{opacity:0,transform:'scale(.7)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:0,transform:'scale(1.12)'}],{duration:600});}
+export function avatarFeedback(){requestAvatarFeedback(document.querySelector('#avatar-preview [data-avatar-static]'),'customize');const spark=document.querySelector('#avatar-preview .avatar-change-spark');animateUI(spark,[{opacity:0,transform:'scale(.7)'},{opacity:1,transform:'scale(1)',offset:.3},{opacity:0,transform:'scale(1.12)'}],{duration:600});}

@@ -1,0 +1,86 @@
+{
+  "tool": "built-in ImageGen",
+  "nativeToolPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-07dbb91a-361f-442f-b392-eeadee918d90.png",
+  "savedNative": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-motion-v1\\closed-native.png",
+  "nativeSha256": "28bb0c888ff7689c14a25cfcc8f3d16905e4402cb7eacb9cf78ea6f2b718cf0e",
+  "savedRegistered": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-motion-v1\\closed-heads.png",
+  "brief": {
+    "asset_id": "avatar-closed-heads-v1",
+    "kind": "avatar",
+    "intent": "edit",
+    "reference_ids": [
+      "R01",
+      "R03",
+      "R04",
+      "R05",
+      "R06"
+    ],
+    "target_paths": [
+      "assets/art/avatar-round-v3/heads.png"
+    ],
+    "reference_bundles": [
+      {
+        "ids": [
+          "R03",
+          "R04"
+        ],
+        "path": "docs/avatar-motion/base-hair-reference.png"
+      }
+    ],
+    "prompt": "Asset: closed-eye full-head sprite variant for Horizons avatars. Image1 R01 brand; Image2 contains full R03 faces above R04 hair; Image3 R05 costumes; Image4 R06 glasses/colors; Image5 EXACT active rounded native head atlas edit target. Preserve the exact 1536x1024 4-column 3-row twelve-head atlas layout, positions, six skin colors repeated across both bases, face silhouettes, ears, necks, brows, nose and smile. ONLY replace each pair of open white/black eyes with two gently curved closed navy eyelid strokes centered at the exact same eye centers. No eye whites or pupils visible. Do not move or resize heads, mouth, ears or neck. Keep all twelve heads complete and exactly registered to the source cells. Transparent background outside heads, opaque head interiors; no new glow, texture, shadows, gradients or blur. Native subtle colors must match the edit target. No text or grid lines. This will be an instantaneous whole-head blink frame under unchanged hair and glasses, not a skin patch."
+  },
+  "preflight": {
+    "pass": true,
+    "asset_id": "avatar-closed-heads-v1",
+    "input_count": 5,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-motion\\base-hair-reference.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference bundle",
+        "ids": [
+          "R03",
+          "R04"
+        ],
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\avatar-motion\\base-hair-reference.png",
+        "sha256": "a7d3836d7b37fcd601a843a2900df3cf7179a3f7c724862d4665289ab36eadc9"
+      },
+      {
+        "role": "reference",
+        "id": "R05",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\05-wardrobe.png",
+        "sha256": "ed62329f2d3425a0e725b7e7ccf96700e047ebb30933397a314627b297951366"
+      },
+      {
+        "role": "reference",
+        "id": "R06",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\06-accessories-and-colors.png",
+        "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-round-v3\\heads.png",
+        "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "registration": "Same1536x1024 grid and exact old frames/positions; apply original rounded alpha to full generated closed-eye head and restore original neck RGBA. Whole native head swap, no skin patches.",
+  "referenceVideo": "20261105-1757-26.9073882.mp4; sampled all598 frames at native30fps. Contact sheets inspected at0\u20132.2s and later intervals.",
+  "blink": "140ms whole-head opaque instantaneous swap at4200ms in5200ms idle cycle; no opacity transition.",
+  "review": "Root inspected native-rate reference contacts, open/closed real editor and240 closed-eye costume/skin/hair/glasses compositions; full rounded silhouette and exact neck alignment preserved. No independent/physical-device claim.",
+  "wholeHeadVariantScope": "Avatar blink uses registered complete native head variants, with unchanged hair/glasses layered above. Pico retains its separate faceless-head rig unchanged.",
+  "preview": "docs/avatar-motion/normal-speed-preview.mp4",
+  "registeredSha256": "8cd7433327e0aa295547e5bf319e26346adeb13c461310e692444ad84b367683"
+}

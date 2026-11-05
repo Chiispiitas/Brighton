@@ -1,11 +1,12 @@
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=round1';
-import {mountOverworld} from './overworld-motion.js?v=round1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=avatar1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=avatar1';
+import {mountOverworld} from './overworld-motion.js?v=avatar1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=round1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=round1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=avatar1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=avatar1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=round1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=avatar1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -109,7 +110,7 @@ function worldTiles(index){
 }
 function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
- state.pathFocusId=id;const player=app.querySelector('.path-player');if(player)player.dataset.selectedNode=id;positionPathPlayer(id);
+ state.pathFocusId=id;const player=app.querySelector('.path-player');if(player)player.dataset.selectedNode=id;positionPathPlayer(id);requestAvatarFeedback(player?.querySelector('.avatar'),'select');
  const status=progress().islands?.[id],done=nodeIsComplete(node),mastered=!!status?.mastered;
  const count=selectIslandQuestions(node,progress(),{seed:0}).length;
  openPathBubble(`<div class="island-bubble-heading"><h2 id="dialog-title">${esc(node.title)}</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p class="island-bubble-progress" title="Master each item with three unaided correct answers and at least 75% accuracy.">${mastered?'Mastered':`${status?.masteredCount||0}/${status?.total||masteryTargets[id]?.length||0} mastered`} · ${count} questions</p><button class="primary-button full-width" data-start-path="${esc(node.id)}">${mastered?'Practice again':done?'Continue':'Start'} ${icon('arrow')}</button>`,anchor,event);
