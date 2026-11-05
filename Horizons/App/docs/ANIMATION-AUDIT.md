@@ -1,6 +1,6 @@
 # Horizons character animation audit
 
-Status: rest reconstruction and sampled motion approved for this scoped banner trial; local and hosted QA passed. Published runtime: a1fbc38c44b2a5b39783be1c9b2eacc658af0df0.
+Status: current architecture is the v4 faceless base with transparent expression sprites. Read the final v4 section for current evidence; earlier sections retain historical, source-bound trial results.
 
 ## Authority and scope
 
@@ -103,3 +103,5 @@ The neutral face fades out as inspection features fade in. During blinking the o
 The [production record](pico-banner-animation/faceless-production-record.json) contains exact ImageGen prompt, four actual attached preflight-approved references/target, raw output path/hash, active sprite hashes and the repeatable [separation recipe](../tools/prepare-pico-face-sprites.py). [Layer board](pico-banner-animation/review/faceless-v4-layers.png). Native originals and superseded v3 recipes remain historical; the runtime no longer uses head-look-base, blink-registered or check-face-registered.
 
 QA checks the blank base, neutral reconstruction, blink and inspection, four screen widths, mutually exclusive eye/expression states, pupil mask, exact idle angles, 38-second shared timelines, loading fallback, route disposal and offscreen/reduced-motion behavior. Root visual review only for this version; prior independent approval applies to v1. Edge/Chromium only; synthetic state; no learner/backend writes.
+
+V4 runtime e5999ddc50b913973713ece2d0447843f48c4628 is live. Hosted four-width proof passed (reports/pico-faceless-v4-hosted.json); root viewed hosted blink and inspection frames. All 397 committed runtime/native files matched the live site, including 12 unchanged book recordings. Pages run [42033619755](https://github.com/Chiispiitas/Brighton/actions/runs/42033619755): completed, success at this evidence capture. The faceless silhouette IoU is 0.97680 against the prior head, a diagnostic rather than a pixel-identity claim. [Normal-speed preview](pico-banner-animation/review/pico-faceless-v4.mp4). Later evidence-only commits preserve the checked runtime.

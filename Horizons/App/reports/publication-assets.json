@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T13:04:01.845922+00:00",
+  "date": "2026-11-05T13:16:06.661360+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "ccc0c2e6150282aede06c180b8ecde0e0dc12d43",
-  "checkedFiles": 389,
+  "revision": "e5999ddc50b913973713ece2d0447843f48c4628",
+  "checkedFiles": 397,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -1201,6 +1201,62 @@
       "status": 200,
       "bytes": 69498,
       "sha256": "7dca356f9d7ad6fb0e79475224aa1dc9f695b44cfdad3f8e06d07141c0647233",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "bytes": 3184,
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "bytes": 16885,
+      "sha256": "27db56a4cecb976d9db4825403d43ae738f9f823cdb71686455b888a28f2a6f2",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "bytes": 44360,
+      "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "bytes": 43376,
+      "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "bytes": 44286,
+      "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/faceless-target.png",
+      "status": 200,
+      "bytes": 287540,
+      "sha256": "7b0d617dedf676b195bd2862bfc89c101ed8030e14224878b8978c89c2e2ae28",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-native-v1.png",
+      "status": 200,
+      "bytes": 898968,
+      "sha256": "96926829e9d35c9e31a2410cf00836c6dbc1efa23e238576c56ee48f763526e7",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "bytes": 41878,
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
       "matchesCommittedBytes": true
     },
     {
@@ -2614,7 +2670,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 3089,
-      "sha256": "71fcf06311c6e0055d345dc012f0071d5a83d197d148ffb491b397628d9a391a",
+      "sha256": "2157bf377beea7cc85cf578587f1b7c29526ed862e193fad66f28978f0c9c007",
       "matchesCommittedBytes": true
     },
     {
@@ -2627,8 +2683,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 2368,
-      "sha256": "ed6123f946260be8141798566262e499778fb44be21b496556be48925df59ca0",
+      "bytes": 2556,
+      "sha256": "711d71f0db6f52098d0588bc4185bad12431bebc4b5bc4d0c50469051796ee55",
       "matchesCommittedBytes": true
     },
     {
@@ -2642,14 +2698,14 @@
       "path": "Horizons/App/src/app.js",
       "status": 200,
       "bytes": 55780,
-      "sha256": "7ae4c280d6a78230678d7c27360532a4a75fa0b66ef431794daf255aef09374e",
+      "sha256": "5413b85f2ada603c81d0f3d84a53f9f85381e62173c20c63169802b9327b57b6",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
       "bytes": 8068,
-      "sha256": "7736d8936f947b7917c5bac2e766195fa7ab39f023b8947a0abfb50966e477a2",
+      "sha256": "dc49bb53d8239ab90cb0f895c0664355782cb3a16dedf0a9cfec4711a72a3f75",
       "matchesCommittedBytes": true
     },
     {
@@ -2697,8 +2753,8 @@
     {
       "path": "Horizons/App/src/pico-banner-motion.js",
       "status": 200,
-      "bytes": 7099,
-      "sha256": "605267250b1f81d86a5e2c6be8db399e3c19f17111a96a80d030cf030e403f78",
+      "bytes": 7510,
+      "sha256": "2cc33662b836cad16d935e8ab3887bfdf0cc40df9d18a00662a6f23ac16acadc",
       "matchesCommittedBytes": true
     },
     {
@@ -2712,7 +2768,7 @@
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
       "bytes": 5964,
-      "sha256": "8ac05785533f83df267537d28b35eb2f2a49b1a5bfb66fa4fa1947bdbad44b33",
+      "sha256": "641da1a96d9cda303d2990445c7ef640cd5ea021fa597efbae9a372c0f5b2845",
       "matchesCommittedBytes": true
     },
     {
