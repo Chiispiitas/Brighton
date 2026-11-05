@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-banner-body-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/baseline-native.png"
+  ],
+  "prompt": "Asset: Unit 1 banner Pico rig component, body. Inputs: Image 1 R01 brand reference; Image 2 R02 cast identity reference; Image 3 R07 object style reference; Image 4 exact current native Pico edit target. Isolate the standing body below the head of this EXACT Pico: navy collared shirt/torso with the magenta satchel and orange button, peach legs and both feet. Remove the head, ears, hands and map. Preserve the exact leg lengths, feet, navy shoulder shape, magenta satchel and their proportions. Fill the torso naturally behind the removed map, since it will be covered by the original map again. The shirt extends to the original neckline, no floating parts. This is a precision component extraction/reconstruction, NOT a new character interpretation. Native flat solid-shape raster with original edges and palette. Entire component in view, transparent margins. True alpha background; solid skin/fabric/map opaque. No outlines, glow, shadows, blur, texture, gradients, lettering, labels, extra objects or extra anatomy. Produce only the requested single component."
+}

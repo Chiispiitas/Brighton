@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-banner-head-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/head-target.png"
+  ],
+  "prompt": "Precision raster component extraction for Unit 1 banner Pico. Input1 R01 brand reference; input2 R02 identity reference; input3 R07 object style reference; input4 exact tightly cropped native component target. Copy precisely the complete head, BOTH ears, face and neck from Image 4. Keep the same head width-to-height ratio, exact cheek/nose contour, exact gentle eyebrows, eye size/centres, mouth, coral ears and bent-ear shape. Remove only the small navy/pink collar fragments at the bottom. The output must reconstruct the exact reference pose when uniformly scaled to the original crop. Make a literal faithful copy, not a new illustration. Flat matte solid colors, NO added lighting, gradients, glow, halo, shadows, texture, outline or blur. Opaque shapes on genuinely TRANSPARENT background, including directly outside the edges. Complete component with 8% transparent margin; no labels or extra parts."
+}

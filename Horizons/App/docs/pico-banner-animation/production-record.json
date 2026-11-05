@@ -1,0 +1,415 @@
+{
+  "version": 1,
+  "scope": "Only Unit 1 banner Pico",
+  "baselineAtlas": "assets/art/cast-static-pico-v2.png",
+  "baselineCrop": {
+    "x": 764,
+    "y": 19,
+    "w": 248,
+    "h": 582
+  },
+  "baselineSha256": "439a0f2c9201a5368575f653b8ddf671876387dbfa64c7d9a0a87b1f7d740e5c",
+  "generations": [
+    {
+      "assetId": "pico-banner-head-v1",
+      "brief": "docs\\pico-banner-animation\\head-brief.json",
+      "prompt": "Asset: Unit 1 banner Pico rig component, head. Inputs: Image 1 R01 brand reference; Image 2 R02 cast identity reference; Image 3 R07 object style reference; Image 4 exact current native Pico edit target. Isolate only the complete head, face, BOTH long ears and the narrow neck of this EXACT Pico. Remove the map, hands, torso, satchel and legs. Match the exact original head silhouette, gentle eyebrows, eyes, open smiling mouth, nose, peach skin and coral ear interiors. Keep the same frontal slight-right orientation, proportions and asymmetric bent right ear. Do not redesign or simplify the face. No new expression. The neck must extend far enough behind the original collar for pivot overlap. This is a precision component extraction/reconstruction, NOT a new character interpretation. Native flat solid-shape raster with original edges and palette. Entire component in view, transparent margins. True alpha background; solid skin/fabric/map opaque. No outlines, glow, shadows, blur, texture, gradients, lettering, labels, extra objects or extra anatomy. Produce only the requested single component.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\baseline-native.png",
+          "sha256": "439a0f2c9201a5368575f653b8ddf671876387dbfa64c7d9a0a87b1f7d740e5c"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9766f61f-acaa-469c-9deb-3320d5a4db11.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\head-v1.png",
+      "sha256": "f4fbc2d051e0c94df85ddd5f03ad28f3a52545871523cd1492baa10bedea77e2",
+      "dimensions": [
+        1128,
+        1394
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": false,
+      "verdict": "Rejected for registration/proportion mismatch in first reconstruction trial; superseded by tighter native-target generation."
+    },
+    {
+      "assetId": "pico-banner-body-v1",
+      "brief": "docs\\pico-banner-animation\\body-brief.json",
+      "prompt": "Asset: Unit 1 banner Pico rig component, body. Inputs: Image 1 R01 brand reference; Image 2 R02 cast identity reference; Image 3 R07 object style reference; Image 4 exact current native Pico edit target. Isolate the standing body below the head of this EXACT Pico: navy collared shirt/torso with the magenta satchel and orange button, peach legs and both feet. Remove the head, ears, hands and map. Preserve the exact leg lengths, feet, navy shoulder shape, magenta satchel and their proportions. Fill the torso naturally behind the removed map, since it will be covered by the original map again. The shirt extends to the original neckline, no floating parts. This is a precision component extraction/reconstruction, NOT a new character interpretation. Native flat solid-shape raster with original edges and palette. Entire component in view, transparent margins. True alpha background; solid skin/fabric/map opaque. No outlines, glow, shadows, blur, texture, gradients, lettering, labels, extra objects or extra anatomy. Produce only the requested single component.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\baseline-native.png",
+          "sha256": "439a0f2c9201a5368575f653b8ddf671876387dbfa64c7d9a0a87b1f7d740e5c"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c73169d4-42d8-4dc8-afa9-40d03abb1109.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\body-v1.png",
+      "sha256": "35738373f7f63f2b2b85c4ff0232f6ed75e72d2ea393f8bab64bb85dd749ed75",
+      "dimensions": [
+        960,
+        1639
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": false,
+      "verdict": "Rejected for registration/proportion mismatch in first reconstruction trial; superseded by tighter native-target generation."
+    },
+    {
+      "assetId": "pico-banner-map-hands-v1",
+      "brief": "docs\\pico-banner-animation\\map-hands-brief.json",
+      "prompt": "Asset: Unit 1 banner Pico rig component, map-hands. Inputs: Image 1 R01 brand reference; Image 2 R02 cast identity reference; Image 3 R07 object style reference; Image 4 exact current native Pico edit target. Isolate ONLY the teal folded map AND the two peach hands gripping its left and right edges as ONE registered prop-and-grip component from this EXACT Pico. Keep all three connected as in the original; preserve exact map silhouette, folds, orange and green shapes, hand shapes, relative positions and colors. Remove all of the head, ears, neck, shirt, satchel, legs and feet. Do not change the map design or the grips. This is a precision component extraction/reconstruction, NOT a new character interpretation. Native flat solid-shape raster with original edges and palette. Entire component in view, transparent margins. True alpha background; solid skin/fabric/map opaque. No outlines, glow, shadows, blur, texture, gradients, lettering, labels, extra objects or extra anatomy. Produce only the requested single component.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\baseline-native.png",
+          "sha256": "439a0f2c9201a5368575f653b8ddf671876387dbfa64c7d9a0a87b1f7d740e5c"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cb9dc4ac-60fe-412c-8f6a-2450be09d162.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\map-hands-rejected-v1.png",
+      "sha256": "68383dc94b663819104c6f4021f933df0805b5d595bf1c089bd8ca962d179044",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "selected": false,
+      "verdict": "Rejected: visible broad teal/peach halo."
+    },
+    {
+      "assetId": "pico-banner-head-v2",
+      "brief": "docs\\pico-banner-animation\\head-v2-brief.json",
+      "prompt": "Precision raster component extraction for Unit 1 banner Pico. Input1 R01 brand reference; input2 R02 identity reference; input3 R07 object style reference; input4 exact tightly cropped native component target. Copy precisely the complete head, BOTH ears, face and neck from Image 4. Keep the same head width-to-height ratio, exact cheek/nose contour, exact gentle eyebrows, eye size/centres, mouth, coral ears and bent-ear shape. Remove only the small navy/pink collar fragments at the bottom. The output must reconstruct the exact reference pose when uniformly scaled to the original crop. Make a literal faithful copy, not a new illustration. Flat matte solid colors, NO added lighting, gradients, glow, halo, shadows, texture, outline or blur. Opaque shapes on genuinely TRANSPARENT background, including directly outside the edges. Complete component with 8% transparent margin; no labels or extra parts.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\head-target.png",
+          "sha256": "bbaaedac35ea64ccacd6e5ac8149ca4e4371d0e689809285fc415b1cbd8f71a1"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4466a9c7-098d-4e1f-9cbf-040c59100bf7.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\head-v2.png",
+      "sha256": "7de712974570d44470d47b329f7dc23f6ec4751fe1196a29e6ac2705f4905d5a",
+      "dimensions": [
+        1056,
+        1489
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected only after mechanical component masking, uniform registration and independent rest/extrema review."
+    },
+    {
+      "assetId": "pico-banner-body-v2",
+      "brief": "docs\\pico-banner-animation\\body-v2-brief.json",
+      "prompt": "Precision raster component extraction for Unit 1 banner Pico. Input1 R01 brand reference; input2 R02 identity reference; input3 R07 object style reference; input4 exact tightly cropped native component target. Copy precisely the visible standing body from Image 4. Preserve EXACT foot silhouettes, leg thickness/length and spacing, satchel shape/button and navy collar. Remove map fragments and hands above it, reconstruct ONLY the occluded navy torso behind the map; keep that hidden torso narrow. Do not lengthen legs or broaden the body. The output must reconstruct the exact reference pose when uniformly scaled to the original crop. Make a literal faithful copy, not a new illustration. Flat matte solid colors, NO added lighting, gradients, glow, halo, shadows, texture, outline or blur. Opaque shapes on genuinely TRANSPARENT background, including directly outside the edges. Complete component with 8% transparent margin; no labels or extra parts.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\body-target.png",
+          "sha256": "ba84b28bfc6ed4fac4b6f6b6901dc77c924798955fcda2ad034757552924329c"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-410d2e5b-369e-493b-9c84-c65ceb13a4a0.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\body-v2.png",
+      "sha256": "2ca0eb5af11e19e14d98a9e3bda6c17324a370245b894b1784231384bcb44af6",
+      "dimensions": [
+        1013,
+        1552
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected only after mechanical component masking, uniform registration and independent rest/extrema review."
+    },
+    {
+      "assetId": "pico-banner-map-hands-v2",
+      "brief": "docs\\pico-banner-animation\\map-hands-v2-brief.json",
+      "prompt": "Precision raster component extraction for Unit 1 banner Pico. Input1 R01 brand reference; input2 R02 identity reference; input3 R07 object style reference; input4 exact tightly cropped native component target. Copy precisely the teal map and both hands gripping it from Image 4. Keep its exact outline, proportions, orange/green shapes and hand circles/bumps. Remove only neck/shirt fragments outside the map. No redesign, no changes to the map folds or grips. The output must reconstruct the exact reference pose when uniformly scaled to the original crop. Make a literal faithful copy, not a new illustration. Flat matte solid colors, NO added lighting, gradients, glow, halo, shadows, texture, outline or blur. Opaque shapes on genuinely TRANSPARENT background, including directly outside the edges. Complete component with 8% transparent margin; no labels or extra parts.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": true,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\map-target.png",
+          "sha256": "88025dac17ce4dc4437b2511c0da6c761734942c00382688a95d23b027d8e9ec"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-45f58e16-4051-4a8e-b17c-845ebaef7b49.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\map-hands-v2.png",
+      "sha256": "219cb77ad3bac994f4db53b3900bf56008328472eca185df81e283e4a4e59fe4",
+      "dimensions": [
+        1591,
+        989
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected only after mechanical component masking, uniform registration and independent rest/extrema review."
+    },
+    {
+      "assetId": "pico-banner-closed-eyes-v1",
+      "brief": "docs\\pico-banner-animation\\blink-brief.json",
+      "prompt": "Asset: Pico eye-region blink patch for a layered animation. Image1 R01 brand; image2 R02 cast identity; image3 R07 style; image4 exact eye-region edit target. Change ONLY these two open eyes to two naturally CLOSED eyes, gentle short dark navy curved eyelid arcs with the same spacing. The surrounding peach skin must exactly match the target, completely uniform and flat. Do not add brows, nose, mouth, head outline, glow, shadow or texture. Preserve the exact rectangular framing, eye centres and all surrounding skin colors. OPAQUE peach skin background, not transparent. This skin patch must cover the old white eyes during a brief blink, with no open white eyes remaining.",
+      "tool": "built-in ImageGen",
+      "transparentBackground": false,
+      "orderedInputs": [
+        {
+          "role": "reference",
+          "id": "R01",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+        },
+        {
+          "role": "reference",
+          "id": "R02",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+        },
+        {
+          "role": "reference",
+          "id": "R07",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
+        },
+        {
+          "role": "edit target",
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\eyes-target.png",
+          "sha256": "7dca356f9d7ad6fb0e79475224aa1dc9f695b44cfdad3f8e06d07141c0647233"
+        }
+      ],
+      "preflightPassedBeforeCall": true,
+      "inputCount": 4,
+      "nativeGeneratedPath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-450457ae-cbc9-469d-ba8c-5795ecc62ddc.png",
+      "repositoryNativeCopy": "assets\\art\\pico-banner-motion-v1\\blink-native-v1.png",
+      "sha256": "790a56121afb9133d709bdd59f08a91df08bc800a5f637a8b69735d2550f98a1",
+      "dimensions": [
+        1565,
+        1005
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        255,
+        255
+      ],
+      "selected": true,
+      "verdict": "Selected only after mechanical component masking, uniform registration and independent rest/extrema review."
+    }
+  ],
+  "integration": {
+    "recipe": "tools/prepare-pico-banner-parts.py",
+    "registration": "assets/art/pico-banner-motion-v1/registration.json",
+    "activeParts": [
+      {
+        "path": "assets\\art\\pico-banner-motion-v1\\head-registered.png",
+        "sha256": "f0f6a3e4d032f893ee506cea194204d9345fd1ac2307bcf6f8d4f7d948de8575",
+        "dimensions": [
+          248,
+          582
+        ],
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      {
+        "path": "assets\\art\\pico-banner-motion-v1\\body-registered.png",
+        "sha256": "e11fd4e55ef65cef20dd9f73fe7032c659f080a664b69e990ff3e95e4b49bb60",
+        "dimensions": [
+          248,
+          582
+        ],
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      {
+        "path": "assets\\art\\pico-banner-motion-v1\\map-registered.png",
+        "sha256": "258f9cde34178173ad2c0fd4a8b17fe9de4590bcd7e89325ee1ea62a715a6486",
+        "dimensions": [
+          248,
+          582
+        ],
+        "alphaRange": [
+          0,
+          255
+        ]
+      },
+      {
+        "path": "assets\\art\\pico-banner-motion-v1\\blink-registered.png",
+        "sha256": "b18fd1300ade67483f0f80e053227f2c7e3d18e9b992619897caad041062a817",
+        "dimensions": [
+          248,
+          582
+        ],
+        "alphaRange": [
+          0,
+          255
+        ]
+      }
+    ],
+    "operations": "Alpha-connected selection, tiny selection opening/dilation, uniform scale/translation, body upper crop, and a soft rounded rectangular eye-region alpha mask. No painted anatomy or new code-drawn eyelids. Raw generated files are untouched.",
+    "diagnostics": {
+      "silhouetteIoU": 0.9319322694238406,
+      "alphaAreaRatio": 0.9983595970033583
+    },
+    "visualReview": "Independent Codex subagent passed very-similar rest reconstruction and six-frame motion extrema + mobile composition; not a pixel-identical claim.",
+    "remainingVariation": [
+      "Slightly broader muzzle/head contour",
+      "Small map/paw position and map-graphic differences",
+      "Small satchel hem/upper-leg-gap differences"
+    ]
+  }
+}

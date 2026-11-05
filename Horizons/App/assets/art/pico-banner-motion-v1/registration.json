@@ -1,0 +1,39 @@
+{
+  "canvas": [
+    248,
+    582
+  ],
+  "parts": {
+    "head": {
+      "file": "head-v2-masked.png",
+      "x": 31,
+      "y": 3,
+      "scale": 0.204,
+      "pivot": [
+        120,
+        267
+      ]
+    },
+    "body": {
+      "file": "body-v2-masked.png",
+      "x": 7,
+      "y": 240,
+      "scale": 0.2236,
+      "pivot": [
+        124,
+        578
+      ],
+      "clipY": 253
+    },
+    "map": {
+      "file": "map-hands-v2-masked.png",
+      "x": 8,
+      "y": 265,
+      "scale": 0.1668,
+      "pivot": [
+        126,
+        327
+      ]
+    }
+  }
+}

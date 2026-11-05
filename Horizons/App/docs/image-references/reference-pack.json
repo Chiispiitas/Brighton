@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T05:01:08.876Z",
-  "sourceCommit": "b224d1a0f706195d28dc8527f777ed49fc8709b2",
+  "createdAt": "2026-11-05T05:42:53.125Z",
+  "sourceCommit": "336c6b2144381d4c6e3cc8e80fc37ee830416fc6",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "2ae0f9e250ec1d058cae2bc2d34ce2d8a3cde0667b412e6424e77dafb84972df"
+      "sha256": "2aefbdd2ea5a481b2d0aa5cc53b8ae0d89a6715179942e968103af695108b40f"
     },
     {
       "file": "src/avatar-static.js",
@@ -23,7 +23,7 @@
     },
     {
       "file": "styles/app.css",
-      "sha256": "9384c29c35f6b7c322921f29b9baabd3ba7eab83b22371c7db73e603c682285b"
+      "sha256": "54936539c1ec61f6b76e2414d574aa1118f88836cd375329ceb45cf3184ceadb"
     }
   ],
   "references": [
@@ -70,6 +70,5 @@
       "sha256": "d725dd9675cb21129e33bd58dac551e60a9dc15a46307084ead04b56f0fba587"
     }
   ],
-  "sourceState": "Rebuilt after compact bubble CSS changes; reviewed reference art unchanged. Retained reviewed native reference PNG bytes.",
-  "sourceRuntimeRevision": "5dc0a3dce6215c83584e2d91d98e82adbec91245"
+  "sourceState": "Rebuilt after isolated banner motion integration. Native reference-board art is unchanged; retained the reviewed PNG bytes."
 }

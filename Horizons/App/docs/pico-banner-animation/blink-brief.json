@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-banner-closed-eyes-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/eyes-target.png"
+  ],
+  "prompt": "Asset: Pico eye-region blink patch for a layered animation. Image1 R01 brand; image2 R02 cast identity; image3 R07 style; image4 exact eye-region edit target. Change ONLY these two open eyes to two naturally CLOSED eyes, gentle short dark navy curved eyelid arcs with the same spacing. The surrounding peach skin must exactly match the target, completely uniform and flat. Do not add brows, nose, mouth, head outline, glow, shadow or texture. Preserve the exact rectangular framing, eye centres and all surrounding skin colors. OPAQUE peach skin background, not transparent. This skin patch must cover the old white eyes during a brief blink, with no open white eyes remaining."
+}

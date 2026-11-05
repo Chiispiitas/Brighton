@@ -26,7 +26,7 @@ await context.addInitScript(()=>{
   const animate=Element.prototype.animate;
   Element.prototype.animate=function(frames,options){
     const protectedArt='.character,.avatar,[data-avatar-static]';
-    window.motionCalls.push({target:this.className?.baseVal??this.className,protected:!!this.closest(protectedArt)||!!this.querySelector(protectedArt),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,frames,duration:options?.duration});
+    window.motionCalls.push({target:this.className?.baseVal??this.className,banner:!!this.closest('.hero-pico')&&this.matches('.pico-banner-head,.pico-banner-map,.pico-banner-blink'),protected:!!this.closest(protectedArt)||!!this.querySelector(protectedArt),reduced:matchMedia('(prefers-reduced-motion: reduce)').matches,frames,duration:options?.duration});
     return animate.call(this,frames,options);
   };
 });
@@ -36,9 +36,9 @@ const resetCalls=()=>page.evaluate(()=>{window.motionCalls=[];});
 async function calls(){return page.evaluate(()=>window.motionCalls);}
 async function still(){
   await settle();
-  assert.equal(await page.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running').length),0,'motion must settle');
-  assert.equal(await page.evaluate(()=>[...document.querySelectorAll('.character,.avatar')].some(el=>{for(let node=el;node;node=node.parentElement)if(node.getAnimations().some(a=>a.playState==='running'))return true;return false;})),false);
-  assert.ok((await calls()).every(call=>!call.protected && !call.reduced && call.duration<=600));
+  assert.equal(await page.evaluate(()=>document.getAnimations().filter(a=>a.playState==='running'&&!a.effect?.target?.closest('.hero-pico')).length),0,'interface motion must settle');
+  assert.equal(await page.evaluate(()=>[...document.querySelectorAll('.character:not(.hero-pico),.avatar')].some(el=>{for(let node=el;node;node=node.parentElement)if(node.getAnimations().some(a=>a.playState==='running'))return true;return false;})),false);
+  assert.ok((await calls()).every(call=>call.banner||(!call.protected && !call.reduced && call.duration<=600)));
   assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'horizontal overflow');
 }
 async function shot(name){await still();await page.screenshot({path:path.join(out,name+'.png')});}
@@ -92,7 +92,7 @@ try{
   await page.locator('[data-mix=memory]').click();await page.locator('.memory-card').first().click();await still();await shot('memory');await leave();
   // A small isolated fixture tests token movement through the same render hooks.
   const token=await page.evaluate(async()=>{
-    const {captureUI,enhanceMotion}=await import('./src/ui-motion.js?v=mastery1');
+    const {captureUI,enhanceMotion}=await import('./src/ui-motion.js?v=pico1');
     const host=document.createElement('div');host.style.cssText='position:fixed;inset:100px 30px auto;z-index:100;background:white';document.body.append(host);
     host.innerHTML='<div class="sentence-answer"><span>Select words.</span></div><div class="sentence-tokens"><button data-token="0">Hello</button></div>';
     const before=captureUI(host);host.innerHTML='<div class="sentence-answer"><button data-remove-token="0">Hello</button></div><div class="sentence-tokens"><button data-token="0" disabled>Hello</button></div>';

@@ -1,0 +1,28 @@
+{
+  "reviewer": "Codex subagent /root/animation_review",
+  "rest": "PASS: very similar, not pixel-identical",
+  "motion": "PASS for this Unit 1 banner pose and declared small motion range",
+  "source": "PASS after shared-clock correction, import catch, explicit marker/explore scope and exact alpha recipe",
+  "reviewed": [
+    "assets/art/pico-banner-motion-v1/reconstruction-comparison.png",
+    "docs/pico-banner-animation/review/motion-extrema-linear-clock.png",
+    "docs/pico-banner-animation/review/banner-390.png",
+    "src/pico-banner-motion.js",
+    "src/art.js",
+    "tools/prepare-pico-banner-parts.py"
+  ],
+  "checks": [
+    "True +1.4 degree and -.6 degree extrema: joined neck/collar",
+    "Both map/paw grips remain rigid",
+    "Feet grounded and ears complete",
+    "Blink patch clean",
+    "Rest and loop-end match visually",
+    "Other characters remain static"
+  ],
+  "limits": [
+    "Finite sampled states; small declared motion range only",
+    "Edge/Chromium automation",
+    "Root inspected frame sequence/timing and exported real-time clip; no human subjective pacing approval claimed",
+    "No approval for other characters or poses"
+  ]
+}

@@ -156,3 +156,7 @@ Reject an asset for missing mandatory references, more than seven image inputs, 
 The final approved result must be inspected in the real website, not only on a contact sheet. Where practical, obtain a second visual review; when unavailable, perform a separate inspection after integration and record the reviewer and limits accurately. Do not invent an independent reviewer.
 
 Publish through the website process audit. Keep a reversible baseline and verify actual hosted native bytes. Updating this guide or a reference sheet alone does not approve new artwork.
+
+## Scoped animation exception
+
+The user reopened animation for Unit 1 banner Pico only. New parts still require this preflight and actual references. The separate ANIMATION-AUDIT.md governs reconstruction-first acceptance, mechanical masking/registration, motion, fallback, independent review and release. This does not authorize old rig reuse or motion elsewhere.

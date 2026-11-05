@@ -1,9 +1,9 @@
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=mastery1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=mastery1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=pico1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=pico1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=colors1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=pico1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -92,7 +92,7 @@ function home(){
  if(!hasBookAccess())return accessPage();
  if(!isA1Book())return `<section class="coming-book"><h1>${esc(bookTitle(activeBook()))}</h1>${characterMarkup('pico','coming-pico')}<p>Activities for this book are not available yet.</p><button class="primary-button" data-action="books">Choose a book ${icon('book')}</button></section>`;
  const next=pathNodes.find(node=>!nodeIsComplete(node))||pathNodes[0];
- return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</section>`;
+ return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</section>`;
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);

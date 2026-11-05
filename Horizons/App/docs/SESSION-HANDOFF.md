@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest exception: Unit 1 banner Pico may use the new ImageGen-generated-part reading rig. See docs/ANIMATION-AUDIT.md and docs/pico-banner-animation/production-record.json. Other cast/avatar art remains static. Current cache horizons-companion-pico-v24; entry queries pico1.
+
 Latest continuation: compact island popovers, no lesson-jump shortcuts, server-derived island and lesson crowns, unseen/unmastered-first rounds capped at eight items. Cache horizons-companion-mastery-v23; entry queries mastery1. Backend deployment 32611cc2-cdaa-4c78-8968-b9dd7681530f, source b9bec307cd90a7a8d249b56c6a317d3bdb5d2dce. See content/island-mastery.mjs and backend/reports/live-island-mastery.json.
 
 Latest correction: remove cast beside lesson headings; relocate islands onto a broader, gentler analytic S. Cache horizons-companion-curve-v22; entry queries curve2.
