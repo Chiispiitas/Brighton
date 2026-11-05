@@ -1,6 +1,6 @@
 # Horizons website session handoff
 
-Current animation rule: Pico has no fading/transparency transitions. Sprite visibility switches instantly at full opacity; movement uses transforms. One 8-second idle then 6-second inspection. Cache pico-v29, queries pico6. See ANIMATION-AUDIT.md final section.
+Current animation rule: Pico has no fading/transparency transitions. Sprite visibility switches instantly at full opacity; movement uses transforms. One 8-second idle then 6-second inspection. Cache pico-v29, queries pico6. See the rewritten ANIMATION-AUDIT.md for the current from-scratch workflow, active sprite inventory and refreshed reference boards/14-second preview. Earlier trial details are in ANIMATION-AUDIT-HISTORY.md.
 
 Current Pico rendering: v4 faceless ImageGen head with separate transparent expression sprites. V3 skin-patch compositing is retired. Motion unchanged. Cache pico-v27, queries pico4. See ANIMATION-AUDIT.md current v4 section and faceless-production-record.json.
 

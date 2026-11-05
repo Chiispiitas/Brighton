@@ -1,117 +1,127 @@
-# Horizons character animation audit
+# Horizons animation production audit
 
-Status: current architecture is the v4 faceless base with transparent expression sprites. Read the final v4 section for current evidence; earlier sections retain historical, source-bound trial results.
+Updated 5 November 2026, America/Bogota. This is the current production workflow and reference index. The [historical audit](ANIMATION-AUDIT-HISTORY.md) preserves earlier trials, rejected attempts and source-bound releases. Historical settings are not current requirements.
 
-## Authority and scope
+## Current decisions and scope
 
-The latest explicit request reopens animation only for Pico in the Unit 1 banner. Earlier static-character rules remain in force everywhere else. This document is separate from APP-AUDIT.md and IMAGE-PRODUCTION.md and records the new trial, generated inputs and acceptance evidence. It does not revive any old rig or authorize automatic rollout to other cast members or avatar previews.
+The user's latest instruction wins. This workflow explains how to create a newly requested animation; it does not authorize animating the rest of the cast. Only Pico in the Unit 1 Learn banner currently uses this rig. Other characters and avatars remain static. Preserve the accepted website, artwork IDs, printed book and backend.
 
-## Immutable baseline and references
+Use a genuinely faceless head with separate transparent facial-feature sprites. Never conceal old expressions with peach skin patches. Separate the features needed by the action: nose, brows, mouths, eye whites, pupils, eyelids and special expressions. Shared features can remain constant layers. Masks contain features within the head and moving pupils within the eye whites.
 
-- Current atlas: assets/art/cast-static-pico-v2.png, 1254×1254.
-- Current explore crop: x764, y19, width248, height582.
-- Mechanical, unmodified crop: assets/art/pico-banner-motion-v1/baseline-native.png.
-- User screenshot: codex-clipboard-d3c3cf77-a5e7-4836-8fcd-0520f1dd2370.png (map-holding Pico).
-- User video: 20261105-0510-16.8044300.mp4, 7.667 seconds. Reading character looks down/across the page, blinks and makes small connected head/book movements; it does not need a walking or limb-swing cycle.
-- Mandatory actual image inputs per cast call: R01, R02, R07 and exact current target. Total cap remains seven, including targets. Briefs and exact prompts live in docs/pico-banner-animation/.
+No fades, crossfades, opacity animation or transparency transitions. Visible sprites stay at opacity 1; incompatible expressions switch instantly. Transparent PNG backgrounds and native antialiased edges are still valid. Translation, rotation, resizing, controlled squash/stretch, anticipation, overshoot and bounce are allowed when anatomy stays connected and identity recognizable.
 
-## Production sequence
+Pico's current cycle is one 8-second idle followed by a 6-second map check: 14 seconds total. The inspection expression has a raised eyebrow, downward squint, closed neutral mouth and no smile. Body and feet remain fixed. Closed eyelids display at 150% size. Reduced motion uses the original native still; offscreen/hidden-tab states pause the cycle. These are Pico's settings, not universal durations or amplitudes for future characters.
 
-1. Read the current render, view the baseline and required sheets, save a component brief and run the image-reference preflight.
-2. Generate each distinct component with the built-in ImageGen tool and actual returned input paths. Preserve selected native bytes, alpha, dimensions and hashes; record rejected attempts and reasons.
-3. Register complete generated components in a canonical coordinate space. Uniform scale/translation, layering, clipping/masking and pivots are allowed. Do not draw substitute anatomy in code or use old articulated parts.
-4. Reconstruct the neutral pose before introducing motion. Reject or regenerate components if the assembly changes Pico's face, head/ear silhouette, clothing, feet, proportions, map design or gripping hands beyond a very similar match to the baseline.
-5. Animate only after neutral reconstruction passes separate visual review. Keep feet grounded, shoulder/neck joints covered, hands registered to the map, ears complete, and all moving regions within their frame. Avoid whole-character floating, detached parts, stretching or a new shadow.
-6. Verify on the actual banner at 320, 390, 768 and 1440px; inspect neutral and extreme frames at enlarged and actual sizes, reduced motion, rerender/disposal, offscreen/tab pause, and hosted source/cache parity if released.
+Verified runtime: `56551e90b35c9219295ce26b74a0084cad82eef6`; cache `horizons-companion-pico-v29`, entry queries `pico6`. Later documentation-only commits preserve this runtime.
 
-## Motion and release gates
+## Updated reference index
 
-Start with small purposeful reading motion, head/ear response and a generated blink if reconstruction permits it. No other character is animated. Reduced motion must show the approved still. Motion must pause offscreen and in a hidden tab. Retain the original static fallback until all required components decode and validation succeeds. The accepted asset must be reviewed in the composed app, not merely as a sheet. Record an independent reviewer when available; never invent independent approval. A successful generation is not approval. If the reconstruction fails, redo the offending generated component before extending motion.
+Read [IMAGE-PRODUCTION.md](IMAGE-PRODUCTION.md), [APP-AUDIT.md](../APP-AUDIT.md), and the [general reference manifest](image-references/reference-pack.json). Each cast ImageGen call must actually attach [R01 brand](image-references/01-brand.png), [R02 cast](image-references/02-cast.png), [R07 style/objects](image-references/07-scenes-vocabulary-ui.png) and the exact current edit target. **Maximum seven image inputs total, including targets.** Run the preflight before every call and attach its returned paths. Mentioning filenames in a prompt does not attach them.
 
-## Trial log
+The [animation reference manifest](pico-banner-animation/animation-reference-pack.json) inventories active assets, hashes and current visual references. It supplements the general pack; it does not replace mandatory inputs or exempt additional images from the seven-input cap.
 
-### Generated parts and rejections
+| Reference | Purpose/status |
+| --- | --- |
+| [Original native crop](../assets/art/pico-banner-motion-v1/baseline-native.png) | Appearance baseline/static fallback. Atlas cast-static-pico-v2.png; x764/y19/w248/h582. |
+| [Current layer board](pico-banner-animation/review/current-layers.png) | Faceless head, body, map/paws and all facial components separately over checkerboard. |
+| [Current composed states](pico-banner-animation/review/current-states.png) | Baseline, reconstructed neutral, before/during/after blink, lift, inspection and restored neutral; current hosted renderer. |
+| [Current normal-speed cycle](pico-banner-animation/review/current-cycle.mp4) | Current 14-second cycle with opaque swaps. Older videos have historical timing or fades. |
+| [Initial part provenance](pico-banner-animation/production-record.json) | Head/body/map/blink prompts, actual inputs, raw outputs, rejected attempts and registration. |
+| [Inspection provenance](pico-banner-animation/check-production-record.json) | First expression rejected for holes/halo; second supplies feature shapes, not an active skin patch. |
+| [Faceless/sprite provenance](pico-banner-animation/faceless-production-record.json) | Exact faceless edit inputs/prompt, raw output and separated feature sources. |
+| [Reading reference clip](C:/Users/David/AppData/Local/Packages/Microsoft.ScreenSketch_8wekyb3d8bbwe/TempState/Recordings/20261105-0510-16.8044300.mp4) | User inspiration for gaze/head/book movement; not a source of Pico art. External local file, not bundled. |
+| [Stretch/bounce reference clip](C:/Users/David/AppData/Local/Packages/Microsoft.ScreenSketch_8wekyb3d8bbwe/TempState/Recordings/20261105-1214-52.2572934.mp4) | User inspiration for anticipation, elasticity and settling. Do not copy its character. External local file, not bundled. |
 
-Full exact prompts, ordered attached inputs/hashes, native paths, native alpha/dimensions/SHA-256, selection status and integration locations are in [production-record.json](pico-banner-animation/production-record.json). Every call used built-in ImageGen, four actual image inputs, and a successful preflight. No abandoned rig parts or code-drawn anatomy are used.
+### Active sprite map
 
-| Component | Selected native file under assets/art/pico-banner-motion-v1 | Result |
-| --- | --- | --- |
-| Head, face, both ears and neck | head-v2.png | Tight native head crop produced a very similar registered head; v1 rejected for proportion/registration mismatch. |
-| Shirt, satchel, standing legs/feet | body-v2.png | Uniform registration plus upper crop removes the extra generated chin. v1 rejected for long/narrow proportions. Body/feet stay fixed. |
-| Map and both gripping paws | map-hands-v2.png | Kept as one rigid group to preserve grip. v1 rejected for a large teal/peach glow. |
-| Closed eyes on matching skin | blink-native-v1.png | ImageGen-generated eyelid arcs, mechanically clipped to the eye region; no eyelids drawn in code. |
+All files below are in [assets/art/pico-banner-motion-v1/](../assets/art/pico-banner-motion-v1/). Active sprites/masks share the 248×582 rig canvas. Raw ImageGen outputs retain their original dimensions/bytes.
 
-The four active render files are head-registered.png, body-registered.png, map-registered.png and blink-registered.png. Native generated files are untouched. The reproducible recipe is tools/prepare-pico-banner-parts.py; registration.json records logical positions, uniform scales and pivots. Alpha-connected selection masks remove exterior speckles. A soft eye-region selection blends the generated blink patch. These are mechanical masks explicitly requested by the user, not new painted anatomy.
+| Active file | Role/source |
+| --- | --- |
+| head-faceless-registered.png | Blank head/ears/neck from head-faceless-native-v1.png; uniformly registered; no facial features. |
+| body-registered.png | Fixed shirt, satchel, legs/feet from body-v2.png. |
+| map-registered.png | Map and both gripping paws as one rigid group from map-hands-v2.png. |
+| face-nose.png | Shared native nose from head-v2 art. |
+| face-neutral-brows-mouth.png | Normal brows and smiling mouth/tongue from head-v2 art. |
+| face-neutral-eyes.png | Native open eye whites; pupils separated and their footprints filled with sampled white. |
+| pupils-native.png | Separate moving native pupils. |
+| eyes-mask.png | Mechanical selection of native eye shapes; contains pupils. |
+| face-blink-eyelids.png | Closed eyelid strokes only, from blink-native-v1.png via blink-registered.png. |
+| face-inspect-features.png | Raised brow, squint and closed mouth only, from check-face-native-v2.png; skin/exterior excluded. |
 
-### Reconstruction and visual review
+Layer order: head behind body/map; inside head, blank base then contained facial layers. The nose is shared. Neutral brows/mouth and open eyes/pupils are replaced by inspection features; eyelids replace open eyes during blinking. Faces inherit the head transform. Masks are containment guards, not substitutes for properly separated sprites.
 
-- Native diagnostic: silhouette IoU 0.93193 and alpha-area ratio 0.99836 at 248×582. These are diagnostics, not a claim of pixel identity or sole acceptance criteria.
-- Root viewed the actual native target, registered assembly, 50% overlay and difference image in reconstruction-comparison.png.
-- Independent reviewer: Codex subagent `/root/animation_review` passed the rest reconstruction as **very similar**. Recorded variation: slightly broader muzzle/head contour, small paw/map placement and map-graphic differences, and small satchel hem/upper-leg-gap differences.
-- The same independent reviewer passed the actual-browser six-state extrema sheet and mobile banner: joined neck/collar, rigid paw grips, grounded feet, full ears, clean blink patch and matching rest/loop-end frames.
-- Root inspected responsive banner images, enlarged extrema, and time-sampled frames from the real-time recorded clip. The normal-speed eight-second clip is delivered for review; no human subjective timing approval is claimed. A future motion revision requires fresh sampled/real-time evidence.
+Recipes: [initial registration](../tools/prepare-pico-banner-parts.py), then [faceless head/feature separation](../tools/prepare-pico-face-sprites.py). The old [prepare-pico-check.py](../tools/prepare-pico-check.py) is historical patch work. Runtime no longer displays head-look-base.png, blink-registered.png or check-face-registered.png as face layers.
 
-### Motion contract
+## What changed and why
 
-The canonical assembly is 248×582. Head pivot is (120,267); map+hands pivot is (126,327). The body/feet do not move. Head rotates from 0 to +1.4°, back to 0, to −0.6°, then rest. Map rotates no more than −0.45°/+0.3°, with at most 0.8 logical pixels vertical motion. Two brief generated blinks occur per eight-second cycle. All tracks share an eight-second linear effect clock and explicit start time. Head/map ease within keyframe segments, so their declared offsets are also their true sampled wall-clock extrema. An initial effect-level easing implementation was corrected after independent review identified misleading sample labels. There is no torso stretch, idle whole-character bob, shadow, walk cycle or detached limb motion.
+| Trial/change | Result carried forward |
+| --- | --- |
+| Generated head, body and map/paws | Rejected initial proportion mismatches and map glow; tighter native targets produced a very similar reconstruction. Raw outputs retained. |
+| Reconstructed the neutral pose first | Established common coordinates, pivots and joint overlaps. No abandoned articulated rig reused. |
+| Added synchronized reading movement/blink | Corrected effect-level easing to a linear common clock with easing inside motion segments, so stated sample times match actual extrema. |
+| Doubled motion and enlarged blink to 150% | Kept wider movement. The enlarged skin patch exposed clipping/overlap problems. |
+| Added gaze and map inspection | Pupil movement, anticipation, stretch, overshoot and settling; raised-brow/no-smile face. Limited map width expansion to prevent paw clipping. |
+| Tried masks and expression skin patches | Containment improved, but seams and covering old features remained problematic. Retired that expression approach. |
+| Generated faceless head and separated features | Established current architecture; removed backing/exterior pixels and restored the tongue after incomplete extraction. |
+| Changed inspection frequency | Four idle loops became one: 8 seconds idle plus 6 seconds inspection. |
+| Removed every fade | Atomic hidden/show changes read the shared clock. Boundary checks caught overlap in an intermediate visibility-keyframe approach; it was replaced. |
+| Checked lifecycle/publication | Native still for loading/reduced motion/failure; phase-preserving pause, cleanup and source-bound hosted proof. Initial independent review covers that trial only. |
 
-Only the explicit `.unit1-banner-pico[data-posture=explore]` marker in the Learn hero mounts this renderer. The original explore atlas remains the static fallback. Generic character and avatar animation guards remain. Reduced motion cancels tracks and displays the native still; hidden/offscreen states pause them. Disposal cancels tracks, disconnects observers/listeners and prevents late image-decoding mounts. Missing module or part assets retain the original still.
+## New animation from scratch
 
-### Local verification
+### 1. Establish the exact target and action
 
-`tools/pico-banner-motion-proof.mjs`: 320/390/768/1440px banner fit, only the approved rig animates, body remains fixed, rest/extreme/blink/loop samples, reduced-motion still, real offscreen pause/resume, controlled hidden-document event, repeated route disposal and missing asset/module fallback. `tests/pico-banner-cache-upgrade.mjs`: actual v23 to v24 lifecycle and exact loaded/cached bytes. Reports live in reports/pico-banner-*.json. The generic interface proof distinguishes this new explicit exception from unauthorised character motion.
+Read current decisions, source, native art and relevant motion clips. Record the authorized character/location, action, expressions, schedule, display sizes and static fallback. Extract an untouched baseline crop. Define invariants: silhouette, proportions, colors, clothing, face identity and held objects. Preserve unrelated work.
 
-Browser scope is Edge/Chromium. The hidden-document event check is a controlled fixture, not a claim of testing every operating-system background state. No backend deployment or learner writes are involved.
+### 2. Plan layers before generating
 
+Start with a faceless head and separate features. List only body, limbs, prop, hands, eye whites, pupils, brows, mouths, eyelids and special expressions needed for the action. Group parts that must stay attached: Pico's map and gripping paws stay together. Define canvas, anchors, pivots, overlap behind joints and layer order. Do not split every limb without a purpose.
 
-### Exact alpha-mask recipe
+### 3. Prepare references and preflight every image call
 
-Derived masks use alpha > 180 to seed the selection, MinFilter(3) then MaxFilter(3), flood fill the central connected component, MaxFilter(3), and min(original alpha, selection). The native generated alpha/RGB files remain untouched; derived edge alpha is intentionally masked and is not claimed identical to the native alpha. The body is clipped above logical y253. The generated blink uses a rounded-rectangle selection (85,154,139,189), radius3, GaussianBlur0.65, multiplied with the patch alpha. All three main components are uniformly scaled, never stretched.
+Inspect R01/R02/R07 and the exact current native target. If the general pack is stale, rebuild it with the reference-board tool and review affected sheets first. Save one brief per deliverable: component boundaries, invariants, framing, alpha requirements, prompt, reference IDs and targets. Run tools/check-image-brief.py from the app directory. Attach its exact returned input_paths to built-in ImageGen; explain input roles in the prompt. Count all images, never more than seven. Repair a rejected preflight before generating.
 
-### Review artifacts
+### 4. Generate parts and preserve provenance
 
-[Neutral comparison](../assets/art/pico-banner-motion-v1/reconstruction-comparison.png), [true extrema](pico-banner-animation/review/motion-extrema-linear-clock.png), [mobile banner](pico-banner-animation/review/banner-390.png), [normal-speed preview](pico-banner-animation/review/pico-reading-v1.mp4), and [independent review](pico-banner-animation/review/independent-review.json) are preserved. The final proof asserts the computed +1.4°/−0.6° angles at their declared times. Missing-image and missing-module tests use fresh browser contexts so decoded caches cannot bypass the failure fixture.
+Use built-in ImageGen for new anatomy/expression art. Generate separate deliverables; tighten native crops when geometry drifts. Request complete contours, solid interiors and transparent backgrounds. Explicitly remove eyes/brows/nose/mouth/tongue from the head. Expressions should contain features only on transparency, aligned to agreed anchors, with no peach skin panel. Save raw results unchanged in the repository. Record exact prompts, ordered input hashes, tool output paths, dimensions, alpha and acceptance/rejection reasons. Accepted native generated features can be mechanically separated/reused; do not redraw substitute anatomy in code.
 
-### Hosted release evidence
+### 5. Inspect and redo failed components
 
-Runtime a1fbc38c44b2a5b39783be1c9b2eacc658af0df0 is published at [Horizons](https://exams.bebrighton.net/Horizons/App/). [GitHub Pages run 41975897079](https://github.com/Chiispiitas/Brighton/actions/runs/41975897079) completed successfully. The hosted proof passed at 320, 390, 768 and 1440px, including the scoped animation, fixed body, reduced-motion still, missing-part/module fallback, offscreen pause/resume, controlled hidden-document event and route disposal. Root viewed the actual hosted mobile banner and +1.4° extreme; preserved copies are [hosted banner](pico-banner-animation/review/hosted-banner-390.png) and [hosted extreme](pico-banner-animation/review/hosted-frame-1920.png).
+View native results and checkerboard composites. Reject wrong identity/proportions, missing contours, extra anatomy, holes in solid areas, halo/shading, opaque backings, unwanted exterior pixels or registration that cannot match the baseline. Redo the offending ImageGen part if the assembly cannot reconstruct the same or a very similar character. Do not hide failure behind another large skin patch. A successful tool response is not visual acceptance.
 
-The real v23→v24 service-worker upgrade passed with exact committed module/part bytes in Cache Storage. Publication parity passed for all 382 committed runtime/native files, including 12 existing book recordings. Reports: [release](../reports/pico-banner-release.json), [hosted motion](../reports/pico-banner-motion-proof-hosted.json), [hosted cache upgrade](../reports/pico-banner-cache-upgrade-hosted.json), and [publication parity](../reports/publication-assets.json). These checks use synthetic intercepted app state and make no learner/backend writes. Browser and visual-review limitations above still apply. Later evidence-only commits do not alter this verified runtime.
+### 6. Prepare sprites and reconstruct the still pose
 
-## Requested amplitude revision
+Keep native files untouched. Make versioned derivatives with a repeatable recipe: mechanical crop, alpha selection, masks, uniform registration and translation. Disclose sampled-color fills used during separation; derivatives are not untouched native bytes. Put features above the blank head in one coordinate space. Preserve complete ears/hair and joint overlap. Inspect blank head, isolated expressions and every composed face. Compare the full neutral assembly with the baseline side by side, with overlays/differences when useful. Identity and connected anatomy must pass before motion. Silhouette scores support review; they are not sole acceptance criteria or claims of pixel identity.
 
-Movement doubled: head +2.8°/−1.2°; map −0.9°/+0.6°, vertical travel 1.6/0.8 logical pixels. Closed-eye sprite uniformly scaled 1.5 around (112,172), its eye-region center; the upper skin margin is clipped at logical y164 to preserve the original eyebrows. Native generated assets unchanged. Cache v25, entry queries pico2. Earlier approval/evidence above describes v1; this revision has fresh automated and sampled checks.
+### 7. Build purposeful motion with transforms
 
-## Map inspection, pupil motion and face containment (v3)
+Set pivots/fixed supports, then idle movement, then special action. Use translation/rotation/resizing, modest squash/stretch, anticipation, overshoot and settling where they serve the action. Keep feet grounded unless the action moves them; keep neck/collar connections and object grips intact. Review true extreme poses for clipping, detachment, unwanted floating or distorted identity before increasing movement.
 
-The latest request adds a real head-alpha mask around the enlarged blink (scale 1.5, clipped above logical y162); the mask is on its parent, so it does not expand with the sprite. Native pupils are separated into a moving layer, clipped by their original eye whites. Small 1–2px glances scan the map. All six images and both masks must decode before replacing the native fallback.
+### 8. Switch expressions at full opacity on one clock
 
-Four complete 8-second idle loops precede a 6-second closer inspection: 38 seconds total, one shared clock. The map anticipates down 4px, lifts approximately 49px, then settles at 45px. Its width compresses to .96 while its height expands to 1.03, keeping both paws within the banner. The head anticipates up 3px, dips 9px/7 degrees, then settles at 7px/6 degrees. It briefly stretches/squashes by up to 2.5%, returning to the unchanged rest pose. Body and feet remain fixed. Offscreen/hidden pauses preserve the cycle counter; reduced motion shows the original still.
+No fades/crossfades/opacity interpolation. Hide outgoing features and show incoming features atomically. Hide eye whites/pupils during blink and show separate eyelids. A transform-based blink squeeze is allowed but must not reveal old eyes underneath. Masks contain pupils/facial features. Share a timebase across head, prop, gaze, blink and action. Pico uses three transform animations with a linear 14-second clock; one frame callback reads it and updates hidden attributes. Future implementations may differ while preserving these visual rules.
 
-New expression: raised eyebrow, downward squint, closed neutral mouth, no smile. ImageGen attempt 1 was rejected for holes/halo. Attempt 2 supplies feature shapes; native sampled skin matching avoids a rectangular seam. [Production record](pico-banner-animation/check-production-record.json) preserves exact prompts, four actual attached inputs, hashes and selection reasons. [Recipe](../tools/prepare-pico-check.py) reproduces native pupil separation and expression registration. Earlier v1 independent approval does not extend to this larger motion; root reviewed its own current sampled frames.
+### 9. Integrate fallback, accessibility and cleanup
 
-Local proof covers four widths, exact idle extrema, expression absent at 32 seconds/present at 35, 38-second shared timelines, mask bindings, fallback, pause/resume and disposal. Sampled blink/inspection/rest frames are preserved in pico-banner-animation/review/check-v3-*.png. Edge/Chromium only; no real learner data or backend changes. Cache v26; entry queries pico3.
+Opt in only the authorized character/location. Fit the rig uniformly to the real slot. Decode every sprite/mask before replacing the accepted still. Keep the still for missing module/assets and reduced motion. Pause the clock and face updater offscreen/in hidden tabs. Cancel animations/frame callbacks, disconnect observers/listeners and prevent late decodes from remounting after navigation. Preserve stable IDs and other static-character guards. Define resume behavior; Pico preserves phase.
 
-V3 published runtime ccc0c2e6150282aede06c180b8ecde0e0dc12d43. Pages run [42026925581](https://github.com/Chiispiitas/Brighton/actions/runs/42026925581) succeeded. Hosted four-width motion/mask/timing/fallback/disposal checks passed; root viewed the hosted inspection frame. See reports/pico-check-v3-hosted.json and the [normal-speed inspection preview](pico-banner-animation/review/pico-check-v3.mp4). Publication parity report is source-bound separately. No backend writes.
+### 10. Review composed motion and test behavior
 
-## Faceless base and transparent expressions (v4, current)
+Inspect neutral, actual extrema, blink, special face, return and loop seam, enlarged and at real app size. Review normal-speed playback of a complete current cycle. Test the actual route at 320/390/768/1440px: edge clearance, joints, grips, grounded body, face alignment and unwanted pixels. Probe before/at/after each expression switch and inside former fade windows. Reject fractional opacity or incompatible features visible together. Verify pupil containment, frequency, reduced motion, pause/resume, repeated navigation/disposal and missing assets/modules using fresh contexts. Use synthetic state, never real learner records. Name actual reviewers/scope; never imply human or independent approval that did not occur.
 
-The user's latest correction replaces the v3 skin-patch approach. The head is now a genuinely faceless ImageGen base: no eyes, brows, nose, mouth or tongue are baked into it. Every facial feature is a separate transparent sprite. Shared nose, neutral brows/mouth, open eye whites and moving pupils, closed eyelids, and the raised-brow squint/closed mouth are layered over the blank base. Expression sprites contain feature shapes only; they carry no peach skin rectangles. All share the canonical head coordinate space and head transform.
+### 11. Publish and refresh the audit/reference set
 
-Historical v4 timing used face and eye fades, superseded by the final opaque-animation rule below. The separate closed eyelids remain at 150% size. This removes the need to conceal old expressions with opaque skin. A head-alpha mask remains as a containment guard, and pupils remain clipped to their native eye whites. Movement amplitude, 38-second/four-idle-loop schedule and pause/reduced-motion/static fallback remain unchanged. Cache v27, entry queries pico4.
+Commit intended work, check remote branches, use the existing publication flow and invalidate relevant entry/service-worker caches. Verify live route, exact hosted module/art bytes and relevant browser behavior. Adapt cache-lifecycle tests to the real previous/new versions; old reports do not prove a later upgrade. Record revision, publication run, hashes, reports, browsers and remaining gaps. Refresh current reference boards, manifest and complete-cycle preview; label older material historical. No book/backend deployment as a side effect of animation work.
 
-The [production record](pico-banner-animation/faceless-production-record.json) contains exact ImageGen prompt, four actual attached preflight-approved references/target, raw output path/hash, active sprite hashes and the repeatable [separation recipe](../tools/prepare-pico-face-sprites.py). [Layer board](pico-banner-animation/review/faceless-v4-layers.png). Native originals and superseded v3 recipes remain historical; the runtime no longer uses head-look-base, blink-registered or check-face-registered.
+## Current evidence and remaining limits
 
-QA checks the blank base, neutral reconstruction, blink and inspection, four screen widths, mutually exclusive eye/expression states, pupil mask, exact idle angles, 38-second shared timelines, loading fallback, route disposal and offscreen/reduced-motion behavior. Root visual review only for this version; prior independent approval applies to v1. Edge/Chromium only; synthetic state; no learner/backend writes.
+[Hosted opaque proof](../reports/pico-opaque-hosted.json), bound to runtime 56551e9: four widths, mutually exclusive eye/expression states, no opacity tracks, all head descendants at computed opacity 1, one idle then inspection, masks, fixed body, reduced-motion still, load fallback, offscreen pause/resume, controlled hidden-document event and disposal. [Local proof](../reports/pico-opaque.json) and [proof script](../tools/pico-banner-motion-proof.mjs) record the contract. Samples cover both sides of 2352/2496/6032/6176/9100/12500ms.
 
-V4 runtime e5999ddc50b913973713ece2d0447843f48c4628 is live. Hosted four-width proof passed (reports/pico-faceless-v4-hosted.json); root viewed hosted blink and inspection frames. All 397 committed runtime/native files matched the live site, including 12 unchanged book recordings. Pages run [42033619755](https://github.com/Chiispiitas/Brighton/actions/runs/42033619755): completed, success at this evidence capture. The faceless silhouette IoU is 0.97680 against the prior head, a diagnostic rather than a pixel-identity claim. [Normal-speed preview](pico-banner-animation/review/pico-faceless-v4.mp4). Later evidence-only commits preserve the checked runtime.
+[Publication parity](../reports/publication-assets.json) verified 397 committed runtime/native files, including 12 unchanged book recordings. [Pages run 42036348344](https://github.com/Chiispiitas/Brighton/actions/runs/42036348344) succeeded. Refreshed visual captures use the hosted renderer without learner API calls; they are visual documentation, not a new cross-browser interaction matrix.
 
-## Inspection frequency correction (current)
+Limits: Edge/Chromium automation; controlled hidden-document event fixture. No physical-phone or Safari/Firefox verification claimed. Initial independent review does not approve later revisions/poses. Current visual review is by the root agent; clips support the user's style/pacing review. Reconstruction is very similar, not pixel-identical; the faceless silhouette diagnostic was 0.97680 against the prior head. Earlier cache-upgrade evidence verifies v23→v24 only; no v28→v29 lifecycle test is claimed here.
 
-The latest request changes the schedule to one 8-second idle followed by the unchanged 6-second map inspection: 14 seconds total. Expression sprites, motion amplitudes and pause/reduced-motion behavior are unchanged. Cache v28, entry queries pico5.
+## Carry-forward package
 
-## Opaque animation rule (current)
-
-No fades or opacity interpolation in Pico animation. Expressions and eye states switch instantly through discrete sprite visibility at full opacity. A single frame callback reads the shared motion clock and switches hidden attributes atomically. Open eyes explicitly hide during both blink and inspection. The callback stops offscreen, in hidden tabs and under reduced motion, and is cancelled on disposal. Neutral and inspection features switch together. All motion uses transforms; native transparent backgrounds and antialiased sprite edges remain. Existing 8-second idle plus 6-second inspection schedule is unchanged. Cache v29, queries pico6. QA probes both sides of every swap and former fade windows to reject fractional opacity, opacity tracks and overlapping facial states.
-
-Opaque-swap runtime 56551e90b35c9219295ce26b74a0084cad82eef6 is live. [Pages run 42036348344](https://github.com/Chiispiitas/Brighton/actions/runs/42036348344) succeeded. Local and hosted proof passed, including boundary samples at 2352/2496/6032/6176/9100/12500ms and adjacent timestamps, no opacity tracks, every head descendant at computed opacity 1, mutually exclusive eyes/expressions, reduced motion and disposal. Root reviewed hosted blink and local inspection frames. Reports: reports/pico-opaque.json and reports/pico-opaque-hosted.json. All 397 committed runtime/native files match the live site. Evidence-only follow-up commits preserve this runtime.
+Carry this audit, image-production guide, reference manifests/boards, native baseline, selected raw parts, briefs/provenance, preparation recipes, renderer, proof scripts and source-bound reports. Rejected parts, skin-patch expressions, four-idle timing, fades and abandoned articulated rigs remain historical; they must not become new production instructions. Adapt motion to the newly requested action while preserving these process/quality rules.

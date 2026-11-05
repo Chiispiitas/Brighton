@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "updatedAt": "2026-11-05T13:44:47.923896+00:00",
+  "runtimeRevision": "56551e90b35c9219295ce26b74a0084cad82eef6",
+  "sourceCheckoutRevision": "a8ac552e3ebb39fdb4baea9821f82267029c0236",
+  "scope": "Unit 1 banner Pico; animation reference supplement, not a replacement for required R01/R02/R07 and exact target",
+  "maximumImageInputsTotal": 7,
+  "captureBase": "https://exams.bebrighton.net/Horizons/App/",
+  "captureMethod": "Hosted module/CSS in isolated preview renderer, no learner API calls; not a fresh full-app interaction matrix",
+  "hostedModuleMatchesSource": true,
+  "cycleSeconds": 14,
+  "idleSeconds": 8,
+  "inspectionSeconds": 6,
+  "fadesAllowed": false,
+  "sources": [
+    {
+      "file": "src/pico-banner-motion.js",
+      "sha256": "35dad1cc1dd99d363e48ec1cf84bc92dfadcdae59979e5c051d6e83a173d698b"
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "bd9e465fb7884699e5aa1db6111a55ccb5b0d5a953d9dbbef9bf41a5283f7cce"
+    },
+    {
+      "file": "styles/app.css",
+      "sha256": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c"
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "769a0e0b0b93514537faa1089d3af0678fff313f7ef42491adf206deff208f53"
+    }
+  ],
+  "assets": [
+    {
+      "file": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "role": "Faceless head",
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/body-registered.png",
+      "role": "Fixed body",
+      "sha256": "e11fd4e55ef65cef20dd9f73fe7032c659f080a664b69e990ff3e95e4b49bb60",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/map-registered.png",
+      "role": "Map + gripping paws",
+      "sha256": "258f9cde34178173ad2c0fd4a8b17fe9de4590bcd7e89325ee1ea62a715a6486",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-nose.png",
+      "role": "Shared nose",
+      "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "role": "Neutral brows / mouth",
+      "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "role": "Open eye whites",
+      "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/pupils-native.png",
+      "role": "Moving pupils",
+      "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "role": "Pupil containment mask",
+      "sha256": "e9fa0e4f08c9532c6acfd866367ad8637828ded4e3088064a98497290db1ecb9",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "role": "Closed eyelid strokes",
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+      "dimensions": [
+        248,
+        582
+      ]
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "role": "Inspection features",
+      "sha256": "27db56a4cecb976d9db4825403d43ae738f9f823cdb71686455b888a28f2a6f2",
+      "dimensions": [
+        248,
+        582
+      ]
+    }
+  ],
+  "references": [
+    {
+      "file": "docs/pico-banner-animation/review/current-layers.png",
+      "sha256": "0e34e5f1a08c4f3c684c87f513c6b5d57f487cd0e3881892d2de4e4773212cf3"
+    },
+    {
+      "file": "docs/pico-banner-animation/review/current-states.png",
+      "sha256": "b4606f21afa882c07e28a22b1bdde67d85dee0c6df2fa933a4f96d97069fe815"
+    },
+    {
+      "file": "docs/pico-banner-animation/review/current-cycle.mp4",
+      "sha256": "f3f251c44acc79ef6ffce9bf815fa8f6d9315ff320aed27f271f6c0bb2db265b"
+    }
+  ],
+  "historicalPreviews": [
+    "pico-reading-v1.mp4",
+    "pico-check-v3.mp4",
+    "pico-faceless-v4.mp4"
+  ],
+  "limits": [
+    "Edge/Chromium",
+    "Preview uses real hosted renderer in an isolated surface",
+    "No independent or human pacing approval claimed"
+  ]
+}
