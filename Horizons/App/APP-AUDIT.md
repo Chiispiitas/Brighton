@@ -66,17 +66,17 @@ Use functional labels: Learn, Practice, My profile, Word bank, Start and Results
 
 The Learn page has no promotional right sidebar, daily-invitation card or word-count panel. The separate Progress page remains removed; stored history, XP and streaks remain intact.
 
-### Navigation and path
+### Navigation and lesson collection
 
-- Desktop sidebar menu: Learn and Practice. No separate Profile menu item.
-- Bottom sidebar shortcut: avatar picture, learner name and My profile. It opens the profile.
-- Mobile navigation retains Profile access.
-- Page headers contain the book switcher and authoritative XP/streak amounts, without a player-avatar picture.
-- Preserve the compact, smooth S trail, one island per row and a continuously tangent connector through orb centers. Inanimate lesson objects occupy the concave pockets without covering controls. Keep keyboard and reading order chronological.
-- Islands have no permanent title/count/duration/step labels. Tap or keyboard activation opens a small non-modal speech bubble at the island/cursor.
-- The bubble contains the name, count, duration and Start. Keep it within the viewport, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.
-- When the Learn hero scrolls out of view, show a compact fixed Unit banner and a separate XP/streak bubble. For future units, derive the number from content rather than copying Unit 1.
-- Floating indicators must not cover the current task, navigation or popover.
+The 5 November layout request authorizes site-changing decisions to distinguish Horizons from Duolingo. The later correction keeps a lively character: strong Horizons colors, playful chapters and clear reward feedback. The current book-led layout replaces the former sidebar/S-trail/floating-status contract; older reports describe historical presentation.
+
+- A horizontal, sticky masthead carries Horizons, Learn, Practice, the book switcher and a text-only name/My profile control. The same navigation works on mobile. No header player picture, left rail or bottom shortcut bar.
+- The Unit opening spread retains animated Pico and a Continue learning action. The unit title and next activity are visible.
+- A progress panel shows completion, mastery, XP and streaks. These are existing stored values; there are no floating Unit/XP/streak overlays.
+- Four colored lesson chapters follow the book's order, with real book pages, lesson title/subtitle, inanimate lesson illustrations and named activity rows. All 21 activity IDs, completion/checks, mastery/crowns and accessible ordering remain compatible with saved progress.
+- The snake connector and circular island layout are retired. Activity names and type labels are visible before activation. No lesson-jump shortcuts; learners scroll manually.
+- Activity activation opens a compact, non-modal details card with title, mastery coverage, question count and Start/Continue/Practice again. Dismiss with Escape, outside activation or scrolling; do not dim the page.
+- Use magenta/amber/teal/green chapter accents, rounded panels, tactile finite feedback, green completed states and gold mastery stamps. Some familiar learning-game cues are welcome; Horizons should have its own overall structure without becoming austere.
 
 ### Profile and avatar studio
 
@@ -94,9 +94,9 @@ Date of birth is optional and private. A future social feature is a separate pro
 
 ### Motion and accessibility
 
-Characters are static: no idle floating, blinking, limb rigs, breathing, pose sequences, parallax or hover displacement. Use complete purposeful still poses and varied cast members appropriate to the task.
+Characters and avatars remain static except Unit 1 banner Pico, whose faceless sprite rig, one-idle-loop inspection schedule and no-fade rules are governed by [ANIMATION-AUDIT.md](docs/ANIMATION-AUDIT.md). Preserve its rendering/motion while changing layout. Use native purposeful still poses for the other cast.
 
-The 4 November video-reference request authorizes finite interface motion: button presses, badge/selection feedback, sliding tab highlights, section text entrances, path-bubble pop-ins, progress fills and answer-tile movement. Preserve the accepted layout and flat visual identity. Do not animate characters or containers holding them; the earlier whole-avatar preview bounce is now removed. The existing native ImageGen sparkle may reveal briefly after an avatar option changes. All feedback must settle, never loop, and respect reduced motion, including cancelling active feedback if that preference changes. See [UI-MOTION.md](docs/UI-MOTION.md).
+The 4 November video-reference request authorizes finite interface motion: button presses, badge/selection feedback, sliding tab highlights, section text entrances, path-bubble pop-ins, progress fills and answer-tile movement. Preserve the current colorful book-led layout and native flat artwork. Do not animate characters or containers holding them; the earlier whole-avatar preview bounce is now removed. The existing native ImageGen sparkle may reveal briefly after an avatar option changes. All feedback must settle, never loop, and respect reduced motion, including cancelling active feedback if that preference changes. See [UI-MOTION.md](docs/UI-MOTION.md).
 
 Use real buttons and inputs, visible keyboard focus, descriptive accessible names, keyboard-operable tabs and useful light-dismiss behavior. A literal double-click is never required. Aim for at least 44px touch controls; never let a compact design make targets hard to use. Check content at 320, 390, 768 and 1440px, and with zoom/long labels.
 

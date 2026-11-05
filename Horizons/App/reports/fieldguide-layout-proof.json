@@ -1,0 +1,215 @@
+{
+  "date": "2026-11-05T14:07:55.030Z",
+  "sourceRevision": "0058c04fd7209a3a959427aecf56cf038c1b71c1",
+  "revision": "0058c04fd7209a3a959427aecf56cf038c1b71c1",
+  "uncommittedRuntime": true,
+  "runtimeSources": {
+    "src/app.js": "d6b9907e4cb0a39e25eea591f86ec4e7e5e0d00e8a5c71bf886cf786fff25e50",
+    "src/studio-ui.js": "034c65aba4c5e4ef30c22cb59d319dcdabcad4e3714b1547141fe5d8db0f6b6d",
+    "src/pico-banner-motion.js": "35dad1cc1dd99d363e48ec1cf84bc92dfadcdae59979e5c051d6e83a173d698b",
+    "styles/app.css": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c",
+    "styles/fieldguide.css": "0c59ca7348540f2d8f194e962e6cefd57690efeb40ff67ccfdbd4943b3ada850",
+    "index.html": "772c9c6bbcf65c6f576a0e4758454712ecd1a81a980d64a898a90970528e6b73",
+    "service-worker.js": "1278da5b0e35b61b82cf2840d557dfbf35795b23fc5ce9613e56b3b8a7f1f7da"
+  },
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "bookLedLayout": true,
+      "namedActivities": 21,
+      "masteryStates": true,
+      "bookPages": true,
+      "keyboardDetails": true,
+      "practiceSelection": true,
+      "wordBankSearch": true,
+      "profileTabs": true,
+      "draftPreserved": true,
+      "touchTargets": true,
+      "noOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 390,
+      "bookLedLayout": true,
+      "namedActivities": 21,
+      "masteryStates": true,
+      "bookPages": true,
+      "keyboardDetails": true,
+      "practiceSelection": true,
+      "wordBankSearch": true,
+      "profileTabs": true,
+      "draftPreserved": true,
+      "touchTargets": true,
+      "noOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 768,
+      "bookLedLayout": true,
+      "namedActivities": 21,
+      "masteryStates": true,
+      "bookPages": true,
+      "keyboardDetails": true,
+      "practiceSelection": true,
+      "wordBankSearch": true,
+      "profileTabs": true,
+      "draftPreserved": true,
+      "touchTargets": true,
+      "noOverflow": true,
+      "otherCharactersStatic": true
+    },
+    {
+      "width": 1440,
+      "bookLedLayout": true,
+      "namedActivities": 21,
+      "masteryStates": true,
+      "bookPages": true,
+      "keyboardDetails": true,
+      "practiceSelection": true,
+      "wordBankSearch": true,
+      "profileTabs": true,
+      "draftPreserved": true,
+      "touchTargets": true,
+      "noOverflow": true,
+      "otherCharactersStatic": true
+    }
+  ],
+  "profileSaveAndReload": "Simulated intercepted in-memory fixture only",
+  "typedSpanish": true,
+  "listeningSkip": true,
+  "bookSelector": true,
+  "reducedNativePico": true,
+  "apiActions": [
+    "getSession",
+    "updateProfile",
+    "getSession",
+    "updateProfile"
+  ],
+  "realLearnerWrites": false,
+  "realBackendRequests": false,
+  "errors": [],
+  "screens": [
+    {
+      "name": "learn-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\learn-320.png",
+      "sha256": "e31a4da980a5e2a9aa3ccef8731d06906fcde90abe28e8a4bfa7828ada76ac3d"
+    },
+    {
+      "name": "details-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\details-320.png",
+      "sha256": "2de9fa1a2a1469d7f6ce75aad1eb7649e43feafa6e92e5c41e80d00da666b996"
+    },
+    {
+      "name": "practice-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\practice-320.png",
+      "sha256": "bd60d8b6ad1b52766ef443e6604607e40a909bbd1b90befe80d8cecc45a8b193"
+    },
+    {
+      "name": "word-bank-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\word-bank-320.png",
+      "sha256": "8f5fe0803e88377f4211fd8324b6d905bec3aeb87cd9d2ada86b71ca5bd3d8f5"
+    },
+    {
+      "name": "profile-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\profile-320.png",
+      "sha256": "95bde3072b4c0bf5627f6da6f737a8a03822fce419daee26ebd5aaaa24d3e54f"
+    },
+    {
+      "name": "learn-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\learn-390.png",
+      "sha256": "e292f836a1ceafa479df436b37d42f3a7b3e4495ed3c5fd33b4096c506953d20"
+    },
+    {
+      "name": "details-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\details-390.png",
+      "sha256": "87c09f709b4f2383e0c5e68dc8de9ae6a4697e8a48e0d213bc105c6250733065"
+    },
+    {
+      "name": "practice-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\practice-390.png",
+      "sha256": "91b1834dd5edf9e4220982a0f34b59dc0c79fa75fb06556ea1d32e59ac997021"
+    },
+    {
+      "name": "word-bank-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\word-bank-390.png",
+      "sha256": "f870a08a7e5a6f811fb3f268473a239f04394ccf4d0c7ebfd5cf0a959254a9ff"
+    },
+    {
+      "name": "profile-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\profile-390.png",
+      "sha256": "df55f89d73b45c092e6b086f71e01ab16f17e83f1dbaabcd5cd40498c957c8fa"
+    },
+    {
+      "name": "learn-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\learn-768.png",
+      "sha256": "72d49c475856ac9843529c142e572b0b4739fd08ad46c62ca703190d8c605bfe"
+    },
+    {
+      "name": "details-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\details-768.png",
+      "sha256": "0e1bcfcdb9cd05c7f2c1456187147cd890e37da065953b812583e111cc35e896"
+    },
+    {
+      "name": "practice-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\practice-768.png",
+      "sha256": "1c2e7b4e9e29c29185112db30398703aebe2137c02ba8e5b41f1e9127951f2e0"
+    },
+    {
+      "name": "word-bank-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\word-bank-768.png",
+      "sha256": "2e011905df8ac6dd4e7c95bc8c97ef3079b5fd0760a92af44e4a0ee19d38c355"
+    },
+    {
+      "name": "profile-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\profile-768.png",
+      "sha256": "d2cb66104ff7639b34ddc2e7d54fbb01304fcf964f356a933a5e567bf25a863d"
+    },
+    {
+      "name": "learn-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\learn-1440.png",
+      "sha256": "43ebeed351b6e85c9203777471e2fc9cd70e5426d2a2c36e1df125e64af70d7c"
+    },
+    {
+      "name": "details-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\details-1440.png",
+      "sha256": "9c3c34d735bfe4f1ddfede7f7ec88f0575c25b69164746f3c034f1baac52b3c1"
+    },
+    {
+      "name": "practice-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\practice-1440.png",
+      "sha256": "a358c5532d12a1f4061aa7cade6bb6a7e231afbca858d4f560525aa36e33ca6d"
+    },
+    {
+      "name": "word-bank-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\word-bank-1440.png",
+      "sha256": "793348e1aae6b0c420425010cc986394e67a2d69bea0d3a2c1159306fa1bc2d8"
+    },
+    {
+      "name": "profile-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\profile-1440.png",
+      "sha256": "cccebee9e700aeaf8fcba23e1dc259247f970ab51fa6bf3b1bcf315efe5ba62a"
+    },
+    {
+      "name": "typed-answer",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\typed-answer.png",
+      "sha256": "d061814820ef245b2cc8f57ec8d9149c0ab3d83eb7fdba661d10317f2665248c"
+    },
+    {
+      "name": "listening-fallback",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\listening-fallback.png",
+      "sha256": "649990c4d504f8dfb3bf60a35ce715e6be05dc7c8b543489f2eba19d8fc14196"
+    },
+    {
+      "name": "reduced-motion",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\horizons-layout\\proof\\reduced-motion.png",
+      "sha256": "2ae00270adf6302e22a3ebd30042cc6489b71301773b46b0b412e06cf9af9310"
+    }
+  ],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only",
+    "Synthetic session/profile responses; no claim of new live persistence grading validation",
+    "Visual verdict follows separate screenshot review"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T13:30:07.499Z",
-  "sourceCommit": "53c362556b910b43eb40e022086a21402be65eba",
+  "createdAt": "2026-11-05T14:10:21.775Z",
+  "sourceCommit": "0058c04fd7209a3a959427aecf56cf038c1b71c1",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "bd9e465fb7884699e5aa1db6111a55ccb5b0d5a953d9dbbef9bf41a5283f7cce"
+      "sha256": "98dea412c199b4f55a7ddd7438f6f99c6a65cecf82fa29b62c87dd8d764c1f55"
     },
     {
       "file": "src/avatar-static.js",
@@ -24,6 +24,10 @@
     {
       "file": "styles/app.css",
       "sha256": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c"
+    },
+    {
+      "file": "styles/fieldguide.css",
+      "sha256": "0c59ca7348540f2d8f194e962e6cefd57690efeb40ff67ccfdbd4943b3ada850"
     }
   ],
   "references": [
@@ -31,31 +35,31 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+      "sha256": "594d5ad04385becebc16e5ea5d0968b6e0a14933f0d0768760639d99f0169373"
     },
     {
       "id": "R02",
       "file": "02-cast.png",
       "title": "Recurring cast",
-      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      "sha256": "03f0196b7f5911010c4bdf1635e5def4f501f359630b7d89df003831b7f37fd8"
     },
     {
       "id": "R03",
       "file": "03-avatar-bases.png",
       "title": "Avatar bases and skin tones",
-      "sha256": "34a3c79f085cd925f19f7f5e28b259dd293dcc493c605f1123f9c7868e2e5499"
+      "sha256": "ddca11cd29db79121b6615fb83b4e4069b1924037f3df8adec6b578b0199f35c"
     },
     {
       "id": "R04",
       "file": "04-hairstyles.png",
       "title": "Approved hairstyles",
-      "sha256": "c7b262895cf3ff8074b3fbdb429e1af803cb7a49b4c133d8887da4ba6d66f4e2"
+      "sha256": "b5d611adde7bad93e7b9ac60d33e3b3e410e1d7a09ddb5d671c26f9bded64aac"
     },
     {
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "ebee16c11505a59fc89a3b779b86691bace5761432b52d8b5a7808d293575444"
+      "sha256": "a7c0dc2762e59eccffa7ccc700b8d6cc27b65a464822f5f8d05312f03f9edd2b"
     },
     {
       "id": "R06",
@@ -67,8 +71,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+      "sha256": "d84d4b01a5147d600d29fb12aff9c9d4bc2ec89dd6d581a69c8c3b6e901e2543"
     }
-  ],
-  "sourceRuntimeRevision": "56551e90b35c9219295ce26b74a0084cad82eef6"
+  ]
 }
