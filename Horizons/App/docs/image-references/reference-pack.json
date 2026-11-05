@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T03:36:53.220Z",
-  "sourceCommit": "b2b062e245b758e217b9abe80c0b88c0cdbb37ec",
+  "createdAt": "2026-11-05T04:04:33.969Z",
+  "sourceCommit": "c96e598f54d7a061187f852ea5aba9f98bdf003e",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -23,7 +23,7 @@
     },
     {
       "file": "styles/app.css",
-      "sha256": "8a418cb22b66a54e49acb5486d809b1895dd5ca4d8d93256bb345f7ead0de1d0"
+      "sha256": "1b94fab50a13c9d156f912822ae39ee1d952065ced7377c16aa2e865be702739"
     }
   ],
   "references": [
@@ -31,7 +31,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
     },
     {
       "id": "R02",

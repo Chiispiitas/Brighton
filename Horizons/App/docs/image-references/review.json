@@ -18,5 +18,12 @@
     "Reference sheets contain current native artwork, including some legacy rendering effects; production guide explicitly forbids copying those effects.",
     "No new illustration was generated for this documentation task.",
     "Preflight validates local inputs; the actual ImageGen call must still attach them."
-  ]
+  ],
+  "motionContinuationReview": {
+    "sourceCommit": "c96e598f54d7a061187f852ea5aba9f98bdf003e",
+    "reviewer": "Codex root",
+    "pass": true,
+    "scope": "Rebuilt all seven sheets after interface CSS change. Directly inspected refreshed R01; R02\u2013R07 are byte-identical to the previously reviewed sheets. Native artwork and geometry remain unchanged.",
+    "preflightTests": 6
+  }
 }

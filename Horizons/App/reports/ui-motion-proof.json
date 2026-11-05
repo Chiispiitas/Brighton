@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-05T04:06:18.810Z",
+  "revision": "c96e598f54d7a061187f852ea5aba9f98bdf003e",
+  "runtimeSources": {
+    "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+    "src/studio-ui.js": "895683e69ee9bc3b9500181b5cb624af4fbec0a240021c78204087910c1f488f",
+    "src/app.js": "d5909f59b932b354a2f2801abf7b14c628177c2f1985356c6bdcc707d5ca25fe",
+    "styles/app.css": "1b94fab50a13c9d156f912822ae39ee1d952065ced7377c16aa2e865be702739",
+    "index.html": "a39a1f75088e014ca539eabe3992cf2ca22d6c128ff78f585060192cc931d476",
+    "service-worker.js": "d7c124fb4e6545fc99fc6cdfa5bf17239afc9556fe13921991907fb75907d68a"
+  },
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 390,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 768,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 1440,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    }
+  ],
+  "progressFill": true,
+  "answerFeedback": true,
+  "tokenMovement": true,
+  "memory": true,
+  "reducedMotion": true,
+  "midFlightReducedMotion": true,
+  "api": "Synthetic session only; real API requests intercepted; no profile/attempt writes",
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only. Token movement uses a small DOM fixture with the production motion hooks. Visual verdict recorded after screenshot review."
+  ],
+  "visualReview": {
+    "reviewer": "Codex root",
+    "pass": true,
+    "scope": "Direct inspection of full-size mobile and desktop screenshots plus all-width overview; accepted layout, bubble fit, tab highlight, bust crop and control spacing retained. No independent reviewer claimed.",
+    "screenshots": "C:/Users/David/Documents/Codex/2026-11-04/horizons-ui-motion"
+  }
+}
