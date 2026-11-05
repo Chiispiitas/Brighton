@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-05T04:48:41.007453+00:00",
+  "revision": "f58999b4614806bf20b478d15ae3d6799c77cfc5",
+  "pass": true,
+  "deployment": {
+    "id": 41969584976,
+    "conclusion": "success"
+  },
+  "hostedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "filesMatch": 355,
+  "lessonTitleCharacters": 0,
+  "islands": 21,
+  "cacheUpgrade": "v21 to v22 verified",
+  "backendChanged": false,
+  "learnerWrites": false,
+  "limits": [
+    "Edge/Chromium only; synthetic intercepted UI session."
+  ],
+  "evidenceCommit": "Runtime bytes unchanged."
+}

@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-05T04:28:29.501853+00:00",
+  "date": "2026-11-05T04:48:15.603639+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "fe7d1660bb8d110a3ae7abf6f32e7b03c2d7fbc9",
+  "revision": "f58999b4614806bf20b478d15ae3d6799c77cfc5",
   "checkedFiles": 355,
   "bookSourceRecordings": 12,
   "pass": true,
@@ -2383,7 +2383,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 3091,
-      "sha256": "71ee7ff4da4a8a039db9d9ffd3584b23184a31829afe3fbf5e013124a50a567d",
+      "sha256": "18a22463a3c9a7e5a6130c99ad0a64e20bd2f557efc43e563525345e9c4872a1",
       "matchesCommittedBytes": true
     },
     {
@@ -2397,7 +2397,7 @@
       "path": "Horizons/App/service-worker.js",
       "status": 200,
       "bytes": 1853,
-      "sha256": "7db39f831267bdfeacd08ee3ae8a5d08b7245f71e70e6230dc312b2c1ac59c43",
+      "sha256": "3a59945e02a35f2113bc3b24eb99e588d6a30a09e4ec2dcbfbe7bdd590ad0532",
       "matchesCommittedBytes": true
     },
     {
@@ -2410,8 +2410,8 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 55302,
-      "sha256": "6b77db08501cf53aaa7a6dde86ac7b45fdd9a8044d0d019212469f7ed21c2af7",
+      "bytes": 55299,
+      "sha256": "dcbb10efa302a1e9e5d7faed437759f2c9893034083e5d758901ad518596f9b0",
       "matchesCommittedBytes": true
     },
     {
@@ -2474,7 +2474,7 @@
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
       "bytes": 5965,
-      "sha256": "592e31d80be0d0a4ec6da2a513103e0fdbc20c1b60a53e1b1f420c4cf7bdfbdd",
+      "sha256": "fcdee1438dea9a8724149e4cb9e8bed79f01c5ac1d6db4c69effc3bd832a6acf",
       "matchesCommittedBytes": true
     },
     {
@@ -2487,8 +2487,8 @@
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 92769,
-      "sha256": "a75eb2949e1c6b969234b35a12b4613298f47bcc1ccc32457606bd0283101599",
+      "bytes": 93205,
+      "sha256": "23ec0d6b8a65529e80d08280d26724933d6143866df8bd5f116f28422f0803fd",
       "matchesCommittedBytes": true
     }
   ]
