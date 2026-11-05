@@ -45,7 +45,7 @@ async function shot(name){await still();await page.screenshot({path:path.join(ou
 async function nav(route){await page.locator('[data-route='+route+']:visible').first().click();await settle();}
 async function leave(){await page.locator('[data-action=leave-activity]').click();await page.locator('[data-leave-confirm]').click();await settle();}
 try{
-  await page.goto(base);await page.locator('.app-shell').waitFor();await settle();assert.equal(await page.title(),'Horizons');assert.equal(await page.locator('meta[property="og:image"]').count(),1);assert.equal(await page.locator('.trail-decoration').count(),4);await page.screenshot({path:path.join(out,'trail-top.png'),fullPage:true});
+  await page.goto(base);await page.locator('.app-shell').waitFor();await settle();assert.equal(await page.title(),'Horizons');assert.equal(await page.locator('meta[property="og:image"]').count(),1);assert.equal(await page.locator('.trail-decoration').count(),4);assert.equal(await page.locator('.lesson-landmark .character').count(),0);await page.screenshot({path:path.join(out,'trail-top.png'),fullPage:true});
   for(const width of [320,390,768,1440]){
     await page.setViewportSize({width,height:width<768?844:1000});await nav('learn');await resetCalls();
     assert.equal(await page.locator('.learning-path [data-path-node]').count(),21);
@@ -92,7 +92,7 @@ try{
   await page.locator('[data-mix=memory]').click();await page.locator('.memory-card').first().click();await still();await shot('memory');await leave();
   // A small isolated fixture tests token movement through the same render hooks.
   const token=await page.evaluate(async()=>{
-    const {captureUI,enhanceMotion}=await import('./src/ui-motion.js?v=trail1');
+    const {captureUI,enhanceMotion}=await import('./src/ui-motion.js?v=curve2');
     const host=document.createElement('div');host.style.cssText='position:fixed;inset:100px 30px auto;z-index:100;background:white';document.body.append(host);
     host.innerHTML='<div class="sentence-answer"><span>Select words.</span></div><div class="sentence-tokens"><button data-token="0">Hello</button></div>';
     const before=captureUI(host);host.innerHTML='<div class="sentence-answer"><button data-remove-token="0">Hello</button></div><div class="sentence-tokens"><button data-token="0" disabled>Hello</button></div>';

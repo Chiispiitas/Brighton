@@ -298,3 +298,9 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .lesson-trail .path-stop{justify-content:center}
 .trail-decoration{position:absolute;left:58%;top:65px;width:36%;max-width:165px;height:150px;object-fit:contain;pointer-events:none;mix-blend-mode:multiply;z-index:-1}
 @media(max-width:680px){.trail-decoration{top:65px;height:120px;left:58%;width:39%}}
+
+/* Broad, gently sampled S bends; island centers follow the same analytic curve. */
+.learning-path .lesson-landmark{padding-right:0;min-height:82px}
+.lesson-trail .path-stop{height:108px}
+.trail-decoration{left:57%;top:88px;width:34%;height:145px}
+@media(max-width:680px){.learning-path .lesson-landmark{padding-right:0;min-height:78px}.lesson-trail .path-stop{height:100px}.trail-decoration{top:85px;left:57%;width:39%;height:120px}}

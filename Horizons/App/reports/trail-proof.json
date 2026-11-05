@@ -1,13 +1,13 @@
 {
-  "date": "2026-11-05T04:22:37.373Z",
-  "revision": "0a3682eb39e0bd36d268e417f7c31255fc61a7e2",
+  "date": "2026-11-05T04:43:18.008Z",
+  "revision": "8c117144dd6a56a06adc2af84e97db7455a30ae1",
   "runtimeSources": {
     "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
-    "src/studio-ui.js": "dd6cb56667f941cea2cf907ae541f337cd2baba7d1f24405844f1a983f92657c",
-    "src/app.js": "9876e5d162b5710b0281293cddb790dcc5d2769dd2157a49b97ba52fc78670f6",
-    "styles/app.css": "dcf139de9bca1c7800e980948459e11cc8109e7531b5c4794d39466fe19eb6c9",
-    "index.html": "1e297a5bf62c4cab86a73ced37bf6973fe05afdd48fef16bc2562e7fbffde29c",
-    "service-worker.js": "8366f6b24a58b3cca25e551f5808e7547c86130758bb8d0f620ecca4c45d1f97"
+    "src/studio-ui.js": "682897859c46ea9a1ee02aaa0b150647bf4bfd0f47abe5b2939cb9235a29140e",
+    "src/app.js": "2f9d9bfe969279949d3829e581e614147de1adf2c8568a738454559fcbdee456",
+    "styles/app.css": "832863bc4d43c87f3b725ffe804db5a0470db5f9d483449aacfb926f5dedab23",
+    "index.html": "61c45f644a272fa8385c91f2b49315224a996d1cc9b9afa2e4aee18cd556f32e",
+    "service-worker.js": "ce1d597ca281e3d8f41815b72d9286896d351933948bf21b2b8383f7f246dfdc"
   },
   "base": "http://127.0.0.1:8898/Horizons/App/",
   "checks": [

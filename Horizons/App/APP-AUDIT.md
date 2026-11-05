@@ -177,3 +177,5 @@ A task is complete when requested behavior works in the user-visible route, mean
 Do not call an incomplete course complete, an archived experiment current, a local result deployed, or a generated picture visually approved merely because the tool returned it. Keep the final handoff concise: what changed, where to use it, what was verified and any material remaining limitation.
 
 Website name: Horizons. Browser title, welcome heading, installed-app name and social metadata use Horizons. The share card is a 1200×630 native-art composition using the supplied wordmark.
+
+Lesson headings have no cast characters. Islands use narrower lateral travel and longer vertical spacing on an analytically sampled sine trail, with continuous tangents through the complete bend. Keep 21 activity IDs and the existing object decorations.

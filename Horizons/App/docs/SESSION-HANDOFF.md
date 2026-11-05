@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest correction: remove cast beside lesson headings; relocate islands onto a broader, gentler analytic S. Cache horizons-companion-curve-v22; entry queries curve2.
+
 Latest continuation: smoother tangent-continuous lesson S trails, four native ImageGen inanimate lesson decorations, name Horizons, and a 1200×630 Open Graph/WhatsApp share card. Cache is horizons-companion-trail-v21; entry queries trail1. See docs/trail-art/ for prompts, inputs and provenance, and reports/trail-proof.json for UI verification.
 
 Continuation on 4 November: the user subsequently requested interface animations based on a supplied video, while keeping characters still. This supersedes the former all-controls-static rule and whole-avatar bounce exception. See [UI-MOTION.md](UI-MOTION.md) and the updated motion section in APP-AUDIT.md. The existing app/layout and native artwork are preserved. Current cache is `horizons-companion-ui-motion-v20`; entry queries use `motion1`. The remainder below records the original transfer baseline and must be read in that historical context where superseded.
