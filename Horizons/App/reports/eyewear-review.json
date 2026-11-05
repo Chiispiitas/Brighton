@@ -1,6 +1,6 @@
 {
-  "status": "LOCAL_PASS_HOSTED_PENDING",
-  "pass": false,
+  "status": "PASS",
+  "pass": true,
   "selection": [
     "None",
     "Round glasses",
@@ -2814,5 +2814,23 @@
     "assets/art/manifest.json": "8cdc5343f3655b7fc95ce5e2b33ef13cd332460afcd3384bd6877938e2059819",
     "assets/art/avatar-static-v1.frames.json": "57937e4e5134aff24ff70ed93755e95bcf09a70676be54fefa037d09954fc186",
     "assets/art/avatar-eyewear-v2.png": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1"
-  }
+  },
+  "publishedRuntimeCommit": "b15a85f6807cd777455a0702c43d866a8d9a9df1",
+  "hosted": {
+    "eyewear-persistence-hosted": {
+      "path": "reports/eyewear-persistence-hosted.json",
+      "pass": true
+    },
+    "eyewear-cache-hosted": {
+      "path": "reports/eyewear-cache-hosted.json",
+      "pass": true
+    },
+    "eyewear-lens-fit": {
+      "path": "reports/eyewear-lens-fit.json",
+      "pass": true
+    }
+  },
+  "publishedFilesMatched": 330,
+  "actualHostedMobileDirectlyViewed": "C:/Users/David/Documents/Codex/2026-11-04/eyewear-hosted/female-saved-mobile.png",
+  "lensFit": "Twelve native faces times three styles: zero clear-frame overlap of eye whites and zero uncovered eye whites under sunglasses."
 }
