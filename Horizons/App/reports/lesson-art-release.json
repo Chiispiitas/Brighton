@@ -1,6 +1,6 @@
 {
-  "status": "LOCAL_PASS_PUBLICATION_PENDING",
-  "pass": false,
+  "status": "PASS",
+  "pass": true,
   "activityScreensReviewedStructurally": 48,
   "companions": {
     "mina": 16,
@@ -26,5 +26,33 @@
     "Hotel picture supplies already-stated context, not the country/name listening answers.",
     "Feedback preserves the contextual art; results and games use the assigned cast."
   ],
-  "contentOrAudioChanged": false
+  "contentOrAudioChanged": false,
+  "publishedRuntimeCommit": "783d04932cdbb10fa708eb9ea536b5e415eb569d",
+  "hostedBrowserReport": "reports/lesson-art-browser-hosted.json",
+  "hostedVerification": {
+    "checks": 11,
+    "screens": 295,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "failures": 0,
+    "clippingCandidates": 0,
+    "runtimeErrors": 0,
+    "consoleErrors": 0,
+    "requestFailures": 0
+  },
+  "publicationParity": {
+    "report": "reports/publication-assets.json",
+    "checkedFiles": 331,
+    "bookSourceRecordings": 12,
+    "pass": true
+  },
+  "hostedDirectlyViewed": [
+    "activity-read-1c-390",
+    "activity-listen-1d-390",
+    "saved-result-390"
+  ]
 }

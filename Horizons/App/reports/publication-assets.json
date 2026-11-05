@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T00:32:57.849425+00:00",
+  "date": "2026-11-05T00:52:55.179030+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "029eb5d68646691b9445d0fe0794b88ba27c6ac7",
-  "checkedFiles": 330,
+  "revision": "783d04932cdbb10fa708eb9ea536b5e415eb569d",
+  "checkedFiles": 331,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -2228,8 +2228,8 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1689,
-      "sha256": "02ad4ba660263ee6a03c77da2adbc0950fe0e7136732aa70f557b22dc350c1b2",
+      "bytes": 1687,
+      "sha256": "8e38faee4fee27e6508a8ff570bcdadf4b2de639c25befd648eebd0acef6fea0",
       "matchesCommittedBytes": true
     },
     {
@@ -2242,8 +2242,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1654,
-      "sha256": "4cc5d6e6d73af8294df51dd615542439b3dd8bab93afc4b8d96b3f251a2c96fa",
+      "bytes": 1680,
+      "sha256": "38d209cd2d2b4614a54e6889ddb79090c0093e1e89584205af47f859f4842be1",
       "matchesCommittedBytes": true
     },
     {
@@ -2256,15 +2256,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60508,
-      "sha256": "76f6c8bd9b60a7bf25255f9dcec56e64f000f13c3902586d14742b41161304ce",
+      "bytes": 61111,
+      "sha256": "dcc8c76a56b1d948ef5365a963fe21a936c72fc513f95babf324385f89c945aa",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 6909,
-      "sha256": "a8a5c421a278abc5ae2ca1679d707d80afd4c08c9fc570ec95c6d58f477c79c1",
+      "bytes": 6942,
+      "sha256": "52bfaf6cbe0e82323c49df1c6a26659b7d33d11a810585a5cd05c1e04815a770",
       "matchesCommittedBytes": true
     },
     {
@@ -2296,6 +2296,13 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/src/lesson-art.js",
+      "status": 200,
+      "bytes": 918,
+      "sha256": "cc8ff27caca315ac2fe756c475fb9df08ef4211fbdc274650e807685c3c233c6",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/src/pico-articulated.js",
       "status": 200,
       "bytes": 10264,
@@ -2312,8 +2319,8 @@
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 83448,
-      "sha256": "e4cb7ce5e67e9361690a066805cb4f43698c0a54aecdd0624d6a16106ee95855",
+      "bytes": 83653,
+      "sha256": "f71d5e02a71db74a1b5bbd1ce13b99e543f208c19dfa2ae1418458de4059ec21",
       "matchesCommittedBytes": true
     }
   ]
