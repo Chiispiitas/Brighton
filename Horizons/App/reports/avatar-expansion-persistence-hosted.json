@@ -1,0 +1,671 @@
+{
+  "date": "2026-11-05T01:31:34.437Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "scope": "Actual app editor and real isolated QA profile; original avatar restored. Four viewport widths, each new choice clicked, saved selection restored after reload and another device. No practice/progress writes and no learner data or credentials recorded.",
+  "sourceReference": {
+    "kind": "git-blob",
+    "commit": "d63a88f8e09aaa1e943a40fcc02a7e577470f227"
+  },
+  "sourceHashes": {
+    "src/avatar-static.js": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665",
+    "src/art.js": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d",
+    "assets/art/manifest.json": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550",
+    "assets/art/avatar-static-v1.frames.json": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a",
+    "assets/art/avatar-expansion-hair-7.png": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+    "assets/art/avatar-expansion-hair-8.png": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+    "assets/art/avatar-expansion-hair-9.png": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+    "assets/art/avatar-expansion-hair-10.png": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+    "assets/art/avatar-expansion-hair-11.png": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+    "assets/art/avatar-expansion-hair-12.png": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+    "assets/art/avatar-expansion-outfit-7.png": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+    "assets/art/avatar-expansion-outfit-8.png": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+    "assets/art/avatar-expansion-outfit-9.png": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+    "assets/art/avatar-expansion-outfit-10.png": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+  },
+  "checks": [
+    {
+      "name": "Saved base remains hidden and all six new hairstyles and four new outfits are offered",
+      "pass": true,
+      "hairChoices": 13,
+      "outfitChoices": 10
+    },
+    {
+      "name": "All ten new choices select with loaded proportional still art at 1440px",
+      "pass": true,
+      "width": 1440,
+      "newChoices": 10
+    },
+    {
+      "name": "All ten new choices select with loaded proportional still art at 768px",
+      "pass": true,
+      "width": 768,
+      "newChoices": 10
+    },
+    {
+      "name": "All ten new choices select with loaded proportional still art at 390px",
+      "pass": true,
+      "width": 390,
+      "newChoices": 10
+    },
+    {
+      "name": "All ten new choices select with loaded proportional still art at 320px",
+      "pass": true,
+      "width": 320,
+      "newChoices": 10
+    },
+    {
+      "name": "Real profile save accepts the new IDs and preserves progress and the hidden base",
+      "pass": true
+    },
+    {
+      "name": "New hairstyle and outfit restore after reload",
+      "pass": true
+    },
+    {
+      "name": "Another browser restores the same new selections and artwork stays pixel-still",
+      "pass": true
+    },
+    {
+      "name": "Original isolated QA avatar restored and read back",
+      "pass": true
+    }
+  ],
+  "proofs": [
+    {
+      "name": "1440-hair-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-7.png",
+      "sha256": "dc4d0320afc265e5ac73988afc8a73bf84d197fd34ca57a6c0e72c7e297eaa38",
+      "width": 1440
+    },
+    {
+      "name": "1440-hair-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-8.png",
+      "sha256": "842d869fbd4949bec51d01dd9d303708d51428b14fe0c92be050e1033dca1090",
+      "width": 1440
+    },
+    {
+      "name": "1440-hair-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-9.png",
+      "sha256": "c2da6424565ff5d9f0f3cc2aa9a667281c6dfe3cd5703db304fad7ba7c42f112",
+      "width": 1440
+    },
+    {
+      "name": "1440-hair-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-10.png",
+      "sha256": "bc2a1bf8157d4b3172932390435a7f550e12decf6ffa49df3370e02545cf5bd3",
+      "width": 1440
+    },
+    {
+      "name": "1440-hair-11",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-11.png",
+      "sha256": "7debb07bb5e52e1295f8f98f84d0f92b4c1466168295ee2add313150a569dc61",
+      "width": 1440
+    },
+    {
+      "name": "1440-hair-12",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-hair-12.png",
+      "sha256": "c7d83befc820cb370cc75bb3c7435d49f7c157c1460cecf010c5daf6e9832282",
+      "width": 1440
+    },
+    {
+      "name": "1440-outfit-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-outfit-7.png",
+      "sha256": "7aa4e1e5aac17d67c7996f0ea6dbe75438fcc5f71b22c176e64f08d9071cd9b6",
+      "width": 1440
+    },
+    {
+      "name": "1440-outfit-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-outfit-8.png",
+      "sha256": "50b5868df6469bd0c144471e37ab3b3c2f86837324ddc79dec1654caa4814a58",
+      "width": 1440
+    },
+    {
+      "name": "1440-outfit-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-outfit-9.png",
+      "sha256": "9cafa298ff5e46774df366512285826952e0feb01f10e831d78687f7373b923b",
+      "width": 1440
+    },
+    {
+      "name": "1440-outfit-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\1440-outfit-10.png",
+      "sha256": "aa1a8e92bc85d7b06517932adffb72c36de2ccc82ba63e17963e36e914d550ff",
+      "width": 1440
+    },
+    {
+      "name": "profile-1440",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\profile-1440.png",
+      "sha256": "de49fe4541d4f780e1f2368d34b49279ff82515becfde1e6c75a98aa87cb8ca9",
+      "width": 1440
+    },
+    {
+      "name": "768-hair-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-7.png",
+      "sha256": "f48bbf58e7ed2da00aa087febcfdbed019ab1b4627fdd640075f4ca142fecdcb",
+      "width": 768
+    },
+    {
+      "name": "768-hair-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-8.png",
+      "sha256": "af051cee76713c04cca15c156ace922d97dee0cda0a61108c9fc0941b15af3e3",
+      "width": 768
+    },
+    {
+      "name": "768-hair-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-9.png",
+      "sha256": "77815ab8414b233e3e3f236c25001c599bf43bcfa33d8c27675e86ae88e79a5d",
+      "width": 768
+    },
+    {
+      "name": "768-hair-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-10.png",
+      "sha256": "989fca42b4987aca81ec669f34d3d8399a325f9f8f31c700737f8d97b56f7a5c",
+      "width": 768
+    },
+    {
+      "name": "768-hair-11",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-11.png",
+      "sha256": "a152637a01ee65be7eb73eb08888b9291e7cefafa6714f23de0afc7fd690a829",
+      "width": 768
+    },
+    {
+      "name": "768-hair-12",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-hair-12.png",
+      "sha256": "8e11aefc73918f0bd35c663f8f38ee5853fb4b899bbe21f803c17cc9b389c2bc",
+      "width": 768
+    },
+    {
+      "name": "768-outfit-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-outfit-7.png",
+      "sha256": "540fcbc85250f8e4b2d3312e80e23537083d93897af8d7971b9dfa984f8b5066",
+      "width": 768
+    },
+    {
+      "name": "768-outfit-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-outfit-8.png",
+      "sha256": "8e72702ef15b9e23b813b939998acd0bd6d2339f69ceb83ab916e41a3ff599f2",
+      "width": 768
+    },
+    {
+      "name": "768-outfit-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-outfit-9.png",
+      "sha256": "c774bf0d64ac6654e71573e0648d8ab063e4d4ab5ad618e98bc3312939082a1d",
+      "width": 768
+    },
+    {
+      "name": "768-outfit-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\768-outfit-10.png",
+      "sha256": "8e11aefc73918f0bd35c663f8f38ee5853fb4b899bbe21f803c17cc9b389c2bc",
+      "width": 768
+    },
+    {
+      "name": "profile-768",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\profile-768.png",
+      "sha256": "1732cf08a1b9defea0a54c14be3ed570ee040582784331827ed75a4eb5aef6c8",
+      "width": 768
+    },
+    {
+      "name": "390-hair-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-7.png",
+      "sha256": "28957dd335d77ce889ac9942263ad633de0dcf89d365e10cdabb1c97e04cca61",
+      "width": 390
+    },
+    {
+      "name": "390-hair-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-8.png",
+      "sha256": "706028be68184d3067ca0ff9218a3fc8f1157b324db454c67c35776744bf41fc",
+      "width": 390
+    },
+    {
+      "name": "390-hair-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-9.png",
+      "sha256": "19eba0abe3f884f61c2117c3dc7bf6df6153a938074be5867eab4090d0a3b290",
+      "width": 390
+    },
+    {
+      "name": "390-hair-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-10.png",
+      "sha256": "9fc94fd06d758dd1eef4b9c3730f77bd6d96ff59381473aed82831af82a69691",
+      "width": 390
+    },
+    {
+      "name": "390-hair-11",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-11.png",
+      "sha256": "458d8937dda5a332beddb67693e6dfbc0bb80a3b3cb72ea2b91e027dd8b6e60c",
+      "width": 390
+    },
+    {
+      "name": "390-hair-12",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-hair-12.png",
+      "sha256": "2c6eb2d7fd844f4f5863abfdd83b5634f4e6b4adcf5c78fc9ff6f6577d181ce2",
+      "width": 390
+    },
+    {
+      "name": "390-outfit-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-outfit-7.png",
+      "sha256": "2a17ae3dc8569bec86db61b56a0bbb5a9899a582473008c0d7b762a4acf0b952",
+      "width": 390
+    },
+    {
+      "name": "390-outfit-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-outfit-8.png",
+      "sha256": "307a004dc33e3c10edc6a76c1311b5c5997ee6f18766fc77ee15a76a8a7a2dca",
+      "width": 390
+    },
+    {
+      "name": "390-outfit-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-outfit-9.png",
+      "sha256": "e377a4c092ac79f37fcf6a65e3a6660cf17b33931990400dc586ddaf3c06cd74",
+      "width": 390
+    },
+    {
+      "name": "390-outfit-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\390-outfit-10.png",
+      "sha256": "2c6eb2d7fd844f4f5863abfdd83b5634f4e6b4adcf5c78fc9ff6f6577d181ce2",
+      "width": 390
+    },
+    {
+      "name": "profile-390",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\profile-390.png",
+      "sha256": "512eee989ad3b2cab7c74c7d4519409347a44fe95ac51ca02dbc0bf408740ac2",
+      "width": 390
+    },
+    {
+      "name": "320-hair-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-7.png",
+      "sha256": "b377f9faf919130f4dc9b444b3f54e50458255497ca7c0aebef9606ec96f47fe",
+      "width": 320
+    },
+    {
+      "name": "320-hair-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-8.png",
+      "sha256": "851b6310d9833205a125e6f244a24669d13a4bc9ae9e728bfe4a6718b7ab724e",
+      "width": 320
+    },
+    {
+      "name": "320-hair-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-9.png",
+      "sha256": "27797174d4d43c86a54d48fd2c975fdf7c78f61330276f2657ed206bb06ec4ba",
+      "width": 320
+    },
+    {
+      "name": "320-hair-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-10.png",
+      "sha256": "db1fc9f7756d8b88086f0a6e016d6da36fa95268ef39e6c22975dffddf41bcc8",
+      "width": 320
+    },
+    {
+      "name": "320-hair-11",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-11.png",
+      "sha256": "80c456b09efd731a3f67552c0ea68ad3d630831bcc208da06c314ef821fbcc43",
+      "width": 320
+    },
+    {
+      "name": "320-hair-12",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-hair-12.png",
+      "sha256": "50860d21f42bf3fedad39ea1ab984311853d05aa28c22c9d69f0947e8d12b784",
+      "width": 320
+    },
+    {
+      "name": "320-outfit-7",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-outfit-7.png",
+      "sha256": "cdf74e3ba403daaff4247dc17a3fad82e9877c3385de087d84729e8090785c03",
+      "width": 320
+    },
+    {
+      "name": "320-outfit-8",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-outfit-8.png",
+      "sha256": "9f644182b1d4cb0d03a1b5742578c4b6572187e10a2dc92fe423be90ce6fa2d0",
+      "width": 320
+    },
+    {
+      "name": "320-outfit-9",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-outfit-9.png",
+      "sha256": "496ef95e9ab2ec72d1cc826e0e65177e2a745057a95d4c20dee928ef19e200eb",
+      "width": 320
+    },
+    {
+      "name": "320-outfit-10",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\320-outfit-10.png",
+      "sha256": "50860d21f42bf3fedad39ea1ab984311853d05aa28c22c9d69f0947e8d12b784",
+      "width": 320
+    },
+    {
+      "name": "profile-320",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\profile-320.png",
+      "sha256": "9c3251144f29083e68414b66105b02f0748c5547fdc9e4bdb83ea2615c0cc8ea",
+      "width": 320
+    },
+    {
+      "name": "saved-after-reload",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\saved-after-reload.png",
+      "sha256": "05d0adb64e0f4f2295ced9e52984e26aa4e9fea44eefea460e1d5326d839fa96",
+      "width": 320
+    },
+    {
+      "name": "restored-second-device",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-expansion\\persistence-hosted\\restored-second-device.png",
+      "sha256": "28bb124d51e779cd2aaebfb163c49e4afb3b86fff00a8075e6d9713e81b6122d",
+      "width": 390
+    }
+  ],
+  "errors": [],
+  "requestFailures": [],
+  "pass": true,
+  "originalAvatarRestored": true,
+  "loadedByteBinding": {
+    "files": [
+      {
+        "file": "src/avatar-static.js",
+        "expected": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665"
+          },
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665"
+          },
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665"
+          }
+        ]
+      },
+      {
+        "file": "src/art.js",
+        "expected": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d"
+          },
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d"
+          },
+          {
+            "status": 200,
+            "query": "?v=wardrobe1",
+            "sha256": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/manifest.json",
+        "expected": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550"
+          },
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550"
+          },
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-v1.frames.json",
+        "expected": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a",
+        "observations": [
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a"
+          },
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a"
+          },
+          {
+            "status": 200,
+            "query": "?wardrobe=1",
+            "sha256": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-7.png",
+        "expected": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-8.png",
+        "expected": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-9.png",
+        "expected": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-10.png",
+        "expected": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-11.png",
+        "expected": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-hair-12.png",
+        "expected": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-7.png",
+        "expected": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-8.png",
+        "expected": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-9.png",
+        "expected": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-expansion-outfit-10.png",
+        "expected": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+        "observations": [
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+          },
+          {
+            "status": 200,
+            "query": "",
+            "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "pass": true
+  },
+  "sourceStable": true,
+  "directVisualReview": {
+    "verdict": "PASS",
+    "screens": [
+      "1440-hair-7",
+      "1440-hair-10",
+      "390-hair-7",
+      "390-hair-10"
+    ],
+    "findings": [
+      "Cropped fade fits the head without exposed scalp corners or eyebrow overlap.",
+      "Sleek low bun has a coherent connected side silhouette and clear eyes and eyebrows.",
+      "Desktop and mobile portraits remain upper-chest busts with clean garment joins and no visible stretching or crop damage."
+    ],
+    "limits": "Four representative hosted portraits directly viewed; complete matrix anatomy evidence is recorded separately."
+  }
+}

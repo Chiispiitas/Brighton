@@ -1,6 +1,6 @@
 {
-  "status": "LOCAL_VISUAL_AND_PERSISTENCE_PASS_PUBLICATION_PENDING",
-  "pass": false,
+  "status": "PASS",
+  "pass": true,
   "baseline": "64ea45a",
   "counts": {
     "newHair": 6,
@@ -55,5 +55,18 @@
     "Native ImageGen alpha sprites; complete static busts without animation.",
     "Stillness checks require exact geometry, styles, asset identity and zero timelines, with at most1/255 antialiased edge rounding; software-rasterized occupation proofs are byte-identical."
   ],
-  "diagnostic": "reports/occupation-dialog-still-diagnostic.json"
+  "diagnostic": "reports/occupation-dialog-still-diagnostic.json",
+  "publishedRuntimeCommit": "d63a88f8e09aaa1e943a40fcc02a7e577470f227",
+  "hosted": {
+    "persistenceReport": "reports/avatar-expansion-persistence-hosted.json",
+    "persistenceChecks": 9,
+    "screens": 46,
+    "pass": true,
+    "cacheUpgradeReport": "reports/avatar-expansion-cache-upgrade-hosted.json",
+    "cacheUpgradeChecks": 4,
+    "publicationParityReport": "reports/publication-assets.json",
+    "checkedFiles": 344,
+    "bookSourceRecordings": 12,
+    "originalQAProfileRestored": true
+  }
 }

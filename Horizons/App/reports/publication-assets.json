@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T00:52:55.179030+00:00",
+  "date": "2026-11-05T01:31:50.231462+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "783d04932cdbb10fa708eb9ea536b5e415eb569d",
-  "checkedFiles": 331,
+  "revision": "d63a88f8e09aaa1e943a40fcc02a7e577470f227",
+  "checkedFiles": 344,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -322,6 +322,97 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/avatar-expansion-clothes-flat-v2.png",
+      "status": 200,
+      "bytes": 1282991,
+      "sha256": "6e0a991bfff18867a5fd69aa5d5685ee7057bb6b05590831ba7de3a7b7c24ac7",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-10.png",
+      "status": 200,
+      "bytes": 190302,
+      "sha256": "a0f32933f067c8e2bfe056666be995b10403b1baa6f74d319a7bbb79d3da5a05",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-11.png",
+      "status": 200,
+      "bytes": 154964,
+      "sha256": "95f71decd65d70cb166d49ec729d40fc6893a04ce92ca95180e4e8ed70314b31",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-12.png",
+      "status": 200,
+      "bytes": 173298,
+      "sha256": "1d048a502af954557f50a881b8abd44c88221f2b0f6331db32b2692c84376fd4",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-7.png",
+      "status": 200,
+      "bytes": 87524,
+      "sha256": "3e40fcafcf12d4ae4b9e64d020c252079fcc347c8dfd738b618a0e986c86761a",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-8.png",
+      "status": 200,
+      "bytes": 92411,
+      "sha256": "7c3d0a8dbd81b37ce5b96355153cae1fa13a0794448f5d8ca6fb3ce28c1a8221",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-9.png",
+      "status": 200,
+      "bytes": 169344,
+      "sha256": "6c33e681a9c04dfd3db697bc6aaffa6e553e02375d03e80f292a972bdb828aa6",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-hair-flat-v1.png",
+      "status": 200,
+      "bytes": 1262674,
+      "sha256": "9556fd3d24c41dc98872c0145a30ab50fc489a7586cecd84a47ec1ea9ff0211f",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-low-bun-source.png",
+      "status": 200,
+      "bytes": 277131,
+      "sha256": "d6e1758102915cc5c65a091f11f63af7b127712928299aa8797a545a6adf5962",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-10.png",
+      "status": 200,
+      "bytes": 214697,
+      "sha256": "bb77dea710466189b45cf01bfa267ee22ef59e5469455695d89f0208c1490b97",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-7.png",
+      "status": 200,
+      "bytes": 235055,
+      "sha256": "81143563b516cfa350dc03d9960c1f009fec844696f672d0f7b420d3c5af848a",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-8.png",
+      "status": 200,
+      "bytes": 210292,
+      "sha256": "e5e92491e4123def3188fb49674a1b6d7602a6fe38c3edc6bffb69303dea5efb",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-expansion-outfit-9.png",
+      "status": 200,
+      "bytes": 205955,
+      "sha256": "a9d89b6cb6dd1d875c1ef4e2a52a5d914653f456831f4ea36c7a823a155f4059",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/avatar-eyewear-v1.png",
       "status": 200,
       "bytes": 240978,
@@ -492,8 +583,8 @@
     {
       "path": "Horizons/App/assets/art/avatar-static-v1.frames.json",
       "status": 200,
-      "bytes": 15314,
-      "sha256": "a09dd74c8fa8e7d977a114c8cac6a43fddee32c2318cbef4099932e4d8e54a38",
+      "bytes": 18755,
+      "sha256": "3653866a2bb9e4e9f01169f1b4abbe1b24223baec40c253a921d4f056a6fa04a",
       "matchesCommittedBytes": true
     },
     {
@@ -884,8 +975,8 @@
     {
       "path": "Horizons/App/assets/art/manifest.json",
       "status": 200,
-      "bytes": 25971,
-      "sha256": "e3e8d6c9a7b0cc549a6d9ffcbfe428c8ea68c4ac5d30cbed6b5c74d9628a8b59",
+      "bytes": 29394,
+      "sha256": "7703765c4e838406f8c02234d59a05b182f90fb90ace15832c31645d6a33c550",
       "matchesCommittedBytes": true
     },
     {
@@ -2228,8 +2319,8 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1687,
-      "sha256": "8e38faee4fee27e6508a8ff570bcdadf4b2de639c25befd648eebd0acef6fea0",
+      "bytes": 1695,
+      "sha256": "b88f746ff8acb2c163471325faf4b9c26ca769740caaef882fb92b09a3e482b7",
       "matchesCommittedBytes": true
     },
     {
@@ -2242,8 +2333,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1680,
-      "sha256": "38d209cd2d2b4614a54e6889ddb79090c0093e1e89584205af47f859f4842be1",
+      "bytes": 1706,
+      "sha256": "8b6782137a1ec6e0e531761608cf604bcc51f12d3e744555e8bb02b849326db6",
       "matchesCommittedBytes": true
     },
     {
@@ -2256,15 +2347,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 61111,
-      "sha256": "dcc8c76a56b1d948ef5365a963fe21a936c72fc513f95babf324385f89c945aa",
+      "bytes": 61119,
+      "sha256": "deda9024db8c63e0be359b4ff8d371fb9f4ed27de3004870b8e85c2dbe4b26ba",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 6942,
-      "sha256": "52bfaf6cbe0e82323c49df1c6a26659b7d33d11a810585a5cd05c1e04815a770",
+      "bytes": 6947,
+      "sha256": "c8d774893077b68e90b8cabe1d94424fa423b1f6ea6c75feedd5cda974c7122d",
       "matchesCommittedBytes": true
     },
     {
@@ -2277,8 +2368,8 @@
     {
       "path": "Horizons/App/src/avatar-static.js",
       "status": 200,
-      "bytes": 4075,
-      "sha256": "cd422a467397b6778410a1160d902da42886f1035efd0fc4ff94c5cb7ee39f36",
+      "bytes": 4076,
+      "sha256": "45a4eac17b2bed94faaf0cc7c46befc159e3011af5b578125ceeb91922eba665",
       "matchesCommittedBytes": true
     },
     {
