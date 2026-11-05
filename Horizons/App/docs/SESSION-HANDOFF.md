@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Overworld runtime 9a29911c85976856b30813fe3e27c9420046b65c is published on both branches; Pages run 42055395675 succeeded. Hosted world/cache/Pico checks pass, with exact parity for 414 runtime/native files. See reports/overworld-release.json. Later evidence-only commits preserve this runtime.
+
 Current enhancement: Unit 1 New Friends Town overworld, normal mouse-wheel vertical-to-horizontal travel, hover/focus saved-avatar preview movement, four native building landmarks, four ImageGen neighborhoods and eight animated decorative birds/butterflies. Same compact shell, 21 activity IDs, profile/learning/backend and Pico. Cache overworld-v32, queries overworld1. See OVERWORLD.md and docs/overworld/production-record.json. Current R07 now includes selected overworld art; the exact earlier inputs used for generation are archived in docs/overworld/inputs.
 
 Previous layout baseline (superseded only by the current overworld enhancement): restore the exact pre-fieldguide compact design, changing only the trail to a horizontally scrollable unit route. Same sidebar/mobile navigation, compact Pico hero, island states and minimal popovers. Four lessons sit side by side; saved user avatar marks current/selected activity. The book-led fieldguide experiment was superseded by the user's later request. Cache horizontal-v31, entry queries horizontal1. See HORIZONTAL-PATH.md and current APP-AUDIT.md.

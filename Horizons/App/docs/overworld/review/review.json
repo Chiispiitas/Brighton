@@ -17,6 +17,8 @@
   ],
   "screens": [
     "garden-review-1440.png",
+    "hosted-world-start-1440.png",
+    "hosted-world-start-390.png",
     "world-details-390.png",
     "world-end-1440.png",
     "world-reduced-motion.png",
@@ -29,5 +31,7 @@
     "Generated art retains minor native color variation; no code repainting"
   ],
   "independentApproval": "PASS after landmark visible-place accessible-name correction; no remaining material regression/accessibility/lifecycle issue",
-  "rootProvenance": "All eight native originals match exact ImageGen outputs; active assets and archived reference hashes verified"
+  "rootProvenance": "All eight native originals match exact ImageGen outputs; active assets and archived reference hashes verified",
+  "hostedRuntimeRevision": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "hostedReview": "Root visually inspected final hosted 390px page; same rendering as local composed checks"
 }

@@ -117,5 +117,7 @@
       "title": "Scenes vocabulary and interface art",
       "sha256": "f0fe0643707aaf9a5a6afdbd333ac9690d3b2ad23cfb986c004889fdae7e0992"
     }
-  ]
+  ],
+  "sourceRuntimeRevision": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "sourceCommitNote": "sourceCommit records the checkout base at sheet creation; sourceRuntimeRevision binds the included overworld sources to the published runtime."
 }

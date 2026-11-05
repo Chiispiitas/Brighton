@@ -1,0 +1,335 @@
+{
+  "date": "2026-11-05T15:34:10.708Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "baseline": "13bcc6e04ed08354faa9a366f3d907127d1d734b",
+  "sourceRef": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "oldCache": "horizons-companion-horizontal-v31",
+  "newCache": "horizons-companion-overworld-v32",
+  "scope": "Real committed horizontal v31 runtime installed and cached, then upgraded through update/activate/controller lifecycle to overworld v32. New layout CSS, entry files, unchanged Pico and native avatar bytes verified in browser and Cache Storage. No API calls or learner writes.",
+  "steps": [
+    {
+      "name": "Previous worker and exact cached runtime installed",
+      "cacheNames": [
+        "horizons-companion-horizontal-v31"
+      ],
+      "controller": true,
+      "oldAppHash": "87fe2f93ba2c6f79e0354adc43f56bd7cf14c637997b3978ca0da53cacd7cebb",
+      "pass": true
+    },
+    {
+      "name": "New worker activated and previous cache removed",
+      "cacheNames": [
+        "horizons-companion-overworld-v32"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Corrected native collar overlay decoded in actual outfit3 renderer",
+      "ready": true,
+      "overlaySource": "assets/art/avatar-jacket-lapels-v1.png",
+      "nativeWidth": 1662,
+      "nativeHeight": 946,
+      "uniform": true,
+      "animations": 0,
+      "pass": true
+    },
+    {
+      "name": "Motion interface and unchanged native art have exact current bytes in Cache Storage",
+      "title": "Horizons",
+      "modules": [
+        "src/app.js?v=overworld1",
+        "src/overworld-motion.js?v=overworld1",
+        "src/api-client.js",
+        "src/lesson-art.js?v=colors1",
+        "src/studio-ui.js?v=overworld1",
+        "src/ui-motion.js?v=overworld1",
+        "src/art.js?v=overworld1"
+      ],
+      "pass": true
+    }
+  ],
+  "lifecycle": [
+    {
+      "event": "worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "worker-state",
+      "state": "activated"
+    }
+  ],
+  "runtimeErrors": [],
+  "bindingErrors": [],
+  "apiRequests": [],
+  "loaded": [
+    {
+      "file": "styles/horizontal-path.css",
+      "query": "?v=overworld1",
+      "sha256": "708e24a5ba5e63defc10e921a82393fe36468a22ee28df98ef8f1b6062f66a5f",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "styles/overworld.css",
+      "query": "?v=overworld1",
+      "sha256": "cc11448cbdaf524f7dd290b5a88279cc1d93b5a93a2535f584ec0f98a755962f",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=overworld1",
+      "sha256": "b87861c4f7834250682e96941d6fb5f332f0b2c33e1e4eb99fcc8f21b1109a80",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "styles/app.css",
+      "query": "?v=overworld1",
+      "sha256": "f642a70e45acb6a1e7634bc2aed5deba71224a1b59d3ecbb68ec510d98f608b0",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/overworld-motion.js",
+      "query": "?v=overworld1",
+      "sha256": "41372adcec3ed9af7961e84a7c442aeb90572a4f14856ee2cf0e893a8d4120f8",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/island-mastery.mjs",
+      "query": "",
+      "sha256": "22f2a49e26838f99344134234e2e6c4504b88fc930849fab5e34501231469a7c",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=overworld1",
+      "sha256": "f106a5c89b8aaa385b23b942a6e212858008e0a037b139df61ebf95a30968937",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "query": "?v=overworld1",
+      "sha256": "58588a6054441f5a1992eb64e5f7ff3fd47fbbd2408030a73a51ec1fb3067f5a",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/ui-motion.js",
+      "query": "?v=overworld1",
+      "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?colors=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/avatar-static.js",
+      "query": "?v=colors1",
+      "sha256": "a503b49b234eb23b1e615039499a2d9c8855946d87bac3afc7ab2a57b0e67597",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?lapel=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "query": "?colors=1",
+      "sha256": "e74f95119e7c64925b6e760a6f0698a127518fdd83808c016e40e5cf565b324a",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/avatar-jacket-lapels-v1.png",
+      "query": "",
+      "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce",
+      "fromServiceWorker": true
+    }
+  ],
+  "pass": true,
+  "cacheBinding": [
+    {
+      "file": "assets/art/overworld-unit1-v1/welcome-park-native.png",
+      "query": "",
+      "sha256": "116763035d82883ff989c6eee5eb237c4f8d8edb70272222a07a5a85321274b0"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/world-garden-native-v3.png",
+      "query": "",
+      "sha256": "d4876792de880a075eb6c88fda6684f082962cdb1c78fe6d572e8aa6c10de99b"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/bird.png",
+      "query": "",
+      "sha256": "8b0f8da6cda2c2acc0bf16c85a1a1e2e2ce3bbdd4e41a4a7eb78ba5a0cd86654"
+    },
+    {
+      "file": "assets/art/overworld-unit1-v1/landmark-3.png",
+      "query": "",
+      "sha256": "fbb8d2ed5c25901826714aee5dd00ee5fa3de9afff81fee51389ef8124f6bef0"
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "query": "",
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106"
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "query": "",
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc"
+    },
+    {
+      "file": "src/pico-banner-motion.js",
+      "query": "?v=overworld1",
+      "sha256": "4996cdbd55569dfc5a26e4f95a1c590d6fdeff3f88899dc6761077f7ddf74a68"
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/body-registered.png",
+      "query": "",
+      "sha256": "e11fd4e55ef65cef20dd9f73fe7032c659f080a664b69e990ff3e95e4b49bb60"
+    },
+    {
+      "file": "assets/art/pico-banner-motion-v1/map-registered.png",
+      "query": "",
+      "sha256": "258f9cde34178173ad2c0fd4a8b17fe9de4590bcd7e89325ee1ea62a715a6486"
+    },
+    {
+      "file": "assets/art/avatar-change-sparkles-v1.png",
+      "query": "",
+      "sha256": "c9b4c96f423dfde60ab6f493e02c984bfa9cf670db68a490e8cbca0adae9b5be"
+    },
+    {
+      "file": "index.html",
+      "query": "",
+      "sha256": "67ba1d7805dda80b538c8f1b253bcdfbcdc2813fa2715d248deef8ecbd46eee1"
+    },
+    {
+      "file": "styles/horizontal-path.css",
+      "query": "?v=overworld1",
+      "sha256": "708e24a5ba5e63defc10e921a82393fe36468a22ee28df98ef8f1b6062f66a5f"
+    },
+    {
+      "file": "styles/overworld.css",
+      "query": "?v=overworld1",
+      "sha256": "cc11448cbdaf524f7dd290b5a88279cc1d93b5a93a2535f584ec0f98a755962f"
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=overworld1",
+      "sha256": "b87861c4f7834250682e96941d6fb5f332f0b2c33e1e4eb99fcc8f21b1109a80"
+    },
+    {
+      "file": "styles/app.css",
+      "query": "?v=overworld1",
+      "sha256": "f642a70e45acb6a1e7634bc2aed5deba71224a1b59d3ecbb68ec510d98f608b0"
+    },
+    {
+      "file": "src/overworld-motion.js",
+      "query": "?v=overworld1",
+      "sha256": "41372adcec3ed9af7961e84a7c442aeb90572a4f14856ee2cf0e893a8d4120f8"
+    },
+    {
+      "file": "content/island-mastery.mjs",
+      "query": "",
+      "sha256": "22f2a49e26838f99344134234e2e6c4504b88fc930849fab5e34501231469a7c"
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=overworld1",
+      "sha256": "f106a5c89b8aaa385b23b942a6e212858008e0a037b139df61ebf95a30968937"
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+    },
+    {
+      "file": "src/studio-ui.js",
+      "query": "?v=overworld1",
+      "sha256": "58588a6054441f5a1992eb64e5f7ff3fd47fbbd2408030a73a51ec1fb3067f5a"
+    },
+    {
+      "file": "src/ui-motion.js",
+      "query": "?v=overworld1",
+      "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38"
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?colors=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9"
+    },
+    {
+      "file": "src/avatar-static.js",
+      "query": "?v=colors1",
+      "sha256": "a503b49b234eb23b1e615039499a2d9c8855946d87bac3afc7ab2a57b0e67597"
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?lapel=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9"
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "query": "?colors=1",
+      "sha256": "e74f95119e7c64925b6e760a6f0698a127518fdd83808c016e40e5cf565b324a"
+    },
+    {
+      "file": "assets/art/avatar-jacket-lapels-v1.png",
+      "query": "",
+      "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce"
+    }
+  ],
+  "changedSources": [],
+  "status": "PASS"
+}

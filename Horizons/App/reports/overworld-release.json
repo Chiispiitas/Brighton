@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-05T15:36:10.498117+00:00",
+  "runtimeRevision": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "baselineRuntime": "13bcc6e04ed08354faa9a366f3d907127d1d734b",
+  "pagesRun": 42055395675,
+  "pagesConclusion": "success",
+  "unit1Theme": "New Friends Town",
+  "districts": [
+    "Welcome Park",
+    "Makers Market",
+    "Travel Garden",
+    "Friends Town Hall"
+  ],
+  "activityCount": 21,
+  "buildingLandmarks": 4,
+  "animatedNativeFauna": 8,
+  "mouseWheelDownRightUpLeft": true,
+  "savedAvatarHoverFocusTravel": true,
+  "testedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "cacheUpgrade": "horizontal-v31 to overworld-v32",
+  "hostedMatchedFiles": 414,
+  "existingBookRecordings": 12,
+  "imageGenCalls": 8,
+  "maximumImageInputsUsed": 4,
+  "productionRecord": "docs/overworld/production-record.json",
+  "existingNativeArtModified": false,
+  "backendChanges": false,
+  "printedBookChanges": false,
+  "realLearnerWrites": false,
+  "reports": [
+    "reports/overworld-proof-hosted.json",
+    "reports/overworld-cache-upgrade-hosted.json",
+    "reports/overworld-pico-proof-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "limits": [
+    "Edge/Chromium only",
+    "Synthetic API fixture; simulated profile writes in memory only",
+    "Hidden-document event is a controlled fixture",
+    "Offscreen test adds temporary document height, not production spacing"
+  ],
+  "pass": true
+}

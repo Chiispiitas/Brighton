@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-05T15:35:14.647Z",
+  "revision": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "sourceRevision": "9a29911c85976856b30813fe3e27c9420046b65c",
+  "uncommittedRuntime": false,
+  "runtimeSources": {
+    "src/app.js": "a3639ff6ba34324cd569794861571e6744bfa389c14a027714838b05d6ccf436",
+    "src/studio-ui.js": "aed4aca63ca8ba2d210ebdf4349f47310277a987fa19275b8bc5088afd8c95f1",
+    "src/pico-banner-motion.js": "35dad1cc1dd99d363e48ec1cf84bc92dfadcdae59979e5c051d6e83a173d698b",
+    "src/overworld-motion.js": "41372adcec3ed9af7961e84a7c442aeb90572a4f14856ee2cf0e893a8d4120f8",
+    "styles/app.css": "47512b386bd24ddf26d932359b7905b41f5380278c97c1706f770d4d81b3f59c",
+    "styles/horizontal-path.css": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d",
+    "styles/overworld.css": "e9cff594ee960183fea3be6af160e8f5de3b8974aeca25073da7298d571181ab",
+    "index.html": "32d42e59cdaf41ea4378b1125432b0578f8bc4e0a014fd2f1ff19e4da18e15f6",
+    "service-worker.js": "75860394e16bd49e44a57f42c868f34653386c1319f6c63545070edab353c651"
+  },
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "activities": 21,
+      "landmarks": 4,
+      "scenery": 4,
+      "fauna": 8,
+      "geometry": [
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        }
+      ],
+      "hoverAndFocusPreview": true,
+      "selectionAndProgressUnchanged": true,
+      "landmarksReachable": true,
+      "keyboardDetails": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 390,
+      "activities": 21,
+      "landmarks": 4,
+      "scenery": 4,
+      "fauna": 8,
+      "geometry": [
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        }
+      ],
+      "hoverAndFocusPreview": true,
+      "selectionAndProgressUnchanged": true,
+      "landmarksReachable": true,
+      "keyboardDetails": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 768,
+      "activities": 21,
+      "landmarks": 4,
+      "scenery": 4,
+      "fauna": 8,
+      "geometry": [
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        }
+      ],
+      "hoverAndFocusPreview": true,
+      "selectionAndProgressUnchanged": true,
+      "landmarksReachable": true,
+      "keyboardDetails": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 1440,
+      "activities": 21,
+      "landmarks": 4,
+      "scenery": 4,
+      "fauna": 8,
+      "geometry": [
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        },
+        {
+          "leftToRight": true,
+          "touch": true,
+          "endpointError": 0
+        }
+      ],
+      "hoverAndFocusPreview": true,
+      "selectionAndProgressUnchanged": true,
+      "landmarksReachable": true,
+      "keyboardDetails": true,
+      "noPageOverflow": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "world-start-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-start-320.png",
+      "sha256": "c2e44b634fb88b4fda185ec1b51af640f93b2b0f75d4140ab3d28b9a32064ea5"
+    },
+    {
+      "name": "world-end-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-end-320.png",
+      "sha256": "c8dcfb0c31516f1588efc276465132db658301993da9b9c8ae31a184401b9beb"
+    },
+    {
+      "name": "world-details-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-details-320.png",
+      "sha256": "fe4d086e23cb2f82828c72dc89e3660f69a4ad9c5952d177e03e29ddc27382af"
+    },
+    {
+      "name": "world-start-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-start-390.png",
+      "sha256": "4d260c3ae074d31437f9309fdd6edb5f0fef36fed04bd1723329ef3a8df77bc1"
+    },
+    {
+      "name": "world-end-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-end-390.png",
+      "sha256": "12984fd045b8e9b418746b1a5ef20e847b80ccf266848e4bd6cd6f5b5e623241"
+    },
+    {
+      "name": "world-details-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-details-390.png",
+      "sha256": "537eb9bfeff78c2ac9475cf86c896ae39826ad3a9def7f444a5ad2b06549cecf"
+    },
+    {
+      "name": "world-start-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-start-768.png",
+      "sha256": "0119eefd3559ad1a7ebfb5a02139ae8e2a5f2996bc97759c90648b0a178ca821"
+    },
+    {
+      "name": "world-end-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-end-768.png",
+      "sha256": "b54747fb460c111dcdaada39a5e3994994ab9211bc3b465c1050ddc8806fedff"
+    },
+    {
+      "name": "world-details-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-details-768.png",
+      "sha256": "b18bf693c0fc52f83d23624840eb42ada68ebab9ee1b99053a598fd227715b94"
+    },
+    {
+      "name": "world-start-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-start-1440.png",
+      "sha256": "8006e5c09b251d41dc8c1bd9b62bf9e38daf712dfa3fed0efb5dc783295527e7"
+    },
+    {
+      "name": "world-end-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-end-1440.png",
+      "sha256": "02080d092eb401432094a6416ed1ee0bf85eea5033f76af9162f61e0a8db8ee3"
+    },
+    {
+      "name": "world-details-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-details-1440.png",
+      "sha256": "ce85d49c6e657d07fcbdc15452b563a4008eff4010eca0ce5369551c84787447"
+    },
+    {
+      "name": "world-reduced-motion",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\overworld-hosted\\world-reduced-motion.png",
+      "sha256": "88529d8db57e0bb93e4df86064368e04072bad6daa98367016e1681255ab0721"
+    }
+  ],
+  "wheelDownRightUpLeft": true,
+  "normalizedLineAndPageWheel": true,
+  "edgeReleaseToPage": true,
+  "nativeHorizontalAndZoomModifiers": true,
+  "hoverFocusNoActivityOrProgressMutation": true,
+  "selectedMarkerRestoredOnLeave": true,
+  "fullOpacityTransformFauna": true,
+  "faunaHiddenAndOffscreenPause": true,
+  "reducedMotionStatic": true,
+  "routeDisposal": true,
+  "savedAvatarFixtureReload": true,
+  "typedSpanish": true,
+  "listeningSkip": true,
+  "apiActions": [
+    "getSession",
+    "updateProfile",
+    "getSession"
+  ],
+  "realBackendRequests": false,
+  "realLearnerWrites": false,
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only",
+    "Synthetic API fixture; simulated profile writes in memory only",
+    "Hidden-document event is a controlled fixture",
+    "Offscreen test adds temporary document height, not production spacing"
+  ]
+}
