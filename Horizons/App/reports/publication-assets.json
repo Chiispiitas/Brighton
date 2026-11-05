@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T04:16:56.558169+00:00",
+  "date": "2026-11-05T04:28:29.501853+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "bab9321099b57a25ffb4ccc15852330696bcdaa8",
-  "checkedFiles": 350,
+  "revision": "fe7d1660bb8d110a3ae7abf6f32e7b03c2d7fbc9",
+  "checkedFiles": 355,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -742,6 +742,13 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/horizons-share-v1.png",
+      "status": 200,
+      "bytes": 134773,
+      "sha256": "7dbfbfa1aefaf10b63e9009dfc3b7d7d87999b93a12f531b65d3c4abfd35ed5d",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/jo-articulated-v3.png",
       "status": 200,
       "bytes": 1011239,
@@ -1194,6 +1201,34 @@
       "status": 200,
       "bytes": 842142,
       "sha256": "045556bd292a2144c3fdc45d377bd7d41c573287056f532dcb4849194abd5477",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/trail-countries-v1.png",
+      "status": 200,
+      "bytes": 1131160,
+      "sha256": "4f1dc7d6850d939844969365c77b137760101c11d95f06a1c9072b60a5ffe69e",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/trail-greetings-v1.png",
+      "status": 200,
+      "bytes": 1106418,
+      "sha256": "52d353834c63a531b0a362dacbaff69dd98cffb194e119a480ece346069fc67f",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/trail-jobs-v1.png",
+      "status": 200,
+      "bytes": 1060409,
+      "sha256": "c460a1bcb57a33fe98a1c76f511fad9cfa344c741c6224f9cce88e39586746ab",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/trail-personal-v1.png",
+      "status": 200,
+      "bytes": 1066331,
+      "sha256": "c71b645a77c7074fcc6b55729e0990b11ad9a00bebe14edbf03d2c99e9a75258",
       "matchesCommittedBytes": true
     },
     {
@@ -2347,22 +2382,22 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1599,
-      "sha256": "a39a1f75088e014ca539eabe3992cf2ca22d6c128ff78f585060192cc931d476",
+      "bytes": 3091,
+      "sha256": "71ee7ff4da4a8a039db9d9ffd3584b23184a31829afe3fbf5e013124a50a567d",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/manifest.webmanifest",
       "status": 200,
-      "bytes": 418,
-      "sha256": "29f3c3d4c07c74c84795949af79eb170a9bf168a8b392b4b05d84579dceb6056",
+      "bytes": 409,
+      "sha256": "edd2b1f6a64936715e3fb7f3ef5f5e6eca95e9dba1aa4a5d950e715aaa4bf301",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1861,
-      "sha256": "d7c124fb4e6545fc99fc6cdfa5bf17239afc9556fe13921991907fb75907d68a",
+      "bytes": 1853,
+      "sha256": "7db39f831267bdfeacd08ee3ae8a5d08b7245f71e70e6230dc312b2c1ac59c43",
       "matchesCommittedBytes": true
     },
     {
@@ -2375,8 +2410,8 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 55050,
-      "sha256": "a18bcf7c1e99bb42795cbf622d5c125e486ab2fbdd9c25eff2d6135d485feb20",
+      "bytes": 55302,
+      "sha256": "6b77db08501cf53aaa7a6dde86ac7b45fdd9a8044d0d019212469f7ed21c2af7",
       "matchesCommittedBytes": true
     },
     {
@@ -2438,8 +2473,8 @@
     {
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
-      "bytes": 5966,
-      "sha256": "263671d1651e473e2f483a51dccad23927011e59ce2cb8c19072264f0cd6e984",
+      "bytes": 5965,
+      "sha256": "592e31d80be0d0a4ec6da2a513103e0fdbc20c1b60a53e1b1f420c4cf7bdfbdd",
       "matchesCommittedBytes": true
     },
     {
@@ -2452,8 +2487,8 @@
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 92386,
-      "sha256": "94ad833c29f1e60192d57ade478c7cdc9895e53a4acd97b21e2208f5846abdfe",
+      "bytes": 92769,
+      "sha256": "a75eb2949e1c6b969234b35a12b4613298f47bcc1ccc32457606bd0283101599",
       "matchesCommittedBytes": true
     }
   ]

@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-05T04:28:51.683252+00:00",
+  "revision": "fe7d1660bb8d110a3ae7abf6f32e7b03c2d7fbc9",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "deployment": {
+    "id": 41967536336,
+    "conclusion": "success"
+  },
+  "pass": true,
+  "hostedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "hostedFileParity": 355,
+  "cacheUpgrade": "Actual v20 to v21 lifecycle and cached bytes passed.",
+  "shareImage": {
+    "url": "https://exams.bebrighton.net/Horizons/App/assets/art/horizons-share-v1.png",
+    "width": 1200,
+    "height": 630,
+    "status": 200
+  },
+  "crawlerStylePageRequest": 200,
+  "whatsAppMessageSent": false,
+  "learnerWrites": false,
+  "backendChanged": false,
+  "limits": [
+    "Edge/Chromium only.",
+    "Native artwork is deliberately opaque and paper-backed; two transparent attempts were rejected for halos.",
+    "Real WhatsApp preview cache/display was not tested by sending a message."
+  ],
+  "subsequentEvidenceCommit": "No runtime bytes changed."
+}
