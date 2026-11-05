@@ -5,7 +5,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  if(!region)return()=>{};
  if(mounts.has(region))return mounts.get(region);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const fauna=[...region.querySelectorAll('.world-fauna > img')].filter(img=>!img.closest('.avatar,.character'));
+ const fauna=[...region.querySelectorAll('.world-fauna > img,.world-fauna > .bird-rig')].filter(img=>!img.closest('.avatar,.character'));
  let disposed=false,visible=false,animations=[];
 
  // Wheel input stays entirely native: vertical wheel scrolls the page.
@@ -13,7 +13,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  let frame=0,held=null,started=0,last=0,drag=null,suppressClick=false;
  const stopPan=()=>{cancelAnimationFrame(frame);frame=0;held=null;};
  const tick=time=>{
-  if(!held||disposed)return;
+  if(!held||disposed||held.hidden||held.dataset.unitHref){stopPan();return;}
   const dt=Math.min(32,time-last);last=time;
   const speed=200+440*Math.min(1,(time-started)/600);
   region.scrollLeft+=Number(held.dataset.pathPan)*speed*dt/1000;
@@ -21,15 +21,18 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  };
  for(const button of region.closest('.learning-path').querySelectorAll('[data-path-pan]')){
   let pointerUsed=false;
+  listen(button,'pointerenter',event=>{if(event.pointerType==='mouse'&&!button.disabled&&!button.dataset.unitHref){stopPan();held=button;started=last=performance.now();frame=requestAnimationFrame(tick);}});
+  listen(button,'pointerleave',()=>{if(held===button)stopPan();});
   listen(button,'pointerdown',event=>{
    if(event.button!==0||button.disabled)return;
    pointerUsed=true;stopPan();held=button;started=last=performance.now();
    button.setPointerCapture(event.pointerId);frame=requestAnimationFrame(tick);
   });
-  listen(button,'pointerup',()=>{if(held&&performance.now()-started<150)region.scrollBy({left:Number(button.dataset.pathPan)*180,behavior:reduced.matches?'instant':'smooth'});stopPan();});
+  listen(button,'pointerup',event=>{if(event.pointerType==='mouse'&&button.matches(':hover'))return;if(held&&performance.now()-started<150)region.scrollBy({left:Number(button.dataset.pathPan)*180,behavior:reduced.matches?'instant':'smooth'});stopPan();});
   for(const type of ['pointercancel','lostpointercapture'])listen(button,type,stopPan);
   listen(button,'click',event=>{
    event.preventDefault();
+   if(button.dataset.unitHref){stopPan();location.assign(button.dataset.unitHref);return;}
    if(pointerUsed&&event.detail!==0){pointerUsed=false;return;}
    region.scrollBy({left:Number(button.dataset.pathPan)*360,behavior:reduced.matches?'instant':'smooth'});
   });
@@ -56,6 +59,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
   if(event.type==='pointerover'&&event.pointerType==='touch')return;
   const stop=event.target.closest?.('.path-stop[data-path-node]');
   if(!stop||!region.contains(stop)||stop.contains(event.relatedTarget))return;
+  const box=region.getBoundingClientRect(),r=stop.getBoundingClientRect();if(r.left<box.left||r.right>box.right||r.top<0||r.bottom>innerHeight)return;
   onPreview(stop.dataset.pathNode);
  };
  const leave=event=>{
@@ -69,7 +73,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
   for(let i=0;i<=steps;i++){
    const t=i/steps,angle=t*Math.PI*2,wing=i%2?.76:1;
    // Closed local flight loop; full-opacity PNGs provide all anatomy.
-   const x=amplitude*Math.sin(angle),y=8*(Math.cos(angle)-1)+3*Math.sin(angle*2);
+   const x=(kind==='bird'?3:8)*Math.sin(angle),y=8*(Math.cos(angle)-1)+3*Math.sin(angle*2);
    const rotate=(kind==='butterfly'?7:3)*Math.sin(angle)+(index%2?1:-1);
    const scale=kind==='butterfly'?`scaleX(${wing})`:`scaleY(${i%2?.94:1})`;
    frames.push({offset:t,transform:`translate(${x}px,${y}px) rotate(${rotate}deg) ${scale}`});
@@ -88,9 +92,13 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
     const animation=img.animate(flightFrames(kind,index),{duration,iterations:Infinity,easing:'linear'});
     // Explicit shared document clock plus a deterministic phase offset.
     animation.startTime=clock-(index*1379)%duration;
+    if(kind==='bird')for(const wing of img.querySelectorAll('.bird-near,.bird-far')){
+     const flap=wing.animate([{transform:'rotate(-20deg) scale(1,1)'},{transform:'rotate(25deg) scale(1.12,.38) skewX(16deg)',offset:.42},{transform:'rotate(38deg) scale(1.2,.18) skewX(-12deg)',offset:.5},{transform:'rotate(-28deg) scale(.95,1.08)',offset:.75},{transform:'rotate(-20deg) scale(1,1)'}],{duration:620,iterations:Infinity,easing:'ease-in-out'});wing.__flight=flap;
+    }
     return animation;
    });
   }
+  for(const wing of region.querySelectorAll('.bird-rig img'))if(wing.__flight&&!animations.includes(wing.__flight))animations.push(wing.__flight);
   animations.forEach(a=>a.play());
  };
  const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting===true;sync();},{threshold:.01});

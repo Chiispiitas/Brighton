@@ -1,0 +1,14 @@
+{
+  "asset_id": "bird-hover-parts-v1",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/overworld-unit1-v1/bird.png"
+  ],
+  "prompt": "Asset: registered body-part atlas for the exact Horizons blue bird. Image1 R01 brand; Image2 R02 style identity only; Image3 R07 native object style; Image4 EXACT CURRENT BIRD edit target. Preserve its cyan round body, tail pointing left, coral triangular beak pointing right, navy circular eye, teal rounded two-lobed wings. Create 3 equal square cells in a single horizontal 1536x512 atlas, with generous empty margins: cell1 complete cyan body+head+tail+beak+eye with BOTH WINGS REMOVED, reconstruct cyan underneath cleanly; cell2 detached near wing, same silhouette as the front teal wing, root at lower right, leaves extending up-left; cell3 detached far wing, same silhouette as rear wing, root at bottom right, leaves extending up-left. No assembled second bird, no extra anatomy, no lines/text/cell borders. Individual reusable parts, proportionate to the original bird, consistent scale across cells except safe padding. Pure opaque vivid magenta #FF00FF background for mechanical extraction, fully opaque parts with flat solid colors. NO glow, shadow, transparency, blur, gradient, texture or modeled lighting. These will reconstruct the same bird using layered sprites and transform-only flaps with short squash/stretch smears. Do not draw a scene."
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T17:03:20.960Z",
-  "sourceCommit": "aa4e916fa6eef3a0686ba7a8417ceb775320a8ae",
+  "createdAt": "2026-11-05T17:23:27.143Z",
+  "sourceCommit": "eccfea003687fcc7d90c015f21480d6ef41edafe",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "367b135069995013f85a204df58dfd51e12dc9bd06b012e74275988d5e15214b"
+      "sha256": "7327ab540d3780bc9dcdf7c00dddaf2027945ba293f55194c67d2f07cfb253ce"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "fe5b21614b80aba9fac6d14acc5233ee06ad0ae38a8d67d86c02340b0ec3b27e"
+      "sha256": "ba96c07befac43b14a13d516eb7b4e83c6337700e2679aeac93747fad231804a"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -56,6 +56,34 @@
     {
       "file": "assets/art/overworld-unit1-v1/butterfly.png",
       "sha256": "50e0fbee6a12da9dd74cff509f43ea3f576250be9009f1c723fdfee45d5b3f1e"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/body.png",
+      "sha256": "4ba58b35c10a27d527c72c09d03dd81f87f8f9c03c55c223eba05c69d7e94e1c"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/wing-near.png",
+      "sha256": "d275c705744a9f3628e5acf6aaa3b065a4c936c988a632880a81ff7756001630"
+    },
+    {
+      "file": "assets/art/bird-hover-v1/wing-far.png",
+      "sha256": "b73b523a55fe6c56f520751553cff2ad6df60bac2bf3830b122697cfc5087fc8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/greetings.png",
+      "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/jobs.png",
+      "sha256": "03fa23bfb6ac2a113e0679f2c5fc226dabc8d56fbeb0c136d80b976751172ec8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/countries.png",
+      "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+    },
+    {
+      "file": "assets/art/lesson-props-v1/personal.png",
+      "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1"
     },
     {
       "file": "assets/art/overworld-tiles-v1/tileset.json",
@@ -127,9 +155,7 @@
       "id": "R07",
       "file": "07-scenes-vocabulary-ui.png",
       "title": "Scenes vocabulary and interface art",
-      "sha256": "ee99b7f2ead017bf435441355038c405881ff2306ea23513974287c594e0e151"
+      "sha256": "5532ed5b4e524341d545171667e07c82e53dabf6efdce4b0e9c8b3635f2e7df1"
     }
-  ],
-  "reviewNote": "Approved art/reference-board PNGs unchanged by map-control placement; rebuilt source metadata tracks current renderer and styles.",
-  "sourceRuntimeRevision": "bc35774e1f502059ab7aabcbb02a1db105b65049"
+  ]
 }

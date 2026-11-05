@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-05T17:24:02.106Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "pass": true,
+  "hoverScroll": true,
+  "leaveStops": true,
+  "endpointsHidden": true,
+  "futureUnitBoundary": {
+    "label": "Go to Unit 2",
+    "href": "#unit-2",
+    "hidden": false
+  },
+  "offscreenPreviewBlocked": true,
+  "buildingLabelsRemoved": true,
+  "lessonProps": 4,
+  "birdParts": 12,
+  "wingAndHoverLoops": true,
+  "reducedMotionCancels": true,
+  "hiddenPausesWings": true,
+  "routeDisposesWings": true,
+  "errors": [],
+  "failedRequests": []
+}

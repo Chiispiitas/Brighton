@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest interaction/art update: mouse hovering an arrow scrolls until leave, as well as press/hold. Reached ends hide arrows; a real adjacent implemented unit turns its boundary into an explicit Go to Unit button (never auto-activate on hover). Unit registry currently contains only Unit 1. Avatar previews stay on fully visible islands; building names removed. Lesson-specific isolated native object tiles are reused. Bird now has separate ImageGen body/near/far wings, transform-only flaps with squash/stretch smear moments and local hover motion; butterfly also hovers locally. Reduced motion, hidden/offscreen pause and disposal apply to every wing loop. Older fixed-eight-animation / release-while-hover assertions are superseded.
+
 Updated 5 November 2026, America/Bogota. This is the current production workflow and reference index. The [historical audit](ANIMATION-AUDIT-HISTORY.md) preserves earlier trials, rejected attempts and source-bound releases. Historical settings are not current requirements.
 
 ## Current decisions and scope
@@ -129,3 +131,9 @@ Carry this audit, image-production guide, reference manifests/boards, native bas
 ## Overworld motion extension
 
 The latest request separately authorizes saved-avatar hover/focus travel and decorative bird/butterfly flight. They use full-opacity transforms, native generated cutouts, reduced-motion static states and offscreen/hidden-tab pause/disposal. No new articulated avatar anatomy or other cast animation is authorized. Pico's rig and timing are unchanged. See [OVERWORLD.md](OVERWORLD.md), [new art provenance](overworld/production-record.json), src/overworld-motion.js and the source-bound overworld reports. Exact old reference inputs are archived before R07 was refreshed with the new scenery.
+
+## Bird hover rig production
+
+Native exact bird target plus preflighted R01/R02/R07 (four total actual image inputs) produced three separate native parts: body/head/tail/beak/eye without wings, near wing and far wing. The opaque magenta-backed native atlas remains unchanged; derived parts use documented color-key alpha and cell crop, without redrawing anatomy. Near wing registers left7%, bottom23%, width51%, pivot88%/86%; far wing left30%, bottom49%, width37%, pivot78%/90%. Body is full width aligned at bottom of the original bird aspect ratio. Reconstruction is very similar, not pixel-identical.
+
+620ms transform-only wing cycle has brief 0.38/0.18 vertical scales, 1.12/1.20 horizontal stretch and ±skew for opaque smear-like downstrokes, then recovery. The composed bird hovers locally (3px sideways with gentle bob), rather than travelling across the map. Butterfly motion is also local. Every wing/hover animation joins the same pause/reduced-motion/disposal collection. All transitions remain opaque. See bird-hover/production-record.json for exact prompts, saved paths, actual inputs and native SHA; bird-hover/reconstruction.png for enlarged composed review.
