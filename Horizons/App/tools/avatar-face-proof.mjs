@@ -12,13 +12,13 @@ async function context(options={}){
  return c;
 }
 const c=await context(),page=await c.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
-await page.goto(base);await page.locator('.path-player [data-avatar-motion=minimal]').waitFor();
+await page.goto(base);await page.locator('.path-player [data-avatar-motion=minimal]').waitFor();await page.locator('.path-player [data-avatar-motion=minimal]').evaluate(el=>new Promise((resolve,reject)=>{let closed=false;const observer=new MutationObserver(()=>{if(el.dataset.avatarBlink==='closed')closed=true;if(closed&&el.dataset.avatarBlink==='open'){clearTimeout(timer);observer.disconnect();resolve(true);}});observer.observe(el,{attributes:true,attributeFilter:['data-avatar-blink']});const timer=setTimeout(()=>{observer.disconnect();reject(Error('Natural blink did not close and reopen within6500ms: '+JSON.stringify([...el.querySelectorAll('.hzn-avatar-idle')].flatMap(x=>x.getAnimations().map(a=>({time:a.currentTime,state:a.playState}))))));},6500);}));
 async function sample(root,time){
  await root.locator('.hzn-avatar-idle').evaluate((el,t)=>{const a=el.getAnimations()[0];a.pause();a.currentTime=t},time);
  await page.waitForTimeout(35);
  return root.evaluate(el=>{
   const bg=el.closest('#avatar-preview')||el;
-  const box=bg.getBoundingClientRect();
+  const box=bg.getBoundingClientRect(),stage=el.querySelector('.hzn-avatar-idle').getBoundingClientRect();
   return {background:{x:box.x,y:box.y,w:box.width,h:box.height,transform:getComputedStyle(bg).transform,animations:bg.getAnimations().length},
    head:el.querySelector('[data-static-part=head] img').src,
    face:getComputedStyle(el.querySelector('.hzn-avatar-face')).transform,
@@ -28,6 +28,8 @@ async function sample(root,time){
    lidsHidden:el.querySelector('[data-static-part=closed-eyes]').hidden,
    oldStillHidden:el.querySelector('[data-static-part=still-fallback]').hidden,
    mask:getComputedStyle(el.querySelector('[data-static-part=face-mask]')).maskImage,
+   restingPupils:[...el.querySelectorAll('[data-eye-mask]')].map(eye=>{const r=eye.querySelector('[data-face-part=pupil] img').getBoundingClientRect();return{actual:[(r.x+r.width/2-stage.x)/stage.width*320,(r.y+r.height/2-stage.y)/stage.height*320],expected:JSON.parse(eye.dataset.restAnchor).pupil};}),eyeLogicalWidth:JSON.parse(el.querySelector('[data-eye-mask]').dataset.restAnchor).w,
+   pupilWidth:el.querySelector('[data-face-part=pupil] img').getBoundingClientRect().width,eyeWidth:el.querySelector('[data-eye-mask]').getBoundingClientRect().width,
    pupilMask:[...el.querySelectorAll('[data-eye-mask]')].every(x=>getComputedStyle(x).maskImage!=='none'),
    opaque:[el,...el.querySelectorAll('*')].every(x=>getComputedStyle(x).opacity==='1'),
    opacityTracks:el.getAnimations({subtree:true}).some(a=>a.effect.getKeyframes().some(k=>'opacity'in k))};
@@ -39,7 +41,7 @@ for(const width of widths){
  const player=page.locator('.path-player [data-avatar-static]');
  const p0=await sample(player,0),p1=await sample(player,1600),p2=await sample(player,3700),pb=await sample(player,4210),p3=await sample(player,4500);
  assert.deepEqual(p0.background,p1.background);assert.deepEqual(p0.background,p2.background);assert.deepEqual(p0.background,pb.background);
- assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);
+ assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);
  assert.equal(pb.blink,'closed');assert.equal(pb.eyesHidden,true);assert.equal(pb.lidsHidden,false);assert.equal(p3.blink,'open');
  for(const s of [p0,p1,p2,pb,p3]){assert.equal(s.head,p0.head);assert.ok(s.head.endsWith('/avatar-face-v2/blank-heads.png'));assert.ok(s.oldStillHidden&&s.pupilMask&&s.mask!=='none'&&s.opaque&&!s.opacityTracks);}
  await page.locator('[data-route=profile]:visible').first().click();await page.locator('#avatar-preview [data-avatar-motion=minimal]').waitFor();
@@ -70,5 +72,5 @@ if(process.env.HZ_RECORD_AVATAR){
  await v.close();fs.writeFileSync(videoDir+'/latest-path.txt',await p.video().path());
 }
 await browser.close();
-fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,separateGeneratedBlankAndFeatures:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
+fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,separateGeneratedBlankAndFeatures:true,naturalClockBlink:true,pupilLogicalWidth:21,neutralPupilsMatchAcceptedStill:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
 console.log('PASS separate blank/feature rig, gaze, masks, fixed backgrounds, opacity and fallback at four widths');

@@ -35,6 +35,26 @@ for base in meta['bases'].values():
         b[y+h-29:y+h,l:r] = a[y+h-29:y+h,l:r]
 Image.fromarray(b).save(out / 'blank-heads.png')
 
+# Measure the accepted still's actual eye bounds and inward resting gaze.
+# Existing eyeCenters are eyewear anchors, not the original pupil centroids.
+rest = {}
+for base, group in meta['bases'].items():
+    rest[base] = {}
+    for key, skin in group['skins'].items():
+        f,p = skin['frame'],skin['position']; x,y,w,h=(f[k] for k in ('x','y','w','h'))
+        crop=a[y:y+h,x:x+w]; scale=p['w']/w; eyes=[]
+        for side in range(2):
+            left,right=(0,w//2) if side==0 else (w//2,w)
+            region=crop[70:170,left:right]
+            white=(region[:,:,:3].min(2)>235)&(region[:,:,3]>200)
+            yy,xx=np.nonzero(white); l,t,r,bx=left+xx.min(),70+yy.min(),left+xx.max()+1,70+yy.max()+1
+            eye=crop[t:bx,l:r]; dark=(eye[:,:,:3].max(2)<80)&(eye[:,:,3]>200)
+            py,px=np.nonzero(dark); assert len(px)>50
+            eyes.append({'x':p['x']+l*scale,'y':p['y']+t*scale,'w':(r-l)*scale,'h':(bx-t)*scale,
+                         'pupil':[p['x']+(l+px.mean()+.5)*scale,p['y']+(t+py.mean()+.5)*scale]})
+        rest[base][key]=eyes
+(out/'rest-anchors.frames.json').write_text(json.dumps({'source':'assets/art/avatar-round-v3/heads.png','method':'white eye bounds and dark pupil pixel centroids from accepted still; original eyewear anchors unchanged','bases':rest},indent=2)+'\n')
+
 features = Image.open(out / 'features-native.png').convert('RGBA')
 regions = {
  'eye-left': (0,0,512,512), 'eye-right': (512,0,1024,512),
@@ -83,6 +103,7 @@ record = {
  'recipe':'tools/prepare-avatar-face-v2.py', 'parts':parts,
  'derivatives':['magenta alpha key and edge matte removal','crop/trim native features','accepted palette registration of native alpha shapes including clean white eyes',
    'original rounded silhouette intersection','original neck seam below chin retained'],
+ 'restRegistration':{'file':'assets/art/avatar-face-v2/rest-anchors.frames.json','sha256':hashlib.sha256((out/'rest-anchors.frames.json').read_bytes()).hexdigest(),'method':'accepted-still eye bounds and actual pupil centroids, preserving subtle inward default gaze; 21 logical px pupils'},
  'invariants':'All saved IDs and original head/costume/hair/eyewear metadata remain unchanged. No whole-head blink frame.',
  'activeFiles':[{'file':str(p.relative_to(app)), 'sha256':hashlib.sha256(p.read_bytes()).hexdigest(), 'dimensions':list(Image.open(p).size)} for p in sorted(out.glob('*.png')) if not p.name.endswith('-native.png')],
  'limits':'Very similar reconstruction, not pixel identical; generated white-eye proportions differ slightly. No independent human approval claimed.'

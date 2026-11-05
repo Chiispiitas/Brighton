@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T18:49:56.033Z",
-  "sourceCommit": "8d42bd7aa0d807c722943f3fe08aca2406b8fbf8",
+  "createdAt": "2026-11-05T19:03:21.071Z",
+  "sourceCommit": "03647fc3981a1c8e34d5b582c3cb5ddaded623fa",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "c2f4b282467e320e8a8a3dcceb1f9d5d01b71c84dcefec6c15748a6892b2f1f5"
+      "sha256": "9f8cc1c748464fb9f5d384f576ef393824b0fab1223aa29e4d6d0a7768601393"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "5026dd3121d2c871a2016719cb5b65bdbd1da2b22b266425569b66de9d66bb62"
+      "sha256": "9f6e3e5812078bccc9ea4eafd9bab42482190e34dffc0af45c42597f9dc66baf"
     },
     {
       "file": "styles/app.css",
@@ -84,6 +84,14 @@
     {
       "file": "assets/art/lesson-props-v1/personal.png",
       "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1"
+    },
+    {
+      "file": "assets/art/avatar-face-v2/rest-anchors.frames.json",
+      "sha256": "9bf4db1ffe46c28ba7cc547f6c36f404553ecf519920edc514f1b3ae27c5a643"
+    },
+    {
+      "file": "assets/art/avatar-round-v3/heads.png",
+      "sha256": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3"
     },
     {
       "file": "src/avatar-motion.js",
@@ -187,7 +195,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "d8b28a1bcfed7e1acfc6da61c9f3a597e89d4fcf6e69fecbc873396ed2e63140"
+      "sha256": "242fa0dafabfab87360b633fab6bf4cdc02b476a4a66cee022e3608bbf15044d"
     },
     {
       "id": "R06",

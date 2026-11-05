@@ -1,12 +1,13 @@
-import {mountAvatarMotion} from './avatar-motion.js?v=face2';
+import {mountAvatarMotion} from './avatar-motion.js?v=face3';
 /* Native bitmap portraits; only the editor and selected path portrait opt into motion. */
 const mounts=new WeakMap();
 const appURL=new URL('../',import.meta.url);
-let atlasPromise;
+let atlasPromise,faceAnchorsPromise;
 const style=`.hzn-avatar-static{position:relative;display:block;width:100%;height:100%;overflow:hidden;isolation:isolate;pointer-events:none;container-type:size}.hzn-avatar-static-stage{position:absolute;left:50%;top:50%;width:min(100cqw,100cqh);height:min(100cqw,100cqh);transform:translate(-50%,-50%)}.hzn-avatar-static-pixels{position:absolute;display:block;overflow:hidden}.hzn-avatar-static-pixels>img{position:absolute;display:block;max-width:none!important;max-height:none!important;pointer-events:none;user-select:none}.hzn-avatar-static [hidden]{display:none!important}.hzn-avatar-static,.hzn-avatar-static *{animation:none!important;transition:none!important}`;
 function installStyle(){if(document.getElementById('hzn-avatar-static-style'))return;const node=document.createElement('style');node.id='hzn-avatar-static-style';node.textContent=style;document.head.append(node);}
 function hairFilter(color){const id='hzn-hair-'+color.slice(1);if(document.getElementById(id))return id;const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg'),filter=document.createElementNS(ns,'filter'),paint=document.createElementNS(ns,'feFlood'),cut=document.createElementNS(ns,'feComposite');svg.setAttribute('width','0');svg.setAttribute('height','0');svg.setAttribute('aria-hidden','true');svg.style.position='absolute';filter.id=id;paint.setAttribute('flood-color',color);paint.setAttribute('result','paint');cut.setAttribute('in','paint');cut.setAttribute('in2','SourceAlpha');cut.setAttribute('operator','in');filter.append(paint,cut);svg.append(filter);document.body.append(svg);return id;}
 function atlas(){return atlasPromise??=fetch(new URL('assets/art/avatar-static-v1.frames.json?round=1',appURL)).then(r=>{if(!r.ok)throw Error('Static avatar artwork could not be opened');return r.json();});}
+function faceAnchors(){return faceAnchorsPromise??=fetch(new URL('assets/art/avatar-face-v2/rest-anchors.frames.json',appURL)).then(r=>{if(!r.ok)throw Error('Avatar eye registration could not be opened');return r.json();});}
 export function unmountAvatar(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountAvatar(element,{avatar={},manifest}={}){
  installStyle();unmountAvatar(element);let disposed=false;
@@ -21,30 +22,6 @@ export function mountAvatar(element,{avatar={},manifest}={}){
   const clothes=data.clothes[avatar.outfit]||data.clothes['outfit-1'];
   const active=!!element.closest('#avatar-preview,.path-player');
   const fallback=layer(skin,active?'still-fallback':'head');let blank,face,eyes,closed,pupils=[];
-  if(active){
-   blank=layer({...skin,src:'assets/art/avatar-face-v2/blank-heads.png'},'head');blank.hidden=true;
-   const clip=document.createElement('span'),f=skin.frame,p=skin.position;
-   clip.dataset.staticPart='face-mask';clip.hidden=true;
-   const mask=new URL('assets/art/avatar-face-v2/blank-heads.png',appURL).href;
-   clip.style.cssText=`position:absolute;left:${p.x/3.2}%;top:${p.y/3.2}%;width:${p.w/3.2}%;height:${p.w*f.h/f.w/3.2}%;z-index:2;mask-image:url("${mask}");mask-size:${skin.atlas.width/f.w*100}% ${skin.atlas.height/f.h*100}%;mask-position:${f.x/(skin.atlas.width-f.w)*100}% ${f.y/(skin.atlas.height-f.h)*100}%;mask-repeat:no-repeat`;
-   const canvas=document.createElement('span');canvas.style.cssText=`position:absolute;left:${-p.x/p.w*100}%;top:${-p.y/(p.w*f.h/f.w)*100}%;width:${320/p.w*100}%;height:${320/(p.w*f.h/f.w)*100}%`;
-   face=document.createElement('span');face.className='hzn-avatar-face';face.style.cssText='position:absolute;inset:0';canvas.append(face);clip.append(canvas);idle.append(clip);
-   const group=part=>{const node=document.createElement('span');node.dataset.staticPart=part;node.style.cssText='position:absolute;inset:0';face.append(node);return node;};
-   const sprite=(name,parent,x,y,w,h)=>{const img=document.createElement('img');img.src=new URL(`assets/art/avatar-face-v2/${name}.png`,appURL).href;img.alt='';img.draggable=false;img.dataset.facePart=name;img.style.cssText=`position:absolute;left:${x/3.2}%;top:${y/3.2}%;width:${w/3.2}%;height:${h/3.2}%;max-width:none`;parent.append(img);return img;};
-   eyes=group('open-eyes');closed=group('closed-eyes');closed.hidden=true;
-   for(const [i,[x,y]]of skin.eyeCenters.entries()){
-    const side=i?'right':'left',eye=document.createElement('span');
-    const eyeURL=new URL(`assets/art/avatar-face-v2/eye-${side}.png`,appURL).href;
-    eye.dataset.eyeMask=side;eye.style.cssText=`position:absolute;left:${(x-17.5)/3.2}%;top:${(y-21.5)/3.2}%;width:${35/3.2}%;height:${43/3.2}%;mask:url("${eyeURL}") center / 100% 100% no-repeat`;
-    const white=document.createElement('img');white.src=eyeURL;white.alt='';white.style.cssText='position:absolute;inset:0;width:100%;height:100%';eye.append(white);
-    const pupil=document.createElement('span');pupil.dataset.facePart='pupil';pupil.style.cssText='position:absolute;inset:0';
-    const dot=document.createElement('img');dot.src=new URL('assets/art/avatar-face-v2/pupil.png',appURL).href;dot.alt='';dot.style.cssText='position:absolute;left:50%;top:50%;width:51.43%;height:41.86%;transform:translate(-50%,-50%)';pupil.append(dot);eye.append(pupil);pupils.push(pupil);eyes.append(eye);
-    sprite('lid-'+side,closed,x-17.5,y-5.5,35,11);
-    sprite('brow-'+side,face,x-17.5,y-37,35,11);
-   }
-   sprite('nose',face,153.5,147,13,22);sprite('mouth',face,143,179,34,11);
-   controller.faceReady=Promise.all([blank.querySelector('img'),...clip.querySelectorAll('img')].map(img=>img.decode())).then(()=>{if(disposed)return false;fallback.hidden=true;blank.hidden=false;clip.hidden=false;frame.dataset.faceRig='faceless-v2';return true;}).catch(()=>{frame.dataset.avatarMotion='fallback';return false;});
-  }
   layer(clothes,'clothes');
   for(const overlay of clothes.overlays||[])layer(overlay,'clothes-overlay');
   layer(data.hair[avatar.hair],'hair');
@@ -58,7 +35,36 @@ export function mountAvatar(element,{avatar={},manifest}={}){
   const groups=manifest?.avatar?.groups||manifest?.avatar?.layers||manifest?.avatar;
   const pins=groups?.badge,options=Array.isArray(pins)?pins:pins?.options;
   const pin=options?.find(option=>option.id===avatar.badge),pinPosition=data.badges[avatar.badge]?.position;
-  layer(pin?.src&&pin.frame&&pin.atlas&&pinPosition?{...pin,position:pinPosition}:data.badges[avatar.badge],'badge');frame.dataset.ready='true';frame.dataset.rigReady='true';if(active&&await controller.faceReady&&!disposed){controller.motion='minimal';controller.motionController=mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils});await controller.motionController.ready;}return controller;
+  layer(pin?.src&&pin.frame&&pin.atlas&&pinPosition?{...pin,position:pinPosition}:data.badges[avatar.badge],'badge');
+  const anchors=active?await faceAnchors().catch(()=>{frame.dataset.avatarMotion='fallback';return null;}):null;
+  if(disposed)return controller;
+  if(active&&anchors){
+   blank=layer({...skin,src:'assets/art/avatar-face-v2/blank-heads.png'},'head');blank.hidden=true;
+   const clip=document.createElement('span'),f=skin.frame,p=skin.position;
+   clip.dataset.staticPart='face-mask';clip.hidden=true;
+   const mask=new URL('assets/art/avatar-face-v2/blank-heads.png',appURL).href;
+   clip.style.cssText=`position:absolute;left:${p.x/3.2}%;top:${p.y/3.2}%;width:${p.w/3.2}%;height:${p.w*f.h/f.w/3.2}%;z-index:2;mask-image:url("${mask}");mask-size:${skin.atlas.width/f.w*100}% ${skin.atlas.height/f.h*100}%;mask-position:${f.x/(skin.atlas.width-f.w)*100}% ${f.y/(skin.atlas.height-f.h)*100}%;mask-repeat:no-repeat`;
+   const canvas=document.createElement('span');canvas.style.cssText=`position:absolute;left:${-p.x/p.w*100}%;top:${-p.y/(p.w*f.h/f.w)*100}%;width:${320/p.w*100}%;height:${320/(p.w*f.h/f.w)*100}%`;
+   face=document.createElement('span');face.className='hzn-avatar-face';face.style.cssText='position:absolute;inset:0';canvas.append(face);clip.append(canvas);idle.append(clip);
+   const group=part=>{const node=document.createElement('span');node.dataset.staticPart=part;node.style.cssText='position:absolute;inset:0';face.append(node);return node;};
+   const sprite=(name,parent,x,y,w,h)=>{const img=document.createElement('img');img.src=new URL(`assets/art/avatar-face-v2/${name}.png`,appURL).href;img.alt='';img.draggable=false;img.dataset.facePart=name;img.style.cssText=`position:absolute;left:${x/3.2}%;top:${y/3.2}%;width:${w/3.2}%;height:${h/3.2}%;max-width:none`;parent.append(img);return img;};
+   eyes=group('open-eyes');closed=group('closed-eyes');closed.hidden=true;
+   const registered=anchors.bases[base][avatar.skin]||anchors.bases[base]['skin-1'];
+   for(const [i,rest]of registered.entries()){
+    const {x,y,w,h,pupil:restPupil}=rest;
+    const side=i?'right':'left',eye=document.createElement('span');
+    const eyeURL=new URL(`assets/art/avatar-face-v2/eye-${side}.png`,appURL).href;
+    eye.dataset.eyeMask=side;eye.dataset.restAnchor=JSON.stringify(rest);eye.style.cssText=`position:absolute;left:${x/3.2}%;top:${y/3.2}%;width:${w/3.2}%;height:${h/3.2}%;mask:url("${eyeURL}") center / 100% 100% no-repeat`;
+    const white=document.createElement('img');white.src=eyeURL;white.alt='';white.style.cssText='position:absolute;inset:0;width:100%;height:100%';eye.append(white);
+    const pupil=document.createElement('span');pupil.dataset.facePart='pupil';pupil.style.cssText='position:absolute;inset:0';
+    const dot=document.createElement('img');dot.src=new URL('assets/art/avatar-face-v2/pupil.png',appURL).href;dot.alt='';dot.style.cssText=`position:absolute;left:${(restPupil[0]-x)/w*100}%;top:${(restPupil[1]-y)/h*100}%;width:${21/w*100}%;height:${21/h*100}%;transform:translate(-50%,-50%)`;pupil.append(dot);eye.append(pupil);pupils.push(pupil);eyes.append(eye);
+    sprite('lid-'+side,closed,x,y+h/2-5.5,w,11);
+    const [browX,browY]=skin.eyeCenters[i];sprite('brow-'+side,face,browX-17.5,browY-37,35,11);
+   }
+   sprite('nose',face,153.5,147,13,22);sprite('mouth',face,143,179,34,11);
+   controller.faceReady=Promise.all([blank.querySelector('img'),...clip.querySelectorAll('img')].map(img=>img.decode())).then(()=>{if(disposed)return false;fallback.hidden=true;blank.hidden=false;clip.hidden=false;frame.dataset.faceRig='faceless-v2';return true;}).catch(()=>{frame.dataset.avatarMotion='fallback';return false;});
+  }
+  frame.dataset.ready='true';frame.dataset.rigReady='true';if(active&&await controller.faceReady&&!disposed){controller.motion='minimal';controller.motionController=mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils});await controller.motionController.ready;}return controller;
  }).catch(error=>{if(!disposed){element.dataset.avatarError='true';console.error(error);}throw error;});
  return controller;
 }

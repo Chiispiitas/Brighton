@@ -342,6 +342,11 @@
     "original rounded silhouette intersection",
     "original neck seam below chin retained"
   ],
+  "restRegistration": {
+    "file": "assets/art/avatar-face-v2/rest-anchors.frames.json",
+    "sha256": "9bf4db1ffe46c28ba7cc547f6c36f404553ecf519920edc514f1b3ae27c5a643",
+    "method": "accepted-still eye bounds and actual pupil centroids, preserving subtle inward default gaze; 21 logical px pupils"
+  },
   "invariants": "All saved IDs and original head/costume/hair/eyewear metadata remain unchanged. No whole-head blink frame.",
   "activeFiles": [
     {
