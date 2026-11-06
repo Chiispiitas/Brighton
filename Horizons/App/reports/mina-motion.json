@@ -12,38 +12,42 @@
   "accentMs": 3000,
   "allTracksSharedClock": true,
   "normalSpeedCycleObserved": true,
+  "correctAnswerJump": true,
+  "wrongAnswerHeadBob": true,
+  "separateJoyAndRaisedBrowSprites": true,
+  "noReactionReplayOnRemount": true,
   "playback": [
     {
       "value": "idle:blink",
-      "time": 2363.5
+      "time": 2351.099999964237
     },
     {
       "value": "idle:neutral",
-      "time": 2496.599999964237
+      "time": 2492.899999976158
     },
     {
       "value": "idle:blink",
-      "time": 6113.299999952316
+      "time": 6101.399999976158
     },
     {
       "value": "idle:neutral",
-      "time": 6246.399999976158
+      "time": 6242.799999952316
     },
     {
       "value": "accent:neutral",
-      "time": 8004.899999976158
+      "time": 8001.299999952316
     },
     {
       "value": "accent:joy",
-      "time": 8605.299999952316
+      "time": 8609.399999976158
     },
     {
       "value": "accent:neutral",
-      "time": 10213.099999964237
+      "time": 10209.699999988079
     },
     {
       "value": "idle:neutral",
-      "time": 11013.099999964237
+      "time": 11001.099999964237
     }
   ],
   "noOpacityKeyframes": true,
@@ -52,7 +56,7 @@
   "headAndPupilMasks": true,
   "discreteBlinkSprites": true,
   "perPosePhaseAcrossAnswerRender": true,
-  "remountPhase": 4524.9,
+  "remountPhase": 4541.8,
   "idempotentMount": true,
   "reducedOriginalStills": true,
   "offscreenPause": true,

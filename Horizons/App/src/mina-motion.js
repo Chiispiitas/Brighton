@@ -1,5 +1,6 @@
 // Mina-only native ImageGen part rigs. Original complete poses remain the fallback.
 const controllers=new WeakMap(),elapsedByPose=new Map();
+const reactedAnswers=new Set();
 const DURATION=11000,IDLE=8000;
 const asset=path=>new URL('../'+path,import.meta.url).href;
 let manifestPromise;
@@ -44,17 +45,39 @@ export function mountMina(slot){
  const pose=slot.dataset.posture,reduced=matchMedia('(prefers-reduced-motion: reduce)');
  const fallback=slot.querySelector(':scope>.character-art'),originalSource=slot.dataset.anatomySource;
  const stage=document.createElement('span');stage.className='mina-motion-stage';stage.hidden=true;stage.setAttribute('aria-hidden','true');slot.append(stage);
- let disposed=false,ready=false,visible=false,animations=[],faceFrame=0,spec,nodes;
+ let disposed=false,ready=false,visible=false,animations=[],faceFrame=0,spec,nodes,reaction=null;
  slot.dataset.minaMotion='loading';
- const remember=()=>{if(animations.length)elapsedByPose.set(pose,phaseOf(animations[0].currentTime));};
+ const remember=()=>{if(animations.length)elapsedByPose.set(pose,reaction?.idlePhase??phaseOf(animations[0].currentTime));};
+ const endReaction=()=>{
+  if(!reaction)return;
+  const phase=reaction.idlePhase;reaction.effects.forEach(a=>a.cancel());reaction=null;
+  for(const a of animations){a.pause();a.currentTime=phase;}
+  delete slot.dataset.minaReaction;
+ };
+ const startReaction=()=>{
+  const activity=slot.closest('.activity-page'),result=activity?.dataset.answerState,key=activity?.dataset.minaAnswer;
+  if(!key||!['correct','incorrect'].includes(result)||reactedAnswers.has(key)||reduced.matches)return;
+  reactedAnswers.add(key);
+  // Bound the in-session replay guard without retaining learner answer content.
+  if(reactedAnswers.size>500)reactedAnswers.delete(reactedAnswers.values().next().value);
+  const idlePhase=phaseOf(animations[0].currentTime);
+  for(const a of animations){a.pause();a.currentTime=0;}
+  const happy=result==='correct',duration=happy?1100:1300;
+  const rootFrames=happy?[{transform:'translateY(0)'},{transform:'translateY(3px)',offset:.16},{transform:'translateY(-48px)',offset:.43},{transform:'translateY(-40px)',offset:.58},{transform:'translateY(2px)',offset:.82},{transform:'translateY(0)'}]:[{transform:'translateY(0)'},{transform:'translateY(0)'}];
+  const headFrames=happy?[{transform:'rotate(0deg)'},{transform:'rotate(-4deg)',offset:.43},{transform:'rotate(2deg)',offset:.8},{transform:'rotate(0deg)'}]:[{transform:'translateY(0) rotate(0deg)'},{transform:'translateY(5px) rotate(-5deg)',offset:.22},{transform:'translateY(-3px) rotate(4deg)',offset:.46},{transform:'translateY(3px) rotate(-3deg)',offset:.7},{transform:'translateY(0) rotate(0deg)'}];
+  const effects=[nodes.reactionRoot.animate(rootFrames,{duration,fill:'both',easing:'ease-in-out'}),nodes.reactionHead.animate(headFrames,{duration,fill:'both',easing:'ease-in-out'})];
+  for(const a of effects){a.pause();a.currentTime=0;}
+  reaction={effects,duration,idlePhase,happy};slot.dataset.minaReaction=result;
+ };
  const setHidden=(node,hidden)=>{if(node.hidden!==hidden)node.hidden=hidden;};
  const renderFace=()=>{
   if(!ready||disposed)return;
+  if(reaction&&Number(reaction.effects[0].currentTime)>=reaction.duration){endReaction();sync();return;}
   const time=phaseOf(animations[0]?.currentTime??elapsedByPose.get(pose));
   const local=time%IDLE,accent=time>=8000;
-  const blink=!accent&&((local>=2350&&local<2490)||(local>=6100&&local<6240));
-  const focus=(pose==='read'||pose==='map')&&time>=8600&&time<10300;
-  const joy=!(pose==='read'||pose==='map')&&time>=(pose==='skip'?8500:8600)&&time<(pose==='skip'?9900:10200);
+  const blink=!reaction&&!accent&&((local>=2350&&local<2490)||(local>=6100&&local<6240));
+  const focus=reaction?!reaction.happy:(pose==='read'||pose==='map')&&time>=8600&&time<10300;
+  const joy=reaction?reaction.happy:!(pose==='read'||pose==='map')&&time>=(pose==='skip'?8500:8600)&&time<(pose==='skip'?9900:10200);
   setHidden(nodes.focus,!focus);setHidden(nodes.joy,!joy);setHidden(nodes.neutral,focus||joy);
   setHidden(nodes.openEyes,blink);setHidden(nodes.blink,!blink);
   const expression=focus?'focus':joy?'joy':blink?'blink':'neutral';
@@ -71,6 +94,9 @@ export function mountMina(slot){
   if(disposed||!ready)return;
   cancelAnimationFrame(faceFrame);faceFrame=0;
   if(reduced.matches){
+   const answerKey=slot.closest('.activity-page')?.dataset.minaAnswer;
+   if(answerKey)reactedAnswers.add(answerKey);
+   endReaction();
    remember();animations.forEach(animation=>animation.cancel());animations=[];
    stage.hidden=true;if(fallback)fallback.hidden=false;
    slot.dataset.minaMotion='reduced';slot.dataset.motionPaused='true';slot.dataset.minaPhase='idle';slot.dataset.minaExpression='neutral';slot.dataset.anatomySource=originalSource||'complete-static-render';return;
@@ -83,7 +109,14 @@ export function mountMina(slot){
    add(nodes.body,motion.body);add(nodes.head,motion.head);if(nodes.gesture)add(nodes.gesture,motion.gesture);
    add(nodes.root,motion.root);add(nodes.pupils,motion.gaze);add(nodes.face,motion.face);
   }
-  const phase=Number(animations[0].currentTime)||0,play=visible&&!document.hidden;
+  startReaction();
+  const play=visible&&!document.hidden;
+  if(reaction){
+   const phase=Number(reaction.effects[0].currentTime)||0;
+   for(const a of reaction.effects){a.pause();a.currentTime=phase;if(play){a.play();a.startTime=document.timeline.currentTime-phase;}}
+   slot.dataset.motionPaused=String(!play);renderFace();return;
+  }
+  const phase=Number(animations[0].currentTime)||0;
   for(const animation of animations){animation.pause();animation.currentTime=phase;}
   if(play){const start=document.timeline.currentTime-phase;for(const animation of animations){animation.play();animation.startTime=start;}}
   else remember();
@@ -94,7 +127,7 @@ export function mountMina(slot){
  const controller={
   get animations(){return animations;},duration:DURATION,
   dispose(){
-   if(disposed)return;remember();disposed=true;cancelAnimationFrame(faceFrame);animations.forEach(animation=>animation.cancel());animations=[];
+   if(disposed)return;remember();endReaction();disposed=true;cancelAnimationFrame(faceFrame);animations.forEach(animation=>animation.cancel());animations=[];
    resize.disconnect();intersection.disconnect();reduced.removeEventListener('change',sync);document.removeEventListener('visibilitychange',sync);
    stage.remove();if(fallback)fallback.hidden=false;
    if(originalSource)slot.dataset.anatomySource=originalSource;else delete slot.dataset.anatomySource;
@@ -114,15 +147,17 @@ export function mountMina(slot){
   };
   const mask=(node,path)=>{const value='url("'+asset(path)+'")';node.style.maskImage=value;node.style.webkitMaskImage=value;};
   const pivot=(node,value,fallback)=>node.style.transformOrigin=(value||fallback).map(n=>n+'px').join(' ');
+  const reactionRoot=group('mina-motion-reaction-root'),reactionHead=group('mina-motion-reaction-head');
   const root=group('mina-motion-root'),head=group('mina-motion-head'),faceMask=group('mina-motion-face-mask'),face=group('mina-motion-face');
   const neutral=group('mina-motion-neutral'),openEyes=group('mina-motion-open-eyes'),pupilMask=group('mina-motion-pupil-mask');
   const headArt=image('head'),body=image('body'),gesture=image('gesture',true),nose=image('nose',true),neutralArt=image('neutral'),eyes=image('eyes'),pupils=image('pupils'),blink=image('blink'),focus=image('focus'),joy=image('joy');
   const images=[headArt,body,gesture,nose,neutralArt,eyes,pupils,blink,focus,joy].filter(Boolean);
-  mask(faceMask,spec.parts.head);mask(pupilMask,spec.parts.eyes);pupilMask.append(pupils);openEyes.append(eyes,pupilMask);neutral.append(neutralArt,openEyes,blink);if(nose)face.append(nose);face.append(neutral,focus,joy);faceMask.append(face);head.append(headArt,faceMask);root.append(head,body);if(gesture)root.append(gesture);stage.append(root);
+  mask(faceMask,spec.parts.head);mask(pupilMask,spec.parts.eyes);pupilMask.append(pupils);openEyes.append(eyes,pupilMask);neutral.append(neutralArt,openEyes,blink);if(nose)face.append(nose);face.append(neutral,focus,joy);faceMask.append(face);head.append(headArt,faceMask);reactionHead.append(head);root.append(reactionHead,body);if(gesture)root.append(gesture);reactionRoot.append(root);stage.append(reactionRoot);
   body.classList.add('mina-motion-body');if(gesture)gesture.classList.add('mina-motion-gesture');
   pivot(body,spec.pivots?.body,[spec.width/2,spec.height]);pivot(head,spec.pivots?.head,[spec.width/2,spec.height*.3]);
   if(gesture)pivot(gesture,spec.pivots?.gesture,[spec.width/2,spec.height*.5]);pivot(root,null,[spec.width/2,spec.height]);
-  nodes={root,head,body,gesture,face,neutral,openEyes,pupils,blink,focus,joy};
+  pivot(reactionHead,spec.pivots?.head,[spec.width/2,spec.height*.3]);
+  nodes={root,head,body,gesture,face,neutral,openEyes,pupils,blink,focus,joy,reactionRoot,reactionHead};
   setHidden(blink,true);setHidden(focus,true);setHidden(joy,true);
   await Promise.all(images.map(img=>img.decode()));
   if(disposed||!slot.isConnected)return controller;ready=true;size();sync();return controller;
