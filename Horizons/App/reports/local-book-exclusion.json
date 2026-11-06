@@ -1,0 +1,17 @@
+{
+  "scope": "Untrack book authoring without removing or modifying local files; published app audio is self-contained.",
+  "pass": true,
+  "preservedLocalFiles": 1291,
+  "allLocalHashesUnchanged": true,
+  "newAppRecordings": 12,
+  "originalTrackedBytes": 1624365729,
+  "newTrackedBytesBeforeThisReport": 826541826,
+  "netReductionBytes": 797823903,
+  "sizeNote": "Tracked source bytes, not a measured GitHub Pages artifact; historical Git objects remain.",
+  "localBookNotInIndex": true,
+  "bookWorkflowLocalOnly": true,
+  "audioProof": "All 12 required native MP3s loaded/decoded in Edge with /Horizons/A1 requests blocked.",
+  "testScope": "27 content/grammar/compatibility checks with local book, plus a fresh source-only checkout without the authoring book.",
+  "historyRewritten": false,
+  "backendDeployed": false
+}

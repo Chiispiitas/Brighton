@@ -1,0 +1,9 @@
+# Horizons book authoring stays local, including future levels and source archives.
+# Keep the online companion and workspace instructions tracked.
+/Horizons/*
+!/Horizons/App/
+!/Horizons/AGENTS.md
+!/Horizons/README.md
+
+# Local book production workflow: source files are no longer in fresh checkouts.
+/.github/workflows/build-horizons-a1-student-book.yml

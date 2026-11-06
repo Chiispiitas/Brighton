@@ -1,8 +1,0 @@
-{
-  "baseline": "59628ea4652eb651c3d0d3cec553a1d63cd0073e",
-  "scope": "Grammar practice3D label/example spacing only",
-  "cause": "Label block spacing was tied to obsolete physical page82; practice3D now prints85.",
-  "fix": "Stable gp14-position-label component selector; explicit source whitespace after the labels. Labels display:block with0.8mm bottom margin.",
-  "content": "Example words, activities, answers, font sizes, image and audio resources unchanged.",
-  "evidence": "Saved-PDF page85 reviewed; all other150pages pixel-identical."
-}

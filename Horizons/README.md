@@ -1,5 +1,9 @@
 # Horizons
 
+The unpublished coursebooks and shared authoring tools are local-only. `A1/`, `Base/`, `Base.zip`, future level folders and the book-build workflow remain in this checkout but are ignored by Git. Only `App/`, this README and `AGENTS.md` are tracked under Horizons. Fresh clones do not include the books; retain a separate backup of local authoring work. Do not use `git clean -fdx`, which would remove ignored books. Previous committed versions remain in Git history; this change does not rewrite it.
+
+The online companion is self-contained: its 12 required Unit 1 recordings are unchanged copies under `App/assets/audio/book-unit1/` with hashes in `provenance.json`. No public book-viewer link is advertised. App content checks use the reviewed Unit 1 snapshot on fresh clones, and additionally compare the original book where it is available locally. To test without a local book, set `HZ_LOCAL_BOOK_DIR` to an absent directory. Book production and its workflow are now local tasks; do not restore automated cloud book builds without an explicit request.
+
 Production workspace for the **Horizons** coursebook series.
 
 The workspace is divided into:

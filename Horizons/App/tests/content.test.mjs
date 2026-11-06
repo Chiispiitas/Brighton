@@ -9,7 +9,10 @@ import {buildQuiz,getWordsForChunks,getWordsForLessons,getMatchingPairs,getActiv
 
 const app=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const book=path.resolve(app,'../A1');
-const original=JSON.parse(fs.readFileSync(path.join(book,'Practice/Vocabulary/study-vocabulary.json'),'utf8')).topics.filter(x=>x.unit===1);
+const localBook=process.env.HZ_LOCAL_BOOK_DIR||book;
+const localSource=path.join(localBook,'Practice/Vocabulary/study-vocabulary.json');
+const hasLocalBook=fs.existsSync(localSource);
+const original=hasLocalBook?JSON.parse(fs.readFileSync(localSource,'utf8')).topics.filter(x=>x.unit===1):JSON.parse(fs.readFileSync(path.join(app,'content/source-unit1.json'),'utf8')).banks;
 const completed=[];let declared=0;
 const verify=(name,fn)=>{declared++;test(name,()=>{fn();completed.push(name);});};
 const getRight=q=>q.type==='choice'?q.answer:q.type==='order'?q.answer:q.accepted[0];
@@ -221,7 +224,8 @@ after(()=>{
   grammarSets:grammarSets.map(x=>({id:x.id,title:x.title,questions:x.questions.length})),games:games.map(x=>({id:x.id,type:x.type})),
   sourceAudioFilesUsed:12,testsDeclared:declared,testsPassed:completed.length,completedChecks:completed,
   missingReferenceEntries:[],masteryPolicy:'Only successful retrieval awards word IDs. Accepted synonyms can be correct without claiming that an unentered bank spelling was recalled; mere viewing never masters an item.',
-  sourceFiles:files.map(file=>({file:`Horizons/A1/${file}`,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(book,file))).digest('hex')})),
+  referenceEvidence:hasLocalBook?'Local authoring book compared directly':'Reviewed Unit 1 source snapshot; local authoring book unavailable',
+  sourceFiles:hasLocalBook?files.map(file=>({file:`Horizons/A1/${file}`,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(localBook,file))).digest('hex')})):[],
   limitations:'This verifies the curriculum/content layer and grading. Final artwork, integrated UI, backend persistence and published browser checks belong to the app release review.'};
  fs.mkdirSync(path.join(app,'reports'),{recursive:true});fs.writeFileSync(path.join(app,'reports/content-coverage.json'),JSON.stringify(report,null,2)+'\n');
 });

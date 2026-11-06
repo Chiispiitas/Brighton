@@ -1,5 +1,7 @@
 # Horizons authoring instructions — every level
 
+The author has chosen local-only book production. Keep `A1/`, `Base/`, `Base.zip`, future levels and the book-build workflow in place but ignored/untracked. Do not force-add authoring files or run commands that delete ignored files. Keep native artwork, accepted sources and local edits intact. The online companion in `App/` stays tracked and must not depend on local book files; copy only its required unchanged media into App assets with provenance. Fresh-clone app checks use the reviewed content snapshot; full book/source audits require the local book. Historical book commits are retained, so this is not a history purge.
+
 Before authoring or redesigning a book, read `Base/design-system/VISUAL-SPIRIT.md`, `CANONICAL-STYLE.md`, `GUIDED-DISCOVERY.md`, `component-contracts.md`, `asset-policy.md` and that book's current audit. Relative design-system filenames in this sentence are inside `Base/design-system/`.
 
 The author's own B2 book is the primary emotional reference. Preserve warm adult playfulness, saturated local colour, expressive letter/number objects, physical concept metaphors and purposeful cutouts. Functional type, navigation and recurring identities stay coherent; individual source features keep suitable visual worlds. Do not neutralise approved details as generic cleanup, impose a universal rainbow or repeat one blue/green-plus-yellow treatment.

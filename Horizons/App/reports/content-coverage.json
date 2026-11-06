@@ -98,43 +98,7 @@
   ],
   "missingReferenceEntries": [],
   "masteryPolicy": "Only successful retrieval awards word IDs. Accepted synonyms can be correct without claiming that an unentered bank spelling was recalled; mere viewing never masters an item.",
-  "sourceFiles": [
-    {
-      "file": "Horizons/A1/Practice/Vocabulary/study-vocabulary.json",
-      "sha256": "f158a8b116c44bf20998b78c4b9c684a68230811f1d46b21219c7e8ca15f5c02"
-    },
-    {
-      "file": "Horizons/A1/Practice/Vocabulary/V1.html",
-      "sha256": "fb4c9df0813b2f96d851bec0757d1ae76430fa635c0bc19ea1e1c2b2cf2ea207"
-    },
-    {
-      "file": "Horizons/A1/Practice/Grammar/G1.html",
-      "sha256": "a7ed51c96dc82d4b4acb2cccdf54163ce888fb762f05efd0b3086bc4badd36d6"
-    },
-    {
-      "file": "Horizons/A1/Lessons/1A.html",
-      "sha256": "c6c0cc092341063f6e5d7c3cc1c9edf4092cbc5c1a89d84f30b8c6765f2f0633"
-    },
-    {
-      "file": "Horizons/A1/Lessons/1B.html",
-      "sha256": "d2fe49e5c641c90344567dac67bd0f9f24d3a4cb278909d0ff1af047e79e8f2e"
-    },
-    {
-      "file": "Horizons/A1/Lessons/1C.html",
-      "sha256": "6ae8a70f144a91240c83da68552bf749d0c5d768b9791de2928c92368edef8b5"
-    },
-    {
-      "file": "Horizons/A1/Lessons/1D.html",
-      "sha256": "ad730297fd9452a2a70638072ba64aedec439cb1b370f2e4a58d3628c274e90f"
-    },
-    {
-      "file": "Horizons/A1/Answer keys/Grammar practice 1-4.md",
-      "sha256": "4245f600def4c315ab4cadbcb33518278c8b58e2586ec3fa96c64b931e48c92d"
-    },
-    {
-      "file": "Horizons/A1/Answer keys/Vocabulary practice.md",
-      "sha256": "e9d8c018e3b52eb6d6c3fccfad29de04669382df3928877ca6ffd917e961ad11"
-    }
-  ],
+  "referenceEvidence": "Reviewed Unit 1 source snapshot; local authoring book unavailable",
+  "sourceFiles": [],
   "limitations": "This verifies the curriculum/content layer and grading. Final artwork, integrated UI, backend persistence and published browser checks belong to the app release review."
 }
