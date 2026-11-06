@@ -1,4 +1,4 @@
-import {presentQuestion} from './exercise-presentation.js?v=tiles1';
+import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor,nextPathActivity} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
@@ -216,14 +216,14 @@ function startQuiz(options,title='Vocabulary') {
   const seed=Date.now();let questions;
   const factoryOptions={...options,seed};if(factoryOptions.activityId&&!allActivities.some(activity=>activity.id===factoryOptions.activityId))delete factoryOptions.activityId;
   try {questions=buildQuiz(factoryOptions);} catch(error) {notify('That mix needs a few more words. Try another set.');console.error(error);return;}
-  beginQuiz(questions,{...options,seed},title);
+  beginQuiz(questions,{...options,seed,practiceUntilCorrect:true},title);
 }
 function beginQuiz(questions,options,title) {
   if (!Array.isArray(questions)) questions=questions?.questions || [];
   if (!questions.length) {notify('No questions available for this selection.');return;}
-  questions=questions.map(q=>presentQuestion(q,options.seed));
+  questions=questions.map(q=>presentQuestion(q,options.seed,{typedVocabulary:options.practiceUntilCorrect&&['recall','mixed'].includes(options.mode)}));
   stopAudio();
-  state.active={kind:'quiz',title,questions,options,index:0,selected:null,order:[],checked:false,answers:[],started:Date.now(),hintUsed:false,saving:false,previewVisible:Boolean(questions[0]?.preview)};
+  state.active={kind:'quiz',title,questions,options,index:0,selected:null,order:[],checked:false,answers:[],answerChecks:0,correctChecks:0,requiredQuestionIds:[...new Set(questions.map(q=>q.id))],started:Date.now(),hintUsed:false,saving:false,previewVisible:Boolean(questions[0]?.preview)};
   render();schedulePreview();window.scrollTo({top:0,behavior:'instant'});
 }
 function schedulePreview(){const current=state.active;if(!current||current.kind!=='quiz'||!current.previewVisible)return;const index=current.index;setTimeout(()=>{if(state.active===current&&current.index===index){current.previewVisible=false;render();document.getElementById('typed-answer')?.focus();}},current.questions[index].previewMs||4500);}
@@ -266,7 +266,13 @@ function gradeCurrent() {
   try {feedback=checkAnswer(q,submitted);} catch {feedback={correct:false,expected:q.answer,feedback:q.explanation,wordIds:q.wordIds || []};}
   const serverSubmitted=q.serverAnswerType==='text'&&Array.isArray(submitted)?submitted.join(' '):q.type==='choice'?(q.choices.find(choice=>String(choice.id)===String(submitted))?.text || submitted):submitted;
   stopAudio();playFeedbackSound(Boolean(feedback.correct));
-  a.feedback=feedback;a.checked=true;a.answers.push({questionId:q.id,submitted:serverSubmitted,correct:Boolean(feedback.correct),wordIds:feedback.wordIds || [],hintUsed:a.hintUsed,masteryEligible:Boolean(feedback.masteryEligible)&&!a.hintUsed});
+  a.feedback=feedback;a.checked=true;
+  const answer={questionId:q.id,submitted:serverSubmitted,correct:Boolean(feedback.correct),wordIds:feedback.wordIds || [],hintUsed:a.hintUsed,masteryEligible:Boolean(feedback.masteryEligible)&&!a.hintUsed};
+  a.answerChecks++;if(feedback.correct)a.correctChecks++;
+  if(a.options.practiceUntilCorrect){
+    const previous=a.answers.findIndex(item=>item.questionId===q.id);if(previous<0)a.answers.push(answer);else a.answers[previous]=answer;
+    if(!feedback.correct)a.questions.push({...q});
+  }else a.answers.push(answer);
   render();app.querySelector('[data-action=next-question]')?.focus({preventScroll:true});
 }
 function nextQuestion() {
@@ -309,9 +315,9 @@ function chooseMatch(side,id) {
   render();
 }
 async function finishActivity() {
-  const previous=state.active;if(!previous||previous.saving)return;previous.saving=true;
-  const correct=previous.answers.filter(answer=>answer.correct).length;
-  const total=previous.answers.length;
+  const previous=state.active;if(!previous||previous.saving)return;if(previous.options.practiceUntilCorrect&&previous.kind==='quiz'&&previous.requiredQuestionIds.some(id=>!previous.answers.some(a=>a.questionId===id&&a.correct)))return;previous.saving=true;
+  const correct=previous.options.practiceUntilCorrect&&previous.kind==='quiz'?previous.correctChecks:previous.answers.filter(answer=>answer.correct).length;
+  const total=previous.options.practiceUntilCorrect&&previous.kind==='quiz'?previous.answerChecks:previous.answers.length;
   const quizOptions={seed:previous.options.seed,mode:previous.kind==='quiz'?(previous.options.mode||'mixed'):previous.kind,count:previous.options.count || previous.questions?.length || 6,chunkIds:previous.options.chunkIds || [],lessonIds:previous.options.lessonIds || (previous.options.lessonId?[previous.options.lessonId]:[]),grammarSetIds:previous.options.grammarSetIds || [],audioEnabled:previous.options.audioEnabled!==false,audioFallbackQuestionIds:previous.options.audioFallbackQuestionIds||[]};
   const inferredLesson=previous.options.lessonId || quizOptions.lessonIds[0] || getChunk(quizOptions.chunkIds[0])?.lessonId || allGrammar.find(g=>quizOptions.grammarSetIds.includes(g.id))?.lessonId || '1A';
   const attempt={id:crypto.randomUUID(),bookId:'horizons-a1',lessonId:inferredLesson,activityId:previous.options.activityId || previous.options.id || 'mixed-practice',mode:quizOptions.mode,quizOptions,...quizOptions,answers:previous.answers,durationMs:Date.now()-previous.started,mistakes:previous.mistakes || 0};
