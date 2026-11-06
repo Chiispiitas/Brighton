@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest stable exercise character size (6 November 2026): cast slots now remain fixed at 110x160px desktop and 90x128px mobile, with a matching reserved scene height. Question length, activity type and answer feedback no longer shrink or expand characters. Existing inner scrolling handles long prompts; answer fields/options retain clear bounds. Animation gestures and breathing remain, with original still/reduced-motion fallback. Verified unchanged rendered character height across feedback at eight desktop/mobile viewports, listening, answer controls and long content. See reports/exercise-art.json. Cache fixed-cast-v86; viewport query castfixed1. This supersedes the earlier flexible 150-320px/112-180px scene rules. No artwork, grading or backend changes.
+
 ## Mina release and identity correction — 6 November 2026
 
 Mina is now explicitly authorized to animate in all four current poses (`step`, `read`, `map`, `skip`). Two 8-second subtle idle loops lead into a 3-second accent: greeting wave, closer book/map inspection, or celebration hop. This is decorative motion with no lesson-entry delay. Separate bodies, gestures/held objects, one permanent faceless head and transparent facial sprites use a shared full-opacity clock. Blinks and expressions switch discretely; pupils remain inside eye masks. Reduced motion and missing-part fallback use the exact original stills. Clocks pause when hidden/offscreen, survive answer redraws by pose, and are disposed on navigation.

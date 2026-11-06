@@ -139,3 +139,11 @@
  .activity-page[data-listening=true]:not([data-answer-state=unanswered]) .question-listen{font-size:12px;padding:8px;gap:6px;align-self:center}
  .activity-page[data-listening=true]:not([data-answer-state=unanswered]) .listening-alternative-slot{min-height:0}
 }
+
+/* Stable cast footprint: answer feedback and question length never resize a character. */
+.activity-page:not(.game-page) .question-content>.question-scene:has(>.question-character){flex:0 0 160px!important;height:160px!important;min-height:160px!important;max-height:160px!important}
+.activity-page:not(.game-page) .question-content>.question-scene>.question-character{flex:none;width:110px!important;height:160px!important;min-height:160px;max-height:none!important;max-width:none!important}
+@media(max-width:760px){
+ .activity-page:not(.game-page) .question-content>.question-scene:has(>.question-character){flex-basis:128px!important;height:128px!important;min-height:128px!important;max-height:128px!important}
+ .activity-page:not(.game-page) .question-content>.question-scene>.question-character{width:90px!important;height:128px!important;min-height:128px}
+}
