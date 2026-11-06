@@ -1,0 +1,24 @@
+{
+  "siteId": "09fbb304-3799-4b3a-8ec6-4a7097167f00",
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "deploymentId": "e86e3970-ba28-4e74-a361-94a433321094",
+  "sourceRevision": "71ef9c622fde170e897849e7b8d3e687b8806685",
+  "masteryPolicy": "one-correct-answer",
+  "testsPassed": 67,
+  "backendTestsPassed": 40,
+  "typecheck": true,
+  "hostingBuild": true,
+  "buildSha256": "047d4dab7f9fb8a08094cbe1d7967aeb1421fbcef843b651f7ba93bd52361b08",
+  "sourceArchiveSha256": "05a5a479cedee3606d82fa4dc480c65c0333957606d0798072741a98a7b08552",
+  "noEnvironmentFilesInArchives": true,
+  "browserProof": "reports/one-correct-mastery.json",
+  "liveProof": "backend/reports/live-one-correct.json",
+  "oldAttemptsRewritten": false,
+  "realLearnerRecordsUsedForQA": false,
+  "sourceHashes": {
+    "content/engine.mjs": "4ce7b6ef07ad66deba7be45343a395e007556fcf181f8b30436aad4f9215947c",
+    "content/unit1.mjs": "e760a724ab2b245f6d892ca0741a8fdb2ab996b2cbc5125d8dd954697efc4a25",
+    "content/island-mastery.mjs": "996350c5459a0e42f5d090c31570c2762219f74541341798b8ac9f87bff699c9",
+    "backend/src/server/application.mjs": "96e9fcc5ed61e7a029bba724a1ccd0e435ae186860b00442dcfc03785928c32f"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "masteryPolicy": "one-correct-answer",
+  "island": "topic-1d-details",
+  "initialMastered": 0,
+  "checks": [
+    {
+      "round": 1,
+      "questions": 8,
+      "before": 0,
+      "mastered": 8,
+      "total": 13,
+      "duplicateSafe": true
+    },
+    {
+      "round": 2,
+      "questions": 5,
+      "before": 8,
+      "mastered": 13,
+      "total": 13,
+      "duplicateSafe": true
+    }
+  ],
+  "crown": true,
+  "restore": true,
+  "profileWrites": false,
+  "fixture": "Reserved synthetic QA example only; no real learner records or original public example 001 used."
+}

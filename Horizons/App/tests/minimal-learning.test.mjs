@@ -94,7 +94,7 @@ test('full-sentence vocabulary is recognition, while apellido and other lexical 
  for(const q of listening){assert.equal(q.prompt,'Listen and choose.');assert.ok(!q.prompt.includes(q.word.spanish));const a=getAudioFallbackQuestion(q),b=getAudioFallbackQuestion(q);assert.equal(a.type,'choice');assert.deepEqual(a.choices,b.choices);}
 });
 
-test('new sentence choices retain question IDs and grade correctly on the unchanged server engine',async()=>{
+test('client and server sentence choices retain question IDs and grade consistently',async()=>{
  const legacy=await import('../backend/src/content/engine.mjs');
  for(const activity of activities.filter(a=>['quiz','review'].includes(a.type))){
   const options={count:'all',seed:'sentence-server-parity'},current=getActivityQuestions(activity.id,options),previous=legacy.getActivityQuestions(activity.id,options);

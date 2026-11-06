@@ -1,13 +1,12 @@
 import {pathNodes,lessons} from './unit1.mjs';
 import {getActivityQuestions,getWordsForChunks} from './engine.mjs';
 
-// Vocabulary keeps the existing server recall standard. Other islands measure
-// their own question skills, never manufacturing vocabulary retrieval mastery.
+// One unaided correct answer masters an item. Matching does not stand in for recall.
 export const masteryTargets=Object.fromEntries(pathNodes.map(node=>[node.id,
  node.type==='quiz'?getWordsForChunks(node.chunkIds).map(word=>word.id):
  getActivityQuestions(node.id,{seed:0,count:512}).map(question=>question.id)
 ]));
-const qualifies=item=>item.correct>=3&&item.correct/Math.max(1,item.attempts)>=.75;
+const qualifies=item=>item.correct>=1;
 export function summarizeIslands(events,wordStats){
  const islands=Object.fromEntries(pathNodes.map(node=>[node.id,{items:{}}]));
  for(const event of events){

@@ -60,7 +60,7 @@ function typedGrammar(template,random){
   'be-not':'Make this negative: She is a teacher.',
   'be-question':'Make this a question: She is a teacher.',
   'be-short-positive':'Is she a teacher? Write a short answer with Yes.',
-  'be-short-negative':'Are they in Class 2? The card says Class 3. Write a short answer.',
+  'be-short-negative':'Are they in Class 2? Write a short answer with No.',
   'contract-youre':'Write the short form: You are a student.',
   'caps-country':'Write it with capital letters and a full stop: i am from ecuador.'
  };
@@ -93,7 +93,8 @@ export function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),aud
  return words.map(word=>{
   const answer=word.kind==='letter'?word.letter:word.term;
   const base={id:`recall-${word.id}`,wordIds:[word.id],word,translation:vocabularyCue(word),explanation:word.example,expectedTerm:answer,kind:'vocabulary',retrieval:true};
-  if(mode==='choice'||mode==='listening'){
+  // Sentence-level language is recognition practice here, not grammar composition.
+  if(mode==='choice'||mode==='listening'||word.kind==='question'||word.answerMode==='choice'){
    const q=choiceQuestion({...base,prompt:mode==='listening'?'Listen and choose.':`Choose the English translation.\n${word.spanish}`,correctText:answer,distractors:shuffle(distractorPool(word),random).map(x=>x.kind==='letter'?x.letter:x.term)},random);
    if(mode==='listening'){Object.assign(q,{listening:true,audioWordId:word.id,listenFor:'',hint:undefined});return audioEnabled===false?getAudioFallbackQuestion(q):q;}
    return q;
@@ -166,7 +167,7 @@ export function getAudioFallbackQuestion(question){
  if(!question.listening&&!question.audio&&!question.audioWordId)return question;
  const word=question.word||wordById[question.audioWordId]||vocabulary.find(w=>normalizeAnswer(w.term)===normalizeAnswer(question.correctText??question.answer));
  let q;
- if(word)q=makeVocabularyQuestions([word],{mode:'recall'})[0];
+ if(word)q=makeVocabularyQuestions([word],{mode:'recall',seed:question.id})[0];
  else if(question.id.startsWith('listen-short-')){
   const index=Number(question.id.split('-').at(-1)),subject=['I','You','He','She'][index],verb=index===0?'am':index===1?'are':'is',short=["I'm","You're","He's","She's"][index];
   q={type:'text',kind:'grammar',prompt:`Write the short form: ${subject} ${verb} a student.`,answer:`${short} a student.`,accepted:[`${short} a student.`],wordIds:[],explanation:`${short} a student.`,allowContractions:false};
@@ -217,22 +218,15 @@ export function checkAnswer(question,submitted) {
   if(question.type==='choice'){
     const value=submitted&&typeof submitted==='object'?submitted.id??submitted.text:submitted;
     const choice=question.choices.find(x=>x.id===value);
-    correct=choice?choice.id===question.answer:normalizeAnswer(value,mode)===normalizeAnswer(question.correctText,mode);
+    correct=choice?choice.id===question.answer:matchesAcceptedAnswer(value,[question.correctText,...question.word?.aliases||[]],{mode,allowContractions:question.word?.kind==='question'||question.allowContractions===true});
   }else{
     let value=submitted;
     if(question.type==='order'&&Array.isArray(submitted))value=submitted.map(token=>typeof token==='object'?token.text:question.sentenceTokens?.find(x=>x.id===token)?.text??token).join(' ');
     const normalized=normalizeAnswer(value,mode);
     correct=matchesAcceptedAnswer(value,question.accepted||[question.answer],{mode,allowContractions:question.allowContractions===true});
   }
-  let wordIds=correct?unique(question.wordIds||[]):[];
-  // A valid synonym earns a correct response, but does not pretend that the bank spelling was recalled.
-  if(correct&&question.type==='text'&&question.word&&question.word.kind!=='letter'){
-    const entered=normalizeAnswer(submitted),target=normalizeAnswer(question.word.term);
-    if(entered!==target){
-      const actual=vocabulary.find(word=>normalizeAnswer(word.term)===entered&&word.id!==question.word.id);
-      wordIds=actual?[actual.id]:[];
-    }
-  }
+  // Credit the prompted item for every accepted correct answer, including synonyms.
+  const wordIds=correct?unique(question.wordIds||[]):[];
   return {correct,expected,feedback:question.explanation||String(expected),wordIds,
     masteryEligible:correct&&wordIds.length>0&&question.retrieval!==false,requiresRetry:!correct};
 }

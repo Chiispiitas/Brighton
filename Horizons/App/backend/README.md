@@ -1,5 +1,7 @@
 # Horizons companion backend
 
+Current mastery release: deployment `e86e3970-ba28-4e74-a361-94a433321094`, source revision `71ef9c622fde170e897849e7b8d3e687b8806685`. One unaided correct answer masters each item; no three-answer/75% gate. Live proof is `reports/live-one-correct.json`; the detailed build/test record is `reports/mastery-once-deployment.json`. Earlier release reports below are historical evidence.
+
 This is the deployed private Wix API for the GitHub-hosted study app. It is a separate free Wix site and does not change the school website or another application's collections.
 
 - API: `https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons`
@@ -35,7 +37,7 @@ There are no public staff, reset or seed endpoints. Public samplecodes intention
 
 `scripts/sync-content.mjs` copies the reviewed Unit1 content and engine into this self-contained backend. Run it whenever the frontend content engine changes, then test and redeploy both together. The server reconstructs questions from the submitted activity, selected word sets, mode and seed, and grades the submitted answer. It ignores claimed correctness, XP, word IDs and mastery flags. Unknown/repeated questions are rejected. Choice answers should be text, ordered sentences should be arrays of token text, and matching answers should be the matched right-hand text.
 
-An attempt ID is unique within its profile. Identical delivery retries award no additional XP; changing previously saved answers returns409. XP is five per correct answer plus ten for completing a round. Word mastery requires at least three successful retrievals and75%recall accuracy. Memory/matching recognition and hinted answers cannot create mastery. Incorrect vocabulary answers populate the review collection. Progress and local-calendar streaks are derived from stored events, not trusted client totals. Only registered path nodes enter completedActivities; custom mixes retain XP, attempts and word progress without increasing the path total. Avatar badges none/star-pin/trophy-pin/compass-pin are validated; earned badges require25/100/250storedXP. Basic avatar customization remains free.
+An attempt ID is unique within its profile. Identical delivery retries award no additional XP; changing previously saved answers returns409. XP is five per correct answer plus ten for completing a round. Word mastery requires one unaided correct answer. Accepted synonyms credit the prompted item. Earlier/later errors do not undo mastery. Memory/matching recognition and hinted answers cannot create mastery. Incorrect vocabulary answers populate the review collection. Progress and local-calendar streaks are derived from stored events, not trusted client totals. Only registered path nodes enter completedActivities; custom mixes retain XP, attempts and word progress without increasing the path total. Avatar badges none/star-pin/trophy-pin/compass-pin are validated; earned badges require25/100/250storedXP. Basic avatar customization remains free.
 
 ## Examples and QA
 
@@ -57,4 +59,4 @@ The deployed release was verified with `node scripts/live-smoke.mjs`; the latest
 
 ## Island mastery
 
-The API now returns `progress.islands` and `progress.masteredLessons`, reconstructed from existing graded attempts. Vocabulary crowns use the existing three-retrieval / 75% rule. Grammar and reading/listening crowns require three unaided correct answers per canonical question with 75% accuracy; silent alternatives cannot count toward listening crowns. Recognition never changes word mastery. No data migration is required. The reserved synthetic example A1-017 verifies live mastery, duplicate saves and new-device restore without profile edits.
+The API now returns `progress.islands` and `progress.masteredLessons`, reconstructed from existing graded attempts. Vocabulary crowns require one unaided correct answer per word. Grammar and reading/listening crowns require one unaided correct answer per canonical question; silent alternatives cannot count toward listening crowns. Recognition never changes word mastery. Existing saved events are summarized under the new rule without rewriting them; stable recall question IDs recover credit for previously accepted synonyms. No data migration is required. The reserved synthetic example A1-017 verifies live mastery, duplicate saves and new-device restore without profile edits.

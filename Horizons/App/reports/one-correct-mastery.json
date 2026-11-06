@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "round": 1,
+      "questions": 8,
+      "mastered": 8,
+      "total": 10
+    },
+    {
+      "round": 2,
+      "questions": 2,
+      "mastered": 10,
+      "total": 10
+    }
+  ],
+  "firstRoundEightMastered": true,
+  "secondRoundOnlyTwoRemaining": true,
+  "acceptedAliasesCount": true,
+  "goldIslandAndCrown": true,
+  "lessonCrown": true,
+  "reloadAndOtherDevice": true,
+  "server": "Actual application with isolated in-memory synthetic store; no real CMS reads/writes",
+  "errors": []
+}

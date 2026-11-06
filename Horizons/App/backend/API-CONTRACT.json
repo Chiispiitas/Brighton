@@ -143,7 +143,7 @@
     "Requests from localhost are allowed for development; production origin is https://exams.bebrighton.net",
     "Correctness, word IDs, mastery eligibility and XP are recomputed on the server with the shared seeded Unit1 engine; submitted correct/XP fields are ignored",
     "Unknown or repeated question IDs are rejected; idempotency keys cannot overwrite previous answers",
-    "Recognition/memory rounds and hinted answers never increase mastery; three successful retrievals and at least75% recall accuracy are required",
+    "Recognition/memory rounds and hinted answers never increase mastery; one unaided correct answer masters the prompted item, including accepted synonyms",
     "Public sample codes ending001 are kept fresh; backend live QA uses A1-019/020 and A2-010",
     "Only registered activity IDs enter completedActivities; historical activity completions remain valid, and synthetic mixed rounds retain XP/history and vocabulary progress",
     "Lesson completion follows the compact path topic IDs and their linked historical chunk/grammar completions without creating attempts, XP or mastery",
@@ -165,8 +165,8 @@
         "mastered"
       ]
     },
-    "vocabulary": "Existing stored word mastery: three unaided correct recalls, at least 75% recall accuracy.",
-    "skills": "Three unaided correct responses per canonical grammar/reading/listening question with 75% accuracy. Silent alternatives do not master audio.",
+    "vocabulary": "One unaided correct answer masters the prompted vocabulary item; accepted synonyms count. Mastery is retained.",
+    "skills": "One unaided correct response per canonical grammar/reading/listening question. Silent alternatives do not master audio.",
     "roundSelection": "Frontend selects at most eight unseen/unmastered items from the full seeded canonical pool; server reconstructs and grades their IDs independently.",
     "persistence": "Derived from stored server-graded events; no client crown flag or new collection.",
     "retry": "Same saved attempt does not award XP or mastery twice."

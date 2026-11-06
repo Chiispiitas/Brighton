@@ -20,11 +20,11 @@ test('Unknown books, lessons and oversized answer sets are rejected',async()=>{c
 test('Revoked codes and expired entitlements cannot be used to redeem or save attempts',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});await f.store.put(COLLECTIONS.codes,await idFor('code:DEMO-HZ-A1-001'),{bookId:'horizons-a1',disabled:true},'issued');assert.equal((await f.call('redeem',{code:'DEMO-HZ-A1-001'})).status,400);assert.equal((await f.call('saveAttempt',{attempt:sampleAttempt},a.token)).status,403);const g=await fixture();await g.call('redeem',{code:'DEMO-HZ-A1-001'});g.setDate('2027-11-05T00:00:00.000Z');assert.equal((await g.call('redeem',{code:'DEMO-HZ-A1-001'})).status,403)});
 test('Signing out revokes only the current device session',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),b=await f.call('redeem',{code:'DEMO-HZ-A1-001'});await f.call('signOut',{},a.token);assert.equal((await f.call('getSession',{},a.token)).status,401);assert.equal((await f.call('getSession',{},b.token)).status,200)});
 test('Cross-origin requests are rejected and error responses never contain credentials',async()=>{const f=await fixture();const bad=await f.call('redeem',{code:'DEMO-HZ-A1-001'},'','https://attacker.example');assert.equal(bad.status,403);assert.equal(bad.token,undefined);assert.equal(bad.profile,undefined)});
-test('Mastery requires repeated successful recall and calendar streak counts local dates',()=>{const base={bookId:'horizons-a1',lessonId:'1A',activityId:'quiz-1a-greetings',xp:15,answers:[{itemId:'hello',term:'Hello',correct:true}]};const events=['2026-11-01T23:00:00.000Z','2026-11-02T23:00:00.000Z','2026-11-03T23:00:00.000Z'].map(createdAt=>({...base,createdAt}));const p=aggregateProgress(events,'2026-11-04T02:00:00.000Z','America/Guayaquil');assert.equal(p.streak,3);assert.equal(p.wordStats.hello.mastered,true);assert.equal(aggregateProgress(events.slice(0,1),'2026-11-02T02:00:00.000Z','America/Guayaquil').wordStats.hello.mastered,false)});
+test('One correct answer masters an item and calendar streak counts local dates',()=>{const base={bookId:'horizons-a1',lessonId:'1A',activityId:'quiz-1a-greetings',xp:15,answers:[{itemId:'hello',term:'Hello',correct:true}]};const events=['2026-11-01T23:00:00.000Z','2026-11-02T23:00:00.000Z','2026-11-03T23:00:00.000Z'].map(createdAt=>({...base,createdAt}));const p=aggregateProgress(events,'2026-11-04T02:00:00.000Z','America/Guayaquil');assert.equal(p.streak,3);assert.equal(p.wordStats.hello.mastered,true);assert.equal(aggregateProgress(events.slice(0,1),'2026-11-02T02:00:00.000Z','America/Guayaquil').wordStats.hello.mastered,true)});
 test('Client-supplied correct flags, word IDs and XP cannot falsify grading',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});const result=await f.call('saveAttempt',{attempt:{...sampleAttempt,xp:999999,answers:[{questionId:'recall-v-greetings-hello',submitted:'wrong',correct:true,wordIds:['v-greetings-hi'],masteryEligible:true}]}},a.token);assert.equal(result.status,200);assert.equal(result.progress.xp,10);assert.equal(result.progress.wordStats['v-greetings-hello'].incorrect,1);assert.equal(result.progress.wordStats['v-greetings-hi'],undefined);assert.deepEqual(result.progress.reviewItems,['v-greetings-hello'])});
 test('Unrecognized, repeated or out-of-scope question IDs are rejected',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});for(const answers of[[{questionId:'unknown',submitted:'yes'}],[...sampleAttempt.answers,...sampleAttempt.answers],[{questionId:'recall-v-adjectives-big',submitted:'big'}]]){const result=await f.call('saveAttempt',{attempt:{...sampleAttempt,answers}},a.token);assert.equal(result.status,400);assert.equal(result.error,'INVALID_QUESTION')}});
 test('Hints and memory recognition do not manufacture mastery',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});for(let i=0;i<3;i++)await f.call('saveAttempt',{attempt:{...sampleAttempt,id:undefined,attemptId:'hinted-round-'+i,answers:[{...sampleAttempt.answers[0],hintUsed:true}]}},a.token);const pairs=getMatchingPairs({chunkIds:['1a-greetings'],seed:22,count:6});for(let i=0;i<3;i++)await f.call('saveAttempt',{attempt:{id:'memory-round-'+i,activityId:'mix-memory',quizOptions:{seed:22,mode:'memory',chunkIds:['1a-greetings']},answers:pairs.map(pair=>({questionId:pair.id,submitted:pair.right,masteryEligible:true}))}},a.token);const result=await f.call('getProgress',{},a.token);assert.equal(result.progress.wordStats['v-greetings-hello'].mastered,false);assert.equal(result.progress.wordStats['v-greetings-hello'].retrievalCorrect,0)});
-test('Repeated genuine retrieval produces persisted mastery across devices',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});for(let i=0;i<3;i++)assert.equal((await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'recall-round-'+i}},a.token)).status,200);const b=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.equal(b.progress.wordStats['v-greetings-hello'].mastered,true);assert.equal(b.progress.xp,45)});
+test('One genuine correct answer produces persisted mastery across devices',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.equal((await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'recall-round-once'}},a.token)).status,200);const b=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.equal(b.progress.wordStats['v-greetings-hello'].mastered,true);assert.equal(b.progress.xp,15)});
 test('Every shipped activity reconstructs and grades on the backend',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});for(const activity of activities){const matching=['memory','matching','countries','opposites'].includes(activity.type);const mode=matching?(activity.type==='memory'?'memory':'matching'):activity.type==='grammar'?'grammar':activity.type==='review'?'mixed':'vocabulary';const options={seed:379,count:8,chunkIds:activity.chunkIds,lessonIds:[activity.lessonId],grammarSetIds:activity.grammarSetIds,mode};const qs=matching?getMatchingPairs({...options,mode:undefined,count:6}):getActivityQuestions(activity.id,{count:8,seed:379});assert.ok(qs.length,activity.id);const result=await f.call('saveAttempt',{attempt:{id:'catalog-round-'+activity.id,activityId:activity.id,quizOptions:options,answers:qs.map(q=>({questionId:q.id,submitted:matching?q.right:q.correctText??q.answer}))}},a.token);assert.equal(result.status,200,activity.id+':'+JSON.stringify(result));assert.equal(result.attempt.awardedXp,qs.length*5+10,activity.id)}assert.deepEqual((await f.call('getProgress',{},a.token)).progress.completedLessons,['1A','1B','1C','1D'])});
 test('Mixed quiz and recall sets can combine lessons without inventing words',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});for(const mode of['vocabulary','recall','mixed']){const options={seed:118,count:12,mode,chunkIds:['1a-greetings','1b-jobs-town','1c-world-start']};const qs=buildQuiz(options);const result=await f.call('saveAttempt',{attempt:{id:'custom-mixed-'+mode,activityId:'mixed-practice',quizOptions:options,answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))}},a.token);assert.equal(result.status,200);assert.equal(result.attempt.awardedXp,qs.length*5+10);assert.ok(Object.keys(result.progress.wordStats).every(id=>wordById[id]))}});
 test('Expired code is never renewed by linking; another active code still restores profile',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});f.setDate('2027-10-01T12:00:00.000Z');const fresh=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.equal((await f.call('linkBook',{code:'DEMO-HZ-A2-001'},fresh.token)).status,200);f.setDate('2027-11-05T12:00:00.000Z');const b=await f.call('redeem',{code:'DEMO-HZ-A2-001'});assert.equal(b.profile.id,a.profile.id);assert.equal(b.books.find(x=>x.id==='horizons-a1').status,'expired');assert.equal((await f.call('linkBook',{code:'DEMO-HZ-A1-001'},b.token)).status,403);assert.equal((await f.call('saveAttempt',{attempt:sampleAttempt},b.token)).status,403)});
@@ -95,23 +95,23 @@ test('Compact lesson completion uses visible topics and games, without requiring
 // Mastery extends existing server-graded events; no client mastery flag is trusted.
 import {selectIslandQuestions,masteryTargets} from '../src/content/island-mastery.mjs';
 test('Island rounds cover unseen words, retain completion and earn crowns across devices',async()=>{
- const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.id==='topic-1a-greetings');let progress=session.progress,firstIds;
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.id==='topic-1a-greetings');let progress=session.progress,firstIds,rounds=0;
  assert.equal(masteryTargets[node.id].length,10);
  for(let round=0;round<10&&!progress.islands[node.id].mastered;round++){
   const options={seed:'island-'+round,count:512},qs=selectIslandQuestions(node,progress,{seed:options.seed});
-  if(round===0){assert.equal(qs.length,8);firstIds=new Set(qs.map(q=>q.wordIds[0]));}
-  if(round===1)assert.equal(qs.slice(0,2).filter(q=>!firstIds.has(q.wordIds[0])).length,2);
+  rounds++;if(round===0){assert.equal(qs.length,8);firstIds=new Set(qs.map(q=>q.wordIds[0]));}
+  if(round===1){assert.equal(qs.length,2);assert.equal(qs.filter(q=>!firstIds.has(q.wordIds[0])).length,2);}
   const attempt={id:'island-coverage-'+round,activityId:node.id,quizOptions:options,answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))};
   const saved=await f.call('saveAttempt',{attempt},session.token);assert.equal(saved.status,200);progress=saved.progress;
-  if(round===0){assert.ok(progress.completedActivities.includes(node.id));assert.equal(progress.islands[node.id].mastered,false);}
+  if(round===0){assert.ok(progress.completedActivities.includes(node.id));assert.equal(progress.islands[node.id].masteredCount,8);assert.equal(progress.islands[node.id].total,10);assert.equal(progress.islands[node.id].mastered,false);}
   const retry=await f.call('saveAttempt',{attempt},session.token);assert.deepEqual(retry.progress.islands,progress.islands);assert.equal(retry.attempt.awardedXp,0);
  }
- assert.equal(progress.islands[node.id].mastered,true);assert.equal(progress.islands[node.id].masteredCount,10);
+ assert.equal(rounds,2);assert.equal(progress.islands[node.id].mastered,true);assert.equal(progress.islands[node.id].masteredCount,10);
  const second=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.deepEqual(second.progress.islands,progress.islands);
 });
 test('Every island and lesson can be mastered; silent alternatives cannot crown audio',async()=>{
  const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});let latest;
- for(const node of pathNodes)for(let round=0;round<3;round++){
+ for(const node of pathNodes)for(let round=0;round<1;round++){
   const qs=getActivityQuestions(node.id,{seed:0,count:512});latest=await f.call('saveAttempt',{attempt:{id:'master-all-'+node.id+'-'+round,activityId:node.id,quizOptions:{seed:0,count:512},answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))}},session.token);assert.equal(latest.status,200,node.id);
  }
  assert.deepEqual(latest.progress.masteredLessons,['1A','1B','1C','1D']);
@@ -128,4 +128,48 @@ test('Hinted grammar and forged mastery flags do not grant skill crowns',async()
   const qs=getActivityQuestions(node.id,{seed:0,count:512});latest=await f.call('saveAttempt',{attempt:{id:'hinted-grammar-'+round,activityId:node.id,mastered:true,quizOptions:{seed:0,count:512},answers:qs.map(q=>({questionId:q.id,submitted:q.correctText??q.answer,hintUsed:true,masteryEligible:true}))}},session.token);
  }
  assert.equal(latest.status,200);assert.equal(latest.progress.islands[node.id].mastered,false);assert.equal(latest.progress.islands[node.id].masteredCount,0);
+});
+
+
+test('Wrong items and unseen items remain queued; one later correct answer crowns the island',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),node=pathNodes.find(n=>n.id==='topic-1a-greetings');
+ const first=selectIslandQuestions(node,session.progress,{seed:'one-pass-wrong'}),missed=first[0];
+ const firstSave=await f.call('saveAttempt',{attempt:{id:'one-pass-first-wrong',activityId:node.id,quizOptions:{seed:'one-pass-wrong'},answers:first.map((q,i)=>({questionId:q.id,submitted:i===0?'not the answer':q.correctText??q.answer}))}},session.token);
+ assert.equal(firstSave.status,200);assert.equal(firstSave.progress.islands[node.id].masteredCount,7);
+ const next=selectIslandQuestions(node,firstSave.progress,{seed:'one-pass-remaining'});assert.equal(next.length,3);assert.ok(next.some(q=>q.id===missed.id));assert.equal(next.filter(q=>!first.some(old=>old.id===q.id)).length,2);
+ const saved=await f.call('saveAttempt',{attempt:{id:'one-pass-last-three',activityId:node.id,quizOptions:{seed:'one-pass-remaining'},answers:next.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))}},session.token);
+ assert.equal(saved.progress.islands[node.id].masteredCount,10);assert.equal(saved.progress.islands[node.id].mastered,true);
+});
+
+test('Accepted vocabulary aliases master the prompted item, not a different word',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ const result=await f.call('saveAttempt',{attempt:{id:'accepted-surname-once',activityId:'quiz-1d-names-contact',quizOptions:{seed:'alias'},answers:[{questionId:'recall-v-personal-last-name',submitted:'surname'}]}},session.token);
+ assert.equal(result.status,200);assert.equal(result.progress.wordStats['v-personal-last-name'].mastered,true);
+ const oldClient=await f.call('saveAttempt',{attempt:{id:'older-typed-question',activityId:'quiz-1d-ask-check',quizOptions:{seed:'old-client'},answers:[{questionId:'recall-v-phrases-what-is-your-last-name',submitted:"What's your last name?"}]}},session.token);
+ assert.equal(oldClient.status,200);assert.equal(oldClient.progress.wordStats['v-phrases-what-is-your-last-name'].mastered,true);
+});
+
+test('Historical accepted synonyms are counted from stable question IDs without rewriting events',()=>{
+ const events=[{bookId:'horizons-a1',lessonId:'1A',activityId:'topic-1a-greetings',createdAt:'2026-11-01T12:00:00Z',xp:20,answers:[
+  {questionId:'recall-v-greetings-hi',wordIds:['v-greetings-hello'],correct:true,retrieval:true,masteryEligible:true,kind:'vocabulary'},
+  {questionId:'recall-v-adjectives-calm',wordIds:[],correct:true,retrieval:true,masteryEligible:false,kind:'vocabulary'}]}];
+ const original=structuredClone(events),p=aggregateProgress(events,'2026-11-04T12:00:00Z','America/Guayaquil');
+ assert.equal(p.wordStats['v-greetings-hi'].mastered,true);assert.equal(p.wordStats['v-adjectives-calm'].mastered,true);assert.equal(p.wordStats['v-greetings-hello'],undefined);assert.deepEqual(events,original);
+});
+
+test('Once-correct mastery is retained despite earlier or later errors',()=>{
+ const event=(correct,i)=>({bookId:'horizons-a1',lessonId:'1A',activityId:'topic-1a-greetings',createdAt:`2026-11-0${i+1}T12:00:00Z`,xp:10,answers:[{questionId:'recall-v-greetings-hello',wordIds:['v-greetings-hello'],correct,retrieval:true,masteryEligible:correct,kind:'vocabulary'}]});
+ const p=aggregateProgress([event(false,0),event(false,1),event(true,2),event(false,3)],'2026-11-05T12:00:00Z','America/Guayaquil');
+ assert.equal(p.wordStats['v-greetings-hello'].mastered,true);assert.equal(p.wordStats['v-greetings-hello'].retrievalCorrect,1);assert.ok(!p.reviewItems.includes('v-greetings-hello'));
+});
+
+
+test('Retrying a historical accepted synonym remains duplicate-safe after mastery policy changes',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ const attempt={id:'historical-synonym-retry',activityId:'quiz-1d-names-contact',quizOptions:{seed:'legacy-retry'},answers:[{questionId:'recall-v-personal-last-name',submitted:'surname'}]};
+ const first=await f.call('saveAttempt',{attempt},session.token);assert.equal(first.status,200);
+ const key=[...f.store.rows.keys()].find(k=>k.startsWith(COLLECTIONS.attempts+':')),stored=f.store.rows.get(key);stored.answers[0].wordIds=[];stored.answers[0].itemId='recall-v-personal-last-name';stored.answers[0].term='last name';stored.answers[0].masteryEligible=false;
+ const old=structuredClone(stored),retry=await f.call('saveAttempt',{attempt},session.token);
+ assert.equal(retry.status,200);assert.equal(retry.attempt.awardedXp,0);assert.equal(retry.progress.wordStats['v-personal-last-name'].mastered,true);assert.deepEqual(f.store.rows.get(key),old);
+ const changed=await f.call('saveAttempt',{attempt:{...attempt,answers:[{...attempt.answers[0],submitted:'first name'}]}},session.token);assert.equal(changed.status,409);
 });

@@ -1,5 +1,7 @@
 # Horizons companion
 
+Mastery: answer each item correctly once without a hint. An eight-question round with eight correct answers on a ten-item island gives 8/10 mastered; continue with the remaining two. All mastered items earn a gold island and crown. Existing saved progress is recalculated under this rule.
+
 Session transfer: [complete handoff](docs/SESSION-HANDOFF.md) and [copyable new-chat prompt](docs/NEW-CHAT-PROMPT.txt).
 
 Production rules: [complete website audit](APP-AUDIT.md), [image production guide](docs/IMAGE-PRODUCTION.md), and [seven mandatory visual reference sheets](docs/image-references/reference-pack.json). Before every ImageGen call, validate the saved brief with tools/check-image-brief.py and attach the returned image paths; the seven-input limit includes edit targets.

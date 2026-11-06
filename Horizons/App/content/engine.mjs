@@ -218,22 +218,15 @@ export function checkAnswer(question,submitted) {
   if(question.type==='choice'){
     const value=submitted&&typeof submitted==='object'?submitted.id??submitted.text:submitted;
     const choice=question.choices.find(x=>x.id===value);
-    correct=choice?choice.id===question.answer:normalizeAnswer(value,mode)===normalizeAnswer(question.correctText,mode);
+    correct=choice?choice.id===question.answer:matchesAcceptedAnswer(value,[question.correctText,...question.word?.aliases||[]],{mode,allowContractions:question.word?.kind==='question'||question.allowContractions===true});
   }else{
     let value=submitted;
     if(question.type==='order'&&Array.isArray(submitted))value=submitted.map(token=>typeof token==='object'?token.text:question.sentenceTokens?.find(x=>x.id===token)?.text??token).join(' ');
     const normalized=normalizeAnswer(value,mode);
     correct=matchesAcceptedAnswer(value,question.accepted||[question.answer],{mode,allowContractions:question.allowContractions===true});
   }
-  let wordIds=correct?unique(question.wordIds||[]):[];
-  // A valid synonym earns a correct response, but does not pretend that the bank spelling was recalled.
-  if(correct&&question.type==='text'&&question.word&&question.word.kind!=='letter'){
-    const entered=normalizeAnswer(submitted),target=normalizeAnswer(question.word.term);
-    if(entered!==target){
-      const actual=vocabulary.find(word=>normalizeAnswer(word.term)===entered&&word.id!==question.word.id);
-      wordIds=actual?[actual.id]:[];
-    }
-  }
+  // Credit the prompted item for every accepted correct answer, including synonyms.
+  const wordIds=correct?unique(question.wordIds||[]):[];
   return {correct,expected,feedback:question.explanation||String(expected),wordIds,
     masteryEligible:correct&&wordIds.length>0&&question.retrieval!==false,requiresRetry:!correct};
 }

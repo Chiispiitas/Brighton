@@ -9,6 +9,7 @@ export const BOOKS={
 };
 export const DEMO_CODES=Array.from({length:20},(_,i)=>({code:`DEMO-HZ-A1-${String(i+1).padStart(3,'0')}`,bookId:'horizons-a1'})).concat(Array.from({length:10},(_,i)=>({code:`DEMO-HZ-A2-${String(i+1).padStart(3,'0')}`,bookId:'horizons-a2-preview'})));
 class AppError extends Error{constructor(status,code,message){super(message);this.status=status;this.code=code;}}
+/** @returns {never} */
 const fail=(status,code,message)=>{throw new AppError(status,code,message);};
 export async function idFor(value){const h=[...new Uint8Array(await crypto.subtle.digest('SHA-256',enc.encode(value)))].map(x=>x.toString(16).padStart(2,'0')).join('');return`${h.slice(0,8)}-${h.slice(8,12)}-${h.slice(12,16)}-${h.slice(16,20)}-${h.slice(20,32)}`;}
 export const normalizeCode=value=>String(value||'').normalize('NFKC').trim().toUpperCase().replace(/\s+/g,'');
@@ -42,7 +43,20 @@ export function aggregateProgress(events,now,timeZone){
  for(const event of [...events].sort((a,b)=>a.createdAt.localeCompare(b.createdAt))){
   xp+=event.xp;const day=dayKey(event.createdAt,timeZone);active.add(day);daily[day]=(daily[day]||0)+event.xp;if(Object.hasOwn(activityById,event.activityId))complete.add(event.activityId);last=event;
   const lesson=lessons[event.lessonId]||={attempts:0,correct:0,total:0,xp:0,completedActivities:[]};lesson.attempts++;lesson.xp+=event.xp;lesson.correct+=event.answers.filter(x=>x.correct).length;lesson.total+=event.answers.length;if(!lesson.completedActivities.includes(event.activityId))lesson.completedActivities.push(event.activityId);
-  for(const answer of event.answers)for(const itemId of answer.wordIds||[answer.itemId]){if(!itemId||answer.kind==='grammar')continue;const s=words[itemId]||={itemId,term:wordById[itemId]?.term||answer.term||itemId,kind:answer.kind||'vocabulary',bookId:event.bookId,lessonId:event.lessonId,correct:0,incorrect:0,seen:0,recallAttempts:0,retrievalCorrect:0,mastered:false,lastSeen:event.createdAt};s.seen++;s[answer.correct?'correct':'incorrect']++;if(answer.retrieval!==false)s.recallAttempts++;if(answer.correct&&answer.masteryEligible!==false)s.retrievalCorrect++;s.lastSeen=event.createdAt;s.lastCorrect=answer.correct;s.mastered=s.retrievalCorrect>=3&&s.retrievalCorrect/Math.max(1,s.recallAttempts)>=.75;}
+  for(const answer of event.answers){
+   // Old accepted synonyms sometimes stored a different/empty word ID. Recover the
+   // prompted vocabulary identity from its stable question ID without rewriting events.
+   const recalledId=answer.questionId?.startsWith('recall-')?answer.questionId.slice(7):null;
+   const targetId=wordById[recalledId]?recalledId:null;
+   for(const itemId of targetId?[targetId]:answer.wordIds||[answer.itemId]){
+    if(!itemId||answer.kind==='grammar')continue;
+    const s=words[itemId]||={itemId,term:wordById[itemId]?.term||answer.term||itemId,kind:answer.kind||'vocabulary',bookId:event.bookId,lessonId:event.lessonId,correct:0,incorrect:0,seen:0,recallAttempts:0,retrievalCorrect:0,mastered:false,lastSeen:event.createdAt};
+    s.seen++;s[answer.correct?'correct':'incorrect']++;
+    if(answer.retrieval!==false)s.recallAttempts++;
+    if(answer.correct&&answer.retrieval!==false&&!answer.hintUsed&&(targetId||answer.masteryEligible!==false))s.retrievalCorrect++;
+    s.lastSeen=event.createdAt;s.lastCorrect=answer.correct;s.mastered=s.retrievalCorrect>=1;
+   }
+  }
  }
  const days=[...active].sort(),daySet=new Set(days);let streak=0,walk=daySet.has(today)?today:previousDay(today);while(daySet.has(walk)){streak++;walk=previousDay(walk);}let bestStreak=0,run=0,prev=null;for(const d of days){run=prev&&previousDay(d)===prev?run+1:1;bestStreak=Math.max(bestStreak,run);prev=d;}
  const nodeDone=id=>{if(complete.has(id))return true;const node=activityById[id];if(node?.kind!=='topic')return false;const oldIds=[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)];return oldIds.length>0&&oldIds.every(id=>complete.has(id));};
@@ -84,6 +98,12 @@ function cleanAttempt(raw,now){
  const seconds=Math.max(0,Math.min(3600,Number(raw.durationSeconds??(Number(raw.durationMs)||0)/1000)||0));
  return{id,bookId:b,lessonId:lesson,activityId:activity,chunkIds:chunks,mode,seed,...(!audioEnabled?{audioEnabled:false}:{}),...(audioFallbackQuestionIds.length?{audioFallbackQuestionIds}:{}),answers,durationSeconds:seconds,createdAt:now,xp:answers.filter(x=>x.correct).length*5+10};
 }
+// Retry identity is the submitted work, not derived grading fields that can change
+// when a mastery policy improves. Stored events remain immutable.
+function sameAttempt(a,b){
+ const identity=attempt=>({...attempt,createdAt:'',xp:0,answers:attempt.answers.map(answer=>({questionId:answer.questionId,answer:answer.answer,hintUsed:!!answer.hintUsed}))});
+ return JSON.stringify(identity(a))===JSON.stringify(identity(b));
+}
 export function createApplication(store,{now=()=>new Date().toISOString(),trustedOrigins=['https://exams.bebrighton.net','https://chiispiitas.github.io'],allowLocal=true}={}){
  const localRate=new Map();
  const isAllowed=origin=>!origin||trustedOrigins.includes(origin)||(allowLocal&&/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin));
@@ -105,7 +125,7 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
   try{
    if(!isAllowed(origin))return json({ok:false,error:'ORIGIN_REJECTED',message:'This request is not allowed.'},403);
    if(request.method==='OPTIONS')return new Response(null,{status:204,headers:json({},200,origin).headers});
-   if(request.method==='GET')return json({ok:true,name:'Horizons Companion API',version:1},200,origin);
+   if(request.method==='GET')return json({ok:true,name:'Horizons Companion API',version:1,masteryPolicy:'one-correct-answer'},200,origin);
    if(request.method!=='POST')return json({ok:false,error:'METHOD_NOT_ALLOWED',message:'Please use the app to continue.'},405,origin);
    const text=await request.text();if(text.length>100000)fail(413,'REQUEST_TOO_LARGE','That practice round is too large.');let body;try{body=JSON.parse(text);}catch{fail(400,'INVALID_JSON','The app could not read that request.');}if(!object(body))fail(400,'INVALID_REQUEST','Please try again.');
    const action=body.action;
@@ -121,8 +141,8 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
    }
    if(action==='saveAttempt'){
     const attempt=cleanAttempt(body.attempt,now()),books=await booksFor(session.profileId);if(!books.some(x=>x.id===attempt.bookId&&x.status==='active'))fail(403,'BOOK_EXPIRED','Add an active book code before starting this practice.');const id=await idFor('attempt:'+session.profileId+':'+attempt.id),existing=await store.get(COLLECTIONS.attempts,id);let duplicate=!!existing;
-    if(existing&&JSON.stringify({...existing,createdAt:''})!==JSON.stringify({...attempt,profileId:session.profileId,createdAt:''}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');
-    if(!existing){try{await store.create(COLLECTIONS.attempts,id,{...attempt,profileId:session.profileId},session.profileId);}catch(error){const saved=await store.get(COLLECTIONS.attempts,id);if(!saved)throw error;if(JSON.stringify({...saved,createdAt:''})!==JSON.stringify({...attempt,profileId:session.profileId,createdAt:''}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');duplicate=true;}}
+    if(existing&&!sameAttempt(existing,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');
+    if(!existing){try{await store.create(COLLECTIONS.attempts,id,{...attempt,profileId:session.profileId},session.profileId);}catch(error){const saved=await store.get(COLLECTIONS.attempts,id);if(!saved)throw error;if(!sameAttempt(saved,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');duplicate=true;}}
     return json({...await bootstrap(session.profileId),attempt:{accepted:true,duplicate,id:attempt.id,awardedXp:duplicate?0:attempt.xp}},200,origin);
    }
    fail(400,'UNKNOWN_ACTION','This app action is not available.');

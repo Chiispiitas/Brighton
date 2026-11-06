@@ -84,7 +84,7 @@ verify('choice sets have one correct choice, no duplicate labels, and every wron
  assert.equal(positions.size,4,'The correct answer should not stay in one slot.');
 });
 
-verify('synonyms do not appear as false distractors or falsely master an unseen bank spelling',()=>{
+verify('synonyms are valid answers for the prompted item and never appear as false distractors',()=>{
  for(const word of vocabulary){
   const q=makeVocabularyQuestions([word],{seed:word.id,mode:'choice'})[0];
   const equivalents=new Set([word.term,...word.aliases||[]].map(x=>normalizeAnswer(x)));
@@ -93,10 +93,10 @@ verify('synonyms do not appear as false distractors or falsely master an unseen 
  const hi=makeVocabularyQuestions([wordById['v-greetings-hi']],{mode:'recall'})[0];
  const result=checkAnswer(hi,'Hello');
  assert.equal(result.correct,true);
- assert.deepEqual(result.wordIds,['v-greetings-hello']);
+ assert.deepEqual(result.wordIds,['v-greetings-hi']);
  const calm=makeVocabularyQuestions([wordById['v-adjectives-calm']],{mode:'recall'})[0];
  assert.equal(checkAnswer(calm,'quiet').correct,true);
- assert.equal(checkAnswer(calm,'quiet').masteryEligible,false);
+ assert.equal(checkAnswer(calm,'quiet').masteryEligible,true);
  assert.equal(checkAnswer(calm,'calm').masteryEligible,true);
 });
 
@@ -223,7 +223,7 @@ after(()=>{
   extraSourceQuestionModels:7,availableVocabularyEntries:vocabulary.length,lessonCodes:lessons.map(x=>x.id),chunks:chunks.length,activities:activities.length,
   grammarSets:grammarSets.map(x=>({id:x.id,title:x.title,questions:x.questions.length})),games:games.map(x=>({id:x.id,type:x.type})),
   sourceAudioFilesUsed:12,testsDeclared:declared,testsPassed:completed.length,completedChecks:completed,
-  missingReferenceEntries:[],masteryPolicy:'Only successful retrieval awards word IDs. Accepted synonyms can be correct without claiming that an unentered bank spelling was recalled; mere viewing never masters an item.',
+  missingReferenceEntries:[],masteryPolicy:'Only successful retrieval awards word IDs. One unaided correct answer masters the prompted item, including accepted synonyms; mere viewing and matching never master it.',
   referenceEvidence:hasLocalBook?'Local authoring book compared directly':'Reviewed Unit 1 source snapshot; local authoring book unavailable',
   sourceFiles:hasLocalBook?files.map(file=>({file:`Horizons/A1/${file}`,sha256:crypto.createHash('sha256').update(fs.readFileSync(path.join(localBook,file))).digest('hex')})):[],
   limitations:'This verifies the curriculum/content layer and grading. Final artwork, integrated UI, backend persistence and published browser checks belong to the app release review.'};
