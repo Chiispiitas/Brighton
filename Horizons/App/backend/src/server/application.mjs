@@ -1,3 +1,4 @@
+import {createContentRepository} from './admin-content-repository.mjs';
 import {activityById,wordById,chunkById,lessonById,lessons as lessonDefinitions} from '../content/unit1.mjs';
 import {getActivityQuestions,buildQuiz,getMatchingPairs,checkAnswer,normalizeAnswer} from '../content/engine.mjs';
 import {summarizeIslands} from '../content/island-mastery.mjs';
@@ -63,7 +64,8 @@ export function aggregateProgress(events,now,timeZone){
  const nodeDone=id=>{if(complete.has(id))return true;const node=activityById[id];if(node?.kind!=='topic')return false;const oldIds=[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)];return oldIds.length>0&&oldIds.every(id=>complete.has(id));};
  return{...summarizeIslands(events,words),xp,streak,bestStreak,todayXp:daily[today]||0,completedActivities:[...complete],completedLessons:lessonDefinitions.filter(lesson=>(lesson.pathNodeIds||lesson.activityIds).every(nodeDone)).map(lesson=>lesson.id),wordStats:words,lessons,attempts:events.length,activeDays:days,dailyXp:daily,reviewItems:Object.values(words).filter(x=>!x.mastered&&(!x.lastCorrect||x.incorrect>0)).map(x=>x.itemId),lastActivityId:last?.activityId||null,lastLessonId:last?.lessonId||null,lastBookId:last?.bookId||null};
 }
-function cleanAttempt(raw,now){
+function cleanAttempt(raw,now,engine=null){
+ const {getActivityQuestions:activityQuestions=getActivityQuestions,buildQuiz:quiz=buildQuiz,getMatchingPairs:pairs=getMatchingPairs}=engine||{};
  if(!object(raw))fail(400,'INVALID_ATTEMPT','Please try that practice round again.');
  const id=String(raw.attemptId||raw.id||'');if(!/^[a-zA-Z0-9_-]{8,90}$/.test(id))fail(400,'INVALID_ATTEMPT_ID','This practice round needs a valid identifier.');
  const options=object(raw.quizOptions)?raw.quizOptions:{};
@@ -83,7 +85,7 @@ function cleanAttempt(raw,now){
  const generation={seed,chunkIds:chunks.length?chunks:definition?.chunkIds,lessonIds:lessonIds.length?lessonIds:definition?.lessonId?[definition.lessonId]:undefined,grammarSetIds:grammarSetIds.length?grammarSetIds:definition?.grammarSetIds,count:512,...(mode&&!matching?{mode}:{})};
  let expected;
  try{
-  const reconstruct=settings=>matching?getMatchingPairs(settings):definition?getActivityQuestions(activity,settings):buildQuiz(settings);
+  const reconstruct=settings=>matching?pairs(settings):definition?activityQuestions(activity,settings):quiz(settings);
   if(audioFallbackQuestionIds.length){const original=reconstruct({...generation,audioEnabled:true,audioFallbackQuestionIds:[]}),listeningIds=new Set(original.filter(q=>q.listening||q.audio||q.audioWordId).map(q=>q.id));if(audioFallbackQuestionIds.some(id=>!listeningIds.has(id)))fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available listening question.');}
   expected=reconstruct({...generation,audioEnabled,audioFallbackQuestionIds});
  }catch{fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available practice activity and word set.');}
@@ -97,7 +99,7 @@ function cleanAttempt(raw,now){
   return{questionId:qid,itemId:ids[0]||qid,wordIds:ids,correct:grade.correct,term:wordById[ids[0]]?.term||q.expectedTerm||qid,kind:q.kind==='grammar'?'grammar':'vocabulary',answer:safeText(Array.isArray(submitted)?submitted.join(' '):object(submitted)?submitted.text||submitted.id:submitted,180),retrieval:!matching&&q.retrieval!==false&&!hintUsed,masteryEligible:!matching&&!!grade.masteryEligible&&!hintUsed,hintUsed};
  });
  const seconds=Math.max(0,Math.min(3600,Number(raw.durationSeconds??(Number(raw.durationMs)||0)/1000)||0));
- return{id,bookId:b,lessonId:lesson,activityId:activity,chunkIds:chunks,mode,seed,...(!audioEnabled?{audioEnabled:false}:{}),...(audioFallbackQuestionIds.length?{audioFallbackQuestionIds}:{}),answers,durationSeconds:seconds,createdAt:now,xp:answers.filter(x=>x.correct).length*5+10};
+ return{id,bookId:b,lessonId:lesson,activityId:activity,chunkIds:chunks,mode,seed,...(options.contentRevision&&options.contentRevision!=='base'?{contentRevision:options.contentRevision}:{}),...(!audioEnabled?{audioEnabled:false}:{}),...(audioFallbackQuestionIds.length?{audioFallbackQuestionIds}:{}),answers,durationSeconds:seconds,createdAt:now,xp:answers.filter(x=>x.correct).length*5+10};
 }
 // Retry identity is the submitted work, not derived grading fields that can change
 // when a mastery policy improves. Stored events remain immutable.
@@ -108,6 +110,7 @@ function sameAttempt(a,b){
 export function createApplication(store,{now=()=>new Date().toISOString(),trustedOrigins=['https://exams.bebrighton.net','https://chiispiitas.github.io'],allowLocal=true}={}){
  const localRate=new Map();
  const isAllowed=origin=>!origin||trustedOrigins.includes(origin)||(allowLocal&&/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin));
+ const contentRepository=createContentRepository(store);
  const json=(data,status=200,origin='')=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(origin&&isAllowed(origin)?{'Access-Control-Allow-Origin':origin,'Vary':'Origin','Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, X-Requested-With','Access-Control-Max-Age':'600'}:{})}});
  async function createOnce(collection,id,value,scope){try{return await store.create(collection,id,value,scope);}catch(error){const existing=await store.get(collection,id);if(existing)return existing;throw error;}}
  async function profileFor(id,book,at){return await store.get(COLLECTIONS.profiles,id)||createOnce(COLLECTIONS.profiles,id,initialProfile(id,book,at),id);}
@@ -120,7 +123,7 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
  async function claimsFor(id){const rows=await store.list(COLLECTIONS.claims,id);return rows;}
  async function booksFor(id){const claims=await claimsFor(id),group=new Map(),at=now();for(const c of claims){const issue=await store.get(COLLECTIONS.codes,c.codeId);const expired=new Date(c.expiresAt)<=new Date(at),status=!issue||issue.disabled?'revoked':expired?'expired':'active';const row={...BOOKS[c.bookId],activatedAt:c.activatedAt,expiresAt:c.expiresAt,status};const previous=group.get(c.bookId);if(!previous||row.status==='active'&&previous.status!=='active'||row.status===previous.status&&row.expiresAt>previous.expiresAt)group.set(c.bookId,row);}return[...group.values()];}
  async function sessionFrom(request){const token=request.headers.get('X-Requested-With')||request.headers.get('Authorization')?.replace(/^Bearer\s+/i,'')||'';if(!/^[A-Za-z0-9_-]{40,100}$/.test(token))fail(401,'SESSION_REQUIRED','Enter your book code to continue.');const id=await idFor('session:'+token),s=await store.get(COLLECTIONS.sessions,id);if(!s||s.revoked||new Date(s.expiresAt)<=new Date(now()))fail(401,'SESSION_EXPIRED','Enter your book code to reopen your profile.');return{id,...s};}
- async function bootstrap(profileId){const[profile,books,events,claims]=await Promise.all([store.get(COLLECTIONS.profiles,profileId),booksFor(profileId),store.list(COLLECTIONS.attempts,profileId),claimsFor(profileId)]);if(!profile)fail(401,'PROFILE_MISSING','Enter your book code to reopen your profile.');const issues=await Promise.all(claims.map(c=>store.get(COLLECTIONS.codes,c.codeId)));const demo=issues.some(issue=>issue?.kind==='example');return{ok:true,demo,profile,books,progress:aggregateProgress(events,now(),profile.timeZone)};}
+ async function bootstrap(profileId){const[profile,books,events,claims]=await Promise.all([store.get(COLLECTIONS.profiles,profileId),booksFor(profileId),store.list(COLLECTIONS.attempts,profileId),claimsFor(profileId)]);if(!profile)fail(401,'PROFILE_MISSING','Enter your book code to reopen your profile.');const issues=await Promise.all(claims.map(c=>store.get(COLLECTIONS.codes,c.codeId)));const demo=issues.some(issue=>issue?.kind==='example');return{ok:true,demo,profile,books,contentSnapshot:await contentRepository.current().then(({revision,patches})=>({revision,patches})),progress:aggregateProgress(events,now(),profile.timeZone)};}
  async function dailyCelebration(profileId,attempt,result){
   const candidate=attempt.dailyStreakCandidate;
   // Only a server-marked, newly completed day can win. Historical attempts and
@@ -157,7 +160,8 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
     const current=await store.get(COLLECTIONS.profiles,session.profileId);if(!current)fail(401,'PROFILE_MISSING','Please enter your book code again.');const updated=cleanProfile(body.patch||body.profile,current,now());if(updated.defaultBookId!==current.defaultBookId){const books=await booksFor(session.profileId);if(!books.some(x=>x.id===updated.defaultBookId))fail(400,'BOOK_NOT_LINKED','Add this book to your profile first.');}const badgeXp={'star-pin':25,'trophy-pin':100,'compass-pin':250}[updated.avatar?.badge];if(badgeXp){const events=await store.list(COLLECTIONS.attempts,session.profileId);if(aggregateProgress(events,now(),updated.timeZone).xp<badgeXp)fail(403,'BADGE_LOCKED',`Keep practising to unlock this badge at ${badgeXp} XP.`);}await store.put(COLLECTIONS.profiles,session.profileId,updated,session.profileId);return json(await bootstrap(session.profileId),200,origin);
    }
    if(action==='saveAttempt'){
-    const attempt=cleanAttempt(body.attempt,now()),books=await booksFor(session.profileId);if(!books.some(x=>x.id===attempt.bookId&&x.status==='active'))fail(403,'BOOK_EXPIRED','Add an active book code before starting this practice.');const id=await idFor('attempt:'+session.profileId+':'+attempt.id),existing=await store.get(COLLECTIONS.attempts,id);let duplicate=!!existing,savedAttempt=existing;
+    const engine=await contentRepository.engine(body.attempt?.quizOptions?.contentRevision||'base');
+    const attempt=cleanAttempt(body.attempt,now(),engine),books=await booksFor(session.profileId);if(!books.some(x=>x.id===attempt.bookId&&x.status==='active'))fail(403,'BOOK_EXPIRED','Add an active book code before starting this practice.');const id=await idFor('attempt:'+session.profileId+':'+attempt.id),existing=await store.get(COLLECTIONS.attempts,id);let duplicate=!!existing,savedAttempt=existing;
     if(existing&&!sameAttempt(existing,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');
     if(!existing){
      const[profile,events]=await Promise.all([store.get(COLLECTIONS.profiles,session.profileId),store.list(COLLECTIONS.attempts,session.profileId)]);if(!profile)fail(401,'PROFILE_MISSING','Enter your book code to reopen your profile.');

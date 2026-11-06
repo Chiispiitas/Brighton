@@ -1,3 +1,4 @@
+import {applyClientContent} from '../content/admin-content.mjs';
 import {STREAK_DURATION,shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streakidle1';
 import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
@@ -65,9 +66,11 @@ const streak = () => Number(progress().streak ?? progress().currentStreak ?? 0);
 const bookList = () => asArray(state.session?.books);
 const activeBook = () => bookList().find(book => String(book.id || book.bookId) === String(state.bookId)) || bookList()[0];
 const completed = () => new Set((progress().completedActivityIds || progress().completedActivities || []).filter(id=>allActivities.some(activity=>activity.id===id)));
+let contentRevision='base';
 function setSession(value) {
   if (!value) return;
   const previousProfileId=profile().id;
+  if(value.contentSnapshot&&(!state.active||state.active.kind==='result')){applyClientContent(value.contentSnapshot.patches);contentRevision=value.contentSnapshot.revision;}
   if (value.profile || value.books || value.progress) state.session = {...(state.session || {}),...value};
   else if (value.session) state.session = value.session;
   if(previousProfileId!==profile().id)state.pathCursorId=null;
@@ -235,6 +238,7 @@ function startQuiz(options,title='Vocabulary') {
   beginQuiz(questions,{...options,seed,practiceUntilCorrect:true},title);
 }
 function beginQuiz(questions,options,title) {
+  options={...options,contentRevision};
   if (!Array.isArray(questions)) questions=questions?.questions || [];
   if (!questions.length) {notify('No questions available for this selection.');return;}
   questions=questions.map(q=>presentQuestion(q,options.seed,{typedVocabulary:options.practiceUntilCorrect&&['recall','mixed'].includes(options.mode)}));
@@ -326,7 +330,7 @@ function startGame(kind,options) {
   if (!pairs?.length) {notify('Choose a word set first.');return;}
   stopAudio();
   const shuffle=values=>values.map(value=>({value,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(x=>x.value);
-  state.active={kind,title:options.title || (kind==='memory'?'Memory':'Matching'),options:{...options,chunkIds,lessonIds,seed,count:6,mode:kind,activityId:options.id || options.activityId || `mix-${kind}`},pairs,cards:shuffle(pairs.flatMap(pair=>[{id:pair.id+'-left',pairId:pair.id,text:pair.left,side:'left'},{id:pair.id+'-right',pairId:pair.id,text:pair.right,side:'right'}])),right:shuffle([...pairs]),matched:[],flipped:[],left:null,rightChoice:null,mistakes:0,moves:0,started:Date.now(),answers:[],locked:false};
+  state.active={kind,title:options.title || (kind==='memory'?'Memory':'Matching'),options:{...options,contentRevision,chunkIds,lessonIds,seed,count:6,mode:kind,activityId:options.id || options.activityId || `mix-${kind}`},pairs,cards:shuffle(pairs.flatMap(pair=>[{id:pair.id+'-left',pairId:pair.id,text:pair.left,side:'left'},{id:pair.id+'-right',pairId:pair.id,text:pair.right,side:'right'}])),right:shuffle([...pairs]),matched:[],flipped:[],left:null,rightChoice:null,mistakes:0,moves:0,started:Date.now(),answers:[],locked:false};
   render();window.scrollTo({top:0,behavior:'instant'});
 }
 function renderGame(a) {
@@ -356,7 +360,7 @@ async function finishActivity() {
   const previous=state.active;if(!previous||previous.saving)return;if(previous.options.practiceUntilCorrect&&previous.kind==='quiz'&&previous.requiredQuestionIds.some(id=>!previous.answers.some(a=>a.questionId===id&&a.correct)))return;previous.saving=true;
   const correct=previous.options.practiceUntilCorrect&&previous.kind==='quiz'?previous.correctChecks:previous.answers.filter(answer=>answer.correct).length;
   const total=previous.options.practiceUntilCorrect&&previous.kind==='quiz'?previous.answerChecks:previous.answers.length;
-  const quizOptions={seed:previous.options.seed,mode:previous.kind==='quiz'?(previous.options.mode||'mixed'):previous.kind,count:previous.options.count || previous.questions?.length || 6,chunkIds:previous.options.chunkIds || [],lessonIds:previous.options.lessonIds || (previous.options.lessonId?[previous.options.lessonId]:[]),grammarSetIds:previous.options.grammarSetIds || [],audioEnabled:previous.options.audioEnabled!==false,audioFallbackQuestionIds:previous.options.audioFallbackQuestionIds||[]};
+  const quizOptions={contentRevision:previous.options.contentRevision||'base',seed:previous.options.seed,mode:previous.kind==='quiz'?(previous.options.mode||'mixed'):previous.kind,count:previous.options.count || previous.questions?.length || 6,chunkIds:previous.options.chunkIds || [],lessonIds:previous.options.lessonIds || (previous.options.lessonId?[previous.options.lessonId]:[]),grammarSetIds:previous.options.grammarSetIds || [],audioEnabled:previous.options.audioEnabled!==false,audioFallbackQuestionIds:previous.options.audioFallbackQuestionIds||[]};
   const inferredLesson=previous.options.lessonId || quizOptions.lessonIds[0] || getChunk(quizOptions.chunkIds[0])?.lessonId || allGrammar.find(g=>quizOptions.grammarSetIds.includes(g.id))?.lessonId || '1A';
   const attempt={id:crypto.randomUUID(),bookId:'horizons-a1',lessonId:inferredLesson,activityId:previous.options.activityId || previous.options.id || 'mixed-practice',mode:quizOptions.mode,quizOptions,...quizOptions,answers:previous.answers,durationMs:Date.now()-previous.started,mistakes:previous.mistakes || 0};
   state.active={kind:'result',title:previous.title,previous,attempt,correct,total,saving:false,saved:false,oldXp:xp(),masteredBefore:Object.entries(progress().islands||{}).filter(([,island])=>island.mastered).map(([id])=>id),error:null};

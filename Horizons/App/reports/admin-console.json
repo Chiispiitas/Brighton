@@ -1,0 +1,24 @@
+{
+  "pass": true,
+  "scope": "Actual separate admin UI with synthetic in-memory backend; no production learner access or writes.",
+  "actions": [
+    "login",
+    "list",
+    "user",
+    "list",
+    "createCode",
+    "list",
+    "updateCode",
+    "list",
+    "catalog",
+    "publish",
+    "catalog",
+    "contentHistory",
+    "restoreContent",
+    "catalog",
+    "logout"
+  ],
+  "avatarRendered": true,
+  "mobileWidth": 390,
+  "errors": []
+}

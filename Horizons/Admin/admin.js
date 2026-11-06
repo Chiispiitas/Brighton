@@ -1,0 +1,89 @@
+import {pathNodeById} from '../App/content/unit1.mjs';
+import {loadArt,avatarMarkup,refreshArtwork,disposeArtwork} from '../App/src/art.js?v=login1';
+const endpoint='https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons-admin';
+const main=document.querySelector('#main'),notice=document.querySelector('#notice'),logout=document.querySelector('#logout');
+let expiryTimer;
+let token=null,tab='users',rows=[],catalog=null,selected=null,sequence=0,offset=0,hasMore=false;
+const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const date=value=>value?new Date(value).toLocaleString('es-EC'):'—';
+function inform(text){notice.textContent=text;}
+async function api(action,data={}){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),35000);
+ try{const response=await fetch(endpoint,{method:'POST',cache:'no-store',credentials:'omit',headers:{'Content-Type':'application/json',...(token?{'X-Requested-With':token}:{})},body:JSON.stringify({action,...data}),signal:controller.signal});const value=await response.json();if(!response.ok||!value.ok){if(response.status===401&&action!=='login')clearSession();throw Error(value.message||'No se pudo completar la operación.');}return value;}catch(error){if(error.name==='AbortError')throw Error('El servidor tardó demasiado. Vuelve a intentarlo.');throw error;}finally{clearTimeout(timer);}
+}
+function clearSession(){clearTimeout(expiryTimer);token=null;rows=[];catalog=null;selected=null;sequence++;disposeArtwork(main);logout.hidden=true;main.innerHTML='<section class="login"><h1>Administración de Horizons</h1><p>Acceso privado. La sesión termina al cerrar o recargar esta pestaña.</p><form id="login"><label>Usuario<input name="username" autocomplete="username" required></label><label>Contraseña<input name="password" type="password" autocomplete="current-password" required></label><button>Entrar</button></form></section>';}
+function shell(title){disposeArtwork(main);main.innerHTML=`<nav aria-label="Administración">${[['users','Alumnos'],['codes','Llaves'],['pools','Ejercicios'],['audit','Cambios']].map(([id,label])=>`<button data-tab="${id}" ${id===tab?'aria-current="page"':''}>${label}</button>`).join('')}</nav><h1>${esc(title)}</h1><div id="view"></div>`;return main.querySelector('#view');}
+async function show(nextTab=tab){
+ if(!token)return;tab=nextTab;selected=null;rows=[];offset=0;hasMore=false;const request=++sequence;const view=shell({users:'Alumnos',codes:'Llaves de los libros',pools:'Pools de ejercicios',audit:'Historial de cambios'}[tab]);view.textContent='Cargando…';
+ if(tab==='pools'){const result=await api('catalog');if(request!==sequence)return;catalog=result.catalog;renderPools();return;}
+ const result=await api('list',{table:tab,offset:0});if(request!==sequence)return;rows=result.rows;hasMore=result.hasMore;renderList();
+}
+function renderList(){
+ const view=main.querySelector('#view');view.innerHTML=`<div class="tools"><input id="search" aria-label="Buscar en las filas cargadas" placeholder="Buscar en las filas cargadas"><button class="secondary" data-refresh>Actualizar</button>${tab==='codes'?'<button data-new-code>Crear llave</button>':''}<button class="secondary" data-export>Exportar filas cargadas</button></div><div id="rows"></div><div class="actions">${hasMore?'<button class="secondary" data-more>Cargar más</button>':''}</div><div id="detail"></div>`;filterRows('');
+}
+function filterRows(query){
+ const visible=rows.map((row,index)=>({row,index})).filter(({row})=>JSON.stringify(row).toLowerCase().includes(query.toLowerCase()));
+ const headings=tab==='users'?['Alumno','Libro','Última modificación','']:tab==='codes'?['Etiqueta / llave','Libro','Estado','Vínculo','']:['Fecha','Acción','Destino'];
+ document.querySelector('#rows').innerHTML=`<p class="muted">${visible.length} de ${rows.length} registros cargados.</p><div class="table-wrap"><table><thead><tr>${headings.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${visible.map(({row:r,index:i})=>tab==='users'?`<tr><td>${esc(r.displayName)}<br><small>${esc(r.id)}</small></td><td>${esc(r.defaultBookId)}</td><td>${date(r.updatedAt)}</td><td><button class="secondary" data-user="${esc(r.id)}">Ver ficha</button></td></tr>`:tab==='codes'?`<tr><td>${esc(r.label||'Sin etiqueta')}<br><small>${esc(r.codeHint)}</small></td><td>${esc(r.bookId)}</td><td><span class="pill">${r.disabled?'Revocada':r.claim?(Date.parse(r.claim.expiresAt)<Date.now()?'Vencida':'Vinculada'):'Sin usar'}</span></td><td>${r.claim?`<button class="secondary" data-user="${esc(r.claim.profileId)}">Ver alumno</button><br><small>Hasta ${date(r.claim.expiresAt)}</small>`:'—'}</td><td><button class="secondary" data-code="${i}">Editar</button></td></tr>`:`<tr><td>${date(r.createdAt)}</td><td>${esc(r.action||r.kind)}<br><small>${esc(r.actor)}</small></td><td>${esc(r.target||r.next)}${r.details?`<details><summary>Detalle</summary><pre>${esc(JSON.stringify(r.details,null,2))}</pre></details>`:''}</td></tr>`).join('')}</tbody></table></div>`;
+}
+async function showUser(id){
+ const result=await api('user',{id}),view=main.querySelector('#detail');if(!view)return;selected=result;
+ const p=result.profile,g=result.progress;await loadArt();
+ view.innerHTML=`<section class="detail"><div class="avatar">${avatarMarkup(p.avatar,'',p.displayName)}</div><h2>${esc(p.displayName)}</h2><p class="muted">${esc(p.id)}<br>Zona horaria: ${esc(p.timeZone)}<br>Fecha de nacimiento: ${esc(p.dateOfBirth||'No indicada')}</p><div class="stats"><div><b>${g.xp}</b>XP</div><div><b>${g.streak}</b>Días de racha</div><div><b>${g.bestStreak}</b>Mejor racha</div><div><b>${g.attempts}</b>Rondas</div></div><p>Última lección: <strong>${esc(g.lastLessonId||'Sin actividad')}</strong> · Última isla: ${esc(pathNodeById[g.lastActivityId]?.title||g.lastActivityId||'—')}</p><p>Lecciones completadas: ${esc(g.completedLessons.join(', ')||'Ninguna')}</p><h3>Libros y llaves</h3>${result.books.map(book=>`<p>${esc(book.label||book.bookId)} · ${esc(book.status)} · Activado ${date(book.activatedAt)} · Vence ${date(book.expiresAt)}</p>`).join('')||'<p>Sin libros.</p>'}<details><summary>Dominio por isla</summary><div class="table-wrap"><table><thead><tr><th>Isla</th><th>Dominio</th><th>Estado</th></tr></thead><tbody>${Object.entries(g.islands||{}).map(([id,island])=>`<tr><td>${esc(pathNodeById[id]?.title||id)}</td><td>${island.masteredCount} / ${island.total}</td><td>${island.mastered?'Corona':'En progreso'}</td></tr>`).join('')}</tbody></table></div></details><details><summary>Vocabulario practicado</summary><div class="table-wrap"><table><tr><th>Palabra</th><th>Aciertos / errores</th><th>Dominio</th></tr>${Object.values(g.wordStats||{}).map(w=>`<tr><td>${esc(w.term)}</td><td>${w.correct} / ${w.incorrect}</td><td>${w.mastered?'Dominada':'Pendiente'}</td></tr>`).join('')}</table></div></details><details><summary>Actividad reciente</summary><div class="table-wrap"><table><tr><th>Fecha</th><th>Lección / actividad</th><th>Aciertos</th><th>XP</th></tr>${result.recentActivity.map(a=>`<tr><td>${date(a.createdAt)}</td><td>${esc(a.lessonId)} · ${esc(pathNodeById[a.activityId]?.title||a.activityId)}</td><td>${a.correct} / ${a.total}</td><td>${a.xp}</td></tr>`).join('')}</table></div></details><div class="actions"><button class="secondary" data-export-user>Exportar ficha</button><button class="danger" data-revoke-user="${esc(p.id)}">Cerrar sesiones del alumno</button></div></section>`;refreshArtwork(view);view.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function codeEditor(index){
+ const code=index===null?null:rows[index],view=document.querySelector('#detail');selected=code;
+ view.innerHTML=`<section class="detail"><h2>${code?'Editar llave':'Crear llave'}</h2><p class="muted">Las llaves nuevas se muestran una sola vez. Las antiguas guardadas como hash no pueden recuperarse. Revocar conserva el historial del alumno.</p><form id="code-form" data-id="${esc(code?.id||'')}"><label>Etiqueta<input name="label" maxlength="100" value="${esc(code?.label||'')}" required></label><label>Libro<select name="bookId" ${code?.claim?'disabled':''}><option value="horizons-a1" ${code?.bookId==='horizons-a1'?'selected':''}>Horizons A1</option><option value="horizons-a2-preview" ${code?.bookId==='horizons-a2-preview'?'selected':''}>Horizons A2 — vista previa</option></select></label>${code?`<label><input style="width:auto" name="disabled" type="checkbox" ${code.disabled?'checked':''}> Revocar esta llave</label>`:''}<button>Guardar</button></form></section>`;view.scrollIntoView({behavior:'smooth'});
+}
+function renderPools(){
+ const view=document.querySelector('#view');view.innerHTML=`<p class="muted">Versión: ${esc(catalog.revision)}. Los cambios solo afectan a rondas nuevas; se conservan las versiones anteriores para corregir rondas ya iniciadas.</p><div class="actions"><button class="secondary" data-history>Versiones / restaurar</button><button class="secondary" data-pool-refresh>Descartar borrador y recargar</button></div><div class="row"><section><label>Buscar pool o pregunta<input id="pool-search" placeholder="Nombre, lección o identificador"></label><div id="pool-list"></div></section><section id="pool-editor"><p>Selecciona una entrada para editarla.</p></section></div><div id="history"></div>`;poolList('');
+}
+function poolList(query){document.querySelector('#pool-list').innerHTML=catalog.pools.map(pool=>`<details ${query?'open':''}><summary>${esc({vocabulary:'Vocabulario',chunks:'Conjuntos de palabras',grammarSets:'Gramática',challengeQuestions:'Lectura y escucha'}[pool.kind])} · ${pool.items.length}</summary>${pool.items.filter(item=>JSON.stringify(item).toLowerCase().includes(query.toLowerCase())).map(item=>`<button class="pool-item" data-pool="${pool.kind}" data-item="${esc(item.id)}">${esc(item.title)}<br><small>${esc(item.lesson)} · ${esc(item.id)}</small></button>`).join('')}</details>`).join('');}
+const fieldLabels={term:'Término inglés (grabación existente)',spanish:'Pista en español',meaning:'Significado',example:'Ejemplo',aliases:'Otras respuestas válidas',title:'Título',description:'Descripción',prompt:'Instrucción / pregunta',correctText:'Respuesta correcta',answer:'Respuesta',accepted:'Respuestas aceptadas',distractors:'Opciones incorrectas',tokens:'Fichas de palabras',explanation:'Explicación',passage:'Texto de lectura'};
+function fieldsMarkup(fields,prefix=''){
+ return Object.entries(fields).map(([key,value])=>{
+  if(key==='questions')return value.map((q,i)=>`<details><summary>Pregunta ${i+1} · ${esc(q.id)}</summary>${fieldsMarkup(Object.fromEntries(Object.entries(q).filter(([k])=>k in fieldLabels)),`questions.${i}.`)}</details>`).join('');
+  if(!(key in fieldLabels))return '';
+  return `<label>${esc(fieldLabels[key])}${Array.isArray(value)?'<small class="muted"> · Una entrada por línea</small>':''}<textarea style="min-height:${Array.isArray(value)?'100':'70'}px" data-field="${prefix+key}" data-array="${Array.isArray(value)}" ${key==='term'?'readonly':''}>${esc(Array.isArray(value)?value.join('\n'):value)}</textarea></label>`;
+ }).join('');
+}
+function editorValue(){const value=structuredClone(selected.item.fields);for(const input of document.querySelectorAll('[data-field]')){const path=input.dataset.field.split('.');let parent=value;for(const key of path.slice(0,-1))parent=parent[key];parent[path.at(-1)]=input.dataset.array==='true'?input.value.split('\n').map(x=>x.trim()).filter(Boolean):input.value;}return value;}
+function editPool(kind,id){const item=catalog.pools.find(pool=>pool.kind===kind).items.find(item=>item.id===id);if(kind==='vocabulary'&&!item.fields.aliases)item.fields.aliases=[];selected={kind,id,item};document.querySelector('#pool-editor').innerHTML=`<h2>${esc(item.title)}</h2><p class="muted">Las grabaciones y las imágenes se conservan. Cambiar un término inglés requiere una grabación nueva.</p>${item.referenceAudio?`<p>Grabación de referencia</p><audio controls preload="none" src="${esc(new URL(item.referenceAudio,new URL('../App/',location.href)).href)}"></audio>`:''}${fieldsMarkup(item.fields)}<div class="actions"><button data-publish>Validar y publicar</button></div><p class="muted">En preguntas de escucha, revisa que la respuesta siga coincidiendo con la grabación.</p>`;}
+
+function download(name,value){const link=document.createElement('a'),url=URL.createObjectURL(new Blob([JSON.stringify(value,null,2)],{type:'application/json'}));link.href=url;link.download=name;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+main.addEventListener('input',event=>{if(event.target.id==='search')filterRows(event.target.value);if(event.target.id==='pool-search')poolList(event.target.value);});
+main.addEventListener('submit',async event=>{
+ event.preventDefault();const form=event.target,button=form.querySelector('button');if(button.disabled)return;button.disabled=true;
+ try{
+  const fields=new FormData(form);
+  if(form.id==='login'){const result=await api('login',{username:fields.get('username'),password:fields.get('password')});form.reset();token=result.token;clearTimeout(expiryTimer);expiryTimer=setTimeout(()=>{clearSession();inform('La sesión ha caducado. Vuelve a entrar.');},Math.max(0,Date.parse(result.expiresAt)-Date.now()));logout.hidden=false;inform('Sesión iniciada.');await show('users');}
+  if(form.id==='code-form'){
+   if(form.dataset.id){await api('updateCode',{id:form.dataset.id,label:fields.get('label'),bookId:fields.get('bookId')||selected.bookId,disabled:fields.has('disabled')});await show('codes');inform('Llave actualizada.');}
+   else{const result=await api('createCode',{label:fields.get('label'),bookId:fields.get('bookId')});document.querySelector('#detail').innerHTML=`<section class="detail"><h2>Llave creada</h2><p>Guárdala ahora: no se podrá recuperar después.</p><pre>${esc(result.code)}</pre><p>${esc(result.label)}</p></section>`;inform('Llave creada y disponible.');}
+  }
+ }catch(error){inform(error.message);}finally{button.disabled=false;}
+});
+main.addEventListener('click',async event=>{
+ const button=event.target.closest('button');if(!button||button.type==='submit'&&button.closest('form'))return;
+ try{
+  if(button.dataset.tab)return await show(button.dataset.tab);
+  if(button.hasAttribute('data-refresh'))return await show();
+  if(button.hasAttribute('data-more')){button.disabled=true;const result=await api('list',{table:tab,offset:rows.length});rows.push(...result.rows);hasMore=result.hasMore;renderList();return;}
+  if(button.dataset.user)return await showUser(button.dataset.user);
+  if(button.hasAttribute('data-code'))return codeEditor(Number(button.dataset.code));
+  if(button.hasAttribute('data-new-code'))return codeEditor(null);
+  if(button.hasAttribute('data-export'))return download('horizons-'+tab+'.json',rows);
+  if(button.hasAttribute('data-export-user'))return download('horizons-alumno.json',selected);
+  if(button.dataset.revokeUser&&confirm('¿Cerrar todas las sesiones de este alumno? Su progreso se conserva.')){const r=await api('revokeSessions',{id:button.dataset.revokeUser});inform('Sesiones cerradas: '+r.revoked);return;}
+  if(button.dataset.pool)return editPool(button.dataset.pool,button.dataset.item);
+  if(button.hasAttribute('data-pool-refresh')){if(confirm('¿Descartar los cambios sin publicar?'))await show('pools');return;}
+  if(button.hasAttribute('data-publish')){
+   const patch=editorValue(),patches=structuredClone(catalog.patches);(patches[selected.kind]??={})[selected.id]=patch;
+   if(!confirm('¿Validar y publicar esta edición para las rondas nuevas?'))return;
+   button.disabled=true;const result=await api('publish',{patches,expectedRevision:catalog.revision});await show('pools');inform('Contenido publicado. Versión '+result.revision);return;
+  }
+  if(button.hasAttribute('data-history')){const result=await api('contentHistory');document.querySelector('#history').innerHTML='<h2>Versiones anteriores</h2>'+[{revision:'base',createdAt:null,actor:'Versión original'},...result.versions].map(v=>`<p>${date(v.createdAt)} · ${esc(v.actor)} · ${esc(v.revision)} <button class="secondary" data-restore="${esc(v.revision)}">Restaurar</button></p>`).join('');return;}
+  if(button.dataset.restore&&confirm('¿Publicar una nueva versión que restaure este contenido?')){await api('restoreContent',{revision:button.dataset.restore,expectedRevision:catalog.revision});await show('pools');inform('Versión restaurada.');}
+ }catch(error){inform(error.message);}finally{button.disabled=false;}
+});
+logout.addEventListener('click',async()=>{try{await api('logout');}catch{}clearSession();inform('Sesión cerrada.');});

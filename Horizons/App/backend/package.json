@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "test": "node --test tests/application.test.mjs",
+    "test": "node --test tests/*.test.mjs",
     "build:hosting": "astro build",
     "astro": "astro",
     "dev": "wix dev",

@@ -1,0 +1,27 @@
+{
+  "pass": true,
+  "revision": "base",
+  "pools": [
+    {
+      "kind": "vocabulary",
+      "count": 143
+    },
+    {
+      "kind": "chunks",
+      "count": 23
+    },
+    {
+      "kind": "grammarSets",
+      "count": 5
+    },
+    {
+      "kind": "challengeQuestions",
+      "count": 51
+    }
+  ],
+  "unauthorizedStatus": 401,
+  "realLearnerRecordsAccessed": false,
+  "logout": true,
+  "deploymentId": "50da1f69-89ad-4076-8547-ea32c4059cfb",
+  "sourceRevision": "62d4651608c41885e6666857554287ef2c70a0b0"
+}

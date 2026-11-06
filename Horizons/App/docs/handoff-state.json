@@ -9,7 +9,7 @@
   "snapshotBeforeHandoffCommit": "ba5f616e69420f4fd8aefef4bc5f8658a8dc67bb",
   "lastRuntimeChange": "ba5f616e69420f4fd8aefef4bc5f8658a8dc67bb",
   "liveURL": "https://exams.bebrighton.net/Horizons/App/",
-  "cache": "horizons-companion-daily-streak-v103",
+  "cache": "horizons-companion-admin-content-v110",
   "coverage": {
     "level": "A1",
     "unit": 1,
@@ -35,9 +35,9 @@
   "backend": {
     "siteId": "09fbb304-3799-4b3a-8ec6-4a7097167f00",
     "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
-    "deploymentId": "ef6074d1-a54e-438b-9259-e42843fd3138",
-    "sourceRevision": "a68ccd0390a70b2ee28711d691be5800bdb7670e",
-    "tests": 50,
+    "deploymentId": "50da1f69-89ad-4076-8547-ea32c4059cfb",
+    "sourceRevision": "62d4651608c41885e6666857554287ef2c70a0b0",
+    "tests": 55,
     "liveChecks": 2,
     "liveCheckScope": "Reserved synthetic profile save and identical retry; first daily claim creation covered by isolated tests because fixture was already active today."
   },
@@ -72,7 +72,7 @@
     "Text source hashes describe the local Windows checkout; Git normalizes text line endings. Hosted frontend byte equality was not checked. Native PNG hashes are unaffected."
   ],
   "secretsIncluded": false,
-  "latestCorrection": "Reference-measured arm shafts about 30-31px and gripping palms40px; whole viewer-right arm behind torso, shoulder tucked at [278,312]. Exact skin palette/native-alpha guard; complete articulated parts, fire burst, counter impact, earned-day rail and Continue only after7.6s. Query streak3, cachev103.",
+  "latestCorrection": "Separate private administration console, learner avatar/progress and code management, validated versioned exercise editing. Student revisions preserve historical grading. Admin outside App worker scope.",
   "dailyStreakArtwork": {
     "version": 2,
     "durationMs": 7600,
@@ -93,5 +93,17 @@
     "noOpacityTransitions": true,
     "continueOnlyAfterAnimation": true,
     "backendUnchanged": true
+  },
+  "adminConsole": {
+    "url": "https://exams.bebrighton.net/Horizons/Admin/",
+    "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons-admin",
+    "credentialStorage": "Private CMS PBKDF2 verifier; plaintext password never stored in repository",
+    "sessions": "Memory-only client tokens; server hashed tokens,8h expiry,logout and independent learner roles",
+    "content": "Immutable snapshots, conflict-safe publications, historical round revision pinning, restore versions",
+    "originalKeyTextRecoverable": false,
+    "newKeysShownOnce": true,
+    "syntheticUiReport": "reports/admin-console.json",
+    "syntheticLearningReport": "reports/admin-content-learning.json",
+    "liveApiReport": "backend/reports/live-admin.json"
   }
 }

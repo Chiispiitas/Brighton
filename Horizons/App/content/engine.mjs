@@ -1,14 +1,16 @@
 import { normalizeAnswer, matchesAcceptedAnswer, compileAnswerPattern } from './answer-matching.mjs';
 import { spanishLetterName } from './translations.mjs';
 export { normalizeAnswer, matchesAcceptedAnswer, compileAnswerPattern } from './answer-matching.mjs';
-import { vocabulary, wordById, chunks, chunkById, lessons, lessonById, grammarSets, grammarSetById, activities, activityById, challengeQuestions, numberToWords } from './unit1.mjs';
+import * as defaultContent from './unit1.mjs';
 
-export function seededRandom(seed = Date.now()) {
+export function createEngine(content=defaultContent){
+ const { vocabulary, wordById, chunks, chunkById, lessons, lessonById, grammarSets, grammarSetById, activities, activityById, challengeQuestions, numberToWords }=content;
+function seededRandom(seed = Date.now()) {
   let state=2166136261;
   for(const char of String(seed)){state^=char.charCodeAt(0);state=Math.imul(state,16777619);}
   return () => {state+=0x6D2B79F5;let t=state;t=Math.imul(t^(t>>>15),t|1);t^=t+Math.imul(t^(t>>>7),t|61);return((t^(t>>>14))>>>0)/4294967296;};
 }
-export function shuffle(values, random=seededRandom()) {
+function shuffle(values, random=seededRandom()) {
   const result=[...values];
   for(let i=result.length-1;i>0;i--){const j=Math.floor(random()*(i+1));[result[i],result[j]]=[result[j],result[i]];}
   return result;
@@ -16,11 +18,11 @@ export function shuffle(values, random=seededRandom()) {
 const unique = values => [...new Set(values)];
 const asArray = value => value == null ? [] : Array.isArray(value) ? value : [value];
 const assertIds = (ids,map,label) => ids.forEach(id=>{if(!map[id])throw new RangeError(`Unknown ${label}: ${id}`);});
-export function getWordsForChunks(chunkIds=[]) {
+function getWordsForChunks(chunkIds=[]) {
   const selected=asArray(chunkIds);assertIds(selected,chunkById,'word set');
   return unique(selected.flatMap(id=>chunkById[id].wordIds)).map(id=>wordById[id]);
 }
-export function getWordsForLessons(lessonIds=[]) {
+function getWordsForLessons(lessonIds=[]) {
   const selected=asArray(lessonIds);assertIds(selected,lessonById,'lesson');
   return unique(selected.flatMap(id=>lessonById[id].chunkIds).flatMap(id=>chunkById[id].wordIds)).map(id=>wordById[id]);
 }
@@ -88,7 +90,7 @@ function distractorPool(word) {
   const equivalents=new Set([word.term,...word.aliases||[]].map(x=>normalizeAnswer(x)));
   return pool.filter(other=>!equivalents.has(normalizeAnswer(other.term)));
 }
-export function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),audioEnabled=true}={}) {
+function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),audioEnabled=true}={}) {
  const random=seededRandom(seed);
  return words.map(word=>{
   const answer=word.kind==='letter'?word.letter:word.term;
@@ -116,7 +118,7 @@ function prioritize(questions,options,random) {
   const important=remaining.filter(q=>q.wordIds?.some(id=>priority.has(id)));
   return [...shuffle(important,random),...shuffle(remaining.filter(q=>!important.includes(q)),random)];
 }
-export function buildQuiz(options={}) {
+function buildQuiz(options={}) {
   const selected=selection(options),random=seededRandom(options.seed??Date.now());
   const mode=options.mode || (selected.activity?.type==='grammar'?'grammar':selected.activity?.type==='review'?'mixed':'recall');
   let vocab=makeVocabularyQuestions(selected.words,{mode:['choice','listening'].includes(mode)?mode:'recall',seed:options.seed,audioEnabled:options.audioEnabled});
@@ -132,7 +134,7 @@ export function buildQuiz(options={}) {
   return applyAudioFallbacks(shuffle(candidates.slice(0,count),random),options);
 }
 
-export function getMatchingPairs(options={}) {
+function getMatchingPairs(options={}) {
  const selected=selection(options),random=seededRandom(options.seed??Date.now());
  const usedLeft=new Set(),usedRight=new Set(),pairs=[];
  for(const word of shuffle(selected.words.filter(word=>word.kind!=='letter'),random)){
@@ -146,7 +148,7 @@ export function getMatchingPairs(options={}) {
 }
 
 const sourceCodes=[[4,0,8],[2,10,6],[9,1,5],[7,3,4]];
-export function makeLockerChallenge({seed=Date.now(),rounds=4}={}) {
+function makeLockerChallenge({seed=Date.now(),rounds=4}={}) {
   const random=seededRandom(seed);
   return shuffle(sourceCodes,random).slice(0,wantedCount(rounds,sourceCodes.length)).map((values,i)=>({
     id:`locker-code-${i}-${values.join('-')}`,type:'text',kind:'game',prompt:'Remember the three-number locker code. Then type the numbers with spaces.',
@@ -164,8 +166,8 @@ function listeningQuestion(template,random){
  const listenFor=indexed.replace(/^Listen(?: to [^.]+| at [^.]+)?\.\s*/,'').replace(/^Listen\.\s*/,'');
  return {...q,prompt:q.type==='choice'?'Listen and choose.':'Listen and type.',listenFor,listening:true};
 }
-export function isAlphabetQuestion(question){return question.word?.kind==='letter'||question.wordIds?.some(id=>wordById[id]?.kind==='letter')||question.id?.includes('alphabet');}
-export function getAudioFallbackQuestion(question){
+function isAlphabetQuestion(question){return question.word?.kind==='letter'||question.wordIds?.some(id=>wordById[id]?.kind==='letter')||question.id?.includes('alphabet');}
+function getAudioFallbackQuestion(question){
  if(isAlphabetQuestion(question))return question;
  if(!question.listening&&!question.audio&&!question.audioWordId)return question;
  const word=question.word||wordById[question.audioWordId]||vocabulary.find(w=>normalizeAnswer(w.term)===normalizeAnswer(question.correctText??question.answer));
@@ -192,7 +194,7 @@ function applyAudioFallbacks(questions,options){
  for(const id of requested)if(!questions.some(q=>q.id===id&&(q.listening||q.audio||q.audioWordId||q.originListening)))throw new RangeError(`Unknown listening alternative: ${id}`);
  return questions.map(q=>(options.audioEnabled===false||requested.includes(q.id))&&(q.listening||q.audio||q.audioWordId)?getAudioFallbackQuestion(q):q);
 }
-export function getActivityQuestions(activityId,options={}) {
+function getActivityQuestions(activityId,options={}) {
  const activity=activityById[activityId];if(!activity)throw new RangeError(`Unknown activity: ${activityId}`);
  const merged={...options,activityId};const random=seededRandom(options.seed??Date.now());
  let questions;
@@ -205,7 +207,7 @@ export function getActivityQuestions(activityId,options={}) {
  return applyAudioFallbacks(questions,options);
 }
 
-export function createPracticeSession(options={}) {
+function createPracticeSession(options={}) {
   const selected=selection(options),activity=selected.activity;
   const questions=activity?getActivityQuestions(activity.id,options):buildQuiz(options);
   return {id:options.sessionId||`practice-${Date.now()}-${Math.floor(Math.random()*1e7)}`,activityId:activity?.id||'custom-mix',
@@ -215,7 +217,7 @@ export function createPracticeSession(options={}) {
     total:questions.length,createdAt:new Date().toISOString(),bookId:'a1',unit:1};
 }
 
-export function checkAnswer(question,submitted) {
+function checkAnswer(question,submitted) {
   const mode=question.normalization||'normal';
   let correct=false,expected=question.correctText??question.answer;
   if(question.type==='choice'){
@@ -233,9 +235,9 @@ export function checkAnswer(question,submitted) {
   return {correct,expected,feedback:question.explanation||String(expected),wordIds,
     masteryEligible:correct&&wordIds.length>0&&question.retrieval!==false,requiresRetry:!correct};
 }
-export function isCorrect(question,submitted){return checkAnswer(question,submitted).correct;}
+function isCorrect(question,submitted){return checkAnswer(question,submitted).correct;}
 
-export function validateContent() {
+function validateContent() {
   const errors=[];const allIds=[...vocabulary,...chunks,...activities].map(x=>x.id);
   for(const id of allIds)if(allIds.indexOf(id)!==allIds.lastIndexOf(id))errors.push(`Duplicate id: ${id}`);
   for(const set of chunks)for(const id of set.wordIds)if(!wordById[id])errors.push(`Missing word ${id} in ${set.id}`);
@@ -243,3 +245,22 @@ export function validateContent() {
   for(const set of grammarSets)for(const q of set.questions){if(!q.prompt||!q.explanation)errors.push(`Incomplete question ${q.id}`);}
   return errors;
 }
+
+return { seededRandom,shuffle,getWordsForChunks,getWordsForLessons,makeVocabularyQuestions,buildQuiz,getMatchingPairs,makeLockerChallenge,isAlphabetQuestion,getAudioFallbackQuestion,getActivityQuestions,createPracticeSession,checkAnswer,isCorrect,validateContent };
+}
+const defaultEngine=createEngine();
+export const seededRandom=(...args)=>defaultEngine.seededRandom(...args);
+export const shuffle=(...args)=>defaultEngine.shuffle(...args);
+export const getWordsForChunks=(...args)=>defaultEngine.getWordsForChunks(...args);
+export const getWordsForLessons=(...args)=>defaultEngine.getWordsForLessons(...args);
+export const makeVocabularyQuestions=(...args)=>defaultEngine.makeVocabularyQuestions(...args);
+export const buildQuiz=(...args)=>defaultEngine.buildQuiz(...args);
+export const getMatchingPairs=(...args)=>defaultEngine.getMatchingPairs(...args);
+export const makeLockerChallenge=(...args)=>defaultEngine.makeLockerChallenge(...args);
+export const isAlphabetQuestion=(...args)=>defaultEngine.isAlphabetQuestion(...args);
+export const getAudioFallbackQuestion=(...args)=>defaultEngine.getAudioFallbackQuestion(...args);
+export const getActivityQuestions=(...args)=>defaultEngine.getActivityQuestions(...args);
+export const createPracticeSession=(...args)=>defaultEngine.createPracticeSession(...args);
+export const checkAnswer=(...args)=>defaultEngine.checkAnswer(...args);
+export const isCorrect=(...args)=>defaultEngine.isCorrect(...args);
+export const validateContent=(...args)=>defaultEngine.validateContent(...args);
