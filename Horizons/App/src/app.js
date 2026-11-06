@@ -185,7 +185,7 @@ function render() {
   disposeArtwork(app);
   app.removeAttribute('aria-busy');
   if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
-  if (state.active) {if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');app.innerHTML=renderActivity();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
+  if (state.active) {if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');app.innerHTML=renderActivity();refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});return;}
   const pages={learn:home,practice,bank:wordBank,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
