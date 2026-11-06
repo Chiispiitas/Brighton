@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T23:40:37.343Z",
-  "sourceCommit": "c8b7fb3f343b87e1f2991804b7726d710fd65487",
+  "createdAt": "2026-11-06T12:41:32.543Z",
+  "sourceCommit": "7e909b4ab94121dd58abcba56e5f4c5ef6dae3bc",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -11,15 +11,15 @@
     },
     {
       "file": "assets/art/avatar-static-v1.frames.json",
-      "sha256": "650ea658c579f99ce7b883840b0eb9b7dfc1b51c536c0940df32e7986f94ceea"
+      "sha256": "1730d404848484e4bcc6374c965816b6e64d2ab85747d602b689588d35a2f276"
     },
     {
       "file": "src/art.js",
-      "sha256": "3fc0642d37c425ea218c618091544b3f27d4568e4e4ab33825fba2e8dd9f4f27"
+      "sha256": "a12fc133b3bace39636bcdaefee771c70cbdb6f1d284f420c7091f8f05801496"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "a13e751e53c906a5ccae416e5cd2b049ab215115ab4f6dc0727ce1fb842c0d1c"
+      "sha256": "779a757fbed76a1bf7180e5934267136d11ddc530244ffb4614f659cf4d5c3e4"
     },
     {
       "file": "styles/app.css",
@@ -203,25 +203,25 @@
       "id": "R03",
       "file": "03-avatar-bases.png",
       "title": "Avatar bases and skin tones",
-      "sha256": "32bd59fabdff62a8b8ba5546d56f542dd4ebe1ded91509acdee61b75c32bd1dc"
+      "sha256": "b60346913450a462728acbe27ca11f6f5558ca955309e9786fe88b3d39e23830"
     },
     {
       "id": "R04",
       "file": "04-hairstyles.png",
       "title": "Approved hairstyles",
-      "sha256": "52663cef4a4d64610b3690d8cebf242041efd339f64c845c02bed061a5eddd53"
+      "sha256": "8985e42c2df82e84273dbedbe0bbacfdb6b392a2065163154051a447230e3fdf"
     },
     {
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "d8b28a1bcfed7e1acfc6da61c9f3a597e89d4fcf6e69fecbc873396ed2e63140"
+      "sha256": "159a789bd525231684f88d2595096a6e878926d58350c95801c153a79f0a7901"
     },
     {
       "id": "R06",
       "file": "06-accessories-and-colors.png",
       "title": "Accessories and customization",
-      "sha256": "34d89f0190222477517b0a85a86170302dcfc5e586c6b6680218682ec1f2215a"
+      "sha256": "c8840c957fc9ae52fb8b9a040188507196be7170e29a97bf1ce105f200b7e316"
     },
     {
       "id": "R07",

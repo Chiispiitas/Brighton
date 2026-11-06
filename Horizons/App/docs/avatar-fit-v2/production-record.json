@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-06",
+  "method": "Native sprite registration and DOM crop/stretch only. No bitmap editing or new ImageGen artwork.",
+  "neck": "A five-source-pixel strip from each existing neck is cropped inside its opaque boundaries and displayed as a45-logical-pixel extension behind head/clothing, moving only with existing avatar idle artwork. Twelve skin/base registrations preserve exact native colors.",
+  "hair": "Side part (hair-1) moved down3 logical pixels. Sampling inner fringe at x195\u2013220/y50\u201385 shows zero uncovered forehead pixels across all12 base/skin registrations after the correction. A7px trial closed the gap but overlapped the eyebrow too much and was reduced to3px.",
+  "invariants": "All metadata other than added neckExtension and hair-1 y coordinate is identical to immediate baseline; all native bitmaps, expression sprites, face/eye/glasses anchors and saved IDs unchanged.",
+  "native_source_hashes": {
+    "assets/art/avatar-round-v3/heads.png": "4be979d259cad931b345947028acae83e8b263af59559a6db33f1dbe199ac2d3",
+    "assets/art/avatar-face-v2/blank-heads.png": "f1fdcd9c6d3462be4efc9cd977474648bfafeef00dee007d2990f2f3f5dd626e",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-face-v2/rest-anchors.frames.json": "9bf4db1ffe46c28ba7cc547f6c36f404553ecf519920edc514f1b3ae27c5a643"
+  },
+  "review": "Before/after and240 outfit/base/skin combinations in static+editor face rigs, plus24 hairstyle/base combinations. Root review only; no independent human review claimed.",
+  "reference_updates": [
+    "R03",
+    "R04",
+    "R05",
+    "R06"
+  ],
+  "cache": "avatar-fit-v80",
+  "runtime_module_query": "fit2",
+  "metadata_query": "fit=2"
+}

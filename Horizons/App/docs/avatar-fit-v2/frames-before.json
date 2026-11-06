@@ -1,0 +1,973 @@
+{
+  "version": 1,
+  "kind": "native-static-flat-avatar",
+  "canvas": {
+    "width": 320,
+    "height": 320
+  },
+  "static": true,
+  "bases": {
+    "male": {
+      "skins": {
+        "skin-1": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 29,
+            "y": 52,
+            "w": 327,
+            "h": 271
+          },
+          "position": {
+            "x": 60,
+            "y": 66.2508,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 139.9511,
+          "eyeCenters": [
+            [
+              126.23899529208587,
+              139.60802029045922
+            ],
+            [
+              194.14380508496825,
+              139.67611616959636
+            ]
+          ]
+        },
+        "skin-2": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 413,
+            "y": 52,
+            "w": 326,
+            "h": 271
+          },
+          "position": {
+            "x": 60,
+            "y": 65.7423,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 139.6687,
+          "eyeCenters": [
+            [
+              126.19386142319564,
+              139.31277999765513
+            ],
+            [
+              194.37304838176408,
+              139.42507249182617
+            ]
+          ]
+        },
+        "skin-3": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 797,
+            "y": 52,
+            "w": 327,
+            "h": 271
+          },
+          "position": {
+            "x": 60,
+            "y": 66.2508,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 139.9511,
+          "eyeCenters": [
+            [
+              126.11970163068631,
+              139.6357671957096
+            ],
+            [
+              194.08174573917316,
+              139.61422748769456
+            ]
+          ]
+        },
+        "skin-4": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 1181,
+            "y": 52,
+            "w": 326,
+            "h": 271
+          },
+          "position": {
+            "x": 60,
+            "y": 65.7423,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 139.6687,
+          "eyeCenters": [
+            [
+              126.21958021030294,
+              139.36170518457052
+            ],
+            [
+              194.60131998316893,
+              139.32775833265526
+            ]
+          ]
+        },
+        "skin-5": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 29,
+            "y": 395,
+            "w": 327,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 68.0856,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.4801,
+          "eyeCenters": [
+            [
+              126.12488018622484,
+              141.03142135195583
+            ],
+            [
+              194.20955936302218,
+              141.0276603755422
+            ]
+          ]
+        },
+        "skin-6": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 413,
+            "y": 395,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 140.8957,
+          "eyeCenters": [
+            [
+              126.22993874197607,
+              140.62445683131241
+            ],
+            [
+              194.46318433676606,
+              140.78633924345513
+            ]
+          ]
+        }
+      }
+    },
+    "female": {
+      "skins": {
+        "skin-1": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 797,
+            "y": 395,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.34116501906573,
+              140.84723771711273
+            ],
+            [
+              194.48013602628617,
+              140.98138918682935
+            ]
+          ]
+        },
+        "skin-2": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 1181,
+            "y": 395,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.2184900592662,
+              140.91731095756705
+            ],
+            [
+              194.54389908800738,
+              140.94136443112632
+            ]
+          ]
+        },
+        "skin-3": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 29,
+            "y": 735,
+            "w": 326,
+            "h": 270
+          },
+          "position": {
+            "x": 60,
+            "y": 66.3558,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.3549979242585,
+              141.01399456617003
+            ],
+            [
+              194.54192936647775,
+              141.02292897116024
+            ]
+          ]
+        },
+        "skin-4": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 413,
+            "y": 737,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.17515835730228,
+              140.97506488604995
+            ],
+            [
+              194.47734780556868,
+              140.99266314299197
+            ]
+          ]
+        },
+        "skin-5": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 797,
+            "y": 737,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.33957658502177,
+              140.9520676090326
+            ],
+            [
+              194.52757909021514,
+              140.9526981274679
+            ]
+          ]
+        },
+        "skin-6": {
+          "src": "assets/art/avatar-round-v3/heads.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          },
+          "frame": {
+            "x": 1181,
+            "y": 737,
+            "w": 326,
+            "h": 268
+          },
+          "position": {
+            "x": 60,
+            "y": 67.5828,
+            "w": 200,
+            "z": 2
+          },
+          "eyeY": 141.2024,
+          "eyeCenters": [
+            [
+              126.24650153199745,
+              140.936513436211
+            ],
+            [
+              194.58591909966904,
+              140.95108005886925
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "clothes": {
+    "outfit-1": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 38,
+        "y": 170,
+        "w": 461,
+        "h": 279
+      },
+      "position": {
+        "x": 70,
+        "y": 209.4295,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-2": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 537,
+        "y": 195,
+        "w": 462,
+        "h": 254
+      },
+      "position": {
+        "x": 70,
+        "y": 214.9221,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-3": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 1037,
+        "y": 186,
+        "w": 462,
+        "h": 263
+      },
+      "position": {
+        "x": 70,
+        "y": 212.974,
+        "w": 180,
+        "z": 3
+      },
+      "overlays": [
+        {
+          "src": "assets/art/avatar-jacket-lapels-v1.png",
+          "atlas": {
+            "width": 1662,
+            "height": 946
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 1662,
+            "h": 946
+          },
+          "position": {
+            "x": 70,
+            "y": 212.974,
+            "w": 180,
+            "z": 3
+          }
+        }
+      ]
+    },
+    "outfit-4": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 38,
+        "y": 624,
+        "w": 461,
+        "h": 277
+      },
+      "position": {
+        "x": 70,
+        "y": 216.0672,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-5": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 537,
+        "y": 633,
+        "w": 462,
+        "h": 268
+      },
+      "position": {
+        "x": 70,
+        "y": 214.5325,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-6": {
+      "src": "assets/art/avatar-static-clothes-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 1037,
+        "y": 640,
+        "w": 462,
+        "h": 261
+      },
+      "position": {
+        "x": 70,
+        "y": 215.7013,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-7": {
+      "src": "assets/art/avatar-expansion-outfit-7.png",
+      "atlas": {
+        "width": 659,
+        "height": 413
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 659,
+        "h": 413
+      },
+      "position": {
+        "x": 70,
+        "y": 200.5053,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-8": {
+      "src": "assets/art/avatar-expansion-outfit-8.png",
+      "atlas": {
+        "width": 661,
+        "height": 397
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 661,
+        "h": 397
+      },
+      "position": {
+        "x": 70,
+        "y": 216.3979,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-9": {
+      "src": "assets/art/avatar-expansion-outfit-9.png",
+      "atlas": {
+        "width": 665,
+        "height": 396
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 665,
+        "h": 396
+      },
+      "position": {
+        "x": 70,
+        "y": 216.8045,
+        "w": 180,
+        "z": 3
+      }
+    },
+    "outfit-10": {
+      "src": "assets/art/avatar-expansion-outfit-10.png",
+      "atlas": {
+        "width": 661,
+        "height": 408
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 661,
+        "h": 408
+      },
+      "position": {
+        "x": 70,
+        "y": 212.5855,
+        "w": 180,
+        "z": 3
+      }
+    }
+  },
+  "hair": {
+    "hair-1": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 30,
+        "y": 24,
+        "w": 438,
+        "h": 323
+      },
+      "position": {
+        "x": 50.0,
+        "y": 5.589,
+        "w": 220,
+        "z": 4
+      }
+    },
+    "hair-2": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 529,
+        "y": 12,
+        "w": 465,
+        "h": 342
+      },
+      "position": {
+        "x": 44.0,
+        "y": 12.1806,
+        "w": 232,
+        "z": 4
+      }
+    },
+    "hair-3": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 1049,
+        "y": 12,
+        "w": 450,
+        "h": 472
+      },
+      "position": {
+        "x": 45.0,
+        "y": 6.0444,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-4": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 9,
+        "y": 532,
+        "w": 499,
+        "h": 282
+      },
+      "position": {
+        "x": 35.0,
+        "y": 30.3687,
+        "w": 250,
+        "z": 4
+      }
+    },
+    "hair-5": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 525,
+        "y": 533,
+        "w": 455,
+        "h": 443
+      },
+      "position": {
+        "x": 45.0,
+        "y": 13.6044,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-6": {
+      "src": "assets/art/avatar-static-hair-v1.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 1011,
+        "y": 531,
+        "w": 516,
+        "h": 463
+      },
+      "position": {
+        "x": 31.0,
+        "y": 15.5,
+        "w": 258,
+        "z": 4
+      }
+    },
+    "hair-7": {
+      "src": "assets/art/avatar-expansion-hair-7.png",
+      "atlas": {
+        "width": 459,
+        "height": 232
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 459,
+        "h": 232
+      },
+      "position": {
+        "x": 67.0,
+        "y": 44.9935,
+        "w": 186,
+        "z": 4
+      }
+    },
+    "hair-8": {
+      "src": "assets/art/avatar-expansion-hair-8.png",
+      "atlas": {
+        "width": 469,
+        "height": 232
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 469,
+        "h": 232
+      },
+      "position": {
+        "x": 60.0,
+        "y": 32.0341,
+        "w": 200,
+        "z": 4
+      }
+    },
+    "hair-9": {
+      "src": "assets/art/avatar-expansion-hair-9.png",
+      "atlas": {
+        "width": 447,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 447,
+        "h": 439
+      },
+      "position": {
+        "x": 62.7517,
+        "y": 0,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-10": {
+      "src": "assets/art/avatar-expansion-hair-10.png",
+      "atlas": {
+        "width": 1043,
+        "height": 493
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 1043,
+        "h": 493
+      },
+      "position": {
+        "x": 68.0805,
+        "y": 47.8869,
+        "w": 214,
+        "z": 4
+      }
+    },
+    "hair-11": {
+      "src": "assets/art/avatar-expansion-hair-11.png",
+      "atlas": {
+        "width": 394,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 394,
+        "h": 439
+      },
+      "position": {
+        "x": 45.0,
+        "y": 23,
+        "w": 230,
+        "z": 4
+      }
+    },
+    "hair-12": {
+      "src": "assets/art/avatar-expansion-hair-12.png",
+      "atlas": {
+        "width": 462,
+        "height": 439
+      },
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 462,
+        "h": 439
+      },
+      "position": {
+        "x": 30.0,
+        "y": 8,
+        "w": 260,
+        "z": 4
+      }
+    }
+  },
+  "accessories": {
+    "accessory-1": {
+      "src": "assets/art/avatar-eyewear-v2.png",
+      "atlas": {
+        "width": 2172,
+        "height": 724
+      },
+      "frame": {
+        "x": 73,
+        "y": 245,
+        "w": 575,
+        "h": 233
+      },
+      "kind": "eyewear",
+      "position": {
+        "x": 90,
+        "y": 120,
+        "w": 140,
+        "z": 6
+      },
+      "lensCenters": [
+        [
+          157.9633877679477,
+          115.64384375983495
+        ],
+        [
+          416.8005971197752,
+          115.77067088162978
+        ]
+      ]
+    },
+    "accessory-2": {
+      "src": "assets/art/avatar-eyewear-v2.png",
+      "atlas": {
+        "width": 2172,
+        "height": 724
+      },
+      "frame": {
+        "x": 778,
+        "y": 244,
+        "w": 617,
+        "h": 235
+      },
+      "kind": "eyewear",
+      "position": {
+        "x": 90,
+        "y": 120,
+        "w": 140,
+        "z": 6
+      },
+      "lensCenters": [
+        [
+          164.57325775092613,
+          116.6881728450312
+        ],
+        [
+          451.56939484126985,
+          117.43702876984128
+        ]
+      ]
+    },
+    "accessory-3": {
+      "src": "assets/art/avatar-eyewear-v2.png",
+      "atlas": {
+        "width": 2172,
+        "height": 724
+      },
+      "frame": {
+        "x": 1508,
+        "y": 236,
+        "w": 624,
+        "h": 250
+      },
+      "kind": "eyewear",
+      "position": {
+        "x": 90,
+        "y": 120,
+        "w": 140,
+        "z": 6
+      },
+      "lensCenters": [
+        [
+          166.4403773688459,
+          124.13635409045872
+        ],
+        [
+          456.6925484294204,
+          124.93300932961839
+        ]
+      ]
+    }
+  },
+  "badges": {
+    "star-pin": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 341,
+        "y": 371,
+        "w": 257,
+        "h": 238
+      },
+      "position": {
+        "x": 204,
+        "y": 270,
+        "w": 23,
+        "z": 7
+      }
+    },
+    "trophy-pin": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 643,
+        "y": 370,
+        "w": 271,
+        "h": 244
+      },
+      "position": {
+        "x": 204,
+        "y": 270,
+        "w": 23,
+        "z": 7
+      }
+    },
+    "compass-pin": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 957,
+        "y": 668,
+        "w": 254,
+        "h": 253
+      },
+      "position": {
+        "x": 204,
+        "y": 270,
+        "w": 23,
+        "z": 7
+      }
+    }
+  }
+}

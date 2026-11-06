@@ -57,6 +57,6 @@ export function normalizeAvatar(avatar={}){return{...avatar,hairColor:manifest.a
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
  for(const slot of container.querySelectorAll('.learn-hero .hero-pico.unit1-banner-pico[data-character=pico][data-posture=explore]'))import('./pico-banner-motion.js?v=areas1').then(module=>{bannerModule=module;if(slot.isConnected)module.mountBannerPico(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.bannerMotion='fallback';});
- for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=areas1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
+ for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=fit2').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
 export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);for(const slot of container.querySelectorAll('.hero-pico'))bannerModule?.unmountBannerPico(slot);}

@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest avatar neckline/hair fit (6 November 2026): reuse the existing native neck pixels as a registered45px extension behind all ten garments; no new bitmap artwork or expression patches. Side-part hair moves down3 logical pixels to close the forehead gap on both bases/all six skins. Eye/face/glasses anchors, hair colors, outfits and saved IDs remain. Before/after and240 costume combinations plus24 hairstyle/base combinations reviewed in static/editor rigs. Native PNGs unchanged; reference sheets R03–R06 regenerated from the renderer. See docs/avatar-fit-v2/production-record.json and reports/avatar-fit-v2.json. Cache avatar-fit-v80; app query avatarfit2; art/static module queries fit2; metadata fit=2.
+
 ## Path prop animation release — 5 November 2026
 
 The user authorized animation of the eight lesson props and removal of all path birds/butterflies. Character/avatar/Pico rigs are unchanged. Current renderer: `src/prop-motion.js`; registrations: `assets/art/prop-motion-v1/rigs.json`; exact sprite calls: [production record](prop-motion-v1/production-record.json); [reference manifest](prop-motion-v1/reference-manifest.json).
