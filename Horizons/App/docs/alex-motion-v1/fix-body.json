@@ -1,0 +1,14 @@
+{
+  "asset_id": "alex-motion-v1-fix-body",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/fix.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. Only the body/support base in EXACTLY the accepted pose. Remove head/hair/face/ears but keep the visible neck support and fixed headphones around the neck. Retain orange shirt, teal jacket with cream badge, navy trousers and cream shoes. Retain the ENTIRE stationary left arm with its hand resting on his hip, exactly as input4. Remove only the viewer-right wrench-holding arm, leaving a rounded shoulder attachment. Do NOT drop retained limbs or change body proportions. Transparent background."
+}

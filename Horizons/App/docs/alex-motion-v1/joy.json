@@ -1,0 +1,14 @@
+{
+  "asset_id": "alex-motion-v1-joy",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/head-exact-6x.png"
+  ],
+  "prompt": "Output only the requested disconnected facial glyphs on transparent alpha. NOT A WHOLE CHARACTER OR HEAD. This is an isolated animation expression layer. No skin pixels, hair, ears, neck, headphones, costume, torso, legs or body anywhere. Inputs1 R01 brand,2 R02 cast,3 R07 rendering are mandatory references; input4 is the exact accepted Alex enlarged head EDIT TARGET, shown only to locate/shape the facial glyphs. No glow, shadows or outlines. ONLY the happy EXPRESSION GLYPHS: two thick raised brown brows, two short closed smiling eye curves and one joyful open smile. Keep original relative feature positions. Nothing else."
+}

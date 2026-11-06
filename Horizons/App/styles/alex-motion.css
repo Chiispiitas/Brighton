@@ -1,0 +1,13 @@
+/* Only Alex's documented native-part rig opts into character motion. */
+.character[data-alex-motion]{overflow:visible}
+.alex-motion-stage{position:absolute;display:block;left:50%;bottom:1%;transform:translateX(-50%) scale(var(--alex-fit,0));transform-origin:50% 100%;pointer-events:none;overflow:visible}
+.alex-motion-group,.alex-motion-layer{position:absolute;display:block;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
+.alex-motion-head{z-index:0}
+.alex-motion-body{z-index:1}
+.alex-motion-gesture{z-index:2}
+/* Registered standing sleeves overlap behind the torso at their shoulder joint. */
+.character[data-character=alex]:is([data-posture=listen],[data-posture=fix],[data-posture=dance]) .alex-motion-body{z-index:2}
+.character[data-character=alex]:is([data-posture=listen],[data-posture=fix],[data-posture=dance]) .alex-motion-gesture{z-index:1}
+.alex-motion-face-mask,.alex-motion-pupil-mask{mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat}
+.alex-motion-stage[hidden],.alex-motion-stage [hidden],.character[data-alex-motion]>.character-art[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.alex-motion-stage{display:none!important}}

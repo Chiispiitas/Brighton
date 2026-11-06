@@ -1,0 +1,15 @@
+{
+  "asset_id": "alex-motion-v1-blink",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/listen.png",
+    "assets/art/alex-motion-v1/baseline/head-exact-6x.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. ONLY two softly curved dark brown closed eyelids matching Alex eyes, arranged at original eye positions. Input5 exact enlarged head. Two separate short clean curves; no white eyes/pupils/brows, mouth, skin, hair or headphones."
+}

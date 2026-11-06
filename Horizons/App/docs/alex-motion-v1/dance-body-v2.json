@@ -1,0 +1,15 @@
+{
+  "asset_id": "alex-motion-v1-dance-body-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/dance.png",
+    "assets/art/alex-motion-v1/native/dance-body-rejected-v1.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Output a headless Alex DANCE BODY only. Inputs1 R01,2 R02,3 R07 are mandatory references. Input4 is original dance pose; input5 is rejected headless body. RESTORE the complete arm/fist on the LEFT SIDE OF THE IMAGE, from input4. REMOVE the complete raised arm/fist on RIGHT SIDE OF IMAGE. This distinction is image-left/image-right, not anatomical sides. Keep torso lean, orange shirt, teal open jacket and badge, navy neck headphones, bent navy legs and cream shoes. No head, hair, face or ears. Right shoulder ends in short rounded overlap stub for a separate arm. Preserve original exact composition and scale proportions; no glow, no other objects. Transparent background. Do not mirror."
+}

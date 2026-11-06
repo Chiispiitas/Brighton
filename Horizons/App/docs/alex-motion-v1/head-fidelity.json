@@ -1,0 +1,326 @@
+[
+  {
+    "pose": "listen",
+    "baselineSha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669",
+    "repairFile": "assets/art/alex-motion-v1/native/head.png",
+    "skinMaterialCrop": [
+      564,
+      326,
+      605,
+      367
+    ],
+    "materialColorSelectionDistance": 7.7196240000927245,
+    "uniformMaterialScale": 3.8536585365853657,
+    "skinPaletteTranslation": [
+      7.0,
+      3.0,
+      -3.0
+    ],
+    "faceFillScope": "Whole connected face/ears/neck region, original per-pose alpha; one permanent generated-material field",
+    "headOriginal": "listen-head-original.png",
+    "faceMask": "listen-head-face-mask.png",
+    "structureMask": "listen-head-structure-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head.png",
+      "uniformScale": 0.1690862510674637,
+      "offset": [
+        44,
+        -4
+      ],
+      "anchorRows": [
+        47,
+        72
+      ],
+      "originalSkinRightEdges": [
+        184,
+        196
+      ],
+      "footprint": "Original eye-relative connected right brow glyph ROI plus native antialias edge"
+    },
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "neckSupport": "Same permanent registered neck derivative overlaps body; generated neck removed; headphones stay on body",
+    "neutralBrowsMouth": "Original native pixels at original coordinates",
+    "neutralPupils": "Original native pixels at original coordinates",
+    "eyes": "Generated white material clipped to original eye regions",
+    "eyeBoxes": [
+      [
+        139,
+        75,
+        158,
+        97
+      ],
+      [
+        172,
+        70,
+        191,
+        91
+      ]
+    ],
+    "browBoxes": [
+      [
+        129,
+        61,
+        158,
+        74
+      ],
+      [
+        167,
+        51,
+        200,
+        68
+      ]
+    ],
+    "mouthBox": [
+      149,
+      116,
+      183,
+      139
+    ],
+    "neckStart": 153,
+    "nose": "Omitted; no distinct glyph in original"
+  },
+  {
+    "pose": "fix",
+    "baselineSha256": "3b6562108f7f11797ca6b574fc675920c6e79f6e9ab3104c448c04a5a31dcf4c",
+    "repairFile": "assets/art/alex-motion-v1/native/head.png",
+    "skinMaterialCrop": [
+      564,
+      326,
+      605,
+      367
+    ],
+    "materialColorSelectionDistance": 7.050516778955909,
+    "uniformMaterialScale": 3.8048780487804876,
+    "skinPaletteTranslation": [
+      6.0,
+      2.0,
+      -4.0
+    ],
+    "faceFillScope": "Whole connected face/ears/neck region, original per-pose alpha; one permanent generated-material field",
+    "headOriginal": "fix-head-original.png",
+    "faceMask": "fix-head-face-mask.png",
+    "structureMask": "fix-head-structure-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head.png",
+      "uniformScale": 0.16737830913748933,
+      "offset": [
+        47,
+        -4
+      ],
+      "anchorRows": [
+        46,
+        71
+      ],
+      "originalSkinRightEdges": [
+        185,
+        197
+      ],
+      "footprint": "Original eye-relative connected right brow glyph ROI plus native antialias edge"
+    },
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "neckSupport": "Same permanent registered neck derivative overlaps body; generated neck removed; headphones stay on body",
+    "neutralBrowsMouth": "Original native pixels at original coordinates",
+    "neutralPupils": "Original native pixels at original coordinates",
+    "eyes": "Generated white material clipped to original eye regions",
+    "eyeBoxes": [
+      [
+        140,
+        74,
+        160,
+        96
+      ],
+      [
+        174,
+        69,
+        192,
+        91
+      ]
+    ],
+    "browBoxes": [
+      [
+        130,
+        60,
+        159,
+        73
+      ],
+      [
+        168,
+        50,
+        201,
+        67
+      ]
+    ],
+    "mouthBox": [
+      150,
+      115,
+      184,
+      138
+    ],
+    "neckStart": 153,
+    "nose": "Omitted; no distinct glyph in original"
+  },
+  {
+    "pose": "dance",
+    "baselineSha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793",
+    "repairFile": "assets/art/alex-motion-v1/native/head.png",
+    "skinMaterialCrop": [
+      564,
+      326,
+      605,
+      367
+    ],
+    "materialColorSelectionDistance": 7.34394057937863,
+    "uniformMaterialScale": 3.6341463414634148,
+    "skinPaletteTranslation": [
+      7.0,
+      2.0,
+      -3.0
+    ],
+    "faceFillScope": "Whole connected face/ears/neck region, original per-pose alpha; one permanent generated-material field",
+    "headOriginal": "dance-head-original.png",
+    "faceMask": "dance-head-face-mask.png",
+    "structureMask": "dance-head-structure-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head.png",
+      "uniformScale": 0.161400512382579,
+      "offset": [
+        51,
+        -2
+      ],
+      "anchorRows": [
+        46,
+        71
+      ],
+      "originalSkinRightEdges": [
+        183,
+        196
+      ],
+      "footprint": "Original eye-relative connected right brow glyph ROI plus native antialias edge"
+    },
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "neckSupport": "Same permanent registered neck derivative overlaps body; generated neck removed; headphones stay on body",
+    "neutralBrowsMouth": "Original native pixels at original coordinates",
+    "neutralPupils": "Original native pixels at original coordinates",
+    "eyes": "Generated white material clipped to original eye regions",
+    "eyeBoxes": [
+      [
+        141,
+        76,
+        160,
+        98
+      ],
+      [
+        174,
+        69,
+        193,
+        91
+      ]
+    ],
+    "browBoxes": [
+      [
+        129,
+        62,
+        158,
+        75
+      ],
+      [
+        168,
+        50,
+        202,
+        67
+      ]
+    ],
+    "mouthBox": [
+      151,
+      117,
+      185,
+      141
+    ],
+    "neckStart": 156,
+    "nose": "Omitted; no distinct glyph in original"
+  },
+  {
+    "pose": "sit",
+    "baselineSha256": "24d54b967c26239ca6ad34b453031ec3c95f880cf43e8ac6224abdb35e786273",
+    "repairFile": "assets/art/alex-motion-v1/native/head.png",
+    "skinMaterialCrop": [
+      564,
+      326,
+      605,
+      367
+    ],
+    "materialColorSelectionDistance": 6.517406871085431,
+    "uniformMaterialScale": 3.731707317073171,
+    "skinPaletteTranslation": [
+      6.0,
+      2.0,
+      -3.0
+    ],
+    "faceFillScope": "Whole connected face/ears/neck region, original per-pose alpha; one permanent generated-material field",
+    "headOriginal": "sit-head-original.png",
+    "faceMask": "sit-head-face-mask.png",
+    "structureMask": "sit-head-structure-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head.png",
+      "uniformScale": 0.16567036720751493,
+      "offset": [
+        45,
+        -2
+      ],
+      "anchorRows": [
+        49,
+        74
+      ],
+      "originalSkinRightEdges": [
+        182,
+        194
+      ],
+      "footprint": "Original eye-relative connected right brow glyph ROI plus native antialias edge"
+    },
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "neckSupport": "Same permanent registered neck derivative overlaps body; generated neck removed; headphones stay on body",
+    "neutralBrowsMouth": "Original native pixels at original coordinates",
+    "neutralPupils": "Original native pixels at original coordinates",
+    "eyes": "Generated white material clipped to original eye regions",
+    "eyeBoxes": [
+      [
+        138,
+        77,
+        158,
+        100
+      ],
+      [
+        171,
+        72,
+        190,
+        94
+      ]
+    ],
+    "browBoxes": [
+      [
+        126,
+        61,
+        155,
+        75
+      ],
+      [
+        165,
+        53,
+        199,
+        70
+      ]
+    ],
+    "mouthBox": [
+      148,
+      118,
+      181,
+      143
+    ],
+    "neckStart": 158,
+    "nose": "Omitted; no distinct glyph in original"
+  }
+]

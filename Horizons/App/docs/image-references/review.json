@@ -33,6 +33,13 @@
     "reviewer": "Codex root",
     "scope": "Rebuilt all seven sheets after the Mina art-loader integration; inspected refreshed R01 and R05 directly. R02/R03/R04/R06/R07 retain their prior bytes. Builder now retains the viewport stylesheet source hash. Exact R01/R02/R07 inputs used for Mina generation are frozen separately in docs/mina-motion-v1/inputs; later sheet refreshes do not rewrite those input hashes."
   },
+  "alexContinuationReview": {
+    "date": "2026-11-06",
+    "baselineCommit": "2cee1f8fd5f494188dc25cd2a6996d7a7293f474",
+    "pass": true,
+    "reviewer": "Codex root",
+    "scope": "Rebuilt all seven sheets after Alex art-loader integration. Directly inspected R01 and R05; accepted native cast sources remain static identity references. Generation-time R01/R02/R07 bytes and every actual preflight input hash are frozen in docs/alex-motion-v1/inputs. Later sheet refreshes do not alter saved generation provenance."
+  },
   "trailContinuationReview": {
     "runtimeRevision": "fe7d1660bb8d110a3ae7abf6f32e7b03c2d7fbc9",
     "pass": true,

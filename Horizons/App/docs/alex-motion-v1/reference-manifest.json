@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "acceptedSource": {
+    "file": "assets/art/cast-static-alex-v3.png",
+    "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825"
+  },
+  "schedule": {
+    "idleLoopMs": 8000,
+    "idleLoopsBeforeAccent": 1,
+    "accentMs": 3000,
+    "cycleMs": 11000
+  },
+  "exerciseReactions": {
+    "correctMs": 1100,
+    "incorrectMs": 1300,
+    "seatedSupportsFixed": true
+  },
+  "activeRuntime": [
+    {
+      "file": "src/alex-motion.js",
+      "sha256": "d8cb408c7695fd3a4a2b9c7a46879db456a33b1f14b270bc5e7e5ab2a0fb50fb",
+      "bytes": 14636
+    },
+    {
+      "file": "styles/alex-motion.css",
+      "sha256": "825308f5cfb65635a308fbe7bbd75b54824c845c040b8bd7bfacc1616419b127",
+      "bytes": 1248
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "a73897720aa9e1d86a7226f1310a3df2dfbf47e39449af10818dde7577513d6b",
+      "bytes": 8953
+    },
+    {
+      "file": "tools/prepare-alex-motion.py",
+      "sha256": "4e6ca2d4be14acc00000f2f57db5cea82fb97882357c97d536548588617d879a",
+      "bytes": 25557
+    },
+    {
+      "file": "assets/art/alex-motion-v1/rigs.json",
+      "sha256": "9cf529753d373b3e2b45bde0a77844383156d5c8cfb99099b1f0a66310cf217e",
+      "bytes": 4481
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-blink.png",
+      "sha256": "f9439f01dbe6cc28913857abba7ca15fc823c29ee9d7159472b51c033632144b",
+      "bytes": 1747
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-body.png",
+      "sha256": "a964e14197eac2edbf1abdc647b08365c5e225163bbd10cede72cc5e20aea5e4",
+      "bytes": 97913
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-eyes.png",
+      "sha256": "adaa31242893a59740b54683fe602af0ab4a71365de77d2421885f87077b0894",
+      "bytes": 3091
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-focus.png",
+      "sha256": "a03a030639170763b3d1eceb353e487edf2f057ea8db7bdfa7f19184df9c088d",
+      "bytes": 3925
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-gesture.png",
+      "sha256": "397bc6bf586dea60d23c838532a7fbfc5c6726e33f8a55f292621e47a9b468a6",
+      "bytes": 16058
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-head.png",
+      "sha256": "b3ec16bec8d7fb0d37c5a867ead16df88de75abb779a9d1dafb0ee716856c502",
+      "bytes": 115369
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-joy.png",
+      "sha256": "c79f3527a9b2f0f272e5d8133ac6476e25ccb5ed86ea85653cee6f202eb6821d",
+      "bytes": 5199
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-neutral.png",
+      "sha256": "a1990cd7185ae4f451bfb750a3a081353599c0cf560bc6d78011645ba442d07d",
+      "bytes": 127405
+    },
+    {
+      "file": "assets/art/alex-motion-v1/dance-pupils.png",
+      "sha256": "affa27478a3e77881470f49e61482f03aeb658a41e2e065464790908ee00bf6a",
+      "bytes": 127329
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-blink.png",
+      "sha256": "47970eec456a58c94458a4d2864d32744ee27a4e782c1f434df4a8f90993d5ef",
+      "bytes": 1790
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-body.png",
+      "sha256": "6cbde41cf501177c7edf5c6e222f3575aefa8e019907d089a9202ffb77b85340",
+      "bytes": 89026
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-eyes.png",
+      "sha256": "379803230fde53babbe68a3c38efa35feb4b038851caabb5de7912efe1361308",
+      "bytes": 3025
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-focus.png",
+      "sha256": "ba696ba966b5b29f0d1bc27c63602dcf0bf62db153ac70a79fa4f7c1000c0fd1",
+      "bytes": 3926
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-gesture.png",
+      "sha256": "d371329a8d9645eb7d397d7f8087c0ed4f4d6973691730216917d16f5c615e8c",
+      "bytes": 21934
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-head.png",
+      "sha256": "d0b48271e03a467accf6028b1fd5720b8c7a1b0ba93b0e4b132ca77fa638f608",
+      "bytes": 107093
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-joy.png",
+      "sha256": "72952b118e07a60fca79815459d5cea6c0f689b319381a2bab786d3b94e5e258",
+      "bytes": 5120
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-neutral.png",
+      "sha256": "60717f3e5e1e5c65a18f5e1909b34cfcdca5c4b279fa26dbbc35bf47993705fa",
+      "bytes": 118753
+    },
+    {
+      "file": "assets/art/alex-motion-v1/fix-pupils.png",
+      "sha256": "42a0858520fa6a986c8f81ff92aafc5e9d9dcd92665c204203e8c1b74f0ce214",
+      "bytes": 118702
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-blink.png",
+      "sha256": "c4168015effcb2aff29858508e1812e1a10c980c744e6684a924262c7d62b9f8",
+      "bytes": 1764
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-body.png",
+      "sha256": "7beb527f2566621e1528e3bc43b9c066a9be634f4fb9df34dff17afb39cdac24",
+      "bytes": 85710
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-eyes.png",
+      "sha256": "e9ed37595989bed45a57ea58fd8a8fc3a936aa7cf23b9d065dab32974622c4b6",
+      "bytes": 2970
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-focus.png",
+      "sha256": "8e68c766d273290f0414096c645cefd428cbf0482175975c3443e0db3b4a5134",
+      "bytes": 3950
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-gesture.png",
+      "sha256": "680e2847f699fa54a395ef01bce37f07a9b07dc664f8275033355b32bc199df9",
+      "bytes": 14856
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-head.png",
+      "sha256": "15dae5fac542b0a9e825a8d46ef46a1e92d050fbb8ab5edd9aeab600c643da3c",
+      "bytes": 100195
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-joy.png",
+      "sha256": "5b6dbcee9df310033f74cc26e464542ce53e446e57607d7580ace028e7b03f5a",
+      "bytes": 5090
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-neutral.png",
+      "sha256": "7f1ae4b842fe67be67d150d5089a7bf10839058ee44bfc3a31a5a85e71988547",
+      "bytes": 112186
+    },
+    {
+      "file": "assets/art/alex-motion-v1/listen-pupils.png",
+      "sha256": "975ded8c5bc280a25aa70fa27bacf9e8a74b6bda6e3768ced3537dd05345f659",
+      "bytes": 112120
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-blink.png",
+      "sha256": "e4bac9064fe7dc7901e460ba0749100df938c373155864159620c1ca32d4d219",
+      "bytes": 1975
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-body.png",
+      "sha256": "63c11914bebf9fa0dd62827ae46e281a2de09d775f349f4ff7deab1367928b37",
+      "bytes": 152383
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-eyes.png",
+      "sha256": "fd7ad444dcb49d632226b8cf64ee803ada2efd76e069f868ee91e872d2bbf0af",
+      "bytes": 3250
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-focus.png",
+      "sha256": "af45ab89247e35aa4c8a5affc21edd4b8f809db78ffff0c02760312e090cd154",
+      "bytes": 4186
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-gesture.png",
+      "sha256": "985e66d386c14cf0579fcfdf26b3b13272a52ddc08e4332ff5679a9ccbf3ffef",
+      "bytes": 46810
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-head.png",
+      "sha256": "bd518fd801b347c096b6b3aa47c362aaab527c8d27720d2748625e6a53271009",
+      "bytes": 147792
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-joy.png",
+      "sha256": "71c82b9a215c1faea3b8b00651e9dd5fbde9778cc8b5c7af368fb701a38f8b3e",
+      "bytes": 5296
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-neutral.png",
+      "sha256": "8610d0fce1914dbd866cc1fd2293f1fdacd86754bdff1c960ae7c4abc1e4b5a7",
+      "bytes": 160276
+    },
+    {
+      "file": "assets/art/alex-motion-v1/sit-pupils.png",
+      "sha256": "6c1975c5e2c280b5d1aeb04011b8158b35ce08600422b66ae63c20c4254d664d",
+      "bytes": 160254
+    }
+  ],
+  "nativeOutputs": [
+    {
+      "file": "assets/art/alex-motion-v1/native/blink-rejected-v1.png",
+      "sha256": "c59fe2eea303625614256634c277e2089ae8225d8f154c8fc91e74a5a744adfb",
+      "bytes": 1038972
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/blink.png",
+      "sha256": "0729729bd34f54b89a2e288bcfe302750a39a2b8de4da0a34563c68d1bf49d24",
+      "bytes": 117043
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/dance-body-rejected-v1.png",
+      "sha256": "3bbad7389be5fa0bda959c4f4b94b7dd5f83be0e0aa2e96e67ed87eb574bc740",
+      "bytes": 874953
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/dance-body.png",
+      "sha256": "84757d6b7969cdbc8c774aace96d44b2180e8b89b3e2cc8f17f4f0c634ba69c2",
+      "bytes": 829859
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/dance-gesture-rejected-v1.png",
+      "sha256": "5e731c6c9c7ed213253800b9d2438c5fda90bf8b75513be5fb2c3cac8438372c",
+      "bytes": 876653
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/dance-gesture.png",
+      "sha256": "0ec6cc2213cfc715346b3c776c71c9b6e2090683f0851e1787a256d5fd0ef047",
+      "bytes": 585303
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/eyes.png",
+      "sha256": "a768c643f6bbdaea279cfab41ed6c31b84451b85549a7dcce274ef0d4e5a73d5",
+      "bytes": 95846
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/fix-body.png",
+      "sha256": "65b766e3bdb93b6a38114be3981334fc126c50914da2d5559fa401fdc610a180",
+      "bytes": 771026
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/fix-gesture-rejected-v1.png",
+      "sha256": "b47beb6a85e52d9d33ab174c2fbfbfdb385da573cad0426fa053ddd6bb58cca7",
+      "bytes": 1071859
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/fix-gesture.png",
+      "sha256": "dd2a328121ca10842269af894abf225ad68f22f82b51581b5fac4e8798d28ffc",
+      "bytes": 652496
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/focus.png",
+      "sha256": "4436ea49c1026b956a165814f0c1d3ba93a477664a618526ce8143b7a0bf432d",
+      "bytes": 281145
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/head.png",
+      "sha256": "173859e2666f360191e20146c6b1f61cf785687a1d19be8ab6e1e3c7a3a734cf",
+      "bytes": 810670
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/joy.png",
+      "sha256": "e43f6d9e71c2264c0d5297a97853894eb2ca3f1cbb67a405226f27517ed1207e",
+      "bytes": 206829
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/listen-body-rejected-v1.png",
+      "sha256": "fa44510f74b897a26d310967890c6d67028b968ebd89bb88db7f6d12ca2b4da5",
+      "bytes": 586597
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/listen-body.png",
+      "sha256": "dbb073549da5111cc77e5c38411c06bf2b755baea9b95be39832ad04082af595",
+      "bytes": 678151
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/listen-gesture-rejected-v1.png",
+      "sha256": "cbd6163d7119cc2f9f17d2abdb3a7ee0add2bbed539d4db4ef6fb0e3a8e22e2f",
+      "bytes": 1135152
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/listen-gesture.png",
+      "sha256": "ad3f334fd0812e58d7eacf1eecd027613e8f694196cd299a3c346fc3ae915f0c",
+      "bytes": 600044
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/neutral.png",
+      "sha256": "81b11c2eb4068f18b722f8b9deda361a328142f3b3b01f70fbcabe12f62a2a44",
+      "bytes": 173838
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/pupils.png",
+      "sha256": "9bd2c2ee45813bac0ea75e11f61979881a1ca52bb405fcdfb7bacf392fb69bc6",
+      "bytes": 988847
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/sit-body.png",
+      "sha256": "c201526973582f578940792c145616b001bb49c92f33655ccac4d491427c1e6f",
+      "bytes": 732321
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/sit-gesture-rejected-v1.png",
+      "sha256": "07bbd2fd40f9352b3ef1e200b7010fc25903157969633706620f31890463fb31",
+      "bytes": 1091335
+    },
+    {
+      "file": "assets/art/alex-motion-v1/native/sit-gesture.png",
+      "sha256": "4699092571afb8ae3700571039c88a48c89443ff76453e50b005da249b352be5",
+      "bytes": 946689
+    }
+  ],
+  "frozenInputs": [
+    {
+      "file": "docs/alex-motion-v1/inputs/01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+      "bytes": 88467
+    },
+    {
+      "file": "docs/alex-motion-v1/inputs/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+      "bytes": 325117
+    },
+    {
+      "file": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png",
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+      "bytes": 1253162
+    }
+  ],
+  "reviewArtifacts": [
+    {
+      "file": "docs/alex-motion-v1/registrations.json",
+      "sha256": "77426a9bb103f3a4b91a5fa55671b9a5ff44f1264d6e3662d2bd901ea60d6dec",
+      "bytes": 16698
+    },
+    {
+      "file": "docs/alex-motion-v1/head-fidelity.json",
+      "sha256": "604b68388542b44e92e06c816caa9c8b05be5a430ab340ceda4eba4eba539d4d",
+      "bytes": 8226
+    },
+    {
+      "file": "docs/alex-motion-v1/reconstruction.png",
+      "sha256": "04b3b8407eceebc0e58e26952c91686471f3910beda977b993131ecc69fb2261",
+      "bytes": 723670
+    },
+    {
+      "file": "docs/alex-motion-v1/head-fidelity.png",
+      "sha256": "225dfb07dfa4fd9fce334b5d3da68aed1fd0f547da5c562c8fe51bae39dbe8b0",
+      "bytes": 170637
+    },
+    {
+      "file": "docs/alex-motion-v1/upper-body-comparison.png",
+      "sha256": "471a2011e0adf00325dbc947e92fd4040cc88c4931fbd6e9054b538efff7b14a",
+      "bytes": 554839
+    },
+    {
+      "file": "docs/alex-motion-v1/shoulder-overlap.json",
+      "sha256": "db44b52b24299c2943573ada820edcaa270855ab84c8213f9279fa63e3478729",
+      "bytes": 16112
+    }
+  ],
+  "limitations": [
+    "Raw native images unchanged; assembled derivatives are not untouched-native or whole-head pixel-identical claims.",
+    "Synthetic local Edge/Chromium QA, not physical-device/Safari/Firefox/human acceptance.",
+    "Large QA videos remain outside repository."
+  ]
+}

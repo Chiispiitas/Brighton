@@ -1,0 +1,15 @@
+{
+  "asset_id": "alex-motion-v1-sit-gesture-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/sit.png",
+    "assets/art/alex-motion-v1/baseline/sit-arms-exact-6x.png"
+  ],
+  "prompt": "STRICT COMPONENT EXTRACTION, not redesign. Generate ONLY the original driving steering wheel with both gripping hands and both forward teal sleeves/forearms from INPUT5 on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatoryreference sheets. Input4 exactaccepted fullAlexdrivingpose; INPUT5 is lossless6x crop of the actual original wheel/hands/arms and is the PRIMARY EDIT TARGET. Preserve exact original wheel diameter, hand positions/size, relative layout, sleeve thickness and elbow contours. Preserve the original STRAIGHT HORIZONTAL lowerforearm and gently sloping upperforearm. DO NOT invent a rounded vertical upper-arm cap/pill/oval on the imageLEFT. End proximal sleeves with a straight edge at the crop LEFT boundary so they connect behind torso. Exclude ALL orange shirt pixels, cream chestbadge, head/headphones, chair, torso, legs and turquoise console. Where those are removed leave transparent alpha, no holes in retained wheel or arm. Do not enlarge wheel or gloves. Wheel/hands/forearms retain their source proportions asone rigid movinggroup. No crop of wheel/hands; complete sourcecomponent. No shadow, glow, outlines or addedgradient. One isolatedpart only, wide transparentcanvas and cleanopaqueinteriors."
+}

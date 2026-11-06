@@ -1,0 +1,14 @@
+{
+  "asset_id": "alex-motion-v1-dance-gesture",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/dance.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The raised right fist and its complete bent teal sleeve/arm ONLY, from shoulder to fist. Include hidden sleeve overlap for rotation. No head, headphones, torso or other arm."
+}

@@ -1,0 +1,15 @@
+{
+  "asset_id": "alex-motion-v1-listen-gesture-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/alex-motion-v1/baseline/listen.png",
+    "assets/art/alex-motion-v1/baseline/listen-arm-exact-6x.png"
+  ],
+  "prompt": "STRICT IDENTITY-PRESERVING COMPONENT EXTRACTION. Output only ONE isolated viewer-right ARM on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 flatstyle are mandatoryreferences. Input4 is exactacceptedfullpose fororientation; input5 is a lossless6x cropofthis SAME EXACT arm, the PRIMARY EDIT TARGET. Extract this exact arm from input5, retaining its original contour, elbow angle, sleeve thickness, hand size, orientation and relative arm segment lengths. Do not redraw or redesign the arm; do not re-pose it, mirror it, make it skinnier or shorten it. Retain exact teal sleeve, orange-brown hand. Include entire sleeve from shoulder attachment to hand. Remove any torso, cream chestbadge, head/headphones, opposite arm and background from crop. Do not cut a hole where badge was; continue hidden shoulder sleeve slightly behind torso for overlap. No extra bulbous shoulder cap. Original arm slopes DOWN from shoulder to elbow, then UP to the large open palm. Do not invent a tall upper-arm hump. Large hand stays originalsize. Match the entire source arm silhouette as closely as possible. No glow, shadow, outline or shading additions. One isolated arm only; portrait canvas for fix/dance, original asymmetric bent-arm silhouette, fully opaque interior, generous transparent margin."
+}

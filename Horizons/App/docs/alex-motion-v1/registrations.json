@@ -1,0 +1,1165 @@
+[
+  {
+    "id": "listen-body",
+    "box": [
+      0,
+      140,
+      280,
+      400
+    ],
+    "uniformScale": 0.3590664272890485,
+    "offset": [
+      16,
+      140
+    ],
+    "size": [
+      248,
+      400
+    ],
+    "generatedNeckRemovedByNativeMaterialComponents": [
+      [
+        132,
+        154,
+        181,
+        187
+      ],
+      [
+        175,
+        188,
+        176,
+        193
+      ]
+    ],
+    "headphones": "Exact accepted original native RGBA cups and native support; generated headphone components replaced",
+    "headphoneSourceBoxes": [
+      [
+        87,
+        143,
+        151,
+        216
+      ],
+      [
+        185,
+        143,
+        237,
+        213
+      ]
+    ],
+    "headphoneSupportMask": "listen-headphone-support-mask.png",
+    "nativeJointSupportStart": 153,
+    "nativeJointSupportBounds": [
+      117,
+      153,
+      201,
+      201
+    ]
+  },
+  {
+    "id": "listen-gesture",
+    "box": [
+      233,
+      163,
+      134,
+      133
+    ],
+    "uniformScale": 0.1289701636188643,
+    "offset": [
+      233,
+      164
+    ],
+    "size": [
+      134,
+      131
+    ]
+  },
+  {
+    "id": "listen-blink",
+    "box": [
+      139,
+      83.8,
+      19,
+      7.699999999999999
+    ],
+    "uniformScale": 0.05413105413105413,
+    "offset": [
+      139,
+      84
+    ],
+    "size": [
+      19,
+      7
+    ]
+  },
+  {
+    "id": "listen-blink",
+    "box": [
+      172,
+      78.4,
+      19,
+      7.35
+    ],
+    "uniformScale": 0.055232558139534885,
+    "offset": [
+      172,
+      79
+    ],
+    "size": [
+      19,
+      7
+    ]
+  },
+  {
+    "id": "listen-focus-brow",
+    "box": [
+      129,
+      59,
+      29,
+      13
+    ],
+    "uniformScale": 0.08430232558139535,
+    "offset": [
+      129,
+      61
+    ],
+    "size": [
+      29,
+      9
+    ]
+  },
+  {
+    "id": "listen-focus-brow",
+    "box": [
+      167,
+      49,
+      33,
+      17
+    ],
+    "uniformScale": 0.0918918918918919,
+    "offset": [
+      169,
+      49
+    ],
+    "size": [
+      29,
+      17
+    ]
+  },
+  {
+    "id": "listen-focus-eye",
+    "box": [
+      139,
+      80.5,
+      19,
+      16.5
+    ],
+    "uniformScale": 0.06321839080459771,
+    "offset": [
+      140,
+      81
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "listen-focus-eye",
+    "box": [
+      172,
+      75.25,
+      19,
+      15.75
+    ],
+    "uniformScale": 0.05855018587360595,
+    "offset": [
+      174,
+      75
+    ],
+    "size": [
+      15,
+      16
+    ]
+  },
+  {
+    "id": "listen-focus-mouth",
+    "box": [
+      149,
+      125.0,
+      34,
+      5
+    ],
+    "uniformScale": 0.06666666666666667,
+    "offset": [
+      158,
+      125
+    ],
+    "size": [
+      16,
+      5
+    ]
+  },
+  {
+    "id": "listen-joy-brow",
+    "box": [
+      129,
+      59,
+      29,
+      13
+    ],
+    "uniformScale": 0.09539473684210527,
+    "offset": [
+      129,
+      60
+    ],
+    "size": [
+      29,
+      12
+    ]
+  },
+  {
+    "id": "listen-joy-brow",
+    "box": [
+      167,
+      49,
+      33,
+      17
+    ],
+    "uniformScale": 0.11458333333333333,
+    "offset": [
+      167,
+      50
+    ],
+    "size": [
+      33,
+      16
+    ]
+  },
+  {
+    "id": "listen-joy-eye",
+    "box": [
+      139,
+      80.5,
+      19,
+      8.8
+    ],
+    "uniformScale": 0.09263157894736843,
+    "offset": [
+      140,
+      80
+    ],
+    "size": [
+      18,
+      9
+    ]
+  },
+  {
+    "id": "listen-joy-eye",
+    "box": [
+      172,
+      75.25,
+      19,
+      8.4
+    ],
+    "uniformScale": 0.09130434782608696,
+    "offset": [
+      172,
+      75
+    ],
+    "size": [
+      18,
+      8
+    ]
+  },
+  {
+    "id": "listen-joy-mouth",
+    "box": [
+      149,
+      115.0,
+      34,
+      25
+    ],
+    "uniformScale": 0.09826589595375723,
+    "offset": [
+      149,
+      116
+    ],
+    "size": [
+      34,
+      23
+    ]
+  },
+  {
+    "id": "fix-body",
+    "box": [
+      0,
+      140,
+      278,
+      399
+    ],
+    "uniformScale": 0.3630573248407643,
+    "offset": [
+      5,
+      140
+    ],
+    "size": [
+      268,
+      399
+    ],
+    "generatedNeckRemovedByNativeMaterialComponents": [
+      [
+        148,
+        146,
+        187,
+        186
+      ]
+    ],
+    "headphones": "Exact accepted original native RGBA cups and native support; generated headphone components replaced",
+    "headphoneSourceBoxes": [
+      [
+        88,
+        143,
+        152,
+        215
+      ],
+      [
+        188,
+        141,
+        240,
+        212
+      ]
+    ],
+    "headphoneSupportMask": "fix-headphone-support-mask.png",
+    "nativeJointSupportStart": 153,
+    "nativeJointSupportBounds": [
+      118,
+      153,
+      201,
+      198
+    ]
+  },
+  {
+    "id": "fix-gesture",
+    "box": [
+      235,
+      89,
+      141,
+      207
+    ],
+    "uniformScale": 0.14764621968616262,
+    "offset": [
+      239,
+      89
+    ],
+    "size": [
+      133,
+      207
+    ]
+  },
+  {
+    "id": "fix-blink",
+    "box": [
+      140,
+      82.8,
+      20,
+      7.699999999999999
+    ],
+    "uniformScale": 0.05698005698005698,
+    "offset": [
+      140,
+      83
+    ],
+    "size": [
+      20,
+      7
+    ]
+  },
+  {
+    "id": "fix-blink",
+    "box": [
+      174,
+      77.8,
+      18,
+      7.699999999999999
+    ],
+    "uniformScale": 0.05232558139534884,
+    "offset": [
+      174,
+      78
+    ],
+    "size": [
+      18,
+      7
+    ]
+  },
+  {
+    "id": "fix-focus-brow",
+    "box": [
+      130,
+      58,
+      29,
+      13
+    ],
+    "uniformScale": 0.08430232558139535,
+    "offset": [
+      130,
+      60
+    ],
+    "size": [
+      29,
+      9
+    ]
+  },
+  {
+    "id": "fix-focus-brow",
+    "box": [
+      168,
+      48,
+      33,
+      17
+    ],
+    "uniformScale": 0.0918918918918919,
+    "offset": [
+      170,
+      48
+    ],
+    "size": [
+      29,
+      17
+    ]
+  },
+  {
+    "id": "fix-focus-eye",
+    "box": [
+      140,
+      79.5,
+      20,
+      16.5
+    ],
+    "uniformScale": 0.06321839080459771,
+    "offset": [
+      142,
+      80
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "fix-focus-eye",
+    "box": [
+      174,
+      74.5,
+      18,
+      16.5
+    ],
+    "uniformScale": 0.06133828996282528,
+    "offset": [
+      175,
+      75
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "fix-focus-mouth",
+    "box": [
+      150,
+      124.0,
+      34,
+      5
+    ],
+    "uniformScale": 0.06666666666666667,
+    "offset": [
+      159,
+      124
+    ],
+    "size": [
+      16,
+      5
+    ]
+  },
+  {
+    "id": "fix-joy-brow",
+    "box": [
+      130,
+      58,
+      29,
+      13
+    ],
+    "uniformScale": 0.09539473684210527,
+    "offset": [
+      130,
+      58
+    ],
+    "size": [
+      29,
+      12
+    ]
+  },
+  {
+    "id": "fix-joy-brow",
+    "box": [
+      168,
+      48,
+      33,
+      17
+    ],
+    "uniformScale": 0.11458333333333333,
+    "offset": [
+      168,
+      48
+    ],
+    "size": [
+      33,
+      16
+    ]
+  },
+  {
+    "id": "fix-joy-eye",
+    "box": [
+      140,
+      79.5,
+      20,
+      8.8
+    ],
+    "uniformScale": 0.09263157894736843,
+    "offset": [
+      141,
+      79
+    ],
+    "size": [
+      18,
+      9
+    ]
+  },
+  {
+    "id": "fix-joy-eye",
+    "box": [
+      174,
+      74.5,
+      18,
+      8.8
+    ],
+    "uniformScale": 0.09183673469387756,
+    "offset": [
+      174,
+      75
+    ],
+    "size": [
+      18,
+      8
+    ]
+  },
+  {
+    "id": "fix-joy-mouth",
+    "box": [
+      150,
+      114.0,
+      34,
+      25
+    ],
+    "uniformScale": 0.09826589595375723,
+    "offset": [
+      150,
+      115
+    ],
+    "size": [
+      34,
+      23
+    ]
+  },
+  {
+    "id": "dance-body",
+    "box": [
+      0,
+      139,
+      352,
+      415
+    ],
+    "uniformScale": 0.3562231759656652,
+    "offset": [
+      18,
+      139
+    ],
+    "size": [
+      316,
+      415
+    ],
+    "generatedNeckRemovedByNativeMaterialComponents": [
+      [
+        146,
+        142,
+        190,
+        187
+      ]
+    ],
+    "headphones": "Exact accepted original native RGBA cups and native support; generated headphone components replaced",
+    "headphoneSourceBoxes": [
+      [
+        89,
+        152,
+        160,
+        224
+      ],
+      [
+        192,
+        141,
+        245,
+        210
+      ]
+    ],
+    "headphoneSupportMask": "dance-headphone-support-mask.png",
+    "nativeJointSupportStart": 156,
+    "nativeJointSupportBounds": [
+      119,
+      156,
+      203,
+      192
+    ]
+  },
+  {
+    "id": "dance-gesture",
+    "box": [
+      229,
+      82,
+      123,
+      151
+    ],
+    "uniformScale": 0.1445358401880141,
+    "offset": [
+      229,
+      82
+    ],
+    "size": [
+      123,
+      150
+    ]
+  },
+  {
+    "id": "dance-blink",
+    "box": [
+      141,
+      84.8,
+      19,
+      7.699999999999999
+    ],
+    "uniformScale": 0.05413105413105413,
+    "offset": [
+      141,
+      85
+    ],
+    "size": [
+      19,
+      7
+    ]
+  },
+  {
+    "id": "dance-blink",
+    "box": [
+      174,
+      77.8,
+      19,
+      7.699999999999999
+    ],
+    "uniformScale": 0.055232558139534885,
+    "offset": [
+      174,
+      78
+    ],
+    "size": [
+      19,
+      7
+    ]
+  },
+  {
+    "id": "dance-focus-brow",
+    "box": [
+      129,
+      60,
+      29,
+      13
+    ],
+    "uniformScale": 0.08430232558139535,
+    "offset": [
+      129,
+      62
+    ],
+    "size": [
+      29,
+      9
+    ]
+  },
+  {
+    "id": "dance-focus-brow",
+    "box": [
+      168,
+      48,
+      34,
+      17
+    ],
+    "uniformScale": 0.0918918918918919,
+    "offset": [
+      170,
+      48
+    ],
+    "size": [
+      29,
+      17
+    ]
+  },
+  {
+    "id": "dance-focus-eye",
+    "box": [
+      141,
+      81.5,
+      19,
+      16.5
+    ],
+    "uniformScale": 0.06321839080459771,
+    "offset": [
+      142,
+      82
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "dance-focus-eye",
+    "box": [
+      174,
+      74.5,
+      19,
+      16.5
+    ],
+    "uniformScale": 0.06133828996282528,
+    "offset": [
+      176,
+      75
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "dance-focus-mouth",
+    "box": [
+      151,
+      126.5,
+      34,
+      5
+    ],
+    "uniformScale": 0.06666666666666667,
+    "offset": [
+      160,
+      126
+    ],
+    "size": [
+      16,
+      5
+    ]
+  },
+  {
+    "id": "dance-joy-brow",
+    "box": [
+      129,
+      60,
+      29,
+      13
+    ],
+    "uniformScale": 0.09539473684210527,
+    "offset": [
+      129,
+      60
+    ],
+    "size": [
+      29,
+      12
+    ]
+  },
+  {
+    "id": "dance-joy-brow",
+    "box": [
+      168,
+      48,
+      34,
+      17
+    ],
+    "uniformScale": 0.11805555555555555,
+    "offset": [
+      168,
+      48
+    ],
+    "size": [
+      34,
+      17
+    ]
+  },
+  {
+    "id": "dance-joy-eye",
+    "box": [
+      141,
+      81.5,
+      19,
+      8.8
+    ],
+    "uniformScale": 0.09263157894736843,
+    "offset": [
+      142,
+      81
+    ],
+    "size": [
+      18,
+      9
+    ]
+  },
+  {
+    "id": "dance-joy-eye",
+    "box": [
+      174,
+      74.5,
+      19,
+      8.8
+    ],
+    "uniformScale": 0.09565217391304348,
+    "offset": [
+      174,
+      74
+    ],
+    "size": [
+      19,
+      9
+    ]
+  },
+  {
+    "id": "dance-joy-mouth",
+    "box": [
+      151,
+      116.0,
+      34,
+      26
+    ],
+    "uniformScale": 0.09826589595375723,
+    "offset": [
+      151,
+      118
+    ],
+    "size": [
+      34,
+      23
+    ]
+  },
+  {
+    "id": "sit-body",
+    "box": [
+      0,
+      127,
+      453,
+      421
+    ],
+    "uniformScale": 0.48814655172413796,
+    "offset": [
+      0,
+      132
+    ],
+    "size": [
+      453,
+      411
+    ],
+    "generatedNeckRemovedByNativeMaterialComponents": [
+      [
+        140,
+        136,
+        191,
+        185
+      ],
+      [
+        156,
+        184,
+        157,
+        190
+      ]
+    ],
+    "headphones": "Exact accepted original native RGBA cups and native support; generated headphone components replaced",
+    "headphoneSourceBoxes": [
+      [
+        79,
+        147,
+        152,
+        219
+      ],
+      [
+        182,
+        150,
+        231,
+        217
+      ]
+    ],
+    "headphoneSupportMask": "sit-headphone-support-mask.png",
+    "nativeJointSupportStart": 158,
+    "nativeJointSupportBounds": [
+      113,
+      158,
+      200,
+      196
+    ]
+  },
+  {
+    "id": "sit-gesture",
+    "box": [
+      65,
+      196,
+      340,
+      180
+    ],
+    "uniformScale": 0.21642266072565244,
+    "offset": [
+      65,
+      200
+    ],
+    "size": [
+      340,
+      172
+    ]
+  },
+  {
+    "id": "sit-native-rear-arm-layering",
+    "source": "native/sit-gesture.png",
+    "method": "Upper native teal color components plus their antialias fringe selected behind body; foreground wheel, grips and lower/front sleeve remain the animated group",
+    "rearMask": "sit-rear-arm-mask.png",
+    "rearBounds": [
+      65,
+      200,
+      342,
+      263
+    ],
+    "frontSleeveBounds": [
+      65,
+      276,
+      225,
+      327
+    ],
+    "noDrawnAnatomy": true
+  },
+  {
+    "id": "sit-blink",
+    "box": [
+      138,
+      86.2,
+      20,
+      8.049999999999999
+    ],
+    "uniformScale": 0.05698005698005698,
+    "offset": [
+      138,
+      87
+    ],
+    "size": [
+      20,
+      7
+    ]
+  },
+  {
+    "id": "sit-blink",
+    "box": [
+      171,
+      80.8,
+      19,
+      7.699999999999999
+    ],
+    "uniformScale": 0.055232558139534885,
+    "offset": [
+      171,
+      81
+    ],
+    "size": [
+      19,
+      7
+    ]
+  },
+  {
+    "id": "sit-focus-brow",
+    "box": [
+      126,
+      59,
+      29,
+      14
+    ],
+    "uniformScale": 0.08430232558139535,
+    "offset": [
+      126,
+      62
+    ],
+    "size": [
+      29,
+      9
+    ]
+  },
+  {
+    "id": "sit-focus-brow",
+    "box": [
+      165,
+      51,
+      34,
+      17
+    ],
+    "uniformScale": 0.0918918918918919,
+    "offset": [
+      168,
+      51
+    ],
+    "size": [
+      29,
+      17
+    ]
+  },
+  {
+    "id": "sit-focus-eye",
+    "box": [
+      138,
+      82.75,
+      20,
+      17.25
+    ],
+    "uniformScale": 0.06609195402298851,
+    "offset": [
+      140,
+      83
+    ],
+    "size": [
+      17,
+      17
+    ]
+  },
+  {
+    "id": "sit-focus-eye",
+    "box": [
+      171,
+      77.5,
+      19,
+      16.5
+    ],
+    "uniformScale": 0.06133828996282528,
+    "offset": [
+      172,
+      78
+    ],
+    "size": [
+      16,
+      16
+    ]
+  },
+  {
+    "id": "sit-focus-mouth",
+    "box": [
+      148,
+      128.0,
+      33,
+      5
+    ],
+    "uniformScale": 0.06666666666666667,
+    "offset": [
+      156,
+      128
+    ],
+    "size": [
+      16,
+      5
+    ]
+  },
+  {
+    "id": "sit-joy-brow",
+    "box": [
+      126,
+      59,
+      29,
+      14
+    ],
+    "uniformScale": 0.09539473684210527,
+    "offset": [
+      126,
+      60
+    ],
+    "size": [
+      29,
+      12
+    ]
+  },
+  {
+    "id": "sit-joy-brow",
+    "box": [
+      165,
+      51,
+      34,
+      17
+    ],
+    "uniformScale": 0.11805555555555555,
+    "offset": [
+      165,
+      51
+    ],
+    "size": [
+      34,
+      17
+    ]
+  },
+  {
+    "id": "sit-joy-eye",
+    "box": [
+      138,
+      82.75,
+      20,
+      9.200000000000001
+    ],
+    "uniformScale": 0.09684210526315791,
+    "offset": [
+      138,
+      83
+    ],
+    "size": [
+      19,
+      9
+    ]
+  },
+  {
+    "id": "sit-joy-eye",
+    "box": [
+      171,
+      77.5,
+      19,
+      8.8
+    ],
+    "uniformScale": 0.09565217391304348,
+    "offset": [
+      171,
+      77
+    ],
+    "size": [
+      19,
+      9
+    ]
+  },
+  {
+    "id": "sit-joy-mouth",
+    "box": [
+      148,
+      117.0,
+      33,
+      27
+    ],
+    "uniformScale": 0.0953757225433526,
+    "offset": [
+      148,
+      120
+    ],
+    "size": [
+      33,
+      22
+    ]
+  }
+]

@@ -1,0 +1,613 @@
+{
+  "pass": true,
+  "acceptedAtlasSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+  "sourceAtlasMatchesCommittedBytes": true,
+  "nativeOutputHashesVerified": [
+    {
+      "id": "head",
+      "file": "assets/art/alex-motion-v1/native/head.png",
+      "sha256": "173859e2666f360191e20146c6b1f61cf785687a1d19be8ab6e1e3c7a3a734cf"
+    },
+    {
+      "id": "neutral",
+      "file": "assets/art/alex-motion-v1/native/neutral.png",
+      "sha256": "81b11c2eb4068f18b722f8b9deda361a328142f3b3b01f70fbcabe12f62a2a44"
+    },
+    {
+      "id": "eyes",
+      "file": "assets/art/alex-motion-v1/native/eyes.png",
+      "sha256": "a768c643f6bbdaea279cfab41ed6c31b84451b85549a7dcce274ef0d4e5a73d5"
+    },
+    {
+      "id": "pupils",
+      "file": "assets/art/alex-motion-v1/native/pupils.png",
+      "sha256": "9bd2c2ee45813bac0ea75e11f61979881a1ca52bb405fcdfb7bacf392fb69bc6"
+    },
+    {
+      "id": "blink",
+      "file": "assets/art/alex-motion-v1/native/blink-rejected-v1.png",
+      "sha256": "c59fe2eea303625614256634c277e2089ae8225d8f154c8fc91e74a5a744adfb"
+    },
+    {
+      "id": "focus",
+      "file": "assets/art/alex-motion-v1/native/focus.png",
+      "sha256": "4436ea49c1026b956a165814f0c1d3ba93a477664a618526ce8143b7a0bf432d"
+    },
+    {
+      "id": "joy",
+      "file": "assets/art/alex-motion-v1/native/joy.png",
+      "sha256": "e43f6d9e71c2264c0d5297a97853894eb2ca3f1cbb67a405226f27517ed1207e"
+    },
+    {
+      "id": "listen-gesture",
+      "file": "assets/art/alex-motion-v1/native/listen-gesture-rejected-v1.png",
+      "sha256": "cbd6163d7119cc2f9f17d2abdb3a7ee0add2bbed539d4db4ef6fb0e3a8e22e2f"
+    },
+    {
+      "id": "listen-body",
+      "file": "assets/art/alex-motion-v1/native/listen-body-rejected-v1.png",
+      "sha256": "fa44510f74b897a26d310967890c6d67028b968ebd89bb88db7f6d12ca2b4da5"
+    },
+    {
+      "id": "fix-gesture",
+      "file": "assets/art/alex-motion-v1/native/fix-gesture-rejected-v1.png",
+      "sha256": "b47beb6a85e52d9d33ab174c2fbfbfdb385da573cad0426fa053ddd6bb58cca7"
+    },
+    {
+      "id": "fix-body",
+      "file": "assets/art/alex-motion-v1/native/fix-body.png",
+      "sha256": "65b766e3bdb93b6a38114be3981334fc126c50914da2d5559fa401fdc610a180"
+    },
+    {
+      "id": "dance-gesture",
+      "file": "assets/art/alex-motion-v1/native/dance-gesture-rejected-v1.png",
+      "sha256": "5e731c6c9c7ed213253800b9d2438c5fda90bf8b75513be5fb2c3cac8438372c"
+    },
+    {
+      "id": "dance-body",
+      "file": "assets/art/alex-motion-v1/native/dance-body-rejected-v1.png",
+      "sha256": "3bbad7389be5fa0bda959c4f4b94b7dd5f83be0e0aa2e96e67ed87eb574bc740"
+    },
+    {
+      "id": "sit-gesture",
+      "file": "assets/art/alex-motion-v1/native/sit-gesture-rejected-v1.png",
+      "sha256": "07bbd2fd40f9352b3ef1e200b7010fc25903157969633706620f31890463fb31"
+    },
+    {
+      "id": "sit-body",
+      "file": "assets/art/alex-motion-v1/native/sit-body.png",
+      "sha256": "c201526973582f578940792c145616b001bb49c92f33655ccac4d491427c1e6f"
+    },
+    {
+      "id": "listen-body-v2",
+      "file": "assets/art/alex-motion-v1/native/listen-body.png",
+      "sha256": "dbb073549da5111cc77e5c38411c06bf2b755baea9b95be39832ad04082af595"
+    },
+    {
+      "id": "blink-v2",
+      "file": "assets/art/alex-motion-v1/native/blink.png",
+      "sha256": "0729729bd34f54b89a2e288bcfe302750a39a2b8de4da0a34563c68d1bf49d24"
+    },
+    {
+      "id": "dance-body-v2",
+      "file": "assets/art/alex-motion-v1/native/dance-body.png",
+      "sha256": "84757d6b7969cdbc8c774aace96d44b2180e8b89b3e2cc8f17f4f0c634ba69c2"
+    },
+    {
+      "id": "listen-gesture-v2",
+      "file": "assets/art/alex-motion-v1/native/listen-gesture.png",
+      "sha256": "ad3f334fd0812e58d7eacf1eecd027613e8f694196cd299a3c346fc3ae915f0c"
+    },
+    {
+      "id": "fix-gesture-v2",
+      "file": "assets/art/alex-motion-v1/native/fix-gesture.png",
+      "sha256": "dd2a328121ca10842269af894abf225ad68f22f82b51581b5fac4e8798d28ffc"
+    },
+    {
+      "id": "dance-gesture-v2",
+      "file": "assets/art/alex-motion-v1/native/dance-gesture.png",
+      "sha256": "0ec6cc2213cfc715346b3c776c71c9b6e2090683f0851e1787a256d5fd0ef047"
+    },
+    {
+      "id": "sit-gesture-v2",
+      "file": "assets/art/alex-motion-v1/native/sit-gesture.png",
+      "sha256": "4699092571afb8ae3700571039c88a48c89443ff76453e50b005da249b352be5"
+    }
+  ],
+  "poses": [
+    {
+      "pose": "listen",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669",
+      "headAlphaExactOriginalSelection": true,
+      "independentSemanticHeadPixels": 15837,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 6758,
+      "hairPixelsExact": 5996,
+      "earAndFaceGeometryFromOriginal": true,
+      "neckAlphaPixelsExact": 1434,
+      "bodyFaceSupportPixels": 667,
+      "bodyFaceSupportMatchesPermanentHead": true,
+      "bodyFaceSupportMaxRGBDelta": 0,
+      "bodyFaceSupportRoundingTolerance": 1,
+      "permanentConnectedSkinMaterialDerivative": true,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            129,
+            61,
+            158,
+            74
+          ],
+          "nativeCorePixels": 264
+        },
+        {
+          "box": [
+            167,
+            51,
+            200,
+            68
+          ],
+          "nativeCorePixels": 351
+        }
+      ],
+      "mouthBox": [
+        149,
+        116,
+        183,
+        139
+      ],
+      "mouthCorePixelsExact": 438,
+      "pupils": [
+        {
+          "eyeBox": [
+            139,
+            75,
+            158,
+            97
+          ],
+          "pupilCoreBox": [
+            149,
+            80,
+            158,
+            91
+          ],
+          "pupilCoreCentroid": [
+            152.91780821917808,
+            85.1917808219178
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              139,
+              75,
+              159,
+              97
+            ],
+            "assembledBrightBounds": [
+              139,
+              75,
+              159,
+              97
+            ],
+            "originalBrightPixels": 251,
+            "assembledBrightPixels": 251,
+            "addedBrightPixels": 1,
+            "lostBrightPixels": 1,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        },
+        {
+          "eyeBox": [
+            172,
+            70,
+            191,
+            91
+          ],
+          "pupilCoreBox": [
+            181,
+            75,
+            189,
+            86
+          ],
+          "pupilCoreCentroid": [
+            184.54285714285714,
+            80.38571428571429
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              172,
+              70,
+              191,
+              91
+            ],
+            "assembledBrightBounds": [
+              172,
+              70,
+              191,
+              91
+            ],
+            "originalBrightPixels": 222,
+            "assembledBrightPixels": 219,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 3,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        }
+      ]
+    },
+    {
+      "pose": "fix",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "3b6562108f7f11797ca6b574fc675920c6e79f6e9ab3104c448c04a5a31dcf4c",
+      "headAlphaExactOriginalSelection": true,
+      "independentSemanticHeadPixels": 16046,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 6850,
+      "hairPixelsExact": 6074,
+      "earAndFaceGeometryFromOriginal": true,
+      "neckAlphaPixelsExact": 1419,
+      "bodyFaceSupportPixels": 827,
+      "bodyFaceSupportMatchesPermanentHead": true,
+      "bodyFaceSupportMaxRGBDelta": 1,
+      "bodyFaceSupportRoundingTolerance": 1,
+      "permanentConnectedSkinMaterialDerivative": true,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            130,
+            60,
+            159,
+            73
+          ],
+          "nativeCorePixels": 265
+        },
+        {
+          "box": [
+            168,
+            50,
+            201,
+            67
+          ],
+          "nativeCorePixels": 357
+        }
+      ],
+      "mouthBox": [
+        150,
+        115,
+        184,
+        138
+      ],
+      "mouthCorePixelsExact": 452,
+      "pupils": [
+        {
+          "eyeBox": [
+            140,
+            74,
+            160,
+            96
+          ],
+          "pupilCoreBox": [
+            150,
+            79,
+            159,
+            90
+          ],
+          "pupilCoreCentroid": [
+            154.125,
+            84.29166666666667
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              140,
+              74,
+              160,
+              96
+            ],
+            "assembledBrightBounds": [
+              140,
+              74,
+              160,
+              96
+            ],
+            "originalBrightPixels": 251,
+            "assembledBrightPixels": 251,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 0,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        },
+        {
+          "eyeBox": [
+            174,
+            69,
+            192,
+            91
+          ],
+          "pupilCoreBox": [
+            182,
+            75,
+            191,
+            85
+          ],
+          "pupilCoreCentroid": [
+            186.06944444444446,
+            79.38888888888889
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              174,
+              69,
+              192,
+              91
+            ],
+            "assembledBrightBounds": [
+              174,
+              69,
+              192,
+              91
+            ],
+            "originalBrightPixels": 216,
+            "assembledBrightPixels": 214,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 2,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        }
+      ]
+    },
+    {
+      "pose": "dance",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793",
+      "headAlphaExactOriginalSelection": true,
+      "independentSemanticHeadPixels": 16545,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 6987,
+      "hairPixelsExact": 6196,
+      "earAndFaceGeometryFromOriginal": true,
+      "neckAlphaPixelsExact": 1600,
+      "bodyFaceSupportPixels": 744,
+      "bodyFaceSupportMatchesPermanentHead": true,
+      "bodyFaceSupportMaxRGBDelta": 1,
+      "bodyFaceSupportRoundingTolerance": 1,
+      "permanentConnectedSkinMaterialDerivative": true,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            129,
+            62,
+            158,
+            75
+          ],
+          "nativeCorePixels": 271
+        },
+        {
+          "box": [
+            168,
+            50,
+            202,
+            67
+          ],
+          "nativeCorePixels": 388
+        }
+      ],
+      "mouthBox": [
+        151,
+        117,
+        185,
+        141
+      ],
+      "mouthCorePixelsExact": 490,
+      "pupils": [
+        {
+          "eyeBox": [
+            141,
+            76,
+            160,
+            98
+          ],
+          "pupilCoreBox": [
+            150,
+            81,
+            159,
+            92
+          ],
+          "pupilCoreCentroid": [
+            154.10666666666665,
+            86.22666666666667
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              141,
+              76,
+              161,
+              98
+            ],
+            "assembledBrightBounds": [
+              141,
+              76,
+              161,
+              98
+            ],
+            "originalBrightPixels": 252,
+            "assembledBrightPixels": 251,
+            "addedBrightPixels": 1,
+            "lostBrightPixels": 2,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        },
+        {
+          "eyeBox": [
+            174,
+            69,
+            193,
+            91
+          ],
+          "pupilCoreBox": [
+            183,
+            75,
+            191,
+            85
+          ],
+          "pupilCoreCentroid": [
+            186.5857142857143,
+            79.61428571428571
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              174,
+              69,
+              193,
+              91
+            ],
+            "assembledBrightBounds": [
+              174,
+              69,
+              193,
+              91
+            ],
+            "originalBrightPixels": 237,
+            "assembledBrightPixels": 237,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 0,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        }
+      ]
+    },
+    {
+      "pose": "sit",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "24d54b967c26239ca6ad34b453031ec3c95f880cf43e8ac6224abdb35e786273",
+      "headAlphaExactOriginalSelection": true,
+      "independentSemanticHeadPixels": 17183,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 7378,
+      "hairPixelsExact": 6585,
+      "earAndFaceGeometryFromOriginal": true,
+      "neckAlphaPixelsExact": 1337,
+      "bodyFaceSupportPixels": 1379,
+      "bodyFaceSupportMatchesPermanentHead": true,
+      "bodyFaceSupportMaxRGBDelta": 1,
+      "bodyFaceSupportRoundingTolerance": 1,
+      "permanentConnectedSkinMaterialDerivative": true,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            126,
+            61,
+            155,
+            75
+          ],
+          "nativeCorePixels": 286
+        },
+        {
+          "box": [
+            165,
+            53,
+            199,
+            70
+          ],
+          "nativeCorePixels": 376
+        }
+      ],
+      "mouthBox": [
+        148,
+        118,
+        181,
+        143
+      ],
+      "mouthCorePixelsExact": 479,
+      "pupils": [
+        {
+          "eyeBox": [
+            138,
+            77,
+            158,
+            100
+          ],
+          "pupilCoreBox": [
+            148,
+            83,
+            157,
+            94
+          ],
+          "pupilCoreCentroid": [
+            152.1184210526316,
+            88.15789473684211
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              138,
+              77,
+              158,
+              100
+            ],
+            "assembledBrightBounds": [
+              138,
+              77,
+              158,
+              100
+            ],
+            "originalBrightPixels": 288,
+            "assembledBrightPixels": 287,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 1,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        },
+        {
+          "eyeBox": [
+            171,
+            72,
+            190,
+            94
+          ],
+          "pupilCoreBox": [
+            180,
+            77,
+            189,
+            88
+          ],
+          "pupilCoreCentroid": [
+            184.23611111111111,
+            82.34722222222223
+          ],
+          "whiteGeometry": {
+            "originalBrightBounds": [
+              171,
+              72,
+              190,
+              94
+            ],
+            "assembledBrightBounds": [
+              171,
+              72,
+              190,
+              94
+            ],
+            "originalBrightPixels": 239,
+            "assembledBrightPixels": 239,
+            "addedBrightPixels": 0,
+            "lostBrightPixels": 0,
+            "threshold": "RGB min>195, range<50; alpha>128"
+          }
+        }
+      ]
+    }
+  ],
+  "review": "docs/alex-motion-v1/head-fidelity-proof.png",
+  "scope": "Original exterior alpha, independently classified head coverage, retained hair/structural RGBA and neutral native feature coordinates are checked against each accepted pose. The entire connected skin/ears/neck field uses permanent generated faceless material and is explicitly not claimed pixel-identical RGB. Body/gesture reconstruction, clean material continuity and animated extrema require the separate runtime/visual review."
+}

@@ -1,0 +1,1267 @@
+{
+  "tool": "built-in ImageGen",
+  "perPartGeneration": true,
+  "records": [
+    {
+      "id": "head",
+      "brief": "docs/alex-motion-v1/head.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The exact faceless head, hair, both ears and visible neck ONLY. Input5 is a lossless6x crop of the exact original head. Delete ONLY facial marks (brows, eyes, pupils, mouth), filling with surrounding skin. Preserve the original hair, face silhouette and ear contours EXACTLY. Exclude navy headphones and all clothing; those remain fixed on the body. Keep neck long enough for overlap. No facial features of any sort. The original features must reconstruct exactly when restored.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-head",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/head.png",
+      "nativeSha256": "173859e2666f360191e20146c6b1f61cf785687a1d19be8ab6e1e3c7a3a734cf",
+      "nativeSize": [
+        1270,
+        1239
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e25f9728-8ca7-4bcd-872e-faa591f032b2.png",
+      "status": "active-generated-material",
+      "role": "One permanent faceless derivative using generated skin/boundary material within original exterior alpha."
+    },
+    {
+      "id": "neutral",
+      "brief": "docs/alex-motion-v1/neutral.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. ONLY the two original thick brown eyebrows and the original smiling open mouth, as disconnected transparent shapes in their exact relative arrangement. Input5 is the exact enlarged head target. No eyes/pupils, face skin, hair, neck, headphones or nose glyph.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-neutral",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/neutral.png",
+      "nativeSha256": "81b11c2eb4068f18b722f8b9deda361a328142f3b3b01f70fbcabe12f62a2a44",
+      "nativeSize": [
+        1774,
+        887
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ef55dac4-12bc-4fbb-ad4c-1b8bc0affac3.png",
+      "status": "archived-for-fidelity",
+      "role": "Original accepted neutral brow/mouth shapes retained instead."
+    },
+    {
+      "id": "eyes",
+      "brief": "docs/alex-motion-v1/eyes.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. ONLY the two original white eye shapes, without any pupils. Input5 exact enlarged head. Same slight lean and relative positions as original. Fully opaque white interiors, transparent outside. No brows, skin, mouth, hair or headphones.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-eyes",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/eyes.png",
+      "nativeSha256": "a768c643f6bbdaea279cfab41ed6c31b84451b85549a7dcce274ef0d4e5a73d5",
+      "nativeSize": [
+        1033,
+        1522
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8ffce247-db39-4bcf-a07c-061fe0313128.png",
+      "status": "active-generated-material",
+      "role": "White material registered to original eye contours."
+    },
+    {
+      "id": "pupils",
+      "brief": "docs/alex-motion-v1/pupils.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. ONLY two separate original dark brown-black pupils, same original shapes and relative arrangement. Input5 exact enlarged head. No white eyes, brows, skin, mouth, hair or headphones.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-pupils",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "status": "rejected",
+      "reason": "Full figure returned instead of isolated feature sprite.",
+      "nativeFile": "assets/art/alex-motion-v1/native/pupils.png",
+      "nativeSha256": "9bd2c2ee45813bac0ea75e11f61979881a1ca52bb405fcdfb7bacf392fb69bc6",
+      "nativeSize": [
+        1033,
+        1522
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-fad15872-23a4-4706-9001-e3460b8b6f03.png"
+    },
+    {
+      "id": "blink",
+      "brief": "docs/alex-motion-v1/blink.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. ONLY two softly curved dark brown closed eyelids matching Alex eyes, arranged at original eye positions. Input5 exact enlarged head. Two separate short clean curves; no white eyes/pupils/brows, mouth, skin, hair or headphones.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-blink",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "status": "rejected",
+      "reason": "Full figure returned instead of isolated feature sprite.",
+      "nativeFile": "assets/art/alex-motion-v1/native/blink-rejected-v1.png",
+      "nativeSha256": "c59fe2eea303625614256634c277e2089ae8225d8f154c8fc91e74a5a744adfb",
+      "nativeSize": [
+        1033,
+        1522
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-764bbcbb-7171-4a1c-91ba-631ce9775084.png"
+    },
+    {
+      "id": "focus",
+      "brief": "docs/alex-motion-v1/focus.json",
+      "prompt": "Output only the requested disconnected facial glyphs on transparent alpha. NOT A WHOLE CHARACTER OR HEAD. This is an isolated animation expression layer. No skin pixels, hair, ears, neck, headphones, costume, torso, legs or body anywhere. Inputs1 R01 brand,2 R02 cast,3 R07 rendering are mandatory references; input4 is the exact accepted Alex enlarged head EDIT TARGET, shown only to locate/shape the facial glyphs. No glow, shadows or outlines. ONLY the complete confused EXPRESSION GLYPHS: two thick brown brows (one raised high, the other level), two white eyes with dark pupils looking inward, and one short uncertain closed mouth. Keep their original relative positions. Nothing else.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-focus",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/focus.png",
+      "nativeSha256": "4436ea49c1026b956a165814f0c1d3ba93a477664a618526ce8143b7a0bf432d",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-1a9c7f7b-a286-4dcc-ac60-f0186a6a7c30.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "joy",
+      "brief": "docs/alex-motion-v1/joy.json",
+      "prompt": "Output only the requested disconnected facial glyphs on transparent alpha. NOT A WHOLE CHARACTER OR HEAD. This is an isolated animation expression layer. No skin pixels, hair, ears, neck, headphones, costume, torso, legs or body anywhere. Inputs1 R01 brand,2 R02 cast,3 R07 rendering are mandatory references; input4 is the exact accepted Alex enlarged head EDIT TARGET, shown only to locate/shape the facial glyphs. No glow, shadows or outlines. ONLY the happy EXPRESSION GLYPHS: two thick raised brown brows, two short closed smiling eye curves and one joyful open smile. Keep original relative feature positions. Nothing else.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-joy",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/joy.png",
+      "nativeSha256": "e43f6d9e71c2264c0d5297a97853894eb2ca3f1cbb67a405226f27517ed1207e",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-195ec3b0-0945-4d6f-989d-161bff5b1ca8.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "listen-gesture",
+      "brief": "docs/alex-motion-v1/listen-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The raised right open hand and complete bent teal sleeve/arm ONLY, from shoulder joint to fingertips. Include hidden proximal sleeve overlap for rotation. No body, head, headphones or other arm.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-listen-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/listen-gesture-rejected-v1.png",
+      "nativeSha256": "cbd6163d7119cc2f9f17d2abdb3a7ee0add2bbed539d4db4ef6fb0e3a8e22e2f",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e9fe9799-93ce-49e6-9c44-634d462507d8.png",
+      "status": "rejected",
+      "reason": "User flagged narrow arm, incorrect elbow bend and shoulder/hand placement versus accepted original."
+    },
+    {
+      "id": "listen-body",
+      "brief": "docs/alex-motion-v1/listen-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The complete body/support base in this exact pose, excluding the entire head/face/hair/ears and excluding ONLY the moving group described here: The raised right open hand and complete bent teal sleeve/arm ONLY, from shoulder joint to fingertips. Include hidden proximal sleeve overlap for rotation. No body, head, headphones or other arm. Retain fixed neck headphones, visible neck support under head, orange shirt, teal jacket with badge, legs and cream shoes. For seated pose also retain the full chair/stand/console. Include clean shoulder overlap surface behind removed arm, no torn fabric, no limb-shaped holes in the torso. For dance keep left arm. For listening/fix keep left hand on hip. Output only this body/support base.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-listen-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "status": "rejected",
+      "reason": "Stationary left arm and hand on hip incorrectly omitted.",
+      "nativeFile": "assets/art/alex-motion-v1/native/listen-body-rejected-v1.png",
+      "nativeSha256": "fa44510f74b897a26d310967890c6d67028b968ebd89bb88db7f6d12ca2b4da5",
+      "nativeSize": [
+        1033,
+        1522
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4cb6a0c4-5673-4165-aafc-3ddbdf850c33.png"
+    },
+    {
+      "id": "fix-gesture",
+      "brief": "docs/alex-motion-v1/fix-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The raised right arm/teal sleeve, gripping hand and cream wrench ONLY, as ONE connected moving group. Include hidden sleeve overlap at the shoulder. Keep exact wrench and grip. No head, headphones, torso or other arm.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-fix-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png",
+            "sha256": "3b6562108f7f11797ca6b574fc675920c6e79f6e9ab3104c448c04a5a31dcf4c"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/fix-gesture-rejected-v1.png",
+      "nativeSha256": "b47beb6a85e52d9d33ab174c2fbfbfdb385da573cad0426fa053ddd6bb58cca7",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8d319ad1-ba1d-438d-997b-6b3c84952b91.png",
+      "status": "rejected",
+      "reason": "User flagged narrow arm, incorrect elbow bend and shoulder/hand placement versus accepted original."
+    },
+    {
+      "id": "fix-body",
+      "brief": "docs/alex-motion-v1/fix-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. Only the body/support base in EXACTLY the accepted pose. Remove head/hair/face/ears but keep the visible neck support and fixed headphones around the neck. Retain orange shirt, teal jacket with cream badge, navy trousers and cream shoes. Retain the ENTIRE stationary left arm with its hand resting on his hip, exactly as input4. Remove only the viewer-right wrench-holding arm, leaving a rounded shoulder attachment. Do NOT drop retained limbs or change body proportions. Transparent background.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-fix-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png",
+            "sha256": "3b6562108f7f11797ca6b574fc675920c6e79f6e9ab3104c448c04a5a31dcf4c"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/fix-body.png",
+      "nativeSha256": "65b766e3bdb93b6a38114be3981334fc126c50914da2d5559fa401fdc610a180",
+      "nativeSize": [
+        1047,
+        1502
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-b720cb45-a262-4fe7-8fab-25b1086066e4.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "dance-gesture",
+      "brief": "docs/alex-motion-v1/dance-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The raised right fist and its complete bent teal sleeve/arm ONLY, from shoulder to fist. Include hidden sleeve overlap for rotation. No head, headphones, torso or other arm.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-dance-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+            "sha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/dance-gesture-rejected-v1.png",
+      "nativeSha256": "5e731c6c9c7ed213253800b9d2438c5fda90bf8b75513be5fb2c3cac8438372c",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-850e8a9d-4b2b-43e6-a887-757beb08c0c4.png",
+      "status": "rejected",
+      "reason": "User flagged narrow arm, incorrect elbow bend and shoulder/hand placement versus accepted original."
+    },
+    {
+      "id": "dance-body",
+      "brief": "docs/alex-motion-v1/dance-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. Only the body/support base in EXACTLY the accepted pose. Remove head/hair/face/ears but keep the visible neck support and fixed headphones around the neck. Retain orange shirt, teal jacket with cream badge, navy trousers and cream shoes. Retain the ENTIRE viewer-left raised arm and fist, exactly as input4. Remove only the viewer-right raised arm, leaving a rounded shoulder attachment. Do NOT drop retained limbs or change body proportions. Transparent background.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-dance-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+            "sha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "status": "rejected",
+      "reason": "Wrong arm retained; required stationary viewer-left arm omitted.",
+      "nativeFile": "assets/art/alex-motion-v1/native/dance-body-rejected-v1.png",
+      "nativeSha256": "3bbad7389be5fa0bda959c4f4b94b7dd5f83be0e0aa2e96e67ed87eb574bc740",
+      "nativeSize": [
+        999,
+        1574
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ba0a70fa-3d62-4edf-ad6f-348fa2a5fa13.png"
+    },
+    {
+      "id": "sit-gesture",
+      "brief": "docs/alex-motion-v1/sit-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. The navy steering wheel with both gripping hands and both complete forward teal forearms/sleeves ONLY, one connected group preserving exact grips. Include hidden shoulder overlap. No head, headphones, seated torso, chair, console or legs.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-sit-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png",
+            "sha256": "24d54b967c26239ca6ad34b453031ec3c95f880cf43e8ac6224abdb35e786273"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/sit-gesture-rejected-v1.png",
+      "nativeSha256": "07bbd2fd40f9352b3ef1e200b7010fc25903157969633706620f31890463fb31",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-336ea1b3-3719-438c-a5a6-44fd8c535cda.png",
+      "status": "rejected",
+      "reason": "Broad rounded upper-arm cap covers shirt/badge; wheel and arm proportions unlike original."
+    },
+    {
+      "id": "sit-body",
+      "brief": "docs/alex-motion-v1/sit-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. Only the body/support base in EXACTLY the accepted pose. Remove head/hair/face/ears but keep the visible neck support and fixed headphones around the neck. Retain orange shirt, teal jacket with cream badge, navy trousers and cream shoes. Retain the entire chair, pedestal, legs, shoes, torso, navy headphones and turquoise console from input4. Remove only the steering wheel, both gripping hands and forward forearms. Close the body surfaces naturally behind that moving group. Do NOT drop retained limbs or change body proportions. Transparent background.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-sit-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png",
+            "sha256": "24d54b967c26239ca6ad34b453031ec3c95f880cf43e8ac6224abdb35e786273"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/sit-body.png",
+      "nativeSha256": "c201526973582f578940792c145616b001bb49c92f33655ccac4d491427c1e6f",
+      "nativeSize": [
+        1263,
+        1246
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-f388ab4f-0b11-4a92-b459-f1a1a3b79734.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "listen-body-v2",
+      "brief": "docs/alex-motion-v1/listen-body-v2.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Alex animation component. Inputs1 R01 brand,2 R02 approved cast and3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Alex pose edit target. Preserve his curly dark brown hair, orange-brown skin, exact rounded face/ears, rectangular thick brows, inward looking eyes, orange shirt, open teal jacket with cream badge, navy headphones around his NECK, navy trousers and cream shoes. Match the exact accepted contours, proportions, orientation and palette. No redesign, added nose, shading, glow, outline, gradient, background, labels or new objects. ONE isolated component per image, generous transparent margin and fully opaque solid interiors. No sprite sheet. Only the body/support base in EXACTLY the accepted pose. Remove head/hair/face/ears but keep the visible neck support and fixed headphones around the neck. Retain orange shirt, teal jacket with cream badge, navy trousers and cream shoes. Retain the ENTIRE stationary left arm with its hand resting on his hip, exactly as input4. Remove only the raised viewer-right arm, leaving a rounded shoulder attachment. Do NOT drop retained limbs or change body proportions. Transparent background. Input5 is the rejected body lacking the left arm. Restore that omitted left bent arm/hand from input4. Keep the right arm absent. This is the only repair.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-listen-body-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\native\\listen-body-rejected-v1.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\native\\listen-body-rejected-v1.png",
+            "sha256": "fa44510f74b897a26d310967890c6d67028b968ebd89bb88db7f6d12ca2b4da5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/listen-body.png",
+      "nativeSha256": "dbb073549da5111cc77e5c38411c06bf2b755baea9b95be39832ad04082af595",
+      "nativeSize": [
+        1033,
+        1523
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9ef1bc7e-e1e4-444c-9756-726a212dae17.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "blink-v2",
+      "brief": "docs/alex-motion-v1/blink-v2.json",
+      "prompt": "Output only the requested disconnected facial glyphs on transparent alpha. NOT A WHOLE CHARACTER OR HEAD. This is an isolated animation expression layer. No skin pixels, hair, ears, neck, headphones, costume, torso, legs or body anywhere. Inputs1 R01 brand,2 R02 cast,3 R07 rendering are mandatory references; input4 is the exact accepted Alex enlarged head EDIT TARGET, shown only to locate/shape the facial glyphs. No glow, shadows or outlines. EXACTLY TWO CLOSED EYELID CURVES ONLY. Two short thick dark brown curved strokes matching the original eyes, arranged as on the head. Exclude even brows/mouth/nose. Two detached eyelids, nothing else.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-blink-v2",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "c6b911a0973312a3cc05d5dba33263423b11386076716933c5babc1437397101"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/blink.png",
+      "nativeSha256": "0729729bd34f54b89a2e288bcfe302750a39a2b8de4da0a34563c68d1bf49d24",
+      "nativeSize": [
+        1774,
+        887
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8426ca28-e8e8-4d37-876a-ea03db91bf46.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "dance-body-v2",
+      "brief": "docs/alex-motion-v1/dance-body-v2.json",
+      "prompt": "Use case: precise-object-edit. Output a headless Alex DANCE BODY only. Inputs1 R01,2 R02,3 R07 are mandatory references. Input4 is original dance pose; input5 is rejected headless body. RESTORE the complete arm/fist on the LEFT SIDE OF THE IMAGE, from input4. REMOVE the complete raised arm/fist on RIGHT SIDE OF IMAGE. This distinction is image-left/image-right, not anatomical sides. Keep torso lean, orange shirt, teal open jacket and badge, navy neck headphones, bent navy legs and cream shoes. No head, hair, face or ears. Right shoulder ends in short rounded overlap stub for a separate arm. Preserve original exact composition and scale proportions; no glow, no other objects. Transparent background. Do not mirror.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-dance-body-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\native\\dance-body-rejected-v1.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+            "sha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\native\\dance-body-rejected-v1.png",
+            "sha256": "3bbad7389be5fa0bda959c4f4b94b7dd5f83be0e0aa2e96e67ed87eb574bc740"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/dance-body.png",
+      "nativeSha256": "84757d6b7969cdbc8c774aace96d44b2180e8b89b3e2cc8f17f4f0c634ba69c2",
+      "nativeSize": [
+        999,
+        1574
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-725f5f26-f141-43c3-8135-03fd5c951dbe.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "listen-gesture-v2",
+      "brief": "docs/alex-motion-v1/listen-gesture-v2.json",
+      "prompt": "STRICT IDENTITY-PRESERVING COMPONENT EXTRACTION. Output only ONE isolated viewer-right ARM on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 flatstyle are mandatoryreferences. Input4 is exactacceptedfullpose fororientation; input5 is a lossless6x cropofthis SAME EXACT arm, the PRIMARY EDIT TARGET. Extract this exact arm from input5, retaining its original contour, elbow angle, sleeve thickness, hand size, orientation and relative arm segment lengths. Do not redraw or redesign the arm; do not re-pose it, mirror it, make it skinnier or shorten it. Retain exact teal sleeve, orange-brown hand. Include entire sleeve from shoulder attachment to hand. Remove any torso, cream chestbadge, head/headphones, opposite arm and background from crop. Do not cut a hole where badge was; continue hidden shoulder sleeve slightly behind torso for overlap. No extra bulbous shoulder cap. Original arm slopes DOWN from shoulder to elbow, then UP to the large open palm. Do not invent a tall upper-arm hump. Large hand stays originalsize. Match the entire source arm silhouette as closely as possible. No glow, shadow, outline or shading additions. One isolated arm only; portrait canvas for fix/dance, original asymmetric bent-arm silhouette, fully opaque interior, generous transparent margin.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-listen-gesture-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen-arm-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen.png",
+            "sha256": "c44198ab231df0744ce0198c38cda24bc50cd9975d8d63e9fc8efddf6a0ae669"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\listen-arm-exact-6x.png",
+            "sha256": "56da2a08f95595b58a27fae405736d1e683c775d8cba5e003863f9c5dff67f68"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/listen-gesture.png",
+      "nativeSha256": "ad3f334fd0812e58d7eacf1eecd027613e8f694196cd299a3c346fc3ae915f0c",
+      "nativeSize": [
+        1196,
+        1315
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-683d1d15-d406-4374-8e0f-2e4d9c9aee96.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "fix-gesture-v2",
+      "brief": "docs/alex-motion-v1/fix-gesture-v2.json",
+      "prompt": "STRICT IDENTITY-PRESERVING COMPONENT EXTRACTION. Output only ONE isolated viewer-right ARM on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 flatstyle are mandatoryreferences. Input4 is exactacceptedfullpose fororientation; input5 is a lossless6x cropofthis SAME EXACT arm, the PRIMARY EDIT TARGET. Extract this exact arm from input5, retaining its original contour, elbow angle, sleeve thickness, hand size, orientation and relative arm segment lengths. Do not redraw or redesign the arm; do not re-pose it, mirror it, make it skinnier or shorten it. Retain exact teal sleeve, orange-brown hand and cream wrench in original grip. Include entire sleeve from shoulder attachment to hand. Remove any torso, cream chestbadge, head/headphones, opposite arm and background from crop. Do not cut a hole where badge was; continue hidden shoulder sleeve slightly behind torso for overlap. No extra bulbous shoulder cap. Keep the forearm/wrench upright with the wrench top HIGH above the shoulder. Do not shrink the wrench or hand. Original lower elbow bend and long sleeve stayexact. Match the entire source arm silhouette as closely as possible. No glow, shadow, outline or shading additions. One isolated arm only; portrait canvas for fix/dance, original asymmetric bent-arm silhouette, fully opaque interior, generous transparent margin.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-fix-gesture-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix-arm-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix.png",
+            "sha256": "3b6562108f7f11797ca6b574fc675920c6e79f6e9ab3104c448c04a5a31dcf4c"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\fix-arm-exact-6x.png",
+            "sha256": "485d89d92e8b310d8d01ce132ffd9b18e55eb73434afc2894f29cc203a240125"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/fix-gesture.png",
+      "nativeSha256": "dd2a328121ca10842269af894abf225ad68f22f82b51581b5fac4e8798d28ffc",
+      "nativeSize": [
+        1017,
+        1546
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-f929aba5-290f-4194-8b44-2bf85759f0c3.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "dance-gesture-v2",
+      "brief": "docs/alex-motion-v1/dance-gesture-v2.json",
+      "prompt": "STRICT IDENTITY-PRESERVING COMPONENT EXTRACTION. Output only ONE isolated viewer-right ARM on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 flatstyle are mandatoryreferences. Input4 is exactacceptedfullpose fororientation; input5 is a lossless6x cropofthis SAME EXACT arm, the PRIMARY EDIT TARGET. Extract this exact arm from input5, retaining its original contour, elbow angle, sleeve thickness, hand size, orientation and relative arm segment lengths. Do not redraw or redesign the arm; do not re-pose it, mirror it, make it skinnier or shorten it. Retain exact teal sleeve, orange-brown hand. Include entire sleeve from shoulder attachment to hand. Remove any torso, cream chestbadge, head/headphones, opposite arm and background from crop. Do not cut a hole where badge was; continue hidden shoulder sleeve slightly behind torso for overlap. No extra bulbous shoulder cap. Fist stays HIGH above the elbow. The outer forearm is nearly VERTICAL. The shoulder/upperarm extends sideways to the elbow, NOT a short diagonal V or floating zigzag. Match the entire source arm silhouette as closely as possible. No glow, shadow, outline or shading additions. One isolated arm only; portrait canvas for fix/dance, original asymmetric bent-arm silhouette, fully opaque interior, generous transparent margin.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-dance-gesture-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance-arm-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance.png",
+            "sha256": "af119ac62fff715fdcbd8c9bb33c9353987b77540e22f0a26dafcb346b452793"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\dance-arm-exact-6x.png",
+            "sha256": "1b24aa0d3724e0f97ebfcfbf7cfcc66bfb9a8c135acb8edae2fac483470b7f94"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/dance-gesture.png",
+      "nativeSha256": "0ec6cc2213cfc715346b3c776c71c9b6e2090683f0851e1787a256d5fd0ef047",
+      "nativeSize": [
+        1086,
+        1448
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c16df4da-6888-4064-a6ff-b9359ae5c045.png",
+      "status": "active-registered-component"
+    },
+    {
+      "id": "sit-gesture-v2",
+      "brief": "docs/alex-motion-v1/sit-gesture-v2.json",
+      "prompt": "STRICT COMPONENT EXTRACTION, not redesign. Generate ONLY the original driving steering wheel with both gripping hands and both forward teal sleeves/forearms from INPUT5 on transparent background. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatoryreference sheets. Input4 exactaccepted fullAlexdrivingpose; INPUT5 is lossless6x crop of the actual original wheel/hands/arms and is the PRIMARY EDIT TARGET. Preserve exact original wheel diameter, hand positions/size, relative layout, sleeve thickness and elbow contours. Preserve the original STRAIGHT HORIZONTAL lowerforearm and gently sloping upperforearm. DO NOT invent a rounded vertical upper-arm cap/pill/oval on the imageLEFT. End proximal sleeves with a straight edge at the crop LEFT boundary so they connect behind torso. Exclude ALL orange shirt pixels, cream chestbadge, head/headphones, chair, torso, legs and turquoise console. Where those are removed leave transparent alpha, no holes in retained wheel or arm. Do not enlarge wheel or gloves. Wheel/hands/forearms retain their source proportions asone rigid movinggroup. No crop of wheel/hands; complete sourcecomponent. No shadow, glow, outlines or addedgradient. One isolatedpart only, wide transparentcanvas and cleanopaqueinteriors.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "alex-motion-v1-sit-gesture-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit-arms-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/alex-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/alex-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/alex-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit.png",
+            "sha256": "24d54b967c26239ca6ad34b453031ec3c95f880cf43e8ac6224abdb35e786273"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-motion-v1\\baseline\\sit-arms-exact-6x.png",
+            "sha256": "9cc566ffbe0d41c31c183839620d786992f9b0e7dcd410ff228ec56d1d19bae0"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/alex-motion-v1/native/sit-gesture.png",
+      "nativeSha256": "4699092571afb8ae3700571039c88a48c89443ff76453e50b005da249b352be5",
+      "nativeSize": [
+        1723,
+        913
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cd841daa-6cb9-48ad-8d42-263b912120bf.png",
+      "status": "active-registered-component"
+    }
+  ],
+  "acceptedSource": {
+    "file": "assets/art/cast-static-alex-v3.png",
+    "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825"
+  },
+  "preservedRawOutputCount": 22,
+  "preparation": "tools/prepare-alex-motion.py; exact selections/registrations in head-fidelity.json and registrations.json. No runtime skin patches, code-drawn anatomy or complete expression heads.",
+  "reviewEvidence": [
+    "docs/alex-motion-v1/reconstruction.png",
+    "docs/alex-motion-v1/head-fidelity.png",
+    "reports/alex-head-fidelity.json",
+    "reports/alex-motion.json",
+    "reports/alex-motion-cache.json"
+  ],
+  "limits": [
+    "Raw native images unchanged; assembled derivatives are not untouched-native or whole-head pixel-identical claims.",
+    "Synthetic local Edge/Chromium QA, not physical-device/Safari/Firefox/human acceptance.",
+    "Large QA videos remain outside repository."
+  ]
+}

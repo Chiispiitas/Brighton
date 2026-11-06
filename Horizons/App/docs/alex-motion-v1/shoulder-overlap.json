@@ -1,0 +1,693 @@
+{
+  "pass": true,
+  "poses": [
+    {
+      "pose": "listen",
+      "minimumOpaqueOverlapPixels": 1147,
+      "samples": [
+        {
+          "angle": -5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1714
+        },
+        {
+          "angle": -5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1760
+        },
+        {
+          "angle": -5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1805
+        },
+        {
+          "angle": -4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1646
+        },
+        {
+          "angle": -4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1693
+        },
+        {
+          "angle": -4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1740
+        },
+        {
+          "angle": -3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1585
+        },
+        {
+          "angle": -3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1631
+        },
+        {
+          "angle": -3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1679
+        },
+        {
+          "angle": -2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1516
+        },
+        {
+          "angle": -2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1562
+        },
+        {
+          "angle": -2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1609
+        },
+        {
+          "angle": -1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1464
+        },
+        {
+          "angle": -1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1512
+        },
+        {
+          "angle": -1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1558
+        },
+        {
+          "angle": 0,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1409
+        },
+        {
+          "angle": 0,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1457
+        },
+        {
+          "angle": 0,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1503
+        },
+        {
+          "angle": 1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1344
+        },
+        {
+          "angle": 1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1392
+        },
+        {
+          "angle": 1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1438
+        },
+        {
+          "angle": 2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1291
+        },
+        {
+          "angle": 2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1339
+        },
+        {
+          "angle": 2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1384
+        },
+        {
+          "angle": 3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1239
+        },
+        {
+          "angle": 3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1288
+        },
+        {
+          "angle": 3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1331
+        },
+        {
+          "angle": 4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1184
+        },
+        {
+          "angle": 4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1233
+        },
+        {
+          "angle": 4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1275
+        },
+        {
+          "angle": 5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1147
+        },
+        {
+          "angle": 5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1195
+        },
+        {
+          "angle": 5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1235
+        }
+      ],
+      "limitation": "Alpha overlap supports but does not establish visual anatomical fit; original/rebuilt and actual-motion review required."
+    },
+    {
+      "pose": "fix",
+      "minimumOpaqueOverlapPixels": 2051,
+      "samples": [
+        {
+          "angle": -5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2749
+        },
+        {
+          "angle": -5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2763
+        },
+        {
+          "angle": -5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2761
+        },
+        {
+          "angle": -4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2673
+        },
+        {
+          "angle": -4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2687
+        },
+        {
+          "angle": -4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2687
+        },
+        {
+          "angle": -3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2605
+        },
+        {
+          "angle": -3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2616
+        },
+        {
+          "angle": -3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2616
+        },
+        {
+          "angle": -2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2533
+        },
+        {
+          "angle": -2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2545
+        },
+        {
+          "angle": -2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2545
+        },
+        {
+          "angle": -1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2462
+        },
+        {
+          "angle": -1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2475
+        },
+        {
+          "angle": -1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2475
+        },
+        {
+          "angle": 0,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2438
+        },
+        {
+          "angle": 0,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2450
+        },
+        {
+          "angle": 0,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2450
+        },
+        {
+          "angle": 1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2321
+        },
+        {
+          "angle": 1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2335
+        },
+        {
+          "angle": 1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2336
+        },
+        {
+          "angle": 2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2251
+        },
+        {
+          "angle": 2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2263
+        },
+        {
+          "angle": 2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2264
+        },
+        {
+          "angle": 3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2183
+        },
+        {
+          "angle": 3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2194
+        },
+        {
+          "angle": 3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2196
+        },
+        {
+          "angle": 4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2117
+        },
+        {
+          "angle": 4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2128
+        },
+        {
+          "angle": 4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2130
+        },
+        {
+          "angle": 5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 2051
+        },
+        {
+          "angle": 5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2062
+        },
+        {
+          "angle": 5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2065
+        }
+      ],
+      "limitation": "Alpha overlap supports but does not establish visual anatomical fit; original/rebuilt and actual-motion review required."
+    },
+    {
+      "pose": "dance",
+      "minimumOpaqueOverlapPixels": 1599,
+      "samples": [
+        {
+          "angle": -5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1951
+        },
+        {
+          "angle": -5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 2030
+        },
+        {
+          "angle": -5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2108
+        },
+        {
+          "angle": -4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1913
+        },
+        {
+          "angle": -4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1992
+        },
+        {
+          "angle": -4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2070
+        },
+        {
+          "angle": -3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1885
+        },
+        {
+          "angle": -3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1963
+        },
+        {
+          "angle": -3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2039
+        },
+        {
+          "angle": -2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1847
+        },
+        {
+          "angle": -2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1924
+        },
+        {
+          "angle": -2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 2000
+        },
+        {
+          "angle": -1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1812
+        },
+        {
+          "angle": -1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1889
+        },
+        {
+          "angle": -1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1965
+        },
+        {
+          "angle": 0,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1792
+        },
+        {
+          "angle": 0,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1869
+        },
+        {
+          "angle": 0,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1945
+        },
+        {
+          "angle": 1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1744
+        },
+        {
+          "angle": 1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1819
+        },
+        {
+          "angle": 1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1894
+        },
+        {
+          "angle": 2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1715
+        },
+        {
+          "angle": 2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1788
+        },
+        {
+          "angle": 2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1861
+        },
+        {
+          "angle": 3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1672
+        },
+        {
+          "angle": 3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1745
+        },
+        {
+          "angle": 3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1818
+        },
+        {
+          "angle": 4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1642
+        },
+        {
+          "angle": 4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1715
+        },
+        {
+          "angle": 4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1788
+        },
+        {
+          "angle": 5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 1599
+        },
+        {
+          "angle": 5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 1672
+        },
+        {
+          "angle": 5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 1745
+        }
+      ],
+      "limitation": "Alpha overlap supports but does not establish visual anatomical fit; original/rebuilt and actual-motion review required."
+    },
+    {
+      "pose": "sit",
+      "minimumOpaqueOverlapPixels": 14973,
+      "samples": [
+        {
+          "angle": -5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15111
+        },
+        {
+          "angle": -5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15484
+        },
+        {
+          "angle": -5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15932
+        },
+        {
+          "angle": -4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15089
+        },
+        {
+          "angle": -4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15445
+        },
+        {
+          "angle": -4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15882
+        },
+        {
+          "angle": -3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15066
+        },
+        {
+          "angle": -3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15397
+        },
+        {
+          "angle": -3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15832
+        },
+        {
+          "angle": -2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15045
+        },
+        {
+          "angle": -2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15357
+        },
+        {
+          "angle": -2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15787
+        },
+        {
+          "angle": -1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15035
+        },
+        {
+          "angle": -1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15323
+        },
+        {
+          "angle": -1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15748
+        },
+        {
+          "angle": 0,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15128
+        },
+        {
+          "angle": 0,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15388
+        },
+        {
+          "angle": 0,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15821
+        },
+        {
+          "angle": 1,
+          "translateY": -3,
+          "opaqueOverlapPixels": 15015
+        },
+        {
+          "angle": 1,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15266
+        },
+        {
+          "angle": 1,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15656
+        },
+        {
+          "angle": 2,
+          "translateY": -3,
+          "opaqueOverlapPixels": 14989
+        },
+        {
+          "angle": 2,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15232
+        },
+        {
+          "angle": 2,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15591
+        },
+        {
+          "angle": 3,
+          "translateY": -3,
+          "opaqueOverlapPixels": 14990
+        },
+        {
+          "angle": 3,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15228
+        },
+        {
+          "angle": 3,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15571
+        },
+        {
+          "angle": 4,
+          "translateY": -3,
+          "opaqueOverlapPixels": 14981
+        },
+        {
+          "angle": 4,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15221
+        },
+        {
+          "angle": 4,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15546
+        },
+        {
+          "angle": 5,
+          "translateY": -3,
+          "opaqueOverlapPixels": 14973
+        },
+        {
+          "angle": 5,
+          "translateY": 0,
+          "opaqueOverlapPixels": 15218
+        },
+        {
+          "angle": 5,
+          "translateY": 3,
+          "opaqueOverlapPixels": 15526
+        }
+      ],
+      "limitation": "Alpha overlap supports but does not establish visual anatomical fit; original/rebuilt and actual-motion review required."
+    }
+  ]
+}

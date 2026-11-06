@@ -1,0 +1,154 @@
+{
+  "poses": {
+    "listen": {
+      "width": 367,
+      "height": 540,
+      "parts": {
+        "head": "assets/art/alex-motion-v1/listen-head.png",
+        "neutral": "assets/art/alex-motion-v1/listen-neutral.png",
+        "body": "assets/art/alex-motion-v1/listen-body.png",
+        "gesture": "assets/art/alex-motion-v1/listen-gesture.png",
+        "eyes": "assets/art/alex-motion-v1/listen-eyes.png",
+        "pupils": "assets/art/alex-motion-v1/listen-pupils.png",
+        "blink": "assets/art/alex-motion-v1/listen-blink.png",
+        "focus": "assets/art/alex-motion-v1/listen-focus.png",
+        "joy": "assets/art/alex-motion-v1/listen-joy.png"
+      },
+      "pivots": {
+        "head": [
+          164,
+          181
+        ],
+        "gesture": [
+          241,
+          208
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "gesture",
+        "body"
+      ]
+    },
+    "fix": {
+      "width": 376,
+      "height": 539,
+      "parts": {
+        "head": "assets/art/alex-motion-v1/fix-head.png",
+        "neutral": "assets/art/alex-motion-v1/fix-neutral.png",
+        "body": "assets/art/alex-motion-v1/fix-body.png",
+        "gesture": "assets/art/alex-motion-v1/fix-gesture.png",
+        "eyes": "assets/art/alex-motion-v1/fix-eyes.png",
+        "pupils": "assets/art/alex-motion-v1/fix-pupils.png",
+        "blink": "assets/art/alex-motion-v1/fix-blink.png",
+        "focus": "assets/art/alex-motion-v1/fix-focus.png",
+        "joy": "assets/art/alex-motion-v1/fix-joy.png"
+      },
+      "pivots": {
+        "head": [
+          166,
+          181
+        ],
+        "gesture": [
+          242,
+          205
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "gesture",
+        "body"
+      ]
+    },
+    "dance": {
+      "width": 352,
+      "height": 554,
+      "parts": {
+        "head": "assets/art/alex-motion-v1/dance-head.png",
+        "neutral": "assets/art/alex-motion-v1/dance-neutral.png",
+        "body": "assets/art/alex-motion-v1/dance-body.png",
+        "gesture": "assets/art/alex-motion-v1/dance-gesture.png",
+        "eyes": "assets/art/alex-motion-v1/dance-eyes.png",
+        "pupils": "assets/art/alex-motion-v1/dance-pupils.png",
+        "blink": "assets/art/alex-motion-v1/dance-blink.png",
+        "focus": "assets/art/alex-motion-v1/dance-focus.png",
+        "joy": "assets/art/alex-motion-v1/dance-joy.png"
+      },
+      "pivots": {
+        "head": [
+          180,
+          182
+        ],
+        "gesture": [
+          254,
+          169
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "gesture",
+        "body"
+      ]
+    },
+    "sit": {
+      "width": 453,
+      "height": 548,
+      "parts": {
+        "head": "assets/art/alex-motion-v1/sit-head.png",
+        "neutral": "assets/art/alex-motion-v1/sit-neutral.png",
+        "body": "assets/art/alex-motion-v1/sit-body.png",
+        "gesture": "assets/art/alex-motion-v1/sit-gesture.png",
+        "eyes": "assets/art/alex-motion-v1/sit-eyes.png",
+        "pupils": "assets/art/alex-motion-v1/sit-pupils.png",
+        "blink": "assets/art/alex-motion-v1/sit-blink.png",
+        "focus": "assets/art/alex-motion-v1/sit-focus.png",
+        "joy": "assets/art/alex-motion-v1/sit-joy.png"
+      },
+      "pivots": {
+        "head": [
+          172,
+          179
+        ],
+        "gesture": [
+          310,
+          280
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    },
+    "drive": {
+      "width": 453,
+      "height": 548,
+      "parts": {
+        "head": "assets/art/alex-motion-v1/sit-head.png",
+        "neutral": "assets/art/alex-motion-v1/sit-neutral.png",
+        "body": "assets/art/alex-motion-v1/sit-body.png",
+        "gesture": "assets/art/alex-motion-v1/sit-gesture.png",
+        "eyes": "assets/art/alex-motion-v1/sit-eyes.png",
+        "pupils": "assets/art/alex-motion-v1/sit-pupils.png",
+        "blink": "assets/art/alex-motion-v1/sit-blink.png",
+        "focus": "assets/art/alex-motion-v1/sit-focus.png",
+        "joy": "assets/art/alex-motion-v1/sit-joy.png"
+      },
+      "pivots": {
+        "head": [
+          172,
+          179
+        ],
+        "gesture": [
+          310,
+          280
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    }
+  }
+}
