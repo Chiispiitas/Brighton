@@ -1,5 +1,12 @@
 # Pico daily streak campfire production
 
+Shoulder and motion correction (6 November 2026): the user rejected the original low arm attachments. Two new native ImageGen upper-body repairs raise the peach shoulders to the shirt shoulder line; prior originals remain archived. Exact briefs, mandatory attached references, preflights and native return paths are in upper-roast-shoulders/upper-lift-shoulders records under docs/streak-campfire-v1. There are now 16 native outputs. The permanent head/features and fixed seat/lower body remain unchanged.
+
+Runtime now separates the existing generated skin/skewer pixels from the fixed shirt texture and applies a small textured mesh deformation. No anatomy or facial marks are drawn in code. Both shoulder roots remain pinned; paws and the held skewer share interpolated grip/tip anchors. An eased 1.45-second lift and 1.55-second return move the current pose before switching at matched halfway positions. All transitions remain opaque. Fire grows from embers over 1.75 seconds; its four native frames share a continuous height/base anchor, sway and width variations, avoiding the former abrupt small-to-full size jump. The 5.6-second sequence still settles and respects reduced motion, hidden/offscreen pause and failure fallback.
+
+Actual browser tests in reports/streak-motion.json include both switch boundaries (1974/1976ms and 4324/4326ms), with marshmallow centroid displacement under 3 logical pixels, six viewport sizes, masks, save/retry and lifecycle checks. Four helper tests and exact-byte/offline checks in reports/streak-cache.json pass. Ten normal-speed frames and desktop renders were inspected, including both transitions. Current cache is horizons-companion-daily-streak-v102; app/scene/style query streak2. No backend or lesson content changes. Pages deployment is not awaited.
+
+
 This is a finite daily completion celebration, not an ambient replacement for the accepted Learn screen. Pico sits on a fixed wooden stump, roasts one marshmallow in a compact freestanding hearth, reacts when the flame catches, and settles. The streak number, weekdays and timing message are accessible HTML beside the illustration; they are never baked into a generated picture.
 
 ## Art and motion contract

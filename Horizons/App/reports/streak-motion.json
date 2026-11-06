@@ -10,22 +10,62 @@
   "persistedSeenGuard": true,
   "hiddenScreenDefersSeen": true,
   "firstLoadRoastPlaceholder": true,
+  "poseSwitchMarshmallowContinuity": [
+    {
+      "times": [
+        1974,
+        1976
+      ],
+      "samples": [
+        {
+          "x": 399.3388042203986,
+          "y": 330.9015240328253,
+          "n": 853
+        },
+        {
+          "x": 400.3719185423366,
+          "y": 331.1725616291533,
+          "n": 933
+        }
+      ],
+      "displacement": 1.0680761119024524
+    },
+    {
+      "times": [
+        4324,
+        4326
+      ],
+      "samples": [
+        {
+          "x": 400.35867237687364,
+          "y": 331.1873661670235,
+          "n": 934
+        },
+        {
+          "x": 399.3388042203986,
+          "y": 330.9015240328253,
+          "n": 853
+        }
+      ],
+      "displacement": 1.0591679669791998
+    }
+  ],
   "playback": [
     {
       "phase": "roasting",
-      "time": 1.0999999642372131
+      "time": 1.199999988079071
     },
     {
       "phase": "igniting",
-      "time": 805.6999999880791
+      "time": 804
     },
     {
       "phase": "celebrating",
-      "time": 2305.699999988079
+      "time": 2312.5
     },
     {
       "phase": "settled",
-      "time": 5605.899999976158
+      "time": 5604.300000011921
     }
   ],
   "normalSpeedFiniteSceneObserved": true,
@@ -34,7 +74,7 @@
   "sourceBinding": [
     {
       "file": "src/streak-celebration.js",
-      "sha256": "db1cfb1b90335afc77ffe0c23f8d11c693ef25afef0577481e2ef57673cc75c4"
+      "sha256": "e02eac0dcc954485ebfd98d1121a6093c9d937d51134315f58d8275759d0180d"
     },
     {
       "file": "styles/streak-celebration.css",
@@ -42,15 +82,15 @@
     },
     {
       "file": "src/app.js",
-      "sha256": "d54885b3bc2968c7b7502ddf1a2dd431cf84dc49b4c22fa55af79169f62b01f5"
+      "sha256": "a5f9990a9802355e4e9bdddb73433d89527f19891eb8e28dc7c552e9f3fdae0c"
     },
     {
       "file": "index.html",
-      "sha256": "03fbee0921ae2d1efee277f8cd68a64e7a7128593fa04a21a9da235ee55f69ea"
+      "sha256": "691cae8620d0c6da911910b31f680d82256dd9b1ea4b5c7a27a1f5574350301d"
     },
     {
       "file": "service-worker.js",
-      "sha256": "48f6211448d9a759a779b1a92dc6ecf3ed4d70cd32099e02568747125c789bb7"
+      "sha256": "ada47391df476518ed59ece8dea1720ec224a899fe8366d2cef80b1229b5658e"
     },
     {
       "file": "assets/art/streak-campfire-v1/rigs.json",
@@ -58,7 +98,7 @@
     },
     {
       "file": "assets/art/streak-campfire-v1/roast-reconstruction.png",
-      "sha256": "a035411141408de4f2cfce1bf129e3e9441dc5ee4103fbde644e8ace5baff0e4"
+      "sha256": "a50b8c352b0f539699edfcb76a8ea4bbbf2404b484eef943b6d31b35c1158153"
     },
     {
       "file": "assets/art/streak-campfire-v1/head.png",
@@ -98,11 +138,11 @@
     },
     {
       "file": "assets/art/streak-campfire-v1/armRoast.png",
-      "sha256": "059414ae49a9b0c62c327d3492206d0d4a433b954f44fd9691b82d9256a81df7"
+      "sha256": "afb78ba4d79f68e225d7d0422e01b9c6dfd6eded03280c5f0c41175f095f2046"
     },
     {
       "file": "assets/art/streak-campfire-v1/armLift.png",
-      "sha256": "ef9eea3b6fd0ec072d64895423532be844db425fa251be5c8d8264bf2146aac7"
+      "sha256": "adc548a0f617bb035b92998e1a3371a1ce0fb499dcf1c2904dfdb92fc50129e4"
     },
     {
       "file": "assets/art/streak-campfire-v1/fireplace.png",
@@ -138,7 +178,7 @@
     },
     {
       "file": "assets/art/streak-campfire-v1/reduced.png",
-      "sha256": "5484de8ee7acf628319b3f73373922c9ee7169f3ff02aa8564a780576464a055"
+      "sha256": "2d084cbec80668cd962be68498b44853aad9fcc97a5cbfbb548cb2093d812be9"
     }
   ],
   "sourceUnchangedDuringRun": true,
@@ -242,7 +282,7 @@
       "expression": "neutral",
       "fire": [
         "fireplace",
-        "fireIgnite"
+        "fireFull"
       ],
       "arm": "roast",
       "opacity": [
@@ -324,7 +364,7 @@
       "expression": "excited",
       "fire": [
         "fireplace",
-        "fireFull"
+        "fireIgnite"
       ],
       "arm": "lift",
       "opacity": [
@@ -365,7 +405,7 @@
       "expression": "neutral",
       "fire": [
         "fireplace",
-        "fireSmall"
+        "fireFull"
       ],
       "arm": "roast",
       "opacity": [

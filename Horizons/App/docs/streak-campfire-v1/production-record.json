@@ -2,14 +2,16 @@
   "date": "2026-11-06",
   "tool": "built-in ImageGen",
   "perPartGeneration": true,
-  "nativeOutputs": 14,
-  "generationAttempts": 17,
+  "nativeOutputs": 16,
+  "generationAttempts": 19,
   "generationFailuresWithoutOutput": 3,
   "toolValidationFailuresBeforeGeneration": 1,
   "rejectedNativeOutputs": [
     "arm-lift",
     "arm-roast",
-    "face-excited"
+    "face-excited",
+    "upper-lift",
+    "upper-roast"
   ],
   "records": [
     {
@@ -951,9 +953,9 @@
       "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-f33126f1-d0b2-4566-b97e-b8d894188384.png",
       "native_path": "assets/art/streak-campfire-v1/native/upper-lift.png",
       "review": "Root approved matched opaque clothed torso/strap/neck/hem and connected raised paws/skewer. Actual registered reconstruction review pending.",
-      "status": "active-native",
+      "status": "rejected",
       "nativeSha256": "0c96df6c83862da68a6e55eb70614b2a8f4d06721a8769854c9730eff70af739",
-      "productionRole": "Native source used by registered final artwork.",
+      "productionRole": "User rejected low forelimb attachments below the shirt shoulder line; replaced by separately generated shoulder repair.",
       "preflightEvidence": {
         "pass": true,
         "asset_id": "pico-streak-upper-lift-v1",
@@ -1002,6 +1004,77 @@
       }
     },
     {
+      "id": "upper-lift-shoulders",
+      "recordFile": "docs/streak-campfire-v1/upper-lift-shoulders-generation.json",
+      "asset_id": "pico-upper-lift-shoulders-v2",
+      "kind": "cast",
+      "intent": "edit",
+      "reference_ids": [
+        "R01",
+        "R02",
+        "R07"
+      ],
+      "target_paths": [
+        "assets/art/streak-campfire-v1/native/upper-lift.png"
+      ],
+      "transparent_background": false,
+      "prompt": "Precise repair of ONE clothed cartoon rabbit upper-body animation sprite. Images1/2/3 are mandatory Horizons brand/cast/style references, not layouts to copy. Image4 is the exact sprite to edit. Preserve its navy sleeveless explorer shirt, magenta diagonal strap, round paws gripping ONE brown marshmallow skewer, exact hand positions, stick direction, white marshmallow, torso outline, neckline, bottom hem, canvas size and all placements. FIX BOTH SHOULDERS: currently the peach forelimbs begin much too low, at the ribs below the shirt shoulder posts. Extend the natural rounded peach shoulder/upper arm upward beside the navy shirt to meet the TOP shoulder line next to the neckline on BOTH sides. The arms must emerge naturally directly from the shirt armholes at shoulder height, with solid overlapping shoulder-to-shirt contact and no narrow empty gaps, floating arm starts or navy posts above the upper arms. Keep forearms/paws/skewer in the existing pose. This is a friendly fully clothed nonhuman rabbit torso component, no head or legs. Flat native filled shape style, clean solid opaque interiors, no glow or shadows. Preserve the existing fully opaque solid #ff00ff background for mechanical key extraction. No extra objects, characters, text or sprite sheet.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-lift.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/upper-lift-shoulders-preflight.json",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2a7f857f-c4af-41f8-947b-655ba0f05316.png",
+      "native_path": "assets/art/streak-campfire-v1/native/upper-lift-shoulders.png",
+      "status": "active-native",
+      "review": "Raised native shoulders meet shirt top; exact head and grip kept. Mechanical registration and transition review required.",
+      "part": "upper-lift-shoulders",
+      "nativeSha256": "24a1b27e1a98108b9b447723c6241e94df10b4e1b821fe81e8c2dd8914443f36",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-upper-lift-shoulders-v2",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-lift.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-lift.png",
+            "sha256": "0c96df6c83862da68a6e55eb70614b2a8f4d06721a8769854c9730eff70af739"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
       "id": "upper-roast",
       "recordFile": "docs/streak-campfire-v1/upper-roast-generation.json",
       "part": "upper-roast",
@@ -1017,9 +1090,9 @@
       "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-0f11e14b-2746-4bc7-a020-b0e61d5f1ab3.png",
       "native_path": "assets/art/streak-campfire-v1/native/upper-roast.png",
       "review": "Root approved coherent opaque clothed torso/strap plus supported paws and down-right skewer with one white marshmallow. Assembly registration/neck-waist review pending.",
-      "status": "active-native",
+      "status": "rejected",
       "nativeSha256": "bf5ffc3b714121d6a27e0d34832e3e333f85cfc0ee7fbec8dcd4db9e1974645c",
-      "productionRole": "Native source used by registered final artwork.",
+      "productionRole": "User rejected low forelimb attachments below the shirt shoulder line; replaced by separately generated shoulder repair.",
       "preflightEvidence": {
         "pass": true,
         "asset_id": "pico-streak-upper-roast-v1",
@@ -1062,6 +1135,77 @@
             "role": "edit target",
             "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift-clean.png",
             "sha256": "37485b384f04a68808a9ce766fae694e51fc9afdb4491dc5ae59a9c45d9b5ef4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-roast-shoulders",
+      "recordFile": "docs/streak-campfire-v1/upper-roast-shoulders-generation.json",
+      "asset_id": "pico-upper-roast-shoulders-v2",
+      "kind": "cast",
+      "intent": "edit",
+      "reference_ids": [
+        "R01",
+        "R02",
+        "R07"
+      ],
+      "target_paths": [
+        "assets/art/streak-campfire-v1/native/upper-roast.png"
+      ],
+      "transparent_background": false,
+      "prompt": "Precise repair of ONE clothed cartoon rabbit upper-body animation sprite. Images1/2/3 are mandatory Horizons brand/cast/style references, not layouts to copy. Image4 is the exact sprite to edit. Preserve its navy sleeveless explorer shirt, magenta diagonal strap, round paws gripping ONE brown marshmallow skewer, exact hand positions, stick direction, white marshmallow, torso outline, neckline, bottom hem, canvas size and all placements. FIX BOTH SHOULDERS: currently the peach forelimbs begin much too low, at the ribs below the shirt shoulder posts. Extend the natural rounded peach shoulder/upper arm upward beside the navy shirt to meet the TOP shoulder line next to the neckline on BOTH sides. The arms must emerge naturally directly from the shirt armholes at shoulder height, with solid overlapping shoulder-to-shirt contact and no narrow empty gaps, floating arm starts or navy posts above the upper arms. Keep forearms/paws/skewer in the existing pose. This is a friendly fully clothed nonhuman rabbit torso component, no head or legs. Flat native filled shape style, clean solid opaque interiors, no glow or shadows. Preserve the existing fully opaque solid #ff00ff background for mechanical key extraction. No extra objects, characters, text or sprite sheet.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/upper-roast-shoulders-preflight.json",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d8ec37a5-48e3-4c26-8906-5a3b9f5a791b.png",
+      "native_path": "assets/art/streak-campfire-v1/native/upper-roast-shoulders.png",
+      "status": "active-native",
+      "review": "Raised native shoulders meet shirt top; exact head and grip kept. Mechanical registration and transition review required.",
+      "part": "upper-roast-shoulders",
+      "nativeSha256": "bd02c5279c16709cce9a1368bf62cb018a0504d085489e103f9a6e4ff50cc510",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-upper-roast-shoulders-v2",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png",
+            "sha256": "bf5ffc3b714121d6a27e0d34832e3e333f85cfc0ee7fbec8dcd4db9e1974645c"
           }
         ],
         "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
@@ -1134,7 +1278,7 @@
   ],
   "registrations": "docs/streak-campfire-v1/registrations.json",
   "nativeBytesUnchanged": true,
-  "activePngBytes": 725777,
+  "activePngBytes": 735294,
   "activePngCount": 21,
   "activeManifestBytes": 2033,
   "startupStill": "assets/art/streak-campfire-v1/roast-reconstruction.png",

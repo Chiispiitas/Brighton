@@ -110,6 +110,8 @@ def composite(images, order):
 def provenance():
     """Refresh records/hashes without rewriting any frozen runtime PNG/manifest."""
     native_roles = {
+        'upper-roast': ('rejected', 'User rejected low forelimb attachments below the shirt shoulder line; replaced by separately generated shoulder repair.'),
+        'upper-lift': ('rejected', 'User rejected low forelimb attachments below the shirt shoulder line; replaced by separately generated shoulder repair.'),
         'seated-reference': ('reference-only', 'Accepted seated geometry reference; original approved Pico blank head/features are reused.'),
         'arm-roast': ('rejected', 'Broad blurry glow around the isolated cartoon forelimbs/skewer.'),
         'arm-lift': ('rejected', 'Broad blurry glow around the isolated cartoon forelimbs/skewer.'),

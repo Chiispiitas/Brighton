@@ -1,6 +1,6 @@
 {
   "pass": true,
-  "cacheName": "horizons-companion-daily-streak-v101",
+  "cacheName": "horizons-companion-daily-streak-v102",
   "exactBytes": true,
   "previousCacheRemoved": true,
   "offlineReload": true,
@@ -16,11 +16,11 @@
     },
     {
       "file": "./assets/art/streak-campfire-v1/armLift.png",
-      "sha256": "ef9eea3b6fd0ec072d64895423532be844db425fa251be5c8d8264bf2146aac7"
+      "sha256": "adc548a0f617bb035b92998e1a3371a1ce0fb499dcf1c2904dfdb92fc50129e4"
     },
     {
       "file": "./assets/art/streak-campfire-v1/armRoast.png",
-      "sha256": "059414ae49a9b0c62c327d3492206d0d4a433b954f44fd9691b82d9256a81df7"
+      "sha256": "afb78ba4d79f68e225d7d0422e01b9c6dfd6eded03280c5f0c41175f095f2046"
     },
     {
       "file": "./assets/art/streak-campfire-v1/blink.png",
@@ -88,31 +88,31 @@
     },
     {
       "file": "./assets/art/streak-campfire-v1/reduced.png",
-      "sha256": "5484de8ee7acf628319b3f73373922c9ee7169f3ff02aa8564a780576464a055"
+      "sha256": "2d084cbec80668cd962be68498b44853aad9fcc97a5cbfbb548cb2093d812be9"
     },
     {
       "file": "./assets/art/streak-campfire-v1/roast-reconstruction.png",
-      "sha256": "a035411141408de4f2cfce1bf129e3e9441dc5ee4103fbde644e8ace5baff0e4"
+      "sha256": "a50b8c352b0f539699edfcb76a8ea4bbbf2404b484eef943b6d31b35c1158153"
     },
     {
       "file": "./assets/art/streak-campfire-v1/satchel.png",
       "sha256": "19b0a9bdda5012ee75515c87ef43e87e6d65fe666ebd00e5f36866523e0d3b20"
     },
     {
-      "file": "./src/streak-celebration.js?v=streak1",
-      "sha256": "db1cfb1b90335afc77ffe0c23f8d11c693ef25afef0577481e2ef57673cc75c4"
+      "file": "./src/streak-celebration.js?v=streak2",
+      "sha256": "e02eac0dcc954485ebfd98d1121a6093c9d937d51134315f58d8275759d0180d"
     },
     {
-      "file": "./styles/streak-celebration.css?v=streak1",
+      "file": "./styles/streak-celebration.css?v=streak2",
       "sha256": "582b40de0ac6cfe40bf74560015e1497469d08386a69dc2b67608ee75ba85dc5"
     },
     {
       "file": "./index.html",
-      "sha256": "03fbee0921ae2d1efee277f8cd68a64e7a7128593fa04a21a9da235ee55f69ea"
+      "sha256": "691cae8620d0c6da911910b31f680d82256dd9b1ea4b5c7a27a1f5574350301d"
     },
     {
-      "file": "./src/app.js?v=streak1",
-      "sha256": "d54885b3bc2968c7b7502ddf1a2dd431cf84dc49b4c22fa55af79169f62b01f5"
+      "file": "./src/app.js?v=streak2",
+      "sha256": "a5f9990a9802355e4e9bdddb73433d89527f19891eb8e28dc7c552e9f3fdae0c"
     }
   ],
   "errors": [],

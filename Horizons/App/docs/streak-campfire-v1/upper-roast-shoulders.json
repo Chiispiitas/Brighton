@@ -1,0 +1,15 @@
+{
+  "asset_id": "pico-upper-roast-shoulders-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/upper-roast.png"
+  ],
+  "transparent_background": false,
+  "prompt": "Precise repair of ONE clothed cartoon rabbit upper-body animation sprite. Images1/2/3 are mandatory Horizons brand/cast/style references, not layouts to copy. Image4 is the exact sprite to edit. Preserve its navy sleeveless explorer shirt, magenta diagonal strap, round paws gripping ONE brown marshmallow skewer, exact hand positions, stick direction, white marshmallow, torso outline, neckline, bottom hem, canvas size and all placements. FIX BOTH SHOULDERS: currently the peach forelimbs begin much too low, at the ribs below the shirt shoulder posts. Extend the natural rounded peach shoulder/upper arm upward beside the navy shirt to meet the TOP shoulder line next to the neckline on BOTH sides. The arms must emerge naturally directly from the shirt armholes at shoulder height, with solid overlapping shoulder-to-shirt contact and no narrow empty gaps, floating arm starts or navy posts above the upper arms. Keep forearms/paws/skewer in the existing pose. This is a friendly fully clothed nonhuman rabbit torso component, no head or legs. Flat native filled shape style, clean solid opaque interiors, no glow or shadows. Preserve the existing fully opaque solid #ff00ff background for mechanical key extraction. No extra objects, characters, text or sprite sheet."
+}

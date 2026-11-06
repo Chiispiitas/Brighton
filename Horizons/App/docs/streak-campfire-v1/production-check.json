@@ -1,12 +1,14 @@
 {
   "pass": true,
-  "nativeOutputs": 14,
-  "generationAttempts": 17,
+  "nativeOutputs": 16,
+  "generationAttempts": 19,
   "toolValidationFailures": 1,
   "rejectedNativeOutputs": [
     "arm-lift",
     "arm-roast",
-    "face-excited"
+    "face-excited",
+    "upper-lift",
+    "upper-roast"
   ],
   "callChecks": [
     {
@@ -138,7 +140,23 @@
       "noOutputCreated": false
     },
     {
+      "id": "upper-lift-shoulders",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
       "id": "upper-roast",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "upper-roast-shoulders",
       "mandatoryReferencesAttached": true,
       "actualPathsMatchPreflight": true,
       "exactInputHashesMatch": true,
@@ -146,7 +164,7 @@
       "noOutputCreated": false
     }
   ],
-  "activePngBytes": 725777,
+  "activePngBytes": 735294,
   "activePngCount": 21,
   "activeSourceHashesCurrent": true,
   "inheritedApprovedBytesExact": true,
@@ -155,6 +173,6 @@
     "motionReport": "reports/streak-motion.json",
     "cacheSourceBytesExact": true,
     "cacheReport": "reports/streak-cache.json",
-    "cacheName": "horizons-companion-daily-streak-v101"
+    "cacheName": "horizons-companion-daily-streak-v102"
   }
 }
