@@ -173,3 +173,10 @@
 .activity-page[data-question-type=order][data-answer-state=incorrect] .sentence-builder :is([data-token],[data-remove-token]){background:#f9e5df;color:#984b3b;border-color:#e5c2b8;box-shadow:0 2px 0 #e5c2b8;opacity:1;transition:none}
 
 .mix-actions>[hidden]{display:none!important}
+/* Typed feedback places fixed-size artwork beside short cues instead of adding vertical overflow. */
+@media(min-width:761px){
+ .activity-page[data-question-type=text][data-listening=false]:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content{display:grid;grid-template-columns:minmax(0,1fr) var(--cast-width);grid-template-rows:auto auto;align-content:center;align-items:center;gap:12px 24px}
+ .activity-page[data-question-type=text][data-listening=false]:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content>h1{grid-column:1;grid-row:1;align-self:end}
+ .activity-page[data-question-type=text][data-listening=false]:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content>.question-cue{grid-column:1;grid-row:2;align-self:start}
+ .activity-page[data-question-type=text][data-listening=false]:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content>.question-scene{grid-column:2;grid-row:1 / span 2;margin:0}
+}
