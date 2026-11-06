@@ -27,11 +27,11 @@ const page=await context.newPage();page.on('pageerror',error=>errors.push(error.
 const map=()=>page.locator('.overworld-map'),nodeButton=id=>page.locator('.learning-path [data-path-node="'+id+'"]');
 try{
  let seed=1;while(buildQuiz({mode:'grammar',grammarSetIds:['1a-be'],count:8,seed}).filter(q=>q.tokens?.length).length<2)seed++;await page.addInitScript(seed=>{Date.now=()=>seed;},seed);
- await page.goto(base);await page.locator('.app-shell').waitFor();await page.locator('.desktop-nav [data-route=practice]').click();await page.locator('[data-grammar="1a-be"]').click();
+ await page.goto(base);await page.locator('.app-shell').waitFor();await page.locator('.desktop-nav [data-route=practice]').click();await page.locator('input[value=topic-1a-be]').check();await page.locator('[data-mix=recall]').click();
  let ordered=0,answered=0;
  async function drag(tile,target,touch=false){const a=await tile.boundingBox(),b=await target.boundingBox();const x=a.x+a.width/2,y=a.y+a.height/2,tx=b.x+b.width/2,ty=b.y+b.height/2;if(touch){const c=await context.newCDPSession(page);await c.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});for(let i=1;i<=8;i++)await c.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:x+(tx-x)*i/8,y:y+(ty-y)*i/8}]});await c.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await c.detach();}else{await page.mouse.move(x,y);await page.mouse.down();await page.mouse.move(tx,ty,{steps:8});await page.mouse.up();}}
  while(await page.locator('.activity-page:not(.result-page)').count()){
-  const st=await page.evaluate(()=>HorizonsApp.getState()),q=buildQuiz(st.options).find(q=>q.id===st.question.id);assert.ok(q);
+  const st=await page.evaluate(()=>HorizonsApp.getState()),q=buildQuiz({...st.options,activityId:undefined}).find(q=>q.id===st.question.id);assert.ok(q);
   if(st.question.type==='order'){
    ordered++;assert.equal(q.type,'text');assert.equal(await page.locator('#typed-answer').count(),0);assert.ok(!(await page.locator('.question-body h1').textContent()).includes('Type'));
    for(const width of [320,390,430,1440]){await page.setViewportSize({width,height:width===1440?900:640});assert.ok(await page.locator('[data-action=check-answer]').evaluate(el=>el.getBoundingClientRect().bottom<=innerHeight),'Check visible');assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await page.screenshot({path:path.join(out,'tiles-'+ordered+'-'+width+'.png')});}
