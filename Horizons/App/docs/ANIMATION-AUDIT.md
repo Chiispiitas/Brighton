@@ -1,19 +1,21 @@
 # Horizons animation production audit
 
+Latest path prop corrections (6 November 2026): the notebook cover uses a hidden backface so its person icon never appears inside, and the writing sprite is retired. The existing separate coffee splash now bursts to 2.25x scale, arcs and falls. The globe smear is removed. A fixed mailbox-slot wrapper clips the independently moving letter as it emerges and fully enters; the former moving-image mask was incorrect. All native sprites/IDs are preserved, with no new artwork, fades, character, backend or book changes. See docs/prop-motion-v1/CORRECTIONS-2026-11-06.md and reports/prop-motion-fixes.json. Cache prop-fixes-v81; app/motion/overworld queries props2; rig manifest v=2.
+
 Latest avatar neckline/hair fit (6 November 2026): reuse the existing native neck pixels as a registered45px extension behind all ten garments; no new bitmap artwork or expression patches. Side-part hair moves down3 logical pixels to close the forehead gap on both bases/all six skins. Eye/face/glasses anchors, hair colors, outfits and saved IDs remain. Before/after and240 costume combinations plus24 hairstyle/base combinations reviewed in static/editor rigs. Native PNGs unchanged; reference sheets R03–R06 regenerated from the renderer. See docs/avatar-fit-v2/production-record.json and reports/avatar-fit-v2.json. Cache avatar-fit-v80; app query avatarfit2; art/static module queries fit2; metadata fit=2.
 
-## Path prop animation release — 5 November 2026
+## Path prop animation release — 5 November 2026, corrected 6 November
 
 The user authorized animation of the eight lesson props and removal of all path birds/butterflies. Character/avatar/Pico rigs are unchanged. Current renderer: `src/prop-motion.js`; registrations: `assets/art/prop-motion-v1/rigs.json`; exact sprite calls: [production record](prop-motion-v1/production-record.json); [reference manifest](prop-motion-v1/reference-manifest.json).
 
 | Prop | Separate parts and motion |
 | --- | --- |
-| Cups | Separate red/yellow cups clink; a separate native coffee splash appears briefly. |
-| Address notebook | Interior/pages, cover, pencil and writing mark. Pencil nudges the opening cover, writes on the exposed page and returns as the cover closes. |
+| Cups | Separate red/yellow cups clink; the separate native coffee splash grows to 2.25x, rises, rotates outward and falls. |
+| Address notebook | Blank interior/pages, front cover with hidden reverse and separate pencil. Pencil moves over the page and returns as the cover closes; no writing mark. |
 | Medical bag | Body and handle/clasp group; small body rock and lift/click of the upper group. |
 | Chef tools | Independent hat and spoon; hat tips and spoon swings. |
 | Map | Three panels fold about their creases; independent compass turns. |
-| Globe | Fixed stand, rotating illustrated Earth disc and a separate opaque smear contained within the Earth silhouette. This is an illustrated disc turn, not simulated 3D geography. |
+| Globe | Fixed stand and rotating illustrated Earth disc, without a smear. This is an illustrated disc turn, not simulated 3D geography. |
 | Keys | Separate ring and key; local hinge/swing motion. |
 | Mailbox | Existing fixed native mailbox plus a separately generated letter, briefly spouted and received through a slot mask. |
 
@@ -21,7 +23,7 @@ Production followed the existing audit: 21 distinct part briefs, each preflighte
 
 `tools/prepare-prop-motion.py` performs only alpha-bounds cropping (a median-filtered threshold finds bounds), uniform scaling and translation onto shared transparent canvases. It does not redraw or recolor parts. Part placement was checked against the source props and adjusted where the chef tools were initially undersized. [Reconstruction board](prop-motion-v1/review/reconstruction-board.png) and `reconstruction-check.json` record the visual comparison and supporting silhouette IoU (0.857–1.000). The result is very similar, not pixel-identical; geometry scores are not visual acceptance by themselves. The original stills remain the static fallback.
 
-The production renderer decodes every required component before swapping in a rig. Each prop uses a shared clock, transform-only anticipation/action/overshoot/settling and a long neutral rest; different timings prevent synchronized motion. Special splash/ink/smear/letter sprites switch with `hidden`, always at opacity 1. No opacity keyframes, fades or crossfades. Notebook perspective scales with render size; globe smear stays inside an elliptical Earth mask and the letter is contained at the mailbox slot. Review frames: [rest](prop-motion-v1/review/rest.png), [extreme](prop-motion-v1/review/extreme.png), [settle](prop-motion-v1/review/settle.png). A normal-speed actual-renderer review is saved locally at `C:/Users/David/Documents/Codex/2026-11-05/prop-motion/normal-speed-review.webm` to avoid adding a video to the public site.
+The production renderer decodes every required component before swapping in a rig. Each prop uses a shared clock, transform-only anticipation/action/overshoot/settling and a long neutral rest; different timings prevent synchronized motion. Special splash/letter sprites switch with `hidden`, always at opacity 1; their motion uses transforms. Writing and smear sprites remain archived, excluded from the runtime manifest/precache. No opacity keyframes, fades or crossfades. Notebook perspective scales with render size and its front illustration is hidden past90 degrees. The fixed slot wrapper masks the moving letter. The previous release mask moved with the letter and failed to establish true insertion; this correction verifies full occlusion before the letter is hidden. See [correction record](prop-motion-v1/CORRECTIONS-2026-11-06.md). Review frames: [rest](prop-motion-v1/review/rest.png), [extreme](prop-motion-v1/review/extreme.png), [settle](prop-motion-v1/review/settle.png). A normal-speed actual-renderer review is saved locally at `C:/Users/David/Documents/Codex/2026-11-05/prop-motion/normal-speed-review.webm` to avoid adding a video to the public site.
 
 Reduced motion displays the exact accepted original stills. Offscreen and hidden-document clocks pause; navigation disposes observers/listeners/animations/frame callbacks, including late-decode guards. Missing sprite/manifest/module retains the original prop. No new sounds or decorative labels. Wildlife markup, wildlife animation code and its precache entries are removed; original wildlife art stays in the asset library for provenance. Existing vertical wheel, horizontal hold/hover arrows, native swipe/drag, location ring, lesson locks, crowns and 308px trail are retained.
 

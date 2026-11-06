@@ -22,7 +22,9 @@ for i,(prop,(baseline,parts)) in enumerate(placements.items()):
   mask=im.getchannel('A').point(lambda a:255 if a>96 else 0).filter(ImageFilter.MedianFilter(5));box=mask.getbbox();assert box,ident
   crop=im.crop(box);x,y,bw,bh=rect;k=min(bw/crop.width,bh/crop.height)*scale;size=(max(1,round(crop.width*k)),max(1,round(crop.height*k)));cx=round((x+bw/2)*scale-size[0]/2);cy=round((y+bh/2)*scale-size[1]/2)
   canvas=Image.new('RGBA',(W,H));canvas.alpha_composite(crop.resize(size,Image.Resampling.LANCZOS),(cx,cy));filename=ident+'.png';canvas.save(ROOT/filename)
-  special=part in ['coffee-splash','writing','smear','letter'];entry={'id':part,'src':'assets/art/prop-motion-v1/'+filename,'special':special};entries.append(entry)
+  special=part in ['coffee-splash','writing','smear','letter'];entry={'id':part,'src':'assets/art/prop-motion-v1/'+filename,'special':special};
+  # Retain original generated derivatives/provenance, but omit retired effects at runtime.
+  if part not in ['writing','smear']:entries.append(entry)
   if not special:assembled.alpha_composite(canvas)
   r.update(status='accepted',registration={'crop':list(box),'uniformScale':k,'outputSize':[W,H],'placedSize':list(size),'offset':[cx,cy],'targetBox':rect},runtimeFile='assets/art/prop-motion-v1/'+filename)
  target=base.resize((W,H));a=target.getchannel('A').point(lambda v:255 if v>96 else 0);b=assembled.getchannel('A').point(lambda v:255 if v>96 else 0);intersection=ImageChops.multiply(a,b).histogram()[255];union=ImageChops.lighter(a,b).histogram()[255];checks.append({'prop':prop,'silhouetteIoU':round(intersection/max(1,union),3),'limit':'Supporting geometry only; visual reconstruction review required.'})

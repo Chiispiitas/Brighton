@@ -1,0 +1,29 @@
+{
+  "pass": true,
+  "eightSeparateRigs": true,
+  "wildlifeRemoved": true,
+  "opacityAlwaysOne": true,
+  "noOpacityKeyframes": true,
+  "coverReverseHidden": true,
+  "writingRemoved": true,
+  "globeSmearRemoved": true,
+  "splashScaleAtPeak": 2.25,
+  "splashDistinctPoses": true,
+  "mobileWidth390": true,
+  "fixedMailboxSlot": true,
+  "letterEntersAndFullyOccludes": true,
+  "reducedMotionOriginalStills": true,
+  "offscreenPause": true,
+  "hiddenPauseFixture": true,
+  "disposalCancels": true,
+  "missingPartFallback": true,
+  "reconstructionAndExtremeScreenshots": [
+    "rest.png",
+    "emerge.png",
+    "extreme.png",
+    "fall.png",
+    "inserted.png"
+  ],
+  "scope": "Actual production renderer in Edge with synthetic session; review grid enlarges the same renderer for visual checks. No real learner records.",
+  "errors": []
+}

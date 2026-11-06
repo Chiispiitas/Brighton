@@ -1,0 +1,135 @@
+{
+  "pass": true,
+  "baseline": "89160837abdc118727b490e93ab36d3af8848d06",
+  "cache": "horizons-companion-prop-fixes-v81",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "76f825731951c98b93524a37ba3d26690a115bb077d9f256b676c8abb0b4f3d6"
+    },
+    {
+      "path": "src/app.js?v=props2",
+      "status": 200,
+      "sha256": "44cb44e541425fcff520d4b54cc85df98c34c4a8e75fc00c8a7e049cc87bcee7"
+    },
+    {
+      "path": "src/prop-motion.js?v=props2",
+      "status": 200,
+      "sha256": "a6e78fb62d44b7862e13b6bd4b2710e5e1649a1adf75e0b004b477cb50706ebf"
+    },
+    {
+      "path": "styles/overworld.css?v=props2",
+      "status": 200,
+      "sha256": "d81ca152509a605d595a5e929cd5002c9bcc0e1fc91769b1a24307cf252f33db"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/rigs.json?v=2",
+      "status": 200,
+      "sha256": "0e035ed058f081c696c8f645d97b4e31d294488f9cd8969180dfae66327340a8"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-cup-red.png",
+      "status": 200,
+      "sha256": "c1826c5da0fa5a7afabb509f441485475c08058d64ccf8dd7fb74ea779f6c999"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-cup-yellow.png",
+      "status": 200,
+      "sha256": "b0ebcf05140e5b4016445023f7f081f775c75ca22df12d62ea602960a7a9c3ac"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-coffee-splash.png",
+      "status": 200,
+      "sha256": "91852492098e099ca4b31ccc09d2ea1e266a8014e9730219aacd7281c9a0d653"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-pages.png",
+      "status": 200,
+      "sha256": "174c962f332bf1b821e0a4b1c862e7e5345f3f1885c35dcc4e971b3c99a4eb4a"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-cover.png",
+      "status": 200,
+      "sha256": "942ca11313927a3a766457f2d34f67ab4fa8155316a6dfe3be3c298b53d49658"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-pencil.png",
+      "status": 200,
+      "sha256": "8e137149e9c2aaa948091029df52e028968228c72cfef90e36f045999435f98e"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/bag-body.png",
+      "status": 200,
+      "sha256": "804a58dd06af892f821869e8e1f32187ccda8266f3f47db330abfbb6fb4a570d"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/bag-handle-clasp.png",
+      "status": 200,
+      "sha256": "a72031abc1a78c04109594db1adb29409c9ea5a13790d4d7c909e932af5358d2"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/chef-hat.png",
+      "status": 200,
+      "sha256": "882c7ed708124e058950c7a36562865f773ea18d4cf685a910128056937fb68f"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/chef-spoon.png",
+      "status": 200,
+      "sha256": "52307068518cd63875537629d2c8bac4f68ad3f67da2d8f4a40f86c900261c58"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-left.png",
+      "status": 200,
+      "sha256": "467fe2ae3e83267c4799dea25f1496a1830a45694c2febcc858e19eaccc958a1"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-middle.png",
+      "status": 200,
+      "sha256": "6914e280ec92c8f2fab3bd9e3983dc4d81fa9de0a96a86fa3e321cc1aeb061c1"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-right.png",
+      "status": 200,
+      "sha256": "0fc5408d4a7f0da3f02ec9e471aeeebc2469dbc81108940c9936e2b205473e35"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-compass.png",
+      "status": 200,
+      "sha256": "afb2ac9b727ae1cc9c477422cc913119f2e7443807c8c7f9cc4c5742ec666b47"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/globe-stand.png",
+      "status": 200,
+      "sha256": "cf3b53224c70a18bb6f9c96fe2dc90a0b57dba4a27cd2f201dffa26514dc0427"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/globe-earth.png",
+      "status": 200,
+      "sha256": "3fd93d2b472bf27dcafaf4a42eb85deaa9ff9f4bbf9db460b68db74c530ec8a2"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/keys-ring.png",
+      "status": 200,
+      "sha256": "e7b54462a22ff5f0a277fdafd46446d83cf39703af61efcaa34e0b722192e640"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/keys-key.png",
+      "status": 200,
+      "sha256": "c3a5494e73e39a7ba4c8f11512783a1110e28b30971042e384a164066391a424"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/postbox-body.png",
+      "status": 200,
+      "sha256": "92e828ce43ba1928cc8eb5ed917f9035a57e6330bba5f47c1ede32558ec8362b"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/postbox-letter.png",
+      "status": 200,
+      "sha256": "431673e8af6936713d3a0143f17a827a164d70aa8370d1e5c12b06416f3f77af"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v81. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+}

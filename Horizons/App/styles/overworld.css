@@ -86,8 +86,8 @@
 
 .prop-still{display:block;width:100%;height:100%;object-fit:contain}
 .prop-stage{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;overflow:visible;perspective:300px}
-.prop-stage>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:1;pointer-events:none}
-.prop-stage[hidden],.prop-still[hidden],.prop-stage>img[hidden]{display:none!important}
+.prop-stage img{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:1;pointer-events:none}
+.prop-stage[hidden],.prop-still[hidden],.prop-stage img[hidden]{display:none!important}
 
 /* Landmark status badges follow the same available/completed palette. */
 .overworld-map .path-stop:not(.mastered):not(.locked) .landmark-state{background:var(--pink);color:white}
@@ -115,3 +115,8 @@
 
 /* Quiet lesson boundaries do not take space from the trail or capture input. */
 .overworld-map .path-lesson+.path-lesson::before{content:'';position:absolute;left:0;top:12px;bottom:18px;width:1px;background:linear-gradient(to bottom,transparent,#ded8d1 20%,#ded8d1 80%,transparent);pointer-events:none}
+
+/* The cover has no printed reverse; pages remain visible behind it. */
+.prop-stage [data-prop-part="cover"]{backface-visibility:hidden}
+/* Slot coordinates belong to the stationary 392 x 512 mailbox canvas. */
+.prop-slot-mask{position:absolute;inset:0;clip-path:inset(-100% 32% 68.5% 18.5%);pointer-events:none}
