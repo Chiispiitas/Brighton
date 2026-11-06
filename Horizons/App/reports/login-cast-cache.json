@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "baseline": "62db8fe7",
+  "cache": "horizons-companion-login-cast-v100",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "c118f2fc6ea16a2e261fe95073bd426849d0c91232329b7763c1779bfb7319ed"
+    },
+    {
+      "path": "src/app.js?v=login1",
+      "status": 200,
+      "sha256": "91834331772300e818c0f6a02e3c6d57da90171c0d962950f7da84fd15439e1f"
+    },
+    {
+      "path": "src/art.js?v=login1",
+      "status": 200,
+      "sha256": "f167fef49cd080b7347d7060965ac2ebd38ec1be62f5d76e70157e6b4844852d"
+    },
+    {
+      "path": "styles/app.css?v=login1",
+      "status": 200,
+      "sha256": "8800b7d5323dd0a905638f37768f8a3e70b93b44a6544f4a62686eb4c48fdf48"
+    },
+    {
+      "path": "src/pico-banner-motion.js?v=login1",
+      "status": 200,
+      "sha256": "35dad1cc1dd99d363e48ec1cf84bc92dfadcdae59979e5c051d6e83a173d698b"
+    },
+    {
+      "path": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106"
+    },
+    {
+      "path": "assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "sha256": "e11fd4e55ef65cef20dd9f73fe7032c659f080a664b69e990ff3e95e4b49bb60"
+    },
+    {
+      "path": "assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "sha256": "258f9cde34178173ad2c0fd4a8b17fe9de4590bcd7e89325ee1ea62a715a6486"
+    }
+  ],
+  "errors": [],
+  "scope": "Previous v99 worker installed then upgraded to v100. Current login HTML, app/art/CSS, Pico module and selected rig parts verified byte-for-byte offline. All four login rigs reach ready while offline. Unauthenticated start screen only; no learner records."
+}

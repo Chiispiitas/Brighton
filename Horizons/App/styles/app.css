@@ -321,14 +321,14 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .lesson-crown .icon{fill:#ffd568;width:28px;height:28px}
 
 /* Only the new Unit 1 banner Pico opts into the reviewed generated-part rig. */
-.hero-pico .pico-banner-stage{position:absolute;display:block;bottom:0;left:50%;width:248px;height:582px;transform:translateX(-50%) scale(var(--pico-fit,0));transform-origin:50% 100%;pointer-events:none}
-.hero-pico .pico-banner-stage[hidden],.hero-pico>.character-art[hidden]{display:none!important}
+:is(.hero-pico,.welcome-pico) .pico-banner-stage{position:absolute;display:block;bottom:0;left:50%;width:248px;height:582px;transform:translateX(-50%) scale(var(--pico-fit,0));transform-origin:50% 100%;pointer-events:none}
+:is(.hero-pico,.welcome-pico) .pico-banner-stage[hidden],:is(.hero-pico,.welcome-pico)>.character-art[hidden]{display:none!important}
 .pico-banner-layer,.pico-banner-head img{position:absolute;inset:0;width:248px;height:582px;max-width:none}
 .pico-banner-head{transform-origin:120px 267px;z-index:0}
 .pico-banner-body{z-index:1}
 .pico-banner-map{transform-origin:126px 327px;z-index:2}
-.hero-pico .pico-banner-stage [hidden]{display:none!important}
-@media(prefers-reduced-motion:reduce){.hero-pico .pico-banner-stage{display:none!important}}
+:is(.hero-pico,.welcome-pico) .pico-banner-stage [hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){:is(.hero-pico,.welcome-pico) .pico-banner-stage{display:none!important}}
 
 /* Neutral black silhouettes in the hairstyle picker. */
 .avatar-option[data-avatar-group="hair"] .avatar-option-art{filter:brightness(0)!important}

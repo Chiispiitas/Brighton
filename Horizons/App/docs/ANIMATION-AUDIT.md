@@ -108,6 +108,7 @@ The current gaze/glasses implementation is live. [Pages run 42105016286](https:/
 | --- | --- |
 | Unit 1 banner Pico | Established faceless-head reading rig:8-second idle,6-second map inspection |
 | Main avatar editor | Breathing, separate blink, varied face/pupil/glasses glances and customization feedback; no path avatar or lesson-entry delay |
+| Login cast | Pico explore/map-reading, Mina step, Alex listen and Jo offer use their existing native rigs, idle/accent and reduced-motion stills |
 | Sidebar avatars and option thumbnails | Static |
 | Mina: step, read, map, skip | One 8-second idle then a 3-second pose-specific accent; separate blank head/features and one-shot exercise reactions |
 | Alex: listen, fix, dance, sit/drive | One 8-second idle then a 3-second pose-specific accent; separate features and one-shot exercise reactions; seated supports fixed |
@@ -324,3 +325,10 @@ Verification: real mouse and CDP touch drags, return-to-bank, tap, reset, exact 
 Mina and Alex begin at the 8000ms accent boundary when mounted inside the saved results screen, rather than waiting through eight seconds of idle or resuming a previously remembered pose phase. The existing three-second accent finishes, then the normal eight-second idle / three-second accent cycle continues. Each new results mount restarts the accent. Other placements keep their existing phase behavior; reduced motion keeps the accepted still. This changes timing only, using the existing generated parts and approved motions; Pico and Jo results still use their existing static artwork.
 
 Actual app completion/browser proof: Mina reading round (2 answers) and Alex alphabet round (8 answers), synthetic server saves, immediate accent at about 8017ms, return to idle, repeated results mount and reduced-motion fallback all pass (reports/result-accent.json). Screenshots: external outputs 2026-11-06/result-accent/mina-entry.png and alex-entry.png. Worker v95 to v96 checks exact HTML/app/art loader/Mina/Alex modules offline (reports/result-accent-cache.json). No backend changes or learner data used. Pages build not awaited.
+
+
+### Animated login cast — 6 November 2026
+
+The user authorized all four animated cast members on the login screen. Mina step, Alex listen and Jo offer already mounted their native rigs there. Login Pico now uses the existing accepted explore/map-reading rig rather than the unrigged greet still; his exact explore still is the reduced-motion/missing-part fallback. The shared Pico loader/CSS and disposal selectors cover both banner and login, without modifying the native art, motion tracks, cadence or accepted banner behavior. Mina/Alex/Jo retain8-second idle +3-second accent; Pico retains8-second idle +6-second map inspection. No new ImageGen calls, anatomy, fades, login copy, backend or learner data changes.
+
+Actual unauthenticated login checks at1440x900,1024x600,390x740 and320x640 pass: allfour rigs mount, idle/accent frames fit, controls usable, full-opacity sprites, reduced original stills, hidden pause, disposal and missing Pico part fallback. No API requests occurred. reports/login-cast.json and login-cast-cache.json record evidence; v99→v100 cache upgrade verifies current login asset bytes and all four rigs ready offline. App/art/CSS/Pico query login1; worker login-cast-v100. Existing reference pack rebuilt for current loader/style fingerprints; original artwork is unchanged. Local Chromium checks do not establish physical-device/Safari/Firefox acceptance. Pages build not awaited unless requested.

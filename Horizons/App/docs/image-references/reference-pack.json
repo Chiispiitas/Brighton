@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-06T17:57:52.302Z",
-  "sourceCommit": "ead94a9fbcbaaeefbb9ea7e3c28363366fba78f5",
+  "createdAt": "2026-11-06T18:05:37.657Z",
+  "sourceCommit": "62db8fe75d3a88673d0e29968ba5db61a2cf8af7",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "bdad2e9c835b72cc7c5ad799062ad80ced0b370a3ddf95496212dabd9d0cb104"
+      "sha256": "f167fef49cd080b7347d7060965ac2ebd38ec1be62f5d76e70157e6b4844852d"
     },
     {
       "file": "src/avatar-static.js",
@@ -23,7 +23,7 @@
     },
     {
       "file": "styles/app.css",
-      "sha256": "a161d9924047e56ef49a3dce220c7cb56082adc819ceda7a3f32ed6376840083"
+      "sha256": "8800b7d5323dd0a905638f37768f8a3e70b93b44a6544f4a62686eb4c48fdf48"
     },
     {
       "file": "styles/horizontal-path.css",
@@ -219,7 +219,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "4f84da3f6f1cad17480eee241005539239519f611ef8504e85a96dfc0ede61f6"
+      "sha256": "0eba3709ba3ef742f819fae059116913564b8ad4cee56add906eda1ccc803e66"
     },
     {
       "id": "R06",
