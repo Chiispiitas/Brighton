@@ -1,3 +1,4 @@
+import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor,nextPathActivity} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
 import {mountOverworld} from './overworld-motion.js?v=areas1';
@@ -13,12 +14,13 @@ import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForCh
 const app = document.getElementById('app');
 const dialog = document.getElementById('app-dialog');
 const toastBox = document.getElementById('toast');
-const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,audioManifest:{}};
+const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,audioManifest:{},pathCursorId:null};
 let toastTimer;
 let wordPlayer;
 let disposeOverworld;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons = {
+ lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
  crown:'<path d="m3 6 4 4 5-7 5 7 4-4-2 13H5Z"/><path d="M5 16h14"/>',
  home:'<path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/>',
  practice:'<path d="M5 3h14v18H5Z"/><path d="M8 7h8M8 11h6M8 15h4"/>',
@@ -54,8 +56,10 @@ const activeBook = () => bookList().find(book => String(book.id || book.bookId) 
 const completed = () => new Set((progress().completedActivityIds || progress().completedActivities || []).filter(id=>allActivities.some(activity=>activity.id===id)));
 function setSession(value) {
   if (!value) return;
+  const previousProfileId=profile().id;
   if (value.profile || value.books || value.progress) state.session = {...(state.session || {}),...value};
   else if (value.session) state.session = value.session;
+  if(previousProfileId!==profile().id)state.pathCursorId=null;
   if (!state.bookId) state.bookId = profile().defaultBookId || profile().lastBookId || bookList()[0]?.id || bookList()[0]?.bookId;
 }
 function notify(message, tone = '') {
@@ -91,17 +95,32 @@ function navItems(current,sidebar=false){return [['learn','home','Learn'],['prac
 function welcome(){
  return `<main class="welcome"><div class="welcome-brand"><span class="wordmark">HORIZONS</span><span class="brighton-label">BY BRIGHTON</span></div><div class="welcome-layout"><section class="welcome-story">${sceneMarkup('town','welcome-town')}<div class="welcome-companions">${characterMarkup('pico','welcome-pico')}${characterMarkup('mina','welcome-mina')}${characterMarkup('alex','welcome-alex')}${characterMarkup('jo','welcome-jo')}</div></section><section class="redeem-panel"><h2>Open your book</h2><form id="redeem-form" class="code-form"><label for="book-code">Book code</label><input id="book-code" name="code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Book code" required maxlength="80"><p id="code-error" class="form-error" role="alert"></p><button class="primary-button full-width" type="submit">Open ${icon('arrow')}</button></form><div class="demo-codes"><button type="button" data-action="demo-codes">Example codes</button></div></section></div></main>`;
 }
-function nodeIsComplete(node){const done=completed();if(done.has(node.id))return true;if(node.kind==='game')return false;const ids=[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)];return ids.length>0&&ids.every(id=>done.has(id));}
+function nodeIsComplete(node){return pathNodeComplete(node,progress());}
+function currentPathNode(){return resolvePathCursor(pathNodes,progress(),state.pathCursorId);}
+function rememberPathCursor(id){
+ const node=pathNodeById[id];if(!node||!pathNodeUnlocked(node,pathNodes,progress()))return;
+ state.pathCursorId=id;
+ for(const button of app.querySelectorAll('.path-stop[data-path-node]')){
+  const current=button.dataset.pathNode===id;button.classList.toggle('current-path',current);
+  if(current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');
+ }
+ const next=nextPathActivity(pathNodes,progress(),id),hero=app.querySelector('.hero-continue');if(next&&hero)hero.dataset.pathNode=next.id;
+}
 function home(){
  if(!hasBookAccess())return accessPage();
  if(!isA1Book())return `<section class="coming-book"><h1>${esc(bookTitle(activeBook()))}</h1>${characterMarkup('pico','coming-pico')}<p>Activities for this book are not available yet.</p><button class="primary-button" data-action="books">Choose a book ${icon('book')}</button></section>`;
- const next=pathNodes.find(node=>!nodeIsComplete(node))||pathNodes[0];
+ const next=nextPathActivity(pathNodes,progress(),state.pathCursorId);
  return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><div class="horizontal-path-scroll overworld-map" role="region" aria-label="New Friends Town overworld" tabindex="0"><div class="horizontal-path-track">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</div></div><div class="path-scroll-toolbar"><div class="path-scroll-buttons"><button class="round-button path-pan-prev" data-path-pan="-1" aria-label="Scroll path left">${icon('arrow')}</button><button class="round-button" data-path-pan="1" aria-label="Scroll path right">${icon('arrow')}</button></div></div></section>`;
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);
  const place=['Café','Market','Travel pavilion','Town hall'][index];
- const stops=nodes.map((node,i)=>{const t=i/Math.max(1,nodes.length-1),y=50-Math.sin(t*2*Math.PI)*Math.sin(t*Math.PI)*18.75,mastered=!!progress().islands?.[node.id]?.mastered,landmark=i===nodes.length-1,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${landmark?'landmark-stop':''} ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''} ${mastered?'mastered':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-t:${t};--path-y:${y}%" aria-label="${esc(lesson.id+' · '+(landmark?place+' · ':'')+node.title+(mastered?' · Mastered':nodeIsComplete(node)?' · Completed':''))}" aria-haspopup="dialog"><span class="stop-orb">${landmark?`<img class="landmark-art" src="./assets/art/overworld-unit1-v1/landmark-${index}.png" alt=""><span class="landmark-state">${icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span>`:icon(mastered?'crown':nodeIsComplete(node)?'check':symbol)}</span></button>`;}).join('');
+ const currentId=currentPathNode()?.id;
+ const stops=nodes.map((node,i)=>{
+  const t=i/Math.max(1,nodes.length-1),y=50-Math.sin(t*2*Math.PI)*Math.sin(t*Math.PI)*18.75,mastered=!!progress().islands?.[node.id]?.mastered,done=nodeIsComplete(node),locked=!pathNodeUnlocked(node,pathNodes,progress()),current=currentId===node.id,landmark=i===nodes.length-1,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';
+  const stateIcon=locked?'lock':mastered?'crown':done?'check':symbol;
+  return `<button class="path-stop path-cell path-symbol-${symbol} ${landmark?'landmark-stop':''} ${node.kind==='game'?'game-stop':''} ${done?'completed':''} ${mastered?'mastered':''} ${locked?'locked':''} ${current?'current-path':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-t:${t};--path-y:${y}%" aria-label="${esc(lesson.id+' · '+(landmark?place+' · ':'')+node.title+(locked?' · Locked':mastered?' · Mastered':done?' · Completed':''))}" ${locked?`disabled aria-disabled="true" title="Complete the earlier islands in ${esc(lesson.id)} first."`:'aria-haspopup="dialog"'} ${current?'aria-current="step"':''}><span class="stop-orb">${landmark?`<img class="landmark-art" src="./assets/art/overworld-unit1-v1/landmark-${index}.png" alt=""><span class="landmark-state">${icon(stateIcon)}</span>`:icon(stateIcon)}</span></button>`;
+ }).join('');
  return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><div class="world-zone-caption"><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2></div>${progress().masteredLessons?.includes(lesson.id)?`<span class="lesson-crown" aria-label="Lesson mastered">${icon('crown')}</span>`:''}</div><div class="lesson-trail" style="--path-count:${nodes.length}" aria-label="${esc(lesson.id)} activities">${worldTiles(index)}<svg class="trail-line" aria-hidden="true"><path class="trail-bed"/><path class="trail-route"/><path class="trail-extension-bed"/><path class="trail-extension"/></svg>${stops}${index%2===0?'<span class="world-fauna world-bird" data-fauna="bird" aria-hidden="true"><span class="bird-rig"><img class="bird-far" src="./assets/art/bird-hover-v1/wing-far.png" alt=""><img class="bird-body" src="./assets/art/bird-hover-v1/body.png" alt=""><img class="bird-near" src="./assets/art/bird-hover-v1/wing-near.png" alt=""></span></span>':'<span class="world-fauna world-butterfly" data-fauna="butterfly" aria-hidden="true"><img src="./assets/art/overworld-unit1-v1/butterfly.png" alt=""></span>'}</div></section>`;
 }
 function worldTiles(index){
@@ -109,7 +128,8 @@ function worldTiles(index){
  return props.map((name,i)=>`<img class="world-tile lesson-prop area-prop area-prop-${i}" data-area-prop="${name}" src="./assets/art/${i?'lesson-area-tiles-v1':'lesson-props-v1'}/${name}.png" alt="" aria-hidden="true" draggable="false">`).join('');
 }
 function pathDetails(id,anchor,event){
- const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
+ const node=pathNodeById[id];if(!node||!requirePracticeAccess()||!pathNodeUnlocked(node,pathNodes,progress()))return;
+ rememberPathCursor(id);
  const status=progress().islands?.[id],done=nodeIsComplete(node),mastered=!!status?.mastered;
  const count=selectIslandQuestions(node,progress(),{seed:0}).length;
  openPathBubble(`<div class="island-bubble-heading"><h2 id="dialog-title">${esc(node.title)}</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p class="island-bubble-progress" title="Master each item by answering it correctly once without a hint.">${mastered?'Mastered':`${status?.masteredCount||0}/${status?.total||masteryTargets[id]?.length||0} mastered`} · ${count} questions</p><button class="primary-button full-width" data-start-path="${esc(node.id)}">${mastered?'Practice again':done?'Continue':'Start'} ${icon('arrow')}</button>`,anchor,event);
@@ -127,6 +147,8 @@ function layoutPaths(){
   // Flat extensions join neighbouring lesson trails without changing node endpoints.
   for(const path of svg.querySelectorAll('.trail-bed,.trail-route'))path.setAttribute('d',d);for(const path of svg.querySelectorAll('.trail-extension-bed,.trail-extension'))path.setAttribute('d',`M0,${first.y} L${first.x},${first.y} M${last.x},${last.y} L${rect.width},${last.y}`);svg.style.overflow='visible';
  }
+ const region=app.querySelector('.overworld-map'),cursor=region?.querySelector('.current-path .stop-orb');
+ if(region&&cursor&&region.clientWidth&&(!region.dataset.cursorRevealed||region.dataset.cursorViewport!==String(region.clientWidth))){const box=region.getBoundingClientRect(),orb=cursor.getBoundingClientRect();region.scrollLeft+=orb.left+orb.width/2-box.left-region.clientWidth/2;region.dataset.cursorRevealed='true';region.dataset.cursorViewport=String(region.clientWidth);}
  syncPathPan();
 }
 function practice(){
@@ -171,6 +193,7 @@ function startActivity(id) {
   if(!requirePracticeAccess())return;
   const activity=pathNodeById[id]||allActivities.find(a=>a.id===id);
   if (!activity) {notify('Choose an activity.');return route('practice');}
+  if(pathNodeById[id]){if(!pathNodeUnlocked(activity,pathNodes,progress())){notify('Complete the earlier islands in this lesson first.');return;}rememberPathCursor(id);}
   if (['memory','matching','countries','opposites'].includes(activity.type)) return startGame(activity.type==='memory'?'memory':'matching',activity);
   const seed=Date.now();let questions;
   try {questions=selectIslandQuestions(activity,progress(),{count:8,seed});} catch(error) {console.error(error);notify('Unable to open this activity. Please try again.');return;}
@@ -289,6 +312,7 @@ async function saveActivityResult(result){
   try{
     const response=await api.saveAttempt(result.attempt);setSession(response);
     result.saved=true;result.earnedXp=Math.max(0,xp()-result.oldXp);
+    if(state.active===result)rememberPathCursor(result.attempt.activityId);
     result.newIslandMastery=Object.entries(progress().islands||{}).some(([id,island])=>island.mastered&&!result.masteredBefore.includes(id));
   }catch(error){result.error=error.message;}
   result.saving=false;
