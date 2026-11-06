@@ -1,0 +1,16 @@
+{
+  "provider": "ElevenLabs",
+  "request": {
+    "text": "A delightful 2.6 second cartoon game reward: immediate warm fireplace WHOOF with soft woody crackle and rounded bass pop, then after 0.8 seconds a bright rising wooden marimba and plucked bell flourish landing in a happy major chord with tiny golden sparkles. Tactile, bouncy, cozy and satisfying, matching a friendly educational adventure. Clean isolated sound, no speech, no music bed, no harsh explosion, no alarm, no long ambience.",
+    "duration_seconds": 2.6,
+    "prompt_influence": 0.4,
+    "model_id": "eleven_text_to_sound_v3",
+    "loop": false
+  },
+  "requestId": null,
+  "sha256": "5d16e73f29cb986942f7ebb5930af539ebe0323bcd31a03e4b3e346db947b28e",
+  "bytes": 41838,
+  "triggerMs": 1600,
+  "revealRelativeMs": 800,
+  "nativeAudioUnedited": true
+}

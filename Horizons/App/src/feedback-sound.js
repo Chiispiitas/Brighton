@@ -32,20 +32,20 @@ export function prepareCompletionSound(){
   const Context=window.AudioContext||window.webkitAudioContext;if(!Context)return;
   completionContext??=new Context();
   completionResume=completionContext.resume().catch(()=>{});
-  completionBuffers??=Promise.all(['lesson-complete','island-mastered'].map(async name=>{
-   const response=await fetch(new URL(`../assets/audio/milestones-v1/${name}.mp3`,import.meta.url));
+  completionBuffers??=Promise.all(['lesson-complete','island-mastered','fire-streak'].map(async name=>{
+   const response=await fetch(new URL(name==='fire-streak'?'../assets/audio/streak-v1/fire-streak.mp3':`../assets/audio/milestones-v1/${name}.mp3`,import.meta.url));
    if(!response.ok)throw Error('Completion sound unavailable');
    return[name,await completionContext.decodeAudioData(await response.arrayBuffer())];
   })).then(Object.fromEntries).catch(()=>{completionBuffers=null;return null;});
  }catch{/* Sound must never block saving or the results screen. */}
 }
-export function playCompletionSound(mastered=false){
+export function playCompletionSound(mastered=false,streak=false){
  stopFeedbackSound();if(!enabled||document.hidden)return;
  const generation=playbackGeneration;
  Promise.all([completionBuffers,completionResume]).then(([buffers])=>{
   if(!buffers||generation!==playbackGeneration||!enabled||document.hidden||completionContext?.state!=='running')return;
   const source=completionContext.createBufferSource(),gain=completionContext.createGain();
-  source.buffer=buffers[mastered?'island-mastered':'lesson-complete'];
+  source.buffer=buffers[streak?'fire-streak':mastered?'island-mastered':'lesson-complete'];
   gain.gain.value=.45;source.connect(gain);gain.connect(completionContext.destination);
   source.onended=()=>{source.disconnect();gain.disconnect();if(completionSource===source)completionSource=null;};
   try{source.start();completionSource=source;}catch{source.disconnect();gain.disconnect();}

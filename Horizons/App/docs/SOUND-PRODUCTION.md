@@ -59,3 +59,7 @@ Cache **answer-sounds-v53**, query **sounds1**, precaches both cues and the soun
 ## Resolved operation issue
 
 The browser download-event listener timed out even though both MP3 menu actions successfully wrote their files to Downloads. Arrival, exact bytes and decoding were checked directly; generation was not repeated. A first overlength prompt was rejected by ElevenLabs before the valid success brief was submitted. This is distinct from the earlier unattributed `Bad Request` reports.
+
+## Dedicated streak cue — 6 November 2026
+
+Native ElevenLabs v3 fire-streak.mp3 combines a warm fire whoof/crackle with an ascending marimba/plucked-bell major-chord reward. Triggered once at the 1.6s fire impact, with the authored flourish 0.8s later for the counter reveal. Replaces the reused completion/mastery cue only on the daily streak screen. Uses existing unlocked Web Audio, remembered mute, cancellation and hidden-page guards. Native bytes and exact prompt/settings/hash are in assets/audio/streak-v1/production.json. Physical speaker listening remains a review limit. Cache v105; sound/app queries streaksound1.

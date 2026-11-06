@@ -1,7 +1,7 @@
 import {STREAK_DURATION,shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streak3';
 import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
-import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
+import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=streaksound1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
 import {mountPropMotion} from './prop-motion.js?v=coffee2';
 import {mountOverworld} from './overworld-motion.js?v=props1';
@@ -200,7 +200,7 @@ function render() {
       // Background saves do not consume the visible daily celebration.
       const profileId=profile().id;
       markControls(app);
-      streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent),onImpact:()=>{if(!result.streakSoundPlayed){result.streakSoundPlayed=true;playCompletionSound(result.newIslandMastery);}}});
+      streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent),onImpact:()=>{if(!result.streakSoundPlayed){result.streakSoundPlayed=true;playCompletionSound(result.newIslandMastery,true);}}});
       streakPage.focus({preventScroll:true});
     }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
     return;
