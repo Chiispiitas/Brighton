@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest mobile Profile fix: the bottom-navigation Profile button now renders the saved avatar through the same static bust renderer as the desktop shortcut, at 28px square, centered above its label. Previously navItems emitted no portrait for Profile. This does not add an avatar to the header or path. Cache mobile-avatar-v72; app module and base stylesheet queries mobileavatar1.
+
 Latest island palette: available unfinished and completed regular islands again share the accepted reddish pink surface with white activity/check icons; landmark badges match. Locked islands stay pale, mastery stays gold, and the selection ring remains removed. Mobile arrows remain below the full-width map. Cache red-islands-v71; overworld query redislands1.
 
 Latest mobile path correction: at widths up to 680px, the swipeable map spans the full available width and the left/right arrows occupy a separate bottom row. The arrows no longer reserve side gutters or obstruct islands. Desktop side arrows, hover/hold navigation, boundary hiding and native swipe/vertical wheel behavior are preserved. Cache mobile-arrows-v70; overworld stylesheet query mobilearrows1.
