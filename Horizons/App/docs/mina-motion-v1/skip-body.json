@@ -1,0 +1,15 @@
+{
+  "asset_id": "mina-motion-v1-skip-body",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/mina-motion-v1/baseline/skip.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the body from the cream neckline and blazer shoulders down through legs and complete shoes, preserving the exact accepted skip pose. REMOVE the complete head, hair, face, earring and neck, and REMOVE the entire high raised right arm including sleeve, forearm and fist. Keep all OTHER body parts exactly. Reconstruct the small concealed torso area behind the removed book/map or gesture-arm only as needed for opaque overlapping joints; no holes and no extra limbs. The shoulder attachment should remain covered by the overlapping arm in the reconstruction.",
+  "output": "skip-body.png"
+}

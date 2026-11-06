@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-06T12:41:32.543Z",
-  "sourceCommit": "7e909b4ab94121dd58abcba56e5f4c5ef6dae3bc",
+  "createdAt": "2026-11-06T14:46:45.764Z",
+  "sourceCommit": "81340065e13cf6a863ca234c24fa01acef1f4557",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "a12fc133b3bace39636bcdaefee771c70cbdb6f1d284f420c7091f8f05801496"
+      "sha256": "3613eb1c6f86047887457753f851057d7cd33f9bcbebf6de3585bf9e8edbe30d"
     },
     {
       "file": "src/avatar-static.js",
@@ -195,7 +195,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
     },
     {
       "id": "R02",
@@ -219,7 +219,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "159a789bd525231684f88d2595096a6e878926d58350c95801c153a79f0a7901"
+      "sha256": "0eba3709ba3ef742f819fae059116913564b8ad4cee56add906eda1ccc803e66"
     },
     {
       "id": "R06",

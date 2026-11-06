@@ -1,0 +1,407 @@
+{
+  "pass": true,
+  "acceptedAtlasSha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+  "sourceAtlasMatchesCommittedBytes": true,
+  "nativeOutputHashesVerified": [
+    {
+      "id": "head",
+      "file": "assets/art/mina-motion-v1/native/head.png",
+      "sha256": "a65c80e3ca5da0d2727b20dd23031d54f8357726b0d61a32b28005125766db9d"
+    },
+    {
+      "id": "neutral",
+      "file": "assets/art/mina-motion-v1/native/neutral.png",
+      "sha256": "cf4a223085b424c20dc4ed3f030ef0ce4d37cf1499ffb23a7bc171ff8fb65707"
+    },
+    {
+      "id": "eyes",
+      "file": "assets/art/mina-motion-v1/native/eyes.png",
+      "sha256": "c48a0d0dbe1758153297e13446573337f1d450dd625bd8d508e772821886ec61"
+    },
+    {
+      "id": "pupils",
+      "file": "assets/art/mina-motion-v1/native/pupils.png",
+      "sha256": "4b7b401101daad813841449350090863ad54baabf65cb3b46d68b2515fcbf599"
+    },
+    {
+      "id": "blink",
+      "file": "assets/art/mina-motion-v1/native/blink.png",
+      "sha256": "5eda458235d741163d3e395ea154ccf90eb7635d637654a8009674ecdeaa8d95"
+    },
+    {
+      "id": "focus",
+      "file": "assets/art/mina-motion-v1/native/focus.png",
+      "sha256": "9c90f0ca6b292fc9b693349ea20d54bcf5e13d7d0871fea61b4d45da96c88a80"
+    },
+    {
+      "id": "joy",
+      "file": "assets/art/mina-motion-v1/native/joy.png",
+      "sha256": "845e77a5cc404f96fab93943c47068d823d5969a6e6e34bf3b79bb3cb277d4fb"
+    },
+    {
+      "id": "step-body",
+      "file": "assets/art/mina-motion-v1/native/step-body.png",
+      "sha256": "95129f3126ff09fccc74b338b8a84856d96787742f1a418c0e34600c15bc4841"
+    },
+    {
+      "id": "step-gesture",
+      "file": "assets/art/mina-motion-v1/native/step-gesture.png",
+      "sha256": "877e2789eae8283f6237069896a07dd6cc7d0ff654e60c0cbe74884ebd17cd80"
+    },
+    {
+      "id": "read-body",
+      "file": "assets/art/mina-motion-v1/native/read-body.png",
+      "sha256": "4cd66591740ee7fe349c5d9be7774611fad004d55dfda6bace9fbe719d9f6ed7"
+    },
+    {
+      "id": "read-gesture",
+      "file": "assets/art/mina-motion-v1/native/read-gesture.png",
+      "sha256": "f456a289c36b6da89320c22e488911ebfc72ffac708050151ba90067e53773eb"
+    },
+    {
+      "id": "map-body",
+      "file": "assets/art/mina-motion-v1/native/map-body.png",
+      "sha256": "d47b73605c508058e5f187854c9b181a064bb85a737ed45f36dedf545c3bfb40"
+    },
+    {
+      "id": "map-gesture",
+      "file": "assets/art/mina-motion-v1/native/map-gesture.png",
+      "sha256": "6bfb61d2206f32a1cfda5a1e0c9357bb0b7820513868b1472cefaf1c0b75498e"
+    },
+    {
+      "id": "skip-body",
+      "file": "assets/art/mina-motion-v1/native/skip-body.png",
+      "sha256": "7cceca08bd85a6f179c48f24b816b26efe43a3956b05fed5860f14b49f23f1c9"
+    },
+    {
+      "id": "skip-gesture",
+      "file": "assets/art/mina-motion-v1/native/skip-gesture.png",
+      "sha256": "5b42134b41dc102686160edfc8a3ceb39c5768d0f3d736911b5f7388c0146524"
+    },
+    {
+      "id": "head-fidelity-v2",
+      "file": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+      "sha256": "b403fb0bef541d77ed8d1877ef90a9f1b2b2278db81f3bdded441ff6b82241bf"
+    }
+  ],
+  "poses": [
+    {
+      "pose": "step",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "e10552f09dac394b730246b61fd6fe04f3769b57ca5b1ce463295c5a73b398b8",
+      "headAlphaExactOriginalSelection": true,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 16799,
+      "hairPixelsExact": 14176,
+      "earringPixelsExact": 466,
+      "neckPixelsExact": 973,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            94,
+            68,
+            119,
+            79
+          ],
+          "nativeCorePixels": 149
+        },
+        {
+          "box": [
+            129,
+            58,
+            155,
+            70
+          ],
+          "nativeCorePixels": 145
+        }
+      ],
+      "mouthBox": [
+        115,
+        115,
+        140,
+        132
+      ],
+      "mouthCorePixelsExact": 280,
+      "pupils": [
+        {
+          "eyeBox": [
+            104,
+            78,
+            121,
+            96
+          ],
+          "pupilCoreBox": [
+            112,
+            84,
+            119,
+            92
+          ],
+          "pupilCoreCentroid": [
+            114.9,
+            87.62
+          ]
+        },
+        {
+          "eyeBox": [
+            133,
+            72,
+            148,
+            90
+          ],
+          "pupilCoreBox": [
+            139,
+            79,
+            146,
+            88
+          ],
+          "pupilCoreCentroid": [
+            142.2156862745098,
+            82.86274509803921
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "read",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "1c3ee9acb89a97a7b5ecd2c8dbd9e8ae1d05afabe99fbe122427b5dd709adaa5",
+      "headAlphaExactOriginalSelection": true,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 17067,
+      "hairPixelsExact": 14497,
+      "earringPixelsExact": 472,
+      "neckPixelsExact": 940,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            89,
+            68,
+            113,
+            78
+          ],
+          "nativeCorePixels": 137
+        },
+        {
+          "box": [
+            123,
+            59,
+            146,
+            71
+          ],
+          "nativeCorePixels": 134
+        }
+      ],
+      "mouthBox": [
+        108,
+        116,
+        133,
+        133
+      ],
+      "mouthCorePixelsExact": 281,
+      "pupils": [
+        {
+          "eyeBox": [
+            98,
+            78,
+            114,
+            96
+          ],
+          "pupilCoreBox": [
+            105,
+            85,
+            112,
+            94
+          ],
+          "pupilCoreCentroid": [
+            107.94,
+            88.96
+          ]
+        },
+        {
+          "eyeBox": [
+            126,
+            74,
+            141,
+            92
+          ],
+          "pupilCoreBox": [
+            131,
+            81,
+            138,
+            90
+          ],
+          "pupilCoreCentroid": [
+            134.05769230769232,
+            85.0576923076923
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "map",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "19262f876bc9d7ec07df72ceb805c7e8bb0acd39b79669aa67da7f24df7c9ffd",
+      "headAlphaExactOriginalSelection": true,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 17272,
+      "hairPixelsExact": 14626,
+      "earringPixelsExact": 506,
+      "neckPixelsExact": 953,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            89,
+            64,
+            116,
+            75
+          ],
+          "nativeCorePixels": 163
+        },
+        {
+          "box": [
+            126,
+            56,
+            150,
+            67
+          ],
+          "nativeCorePixels": 145
+        }
+      ],
+      "mouthBox": [
+        110,
+        113,
+        136,
+        130
+      ],
+      "mouthCorePixelsExact": 298,
+      "pupils": [
+        {
+          "eyeBox": [
+            101,
+            75,
+            117,
+            94
+          ],
+          "pupilCoreBox": [
+            108,
+            84,
+            115,
+            93
+          ],
+          "pupilCoreCentroid": [
+            111.0,
+            88.0
+          ]
+        },
+        {
+          "eyeBox": [
+            130,
+            71,
+            145,
+            90
+          ],
+          "pupilCoreBox": [
+            134,
+            79,
+            142,
+            88
+          ],
+          "pupilCoreCentroid": [
+            137.625,
+            83.01785714285714
+          ]
+        }
+      ]
+    },
+    {
+      "pose": "skip",
+      "baselineExactAtlasCrop": true,
+      "baselineSha256": "8a6909bf4e72bf99eb9c44aaafe3aa9c67d341dda8ed12234b66f356cf8ad310",
+      "headAlphaExactOriginalSelection": true,
+      "noInternalFaceAlphaHolesAtNativeLandmarks": true,
+      "newEnclosedFaceAlphaHoles": 0,
+      "structurePixelsExact": 17210,
+      "hairPixelsExact": 14661,
+      "earringPixelsExact": 479,
+      "neckPixelsExact": 919,
+      "wholeFaceFillChanged": true,
+      "neutralOriginalPixelSelection": true,
+      "brows": [
+        {
+          "box": [
+            138,
+            66,
+            163,
+            77
+          ],
+          "nativeCorePixels": 160
+        },
+        {
+          "box": [
+            174,
+            57,
+            198,
+            69
+          ],
+          "nativeCorePixels": 144
+        }
+      ],
+      "mouthBox": [
+        160,
+        115,
+        185,
+        132
+      ],
+      "mouthCorePixelsExact": 292,
+      "pupils": [
+        {
+          "eyeBox": [
+            149,
+            77,
+            166,
+            95
+          ],
+          "pupilCoreBox": [
+            156,
+            85,
+            164,
+            94
+          ],
+          "pupilCoreCentroid": [
+            159.36,
+            88.72
+          ]
+        },
+        {
+          "eyeBox": [
+            178,
+            71,
+            193,
+            90
+          ],
+          "pupilCoreBox": [
+            183,
+            79,
+            190,
+            88
+          ],
+          "pupilCoreCentroid": [
+            186.03846153846155,
+            83.07692307692308
+          ]
+        }
+      ]
+    }
+  ],
+  "review": "docs/mina-motion-v1/head-fidelity-proof.png",
+  "scope": "Structural/exterior RGBA and selected neutral native feature coordinates are checked against each accepted pose. The face interior and removed-brow footprint use generated faceless material and are explicitly not claimed pixel-identical. Body/gesture reconstruction and animated extrema require the separate runtime/visual review."
+}

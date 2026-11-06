@@ -1,0 +1,42 @@
+# Mina animation production - four accepted poses
+
+The user authorized Mina (the red-blazer character) to animate in every current accepted pose, with a subtle idle and occasional pose-specific accents like the established Pico rig. Current accepted poses are `step`, `read`, `map` and `skip`, all from `assets/art/cast-static-mina-v2.png`. Older articulated Mina assets remain historical and are not used.
+
+## Production sources
+
+- Exact original pose crops: `assets/art/mina-motion-v1/baseline/` and [baselines.png](baselines.png).
+- [production-record.json](production-record.json): exact saved prompts, successful mandatory-reference preflights, original native output paths and hashes, rejected head reconstruction and fidelity repair.
+- Raw outputs remain unchanged in `assets/art/mina-motion-v1/native/`.
+- [prepare-mina-motion.py](../../tools/prepare-mina-motion.py): disclosed mechanical alpha selection, crop, uniform registration and compositing. No code-drawn character anatomy or expressions.
+- [reconstruction.png](reconstruction.png): current original/reconstructed pose comparison. The initial rejected reconstruction is preserved at [rejected/reconstruction-head-v1.png](rejected/reconstruction-head-v1.png).
+- Runtime registrations: [rigs.json](../../assets/art/mina-motion-v1/rigs.json).
+
+Each of 15 initial successful component calls attached the actual returned R01/R02/R07 paths and the exact accepted target crop (four total images). Parts comprise a faceless head, neutral features, eye whites, pupils, eyelids, focused and cheerful expression overlays, four bodies and four gesture/prop groups. The fidelity repair attached those three mandatory references plus the original pose and a lossless enlarged original head target (five total inputs). No call exceeded seven inputs. Exact generation-time reference bytes are frozen under `inputs/`; their hashes match the saved preflights despite later reference-pack refreshes. All 16 successful raw outputs occupy about 11.6 MB; large videos remain outside the repository.
+
+## Fidelity correction
+
+The user rejected the first generated head and face as unlike the accepted character. That reconstruction is not an accepted reference. Generic generated silhouette/neutral-face shapes must not replace Mina's original identity. The corrected permanent faceless-head derivative preserves original per-pose exterior geometry, visible hair, earring and neck. Generated faceless material fills the entire interior face; original neutral brows/mouth/pupils are selected at their exact original positions, and generated white-eye material uses original eye contours. No new nose glyph is added. The first mechanical repair left an angular staircase under the removed brow. It was rejected during close-up QA: only the original brow footprint now receives the smooth boundary from the uniformly registered native faceless repair. Per-pose transforms, masks and exact selections are disclosed in `head-fidelity.json`. This is one unchanging blank head for every expression, not a skin-colored patch swapped during expressions. [Head comparison](head-fidelity-proof.png) shows original, faceless base and neutral assembly for all four poses.
+
+Body, raised-arm and held-object components are separate native generations. Reading uses navy book plus both gripping hands as one rigid group; map-reading uses the green map plus both hands. This preserves each grip during movement. The greeting and celebration poses each have one separate raised arm with shoulder overlap. Parts are reconstructed before animation; unrelated artwork and saved asset identities remain.
+
+## Runtime behavior
+
+`src/mina-motion.js` mounts only `data-character=mina` elements through the existing art loader. Head/face, body and gesture parts have independent registered pivots, while related facial features inherit the head transform. Head alpha contains every expression, and separate eye alpha contains moving pupils. Every sprite remains at opacity 1. Closed eyelids replace open eyes; focus/joy overlays replace only facial features. No fades or crossfades are used.
+
+The shared 19000ms cycle contains two 8000ms idle loops followed by a 3000ms accent. Idle is a tiny breathing/head/gesture drift, varied pupil glance and brief sprite blinks. Greeting adds a little arm wave/head tilt and cheerful expression; reading/map poses lift the held object and lower/tilt the head with focused features; celebration adds a small whole-character hop and arm accent. The hop is decorative idle activity, not a lesson-entry animation or delay.
+
+Per-pose elapsed time is retained in module memory across answer/route redraws. Hidden-document and offscreen clocks pause without advancing the idle counter. Reduced motion displays the exact accepted static pose, not the reconstructed rig. Mounting waits for every image to decode; missing assets retain the original still. Disposal cancels all animations/listeners/observers/frame callbacks, including late-decode guards.
+
+The rig uses a 98% fit and 1% bottom allowance to keep the recently enlarged exercise artwork prominent. Existing scene margins provide additional motion clearance. Other cast members, avatars, Pico, question grading, sounds, book/backend and path behavior are untouched.
+
+## Verification
+
+[mina-motion.json](../../reports/mina-motion.json) records actual-app synthetic-session checks and four-pose gallery captures: neutral, blink, idle, pre-accent, accent, settle and restored neutral; a complete normal-speed cycle; opaque tracks; head/pupil masks; per-pose phase after answer redraw; responsive exercise controls; exact reduced stills; offscreen/hidden pause; idempotent mounting; disposal/late-decode and missing-head fallback. Current acceptance must use the corrected head capture, not an earlier run's images.
+
+[mina-head-fidelity.json](../../reports/mina-head-fidelity.json) independently checks the unchanged accepted atlas and all four exact pose crops, original structural alpha/pixels, facial anchors and absence of internal face holes. Visual review also checks actual neutral, blink and accent heads; numerical agreement alone does not establish identity.
+
+[mina-motion-cache.json](../../reports/mina-motion-cache.json) records an actual v84-to-v85 worker upgrade with old-cache removal and exact current app/loader/module/style/registration/part bytes fetched offline. Worker `horizons-companion-mina-motion-v85`; app/art/Mina/style queries `mina1`; rig manifest `v=1`. The runtime manifest/precache includes 36 active sprite derivatives; rejected/unused derivatives and raw outputs are not precached.
+
+Full review images and normal-speed capture remain local at `C:/Users/David/Documents/Codex/2026-11-06/mina-motion/`, keeping large videos outside the public repository. Synthetic QA does not use learner records. No physical-device, Safari/Firefox or independent human acceptance is claimed. The root and separate review agents inspect actual compositions; structural tests do not establish visual identity by themselves.
+
+For another cast animation, follow [ANIMATION-AUDIT.md](../ANIMATION-AUDIT.md): extract the exact accepted baseline; plan one permanent faceless head and transparent feature layers; preflight and attach every mandatory reference/target for each separate component; preserve raw outputs; disclose mechanical preparation; reject identity drift; reconstruct and compare before motion; add one shared full-opacity clock with an explicit idle/accent schedule; inspect normal speed and extrema at actual UI sizes; verify masks, reduced motion, phase continuity, lifecycle and cache; record active references and limitations.

@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "acceptedSource": {
+    "file": "assets/art/cast-static-mina-v2.png",
+    "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "unchanged": true
+  },
+  "schedule": {
+    "idleLoopMs": 8000,
+    "idleLoopsBeforeAccent": 2,
+    "accentMs": 3000,
+    "cycleMs": 19000
+  },
+  "activeRuntime": [
+    {
+      "file": "src/mina-motion.js",
+      "sha256": "71d039db811806d401a5a8f445c023ff7c0ab6761d526ed750d8e2406200df6f",
+      "bytes": 10891
+    },
+    {
+      "file": "styles/mina-motion.css",
+      "sha256": "0262aee74c96905f932335743b71c491d2201dc89ed0d9016a3dd58c6810a7fe",
+      "bytes": 904
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "3613eb1c6f86047887457753f851057d7cd33f9bcbebf6de3585bf9e8edbe30d",
+      "bytes": 8535
+    },
+    {
+      "file": "tools/prepare-mina-motion.py",
+      "sha256": "2cf563f5e4ea1bd8c3b079f8c45c553a5b494c009dd2933b90047ce5e8b8478c",
+      "bytes": 16983
+    },
+    {
+      "file": "assets/art/mina-motion-v1/rigs.json",
+      "sha256": "2748fb9bcd5c46d5e0d1e036678a2f87d190681c092eb584be6efef62fc10e7e",
+      "bytes": 3234
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-blink.png",
+      "sha256": "8206768fccda82cd31f7bdda47687d813e4cefe4079ec63ad3a60abe24ea9035",
+      "bytes": 1226
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-body.png",
+      "sha256": "96242c6688cef5a5a2bf3eb9aba9d1dc21db442399a38488fb13c2db7e18ac35",
+      "bytes": 58377
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-eyes.png",
+      "sha256": "f1952fabc5d4e98f1ba7f0f63994bcd413a250afa7021e65ec517643cb4d516c",
+      "bytes": 1739
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-focus.png",
+      "sha256": "bba6b9a5e3b1ac9b2418107a15319ee15dfaf24c63798f419f3b7d4d15337d73",
+      "bytes": 3145
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-gesture.png",
+      "sha256": "4b5302a8d4e0e34b8c85189d2b9f8dc9e1e042740dc59c4458b8b8a914117001",
+      "bytes": 24973
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-head.png",
+      "sha256": "a7f0c3a177aec4f948e8c7cbdfad3e097714bd250d6168b0e26f5aa73f6572e9",
+      "bytes": 88620
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-joy.png",
+      "sha256": "dc30189bc047c809e96481037125cf65873f7bf0c9e465eff6cef81d5f771ca7",
+      "bytes": 3891
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-neutral.png",
+      "sha256": "232fd8021eb41e36ce28eedfaf8dd05ed2d8f91d3fd33e3f2ca38a94dacbfbd1",
+      "bytes": 90364
+    },
+    {
+      "file": "assets/art/mina-motion-v1/map-pupils.png",
+      "sha256": "3babae31bb301f00d93db2a4e2e09b2a37b3672901a6907fe499f526d7396bb1",
+      "bytes": 90314
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-blink.png",
+      "sha256": "08f4c6cd61d4acb5e01c3f0b3d7000f96a66670f70110e178b995d571b5cdf1d",
+      "bytes": 1113
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-body.png",
+      "sha256": "0e90e271ba8ed2b230010463ed190d01bc8f6ed351b4677e5121de4ffe3ba71d",
+      "bytes": 54715
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-eyes.png",
+      "sha256": "ca2e339db7d7e38beb283c3c5e7424da25f026e9c269ef0736152cad6a4bb08d",
+      "bytes": 1575
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-focus.png",
+      "sha256": "06846676ce0755d329fadf0e2a6407785325eba36343236de69af4a44abe9cef",
+      "bytes": 3043
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-gesture.png",
+      "sha256": "9ddb3fd8393708d62cd2ebcb0206d002721168737ad2cac174775d5367b56469",
+      "bytes": 18774
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-head.png",
+      "sha256": "8d80856dbe33167bce8e0305958a335410c55a043accedb95ea78cf12024aa6e",
+      "bytes": 84084
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-joy.png",
+      "sha256": "ead3f6b60e2666654425672c541e8dba1663105640244016699049f94893b649",
+      "bytes": 3451
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-neutral.png",
+      "sha256": "8293fc72cee5148a68404c11829e13614526567d38a1355ca2f184fc37e90379",
+      "bytes": 86051
+    },
+    {
+      "file": "assets/art/mina-motion-v1/read-pupils.png",
+      "sha256": "cfedcb16dd73e63ab003b6b1e9dab8e3d6baa82c10cf165ff5cbbedeeb7ade2b",
+      "bytes": 86027
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-blink.png",
+      "sha256": "16f140773cbe68e5811cd080ee57a1911c66bf8d74750bc5eb014853595a20da",
+      "bytes": 1422
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-body.png",
+      "sha256": "fa3d17189a2db3ae50c4fd83186da21ba9b7c13d5fdc81235afc9f638532c239",
+      "bytes": 58605
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-eyes.png",
+      "sha256": "28d01bcb70869f74474bc0c0679e4fdcb431150b4b326225372057e83e815eb9",
+      "bytes": 1909
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-focus.png",
+      "sha256": "39c5c314ce422d3b56dc5cdbc186ab577c5c65383e72af27864b6d1f5f3e00be",
+      "bytes": 3323
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-gesture.png",
+      "sha256": "ce158f8a8d06e3cd3fc4ef509f892626dc6ff6011d506c0a0a7f8676af89bd9f",
+      "bytes": 9610
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-head.png",
+      "sha256": "59f1d8bec360318d79b35675f2eef8b1383233c7549120a095386a970c83db18",
+      "bytes": 90434
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-joy.png",
+      "sha256": "39ddd72ec670fc41d57f46c601703fd253d4d0325dc068ce767937b9ddfc1b01",
+      "bytes": 3908
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-neutral.png",
+      "sha256": "db6679a2f6fcf38b11215f3da9b1faad6f6fd81df0e22c96c45db1d7f9bb7e00",
+      "bytes": 92753
+    },
+    {
+      "file": "assets/art/mina-motion-v1/skip-pupils.png",
+      "sha256": "9d55865bf6cd020546235d8c15bdb6b3793c38610d7c83e988f133f58d4ceedd",
+      "bytes": 92735
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-blink.png",
+      "sha256": "9e03e3367bb3254bca1c7678e97099dee3b4f70798d2095f8b882a0ac91911f2",
+      "bytes": 1280
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-body.png",
+      "sha256": "d82aff528264ff73bc2bac4875613d4ed4f640ef7ccd3d046f1a00778e03a9aa",
+      "bytes": 60904
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-eyes.png",
+      "sha256": "d045f71e7ea2044c1eaa829b6c7f2accacba46a807a64c3dee1dfd9d06302cef",
+      "bytes": 1777
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-focus.png",
+      "sha256": "cb574aa2502358922f3ecea603ed4299984ca6d9c1609bf21bcd167f0a19b283",
+      "bytes": 3251
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-gesture.png",
+      "sha256": "0bd5975dc3445d193f052b54ff682cbea649d0b38095362f2d351feec201e9a6",
+      "bytes": 10602
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-head.png",
+      "sha256": "ede1c21fd6a229ef0fdd5e19873f19768912907a2f11a71c53840476797f7739",
+      "bytes": 92432
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-joy.png",
+      "sha256": "9e361a5e1fa8154f14ce037eda5aeb9e9a252c1f76af44140621c4f2759f057d",
+      "bytes": 3822
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-neutral.png",
+      "sha256": "1461dd125507ea4b15bd61237bfd96f2b2c82292137f545a8f90d2eabc31d8c8",
+      "bytes": 94066
+    },
+    {
+      "file": "assets/art/mina-motion-v1/step-pupils.png",
+      "sha256": "fcfdb8beee39cceda7589fe05b5e563e34867b7cec67613e7279b0e56564099a",
+      "bytes": 94029
+    }
+  ],
+  "nativeOutputs": [
+    {
+      "file": "assets/art/mina-motion-v1/native/blink.png",
+      "sha256": "5eda458235d741163d3e395ea154ccf90eb7635d637654a8009674ecdeaa8d95",
+      "bytes": 577452
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/eyes.png",
+      "sha256": "c48a0d0dbe1758153297e13446573337f1d450dd625bd8d508e772821886ec61",
+      "bytes": 701577
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/focus.png",
+      "sha256": "9c90f0ca6b292fc9b693349ea20d54bcf5e13d7d0871fea61b4d45da96c88a80",
+      "bytes": 137880
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+      "sha256": "b403fb0bef541d77ed8d1877ef90a9f1b2b2278db81f3bdded441ff6b82241bf",
+      "bytes": 1098175
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/head.png",
+      "sha256": "a65c80e3ca5da0d2727b20dd23031d54f8357726b0d61a32b28005125766db9d",
+      "bytes": 877052
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/joy.png",
+      "sha256": "845e77a5cc404f96fab93943c47068d823d5969a6e6e34bf3b79bb3cb277d4fb",
+      "bytes": 110783
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/map-body.png",
+      "sha256": "d47b73605c508058e5f187854c9b181a064bb85a737ed45f36dedf545c3bfb40",
+      "bytes": 1105875
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/map-gesture.png",
+      "sha256": "6bfb61d2206f32a1cfda5a1e0c9357bb0b7820513868b1472cefaf1c0b75498e",
+      "bytes": 1304327
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/neutral.png",
+      "sha256": "cf4a223085b424c20dc4ed3f030ef0ce4d37cf1499ffb23a7bc171ff8fb65707",
+      "bytes": 115675
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/pupils.png",
+      "sha256": "4b7b401101daad813841449350090863ad54baabf65cb3b46d68b2515fcbf599",
+      "bytes": 565186
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/read-body.png",
+      "sha256": "4cd66591740ee7fe349c5d9be7774611fad004d55dfda6bace9fbe719d9f6ed7",
+      "bytes": 618031
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/read-gesture.png",
+      "sha256": "f456a289c36b6da89320c22e488911ebfc72ffac708050151ba90067e53773eb",
+      "bytes": 1219029
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/skip-body.png",
+      "sha256": "7cceca08bd85a6f179c48f24b816b26efe43a3956b05fed5860f14b49f23f1c9",
+      "bytes": 536601
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/skip-gesture.png",
+      "sha256": "5b42134b41dc102686160edfc8a3ceb39c5768d0f3d736911b5f7388c0146524",
+      "bytes": 287898
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/step-body.png",
+      "sha256": "95129f3126ff09fccc74b338b8a84856d96787742f1a418c0e34600c15bc4841",
+      "bytes": 1255308
+    },
+    {
+      "file": "assets/art/mina-motion-v1/native/step-gesture.png",
+      "sha256": "877e2789eae8283f6237069896a07dd6cc7d0ff654e60c0cbe74884ebd17cd80",
+      "bytes": 1039209
+    }
+  ],
+  "frozenInputs": [
+    {
+      "file": "docs/mina-motion-v1/inputs/01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+      "bytes": 88467
+    },
+    {
+      "file": "docs/mina-motion-v1/inputs/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+      "bytes": 325117
+    },
+    {
+      "file": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png",
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+      "bytes": 1253162
+    }
+  ],
+  "derivativeIdentity": "Each original per-pose head exterior and visible hair/earring/neck pixel is retained; one permanently assembled generated-material blank face supports separate transparent features. Head-fidelity masks and proof disclose exact source binding.",
+  "preparationAndReviews": [
+    {
+      "file": "docs/mina-motion-v1/registrations.json",
+      "sha256": "92fdc1a9a665cdf0feca8a5f22c1438819621c27c7b15ad9d5cc630bc402f5cb",
+      "bytes": 13355
+    },
+    {
+      "file": "docs/mina-motion-v1/head-fidelity.json",
+      "sha256": "8b53aa1e9689327b9fb224b69ea9ff7a111ee4f6d15a2544ed86565171e3d2b7",
+      "bytes": 8205
+    },
+    {
+      "file": "docs/mina-motion-v1/head-fidelity-proof.png",
+      "sha256": "3ed11760c6663cf53081850470198c29cf221dfb5542c6dcdcf2c17dcfa2dc64",
+      "bytes": 186426
+    },
+    {
+      "file": "docs/mina-motion-v1/reconstruction.png",
+      "sha256": "cce15f3910f020726301de76754a5339486bf52c22f79e2a90447345e1002231",
+      "bytes": 251190
+    }
+  ],
+  "limitations": [
+    "Raw generated material is retained unchanged; registered derivatives are not untouched-native claims.",
+    "Synthetic local Edge/Chromium QA only; no physical phone, Safari/Firefox or independent human acceptance.",
+    "Normal-speed recordings remain outside the public repository."
+  ]
+}

@@ -1,0 +1,326 @@
+[
+  {
+    "pose": "step",
+    "baselineSha256": "e10552f09dac394b730246b61fd6fe04f3769b57ca5b1ce463295c5a73b398b8",
+    "repairFile": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+    "skinMaterialCrop": [
+      650,
+      500,
+      850,
+      850
+    ],
+    "uniformMaterialScale": 0.385,
+    "headOriginal": "step-head-original.png",
+    "faceMask": "step-head-face-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head-fidelity-v2.png",
+      "uniformCanvasScale": 1.0,
+      "sourceSize": [
+        182,
+        180
+      ],
+      "offset": [
+        19,
+        -1
+      ],
+      "anchors": {
+        "rows": [
+          64,
+          85
+        ],
+        "originalSkinLeft": [
+          112,
+          88
+        ]
+      }
+    },
+    "browBoundaryMask": "original native brow feature footprint including antialias edge",
+    "structureMask": "step-head-structure-mask.png",
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "occludedBrowHairFill": "Actual smooth native boundary from uniformly registered faceless repair; only original brow footprint replaced, no nearest-neighbor or drawn boundary",
+    "neckSupport": "Exact original neck pixels alpha-composited into body for stable overlapping joint",
+    "neutralBrowsMouth": "Original native pixels selected by feature material masks",
+    "neutralPupils": "Original native pixels at original positions",
+    "eyes": "Generated white material clipped to original eye-region masks",
+    "eyeBoxes": [
+      [
+        104,
+        78,
+        121,
+        96
+      ],
+      [
+        133,
+        72,
+        148,
+        90
+      ]
+    ],
+    "browBoxes": [
+      [
+        94,
+        68,
+        119,
+        79
+      ],
+      [
+        129,
+        58,
+        155,
+        70
+      ]
+    ],
+    "mouthBox": [
+      115,
+      115,
+      140,
+      132
+    ],
+    "neckStart": 146,
+    "nose": "Omitted; no distinct original glyph"
+  },
+  {
+    "pose": "read",
+    "baselineSha256": "1c3ee9acb89a97a7b5ecd2c8dbd9e8ae1d05afabe99fbe122427b5dd709adaa5",
+    "repairFile": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+    "skinMaterialCrop": [
+      650,
+      500,
+      850,
+      850
+    ],
+    "uniformMaterialScale": 0.38,
+    "headOriginal": "read-head-original.png",
+    "faceMask": "read-head-face-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head-fidelity-v2.png",
+      "uniformCanvasScale": 0.9821428571428571,
+      "sourceSize": [
+        182,
+        180
+      ],
+      "offset": [
+        14,
+        1
+      ],
+      "anchors": {
+        "rows": [
+          64,
+          84
+        ],
+        "originalSkinLeft": [
+          106,
+          82
+        ]
+      }
+    },
+    "browBoundaryMask": "original native brow feature footprint including antialias edge",
+    "structureMask": "read-head-structure-mask.png",
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "occludedBrowHairFill": "Actual smooth native boundary from uniformly registered faceless repair; only original brow footprint replaced, no nearest-neighbor or drawn boundary",
+    "neckSupport": "Exact original neck pixels alpha-composited into body for stable overlapping joint",
+    "neutralBrowsMouth": "Original native pixels selected by feature material masks",
+    "neutralPupils": "Original native pixels at original positions",
+    "eyes": "Generated white material clipped to original eye-region masks",
+    "eyeBoxes": [
+      [
+        98,
+        78,
+        114,
+        96
+      ],
+      [
+        126,
+        74,
+        141,
+        92
+      ]
+    ],
+    "browBoxes": [
+      [
+        89,
+        68,
+        113,
+        78
+      ],
+      [
+        123,
+        59,
+        146,
+        71
+      ]
+    ],
+    "mouthBox": [
+      108,
+      116,
+      133,
+      133
+    ],
+    "neckStart": 147,
+    "nose": "Omitted; no distinct original glyph"
+  },
+  {
+    "pose": "map",
+    "baselineSha256": "19262f876bc9d7ec07df72ceb805c7e8bb0acd39b79669aa67da7f24df7c9ffd",
+    "repairFile": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+    "skinMaterialCrop": [
+      650,
+      500,
+      850,
+      850
+    ],
+    "uniformMaterialScale": 0.385,
+    "headOriginal": "map-head-original.png",
+    "faceMask": "map-head-face-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head-fidelity-v2.png",
+      "uniformCanvasScale": 1.0178571428571428,
+      "sourceSize": [
+        182,
+        180
+      ],
+      "offset": [
+        12,
+        -4
+      ],
+      "anchors": {
+        "rows": [
+          60,
+          81
+        ],
+        "originalSkinLeft": [
+          109,
+          83
+        ]
+      }
+    },
+    "browBoundaryMask": "original native brow feature footprint including antialias edge",
+    "structureMask": "map-head-structure-mask.png",
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "occludedBrowHairFill": "Actual smooth native boundary from uniformly registered faceless repair; only original brow footprint replaced, no nearest-neighbor or drawn boundary",
+    "neckSupport": "Exact original neck pixels alpha-composited into body for stable overlapping joint",
+    "neutralBrowsMouth": "Original native pixels selected by feature material masks",
+    "neutralPupils": "Original native pixels at original positions",
+    "eyes": "Generated white material clipped to original eye-region masks",
+    "eyeBoxes": [
+      [
+        101,
+        75,
+        117,
+        94
+      ],
+      [
+        130,
+        71,
+        145,
+        90
+      ]
+    ],
+    "browBoxes": [
+      [
+        89,
+        64,
+        116,
+        75
+      ],
+      [
+        126,
+        56,
+        150,
+        67
+      ]
+    ],
+    "mouthBox": [
+      110,
+      113,
+      136,
+      130
+    ],
+    "neckStart": 144,
+    "nose": "Omitted; no distinct original glyph"
+  },
+  {
+    "pose": "skip",
+    "baselineSha256": "8a6909bf4e72bf99eb9c44aaafe3aa9c67d341dda8ed12234b66f356cf8ad310",
+    "repairFile": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+    "skinMaterialCrop": [
+      650,
+      500,
+      850,
+      850
+    ],
+    "uniformMaterialScale": 0.395,
+    "headOriginal": "skip-head-original.png",
+    "faceMask": "skip-head-face-mask.png",
+    "browBoundaryRegistration": {
+      "source": "native/head-fidelity-v2.png",
+      "uniformCanvasScale": 1.0,
+      "sourceSize": [
+        182,
+        180
+      ],
+      "offset": [
+        59,
+        2
+      ],
+      "anchors": {
+        "rows": [
+          62,
+          83
+        ],
+        "originalSkinLeft": [
+          157,
+          132
+        ]
+      }
+    },
+    "browBoundaryMask": "original native brow feature footprint including antialias edge",
+    "structureMask": "skip-head-structure-mask.png",
+    "structurePixelsExact": true,
+    "headExteriorAlphaFromOriginal": true,
+    "occludedBrowHairFill": "Actual smooth native boundary from uniformly registered faceless repair; only original brow footprint replaced, no nearest-neighbor or drawn boundary",
+    "neckSupport": "Exact original neck pixels alpha-composited into body for stable overlapping joint",
+    "neutralBrowsMouth": "Original native pixels selected by feature material masks",
+    "neutralPupils": "Original native pixels at original positions",
+    "eyes": "Generated white material clipped to original eye-region masks",
+    "eyeBoxes": [
+      [
+        149,
+        77,
+        166,
+        95
+      ],
+      [
+        178,
+        71,
+        193,
+        90
+      ]
+    ],
+    "browBoxes": [
+      [
+        138,
+        66,
+        163,
+        77
+      ],
+      [
+        174,
+        57,
+        198,
+        69
+      ]
+    ],
+    "mouthBox": [
+      160,
+      115,
+      185,
+      132
+    ],
+    "neckStart": 146,
+    "nose": "Omitted; no distinct original glyph"
+  }
+]

@@ -1,6 +1,6 @@
-// Still native artwork. This module never starts a timeline or pointer gesture.
+// Native artwork with explicitly authorized Pico, Mina and avatar motion mounts.
 let manifest={postures:{},avatar:{}};
-let avatarModule,bannerModule,rasterObserver,rasterMutationObserver;
+let avatarModule,bannerModule,minaModule,rasterObserver,rasterMutationObserver;
 const sourceBase=new URL('../assets/art/',import.meta.url);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export async function loadArt(){
@@ -56,7 +56,8 @@ export function defaultAvatar(){return Object.fromEntries(avatarOptions().map(gr
 export function normalizeAvatar(avatar={}){return{...avatar,hairColor:manifest.avatar?.hairColor?.some(c=>c.id===avatar.hairColor)?avatar.hairColor:'color-original',background:manifest.avatar?.background?.some(c=>c.id===avatar.background)?avatar.background:'bg-cream',accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
+ for(const slot of container.querySelectorAll('[data-character="mina"]'))import('./mina-motion.js?v=mina1').then(module=>{minaModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountMina(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.minaMotion='fallback';});
  for(const slot of container.querySelectorAll('.learn-hero .hero-pico.unit1-banner-pico[data-character=pico][data-posture=explore]'))import('./pico-banner-motion.js?v=areas1').then(module=>{bannerModule=module;if(slot.isConnected)module.mountBannerPico(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.bannerMotion='fallback';});
  for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=fit2').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
-export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);for(const slot of container.querySelectorAll('.hero-pico'))bannerModule?.unmountBannerPico(slot);}
+export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-character="mina"]'))minaModule?.unmountMina(slot);for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);for(const slot of container.querySelectorAll('.hero-pico'))bannerModule?.unmountBannerPico(slot);}

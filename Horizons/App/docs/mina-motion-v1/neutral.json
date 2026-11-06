@@ -1,0 +1,15 @@
+{
+  "asset_id": "mina-motion-v1-neutral",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/mina-motion-v1/baseline/head.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only Mina's neutral eyebrows, small nose and accepted open smiling mouth, arranged in exactly the same relative positions as the face. Remove eye whites and pupils completely. No skin-colored facial patch, face shape, hair, earring or neck. These disconnected feature shapes will overlay a separate blank head.",
+  "output": "neutral.png"
+}

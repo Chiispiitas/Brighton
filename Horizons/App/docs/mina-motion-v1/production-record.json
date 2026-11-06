@@ -1,0 +1,868 @@
+{
+  "tool": "built-in ImageGen",
+  "perPartGeneration": true,
+  "records": [
+    {
+      "id": "head",
+      "brief": "docs/mina-motion-v1/head.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. The complete FACELESS head including full accepted hair silhouette, one visible yellow earring, ear, face shape and neck. Remove ALL facial features: no eyes, pupils, brows, nose or mouth. Preserve face silhouette and hair exactly. Exclude blazer/shirt/shoulders, but retain the complete neck for attachment.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-head",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/head.png",
+      "nativeSha256": "a65c80e3ca5da0d2727b20dd23031d54f8357726b0d61a32b28005125766db9d",
+      "nativeSize": [
+        1261,
+        1247
+      ],
+      "status": "rejected",
+      "reason": "User rejected head/face silhouette drift; first reconstruction lengthened head and introduced collar notch."
+    },
+    {
+      "id": "neutral",
+      "brief": "docs/mina-motion-v1/neutral.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only Mina's neutral eyebrows, small nose and accepted open smiling mouth, arranged in exactly the same relative positions as the face. Remove eye whites and pupils completely. No skin-colored facial patch, face shape, hair, earring or neck. These disconnected feature shapes will overlay a separate blank head.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-neutral",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/neutral.png",
+      "nativeSha256": "cf4a223085b424c20dc4ed3f030ef0ce4d37cf1499ffb23a7bc171ff8fb65707",
+      "nativeSize": [
+        1402,
+        1122
+      ],
+      "status": "archived-replaced-for-identity-fidelity",
+      "reason": "Original neutral facial anchors and native feature shapes retained for the user-requested exact identity correction; generated eye-white material remains available.",
+      "activeRole": "None; original accepted facial shape and position retained instead."
+    },
+    {
+      "id": "eyes",
+      "brief": "docs/mina-motion-v1/eyes.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the pair of white eye shapes in exactly Mina's original size, spacing and slight rightward orientation. REMOVE dark pupils entirely so both eyes are solid white inside. No brows, nose, mouth, skin patch, face shape, hair or outline. Keep relative positioning between the two eye whites exactly.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-eyes",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/eyes.png",
+      "nativeSha256": "c48a0d0dbe1758153297e13446573337f1d450dd625bd8d508e772821886ec61",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "active-generated-material",
+      "reason": "Original neutral facial anchors and native feature shapes retained for the user-requested exact identity correction; generated eye-white material remains available.",
+      "activeRole": "White material clipped to original per-pose eye-region geometry."
+    },
+    {
+      "id": "pupils",
+      "brief": "docs/mina-motion-v1/pupils.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the two small dark pupils from Mina's accepted neutral face, in exactly the original pair spacing and alignment. Two opaque dark rounded pupil shapes on transparent alpha, nothing else. No white eyes, eyebrows, mouth, skin, head or decorative marks.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-pupils",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/pupils.png",
+      "nativeSha256": "4b7b401101daad813841449350090863ad54baabf65cb3b46d68b2515fcbf599",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "archived-replaced-for-identity-fidelity",
+      "reason": "Original neutral facial anchors and native feature shapes retained for the user-requested exact identity correction; generated eye-white material remains available.",
+      "activeRole": "None; original accepted facial shape and position retained instead."
+    },
+    {
+      "id": "blink",
+      "brief": "docs/mina-motion-v1/blink.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only two closed eyelid strokes, following exactly the spacing and tilted eye axis of Mina's accepted eyes. Gentle relaxed blink, simple dark curved strokes. No brows, nose, mouth, skin patch, head, hair or eye whites. Each closed lid belongs at the original eye position.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-blink",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/blink.png",
+      "nativeSha256": "5eda458235d741163d3e395ea154ccf90eb7635d637654a8009674ecdeaa8d95",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "focus",
+      "brief": "docs/mina-motion-v1/focus.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only a complete focused facial expression, feature shapes arranged like Mina's original face: one raised eyebrow, lightly squinted attentive eyes, the same small nose, and a closed neutral mouth without a smile. NO skin patch, face silhouette, hair, earring or neck. Feature-only transparent overlay for looking down at her book or map.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-focus",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/focus.png",
+      "nativeSha256": "9c90f0ca6b292fc9b693349ea20d54bcf5e13d7d0871fea61b4d45da96c88a80",
+      "nativeSize": [
+        1402,
+        1122
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "joy",
+      "brief": "docs/mina-motion-v1/joy.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only a complete cheerful accent facial expression, positioned like Mina's original face: slightly lifted brows, happy squinted closed eyes, same small nose and broad warm open smile. NO skin patch, face silhouette, hair, earring or neck. Feature-only transparent overlay for her little wave or celebratory hop.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-joy",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head.png",
+            "sha256": "22c81c197bdc389dbe4621d094b57d30cbd67d8f4996eabd35b8ce23556cca56"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/joy.png",
+      "nativeSha256": "845e77a5cc404f96fab93943c47068d823d5969a6e6e34bf3b79bb3cb277d4fb",
+      "nativeSize": [
+        1261,
+        1247
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "step-body",
+      "brief": "docs/mina-motion-v1/step-body.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the body from the cream neckline and blazer shoulders down through legs and complete shoes, preserving the exact accepted step pose. REMOVE the complete head, hair, face, earring and neck, and REMOVE the entire raised palm-up right arm including its red sleeve, forearm and hand. Keep all OTHER body parts exactly. Reconstruct the small concealed torso area behind the removed book/map or gesture-arm only as needed for opaque overlapping joints; no holes and no extra limbs. The shoulder attachment should remain covered by the overlapping arm in the reconstruction.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-step-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png",
+            "sha256": "e10552f09dac394b730246b61fd6fe04f3769b57ca5b1ce463295c5a73b398b8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/step-body.png",
+      "nativeSha256": "95129f3126ff09fccc74b338b8a84856d96787742f1a418c0e34600c15bc4841",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "step-gesture",
+      "brief": "docs/mina-motion-v1/step-gesture.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the complete raised palm-up right arm: red blazer sleeve, bent forearm and open hand, exactly the accepted gesture pose. Include the sleeve shoulder root with a little concealed overlap for rotation. No torso, head, opposite arm, legs or props.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-step-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png",
+            "sha256": "e10552f09dac394b730246b61fd6fe04f3769b57ca5b1ce463295c5a73b398b8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/step-gesture.png",
+      "nativeSha256": "877e2789eae8283f6237069896a07dd6cc7d0ff654e60c0cbe74884ebd17cd80",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "read-body",
+      "brief": "docs/mina-motion-v1/read-body.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the body from the cream neckline and blazer shoulders down through legs and complete shoes, preserving the exact accepted read pose. REMOVE the complete head, hair, face, earring and neck, and REMOVE the navy open book and both gripping hands. Keep all OTHER body parts exactly. Reconstruct the small concealed torso area behind the removed book/map or gesture-arm only as needed for opaque overlapping joints; no holes and no extra limbs. The shoulder attachment should remain covered by the overlapping arm in the reconstruction.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-read-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\read.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\read.png",
+            "sha256": "1c3ee9acb89a97a7b5ecd2c8dbd9e8ae1d05afabe99fbe122427b5dd709adaa5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/read-body.png",
+      "nativeSha256": "4cd66591740ee7fe349c5d9be7774611fad004d55dfda6bace9fbe719d9f6ed7",
+      "nativeSize": [
+        916,
+        1717
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "read-gesture",
+      "brief": "docs/mina-motion-v1/read-gesture.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the exact open navy book AND both peach gripping hands, together as one rigid connected group in exactly their accepted relative positions. Keep cream pages and navy cover unchanged. No red sleeves, torso, head, legs or additional objects.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-read-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\read.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\read.png",
+            "sha256": "1c3ee9acb89a97a7b5ecd2c8dbd9e8ae1d05afabe99fbe122427b5dd709adaa5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/read-gesture.png",
+      "nativeSha256": "f456a289c36b6da89320c22e488911ebfc72ffac708050151ba90067e53773eb",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "map-body",
+      "brief": "docs/mina-motion-v1/map-body.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the body from the cream neckline and blazer shoulders down through legs and complete shoes, preserving the exact accepted map pose. REMOVE the complete head, hair, face, earring and neck, and REMOVE the green folded map and both gripping hands. Keep all OTHER body parts exactly. Reconstruct the small concealed torso area behind the removed book/map or gesture-arm only as needed for opaque overlapping joints; no holes and no extra limbs. The shoulder attachment should remain covered by the overlapping arm in the reconstruction.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-map-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\map.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\map.png",
+            "sha256": "19262f876bc9d7ec07df72ceb805c7e8bb0acd39b79669aa67da7f24df7c9ffd"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/map-body.png",
+      "nativeSha256": "d47b73605c508058e5f187854c9b181a064bb85a737ed45f36dedf545c3bfb40",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "map-gesture",
+      "brief": "docs/mina-motion-v1/map-gesture.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the exact folded pale-green map AND both peach gripping hands, together as one rigid connected group in exactly their accepted relative positions. Preserve the map panel shapes and original green fills. No red sleeves, torso, head, legs or extra objects.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-map-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\map.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\map.png",
+            "sha256": "19262f876bc9d7ec07df72ceb805c7e8bb0acd39b79669aa67da7f24df7c9ffd"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/map-gesture.png",
+      "nativeSha256": "6bfb61d2206f32a1cfda5a1e0c9357bb0b7820513868b1472cefaf1c0b75498e",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "skip-body",
+      "brief": "docs/mina-motion-v1/skip-body.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the body from the cream neckline and blazer shoulders down through legs and complete shoes, preserving the exact accepted skip pose. REMOVE the complete head, hair, face, earring and neck, and REMOVE the entire high raised right arm including sleeve, forearm and fist. Keep all OTHER body parts exactly. Reconstruct the small concealed torso area behind the removed book/map or gesture-arm only as needed for opaque overlapping joints; no holes and no extra limbs. The shoulder attachment should remain covered by the overlapping arm in the reconstruction.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-skip-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\skip.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\skip.png",
+            "sha256": "8a6909bf4e72bf99eb9c44aaafe3aa9c67d341dda8ed12234b66f356cf8ad310"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/skip-body.png",
+      "nativeSha256": "7cceca08bd85a6f179c48f24b816b26efe43a3956b05fed5860f14b49f23f1c9",
+      "nativeSize": [
+        928,
+        1694
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "skip-gesture",
+      "brief": "docs/mina-motion-v1/skip-gesture.json",
+      "prompt": "Use case: precise-object-edit. Horizons Mina animation component. Inputs1 R01 brand,2 R02 cast and3 R07 style are mandatory reference sheets; input4 is the exact accepted native edit target. Generate ONE requested isolated component in ONE transparent image, not a sheet, not a new full pose. Preserve the exact accepted brown swept wavy hair, peach skin, red-pink blazer, cream shirt, navy trousers, orange shoes and yellow earring as applicable. Match exact flat filled shapes, silhouette, scale ratios, direction, viewing angle and relative feature placement. No redesign, outlines, gradients, shadows, glow, texture additions, labels, backgrounds or scenery. True transparent alpha with generous clear margin. Complete contours and opaque interiors. Center the component at large scale; exclude every other part. Only the complete high raised right arm: red blazer sleeve, forearm and cheerful rounded fist, exactly the accepted pose. Include shoulder root with a little concealed overlap for rotation. No torso, head, opposite arm, legs or props.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-skip-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\skip.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\skip.png",
+            "sha256": "8a6909bf4e72bf99eb9c44aaafe3aa9c67d341dda8ed12234b66f356cf8ad310"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativeFile": "assets/art/mina-motion-v1/native/skip-gesture.png",
+      "nativeSha256": "5b42134b41dc102686160edfc8a3ceb39c5768d0f3d736911b5f7388c0146524",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "status": "active-registered-component"
+    },
+    {
+      "id": "head-fidelity-v2",
+      "brief": "docs/mina-motion-v1/head-fidelity-v2.json",
+      "prompt": "Use case: precise-object-edit, STRICT FIDELITY REPAIR. Inputs1 R01 brand,2 R02 cast,3 R07 style are reference sheets. Input4 is the exact accepted Mina complete pose; input5 is a lossless6x enlargement of her EXACT accepted head crop and is THE EDIT TARGET. The previous generated head changed her shape and was rejected by the user. Make a blank faceless version of INPUT5 by removing ONLY eyes, pupils, eyebrows and mouth marks, filling those small interior facial areas with the surrounding peach skin. Preserve EVERYTHING ELSE EXACTLY: outer head/face silhouette, pointed right-side nose/profile contour, angular cheek/chin, hair silhouette and sweep, ear, yellow earring, original narrow long neck and tiny visible collar pieces, original palette, proportions and original placement within canvas. DO NOT round or enlarge her cheek, extend hair lower, lengthen or widen neck, re-illustrate the head, redesign hair, recolor, add a nose glyph, change facial profile or recenter/tight-crop. Keep original full canvas, original transparent background and original head scale/position. Only facial feature deletion is authorized. One image only, no sprite sheet, no new parts. This must reconstruct the exact accepted still when its original features are placed back on it. Output transparent alpha, complete clean original edges. No shadow/glow/outline/gradients added.",
+      "nativeFile": "assets/art/mina-motion-v1/native/head-fidelity-v2.png",
+      "nativeSha256": "b403fb0bef541d77ed8d1877ef90a9f1b2b2278db81f3bdded441ff6b82241bf",
+      "status": "active-permanent-faceless-head-source",
+      "note": "Reuses original head silhouette, hair, earring and neck in one permanent blank-head derivative. Not a per-expression skin patch.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "mina-motion-v1-head-fidelity-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/mina-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/mina-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/mina-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\step.png",
+            "sha256": "e10552f09dac394b730246b61fd6fe04f3769b57ca5b1ce463295c5a73b398b8"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "bb09ada90e613488254cdbd2ada72c4c110193a35a77875c619808d8dcf7eb5b"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "activeRole": "Generated skin material and native smooth hairline under removed brows; exact visible original head structure retained."
+    }
+  ],
+  "reconstructionPolicy": "The first generic head/neutral-face reconstruction was rejected by the user. The active derivative must preserve original per-pose exterior geometry and neutral feature anchors, with one permanent generated faceless fill and no expression-dependent skin patches.",
+  "acceptedSource": {
+    "file": "assets/art/cast-static-mina-v2.png",
+    "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "unchanged": true
+  },
+  "preparation": "tools/prepare-mina-motion.py; exact source selections and generated native material registration are disclosed in head-fidelity.json and registrations.json. No runtime skin patches or complete expression heads.",
+  "rejection": "First generated head/neutral face rejected by user for identity drift. Rejected board remains under rejected/. Original per-pose geometry and facial anchors govern the correction.",
+  "reviewEvidence": [
+    "docs/mina-motion-v1/head-fidelity-proof.png",
+    "reports/mina-head-fidelity.json",
+    "reports/mina-motion.json",
+    "reports/mina-motion-cache.json"
+  ],
+  "limits": [
+    "Raw generated material is retained unchanged; registered derivatives are not untouched-native claims.",
+    "Synthetic local Edge/Chromium QA only; no physical phone, Safari/Firefox or independent human acceptance.",
+    "Normal-speed recordings remain outside the public repository."
+  ]
+}

@@ -1,0 +1,754 @@
+{
+  "pass": true,
+  "poses": [
+    "step",
+    "read",
+    "map",
+    "skip"
+  ],
+  "duration": 19000,
+  "idleLoops": 2,
+  "idleLoopMs": 8000,
+  "accentMs": 3000,
+  "allTracksSharedClock": true,
+  "normalSpeedCycleObserved": true,
+  "playback": [
+    {
+      "value": "idle:blink",
+      "time": 2357.199999988079
+    },
+    {
+      "value": "idle:neutral",
+      "time": 2498.900000035763
+    },
+    {
+      "value": "idle:blink",
+      "time": 6115.5
+    },
+    {
+      "value": "idle:neutral",
+      "time": 6248.600000023842
+    },
+    {
+      "value": "idle:blink",
+      "time": 10365.600000023842
+    },
+    {
+      "value": "idle:neutral",
+      "time": 10498.699999988079
+    },
+    {
+      "value": "idle:blink",
+      "time": 14107.199999988079
+    },
+    {
+      "value": "idle:neutral",
+      "time": 14248.699999988079
+    },
+    {
+      "value": "accent:neutral",
+      "time": 16007.199999988079
+    },
+    {
+      "value": "accent:joy",
+      "time": 16615.30000001192
+    },
+    {
+      "value": "accent:neutral",
+      "time": 18207.400000035763
+    },
+    {
+      "value": "idle:neutral",
+      "time": 19015.400000035763
+    }
+  ],
+  "noOpacityKeyframes": true,
+  "opaqueSprites": true,
+  "facelessHeadAndSeparateExpressions": true,
+  "headAndPupilMasks": true,
+  "discreteBlinkSprites": true,
+  "perPosePhaseAcrossAnswerRender": true,
+  "remountPhase": 12533.199999999999,
+  "idempotentMount": true,
+  "reducedOriginalStills": true,
+  "offscreenPause": true,
+  "hiddenPauseFixture": true,
+  "disposalCancels": true,
+  "lateDecodeGuard": true,
+  "missingPartFallback": true,
+  "responsiveExerciseControls": true,
+  "states": [
+    {
+      "label": "neutral",
+      "time": 0,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "idle",
+      "time": 2800,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "before-blink",
+      "time": 2340,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "blink",
+      "time": 2420,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "blink",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "blink",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "blink",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "blink",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "after-blink",
+      "time": 2520,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "before-accent",
+      "time": 15900,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "accent",
+      "time": 17300,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "joy",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "focus",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "focus",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "joy",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "settle",
+      "time": 18700,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "accent",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "restored",
+      "time": 19000,
+      "poses": [
+        {
+          "pose": "step",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "read",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "map",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        },
+        {
+          "pose": "skip",
+          "motion": "ready",
+          "phase": "idle",
+          "expression": "neutral",
+          "opacity": [
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1",
+            "1"
+          ]
+        }
+      ]
+    }
+  ],
+  "apiActions": [
+    "getSession",
+    "getSession"
+  ],
+  "errors": [],
+  "scope": "Actual app renderer and backend application with synthetic in-memory session/store. Controlled gallery uses the production module at enlarged display sizes for visual reconstruction review. Metrics are lifecycle/structure checks, not a claim of pixel-identical reconstruction. Physical device, Safari/Firefox and human acceptance remain unverified."
+}

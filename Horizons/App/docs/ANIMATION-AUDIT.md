@@ -1,5 +1,13 @@
 # Horizons animation production audit
 
+## Mina release and identity correction — 6 November 2026
+
+Mina is now explicitly authorized to animate in all four current poses (`step`, `read`, `map`, `skip`). Two 8-second subtle idle loops lead into a 3-second accent: greeting wave, closer book/map inspection, or celebration hop. This is decorative motion with no lesson-entry delay. Separate bodies, gestures/held objects, one permanent faceless head and transparent facial sprites use a shared full-opacity clock. Blinks and expressions switch discretely; pupils remain inside eye masks. Reduced motion and missing-part fallback use the exact original stills. Clocks pause when hidden/offscreen, survive answer redraws by pose, and are disposed on navigation.
+
+The user rejected the first generated head/face because it changed Mina's identity. That version is archived as rejected, never an accepted reference. The corrected derivative preserves each original pose's head geometry, hair, earring, neck and neutral facial anchors; generated material supplies the permanent blank face. No added nose glyph, complete expression-head swaps or per-expression skin patches. Generated components are reconstructed against the original before motion, and both neutral and accent expressions require close visual review: numeric mask checks alone cannot accept identity or a malformed hairline. Exact prompts, actual attached preflight paths, raw outputs, mechanical preparation, rejected output and review evidence are in [mina-motion-v1/README.md](mina-motion-v1/README.md), [production-record.json](mina-motion-v1/production-record.json) and [reference-manifest.json](mina-motion-v1/reference-manifest.json).
+
+Runtime: `src/mina-motion.js`, `styles/mina-motion.css`, `assets/art/mina-motion-v1/rigs.json`. Verification: `reports/mina-head-fidelity.json`, `reports/mina-motion.json`, `reports/mina-motion-cache.json`. Synthetic local Edge/Chromium checks do not establish physical-device or independent human acceptance. Cache `horizons-companion-mina-motion-v85`; app/art/Mina/style queries `mina1`. The accepted enlarged exercise artwork and unobstructed answer fields/options remain. Other cast, avatar/Pico motion, grading, backend and printed book are unchanged. The older static-Mina and path-wildlife notes below are historical.
+
 Latest exercise artwork and clipping correction (6 November2026): full native quiz art now uses150-320px desktop scenes and112-180px mobile scenes instead of the miniature rule. Answer fields, choice lists and tile builders remain outside a separately scrolling prompt/art region, with clear space for focus outlines. Short desktop feedback uses side-by-side question/art and answers to retain complete sprites and fields; listening places audio controls beside the illustration. Mobile choice cues can share a row with art. All native assets, static cast poses, listening privacy, grading and saved IDs remain. Actual raster bounds and full field/option/tile/ring bounds were checked before/after feedback on desktop/mobile. See reports/exercise-art.json, reports/exercise-art-cache.json, reports/word-tiles.json and docs/SCREEN-FIT.md. Cache exercise-art-v84; app and viewport queries sprites1; prop query coffee2 remains.
 
 Latest coffee flipbook (6 November 2026): replaced the single transformed splash with four separately generated native ImageGen frames: emergence, peak, breakup and falling droplets. Every call passed the authored preflight and attached R01/R02/R07 plus the original native splash and accepted cups (five actual inputs total). Four registered transparent PNGs swap discretely at opacity1, synchronized to the unchanged clink; no fading or splash transform animation. All raw outputs, exact prompts, input hashes, registration and quality review are recorded in docs/coffee-splash-v2/production-record.json. Reduced motion uses the original static cups; any missing frame falls back to that still. See reports/coffee-frames.json and coffee-frames-cache.json. Cache coffee-frames-v83; app/prop module queries coffee2; rig manifest v=3. Desktop screen-fit and removed banner Continue remain.
@@ -68,10 +76,10 @@ The current gaze/glasses implementation is live. [Pages run 42105016286](https:/
 | Target | Current authorized motion |
 | --- | --- |
 | Unit 1 banner Pico | Established faceless-head reading rig:8-second idle,6-second map inspection |
-| Main avatar editor and selected path portrait | Breathing, separate blink, varied glances, customization/selection feedback; immediate lesson entry |
+| Main avatar editor | Breathing, separate blink, varied face/pupil/glasses glances and customization feedback; no path avatar or lesson-entry delay |
 | Sidebar avatars and option thumbnails | Static |
-| Decorative bird | Separate body/near/far wings, rotation-only flap and local hover |
-| Butterfly | Established local hover/flutter |
+| Mina: step, read, map, skip | Two 8-second idle loops then a 3-second pose-specific accent; separate blank head/features |
+| Path decorations | Eight authorized prop rigs; no birds or butterflies |
 | Other cast | Static unless specifically authorized |
 
 Generate a genuinely blank head FIRST and expressions/eye whites/pupils/eyelids separately. Do not swap complete expression heads, conceal baked eyes with skin patches, or revive abandoned articulated art. Keep native ImageGen originals and stable saved IDs. Masks contain already-separated features; they are not a substitute for separation.

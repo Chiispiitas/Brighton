@@ -1,0 +1,15 @@
+{
+  "asset_id": "mina-motion-v1-head-fidelity-v2",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/mina-motion-v1/baseline/step.png",
+    "assets/art/mina-motion-v1/baseline/head-exact-6x.png"
+  ],
+  "prompt": "Use case: precise-object-edit, STRICT FIDELITY REPAIR. Inputs1 R01 brand,2 R02 cast,3 R07 style are reference sheets. Input4 is the exact accepted Mina complete pose; input5 is a lossless6x enlargement of her EXACT accepted head crop and is THE EDIT TARGET. The previous generated head changed her shape and was rejected by the user. Make a blank faceless version of INPUT5 by removing ONLY eyes, pupils, eyebrows and mouth marks, filling those small interior facial areas with the surrounding peach skin. Preserve EVERYTHING ELSE EXACTLY: outer head/face silhouette, pointed right-side nose/profile contour, angular cheek/chin, hair silhouette and sweep, ear, yellow earring, original narrow long neck and tiny visible collar pieces, original palette, proportions and original placement within canvas. DO NOT round or enlarge her cheek, extend hair lower, lengthen or widen neck, re-illustrate the head, redesign hair, recolor, add a nose glyph, change facial profile or recenter/tight-crop. Keep original full canvas, original transparent background and original head scale/position. Only facial feature deletion is authorized. One image only, no sprite sheet, no new parts. This must reconstruct the exact accepted still when its original features are placed back on it. Output transparent alpha, complete clean original edges. No shadow/glow/outline/gradients added."
+}

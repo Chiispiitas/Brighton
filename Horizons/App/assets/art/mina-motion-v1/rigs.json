@@ -1,0 +1,104 @@
+{
+  "poses": {
+    "step": {
+      "width": 285,
+      "height": 552,
+      "parts": {
+        "head": "assets/art/mina-motion-v1/step-head.png",
+        "body": "assets/art/mina-motion-v1/step-body.png",
+        "gesture": "assets/art/mina-motion-v1/step-gesture.png",
+        "neutral": "assets/art/mina-motion-v1/step-neutral.png",
+        "eyes": "assets/art/mina-motion-v1/step-eyes.png",
+        "pupils": "assets/art/mina-motion-v1/step-pupils.png",
+        "blink": "assets/art/mina-motion-v1/step-blink.png",
+        "focus": "assets/art/mina-motion-v1/step-focus.png",
+        "joy": "assets/art/mina-motion-v1/step-joy.png"
+      },
+      "pivots": {
+        "head": [
+          127,
+          180
+        ],
+        "gesture": [
+          180,
+          181
+        ]
+      }
+    },
+    "read": {
+      "width": 202,
+      "height": 552,
+      "parts": {
+        "head": "assets/art/mina-motion-v1/read-head.png",
+        "body": "assets/art/mina-motion-v1/read-body.png",
+        "gesture": "assets/art/mina-motion-v1/read-gesture.png",
+        "neutral": "assets/art/mina-motion-v1/read-neutral.png",
+        "eyes": "assets/art/mina-motion-v1/read-eyes.png",
+        "pupils": "assets/art/mina-motion-v1/read-pupils.png",
+        "blink": "assets/art/mina-motion-v1/read-blink.png",
+        "focus": "assets/art/mina-motion-v1/read-focus.png",
+        "joy": "assets/art/mina-motion-v1/read-joy.png"
+      },
+      "pivots": {
+        "head": [
+          116,
+          180
+        ],
+        "gesture": [
+          110,
+          265
+        ]
+      }
+    },
+    "map": {
+      "width": 231,
+      "height": 563,
+      "parts": {
+        "head": "assets/art/mina-motion-v1/map-head.png",
+        "body": "assets/art/mina-motion-v1/map-body.png",
+        "gesture": "assets/art/mina-motion-v1/map-gesture.png",
+        "neutral": "assets/art/mina-motion-v1/map-neutral.png",
+        "eyes": "assets/art/mina-motion-v1/map-eyes.png",
+        "pupils": "assets/art/mina-motion-v1/map-pupils.png",
+        "blink": "assets/art/mina-motion-v1/map-blink.png",
+        "focus": "assets/art/mina-motion-v1/map-focus.png",
+        "joy": "assets/art/mina-motion-v1/map-joy.png"
+      },
+      "pivots": {
+        "head": [
+          119,
+          180
+        ],
+        "gesture": [
+          118,
+          269
+        ]
+      }
+    },
+    "skip": {
+      "width": 308,
+      "height": 562,
+      "parts": {
+        "head": "assets/art/mina-motion-v1/skip-head.png",
+        "body": "assets/art/mina-motion-v1/skip-body.png",
+        "gesture": "assets/art/mina-motion-v1/skip-gesture.png",
+        "neutral": "assets/art/mina-motion-v1/skip-neutral.png",
+        "eyes": "assets/art/mina-motion-v1/skip-eyes.png",
+        "pupils": "assets/art/mina-motion-v1/skip-pupils.png",
+        "blink": "assets/art/mina-motion-v1/skip-blink.png",
+        "focus": "assets/art/mina-motion-v1/skip-focus.png",
+        "joy": "assets/art/mina-motion-v1/skip-joy.png"
+      },
+      "pivots": {
+        "head": [
+          172,
+          181
+        ],
+        "gesture": [
+          223,
+          170
+        ]
+      }
+    }
+  }
+}

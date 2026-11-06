@@ -1,0 +1,10 @@
+/* Only Mina's documented native-part rig opts into character motion. */
+.character[data-mina-motion]{overflow:visible}
+.mina-motion-stage{position:absolute;display:block;left:50%;bottom:1%;transform:translateX(-50%) scale(var(--mina-fit,0));transform-origin:50% 100%;pointer-events:none;overflow:visible}
+.mina-motion-group,.mina-motion-layer{position:absolute;display:block;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
+.mina-motion-head{z-index:0}
+.mina-motion-body{z-index:1}
+.mina-motion-gesture{z-index:2}
+.mina-motion-face-mask,.mina-motion-pupil-mask{mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat}
+.mina-motion-stage[hidden],.mina-motion-stage [hidden],.character[data-mina-motion]>.character-art[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.mina-motion-stage{display:none!important}}
