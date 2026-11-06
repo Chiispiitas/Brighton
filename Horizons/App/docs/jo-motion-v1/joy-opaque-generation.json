@@ -1,0 +1,58 @@
+{
+  "part": "joy-opaque",
+  "prompt": "Use case: precise-object-edit. Input1 R01,2 R02,3 R07 mandatory references; Input4 exact generated expression face crop; Input5 failed isolated joyful glyphs has a large dark halo. Make ONLY FIVE SEPARATE FACIAL GLYPHS from that expression: two lifted dark eyebrows, two happy dark crescent closed eyes, one welcoming open smiling mouth with red tongue. No glasses, no eye whites, no skin, no nose, no hair, no head, no neck, no body. Preserve glyph shapes and their exact relative face layout. Remove ALL glow/blur/halo. Use solid opaque flat features with sharp antialias contour and no texture or modeled lighting. Center these five disconnected glyphs on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background. No transparency in this intermediate source; it will be keyed mechanically. No outlines, labels or extra objects.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png"
+  ],
+  "preflight": {
+    "pass": true,
+    "asset_id": "jo-motion-v1-joy-opaque",
+    "input_count": 5,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference",
+        "id": "R02",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      },
+      {
+        "role": "reference",
+        "id": "R07",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+        "sha256": "3aaa2954562cbda449abe3c5af9c670baf5722b8035878b0f3b9680c5ff9d51b"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png",
+        "sha256": "86208e4b8007fda91127df8803073bfd3a05695a352dd1beb8658b0aec6ee8e0"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "transparent_background": false,
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c2e754a1-9b62-451d-a297-dff1a11e7bdc.png",
+  "output_hint": "Generated images are saved to C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714 as C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c2e754a1-9b62-451d-a297-dff1a11e7bdc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "native_path": "assets/art/jo-motion-v1/native/joy-opaque.png"
+}

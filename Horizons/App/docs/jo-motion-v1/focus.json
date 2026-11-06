@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-focus",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/offer.png",
+    "assets/art/jo-motion-v1/baseline/head-exact-6x.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY Jo facial expression features: two brows with one gently raised, two slightly squinted eyes, and a short closed neutral mouth, in original facial arrangement. Input5 exact enlarged head supplies scale/orientation. Confused but kind, not angry; NO SMILE. No glasses, nose, skin, hair, head exterior, neck or white/peach panel. Features only on true alpha."
+}

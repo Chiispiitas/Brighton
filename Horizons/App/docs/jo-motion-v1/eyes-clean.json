@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-eyes-clean",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/head-exact-6x.png",
+    "assets/art/jo-motion-v1/native/eyes.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Output just TWO opaque WHITE EYE SHAPES, not a face. Inputs1 R01 brand,2 R02 cast,3 R07 style. Input4 exact accepted Jo head supplies eye white shape anchors. Input5 failed isolated eye source has an unwanted halo. Repair to ONLY two solid flat white oval eye-white shapes, correct relative spacing and slight tilt. No pupils, dark contour, glasses, brows, nose, hair, skin, mouth or portrait. Completely remove all glow, shadows and modeled lighting from the failed source. Render on an intentionally OPAQUE perfectly uniform magenta #ff00ff background with generous margins. No transparency in this intermediate source; it will be mechanically keyed. Flat white interiors, sharp clean contours, no gradient or blur. Keep empty opening/background magenta."
+}

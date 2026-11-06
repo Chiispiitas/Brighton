@@ -1,0 +1,128 @@
+{
+  "poses": {
+    "offer": {
+      "width": 284,
+      "height": 556,
+      "parts": {
+        "head": "assets/art/jo-motion-v1/offer-head.png",
+        "neutral": "assets/art/jo-motion-v1/offer-neutral.png",
+        "nose": "assets/art/jo-motion-v1/offer-nose.png",
+        "eyes": "assets/art/jo-motion-v1/offer-eyes.png",
+        "pupils": "assets/art/jo-motion-v1/offer-pupils.png",
+        "blink": "assets/art/jo-motion-v1/offer-blink.png",
+        "focus": "assets/art/jo-motion-v1/offer-focus.png",
+        "joy": "assets/art/jo-motion-v1/offer-joy.png",
+        "body": "assets/art/jo-motion-v1/offer-body.png",
+        "gesture": "assets/art/jo-motion-v1/offer-gesture.png"
+      },
+      "pivots": {
+        "head": [
+          148,
+          169
+        ],
+        "gesture": [
+          148,
+          269
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    },
+    "read": {
+      "width": 286,
+      "height": 555,
+      "parts": {
+        "head": "assets/art/jo-motion-v1/read-head.png",
+        "neutral": "assets/art/jo-motion-v1/read-neutral.png",
+        "nose": "assets/art/jo-motion-v1/read-nose.png",
+        "eyes": "assets/art/jo-motion-v1/read-eyes.png",
+        "pupils": "assets/art/jo-motion-v1/read-pupils.png",
+        "blink": "assets/art/jo-motion-v1/read-blink.png",
+        "focus": "assets/art/jo-motion-v1/read-focus.png",
+        "joy": "assets/art/jo-motion-v1/read-joy.png",
+        "body": "assets/art/jo-motion-v1/read-body.png",
+        "gesture": "assets/art/jo-motion-v1/read-gesture.png"
+      },
+      "pivots": {
+        "head": [
+          153,
+          175
+        ],
+        "gesture": [
+          150,
+          278
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    },
+    "pour": {
+      "width": 294,
+      "height": 568,
+      "parts": {
+        "head": "assets/art/jo-motion-v1/pour-head.png",
+        "neutral": "assets/art/jo-motion-v1/pour-neutral.png",
+        "nose": "assets/art/jo-motion-v1/pour-nose.png",
+        "eyes": "assets/art/jo-motion-v1/pour-eyes.png",
+        "pupils": "assets/art/jo-motion-v1/pour-pupils.png",
+        "blink": "assets/art/jo-motion-v1/pour-blink.png",
+        "focus": "assets/art/jo-motion-v1/pour-focus.png",
+        "joy": "assets/art/jo-motion-v1/pour-joy.png",
+        "body": "assets/art/jo-motion-v1/pour-body.png",
+        "gesture": "assets/art/jo-motion-v1/pour-gesture.png"
+      },
+      "pivots": {
+        "head": [
+          150,
+          171
+        ],
+        "gesture": [
+          151,
+          270
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    },
+    "clap": {
+      "width": 256,
+      "height": 570,
+      "parts": {
+        "head": "assets/art/jo-motion-v1/clap-head.png",
+        "neutral": "assets/art/jo-motion-v1/clap-neutral.png",
+        "nose": "assets/art/jo-motion-v1/clap-nose.png",
+        "eyes": "assets/art/jo-motion-v1/clap-eyes.png",
+        "pupils": "assets/art/jo-motion-v1/clap-pupils.png",
+        "blink": "assets/art/jo-motion-v1/clap-blink.png",
+        "focus": "assets/art/jo-motion-v1/clap-focus.png",
+        "joy": "assets/art/jo-motion-v1/clap-joy.png",
+        "body": "assets/art/jo-motion-v1/clap-body.png",
+        "gesture": "assets/art/jo-motion-v1/clap-gesture.png"
+      },
+      "pivots": {
+        "head": [
+          132,
+          173
+        ],
+        "gesture": [
+          138,
+          269
+        ]
+      },
+      "layerOrder": [
+        "head",
+        "body",
+        "gesture"
+      ]
+    }
+  }
+}

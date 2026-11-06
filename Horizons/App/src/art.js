@@ -1,6 +1,6 @@
-// Native artwork with explicitly authorized Pico, Mina, Alex and avatar motion mounts.
+// Native artwork with explicitly authorized Pico, Mina, Alex, Jo and avatar motion mounts.
 let manifest={postures:{},avatar:{}};
-let avatarModule,bannerModule,minaModule,alexModule,rasterObserver,rasterMutationObserver;
+let avatarModule,bannerModule,minaModule,alexModule,joModule,rasterObserver,rasterMutationObserver;
 const sourceBase=new URL('../assets/art/',import.meta.url);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export async function loadArt(){
@@ -57,8 +57,9 @@ export function normalizeAvatar(avatar={}){return{...avatar,hairColor:manifest.a
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
  for(const slot of container.querySelectorAll('[data-character="alex"]'))import('./alex-motion.js?v=resultaccent1').then(module=>{alexModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAlex(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.alexMotion='fallback';});
+ for(const slot of container.querySelectorAll('[data-character="jo"]'))import('./jo-motion.js?v=jo1').then(module=>{joModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountJo(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.joMotion='fallback';});
  for(const slot of container.querySelectorAll('[data-character="mina"]'))import('./mina-motion.js?v=resultaccent1').then(module=>{minaModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountMina(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.minaMotion='fallback';});
  for(const slot of container.querySelectorAll('.learn-hero .hero-pico.unit1-banner-pico[data-character=pico][data-posture=explore]'))import('./pico-banner-motion.js?v=areas1').then(module=>{bannerModule=module;if(slot.isConnected)module.mountBannerPico(slot);}).catch(()=>{if(slot.isConnected)slot.dataset.bannerMotion='fallback';});
  for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=fit2').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
-export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-character="alex"]'))alexModule?.unmountAlex(slot);for(const slot of container.querySelectorAll('[data-character="mina"]'))minaModule?.unmountMina(slot);for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);for(const slot of container.querySelectorAll('.hero-pico'))bannerModule?.unmountBannerPico(slot);}
+export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-character="jo"]'))joModule?.unmountJo(slot);for(const slot of container.querySelectorAll('[data-character="alex"]'))alexModule?.unmountAlex(slot);for(const slot of container.querySelectorAll('[data-character="mina"]'))minaModule?.unmountMina(slot);for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);for(const slot of container.querySelectorAll('.hero-pico'))bannerModule?.unmountBannerPico(slot);}

@@ -45,5 +45,12 @@
     "pass": true,
     "reviewer": "Codex root",
     "scope": "Rebuilt pack after CSS change; directly inspected refreshed R07. Four native inanimate still lifes and social card inspected in their actual page composition."
+  },
+  "joContinuationReview": {
+    "date": "2026-11-06",
+    "baselineCommit": "dded168a980386fffcf2b9b0f7c5d3f8709c524a",
+    "pass": true,
+    "reviewer": "Codex jo_assets subagent",
+    "scope": "Rebuilt seven sheets after current Jo art-loader integration and prior viewport changes. Directly inspected R01/R02/R07, the mandatory Jo call references. Accepted native Jo baseline art remains static. Exact generation-time mandatory sheet PNGs and manifest frozen in docs/jo-motion-v1/inputs; all15 preflights pass with four or five actual images total."
   }
 }

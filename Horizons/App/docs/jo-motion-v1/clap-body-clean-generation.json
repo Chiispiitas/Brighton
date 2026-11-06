@@ -1,0 +1,58 @@
+{
+  "part": "clap-body-clean",
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted clap pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png"
+  ],
+  "preflight": {
+    "pass": true,
+    "asset_id": "jo-motion-v1-clap-body-clean",
+    "input_count": 5,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference",
+        "id": "R02",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      },
+      {
+        "role": "reference",
+        "id": "R07",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+        "sha256": "c52f4dba4a1ababbe717726a274d1c746f28e3f24fc01c33266587f7d85ce7e6"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png",
+        "sha256": "791ea789843c409cc6812f483c91407f6f402b5890d81a667c9fb86c4633f096"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "transparent_background": false,
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-32da6eec-a572-4b00-8dd3-a34ccad0b5a1.png",
+  "output_hint": "Generated images are saved to C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714 as C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-32da6eec-a572-4b00-8dd3-a34ccad0b5a1.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "native_path": "assets/art/jo-motion-v1/native/clap-body-clean.png"
+}

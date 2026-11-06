@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-joy-opaque",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/joy-generated-face-target.png",
+    "assets/art/jo-motion-v1/native/joy-clean.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Input1 R01,2 R02,3 R07 mandatory references; Input4 exact generated expression face crop; Input5 failed isolated joyful glyphs has a large dark halo. Make ONLY FIVE SEPARATE FACIAL GLYPHS from that expression: two lifted dark eyebrows, two happy dark crescent closed eyes, one welcoming open smiling mouth with red tongue. No glasses, no eye whites, no skin, no nose, no hair, no head, no neck, no body. Preserve glyph shapes and their exact relative face layout. Remove ALL glow/blur/halo. Use solid opaque flat features with sharp antialias contour and no texture or modeled lighting. Center these five disconnected glyphs on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background. No transparency in this intermediate source; it will be keyed mechanically. No outlines, labels or extra objects."
+}

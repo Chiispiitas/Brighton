@@ -1,0 +1,50 @@
+{
+  "part": "read-gesture",
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the moving forearm/hand/prop group from this exact pose: Both peach forearms and hands gripping the accepted open navy book with cream pages, complete book. Remove orange upper sleeves, torso, apron, legs, head and all background. Preserve exact placement, hand thickness, object outline and grip geometry from target. Keep the two forearms as a disconnected group in their exact relative positions; do not combine them with new connecting anatomy. Generous invisible registration overlap at sleeve ends is allowed; retain original silhouette.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+  ],
+  "preflight": {
+    "pass": true,
+    "asset_id": "jo-motion-v1-read-gesture",
+    "input_count": 4,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference",
+        "id": "R02",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      },
+      {
+        "role": "reference",
+        "id": "R07",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+        "sha256": "7d00b1f57aed4a8d14b269af11f9913699819b67cb46ed31257134ef5c2e62c9"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-1e805f39-298a-43e1-962a-75604134ebbb.png",
+  "output_hint": "Generated images are saved to C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714 as C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-1e805f39-298a-43e1-962a-75604134ebbb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "native_path": "assets/art/jo-motion-v1/native/read-gesture.png"
+}

@@ -1,0 +1,245 @@
+{
+  "pass": true,
+  "baseline": "dded168a",
+  "cache": "horizons-companion-jo-motion-v97",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "d7196cd088c006c1000d36d3d73113d1b57f64224b08255a03f2dc67ee4fc6f9"
+    },
+    {
+      "path": "styles/viewport.css?v=tileflip1",
+      "status": 200,
+      "sha256": "73dfb5e42ec64a2232364f5f29a3f0c3f84123a2ffb37594eb4622fce36e759c"
+    },
+    {
+      "path": "src/app.js?v=jo1",
+      "status": 200,
+      "sha256": "100acb3f671e24d89e225543cc3a89e4bd66456f8c8585cdc401135dbc00202c"
+    },
+    {
+      "path": "src/art.js?v=jo1",
+      "status": 200,
+      "sha256": "bdad2e9c835b72cc7c5ad799062ad80ced0b370a3ddf95496212dabd9d0cb104"
+    },
+    {
+      "path": "src/jo-motion.js?v=jo1",
+      "status": 200,
+      "sha256": "48ad400caae2c4c22f1d47f0f91b309e536faf880188697d1ba9926cac81d820"
+    },
+    {
+      "path": "styles/jo-motion.css?v=jo1",
+      "status": 200,
+      "sha256": "6034552cf7d37e79c558acdd5fe6603a7f78ad69b7739e0e4f14b61c83fd4417"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/rigs.json?v=1",
+      "status": 200,
+      "sha256": "bd1779bac9d866d66706c124999772ab9dff60a94acf8a2d8cfa4c399d086942"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-head.png",
+      "status": 200,
+      "sha256": "a793f0948b74ed117ab567cb911b388488fe9ff67b71b2ad7b298cb234cb97b3"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-neutral.png",
+      "status": 200,
+      "sha256": "22e5fb70bc9adc1817751d76be2b5aacc8946e63cdc2bb755372a8d17020035d"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-nose.png",
+      "status": 200,
+      "sha256": "a8910e7807f8995e143920a2050bd531673e4f47d7101304ce1fd873e16d0f7d"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-eyes.png",
+      "status": 200,
+      "sha256": "36429d563dc547698288c45d0e4b1a92509e06d60d3247a558e1ec31e2fb5f99"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-pupils.png",
+      "status": 200,
+      "sha256": "ff8c889e87c7a832afc6fe72d77e10be5fb1c681bd7f42c2066de195d49d702c"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-blink.png",
+      "status": 200,
+      "sha256": "7fc517f4081635f873eea5550f02976db850dc7bf10582c4b8020252c00ad785"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-focus.png",
+      "status": 200,
+      "sha256": "f818d6f975f14754e0d84de485588cefe5fec3a92001d15e6d1abf99fdf87424"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-joy.png",
+      "status": 200,
+      "sha256": "2754ade87d66152c9dca1052fa34f79079b5f705c97451ac6332c3afa166efc6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-body.png",
+      "status": 200,
+      "sha256": "5fe6d887c7d6560f1579baf8484d6166b9415400290f73d17985a63e4b392a1c"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/offer-gesture.png",
+      "status": 200,
+      "sha256": "500ae77b3968f91d1b2df29feccc5eb4736db7218d58acdbac0b0944fb228a8b"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-head.png",
+      "status": 200,
+      "sha256": "7e35ef772eae0c4e14c406bfb6779c87721b2af56397cd987cedaf0bc6fddd03"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-neutral.png",
+      "status": 200,
+      "sha256": "abeeedf6e7e7ae8c7f9bb58ad802617462dca5bbd85329b8e181e1b0b934b1d0"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-nose.png",
+      "status": 200,
+      "sha256": "7ec471e2d2ea687dab98055f397dfa046a760837d44ac65d160c1cdb172db704"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-eyes.png",
+      "status": 200,
+      "sha256": "2956b9b011759a9d240506080b03d60624723dc3ac4a98e5e63a9adc8a4b6c1f"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-pupils.png",
+      "status": 200,
+      "sha256": "267fc1d7ea49a636443602c4e511712f50a66188abe02611ac4e3359606027b6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-blink.png",
+      "status": 200,
+      "sha256": "42974cfafb6149ac6fefc456fa7eb5114e9b0e07e01babfd45c5275edc90612b"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-focus.png",
+      "status": 200,
+      "sha256": "99006461303999ba75cbddf376f4416edd0fcb02b7e64d3fabfd09f0add25fc6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-joy.png",
+      "status": 200,
+      "sha256": "5e53aba33c63743b4aed580297012160736eba475125d5eddbf376c42326e4e6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-body.png",
+      "status": 200,
+      "sha256": "0c3b60f91a92412e07763435358ae3630e851c43bf2aabed5c487b1a8f1c7b68"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/read-gesture.png",
+      "status": 200,
+      "sha256": "8cc64ade31890dee1a51029d05e5f6bb477ff49b2e38fc2cc1eff23dfb14e2cd"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-head.png",
+      "status": 200,
+      "sha256": "d385ae7227b9ca1cd13580212f203b95a022fca946055c85479b7b74d73477b3"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-neutral.png",
+      "status": 200,
+      "sha256": "393a67f256951b3512952bd95d168a51ae733b8d910e9c5b2243093cf50c8c1e"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-nose.png",
+      "status": 200,
+      "sha256": "03131d9bae290310ed92fb370304ded35c614e0b32cc097295160492dbe3e55b"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-eyes.png",
+      "status": 200,
+      "sha256": "8677eaa4b91ec67ee1694edff2ec539446ca62dd618ef2cb647b03c804e52d24"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-pupils.png",
+      "status": 200,
+      "sha256": "46b8cdfe4bafb3d4899a477150c67e77009525413d4190ae3c3ff6c478a3c2bc"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-blink.png",
+      "status": 200,
+      "sha256": "37cc40c6d1b4543fdef00c0390fcaf504666b270035be5d9c93c2ae55dd15ebe"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-focus.png",
+      "status": 200,
+      "sha256": "b37c047717e720985790791c169168ce1d439693240eb1360c37a912f0ffd1b1"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-joy.png",
+      "status": 200,
+      "sha256": "0b4bcfe54b4cfd85bc5ee57a284985f9b760873e450b57f9cf157351384f5372"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-body.png",
+      "status": 200,
+      "sha256": "e39c2f4d8cea29c402bffcef4d6d27da8039bcd883e5699c3507f8b1f3aabd0d"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/pour-gesture.png",
+      "status": 200,
+      "sha256": "681a5163456b317b007bab372493391f6cded97d04f00a0aea1e5f3f2b438ac6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-head.png",
+      "status": 200,
+      "sha256": "54247f2fa2de357f81f6fe95936b6024a3425501bb73c2fc47559fa18ea3ae2f"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-neutral.png",
+      "status": 200,
+      "sha256": "0a980919059d1181414733b03c1aab73b0f5f104e44b5cc9e92b5057d0ccadd1"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-nose.png",
+      "status": 200,
+      "sha256": "c05d614eaa204a27224a4a57995a16aeb143b1230c7c542be4db4647628a9fbf"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-eyes.png",
+      "status": 200,
+      "sha256": "c5bb1721a5e5eef8b272a241cba3db3b3eef9e25116398dbcb13dfc041f8c561"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-pupils.png",
+      "status": 200,
+      "sha256": "f17ffa1c1ae464ac1ed5ec2932285aa65d643d2fef2625bda69a03dac58e7ec6"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-blink.png",
+      "status": 200,
+      "sha256": "f9afe751881d9a01681023da4dfcbe3ebf3ced424323ce9928ba394a3f63e97c"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-focus.png",
+      "status": 200,
+      "sha256": "1274a941573c5458500e50b38c92827ca531865a41696e3fa6d195cb311097b3"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-joy.png",
+      "status": 200,
+      "sha256": "9660f08449f509e358e62547c3ba828546d6e60eddc94bb0314f2f16e545b297"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-body.png",
+      "status": 200,
+      "sha256": "8f010ba6549a1e0535bb0cad591f56776144201131fa9b3548524e010bbf0fb3"
+    },
+    {
+      "path": "assets/art/jo-motion-v1/clap-gesture.png",
+      "status": 200,
+      "sha256": "d6ed3a36d2748760a89d90e4914d228c17ff3ab8c6ac40973f2760d053b28530"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v97. New controller and exact current app, art loader, Jo module/styles/manifest and every registered part byte verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

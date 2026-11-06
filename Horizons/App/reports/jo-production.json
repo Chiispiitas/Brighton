@@ -1,0 +1,151 @@
+{
+  "pass": true,
+  "nativeCalls": 24,
+  "maximumAttachedImages": 5,
+  "checks": [
+    {
+      "id": "blink",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "clap-body-clean",
+      "status": "rejected",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "clap-body",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "clap-gesture",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "eyes-clean",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "eyes",
+      "status": "rejected",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "focus-clean",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "focus",
+      "status": "rejected",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "head",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "joy-clean",
+      "status": "rejected",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "joy",
+      "status": "rejected",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "joy-opaque",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "neutral",
+      "status": "reference-only",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "offer-body-clean",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "offer-body",
+      "status": "rejected",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "offer-gesture",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "pour-body-clean",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "pour-body",
+      "status": "rejected",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "pour-gesture",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "pupil-clean",
+      "status": "reference-only",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "pupil",
+      "status": "rejected",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "read-body-clean",
+      "status": "active-generated-source",
+      "images": 5,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "read-body",
+      "status": "rejected",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    },
+    {
+      "id": "read-gesture",
+      "status": "active-generated-source",
+      "images": 4,
+      "nativeOriginalMatchesTool": true
+    }
+  ]
+}

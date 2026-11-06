@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-eyes",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/offer.png",
+    "assets/art/jo-motion-v1/baseline/head-exact-6x.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the pair of solid white open-eye shapes, in original relative arrangement and slight tilt. Input5 enlarged exact head shows anchors. Remove pupils, glasses, brows, skin and all other anatomy. These two eye-white sprites must be opaque white with clean native antialias edges."
+}

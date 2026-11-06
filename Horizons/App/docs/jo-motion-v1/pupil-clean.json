@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-pupil-clean",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/head-exact-6x.png",
+    "assets/art/jo-motion-v1/native/pupil.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Input1 R01 brand,2 R02 cast,3 R07 style; Input4 exact original Jo head supplies pupil style. Input5 failed pupil source has a huge unwanted transparent brown glow. Return ONLY ONE small perfectly opaque flat near-black round pupil matching the original Jo pupil. Absolutely NO halo, light, shadow, gradient, shine, texture, outline, eye white, glasses, skin or character. Make a simple solid near-black round native sprite with sharp antialias boundary. Center with generous margins on an intentionally OPAQUE completely uniform vivid magenta #ff00ff background. No transparency in this intermediate source; background will be mechanically keyed. No labels, figures or other objects."
+}

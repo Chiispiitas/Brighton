@@ -1,0 +1,14 @@
+{
+  "asset_id": "jo-motion-v1-clap-body",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/clap.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the headless stationary body: orange shirt and full connected sleeves, navy apron and cream pocket, olive trousers, both cream shoes. Preserve full original pose and natural collar/neck overlap. Exclude ALL head/hair/facial parts, peach forearms/hands, mug/book/cloth. Complete the continuous navy apron field behind the removed forearms/prop so separate group can overlap it. Preserve sleeve ends and torso width exactly. Do not narrow arms, change apron or shorten legs."
+}

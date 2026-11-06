@@ -1,0 +1,15 @@
+{
+  "asset_id": "jo-motion-v1-read-body-clean",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/read.png",
+    "assets/art/jo-motion-v1/native/read-body.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted read pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign."
+}

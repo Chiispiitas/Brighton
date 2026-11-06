@@ -374,3 +374,10 @@ A cleanup command for a generated __pycache__ folder was rejected by automatic c
 All requested website changes through the sidebar adjustment are implemented and committed. The full audit, image guide and seven-reference pack are complete. This request adds the handoff and bundle; it is not authorization for another redesign.
 
 In a new chat, read the attached documents, verify the checkout/live state, briefly confirm readiness and wait for the user's next change. Do not ask the user to repeat this history.
+
+
+### Jo animation release — 6 November 2026
+
+All four accepted Jo v3 poses now animate with separate native ImageGen parts and a permanent faceless head/features, preserving her original head exterior/glasses/neutral anchors. One8-second idle plus3-second pose-specific accent; correct jump/joy, wrong head bob/raised brow and immediate saved-results accent follow Mina/Alex. Allopaque transforms/sprite swaps; originalstills for reduced motion/failure; pause/disposal/replay guards remain. `pour` is mug wiping, not a new pouring prop.
+
+Twenty-four exact calls, nine rejected outputs, successful mandatory-reference preflights and original native bytes are preserved in docs/jo-motion-v1/production-record.json. Mechanical keying/registration, source feature selection and corrected reconstruction are disclosed in its README and reference-manifest. Runtime src/jo-motion.js, styles/jo-motion.css, assets/art/jo-motion-v1/rigs.json; queries jo1, worker horizons-companion-jo-motion-v97. reports/jo-motion.json, jo-motion-cache.json and jo-production.json pass, with actual synthetic exercise/results, allpose extremes, normal-speed review and lifecycle/fallback checks. Root plus two agents reviewed compositions; physical devices/Safari/Firefox/human acceptance are unverified. Audit and image guide updated; no grading, backend, printed book or real learner data changes. Publish through existing branch/main; do not await Pages per current preference.

@@ -1,0 +1,58 @@
+{
+  "part": "pupil-clean",
+  "prompt": "Use case: precise-object-edit. Input1 R01 brand,2 R02 cast,3 R07 style; Input4 exact original Jo head supplies pupil style. Input5 failed pupil source has a huge unwanted transparent brown glow. Return ONLY ONE small perfectly opaque flat near-black round pupil matching the original Jo pupil. Absolutely NO halo, light, shadow, gradient, shine, texture, outline, eye white, glasses, skin or character. Make a simple solid near-black round native sprite with sharp antialias boundary. Center with generous margins on an intentionally OPAQUE completely uniform vivid magenta #ff00ff background. No transparency in this intermediate source; background will be mechanically keyed. No labels, figures or other objects.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png"
+  ],
+  "preflight": {
+    "pass": true,
+    "asset_id": "jo-motion-v1-pupil-clean",
+    "input_count": 5,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference",
+        "id": "R02",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      },
+      {
+        "role": "reference",
+        "id": "R07",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+        "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png",
+        "sha256": "3ddd23249be68762b2ece4364cb9d9919bce6981c1cb6901bf2dcf35e339fd0b"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "transparent_background": false,
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-eea541ff-13e6-418e-9f80-6f27535bba73.png",
+  "output_hint": "Generated images are saved to C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714 as C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-eea541ff-13e6-418e-9f80-6f27535bba73.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+  "native_path": "assets/art/jo-motion-v1/native/pupil-clean.png"
+}

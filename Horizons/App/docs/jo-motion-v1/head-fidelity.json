@@ -1,0 +1,226 @@
+[
+  {
+    "pose": "offer",
+    "headExteriorAlphaFromOriginal": true,
+    "structurePixelsExact": true,
+    "faceFillScope": "One permanent whole-face field from native/head.png; exact accepted alpha and gray-hair exterior retained",
+    "skinMaterialCrop": [
+      693,
+      533,
+      724,
+      564
+    ],
+    "uniformMaterialScale": 4.67741935483871,
+    "paletteTranslation": [
+      2.0,
+      -10.0,
+      -14.0
+    ],
+    "materialColorSelectionDistance": 17.51007838307205,
+    "eyeBoxes": [
+      [
+        129,
+        64,
+        152,
+        89
+      ],
+      [
+        167,
+        73,
+        190,
+        97
+      ]
+    ],
+    "browBoxes": [
+      [
+        132,
+        47,
+        157,
+        59
+      ],
+      [
+        171,
+        56,
+        196,
+        69
+      ]
+    ],
+    "mouthBox": [
+      132,
+      111,
+      164,
+      141
+    ],
+    "neutralFeatures": "Exact original brows, mouth, pupils, glasses and nose at accepted anchors; generated white material within eye shape",
+    "nosePart": "Shared original glasses and nose; moves with all expressions on face layer",
+    "baselineSha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+  },
+  {
+    "pose": "read",
+    "headExteriorAlphaFromOriginal": true,
+    "structurePixelsExact": true,
+    "faceFillScope": "One permanent whole-face field from native/head.png; exact accepted alpha and gray-hair exterior retained",
+    "skinMaterialCrop": [
+      693,
+      533,
+      724,
+      564
+    ],
+    "uniformMaterialScale": 6.193548387096774,
+    "paletteTranslation": [
+      2.0,
+      -10.0,
+      -14.0
+    ],
+    "materialColorSelectionDistance": 17.51007838307205,
+    "eyeBoxes": [
+      [
+        134,
+        73,
+        157,
+        98
+      ],
+      [
+        172,
+        83,
+        195,
+        108
+      ]
+    ],
+    "browBoxes": [
+      [
+        137,
+        55,
+        161,
+        66
+      ],
+      [
+        176,
+        64,
+        202,
+        77
+      ]
+    ],
+    "mouthBox": [
+      133,
+      119,
+      166,
+      149
+    ],
+    "neutralFeatures": "Exact original brows, mouth, pupils, glasses and nose at accepted anchors; generated white material within eye shape",
+    "nosePart": "Shared original glasses and nose; moves with all expressions on face layer",
+    "baselineSha256": "7d00b1f57aed4a8d14b269af11f9913699819b67cb46ed31257134ef5c2e62c9"
+  },
+  {
+    "pose": "pour",
+    "headExteriorAlphaFromOriginal": true,
+    "structurePixelsExact": true,
+    "faceFillScope": "One permanent whole-face field from native/head.png; exact accepted alpha and gray-hair exterior retained",
+    "skinMaterialCrop": [
+      693,
+      533,
+      724,
+      564
+    ],
+    "uniformMaterialScale": 4.354838709677419,
+    "paletteTranslation": [
+      2.0,
+      -10.0,
+      -13.0
+    ],
+    "materialColorSelectionDistance": 16.720271085381118,
+    "eyeBoxes": [
+      [
+        115,
+        72,
+        139,
+        96
+      ],
+      [
+        153,
+        66,
+        176,
+        90
+      ]
+    ],
+    "browBoxes": [
+      [
+        109,
+        56,
+        133,
+        68
+      ],
+      [
+        149,
+        49,
+        173,
+        60
+      ]
+    ],
+    "mouthBox": [
+      133,
+      119,
+      164,
+      143
+    ],
+    "neutralFeatures": "Exact original brows, mouth, pupils, glasses and nose at accepted anchors; generated white material within eye shape",
+    "nosePart": "Shared original glasses and nose; moves with all expressions on face layer",
+    "baselineSha256": "6157dba216acb282019b3d13edb5efcba75826d37917e33ee2064e55f9f91a7d"
+  },
+  {
+    "pose": "clap",
+    "headExteriorAlphaFromOriginal": true,
+    "structurePixelsExact": true,
+    "faceFillScope": "One permanent whole-face field from native/head.png; exact accepted alpha and gray-hair exterior retained",
+    "skinMaterialCrop": [
+      693,
+      533,
+      724,
+      564
+    ],
+    "uniformMaterialScale": 5.387096774193548,
+    "paletteTranslation": [
+      2.0,
+      -10.0,
+      -13.0
+    ],
+    "materialColorSelectionDistance": 16.720271085381118,
+    "eyeBoxes": [
+      [
+        113,
+        70,
+        137,
+        94
+      ],
+      [
+        153,
+        77,
+        176,
+        102
+      ]
+    ],
+    "browBoxes": [
+      [
+        117,
+        51,
+        141,
+        62
+      ],
+      [
+        157,
+        59,
+        182,
+        72
+      ]
+    ],
+    "mouthBox": [
+      118,
+      116,
+      150,
+      145
+    ],
+    "neutralFeatures": "Exact original brows, mouth, pupils, glasses and nose at accepted anchors; generated white material within eye shape",
+    "nosePart": "Shared original glasses and nose; moves with all expressions on face layer",
+    "baselineSha256": "c52f4dba4a1ababbe717726a274d1c746f28e3f24fc01c33266587f7d85ce7e6"
+  }
+]

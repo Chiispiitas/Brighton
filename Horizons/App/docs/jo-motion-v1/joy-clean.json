@@ -1,0 +1,14 @@
+{
+  "asset_id": "jo-motion-v1-joy-clean",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/jo-motion-v1/baseline/joy-generated-face-target.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Make a TRANSPARENT FACIAL GLYPH OVERLAY, NOT a character portrait. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references; Input4 is the exact generated expression-face crop to extract. Return ONLY two lifted eyebrows, two happy crescent closed eyes, and one open laughing smile with red tongue. Delete completely ALL gray hair, peach skin, nose, navy glasses, head outline, neck and clothing. No face-shaped backing or panel. Keep each glyph disconnected on genuinely transparent empty alpha at the exact relative locations from Input4. Five components total: two brows above two eyes above one mouth. Native filled raster contours, fully opaque feature interiors and clean antialias edges. No outlines, shadow, glow, gradient or labels. Absolutely no complete head or body."
+}

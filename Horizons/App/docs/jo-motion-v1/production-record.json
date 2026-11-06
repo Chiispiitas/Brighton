@@ -1,0 +1,1661 @@
+{
+  "tool": "built-in ImageGen",
+  "date": "2026-11-06",
+  "perPartGeneration": true,
+  "calls": 24,
+  "rejections": 9,
+  "records": [
+    {
+      "id": "blink",
+      "brief": "docs/jo-motion-v1/blink.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the two closed eyelid strokes of Jo, matching the original eye centers and slight tilt, gently closed. Input5 enlarged exact head is the identity target. No glasses, brows, eye whites, pupils, mouth, skin or head. Two isolated dark curved strokes on true alpha.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-blink",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/blink.png",
+      "nativeSha256": "6e425e8a43a586577a3563f8660eb8e0be71ba92dbc491eac2d063cb57862b26",
+      "nativeSize": [
+        1489,
+        1056
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cb63c6a3-c798-4e4d-b9bd-597adaa58160.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "clap-body-clean",
+      "brief": "docs/jo-motion-v1/clap-body-clean.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted clap pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-clap-body-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+            "sha256": "c52f4dba4a1ababbe717726a274d1c746f28e3f24fc01c33266587f7d85ce7e6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png",
+            "sha256": "791ea789843c409cc6812f483c91407f6f402b5890d81a667c9fb86c4633f096"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\clap-body.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/clap-body-clean.png",
+      "nativeSha256": "4668fd359f306bef0f29069fc45332dfd9c10508ac36ab843cf4218eba2a123b",
+      "nativeSize": [
+        840,
+        1873
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-32da6eec-a572-4b00-8dd3-a34ccad0b5a1.png",
+      "status": "rejected",
+      "reason": "Rejected repair reintroduced peach forearms/hands into stationary body; original clap-body is the accepted clean source."
+    },
+    {
+      "id": "clap-body",
+      "brief": "docs/jo-motion-v1/clap-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the headless stationary body: orange shirt and full connected sleeves, navy apron and cream pocket, olive trousers, both cream shoes. Preserve full original pose and natural collar/neck overlap. Exclude ALL head/hair/facial parts, peach forearms/hands, mug/book/cloth. Complete the continuous navy apron field behind the removed forearms/prop so separate group can overlap it. Preserve sleeve ends and torso width exactly. Do not narrow arms, change apron or shorten legs.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-clap-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+            "sha256": "c52f4dba4a1ababbe717726a274d1c746f28e3f24fc01c33266587f7d85ce7e6"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/clap-body.png",
+      "nativeSha256": "791ea789843c409cc6812f483c91407f6f402b5890d81a667c9fb86c4633f096",
+      "nativeSize": [
+        840,
+        1873
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-84ea235a-3baa-4063-b050-a0435917d625.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "clap-gesture",
+      "brief": "docs/jo-motion-v1/clap-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the moving forearm/hand/prop group from this exact pose: Both peach forearms and hands together in the original pressed-palms/clapping pose. Preserve both hands and their exact touching geometry; no prop. Remove orange upper sleeves, torso, apron, legs, head and all background. Preserve exact placement, hand thickness, object outline and grip geometry from target. Keep the two forearms as a disconnected group in their exact relative positions; do not combine them with new connecting anatomy. Generous invisible registration overlap at sleeve ends is allowed; retain original silhouette.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-clap-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png",
+            "sha256": "c52f4dba4a1ababbe717726a274d1c746f28e3f24fc01c33266587f7d85ce7e6"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\clap.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/clap-gesture.png",
+      "nativeSha256": "b2dfd449a48b6816898ea4a71aa5e02d43f0ef12b72abc2448bf926ba52f8eb5",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-36beebc2-3211-4452-afae-f60997ce756b.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "eyes-clean",
+      "brief": "docs/jo-motion-v1/eyes-clean.json",
+      "prompt": "Use case: precise-object-edit. Output just TWO opaque WHITE EYE SHAPES, not a face. Inputs1 R01 brand,2 R02 cast,3 R07 style. Input4 exact accepted Jo head supplies eye white shape anchors. Input5 failed isolated eye source has an unwanted halo. Repair to ONLY two solid flat white oval eye-white shapes, correct relative spacing and slight tilt. No pupils, dark contour, glasses, brows, nose, hair, skin, mouth or portrait. Completely remove all glow, shadows and modeled lighting from the failed source. Render on an intentionally OPAQUE perfectly uniform magenta #ff00ff background with generous margins. No transparency in this intermediate source; it will be mechanically keyed. Flat white interiors, sharp clean contours, no gradient or blur. Keep empty opening/background magenta.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-eyes-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\eyes.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\eyes.png",
+            "sha256": "e7a9fd569fd5f27b8bed60ecc87d799e3ecb30daf6f57fce7613407203cec2f1"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\eyes.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/eyes-clean.png",
+      "nativeSha256": "f64e0bf2487a067fff4dc9478889a949520ddd539e56e0a9637fad15682475f7",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-672768fe-3d5a-4314-8e67-4fb2b1d19315.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "eyes",
+      "brief": "docs/jo-motion-v1/eyes.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the pair of solid white open-eye shapes, in original relative arrangement and slight tilt. Input5 enlarged exact head shows anchors. Remove pupils, glasses, brows, skin and all other anatomy. These two eye-white sprites must be opaque white with clean native antialias edges.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-eyes",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/eyes.png",
+      "nativeSha256": "e7a9fd569fd5f27b8bed60ecc87d799e3ecb30daf6f57fce7613407203cec2f1",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-95dc0ed1-1995-4dce-b380-4907c938e2ee.png",
+      "status": "rejected",
+      "reason": "Rejected broad white exterior glow."
+    },
+    {
+      "id": "focus-clean",
+      "brief": "docs/jo-motion-v1/focus-clean.json",
+      "prompt": "Use case: precise-object-edit. Make a TRANSPARENT FACIAL GLYPH OVERLAY, NOT a character portrait. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references; Input4 is the exact generated expression-face crop to extract. Return ONLY one raised eyebrow and one lower eyebrow, two squinted eye shapes and the short closed neutral mouth, NO SMILE. Delete completely ALL gray hair, peach skin, nose, navy glasses, head outline, neck and clothing. No face-shaped backing or panel. Keep each glyph disconnected on genuinely transparent empty alpha at the exact relative locations from Input4. Five components total: two brows above two eyes above one mouth. Native filled raster contours, fully opaque feature interiors and clean antialias edges. No outlines, shadow, glow, gradient or labels. Absolutely no complete head or body.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-focus-clean",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\focus-generated-face-target.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\focus-generated-face-target.png",
+            "sha256": "cd32cb55aa45736e8d28d18aa314fbebf094fed067c54fdfad0ae420bd74afae"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\focus-generated-face-target.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/focus-clean.png",
+      "nativeSha256": "d3097bae2a919d7b5f88d46c67c78e2d886750fb073c931a829eec90ce584c04",
+      "nativeSize": [
+        1538,
+        1023
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2b64526a-159c-4f43-85f8-07d1c8c1cddc.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "focus",
+      "brief": "docs/jo-motion-v1/focus.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY Jo facial expression features: two brows with one gently raised, two slightly squinted eyes, and a short closed neutral mouth, in original facial arrangement. Input5 exact enlarged head supplies scale/orientation. Confused but kind, not angry; NO SMILE. No glasses, nose, skin, hair, head exterior, neck or white/peach panel. Features only on true alpha.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-focus",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/focus.png",
+      "nativeSha256": "2b0354d67dd455d6f376d73c167dffabbfde977d9a4d84f07ea8ef5f8389af41",
+      "nativeSize": [
+        896,
+        1754
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2cb12204-5e16-4ed4-949c-921725326ecc.png",
+      "status": "rejected",
+      "reason": "Rejected whole figure instead of isolated expression glyphs."
+    },
+    {
+      "id": "head",
+      "brief": "docs/jo-motion-v1/head.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. The exact FACELESS head, gray hair and visible short neck ONLY. Input5 is the exact lossless6x original-head crop. Delete ALL facial marks: eyebrows, eyes, pupils, GLASSES, NOSE and mouth. Fill their entire former facial surface with smooth opaque matching peach skin. Preserve the original outer hair silhouette and face/chin geometry EXACTLY. No facial features at all, no glasses. Exclude all clothing, hands and objects. Neck must overlap the shirt when assembled; do not change head proportions.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-head",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/head.png",
+      "nativeSha256": "4fd03648df092d9f918832afd426f089cef982142f1fbc81f185f9fea235c248",
+      "nativeSize": [
+        1489,
+        1056
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2272b96d-da2e-4578-b705-63e8d13e7859.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "joy-clean",
+      "brief": "docs/jo-motion-v1/joy-clean.json",
+      "prompt": "Use case: precise-object-edit. Make a TRANSPARENT FACIAL GLYPH OVERLAY, NOT a character portrait. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references; Input4 is the exact generated expression-face crop to extract. Return ONLY two lifted eyebrows, two happy crescent closed eyes, and one open laughing smile with red tongue. Delete completely ALL gray hair, peach skin, nose, navy glasses, head outline, neck and clothing. No face-shaped backing or panel. Keep each glyph disconnected on genuinely transparent empty alpha at the exact relative locations from Input4. Five components total: two brows above two eyes above one mouth. Native filled raster contours, fully opaque feature interiors and clean antialias edges. No outlines, shadow, glow, gradient or labels. Absolutely no complete head or body.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-joy-clean",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+            "sha256": "3aaa2954562cbda449abe3c5af9c670baf5722b8035878b0f3b9680c5ff9d51b"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/joy-clean.png",
+      "nativeSha256": "86208e4b8007fda91127df8803073bfd3a05695a352dd1beb8658b0aec6ee8e0",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-28323218-2939-4f46-9f4f-0480804db06f.png",
+      "status": "rejected",
+      "reason": "Rejected broad transparent dark glow around otherwise separate glyphs; superseded by opaque magenta cleanup."
+    },
+    {
+      "id": "joy",
+      "brief": "docs/jo-motion-v1/joy.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY Jo joyful facial expression features: two gently lifted brows, two happy closed crescent eyes and a wider welcoming laughing smile with small red tongue. Input5 enlarged exact head supplies identity/anchors. No glasses, nose, skin, head exterior, hair, neck or opaque backing. Features only, true alpha.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-joy",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/joy.png",
+      "nativeSha256": "ddbf7ccf73a656af360f451a7f26063e7eeb9ad0dd7c250873691944ad0b7586",
+      "nativeSize": [
+        896,
+        1755
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9007fe80-a945-4513-832a-b202dd14b41d.png",
+      "status": "rejected",
+      "reason": "Rejected whole figure instead of isolated expression glyphs."
+    },
+    {
+      "id": "joy-opaque",
+      "brief": "docs/jo-motion-v1/joy-opaque.json",
+      "prompt": "Use case: precise-object-edit. Input1 R01,2 R02,3 R07 mandatory references; Input4 exact generated expression face crop; Input5 failed isolated joyful glyphs has a large dark halo. Make ONLY FIVE SEPARATE FACIAL GLYPHS from that expression: two lifted dark eyebrows, two happy dark crescent closed eyes, one welcoming open smiling mouth with red tongue. No glasses, no eye whites, no skin, no nose, no hair, no head, no neck, no body. Preserve glyph shapes and their exact relative face layout. Remove ALL glow/blur/halo. Use solid opaque flat features with sharp antialias contour and no texture or modeled lighting. Center these five disconnected glyphs on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background. No transparency in this intermediate source; it will be keyed mechanically. No outlines, labels or extra objects.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-joy-opaque",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+            "sha256": "3aaa2954562cbda449abe3c5af9c670baf5722b8035878b0f3b9680c5ff9d51b"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png",
+            "sha256": "86208e4b8007fda91127df8803073bfd3a05695a352dd1beb8658b0aec6ee8e0"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\joy-generated-face-target.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\joy-clean.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/joy-opaque.png",
+      "nativeSha256": "7b3360a469b594d62a3542aa75de2770b75de4ca7f7bd2f2db61c4a94456dcd3",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c2e754a1-9b62-451d-a297-dff1a11e7bdc.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "neutral",
+      "brief": "docs/jo-motion-v1/neutral.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY two original dark brows and the original smiling mouth as disconnected transparent shapes in their original relative arrangement. Input5 enlarged exact head helps preserve shapes. No eyes, pupils, glasses, nose, skin, head exterior or hair.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-neutral",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/neutral.png",
+      "nativeSha256": "f45a1530562df48797a3a8fcb14172fd010dea0904b2d3c363f9d3af3564e98f",
+      "nativeSize": [
+        1206,
+        1305
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-43a4ed53-1527-4c8e-b858-9800cb7cda3e.png",
+      "status": "reference-only",
+      "reason": "Generated reference retained; exact original native glyph pixels preserve neutral identity and anchors."
+    },
+    {
+      "id": "offer-body-clean",
+      "brief": "docs/jo-motion-v1/offer-body-clean.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted offer pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-offer-body-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\offer-body.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\offer-body.png",
+            "sha256": "d9a26e2b9d15c572bb9b2181aa2f3e2b5332af750b503b69c7e8c9d7d6222974"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\offer-body.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/offer-body-clean.png",
+      "nativeSha256": "6097cc63733a7e1f2363f4e19fcc5c56299dde97c4bdb5dfce0c106c9ddf6dc3",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d4d4054c-2422-4743-8140-d8fe153f93dc.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "offer-body",
+      "brief": "docs/jo-motion-v1/offer-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the headless stationary body: orange shirt and full connected sleeves, navy apron and cream pocket, olive trousers, both cream shoes. Preserve full original pose and natural collar/neck overlap. Exclude ALL head/hair/facial parts, peach forearms/hands, mug/book/cloth. Complete the continuous navy apron field behind the removed forearms/prop so separate group can overlap it. Preserve sleeve ends and torso width exactly. Do not narrow arms, change apron or shorten legs.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-offer-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/offer-body.png",
+      "nativeSha256": "d9a26e2b9d15c572bb9b2181aa2f3e2b5332af750b503b69c7e8c9d7d6222974",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-1da2f072-fb9b-4353-a41c-583b355840f3.png",
+      "status": "rejected",
+      "reason": "Rejected exterior glow/halo; superseded by opaque magenta cleanup."
+    },
+    {
+      "id": "offer-gesture",
+      "brief": "docs/jo-motion-v1/offer-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the moving forearm/hand/prop group from this exact pose: Both peach forearms and hands gripping the accepted teal mug, with the complete teal mug. Remove orange upper sleeves, torso, apron, legs, head and all background. Preserve exact placement, hand thickness, object outline and grip geometry from target. Keep the two forearms as a disconnected group in their exact relative positions; do not combine them with new connecting anatomy. Generous invisible registration overlap at sleeve ends is allowed; retain original silhouette.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-offer-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/offer-gesture.png",
+      "nativeSha256": "dca469609ca4dfada108f108b093c5d6b80fe534a3dc737474c8170b5994999b",
+      "nativeSize": [
+        1774,
+        887
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-de010db4-a609-4688-88bf-2a7ceca6c6f3.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "pour-body-clean",
+      "brief": "docs/jo-motion-v1/pour-body-clean.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted pour pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-pour-body-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pour-body.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png",
+            "sha256": "6157dba216acb282019b3d13edb5efcba75826d37917e33ee2064e55f9f91a7d"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pour-body.png",
+            "sha256": "3b4f9343e29935c68a782605ba77bd7975c702f7b42f92bcca9114a5de58d32f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pour-body.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/pour-body-clean.png",
+      "nativeSha256": "68a8b64d8418d0017a333c86b48ebdd8b57650ee04e8e06bffc88fa42dbe63b7",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6aeabf81-3faa-4cb2-a4fb-930df58a283b.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "pour-body",
+      "brief": "docs/jo-motion-v1/pour-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the headless stationary body: orange shirt and full connected sleeves, navy apron and cream pocket, olive trousers, both cream shoes. Preserve full original pose and natural collar/neck overlap. Exclude ALL head/hair/facial parts, peach forearms/hands, mug/book/cloth. Complete the continuous navy apron field behind the removed forearms/prop so separate group can overlap it. Preserve sleeve ends and torso width exactly. Do not narrow arms, change apron or shorten legs.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-pour-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png",
+            "sha256": "6157dba216acb282019b3d13edb5efcba75826d37917e33ee2064e55f9f91a7d"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/pour-body.png",
+      "nativeSha256": "3b4f9343e29935c68a782605ba77bd7975c702f7b42f92bcca9114a5de58d32f",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4a6cb5e7-9b3a-4121-9769-4370c19947a4.png",
+      "status": "rejected",
+      "reason": "Rejected exterior glow/halo; superseded by opaque magenta cleanup."
+    },
+    {
+      "id": "pour-gesture",
+      "brief": "docs/jo-motion-v1/pour-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the moving forearm/hand/prop group from this exact pose: Both peach forearms and hands, complete teal mug, and cream cloth held over its left rim exactly as the original. She is wiping the cup, not pouring; no liquid stream or pot. Remove orange upper sleeves, torso, apron, legs, head and all background. Preserve exact placement, hand thickness, object outline and grip geometry from target. Keep the two forearms as a disconnected group in their exact relative positions; do not combine them with new connecting anatomy. Generous invisible registration overlap at sleeve ends is allowed; retain original silhouette.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-pour-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png",
+            "sha256": "6157dba216acb282019b3d13edb5efcba75826d37917e33ee2064e55f9f91a7d"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\pour.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/pour-gesture.png",
+      "nativeSha256": "c368ff569aa4d680dd1eb033ddcdaf5e1029981db7b9b82d2db845b5e48c6bef",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c4037edd-a9b0-45a1-aab1-05c9cb1210a4.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "pupil-clean",
+      "brief": "docs/jo-motion-v1/pupil-clean.json",
+      "prompt": "Use case: precise-object-edit. Input1 R01 brand,2 R02 cast,3 R07 style; Input4 exact original Jo head supplies pupil style. Input5 failed pupil source has a huge unwanted transparent brown glow. Return ONLY ONE small perfectly opaque flat near-black round pupil matching the original Jo pupil. Absolutely NO halo, light, shadow, gradient, shine, texture, outline, eye white, glasses, skin or character. Make a simple solid near-black round native sprite with sharp antialias boundary. Center with generous margins on an intentionally OPAQUE completely uniform vivid magenta #ff00ff background. No transparency in this intermediate source; background will be mechanically keyed. No labels, figures or other objects.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-pupil-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png",
+            "sha256": "3ddd23249be68762b2ece4364cb9d9919bce6981c1cb6901bf2dcf35e339fd0b"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\pupil.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/pupil-clean.png",
+      "nativeSha256": "5f66d75d482deecdab9ade6f7f7c92a3e2e348b6bfbef1dd95166761ac223ab5",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-eea541ff-13e6-418e-9f80-6f27535bba73.png",
+      "status": "reference-only",
+      "reason": "Generated reference retained; exact original native glyph pixels preserve neutral identity and anchors."
+    },
+    {
+      "id": "pupil",
+      "brief": "docs/jo-motion-v1/pupil.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY one round dark pupil matching the original eye pupil exactly. Input5 enlarged exact head shows original shape/color. No eye white, eye outline, highlights, glasses, eyebrows or skin. A single isolated dark circle-like native sprite on true alpha.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-pupil",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+            "sha256": "33d19fbd7d0a201d344b46057d3071412a4665eca444e1737c35244bb5ff5ca6"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png",
+            "sha256": "4ead3ea3c7a05481375f061cde7d0fa5fa06bf0d2d37d6cb7d9e9efb53ba3875"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\offer.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\head-exact-6x.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/pupil.png",
+      "nativeSha256": "3ddd23249be68762b2ece4364cb9d9919bce6981c1cb6901bf2dcf35e339fd0b",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-bb147e1c-0d3d-4e7a-b2ea-644ca8d7fea8.png",
+      "status": "rejected",
+      "reason": "Rejected broad soft dark halo instead of clean pupil contour."
+    },
+    {
+      "id": "read-body-clean",
+      "brief": "docs/jo-motion-v1/read-body-clean.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo stationary body repair. Image1 R01 brand,Image2 R02 accepted cast,Image3 R07 flat rendering; Image4 exact accepted read pose,Image5 faulty isolated body. Repair ONLY the exterior rendering: remove ALL glow/halo/shadow/lighting aura and subtle modeled light from Image5. Keep the sharp original clothing/legs/shoes silhouette, same contour bends, sleeve thickness, apron/pocket, orange shirt, navy apron, olive trousers and cream shoes as Image4. Head/hair/facial features, peach forearms/hands and held props remain excluded. Keep continuous original body behind the separate forearm group and correct neck overlap. Use completely FLAT solid native filled shapes, NO shading, gradient, outline, border or antialias glow. Render this one complete headless body centered with generous margins on an intentionally OPAQUE perfectly uniform vivid magenta #ff00ff background, including all empty openings. Absolutely no transparency in this intermediate source. Background will be mechanically keyed; no magenta inside solid clothing. Do not draw character head or add any other objects. This is a precise repair, not a new pose or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-read-body-clean",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\read-body.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+            "sha256": "7d00b1f57aed4a8d14b269af11f9913699819b67cb46ed31257134ef5c2e62c9"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\read-body.png",
+            "sha256": "9162d2fd48463e99c8938192eba571d28471461803eaa4b5f834c14f7c6a1e82"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\native\\read-body.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/read-body-clean.png",
+      "nativeSha256": "872bcac9c9a35274348652d5a1e2fee3f63372ca04e7bf7d43e7af901a84921b",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        255,
+        255
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4ddd2aaa-4543-4d03-bf48-b2a7dbc0481d.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    },
+    {
+      "id": "read-body",
+      "brief": "docs/jo-motion-v1/read-body.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the headless stationary body: orange shirt and full connected sleeves, navy apron and cream pocket, olive trousers, both cream shoes. Preserve full original pose and natural collar/neck overlap. Exclude ALL head/hair/facial parts, peach forearms/hands, mug/book/cloth. Complete the continuous navy apron field behind the removed forearms/prop so separate group can overlap it. Preserve sleeve ends and torso width exactly. Do not narrow arms, change apron or shorten legs.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-read-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+            "sha256": "7d00b1f57aed4a8d14b269af11f9913699819b67cb46ed31257134ef5c2e62c9"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/read-body.png",
+      "nativeSha256": "9162d2fd48463e99c8938192eba571d28471461803eaa4b5f834c14f7c6a1e82",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-154ad20c-1237-459d-aadc-948c15c76337.png",
+      "status": "rejected",
+      "reason": "Rejected exterior glow/halo; superseded by opaque magenta cleanup."
+    },
+    {
+      "id": "read-gesture",
+      "brief": "docs/jo-motion-v1/read-gesture.json",
+      "prompt": "Use case: precise-object-edit. Asset: Horizons Jo animation component. Inputs1 R01 brand,2 R02 accepted recurring cast,3 R07 flat rendering are mandatory references, not content to reproduce. Input4 is the exact accepted Jo pose edit target. Preserve Jo: mature woman with warm peach skin, distinctive broad soft gray hair, navy rectangular glasses, gentle dark eyebrows, orange long-sleeve shirt, navy apron with cream pocket, olive trousers and cream shoes. Match the exact accepted silhouette, proportions, contour bends, grips, orientation and palette. No redesign, added anatomy, shading, outline, glow, gradient, background, labels or new objects. ONE component per image, fully opaque interiors, genuine transparency and generous transparent margins. No sprite sheet. ONLY the moving forearm/hand/prop group from this exact pose: Both peach forearms and hands gripping the accepted open navy book with cream pages, complete book. Remove orange upper sleeves, torso, apron, legs, head and all background. Preserve exact placement, hand thickness, object outline and grip geometry from target. Keep the two forearms as a disconnected group in their exact relative positions; do not combine them with new connecting anatomy. Generous invisible registration overlap at sleeve ends is allowed; retain original silhouette.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "jo-motion-v1-read-gesture",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/jo-motion-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/jo-motion-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/jo-motion-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png",
+            "sha256": "7d00b1f57aed4a8d14b269af11f9913699819b67cb46ed31257134ef5c2e62c9"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "actualReferencedImagePaths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-motion-v1\\baseline\\read.png"
+      ],
+      "nativeFile": "assets/art/jo-motion-v1/native/read-gesture.png",
+      "nativeSha256": "5e82e25298332b350564d741bd832786f35750c01163a0f5195d82d1b12db2bb",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "nativeAlphaExtrema": [
+        0,
+        254
+      ],
+      "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-1e805f39-298a-43e1-962a-75604134ebbb.png",
+      "status": "active-generated-source",
+      "reason": "Native output supplies registered active parts/material; reconstruction and actual-motion review required."
+    }
+  ],
+  "mechanicalPreparation": "tools/prepare-jo-motion.py",
+  "derivativesDisclosure": [
+    "Raw outputs preserve original bytes. Active parts are mechanical registrations, not untouched-native claims.",
+    "Opaque magenta intermediates are mechanically keyed; alpha glows remain rejected.",
+    "The permanent faceless field is generated opaque material within the accepted head exterior, with one uniform palette translation; no per-expression skin patches.",
+    "Original native gray hair/head geometry, neutral brows/mouth/pupils, glasses/nose preserve identity/joins.",
+    "Generated facial glyph components are registered separately; full head-expression swaps are never rendered."
+  ],
+  "qualityReports": [
+    "docs/jo-motion-v1/head-fidelity.json",
+    "reports/jo-head-fidelity.json",
+    "reports/jo-motion.json",
+    "reports/jo-motion-cache.json"
+  ],
+  "limits": [
+    "Reconstruction scores and automated masks do not establish visual identity.",
+    "Local synthetic QA does not establish physical-device/Safari/Firefox or independent human acceptance."
+  ]
+}

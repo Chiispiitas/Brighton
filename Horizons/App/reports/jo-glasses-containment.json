@@ -1,0 +1,181 @@
+{
+  "pass": true,
+  "cause": "The material-unmixed navy frame had fractional alpha, allowing the whites/eye features beneath it to show through.",
+  "fix": "Exact original navy frame core is fully opaque. Registered eye whites, pupils, blink strokes and only the eye portions of focus/joy are clipped to original visible eye apertures minus native rim pixels.",
+  "originalOpenTopPreserved": true,
+  "newFramesOrAnatomyDrawn": false,
+  "checks": [
+    {
+      "pose": "offer",
+      "navyFrameCorePixels": 668,
+      "frameCoreMinimumAlpha": 255,
+      "layers": {
+        "eyes": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "pupils": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "blink": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "focus": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "joy": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        }
+      },
+      "originalEyeBoxes": [
+        [
+          129,
+          64,
+          152,
+          89
+        ],
+        [
+          167,
+          73,
+          190,
+          97
+        ]
+      ],
+      "lensMask": "assets/art/jo-motion-v1/offer-lens-mask.png",
+      "frameCoreMask": "assets/art/jo-motion-v1/offer-frame-core-mask.png"
+    },
+    {
+      "pose": "read",
+      "navyFrameCorePixels": 728,
+      "frameCoreMinimumAlpha": 255,
+      "layers": {
+        "eyes": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "pupils": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "blink": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "focus": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "joy": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        }
+      },
+      "originalEyeBoxes": [
+        [
+          134,
+          73,
+          157,
+          98
+        ],
+        [
+          172,
+          83,
+          195,
+          108
+        ]
+      ],
+      "lensMask": "assets/art/jo-motion-v1/read-lens-mask.png",
+      "frameCoreMask": "assets/art/jo-motion-v1/read-frame-core-mask.png"
+    },
+    {
+      "pose": "pour",
+      "navyFrameCorePixels": 656,
+      "frameCoreMinimumAlpha": 255,
+      "layers": {
+        "eyes": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "pupils": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "blink": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "focus": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "joy": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        }
+      },
+      "originalEyeBoxes": [
+        [
+          115,
+          72,
+          139,
+          96
+        ],
+        [
+          153,
+          66,
+          176,
+          90
+        ]
+      ],
+      "lensMask": "assets/art/jo-motion-v1/pour-lens-mask.png",
+      "frameCoreMask": "assets/art/jo-motion-v1/pour-frame-core-mask.png"
+    },
+    {
+      "pose": "clap",
+      "navyFrameCorePixels": 688,
+      "frameCoreMinimumAlpha": 255,
+      "layers": {
+        "eyes": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "pupils": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "blink": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "focus": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        },
+        "joy": {
+          "outsideAcceptedEyeAperture": 0,
+          "underNavyFrameCore": 0
+        }
+      },
+      "originalEyeBoxes": [
+        [
+          113,
+          70,
+          137,
+          94
+        ],
+        [
+          153,
+          77,
+          176,
+          102
+        ]
+      ],
+      "lensMask": "assets/art/jo-motion-v1/clap-lens-mask.png",
+      "frameCoreMask": "assets/art/jo-motion-v1/clap-frame-core-mask.png"
+    }
+  ]
+}

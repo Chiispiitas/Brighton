@@ -1,0 +1,11 @@
+/* Only Jo's documented native-part rig opts into character motion. */
+.character[data-jo-motion]{overflow:visible}
+.jo-motion-stage{position:absolute;display:block;left:50%;bottom:1%;transform:translateX(-50%) scale(var(--jo-fit,0));transform-origin:50% 100%;pointer-events:none;overflow:visible}
+.jo-motion-group,.jo-motion-layer{position:absolute;display:block;inset:0;width:100%;height:100%;max-width:none;pointer-events:none}
+.jo-motion-head{z-index:0}
+.jo-motion-body{z-index:1}
+.jo-motion-gesture{z-index:2}
+/* Jo's shared forearm/hand/prop derivative remains in front of the fixed sleeves. */
+.jo-motion-face-mask,.jo-motion-pupil-mask{mask-size:100% 100%;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;-webkit-mask-repeat:no-repeat}
+.jo-motion-stage[hidden],.jo-motion-stage [hidden],.character[data-jo-motion]>.character-art[hidden]{display:none!important}
+@media(prefers-reduced-motion:reduce){.jo-motion-stage{display:none!important}}
