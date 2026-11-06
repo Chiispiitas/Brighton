@@ -528,3 +528,16 @@ async function boot() {
 }
 boot().catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Unable to open Horizons</h1><p>Check your connection and try again.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
 window.HorizonsApp={getState:()=>{const a=state.active,q=a?.questions?.[a.index];return{signedIn:Boolean(state.session),route:state.route,bookId:state.bookId,activity:a?.kind||null,activityId:a?.options?.activityId||null,options:a?.options?Object.fromEntries(['seed','mode','count','chunkIds','lessonIds','grammarSetIds','audioEnabled','audioFallbackQuestionIds'].filter(k=>a.options[k]!==undefined).map(k=>[k,a.options[k]])):null,index:a?.index??null,checked:Boolean(a?.checked),saved:Boolean(a?.saved),question:q?Object.fromEntries(['id','type','prompt','listening','listenFor','wordIds','originListening'].filter(k=>q[k]!==undefined).map(k=>[k,q[k]])):null};},reload:()=>boot()};
+
+// Track the visible area on browsers that overlay the keyboard on the layout viewport.
+function syncExerciseKeyboardViewport(){
+ const viewport=window.visualViewport;
+ const typing=document.activeElement?.matches('#typed-answer:not(:disabled)');
+ const keyboard=innerWidth<=760&&typing&&viewport&&innerHeight-viewport.height>100;
+ document.documentElement.classList.toggle('exercise-keyboard-open',Boolean(keyboard));
+ document.documentElement.style.setProperty('--exercise-visible-height',(viewport?.height||innerHeight)+'px');
+}
+window.visualViewport?.addEventListener('resize',syncExerciseKeyboardViewport);
+window.addEventListener('resize',syncExerciseKeyboardViewport);
+document.addEventListener('focusin',syncExerciseKeyboardViewport);
+document.addEventListener('focusout',()=>requestAnimationFrame(syncExerciseKeyboardViewport));
