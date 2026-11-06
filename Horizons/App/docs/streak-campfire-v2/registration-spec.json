@@ -1,0 +1,591 @@
+{
+  "width": 760,
+  "height": 560,
+  "headBox": [
+    31,
+    3,
+    209,
+    282
+  ],
+  "headScale": 0.8,
+  "parts": {
+    "torso": {
+      "source": "torso-clean-v3.png",
+      "size": [
+        126,
+        185
+      ],
+      "pivot": [
+        0.5,
+        0.8174157303370787
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -11,
+          -18,
+          -13
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          208,
+          171
+        ],
+        "skinOnly": true,
+        "alphaPreserved": true,
+        "mask": {
+          "greenLow": 110,
+          "greenHigh": 170
+        }
+      }
+    },
+    "leftUpperArm": {
+      "source": "upper-arm-left-chunky.png",
+      "sourceBox": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "size": [
+        37,
+        92
+      ],
+      "pivot": [
+        0.5380228136882129,
+        0.1476846057571965
+      ],
+      "end": [
+        0.4600760456273764,
+        0.8635794743429287
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -11,
+          -9,
+          -4
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          199,
+          162
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      },
+      "axisResize": [
+        36,
+        85
+      ],
+      "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence."
+    },
+    "rightUpperArm": {
+      "source": "upper-arm-right-chunky.png",
+      "sourceBox": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "size": [
+        37,
+        92
+      ],
+      "pivot": [
+        0.5438931297709924,
+        0.12815884476534295
+      ],
+      "end": [
+        0.4484732824427481,
+        0.8754512635379061
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -11,
+          -10,
+          -4
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          200,
+          162
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      },
+      "axisResize": [
+        39,
+        81
+      ],
+      "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence."
+    },
+    "leftForearm": {
+      "source": "forearm-left-chunky.png",
+      "size": [
+        37,
+        90
+      ],
+      "pivot": [
+        0.3965014577259475,
+        0.16043425814234016
+      ],
+      "end": [
+        0.6501457725947521,
+        0.8588661037394452
+      ],
+      "matteEdges": true,
+      "sourceBox": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -14,
+          -9
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          204,
+          167
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      },
+      "axisResize": [
+        42,
+        71
+      ],
+      "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence."
+    },
+    "rightForearm": {
+      "source": "forearm-right-chunky.png",
+      "size": [
+        31,
+        82
+      ],
+      "pivot": [
+        0.5441176470588235,
+        0.13825983313468415
+      ],
+      "end": [
+        0.3897058823529412,
+        0.8921334922526818
+      ],
+      "matteEdges": true,
+      "sourceBox": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -12,
+          -5
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          202,
+          163
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      },
+      "axisResize": [
+        41,
+        68
+      ],
+      "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence."
+    },
+    "leftPaw": {
+      "source": "paw-left.png",
+      "size": [
+        47,
+        48
+      ],
+      "pivot": [
+        0.5,
+        0.12
+      ],
+      "end": [
+        0.5,
+        0.56
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -10,
+          -2,
+          1
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          253,
+          192,
+          157
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightPaw": {
+      "source": "paw-right.png",
+      "size": [
+        46,
+        48
+      ],
+      "pivot": [
+        0.5,
+        0.12
+      ],
+      "end": [
+        0.5,
+        0.56
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -10,
+          -1,
+          2
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          253,
+          191,
+          156
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "skewer": {
+      "source": "skewer.png",
+      "size": [
+        290,
+        7
+      ],
+      "pivot": [
+        0.27586206896551724,
+        0.5
+      ],
+      "end": [
+        0.985,
+        0.5
+      ]
+    },
+    "marshmallow": {
+      "source": "marshmallow.png",
+      "size": [
+        37,
+        36
+      ],
+      "pivot": [
+        0.14,
+        0.55
+      ]
+    },
+    "leftLeg": {
+      "source": "leg-left.png",
+      "size": [
+        112,
+        133
+      ],
+      "pivot": [
+        0.72,
+        0.1
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -9,
+          -1,
+          0
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          252,
+          191,
+          158
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightLeg": {
+      "source": "leg-right.png",
+      "size": [
+        112,
+        133
+      ],
+      "pivot": [
+        0.3,
+        0.1
+      ],
+      "matteEdges": true,
+      "palette": {
+        "offset": [
+          -8,
+          1,
+          2
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          251,
+          189,
+          156
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "seat": {
+      "source": "seat.png",
+      "size": [
+        138,
+        99
+      ],
+      "x": 135,
+      "y": 430
+    },
+    "satchel": {
+      "source": "satchel.png",
+      "size": [
+        59,
+        48
+      ],
+      "pivot": [
+        0.72,
+        0.1
+      ]
+    },
+    "fireplace": {
+      "source": "fireplace.png",
+      "key": null,
+      "size": [
+        300,
+        260
+      ],
+      "x": 375,
+      "y": 270
+    },
+    "fireEmber": {
+      "source": "fireEmber.png",
+      "key": "magenta",
+      "size": [
+        112,
+        35
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "fireSmall": {
+      "source": "fireSmall.png",
+      "key": "magenta",
+      "size": [
+        112,
+        130
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "fireIgnite": {
+      "source": "fireIgnite.png",
+      "key": "magenta",
+      "size": [
+        112,
+        162
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "fireFull": {
+      "source": "fireFull.png",
+      "key": "magenta",
+      "size": [
+        112,
+        143
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "burstCompress": {
+      "source": "blast-compress.png",
+      "size": [
+        240,
+        100
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "burstPunch": {
+      "source": "blast-punch.png",
+      "size": [
+        250,
+        350
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "burstSplit": {
+      "source": "blast-split.png",
+      "size": [
+        320,
+        310
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    },
+    "burstSettle": {
+      "source": "blast-settle.png",
+      "size": [
+        270,
+        310
+      ],
+      "pivot": [
+        0.5,
+        0.985
+      ]
+    }
+  },
+  "anchors": {
+    "root": [
+      230,
+      410
+    ],
+    "neck": [
+      230,
+      292
+    ],
+    "leftShoulder": [
+      190,
+      312
+    ],
+    "rightShoulder": [
+      278,
+      312
+    ],
+    "leftHip": [
+      205,
+      410
+    ],
+    "rightHip": [
+      260,
+      410
+    ],
+    "leftGrip": [
+      271,
+      378
+    ],
+    "rightGrip": [
+      323,
+      382
+    ],
+    "skewerTip": [
+      528,
+      400
+    ],
+    "satchel": [
+      184,
+      394
+    ],
+    "leftBend": 1,
+    "rightBend": 1
+  },
+  "fireBase": [
+    530,
+    490
+  ],
+  "elbowBend": {
+    "left": 1,
+    "right": 1
+  },
+  "constructionReferenceOnly": {
+    "legacyPoseAnchors": {
+      "leftElbow": [
+        180,
+        355
+      ],
+      "rightElbow": [
+        294,
+        355
+      ],
+      "leftWrist": [
+        232,
+        361
+      ],
+      "rightWrist": [
+        283,
+        365
+      ]
+    },
+    "note": "Historical planning points only; actual elbow/wrist positions are solved from the complete upperarm + forearm + palm-grip chain. Not active runtime anchors."
+  },
+  "referenceProportions": {
+    "upperShaftTarget": 31,
+    "forearmShaftTarget": 30.5,
+    "palmTarget": 40,
+    "method": "Accepted exposed-arm greet/jump at matched cheek width (141px source to121px active); opaque shaft cross-section, not texture bounding box. Folded source sample52.4px excluded for merged adjacent skin."
+  }
+}

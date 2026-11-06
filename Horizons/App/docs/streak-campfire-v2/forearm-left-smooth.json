@@ -1,0 +1,16 @@
+{
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "transparent_background": false,
+  "asset_id": "pico-streak-v2-forearm-left-smooth",
+  "target_paths": [
+    "assets/art/streak-campfire-v2/native/forearm-left.png",
+    "assets/art/streak-campfire-v1/native/seated-reference.png"
+  ],
+  "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-LEFT LOWER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard."
+}

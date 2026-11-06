@@ -1,0 +1,25 @@
+{
+  "part": "upper-arm-left-context",
+  "prompt": "Create a family-friendly CARTOON PUPPET CONSTRUCTION PLATE on one fully opaque solid cyan #00ffff 1536x1024 canvas. Images1/2/3 are mandatory Horizons brand/cast/style references, Image4 exact Pico rabbit. LEFT THIRD: show a SMALL COMPLETE CLOTHED PICO, the familiar nonhuman peach rabbit with long ears, navy explorer shirt, magenta strap/bag and supported feet, copied in identity from Image4. This is visual context only and will be cropped away. RIGHT HALF: show ONE COMPLETE INDEPENDENT PUPPET PART, cleanly separated from the little rabbit by wide cyan empty space. The part belongs to that friendly cartoon rabbit, not realistic human anatomy. Keep all of the right-hand part including its rounded hidden joint caps fully inside x850..1450,y100..924; do not overlap context character or attach it to him. PART:  SCREEN-LEFT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer right. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4. The complete part on the RIGHT must be much larger than the context rabbit's corresponding part for accurate registration. No labels, arrows, diagrams, extra parts or outlines. Crisp flat opaque filled raster contours, no glow/texture/shadows/gradients. All empty space fully opaque cyan, no transparency.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+  ],
+  "preflight": "docs/streak-campfire-v2/upper-arm-left-context-preflight.json",
+  "native_path": "assets/art/streak-campfire-v2/native/upper-arm-left-context.png",
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-bdc86907-6a69-4f97-828d-11e41403d045.png",
+  "nativeSha256": "39ef6ca23c4bb0eee28b04080b787753134a9a5904c0b457aa3b039e1332fc15",
+  "transparent_background": false,
+  "keyBackground": "#00ffff",
+  "status": "user-rejected-superseded",
+  "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required. Context illustration on LEFT is never part of runtime artwork.",
+  "mechanicalContextCrop": [
+    768,
+    0,
+    1536,
+    1024
+  ],
+  "productionRole": "User rejected inflated visible shoulder/elbow balls; superseded by smooth complete segment."
+}

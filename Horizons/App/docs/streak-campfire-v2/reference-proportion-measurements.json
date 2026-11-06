@@ -1,0 +1,99 @@
+{
+  "source": "assets/art/cast-static-pico-v2.png",
+  "acceptedPoseManifest": "assets/art/manifest.json",
+  "headScale": 0.8,
+  "method": "Opaque peach shaft cross-section perpendicular to actual accepted exposed-arm direction; excludes clothing and full-pose bounding boxes.",
+  "samples": [
+    {
+      "pose": "greet",
+      "segment": "leftUpper",
+      "nativeCentre": [
+        55,
+        310
+      ],
+      "nativeNormal": [
+        -0.7136840884914969,
+        -0.7004677164823951
+      ],
+      "nativeOpaqueSkinWidth": 34.3,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 27.44
+    },
+    {
+      "pose": "greet",
+      "segment": "leftFore",
+      "nativeCentre": [
+        55,
+        355
+      ],
+      "nativeNormal": [
+        -0.6681253736178797,
+        0.7440487115290024
+      ],
+      "nativeOpaqueSkinWidth": 37.4,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 29.92
+    },
+    {
+      "pose": "greet",
+      "segment": "rightUpper",
+      "nativeCentre": [
+        169,
+        312
+      ],
+      "nativeNormal": [
+        -0.9503971290446889,
+        0.3110390604146254
+      ],
+      "nativeOpaqueSkinWidth": 65.5,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 52.4
+    },
+    {
+      "pose": "greet",
+      "segment": "rightFore",
+      "nativeCentre": [
+        193,
+        304
+      ],
+      "nativeNormal": [
+        0.7709617516270895,
+        0.6368814469962913
+      ],
+      "nativeOpaqueSkinWidth": 35.0,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 28.0
+    },
+    {
+      "pose": "jump",
+      "segment": "leftArm",
+      "nativeCentre": [
+        86,
+        279
+      ],
+      "nativeNormal": [
+        0.627525283230768,
+        -0.7785961847492862
+      ],
+      "nativeOpaqueSkinWidth": 38.6,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 30.88
+    },
+    {
+      "pose": "jump",
+      "segment": "rightArm",
+      "nativeCentre": [
+        213,
+        280
+      ],
+      "nativeNormal": [
+        0.5594728550010625,
+        0.8288486740756481
+      ],
+      "nativeOpaqueSkinWidth": 38.8,
+      "matchedHeadScale": 0.8,
+      "displayWidth": 31.04
+    }
+  ],
+  "scope": "Historical exploratory0.8 scaling only, superseded by face-size-matched report in reports/streak-v2-reference-proportions.json. Exclude52.4px folded upper-arm sample: merged/oblique adjacent skin, not isolated shaft. Do not average it."
+}

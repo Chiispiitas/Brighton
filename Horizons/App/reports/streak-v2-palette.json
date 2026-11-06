@@ -1,0 +1,277 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "part": "torso",
+      "skinPixels": 1507,
+      "sourceMedian": [
+        254,
+        208,
+        171
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 14086,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "leftUpperArm",
+      "skinPixels": 2324,
+      "sourceMedian": [
+        254,
+        199,
+        162
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "rightUpperArm",
+      "skinPixels": 2287,
+      "sourceMedian": [
+        254,
+        200,
+        162
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "leftForearm",
+      "skinPixels": 1887,
+      "sourceMedian": [
+        254,
+        204,
+        167
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "rightForearm",
+      "skinPixels": 1908,
+      "sourceMedian": [
+        254,
+        202,
+        163
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "leftPaw",
+      "skinPixels": 1522,
+      "sourceMedian": [
+        253,
+        192,
+        157
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "rightPaw",
+      "skinPixels": 1554,
+      "sourceMedian": [
+        253,
+        191,
+        156
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "leftLeg",
+      "skinPixels": 6174,
+      "sourceMedian": [
+        252,
+        191,
+        158
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    },
+    {
+      "part": "rightLeg",
+      "skinPixels": 7256,
+      "sourceMedian": [
+        251,
+        189,
+        156
+      ],
+      "actualFilteredMedian": [
+        243,
+        190,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "maxMedianError": 0,
+      "maxAlphaDifference": 0,
+      "garmentPixels": 0,
+      "maxGarmentRgbDifference": 0,
+      "pass": true,
+      "actualFilterCaptured": true
+    }
+  ],
+  "scope": "Actual runtime SVG filter definitions captured and rasterized at native intrinsic dimensions; native PNGs and alpha geometry are unchanged.",
+  "sourceBinding": [
+    {
+      "file": "src/streak-celebration.js",
+      "sha256": "0e9d87badc700427811290fcf1d776ddfdf1066aaee164f6df4c707baa028b6c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rigs.json",
+      "sha256": "1594e4f82698060e5b0b938647499c0aceb13e97b8ed93f72b30b869167fcf1b"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/torso.png",
+      "sha256": "52b0973b35b864d20dfa2212c3b687b920e1756ac9323cd21dce0b4113f48d12"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftUpperArm.png",
+      "sha256": "a41ec628555abbd084558ed80f744a4b566aa4ddc00ce1ee6249ef9e675c83d9"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightUpperArm.png",
+      "sha256": "5938423ed448230be53d433d2a21fb0cd46d90bf7184dab6000112bfc5d27df4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftForearm.png",
+      "sha256": "f65dbb1bfd7c49394cb3776304a609b4514e81c7255a71612b2408174bd2162e"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightForearm.png",
+      "sha256": "6014cc46b655b5f81d00444a957073eaa87b7cb0d5ce87e124a57ebadf6510b0"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftPaw.png",
+      "sha256": "df88e7fed984aee852f763feb6e134fd64ba10c9fd864197692a17a043cdff8f"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightPaw.png",
+      "sha256": "d84eeaf8b485fb2aa5e4d6e82c2bbd758fc9a9ed1f4361ccb5e95687c0cb2855"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftLeg.png",
+      "sha256": "61016b087a6db34d87021ddccbcd00b5b3c1cc54648fdde339838f46d35c69e5"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightLeg.png",
+      "sha256": "9915973dbeecfbee09923d6e3833bdb7f699cef9c340edb2364cab576a446a8b"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "targetMedian": [
+    243,
+    190,
+    158
+  ],
+  "method": "Accepted full-size native head opaque peach pixel median; independent permanent runtime sRGB offsets with source-alpha proportional bias. Complete source PNG and alpha shape unchanged; torso garment identity preserved through native green-channel mask. Registered source medians recomputed after final reference-derived proportion correction.",
+  "parts": {
+    "torso": {
+      "sourceMedian": [
+        254,
+        208,
+        171
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -11,
+        -18,
+        -13
+      ],
+      "opaqueSkinPixels": 1507,
+      "registeredSha256": "52b0973b35b864d20dfa2212c3b687b920e1756ac9323cd21dce0b4113f48d12"
+    },
+    "leftUpperArm": {
+      "sourceMedian": [
+        254,
+        199,
+        162
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -11,
+        -9,
+        -4
+      ],
+      "opaqueSkinPixels": 2324,
+      "registeredSha256": "a41ec628555abbd084558ed80f744a4b566aa4ddc00ce1ee6249ef9e675c83d9"
+    },
+    "rightUpperArm": {
+      "sourceMedian": [
+        254,
+        200,
+        162
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -11,
+        -10,
+        -4
+      ],
+      "opaqueSkinPixels": 2287,
+      "registeredSha256": "5938423ed448230be53d433d2a21fb0cd46d90bf7184dab6000112bfc5d27df4"
+    },
+    "leftForearm": {
+      "sourceMedian": [
+        254,
+        204,
+        167
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -11,
+        -14,
+        -9
+      ],
+      "opaqueSkinPixels": 1887,
+      "registeredSha256": "f65dbb1bfd7c49394cb3776304a609b4514e81c7255a71612b2408174bd2162e"
+    },
+    "rightForearm": {
+      "sourceMedian": [
+        254,
+        202,
+        163
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -11,
+        -12,
+        -5
+      ],
+      "opaqueSkinPixels": 1908,
+      "registeredSha256": "6014cc46b655b5f81d00444a957073eaa87b7cb0d5ce87e124a57ebadf6510b0"
+    },
+    "leftPaw": {
+      "sourceMedian": [
+        253,
+        192,
+        157
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -10,
+        -2,
+        1
+      ],
+      "opaqueSkinPixels": 1522,
+      "registeredSha256": "df88e7fed984aee852f763feb6e134fd64ba10c9fd864197692a17a043cdff8f"
+    },
+    "rightPaw": {
+      "sourceMedian": [
+        253,
+        191,
+        156
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -10,
+        -1,
+        2
+      ],
+      "opaqueSkinPixels": 1554,
+      "registeredSha256": "d84eeaf8b485fb2aa5e4d6e82c2bbd758fc9a9ed1f4361ccb5e95687c0cb2855"
+    },
+    "leftLeg": {
+      "sourceMedian": [
+        252,
+        191,
+        158
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -9,
+        -1,
+        0
+      ],
+      "opaqueSkinPixels": 6174,
+      "registeredSha256": "61016b087a6db34d87021ddccbcd00b5b3c1cc54648fdde339838f46d35c69e5"
+    },
+    "rightLeg": {
+      "sourceMedian": [
+        251,
+        189,
+        156
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "offset": [
+        -8,
+        1,
+        2
+      ],
+      "opaqueSkinPixels": 7256,
+      "registeredSha256": "9915973dbeecfbee09923d6e3833bdb7f699cef9c340edb2364cab576a446a8b"
+    }
+  }
+}

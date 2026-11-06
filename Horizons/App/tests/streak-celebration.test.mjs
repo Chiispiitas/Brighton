@@ -45,8 +45,10 @@ test('calendar has seven short labels, active marks and no future missed-practic
  assert.match(html,/Friday 2026-11-06, practiced, today/);
  assert.match(html,/Saturday 2026-11-07"/);
  assert.doesNotMatch(html,/Saturday 2026-11-07, no practice/);
- assert.match(html,/roast-reconstruction\.png/);
+ assert.match(html,/startup\.png/);
  assert.doesNotMatch(html,/reduced\.png/,'Normal first paint starts in the roast pose');
  assert.match(html,/data-action="streak-results"/);
- assert.doesNotMatch(html,/data-action="streak-results"[^>]*disabled/);
+ assert.match(html,/data-action="streak-results"[^>]*hidden disabled/);
+ assert.match(html,/role="progressbar"[^>]*aria-valuenow="0"/);
+ assert.match(html,/streak-campfire-v2/);
 });

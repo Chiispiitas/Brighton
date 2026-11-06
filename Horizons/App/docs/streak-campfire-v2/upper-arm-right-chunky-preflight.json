@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "asset_id": "pico-streak-v2-upper-arm-right-chunky",
+  "input_count": 5,
+  "input_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-smooth.png"
+  ],
+  "inputs": [
+    {
+      "role": "reference",
+      "id": "R01",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "role": "reference",
+      "id": "R02",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "role": "reference",
+      "id": "R07",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+    },
+    {
+      "role": "edit target",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+      "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+    },
+    {
+      "role": "edit target",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-smooth.png",
+      "sha256": "882c5641fec794e82882aa7c550b9b611c137c64d39d4e42c2b481ebedd05c42"
+    }
+  ],
+  "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+}

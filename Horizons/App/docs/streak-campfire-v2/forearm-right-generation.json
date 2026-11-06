@@ -1,0 +1,19 @@
+{
+  "part": "forearm-right",
+  "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-RIGHT lower forelimb component for Pico, a thick rounded peach cartoon puppet connector. Complete rounded elbow cap at TOP and rounded wrist cap at BOTTOM, with generous concealed overlap on both ends. Straight vertical neutral long-axis; approximately 2.0 times as long as wide, gently tapering toward wrist. No attached paw, digits, torso, head, stick or other objects. Match the reference rabbit's simple generous rounded forelimb style, not realistic human anatomy.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+  ],
+  "preflight": "docs/streak-campfire-v2/forearm-right-preflight.json",
+  "native_path": "assets/art/streak-campfire-v2/native/forearm-right.png",
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ab704d75-2a77-44f8-8930-101c7ef26f2b.png",
+  "nativeSha256": "12914f109d82321b15cb905cb8fbfd1a887b5c55ec164711553a506d8e9dbe8d",
+  "transparent_background": false,
+  "keyBackground": "#00ffff",
+  "status": "user-rejected-superseded",
+  "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required.",
+  "productionRole": "User rejected inflated visible elbow/wrist balls; superseded by smooth complete segment."
+}

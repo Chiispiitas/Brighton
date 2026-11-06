@@ -1,0 +1,146 @@
+{
+  "userRequestedChunkyOriginalPicoProportions": true,
+  "method": "Physical shaft/palm cross-section, not curved bounding box. Controlled axis resize retains complete native material; no drawing/truncation.",
+  "parts": [
+    {
+      "part": "leftUpperArm",
+      "nativeSize": [
+        263,
+        799
+      ],
+      "nativeShaftWidth": 224.0,
+      "nativeCapCenters": [
+        [
+          141.5,
+          118.0
+        ],
+        [
+          121.0,
+          690.0
+        ]
+      ],
+      "registeredSize": [
+        56,
+        85
+      ],
+      "axisScale": [
+        0.21292775665399238,
+        0.10638297872340426
+      ],
+      "targetShaftWidth": 48,
+      "targetBone": 61
+    },
+    {
+      "part": "rightUpperArm",
+      "nativeSize": [
+        262,
+        831
+      ],
+      "nativeShaftWidth": 209.0,
+      "nativeCapCenters": [
+        [
+          142.5,
+          106.5
+        ],
+        [
+          117.5,
+          727.5
+        ]
+      ],
+      "registeredSize": [
+        60,
+        81
+      ],
+      "axisScale": [
+        0.22900763358778625,
+        0.09747292418772563
+      ],
+      "targetShaftWidth": 48,
+      "targetBone": 61
+    },
+    {
+      "part": "leftForearm",
+      "nativeSize": [
+        343,
+        829
+      ],
+      "nativeShaftWidth": 247.0,
+      "nativeCapCenters": [
+        [
+          136.0,
+          133.0
+        ],
+        [
+          223.0,
+          712.0
+        ]
+      ],
+      "registeredSize": [
+        58,
+        71
+      ],
+      "axisScale": [
+        0.16909620991253643,
+        0.0856453558504222
+      ],
+      "targetShaftWidth": 42,
+      "targetBone": 52
+    },
+    {
+      "part": "rightForearm",
+      "nativeSize": [
+        272,
+        839
+      ],
+      "nativeShaftWidth": 204.0,
+      "nativeCapCenters": [
+        [
+          148.0,
+          116.0
+        ],
+        [
+          106.0,
+          748.5
+        ]
+      ],
+      "registeredSize": [
+        56,
+        68
+      ],
+      "axisScale": [
+        0.20588235294117646,
+        0.08104886769964244
+      ],
+      "targetShaftWidth": 42,
+      "targetBone": 52
+    },
+    {
+      "part": "leftPaw",
+      "nativeSize": [
+        607,
+        615
+      ],
+      "nativePalmWidth": 577.0,
+      "registeredFit": [
+        45,
+        46
+      ],
+      "targetPalmWidth": 43
+    },
+    {
+      "part": "rightPaw",
+      "nativeSize": [
+        609,
+        635
+      ],
+      "nativePalmWidth": 547.2,
+      "registeredFit": [
+        48,
+        50
+      ],
+      "targetPalmWidth": 43
+    }
+  ],
+  "status": "user-rejected-registration",
+  "reason": "User rejected 48/42px overwide arms as off-model. Complete latest native outputs are retained and reused at final reference-derived31/30.5px shaft targets and40px palms."
+}

@@ -1,0 +1,1797 @@
+{
+  "date": "2026-11-06",
+  "tool": "built-in ImageGen",
+  "userRejectedV1": true,
+  "completeHiddenMaterial": true,
+  "perComponentGeneration": true,
+  "nativeOutputs": 26,
+  "userRejectedNativeOutputs": [
+    "forearm-left",
+    "forearm-left-smooth",
+    "forearm-right",
+    "forearm-right-smooth",
+    "torso",
+    "upper-arm-left-context",
+    "upper-arm-left-smooth",
+    "upper-arm-right-context",
+    "upper-arm-right-smooth"
+  ],
+  "generationAttempts": 28,
+  "generationFailuresWithoutOutput": 2,
+  "records": [
+    {
+      "id": "blast-compress",
+      "recordFile": "docs/streak-campfire-v2/blast-compress-generation.json",
+      "part": "blast-compress",
+      "prompt": "Horizons separately authored fire-burst animation frame. Images1/2/3 mandatory brand/cast/style references only; Image4 exact hearth is context. Return ONLY ONE native FIRE EFFECT FRAME, no hearth/logs/characters/room/text. FRAME1 ANTICIPATION: compressed broad low orange/coral fire at the shared base, three little pointed tongues, small gold core; about2.5times wider than tall. No particles. Use flat confident geometric solid orange/coral and gold shapes, clean filled contours, fully opaque interiors. No glow, smoke, lighting, texture, gradient, blur or shadows. Whole frame centred uncropped on deliberately FULLY OPAQUE SOLID CYAN #00ffff background with generous margins, no transparency/checkerboard. Frame will be keyed as disclosed mechanical derivative. This large flame blast must be allowed to project above the hearth, not be confined to its little arch.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/blast-compress-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/blast-compress.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6a53c99c-2a0b-48ef-bf3c-eb0e006aebcd.png",
+      "nativeSha256": "fa161a5a78799d12db98c0ed096258dbdfcff2cffd71e5b2a69033028ab84815",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete opaque native fire frame; registered burst/occlusion review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-blast-compress",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "blast-punch",
+      "recordFile": "docs/streak-campfire-v2/blast-punch-generation.json",
+      "part": "blast-punch",
+      "prompt": "Horizons separately authored fire-burst animation frame. Images1/2/3 mandatory brand/cast/style references only; Image4 exact hearth is context. Return ONLY ONE native FIRE EFFECT FRAME, no hearth/logs/characters/room/text. FRAME2 IGNITION PUNCH: an explosive tall orange/coral fire plume shooting UP from one compact base. Strong tapered middle tongue, two sharp swept side tongues and golden/cream heart. Height about2.2times base width. A few distinct solid orange burst flecks near the very top belong to this one frame. Energetic graphic fire blast, not a calm candle. Use flat confident geometric solid orange/coral and gold shapes, clean filled contours, fully opaque interiors. No glow, smoke, lighting, texture, gradient, blur or shadows. Whole frame centred uncropped on deliberately FULLY OPAQUE SOLID CYAN #00ffff background with generous margins, no transparency/checkerboard. Frame will be keyed as disclosed mechanical derivative. This large flame blast must be allowed to project above the hearth, not be confined to its little arch.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/blast-punch-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/blast-punch.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9cc2da24-96d2-4059-a527-c4475bb7687a.png",
+      "nativeSha256": "481c720720e1a7195109640cf027d92d16751e3a16db94698ff0b514b720efcc",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete opaque native fire frame; burst/occlusion review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-blast-punch",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "blast-settle",
+      "recordFile": "docs/streak-campfire-v2/blast-settle-generation.json",
+      "part": "blast-settle",
+      "prompt": "Horizons separately authored fire-burst animation frame. Images1/2/3 mandatory brand/cast/style references only; Image4 exact hearth is context. Return ONLY ONE native FIRE EFFECT FRAME, no hearth/logs/characters/room/text. FRAME4 FOLLOW THROUGH: the energetic orange/coral plume bends to the RIGHT with a curled top tongue, two smaller left tongues and golden/cream core, a few falling orange flecks. Same compact centred bottom base. Height about1.8times base width; clean graphic shape, still full of energy. Use flat confident geometric solid orange/coral and gold shapes, clean filled contours, fully opaque interiors. No glow, smoke, lighting, texture, gradient, blur or shadows. Whole frame centred uncropped on deliberately FULLY OPAQUE SOLID CYAN #00ffff background with generous margins, no transparency/checkerboard. Frame will be keyed as disclosed mechanical derivative. This large flame blast must be allowed to project above the hearth, not be confined to its little arch.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/blast-settle-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/blast-settle.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4441dca6-27f8-4f60-8abf-e6a1e72d1f18.png",
+      "nativeSha256": "48a71a3df40f0b403e9af844d54a57b8eeb7b648429a317e8fc62b9bb886e88d",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete opaque native fire frame; registered burst/occlusion review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-blast-settle",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "blast-split",
+      "recordFile": "docs/streak-campfire-v2/blast-split-generation.json",
+      "part": "blast-split",
+      "prompt": "Horizons separately authored fire-burst animation frame. Images1/2/3 mandatory brand/cast/style references only; Image4 exact hearth is context. Return ONLY ONE native FIRE EFFECT FRAME, no hearth/logs/characters/room/text. FRAME3 EXPANSION: a wide dramatic branching fire burst with a big central tongue and two broad hooked side tongues, gold core and a few solid isolated orange sparks. Bottom stays one compact base, upper silhouette spreads strongly sideways. Height about1.6times base width. Clearly different from the straight ignition punch. Use flat confident geometric solid orange/coral and gold shapes, clean filled contours, fully opaque interiors. No glow, smoke, lighting, texture, gradient, blur or shadows. Whole frame centred uncropped on deliberately FULLY OPAQUE SOLID CYAN #00ffff background with generous margins, no transparency/checkerboard. Frame will be keyed as disclosed mechanical derivative. This large flame blast must be allowed to project above the hearth, not be confined to its little arch.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/blast-split-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/blast-split.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6f3be0ab-ccf4-438e-8833-907ff1006898.png",
+      "nativeSha256": "452de07d583751cd6b9ae1ae4eb8081a3cec7066bdaf2c8200037c9db9520149",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete opaque native fire frame; burst/occlusion review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-blast-split",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-left-chunky",
+      "recordFile": "docs/streak-campfire-v2/forearm-left-chunky-generation.json",
+      "part": "forearm-left-chunky",
+      "prompt": "Horizons friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE. Image1/2/3 are mandatory brand/cast/style references. Image4 ORIGINAL ACCEPTED PICO is the AUTHORITATIVE POSITIVE reference: match his substantial soft peach arm/paw volume and simple rounded filled shapes. Image5 the prior isolated segment is a NEGATIVE THICKNESS reference only: it is TOO SKINNY and must NOT guide thickness or proportions. Create a1536x1024 fully opaque solid CYAN #00ffff construction plate. LEFT THIRD: a small complete clothed Pico from Image4 solely as identity/context, not a new runtime character. RIGHT HALF: ONE independent COMPLETE SCREEN-LEFT LOWER FORELIMB: generous soft broad cartoon mass, approximately40\u201344pixels WIDE for94pixels COMPLETE HEIGHT at final scale (the full hidden rounded caps included); taper gently to a still-substantial32\u201336pixel wrist. Short stout full forelimb, never a narrow rod. Both elbow and wrist ends continue the local thick shaft width. Keep the component completely within x850..1450,y90..930 with wide empty cyan separation from the context figure. The part should read CHUNKY, plush and expressive like the accepted original Pico's arms, not thin rubber tubing, a noodle, stick, or realistic human limb. Strong consistent volume along its entire smooth almost-straight outline. Keep centre-line sideways drift under10percent of shaft width: DO NOT add a pronounced C curve that makes the bounding box wide while the actual limb shaft stays skinny. The stated width means the ACTUAL SHAFT thickness, not empty-space-inclusive bounds. Full concealed proximal and distal overlap material is present. Rounded ends must stay the SAME WIDTH AS THE ADJACENT SHAFT: no separate spheres, inflated knobs, dumbbell heads, balls, joint discs or rings. No attached paw/digits, torso, prop, extra parts or text on the RIGHT. Large full native component, no cropping. Use warm peach matching Image4, confident flat opaque raster filled shapes, no white/cyan outlines, highlights, lighting, texture, gradients, shadows or glow. Opaque cyan empty space, no transparency/checkerboard. LEFT context will be cropped away mechanically; do not overlap it with the right-hand component.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left-smooth.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-left-chunky-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-left-chunky.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4f60770c-8a43-4994-866b-1da6e0e5c212.png",
+      "nativeSha256": "31da8e2bfd81060c646c88e635f1020be0222e8a0e2a74e4db83f2da1c47c5d6",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "review": "Root reviewed complete new native part with no inflated joint ends; actual chunky shaft proportions require whole-component axis registration and final body review.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-left-chunky",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left-smooth.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left-smooth.png",
+            "sha256": "71df7e045937383e7a56822f585a5144ac59cf80a34e28ab7e84c4db62824bda"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-left",
+      "recordFile": "docs/streak-campfire-v2/forearm-left-generation.json",
+      "part": "forearm-left",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-LEFT lower forelimb component for Pico, a thick rounded peach cartoon puppet connector. Complete rounded elbow cap at TOP and rounded wrist cap at BOTTOM, with generous concealed overlap on both ends. Straight vertical neutral long-axis; approximately 2.0 times as long as wide, gently tapering toward wrist. No attached paw, digits, torso, head, stick or other objects. Match the reference rabbit's simple generous rounded forelimb style, not realistic human anatomy.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-left-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-left.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-30b44560-fff9-4581-aff1-be1d79a98d16.png",
+      "nativeSha256": "1f92910ffbe629285119473551ee80d60214f7c55dfc248deb80a7e9bfa8b76b",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required.",
+      "productionRole": "User rejected inflated visible elbow/wrist balls; superseded by smooth complete segment.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-left",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-left-smooth",
+      "recordFile": "docs/streak-campfire-v2/forearm-left-smooth-generation.json",
+      "part": "forearm-left-smooth",
+      "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-LEFT LOWER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-left-smooth-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-left-smooth.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4ab59572-b400-44b5-bc86-b82553767018.png",
+      "nativeSha256": "71df7e045937383e7a56822f585a5144ac59cf80a34e28ab7e84c4db62824bda",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected off-model skimpy arms; superseded by complete native component with measured reference registration.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-left-smooth",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-left.png",
+            "sha256": "1f92910ffbe629285119473551ee80d60214f7c55dfc248deb80a7e9bfa8b76b"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-right-chunky",
+      "recordFile": "docs/streak-campfire-v2/forearm-right-chunky-generation.json",
+      "part": "forearm-right-chunky",
+      "prompt": "Horizons friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE. Image1/2/3 are mandatory brand/cast/style references. Image4 ORIGINAL ACCEPTED PICO is the AUTHORITATIVE POSITIVE reference: match his substantial soft peach arm/paw volume and simple rounded filled shapes. Image5 the prior isolated segment is a NEGATIVE THICKNESS reference only: it is TOO SKINNY and must NOT guide thickness or proportions. Create a1536x1024 fully opaque solid CYAN #00ffff construction plate. LEFT THIRD: a small complete clothed Pico from Image4 solely as identity/context, not a new runtime character. RIGHT HALF: ONE independent COMPLETE SCREEN-RIGHT LOWER FORELIMB: generous soft broad cartoon mass, approximately40\u201344pixels WIDE for94pixels COMPLETE HEIGHT at final scale (the full hidden rounded caps included); taper gently to a still-substantial32\u201336pixel wrist. Short stout full forelimb, never a narrow rod. Both elbow and wrist ends continue the local thick shaft width. Keep the component completely within x850..1450,y90..930 with wide empty cyan separation from the context figure. The part should read CHUNKY, plush and expressive like the accepted original Pico's arms, not thin rubber tubing, a noodle, stick, or realistic human limb. Strong consistent volume along its entire smooth almost-straight outline. Keep centre-line sideways drift under10percent of shaft width: DO NOT add a pronounced C curve that makes the bounding box wide while the actual limb shaft stays skinny. The stated width means the ACTUAL SHAFT thickness, not empty-space-inclusive bounds. Full concealed proximal and distal overlap material is present. Rounded ends must stay the SAME WIDTH AS THE ADJACENT SHAFT: no separate spheres, inflated knobs, dumbbell heads, balls, joint discs or rings. No attached paw/digits, torso, prop, extra parts or text on the RIGHT. Large full native component, no cropping. Use warm peach matching Image4, confident flat opaque raster filled shapes, no white/cyan outlines, highlights, lighting, texture, gradients, shadows or glow. Opaque cyan empty space, no transparency/checkerboard. LEFT context will be cropped away mechanically; do not overlap it with the right-hand component.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right-smooth.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-right-chunky-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-right-chunky.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-28516cee-ea05-4870-9ed4-2a28371625a5.png",
+      "nativeSha256": "5ee5b345726c94859cfc93492c5c44a648f717b5a84d33bd9eefaec7e3f2234f",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "review": "Root reviewed complete new native part with no inflated joint ends; actual chunky shaft proportions require whole-component axis registration and final body review.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-right-chunky",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right-smooth.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right-smooth.png",
+            "sha256": "b0b2400fc7f53fbc003d4834ae4756b08c41405fa82e648c67636b48ab28d3a6"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-right",
+      "recordFile": "docs/streak-campfire-v2/forearm-right-generation.json",
+      "part": "forearm-right",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-RIGHT lower forelimb component for Pico, a thick rounded peach cartoon puppet connector. Complete rounded elbow cap at TOP and rounded wrist cap at BOTTOM, with generous concealed overlap on both ends. Straight vertical neutral long-axis; approximately 2.0 times as long as wide, gently tapering toward wrist. No attached paw, digits, torso, head, stick or other objects. Match the reference rabbit's simple generous rounded forelimb style, not realistic human anatomy.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-right-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-right.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ab704d75-2a77-44f8-8930-101c7ef26f2b.png",
+      "nativeSha256": "12914f109d82321b15cb905cb8fbfd1a887b5c55ec164711553a506d8e9dbe8d",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required.",
+      "productionRole": "User rejected inflated visible elbow/wrist balls; superseded by smooth complete segment.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-right",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "forearm-right-smooth",
+      "recordFile": "docs/streak-campfire-v2/forearm-right-smooth-generation.json",
+      "part": "forearm-right-smooth",
+      "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-RIGHT LOWER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/forearm-right-smooth-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/forearm-right-smooth.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-171774ca-924c-448a-90f9-388ead1c8a16.png",
+      "nativeSha256": "b0b2400fc7f53fbc003d4834ae4756b08c41405fa82e648c67636b48ab28d3a6",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected off-model skimpy arms; superseded by complete native component with measured reference registration.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-forearm-right-smooth",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right.png",
+            "sha256": "12914f109d82321b15cb905cb8fbfd1a887b5c55ec164711553a506d8e9dbe8d"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "leg-left",
+      "recordFile": "docs/streak-campfire-v2/leg-left-generation.json",
+      "part": "leg-left",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE complete SCREEN-LEFT peach rabbit LEG/FOOT component for the seated Pico. Complete broad rounded hip/thigh cap at TOP, smooth full shin, and the full long flat rabbit foot with rounded toe pointing LEFT at BOTTOM. Same familiar long peach limbs/feet as Image4, not human toes. Keep the full hidden upper thigh that will overlap behind the separate torso; no truncated knee, no missing heel. Neutral seated-support silhouette with a gentle bent knee and foot supported at ground level. No torso, shorts, second leg, stool, arms or head.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/leg-left-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/leg-left.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-93c575d4-e2bb-4a41-a6c5-c32c1a45616f.png",
+      "nativeSha256": "82e1e099a7a6a91ec739cf038359fe04bbc841bb236a61c590566a6ce02d76ee",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-leg-left",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "leg-right",
+      "recordFile": "docs/streak-campfire-v2/leg-right-generation.json",
+      "part": "leg-right",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE complete SCREEN-RIGHT peach rabbit LEG/FOOT component for the seated Pico. Complete broad rounded hip/thigh cap at TOP, smooth full shin, and the full long flat rabbit foot with rounded toe pointing RIGHT at BOTTOM. Same familiar long peach limbs/feet as Image4, not human toes. Keep the full hidden upper thigh that will overlap behind the separate torso; no truncated knee, no missing heel. Neutral seated-support silhouette with a gentle bent knee and foot supported at ground level. No torso, shorts, second leg, stool, arms or head.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/leg-right-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/leg-right.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ac80dc56-3ba1-47a1-8849-9ab7c1554438.png",
+      "nativeSha256": "8337e67d550e3c42215e423b9ba93d5d0a10ebb17e9508e2cac2a14750cb26c9",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-leg-right",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "marshmallow",
+      "recordFile": "docs/streak-campfire-v2/marshmallow-generation.json",
+      "part": "marshmallow",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE separate white/cream MARSHMALLOW, a soft rounded cube in a simple front/three-quarter view. Complete unbitten opaque silhouette, no skewering hole/cutout because it will be anchored onto a separate stick behind it. A small warm cream side plane is okay but no gradient/shadow or realistic texture. No stick, paws, fire, face or other objects. Full white silhouette must remain opaque, matching Image4's simple marshmallow.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/marshmallow-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/marshmallow.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e11b787d-93ba-44fc-97a9-3f609cfc372c.png",
+      "nativeSha256": "547cf8cd020824305f394c2db873dcdc901ce1669d623340e11f31e1bdde6f74",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-marshmallow",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "paw-left",
+      "recordFile": "docs/streak-campfire-v2/paw-left-generation.json",
+      "part": "paw-left",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-LEFT peach cartoon rabbit gripping PAW for Pico. Complete round palm silhouette with a small integrated rounded thumb curl, a short rounded wrist overlap at TOP, and concealed back-of-paw material fully filled. Front/three-quarter view like Image4, friendly mitten-like hand with no detailed fingers/nails. Shape should clearly be able to grasp a thin skewer horizontally through the palm centre, but DO NOT include any skewer or prop: that will be a separate sprite behind this paw. One complete paw only, no arm/torso/head/other objects.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/paw-left-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/paw-left.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8871ab94-5d8e-4e58-af15-1bc97bca5494.png",
+      "nativeSha256": "435163f10e906490b50d0adedd6835935ff99a988f957c8a4b63f67c14b63d26",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-paw-left",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "paw-right",
+      "recordFile": "docs/streak-campfire-v2/paw-right-generation.json",
+      "part": "paw-right",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-RIGHT peach cartoon rabbit gripping PAW for Pico. Complete round palm silhouette with a small integrated rounded thumb curl, a short rounded wrist overlap at TOP, and concealed back-of-paw material fully filled. Front/three-quarter view like Image4, friendly mitten-like hand with no detailed fingers/nails. Shape should clearly be able to grasp a thin skewer horizontally through the palm centre, but DO NOT include any skewer or prop: that will be a separate sprite behind this paw. One complete paw only, no arm/torso/head/other objects.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/paw-right-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/paw-right.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e9fca2b3-b4c9-4fb6-ae4e-3aa5eec8725d.png",
+      "nativeSha256": "6f916a1b155233688671593e06cf0cf4e1d41bbfd355f887bbe92a2e318e5c58",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-paw-right",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "satchel",
+      "recordFile": "docs/streak-campfire-v2/satchel-generation.json",
+      "part": "satchel",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE complete small MAGENTA explorer SATCHEL POUCH with rounded lower corners, full flap and one round YELLOW button. Preserve the familiar Pico satchel in Image4. Full concealed top/back surface exists. No long diagonal strap: the strap belongs to the separate torso sprite. No character, limbs, hands, stick or other objects. Simple flat opaque magenta/yellow, native raster geometric shape.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/satchel-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/satchel.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-349fed26-36dc-4b33-a909-ea7c6843b41b.png",
+      "nativeSha256": "22eb67466486f6f0a614a9e6b60bf2ea6cc7c62df0c14eb7d9cc05e62c59938b",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-satchel",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "seat",
+      "recordFile": "docs/streak-campfire-v2/seat-generation.json",
+      "part": "seat",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE small low simple WOODEN STUMP seat, complete freestanding object with a warm brown/orange flat oval top, softly tapered trunk and a few subtle darker geometric bark patches like Image4. No roots sticking out, no grass or scenery. The entire seat top and back must be drawn, including material usually hidden underneath the seated rabbit. No character, limbs, bag, fireplace or other object.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/seat-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/seat.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-92962a8d-a61f-414e-b490-7c0348d6493e.png",
+      "nativeSha256": "bbe795e75806946622e8e4f97a7b3b909d92f6ac22882092237e302dc523dd5f",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-seat",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "skewer",
+      "recordFile": "docs/streak-campfire-v2/skewer-generation.json",
+      "part": "skewer",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. ONE thin straight brown wooden roasting SKEWER, entire length visible, horizontal left-to-right, with a subtly rounded handle end LEFT and tapered pointed tip RIGHT. Length approximately 14 times its thickness. Fully opaque flat brown, a simple clean uninterrupted silhouette. No marshmallow, paws, food or other objects. Complete shaft even through the region that will later be hidden by the gripping paws.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/skewer-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/skewer.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-587a4039-3625-432f-b2c9-0f70ef0b052c.png",
+      "nativeSha256": "49d059746bdac2e278b604852f208a34c40a2c58e1cd221b8fadb0348fa37673",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved complete native component with concealed material; articulated joint/extreme reconstruction remains required.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-skewer",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "torso-clean-v3",
+      "recordFile": "docs/streak-campfire-v2/torso-clean-v3-generation.json",
+      "part": "torso-clean-v3",
+      "prompt": "Precise repair of ONE independent Pico clothed torso puppet component. Images1/2/3 are mandatory Horizons brand/cast/style references. Image4 is the exact torso to repair; Image5 complete Pico locks identity and costume. Preserve the navy sleeveless explorer shirt, diagonal magenta strap, shoulder width/line, V neckline and short peach NECK PEG. REMOVE BOTH LARGE PEACH SIDE OVALS completely: those are unwanted socket/arm patches. The ONLY peach visible in this torso component may be the little neck peg. No side skin, shoulder pads, arm caps or attached limbs. Give the garment clean natural navy side/armhole contours that allow independently generated arms to attach outside its edges without being covered by big cloth/skin plates. Draw the complete hidden navy torso material. Extend ONLY the continuous opaque NAVY LOWER HEM DOWN by approximately20percent of the original torso height, preserving the original upper chest/neck/shoulder positions and width. The longer smooth flat navy hem must cover the meeting point of two rounded hip/thigh pieces beneath it by20\u201330logicalpixels at final UI size. No divided crotch, peach hip cleft, shorts split, central notch, extra coat, or added anatomy. Keep ample margin below the extended hem; a taller canvas is fine, never crop. No head, arms, hands, legs, satchel pouch, props, labels or scenery. Exact familiar flat native geometric raster style, solid opaque navy/magenta/peachneck, no white/cyan outline, highlights, gradients, glow, shadows or texture. Entire component centred on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency/checkerboard.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\torso.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/torso-clean-v3-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/torso-clean-v3.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-5fe158b5-004a-4e29-8d57-914bf781eec8.png",
+      "nativeSha256": "80f30be7d73bb4ea12275a0b296961d6c6920230cb14e14371149fb58d1b5826",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-torso-clean-v3",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\torso.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\torso.png",
+            "sha256": "b7a7e92d6a0fcc0432444a995008ced48b75ab6cf9fbd582aa5a267cda8ffedf"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "torso",
+      "recordFile": "docs/streak-campfire-v2/torso-generation.json",
+      "part": "torso",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One complete sleeveless NAVY explorer-shirt TORSO with its diagonal MAGENTA satchel strap. Include full rounded shoulder caps/armhole surfaces, complete side/back garment silhouette, full bottom hem, and a generous short PEACH neck peg extending upward out of neckline for overlap behind the separate head. No rabbit head, arms, paws, legs, satchel pouch, stick or other objects. The shirt must be wide enough for solid shoulder overlaps, not narrow posts. Upright front/three-quarter torso matching Image4. All concealed torso clothing surfaces must exist, rather than holes where arms covered them.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/torso-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/torso.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-3ae2733f-f132-4c2c-86a0-5e673500c240.png",
+      "nativeSha256": "b7a7e92d6a0fcc0432444a995008ced48b75ab6cf9fbd582aa5a267cda8ffedf",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved complete torso, hem/neck and shoulder socket caps. Joint reconstruction remains required.",
+      "productionRole": "User rejected peach side/socket ovals overlapping the arms and insufficient lower hem coverage of the upper-thigh cleft.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-torso",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-left-chunky",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-left-chunky-generation.json",
+      "part": "upper-arm-left-chunky",
+      "prompt": "Horizons friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE. Image1/2/3 are mandatory brand/cast/style references. Image4 ORIGINAL ACCEPTED PICO is the AUTHORITATIVE POSITIVE reference: match his substantial soft peach arm/paw volume and simple rounded filled shapes. Image5 the prior isolated segment is a NEGATIVE THICKNESS reference only: it is TOO SKINNY and must NOT guide thickness or proportions. Create a1536x1024 fully opaque solid CYAN #00ffff construction plate. LEFT THIRD: a small complete clothed Pico from Image4 solely as identity/context, not a new runtime character. RIGHT HALF: ONE independent COMPLETE SCREEN-LEFT UPPER FORELIMB: generous muscular-soft cartoon mass, approximately46\u201350pixels WIDE for109pixels COMPLETE HEIGHT at final scale (the full hidden rounded caps included), a short stout rounded tapered form rather than a long connector. Both shoulder and elbow ends continue the full thick shaft width. Keep the component completely within x850..1450,y90..930 with wide empty cyan separation from the context figure. The part should read CHUNKY, plush and expressive like the accepted original Pico's arms, not thin rubber tubing, a noodle, stick, or realistic human limb. Strong consistent volume along its entire smooth almost-straight outline. Keep centre-line sideways drift under10percent of shaft width: DO NOT add a pronounced C curve that makes the bounding box wide while the actual limb shaft stays skinny. The stated width means the ACTUAL SHAFT thickness, not empty-space-inclusive bounds. Full concealed proximal and distal overlap material is present. Rounded ends must stay the SAME WIDTH AS THE ADJACENT SHAFT: no separate spheres, inflated knobs, dumbbell heads, balls, joint discs or rings. No attached paw/digits, torso, prop, extra parts or text on the RIGHT. Large full native component, no cropping. Use warm peach matching Image4, confident flat opaque raster filled shapes, no white/cyan outlines, highlights, lighting, texture, gradients, shadows or glow. Opaque cyan empty space, no transparency/checkerboard. LEFT context will be cropped away mechanically; do not overlap it with the right-hand component.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-smooth.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-left-chunky-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-left-chunky.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-87f3f456-2a21-475b-96ec-440ac8099df3.png",
+      "nativeSha256": "4dce105563e726982374981c41a2c265495bd0447d009451522095e19424522a",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "review": "Root reviewed complete new native part with no inflated joint ends; actual chunky shaft proportions require whole-component axis registration and final body review.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-left-chunky",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-smooth.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-smooth.png",
+            "sha256": "cd53be1b46360d051c237831f6e66b7e04f3ca730dd52e3d730c962d467508e3"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-left-context",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-left-context-generation.json",
+      "part": "upper-arm-left-context",
+      "prompt": "Create a family-friendly CARTOON PUPPET CONSTRUCTION PLATE on one fully opaque solid cyan #00ffff 1536x1024 canvas. Images1/2/3 are mandatory Horizons brand/cast/style references, Image4 exact Pico rabbit. LEFT THIRD: show a SMALL COMPLETE CLOTHED PICO, the familiar nonhuman peach rabbit with long ears, navy explorer shirt, magenta strap/bag and supported feet, copied in identity from Image4. This is visual context only and will be cropped away. RIGHT HALF: show ONE COMPLETE INDEPENDENT PUPPET PART, cleanly separated from the little rabbit by wide cyan empty space. The part belongs to that friendly cartoon rabbit, not realistic human anatomy. Keep all of the right-hand part including its rounded hidden joint caps fully inside x850..1450,y100..924; do not overlap context character or attach it to him. PART:  SCREEN-LEFT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer right. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4. The complete part on the RIGHT must be much larger than the context rabbit's corresponding part for accurate registration. No labels, arrows, diagrams, extra parts or outlines. Crisp flat opaque filled raster contours, no glow/texture/shadows/gradients. All empty space fully opaque cyan, no transparency.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-left-context-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-left-context.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-bdc86907-6a69-4f97-828d-11e41403d045.png",
+      "nativeSha256": "39ef6ca23c4bb0eee28b04080b787753134a9a5904c0b457aa3b039e1332fc15",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved whole component, hidden cap/wrist material and opaque interiors; assembly/extreme-joint review remains required. Context illustration on LEFT is never part of runtime artwork.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected inflated visible shoulder/elbow balls; superseded by smooth complete segment.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-left-context",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-left",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-left-failed-generation.json",
+      "part": "upper-arm-left",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-LEFT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer right. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-left-preflight.json",
+      "native_path": null,
+      "status": "failed-no-output",
+      "operation": "ImageGen output moderation",
+      "httpStatus": 400,
+      "category": "sexual",
+      "requestId": "cf048da8-2f94-40c3-9609-574397fcad3c",
+      "reason": "Benign nonhuman cartoon part request blocked by output filter; no image created.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-left",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-left-smooth",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-left-smooth-generation.json",
+      "part": "upper-arm-left-smooth",
+      "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-LEFT UPPER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-context.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-left-smooth-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-left-smooth.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2f8d84e7-d58c-4924-ab54-c9d16542b7e1.png",
+      "nativeSha256": "cd53be1b46360d051c237831f6e66b7e04f3ca730dd52e3d730c962d467508e3",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected off-model skimpy arms; superseded by complete native component with measured reference registration.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-left-smooth",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-context.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-left-context.png",
+            "sha256": "39ef6ca23c4bb0eee28b04080b787753134a9a5904c0b457aa3b039e1332fc15"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-right-chunky",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-right-chunky-generation.json",
+      "part": "upper-arm-right-chunky",
+      "prompt": "Horizons friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE. Image1/2/3 are mandatory brand/cast/style references. Image4 ORIGINAL ACCEPTED PICO is the AUTHORITATIVE POSITIVE reference: match his substantial soft peach arm/paw volume and simple rounded filled shapes. Image5 the prior isolated segment is a NEGATIVE THICKNESS reference only: it is TOO SKINNY and must NOT guide thickness or proportions. Create a1536x1024 fully opaque solid CYAN #00ffff construction plate. LEFT THIRD: a small complete clothed Pico from Image4 solely as identity/context, not a new runtime character. RIGHT HALF: ONE independent COMPLETE SCREEN-RIGHT UPPER FORELIMB: generous muscular-soft cartoon mass, approximately46\u201350pixels WIDE for109pixels COMPLETE HEIGHT at final scale (the full hidden rounded caps included), a short stout rounded tapered form rather than a long connector. Both shoulder and elbow ends continue the full thick shaft width. Keep the component completely within x850..1450,y90..930 with wide empty cyan separation from the context figure. The part should read CHUNKY, plush and expressive like the accepted original Pico's arms, not thin rubber tubing, a noodle, stick, or realistic human limb. Strong consistent volume along its entire smooth almost-straight outline. Keep centre-line sideways drift under10percent of shaft width: DO NOT add a pronounced C curve that makes the bounding box wide while the actual limb shaft stays skinny. The stated width means the ACTUAL SHAFT thickness, not empty-space-inclusive bounds. Full concealed proximal and distal overlap material is present. Rounded ends must stay the SAME WIDTH AS THE ADJACENT SHAFT: no separate spheres, inflated knobs, dumbbell heads, balls, joint discs or rings. No attached paw/digits, torso, prop, extra parts or text on the RIGHT. Large full native component, no cropping. Use warm peach matching Image4, confident flat opaque raster filled shapes, no white/cyan outlines, highlights, lighting, texture, gradients, shadows or glow. Opaque cyan empty space, no transparency/checkerboard. LEFT context will be cropped away mechanically; do not overlap it with the right-hand component.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-smooth.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-right-chunky-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-right-chunky.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4f91625d-10fc-4b7b-aa99-49e709915042.png",
+      "nativeSha256": "f89e8dbaf68ee2cc29c1b8c0836ca754db0232696fbb3476881c9c45a87365b3",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "active-native",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "review": "Root reviewed complete new native part with no inflated joint ends; actual chunky shaft proportions require whole-component axis registration and final body review.",
+      "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-right-chunky",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-smooth.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-banner-motion-v1\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-smooth.png",
+            "sha256": "882c5641fec794e82882aa7c550b9b611c137c64d39d4e42c2b481ebedd05c42"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-right-context",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-right-context-generation.json",
+      "part": "upper-arm-right-context",
+      "prompt": "Create a family-friendly CARTOON PUPPET CONSTRUCTION PLATE on one fully opaque solid cyan #00ffff 1536x1024 canvas. Images1/2/3 are mandatory Horizons brand/cast/style references, Image4 exact Pico rabbit. LEFT THIRD: show a SMALL COMPLETE CLOTHED PICO, the familiar nonhuman peach rabbit with long ears, navy explorer shirt, magenta strap/bag and supported feet, copied in identity from Image4. This is visual context only and will be cropped away. RIGHT HALF: show ONE COMPLETE INDEPENDENT PUPPET PART, cleanly separated from the little rabbit by wide cyan empty space. The part belongs to that friendly cartoon rabbit, not realistic human anatomy. Keep all of the right-hand part including its rounded hidden joint caps fully inside x850..1450,y100..924; do not overlap context character or attach it to him. PART:  SCREEN-RIGHT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer left. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4. The complete part on the RIGHT must be much larger than the context rabbit's corresponding part for accurate registration. No labels, arrows, diagrams, extra parts or outlines. Crisp flat opaque filled raster contours, no glow/texture/shadows/gradients. All empty space fully opaque cyan, no transparency.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-right-context-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-right-context.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-5543abca-44c1-4183-a113-7d140899fad5.png",
+      "nativeSha256": "8ef48456b6f43cea225500064fdf2f92465ccb93015fae750a88a3939ba594fd",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Full component saved unchanged; assembly/extreme-joint review remains required. Context illustration on LEFT is never part of runtime artwork.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected inflated visible shoulder/elbow balls; superseded by smooth complete segment.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-right-context",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-right",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-right-failed-generation.json",
+      "part": "upper-arm-right",
+      "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-RIGHT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer left. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-right-preflight.json",
+      "native_path": null,
+      "status": "failed-no-output",
+      "operation": "ImageGen output moderation",
+      "httpStatus": 400,
+      "category": "sexual",
+      "requestId": "c00455ad-26bb-4401-9832-bccab36508b1",
+      "reason": "Benign nonhuman cartoon part request blocked by output filter; no image created.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-right",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-arm-right-smooth",
+      "recordFile": "docs/streak-campfire-v2/upper-arm-right-smooth-generation.json",
+      "part": "upper-arm-right-smooth",
+      "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-RIGHT UPPER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-context.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v2/upper-arm-right-smooth-preflight.json",
+      "native_path": "assets/art/streak-campfire-v2/native/upper-arm-right-smooth.png",
+      "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-ba13898c-984e-41bd-8051-049707d73ff5.png",
+      "nativeSha256": "882c5641fec794e82882aa7c550b9b611c137c64d39d4e42c2b481ebedd05c42",
+      "transparent_background": false,
+      "keyBackground": "#00ffff",
+      "status": "user-rejected-superseded",
+      "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+      "mechanicalContextCrop": [
+        768,
+        0,
+        1536,
+        1024
+      ],
+      "productionRole": "User rejected off-model skimpy arms; superseded by complete native component with measured reference registration.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-v2-upper-arm-right-smooth",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-context.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\upper-arm-right-context.png",
+            "sha256": "8ef48456b6f43cea225500064fdf2f92465ccb93015fae750a88a3939ba594fd"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    }
+  ],
+  "activePngBytes": 802233,
+  "reusedSources": {
+    "headAndFace": "Exact accepted pico-banner-motion-v1 sources, shared crop/scale; no new expression head.",
+    "excited": "Previously separately generated native facial glyphs, re-registered to same head.",
+    "fixedHearthAndIdleFlames": "Exact v1 native hearth and four native idle-fire sources, separately registered; all new blast frames are distinct ImageGen calls."
+  },
+  "referenceProportions": {
+    "upperShaftTarget": 31,
+    "forearmShaftTarget": 30.5,
+    "palmTarget": 40,
+    "method": "Accepted exposed-arm greet/jump at matched cheek width (141px source to121px active); opaque shaft cross-section, not texture bounding box. Folded source sample52.4px excluded for merged adjacent skin."
+  },
+  "rejectedRegistrations": [
+    "Thin arm20\u201326px shafts; user rejected as skimpy/off-model.",
+    "Overwide arm48/42px shafts and oversized paws; user rejected as too thick/off-model. Native component bytes remain reusable."
+  ],
+  "runtimeContract": "Local pivot/end textures with full rounded caps; hierarchical upperarm/forearm/paw chains and independent skewer/marshmallow. No combined torso pose swap or whole-bitmap mesh.",
+  "runtimeEvidence": {
+    "motion": {
+      "report": "reports/streak-v2-motion.json",
+      "pass": true,
+      "boundBytesCurrent": true
+    },
+    "cache": {
+      "report": "reports/streak-v2-cache.json",
+      "pass": true,
+      "boundBytesCurrent": true
+    }
+  }
+}

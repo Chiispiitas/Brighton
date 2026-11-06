@@ -1,0 +1,84 @@
+{
+  "scope": "Dense visual reference analysis; not application or animation acceptance. No audio listening claim.",
+  "source": "C:/Users/David/AppData/Local/Packages/Microsoft.ScreenSketch_8wekyb3d8bbwe/TempState/Recordings/20261106-1809-05.7259439.mp4",
+  "durationSeconds": 8.33,
+  "fps": 30,
+  "sampleIntervalSeconds": 0.25,
+  "framesInspected": 32,
+  "contactSheet": "C:/Users/David/Documents/Codex/2026-11-06/streak-v2-review/reference-dense.png",
+  "beats": [
+    {
+      "range": [
+        0,
+        0.3
+      ],
+      "action": "Held quiet initial state."
+    },
+    {
+      "range": [
+        0.4,
+        0.6
+      ],
+      "action": "Strong compression before launch."
+    },
+    {
+      "range": [
+        0.7,
+        1.3
+      ],
+      "action": "Fast upward launch, broad arcs and spark follow-through."
+    },
+    {
+      "range": [
+        1.5,
+        1.7
+      ],
+      "action": "Radial impact and count change, followed by flattened landing."
+    },
+    {
+      "range": [
+        2,
+        2.7
+      ],
+      "action": "Tall rebound, then an overshoot settling into the label."
+    },
+    {
+      "range": [
+        3,
+        4
+      ],
+      "action": "Week rail moves through achieved days with check pops."
+    }
+  ],
+  "interpretation": "Energy is created by contrast between held anticipation, fast burst, overshoot and settling; silhouette changes and overlapping follow-through matter more than continuous subtle motion.",
+  "originalHorizonsPlan": {
+    "durationMs": 7600,
+    "anticipation": [
+      0,
+      1400
+    ],
+    "burst": [
+      1400,
+      2400
+    ],
+    "impact": [
+      2400,
+      3800
+    ],
+    "week": [
+      3800,
+      6500
+    ],
+    "settling": [
+      6500,
+      7600
+    ],
+    "continueAt": 7600
+  },
+  "constraints": [
+    "Preserve Horizons identity rather than copying the reference palette or flame icon.",
+    "Latest user instruction requires Continue only after completion, superseding the earlier reference CTA timing.",
+    "No opacity transitions.",
+    "Full independent moving parts and covered joints require actual visual review before acceptance."
+  ]
+}

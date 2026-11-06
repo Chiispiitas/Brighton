@@ -1,0 +1,19 @@
+{
+  "part": "blast-settle",
+  "prompt": "Horizons separately authored fire-burst animation frame. Images1/2/3 mandatory brand/cast/style references only; Image4 exact hearth is context. Return ONLY ONE native FIRE EFFECT FRAME, no hearth/logs/characters/room/text. FRAME4 FOLLOW THROUGH: the energetic orange/coral plume bends to the RIGHT with a curled top tongue, two smaller left tongues and golden/cream core, a few falling orange flecks. Same compact centred bottom base. Height about1.8times base width; clean graphic shape, still full of energy. Use flat confident geometric solid orange/coral and gold shapes, clean filled contours, fully opaque interiors. No glow, smoke, lighting, texture, gradient, blur or shadows. Whole frame centred uncropped on deliberately FULLY OPAQUE SOLID CYAN #00ffff background with generous margins, no transparency/checkerboard. Frame will be keyed as disclosed mechanical derivative. This large flame blast must be allowed to project above the hearth, not be confined to its little arch.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+  ],
+  "preflight": "docs/streak-campfire-v2/blast-settle-preflight.json",
+  "native_path": "assets/art/streak-campfire-v2/native/blast-settle.png",
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4441dca6-27f8-4f60-8abf-e6a1e72d1f18.png",
+  "nativeSha256": "48a71a3df40f0b403e9af844d54a57b8eeb7b648429a317e8fc62b9bb886e88d",
+  "transparent_background": false,
+  "keyBackground": "#00ffff",
+  "status": "active-native",
+  "review": "Root approved complete opaque native fire frame; registered burst/occlusion review remains required.",
+  "productionRole": "Current complete independent native component; root reviewed latest neutral and extreme assembly; user acceptance is not claimed."
+}

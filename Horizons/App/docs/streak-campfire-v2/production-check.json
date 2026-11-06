@@ -1,0 +1,217 @@
+{
+  "pass": true,
+  "runtimeEvidence": {
+    "motion": {
+      "report": "reports/streak-v2-motion.json",
+      "pass": true,
+      "boundBytesCurrent": true
+    },
+    "cache": {
+      "report": "reports/streak-v2-cache.json",
+      "pass": true,
+      "boundBytesCurrent": true
+    }
+  },
+  "nativeOutputs": 26,
+  "generationAttempts": 28,
+  "callChecks": [
+    {
+      "part": "blast-compress",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "blast-punch",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "blast-settle",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "blast-split",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-left-chunky",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-left",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-left-smooth",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-right-chunky",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-right",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "forearm-right-smooth",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "leg-left",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "leg-right",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "marshmallow",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "paw-left",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "paw-right",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "satchel",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "seat",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "skewer",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "torso-clean-v3",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "torso",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-left-chunky",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-left-context",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-left",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": null,
+      "noOutputCreated": true
+    },
+    {
+      "part": "upper-arm-left-smooth",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-right-chunky",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-right-context",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "part": "upper-arm-right",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": null,
+      "noOutputCreated": true
+    },
+    {
+      "part": "upper-arm-right-smooth",
+      "actualPathsMatchPreflight": true,
+      "mandatoryReferencesAttached": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    }
+  ],
+  "activePngBytes": 802233,
+  "inheritedHeadIdentity": "Exact source bytes, uniform common crop/scale on every head/face layer; no facial redraw."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "historical-user-rejected-overwide-registration",
+  "report": {
+    "scope": "Actual opaque palm material; maximum inscribed circle excludes wrist peg and thumb-only bounding-box inflation. Supports original-vs-current visual gate.",
+    "parts": [
+      {
+        "part": "leftPaw",
+        "textureSize": [
+          45,
+          46
+        ],
+        "actualPalmInscribedDiameter": 38.2099463490856,
+        "palmCentre": [
+          20,
+          25
+        ]
+      },
+      {
+        "part": "rightPaw",
+        "textureSize": [
+          48,
+          50
+        ],
+        "actualPalmInscribedDiameter": 41.7612260356422,
+        "palmCentre": [
+          21,
+          27
+        ]
+      }
+    ]
+  }
+}

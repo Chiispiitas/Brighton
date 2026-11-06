@@ -1,0 +1,15 @@
+{
+  "asset_id": "pico-streak-v2-paw-right",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/seated-reference.png"
+  ],
+  "transparent_background": false,
+  "prompt": "Precise Horizons native puppet-part production for the friendly nonhuman rabbit Pico. Images1/2/3 are the mandatory brand, cast and flat-rendering references; do not copy their layouts/text. Image4 is the exact complete Pico identity/palette reference. Author ONE COMPLETE independent movable puppet component, including all hidden joint material that will later overlap behind neighbouring parts. Keep rounded generous flat geometric solid shapes and the reference peach/navy/magenta palette; clean opaque filled interiors and crisp antialias edges. No glow, texture, shadows, outlines, lighting or gradients. Center the whole component uncropped with generous margin on deliberately FULLY OPAQUE SOLID CYAN #00ffff background, no transparency or checkerboard. This is a declared key-color intermediate. One independent SCREEN-RIGHT peach cartoon rabbit gripping PAW for Pico. Complete round palm silhouette with a small integrated rounded thumb curl, a short rounded wrist overlap at TOP, and concealed back-of-paw material fully filled. Front/three-quarter view like Image4, friendly mitten-like hand with no detailed fingers/nails. Shape should clearly be able to grasp a thin skewer horizontally through the palm centre, but DO NOT include any skewer or prop: that will be a separate sprite behind this paw. One complete paw only, no arm/torso/head/other objects."
+}

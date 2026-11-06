@@ -1,0 +1,124 @@
+{
+  "targets": {
+    "upper": 31,
+    "forearm": 30.5,
+    "palm": 40
+  },
+  "method": "Opaque alpha>200 cross-sections normal to true cap-centre bone at25/50/75percent; palm largest opaque inscribed circle in palm region excluding wrist peg and thumb bbox. Final actual visual reference gate still governs.",
+  "shaftChecks": [
+    {
+      "part": "leftUpperArm",
+      "actualOpaqueShaftCrossSections25_50_75": [
+        30.9,
+        29.9,
+        29.9
+      ],
+      "medianShaft": 29.9,
+      "boneLength": 60.91566167251243,
+      "size": [
+        36,
+        85
+      ],
+      "pivot": [
+        19.369,
+        12.553
+      ],
+      "end": [
+        16.563,
+        73.404
+      ]
+    },
+    {
+      "part": "rightUpperArm",
+      "actualOpaqueShaftCrossSections25_50_75": [
+        31.0,
+        30.9,
+        30.0
+      ],
+      "medianShaft": 30.9,
+      "boneLength": 60.64532335638091,
+      "size": [
+        39,
+        81
+      ],
+      "pivot": [
+        21.212,
+        10.381
+      ],
+      "end": [
+        17.49,
+        70.912
+      ]
+    },
+    {
+      "part": "leftForearm",
+      "actualOpaqueShaftCrossSections25_50_75": [
+        29.6,
+        29.5,
+        28.5
+      ],
+      "medianShaft": 29.5,
+      "boneLength": 50.719386362612866,
+      "size": [
+        42,
+        71
+      ],
+      "pivot": [
+        16.653,
+        11.391
+      ],
+      "end": [
+        27.306,
+        60.979
+      ]
+    },
+    {
+      "part": "rightForearm",
+      "actualOpaqueShaftCrossSections25_50_75": [
+        32.1,
+        30.1,
+        27.1
+      ],
+      "medianShaft": 30.1,
+      "boneLength": 51.65246102558909,
+      "size": [
+        41,
+        68
+      ],
+      "pivot": [
+        22.309,
+        9.402
+      ],
+      "end": [
+        15.978,
+        60.665
+      ]
+    }
+  ],
+  "palmChecks": [
+    {
+      "part": "leftPaw",
+      "actualOpaquePalmCircleDiameter": 39.85,
+      "center": [
+        21,
+        27
+      ],
+      "textureSize": [
+        47,
+        48
+      ]
+    },
+    {
+      "part": "rightPaw",
+      "actualOpaquePalmCircleDiameter": 40.05,
+      "center": [
+        21,
+        25
+      ],
+      "textureSize": [
+        46,
+        48
+      ]
+    }
+  ]
+}

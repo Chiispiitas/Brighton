@@ -1,0 +1,93 @@
+{
+  "anchors": {
+    "root": [
+      230,
+      410
+    ],
+    "neck": [
+      230,
+      292
+    ],
+    "leftShoulder": [
+      190,
+      312
+    ],
+    "rightShoulder": [
+      272,
+      312
+    ],
+    "leftHip": [
+      205,
+      410
+    ],
+    "rightHip": [
+      260,
+      410
+    ],
+    "leftElbow": [
+      180,
+      355
+    ],
+    "rightElbow": [
+      294,
+      355
+    ],
+    "leftWrist": [
+      232,
+      361
+    ],
+    "rightWrist": [
+      283,
+      365
+    ],
+    "leftGrip": [
+      271,
+      378
+    ],
+    "rightGrip": [
+      323,
+      382
+    ],
+    "skewerTip": [
+      528,
+      400
+    ],
+    "satchel": [
+      184,
+      394
+    ],
+    "leftBend": 1,
+    "rightBend": 1
+  },
+  "elbowBend": {
+    "left": 1,
+    "right": 1
+  },
+  "forearms": [
+    {
+      "part": "leftForearm",
+      "pivot": [
+        14.5,
+        18.5
+      ],
+      "end": [
+        25.0,
+        69.5
+      ],
+      "bone": 52.06966487312935
+    },
+    {
+      "part": "rightForearm",
+      "pivot": [
+        17.0,
+        15.0
+      ],
+      "end": [
+        10.5,
+        67.0
+      ],
+      "bone": 52.40467536394057
+    }
+  ],
+  "disclosure": "Whole native textures retained; proximal/distal pivots registered within opaque rounded end material, with collinear forearm-to-paw grip chain."
+}

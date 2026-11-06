@@ -1,0 +1,35 @@
+{
+  "canvas": [
+    760,
+    560
+  ],
+  "parts": [
+    "torso",
+    "upper-arm-left",
+    "upper-arm-right",
+    "forearm-left",
+    "forearm-right",
+    "paw-left",
+    "paw-right",
+    "skewer",
+    "marshmallow",
+    "leg-left",
+    "leg-right",
+    "seat",
+    "satchel",
+    "blast-compress",
+    "blast-punch",
+    "blast-split",
+    "blast-settle"
+  ],
+  "mandatoryReferences": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "maxActualInputs": 5,
+  "keyBackground": "#00ffff",
+  "completeHiddenPartsRequired": true,
+  "oldV1Rejected": true,
+  "continueOnlyAfterFinish": true
+}

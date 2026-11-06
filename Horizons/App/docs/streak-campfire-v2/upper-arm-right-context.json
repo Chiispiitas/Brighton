@@ -1,0 +1,15 @@
+{
+  "asset_id": "pico-streak-v2-upper-arm-right-context",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/seated-reference.png"
+  ],
+  "transparent_background": false,
+  "prompt": "Create a family-friendly CARTOON PUPPET CONSTRUCTION PLATE on one fully opaque solid cyan #00ffff 1536x1024 canvas. Images1/2/3 are mandatory Horizons brand/cast/style references, Image4 exact Pico rabbit. LEFT THIRD: show a SMALL COMPLETE CLOTHED PICO, the familiar nonhuman peach rabbit with long ears, navy explorer shirt, magenta strap/bag and supported feet, copied in identity from Image4. This is visual context only and will be cropped away. RIGHT HALF: show ONE COMPLETE INDEPENDENT PUPPET PART, cleanly separated from the little rabbit by wide cyan empty space. The part belongs to that friendly cartoon rabbit, not realistic human anatomy. Keep all of the right-hand part including its rounded hidden joint caps fully inside x850..1450,y100..924; do not overlap context character or attach it to him. PART:  SCREEN-RIGHT upper forelimb component for Pico, a soft tapered peach cartoon rabbit puppet segment. A complete rounded shoulder cap at TOP and complete rounded elbow cap at BOTTOM, including all normally concealed overlap. Neutral straight vertical long-axis, shoulder above elbow. Thick enough to match the generous original arms, approximately 2.2 times as long as wide, slight natural curve toward viewer left. No torso, hands, fingers, head, props or human anatomy detail. It is the full upper segment of a friendly nonhuman rabbit puppet, not just the exposed sliver in Image4. The complete part on the RIGHT must be much larger than the context rabbit's corresponding part for accurate registration. No labels, arrows, diagrams, extra parts or outlines. Crisp flat opaque filled raster contours, no glow/texture/shadows/gradients. All empty space fully opaque cyan, no transparency."
+}

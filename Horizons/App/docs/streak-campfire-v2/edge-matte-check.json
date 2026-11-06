@@ -1,0 +1,78 @@
+{
+  "pass": true,
+  "scope": "Known-cyan matte extraction copies existing native opaque-core pixels without alteration. Fringe RGB is selected from nearest unchanged native opaque pixels; no anatomy is drawn. These are raw-source checks, not a substitute for actual assembled visual approval.",
+  "checks": [
+    {
+      "part": "torso",
+      "source": "assets/art/streak-campfire-v2/native/torso-clean-v3.png",
+      "sourceSha256": "80f30be7d73bb4ea12275a0b296961d6c6920230cb14e14371149fb58d1b5826",
+      "nativeOpaqueCorePixels": 526660,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "leftUpperArm",
+      "source": "assets/art/streak-campfire-v2/native/upper-arm-left-chunky.png",
+      "sourceSha256": "4dce105563e726982374981c41a2c265495bd0447d009451522095e19424522a",
+      "nativeOpaqueCorePixels": 285296,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "rightUpperArm",
+      "source": "assets/art/streak-campfire-v2/native/upper-arm-right-chunky.png",
+      "sourceSha256": "f89e8dbaf68ee2cc29c1b8c0836ca754db0232696fbb3476881c9c45a87365b3",
+      "nativeOpaqueCorePixels": 285955,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "leftForearm",
+      "source": "assets/art/streak-campfire-v2/native/forearm-left-chunky.png",
+      "sourceSha256": "31da8e2bfd81060c646c88e635f1020be0222e8a0e2a74e4db83f2da1c47c5d6",
+      "nativeOpaqueCorePixels": 303633,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "rightForearm",
+      "source": "assets/art/streak-campfire-v2/native/forearm-right-chunky.png",
+      "sourceSha256": "5ee5b345726c94859cfc93492c5c44a648f717b5a84d33bd9eefaec7e3f2234f",
+      "nativeOpaqueCorePixels": 270481,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "leftPaw",
+      "source": "assets/art/streak-campfire-v2/native/paw-left.png",
+      "sourceSha256": "435163f10e906490b50d0adedd6835935ff99a988f957c8a4b63f67c14b63d26",
+      "nativeOpaqueCorePixels": 263381,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "rightPaw",
+      "source": "assets/art/streak-campfire-v2/native/paw-right.png",
+      "sourceSha256": "6f916a1b155233688671593e06cf0cf4e1d41bbfd355f887bbe92a2e318e5c58",
+      "nativeOpaqueCorePixels": 284195,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "leftLeg",
+      "source": "assets/art/streak-campfire-v2/native/leg-left.png",
+      "sourceSha256": "82e1e099a7a6a91ec739cf038359fe04bbc841bb236a61c590566a6ce02d76ee",
+      "nativeOpaqueCorePixels": 373321,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    },
+    {
+      "part": "rightLeg",
+      "source": "assets/art/streak-campfire-v2/native/leg-right.png",
+      "sourceSha256": "8337e67d550e3c42215e423b9ba93d5d0a10ebb17e9508e2cac2a14750cb26c9",
+      "nativeOpaqueCorePixels": 420172,
+      "nativeOpaqueCoreByteIdentical": true,
+      "pass": true
+    }
+  ]
+}

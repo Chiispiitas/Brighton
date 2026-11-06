@@ -1,0 +1,269 @@
+{
+  "scope": "Reference-only material measurement; no final articulated silhouette approval.",
+  "acceptedReference": "assets/art/cast-static-pico-v2.png",
+  "sourceSha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+  "sameFaceSizeScale": 0.8581560283687943,
+  "scaleBasis": "Accepted lower cheek approximately141 source pixels; current active head approximately121. Nearby rows and accepted poses differ slightly, so 0.85-0.88 is a useful range.",
+  "samples": {
+    "greet-upper": {
+      "pose": "greet",
+      "axis": [
+        [
+          69,
+          282
+        ],
+        [
+          35,
+          333
+        ]
+      ],
+      "samples": [
+        {
+          "fraction": 0.25,
+          "sourceWidth": 34.25,
+          "line": [
+            [
+              75.06088015091227,
+              304.4572534339415
+            ],
+            [
+              46.77117014342558,
+              285.5974467622837
+            ]
+          ],
+          "sameFaceSizeWidth": 29.39
+        },
+        {
+          "fraction": 0.5,
+          "sourceWidth": 34.75,
+          "line": [
+            [
+              65.3128047094055,
+              316.3752031396037
+            ],
+            [
+              36.60706955474989,
+              297.2380463698333
+            ]
+          ],
+          "sameFaceSizeWidth": 29.82
+        },
+        {
+          "fraction": 0.75,
+          "sourceWidth": 35.5,
+          "line": [
+            [
+              55.35671669431427,
+              328.1544777962095
+            ],
+            [
+              26.026943818905284,
+              308.6012958792702
+            ]
+          ],
+          "sameFaceSizeWidth": 30.46
+        }
+      ]
+    },
+    "greet-fore": {
+      "pose": "greet",
+      "axis": [
+        [
+          35,
+          333
+        ],
+        [
+          65,
+          373
+        ]
+      ],
+      "samples": [
+        {
+          "fraction": 0.25,
+          "sourceWidth": 36.0,
+          "line": [
+            [
+              53.3,
+              334.9
+            ],
+            [
+              24.7,
+              356.35
+            ]
+          ],
+          "sameFaceSizeWidth": 30.89
+        },
+        {
+          "fraction": 0.5,
+          "sourceWidth": 35.25,
+          "line": [
+            [
+              61.4,
+              344.45
+            ],
+            [
+              33.4,
+              365.45
+            ]
+          ],
+          "sameFaceSizeWidth": 30.25
+        },
+        {
+          "fraction": 0.75,
+          "sourceWidth": 36.0,
+          "line": [
+            [
+              69.3,
+              354.15
+            ],
+            [
+              40.7,
+              375.6
+            ]
+          ],
+          "sameFaceSizeWidth": 30.89
+        }
+      ]
+    },
+    "jump-left": {
+      "pose": "jump",
+      "axis": [
+        [
+          94,
+          295
+        ],
+        [
+          43,
+          250
+        ]
+      ],
+      "samples": [
+        {
+          "fraction": 0.25,
+          "sourceWidth": 38.5,
+          "line": [
+            [
+              67.52135103044795,
+              299.30913549882564
+            ],
+            [
+              92.82837864901981,
+              270.62783753111086
+            ]
+          ],
+          "sameFaceSizeWidth": 33.04
+        },
+        {
+          "fraction": 0.5,
+          "sourceWidth": 37.75,
+          "line": [
+            [
+              54.605945621176225,
+              288.24659496266696
+            ],
+            [
+              79.41675701193296,
+              260.12767538647597
+            ]
+          ],
+          "sameFaceSizeWidth": 32.4
+        },
+        {
+          "fraction": 0.75,
+          "sourceWidth": 37.25,
+          "line": [
+            [
+              41.525134802632806,
+              277.3715138903495
+            ],
+            [
+              66.00513537484612,
+              249.62751324184106
+            ]
+          ],
+          "sameFaceSizeWidth": 31.97
+        }
+      ]
+    },
+    "jump-right": {
+      "pose": "jump",
+      "axis": [
+        [
+          201,
+          295
+        ],
+        [
+          251,
+          255
+        ]
+      ],
+      "samples": [
+        {
+          "fraction": 0.25,
+          "sourceWidth": 38.5,
+          "line": [
+            [
+              203.50487923912922,
+              272.5060990489115
+            ],
+            [
+              227.39946480808595,
+              302.3743310101074
+            ]
+          ],
+          "sameFaceSizeWidth": 33.04
+        },
+        {
+          "fraction": 0.5,
+          "sourceWidth": 37.5,
+          "line": [
+            [
+              216.62957428668363,
+              263.28696785835456
+            ],
+            [
+              239.89946480808595,
+              292.3743310101074
+            ]
+          ],
+          "sameFaceSizeWidth": 32.18
+        },
+        {
+          "fraction": 0.75,
+          "sourceWidth": 37.0,
+          "line": [
+            [
+              229.44192181046085,
+              253.67740226307606
+            ],
+            [
+              252.39946480808595,
+              282.3743310101074
+            ]
+          ],
+          "sameFaceSizeWidth": 31.75
+        }
+      ]
+    }
+  },
+  "registrationRecommendation": {
+    "upperShaft": [
+      30,
+      32
+    ],
+    "forearmShaft": [
+      30,
+      31
+    ],
+    "palm": [
+      39,
+      41
+    ]
+  },
+  "rejectedComparison": {
+    "thin": "Earlier 20-26px shafts were below the accepted reference.",
+    "chunky": "48px upper/42px fore shafts were substantially above the accepted reference."
+  },
+  "limitations": "Cross sections intentionally avoid joints, tangent corners and atlas antialiasing. Screen poses and complete overlapping joint geometry still need manual actual-renderer review.",
+  "board": "C:\\Users\\David\\Documents\\Codex\\2026-11-06\\streak-v2-review\\accepted-pico-measured-arm-reference.png"
+}

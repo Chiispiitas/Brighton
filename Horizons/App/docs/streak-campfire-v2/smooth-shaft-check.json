@@ -1,0 +1,103 @@
+{
+  "pass": true,
+  "scope": "Supporting width profile only; root visual native and actual neutral/recoil review remains acceptance gate. Complete source rounded ends retained.",
+  "parts": [
+    {
+      "part": "upper-arm-left-smooth",
+      "sourceBounds": [
+        911,
+        106,
+        1208,
+        932
+      ],
+      "widthProfile": {
+        "0.15": 208,
+        "0.2": 206,
+        "0.25": 203,
+        "0.35": 195,
+        "0.5": 189,
+        "0.65": 187,
+        "0.75": 188,
+        "0.8": 188,
+        "0.85": 190
+      },
+      "supportingNoBulbCheck": true,
+      "wholeTaperEndToMiddleRatio": 1.1005291005291005,
+      "proximalCapToAdjacentShaftRatio": 1.0246305418719213,
+      "distalCapToAdjacentShaftRatio": 1.0106382978723405
+    },
+    {
+      "part": "upper-arm-right-smooth",
+      "sourceBounds": [
+        928,
+        103,
+        1244,
+        929
+      ],
+      "widthProfile": {
+        "0.15": 200,
+        "0.2": 196,
+        "0.25": 194,
+        "0.35": 188,
+        "0.5": 182,
+        "0.65": 179,
+        "0.75": 177,
+        "0.8": 177,
+        "0.85": 177
+      },
+      "supportingNoBulbCheck": true,
+      "wholeTaperEndToMiddleRatio": 1.098901098901099,
+      "proximalCapToAdjacentShaftRatio": 1.0309278350515463,
+      "distalCapToAdjacentShaftRatio": 1.0
+    },
+    {
+      "part": "forearm-left-smooth",
+      "sourceBounds": [
+        889,
+        106,
+        1223,
+        921
+      ],
+      "widthProfile": {
+        "0.15": 247,
+        "0.2": 254,
+        "0.25": 253,
+        "0.35": 243,
+        "0.5": 230,
+        "0.65": 218,
+        "0.75": 209,
+        "0.8": 204,
+        "0.85": 199
+      },
+      "supportingNoBulbCheck": true,
+      "wholeTaperEndToMiddleRatio": 1.1043478260869566,
+      "proximalCapToAdjacentShaftRatio": 1.0039525691699605,
+      "distalCapToAdjacentShaftRatio": 0.9760765550239234
+    },
+    {
+      "part": "forearm-right-smooth",
+      "sourceBounds": [
+        927,
+        92,
+        1221,
+        927
+      ],
+      "widthProfile": {
+        "0.15": 219,
+        "0.2": 218,
+        "0.25": 213,
+        "0.35": 203,
+        "0.5": 193,
+        "0.65": 189,
+        "0.75": 189,
+        "0.8": 190,
+        "0.85": 192
+      },
+      "supportingNoBulbCheck": true,
+      "wholeTaperEndToMiddleRatio": 1.1347150259067358,
+      "proximalCapToAdjacentShaftRatio": 1.028169014084507,
+      "distalCapToAdjacentShaftRatio": 1.0158730158730158
+    }
+  ],
+  "method": "Compare each rounded end with its immediate neighbouring shaft, preserving gradual natural taper rather than comparing unequal ends to a global middle width."
+}

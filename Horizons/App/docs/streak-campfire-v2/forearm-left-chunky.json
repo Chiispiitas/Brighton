@@ -1,0 +1,16 @@
+{
+  "asset_id": "pico-streak-v2-forearm-left-chunky",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/pico-banner-motion-v1/neutral-reconstruction.png",
+    "assets/art/streak-campfire-v2/native/forearm-left-smooth.png"
+  ],
+  "transparent_background": false,
+  "prompt": "Horizons friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE. Image1/2/3 are mandatory brand/cast/style references. Image4 ORIGINAL ACCEPTED PICO is the AUTHORITATIVE POSITIVE reference: match his substantial soft peach arm/paw volume and simple rounded filled shapes. Image5 the prior isolated segment is a NEGATIVE THICKNESS reference only: it is TOO SKINNY and must NOT guide thickness or proportions. Create a1536x1024 fully opaque solid CYAN #00ffff construction plate. LEFT THIRD: a small complete clothed Pico from Image4 solely as identity/context, not a new runtime character. RIGHT HALF: ONE independent COMPLETE SCREEN-LEFT LOWER FORELIMB: generous soft broad cartoon mass, approximately40\u201344pixels WIDE for94pixels COMPLETE HEIGHT at final scale (the full hidden rounded caps included); taper gently to a still-substantial32\u201336pixel wrist. Short stout full forelimb, never a narrow rod. Both elbow and wrist ends continue the local thick shaft width. Keep the component completely within x850..1450,y90..930 with wide empty cyan separation from the context figure. The part should read CHUNKY, plush and expressive like the accepted original Pico's arms, not thin rubber tubing, a noodle, stick, or realistic human limb. Strong consistent volume along its entire smooth almost-straight outline. Keep centre-line sideways drift under10percent of shaft width: DO NOT add a pronounced C curve that makes the bounding box wide while the actual limb shaft stays skinny. The stated width means the ACTUAL SHAFT thickness, not empty-space-inclusive bounds. Full concealed proximal and distal overlap material is present. Rounded ends must stay the SAME WIDTH AS THE ADJACENT SHAFT: no separate spheres, inflated knobs, dumbbell heads, balls, joint discs or rings. No attached paw/digits, torso, prop, extra parts or text on the RIGHT. Large full native component, no cropping. Use warm peach matching Image4, confident flat opaque raster filled shapes, no white/cyan outlines, highlights, lighting, texture, gradients, shadows or glow. Opaque cyan empty space, no transparency/checkerboard. LEFT context will be cropped away mechanically; do not overlap it with the right-hand component."
+}

@@ -1,0 +1,579 @@
+{
+  "width": 760,
+  "height": 560,
+  "parts": {
+    "torso": {
+      "file": "assets/art/streak-campfire-v2/torso.png",
+      "width": 126,
+      "height": 177,
+      "pivot": [
+        63.0,
+        144.683
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -18,
+          -13
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          208,
+          171
+        ],
+        "skinOnly": true,
+        "alphaPreserved": true,
+        "mask": {
+          "greenLow": 110,
+          "greenHigh": 170
+        }
+      }
+    },
+    "leftUpperArm": {
+      "file": "assets/art/streak-campfire-v2/leftUpperArm.png",
+      "width": 36,
+      "height": 85,
+      "pivot": [
+        19.369,
+        12.553
+      ],
+      "end": [
+        16.563,
+        73.404
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -9,
+          -4
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          199,
+          162
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightUpperArm": {
+      "file": "assets/art/streak-campfire-v2/rightUpperArm.png",
+      "width": 39,
+      "height": 81,
+      "pivot": [
+        21.212,
+        10.381
+      ],
+      "end": [
+        17.49,
+        70.912
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -10,
+          -4
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          200,
+          162
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "leftForearm": {
+      "file": "assets/art/streak-campfire-v2/leftForearm.png",
+      "width": 42,
+      "height": 71,
+      "pivot": [
+        16.653,
+        11.391
+      ],
+      "end": [
+        27.306,
+        60.979
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -14,
+          -9
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          204,
+          167
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightForearm": {
+      "file": "assets/art/streak-campfire-v2/rightForearm.png",
+      "width": 41,
+      "height": 68,
+      "pivot": [
+        22.309,
+        9.402
+      ],
+      "end": [
+        15.978,
+        60.665
+      ],
+      "palette": {
+        "offset": [
+          -11,
+          -12,
+          -5
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          254,
+          202,
+          163
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "leftPaw": {
+      "file": "assets/art/streak-campfire-v2/leftPaw.png",
+      "width": 47,
+      "height": 48,
+      "pivot": [
+        23.5,
+        5.76
+      ],
+      "end": [
+        23.5,
+        26.88
+      ],
+      "palette": {
+        "offset": [
+          -10,
+          -2,
+          1
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          253,
+          192,
+          157
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightPaw": {
+      "file": "assets/art/streak-campfire-v2/rightPaw.png",
+      "width": 46,
+      "height": 48,
+      "pivot": [
+        23.0,
+        5.76
+      ],
+      "end": [
+        23.0,
+        26.88
+      ],
+      "palette": {
+        "offset": [
+          -10,
+          -1,
+          2
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          253,
+          191,
+          156
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "skewer": {
+      "file": "assets/art/streak-campfire-v2/skewer.png",
+      "width": 290,
+      "height": 6,
+      "pivot": [
+        80.0,
+        3.0
+      ],
+      "end": [
+        285.65,
+        3.0
+      ]
+    },
+    "marshmallow": {
+      "file": "assets/art/streak-campfire-v2/marshmallow.png",
+      "width": 37,
+      "height": 34,
+      "pivot": [
+        5.18,
+        18.7
+      ]
+    },
+    "leftLeg": {
+      "file": "assets/art/streak-campfire-v2/leftLeg.png",
+      "width": 111,
+      "height": 133,
+      "pivot": [
+        79.92,
+        13.3
+      ],
+      "palette": {
+        "offset": [
+          -9,
+          -1,
+          0
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          252,
+          191,
+          158
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "rightLeg": {
+      "file": "assets/art/streak-campfire-v2/rightLeg.png",
+      "width": 111,
+      "height": 133,
+      "pivot": [
+        33.3,
+        13.3
+      ],
+      "palette": {
+        "offset": [
+          -8,
+          1,
+          2
+        ],
+        "targetMedian": [
+          243,
+          190,
+          158
+        ],
+        "sourceMedian": [
+          251,
+          189,
+          156
+        ],
+        "skinOnly": false,
+        "alphaPreserved": true
+      }
+    },
+    "seat": {
+      "file": "assets/art/streak-campfire-v2/seat.png",
+      "width": 138,
+      "height": 96,
+      "x": 135,
+      "y": 430
+    },
+    "satchel": {
+      "file": "assets/art/streak-campfire-v2/satchel.png",
+      "width": 59,
+      "height": 47,
+      "pivot": [
+        42.48,
+        4.7
+      ]
+    },
+    "fireplace": {
+      "file": "assets/art/streak-campfire-v2/fireplace.png",
+      "width": 300,
+      "height": 244,
+      "x": 375,
+      "y": 270
+    },
+    "fireEmber": {
+      "file": "assets/art/streak-campfire-v2/fireEmber.png",
+      "width": 112,
+      "height": 34,
+      "pivot": [
+        56.0,
+        33.49
+      ]
+    },
+    "fireSmall": {
+      "file": "assets/art/streak-campfire-v2/fireSmall.png",
+      "width": 110,
+      "height": 130,
+      "pivot": [
+        55.0,
+        128.05
+      ]
+    },
+    "fireIgnite": {
+      "file": "assets/art/streak-campfire-v2/fireIgnite.png",
+      "width": 109,
+      "height": 162,
+      "pivot": [
+        54.5,
+        159.57
+      ]
+    },
+    "fireFull": {
+      "file": "assets/art/streak-campfire-v2/fireFull.png",
+      "width": 111,
+      "height": 143,
+      "pivot": [
+        55.5,
+        140.855
+      ]
+    },
+    "burstCompress": {
+      "file": "assets/art/streak-campfire-v2/burstCompress.png",
+      "width": 240,
+      "height": 100,
+      "pivot": [
+        120.0,
+        98.5
+      ]
+    },
+    "burstPunch": {
+      "file": "assets/art/streak-campfire-v2/burstPunch.png",
+      "width": 213,
+      "height": 350,
+      "pivot": [
+        106.5,
+        344.75
+      ]
+    },
+    "burstSplit": {
+      "file": "assets/art/streak-campfire-v2/burstSplit.png",
+      "width": 320,
+      "height": 253,
+      "pivot": [
+        160.0,
+        249.205
+      ]
+    },
+    "burstSettle": {
+      "file": "assets/art/streak-campfire-v2/burstSettle.png",
+      "width": 270,
+      "height": 306,
+      "pivot": [
+        135.0,
+        301.41
+      ]
+    },
+    "fireMask": {
+      "file": "assets/art/streak-campfire-v2/fireMask.png",
+      "width": 300,
+      "height": 244,
+      "x": 375,
+      "y": 270
+    },
+    "head": {
+      "file": "assets/art/streak-campfire-v2/head.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "eyes": {
+      "file": "assets/art/streak-campfire-v2/eyes.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "pupils": {
+      "file": "assets/art/streak-campfire-v2/pupils.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "browsMouth": {
+      "file": "assets/art/streak-campfire-v2/browsMouth.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "nose": {
+      "file": "assets/art/streak-campfire-v2/nose.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "blink": {
+      "file": "assets/art/streak-campfire-v2/blink.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "excited": {
+      "file": "assets/art/streak-campfire-v2/excited.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "faceMask": {
+      "file": "assets/art/streak-campfire-v2/faceMask.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    },
+    "eyeMask": {
+      "file": "assets/art/streak-campfire-v2/eyeMask.png",
+      "width": 142,
+      "height": 223,
+      "pivot": [
+        64.8,
+        222.4
+      ]
+    }
+  },
+  "anchors": {
+    "root": [
+      230,
+      410
+    ],
+    "neck": [
+      230,
+      292
+    ],
+    "leftShoulder": [
+      190,
+      312
+    ],
+    "rightShoulder": [
+      278,
+      312
+    ],
+    "leftHip": [
+      205,
+      410
+    ],
+    "rightHip": [
+      260,
+      410
+    ],
+    "leftGrip": [
+      271,
+      378
+    ],
+    "rightGrip": [
+      323,
+      382
+    ],
+    "skewerTip": [
+      528,
+      400
+    ],
+    "satchel": [
+      184,
+      394
+    ],
+    "leftBend": 1,
+    "rightBend": 1
+  },
+  "elbowBend": {
+    "left": 1,
+    "right": 1
+  },
+  "constructionReferenceOnly": {
+    "legacyPoseAnchors": {
+      "leftElbow": [
+        180,
+        355
+      ],
+      "rightElbow": [
+        294,
+        355
+      ],
+      "leftWrist": [
+        232,
+        361
+      ],
+      "rightWrist": [
+        283,
+        365
+      ]
+    },
+    "note": "Historical planning points only; actual elbow/wrist positions are solved from the complete upperarm + forearm + palm-grip chain. Not active runtime anchors."
+  },
+  "fireBase": [
+    530,
+    490
+  ],
+  "fireFrames": [
+    "fireEmber",
+    "fireSmall",
+    "fireIgnite",
+    "fireFull"
+  ],
+  "burstFrames": [
+    "burstCompress",
+    "burstPunch",
+    "burstSplit",
+    "burstSettle"
+  ],
+  "fallback": "assets/art/streak-campfire-v2/reduced.png",
+  "startup": "assets/art/streak-campfire-v2/startup.png",
+  "fullHiddenParts": true
+}

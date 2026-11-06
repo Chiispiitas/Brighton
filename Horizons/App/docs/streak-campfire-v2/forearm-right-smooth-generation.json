@@ -1,0 +1,26 @@
+{
+  "part": "forearm-right-smooth",
+  "prompt": "Friendly nonhuman Pico rabbit PUPPET CONSTRUCTION PLATE, not realistic human anatomy. Images1/2/3 mandatory Horizons brand/cast/style references; Image4 is the exact prior component to repair, Image5 complete clothed Pico for identity/palette. On a1536x1024 FULLY OPAQUE SOLID CYAN #00ffff canvas: LEFT THIRD show a small complete clothed Pico as identity context ONLY, copied from Image5. RIGHT HALF show ONE COMPLETE INDEPENDENT SCREEN-RIGHT LOWER FORELIMB component for that rabbit, x850..1450,y90..930, with wide empty cyan separation from the left context figure. FIX THE BULBOUS JOINTS: the component must be ONE SMOOTH gently curved near-constant-width tapered peach segment with softly rounded ends. It must NOT be a dumbbell, two balls connected by a stick, inflated shoulder sphere, elbow knob, elbow ball, separate circle, joint symbol, or ring. Both ends have approximately the SAME WIDTH AS THE SHAFT; rounded caps are simply the natural continuation of that single smooth outline. Proximal end atTOP and distal end atBOTTOM. Include generous complete concealed end material for overlapping behind neighbouring components, but keep all hidden material within the same smooth shaft width, not big bulbs. Match Pico's generous existing limb thickness and peach tone; no thin zigzag or realistic anatomy. The part should be about2.5times as long as wide, subtle natural curve, smooth continuous silhouette. No attached paw/digits, torso, props, extra components or text on the RIGHT. Small LEFT identity Pico is context and will be mechanically cropped away; it is not runtime artwork. Flat opaque peach native raster filled shapes, NO white/cyan outlines, highlights, shadows, gradients, glow, texture, spheres or glossyjointedges. Entire background solidcyan with no transparency/checkerboard.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v2\\native\\forearm-right.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+  ],
+  "preflight": "docs/streak-campfire-v2/forearm-right-smooth-preflight.json",
+  "native_path": "assets/art/streak-campfire-v2/native/forearm-right-smooth.png",
+  "output_path": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-171774ca-924c-448a-90f9-388ead1c8a16.png",
+  "nativeSha256": "b0b2400fc7f53fbc003d4834ae4756b08c41405fa82e648c67636b48ab28d3a6",
+  "transparent_background": false,
+  "keyBackground": "#00ffff",
+  "status": "user-rejected-superseded",
+  "review": "Root approved no torso skin-side plates and smooth constant-width limb ends; latest user geometry requires actual neutral/recoil review.",
+  "mechanicalContextCrop": [
+    768,
+    0,
+    1536,
+    1024
+  ],
+  "productionRole": "User rejected off-model skimpy arms; superseded by complete native component with measured reference registration."
+}

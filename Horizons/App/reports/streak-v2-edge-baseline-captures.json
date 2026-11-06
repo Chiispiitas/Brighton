@@ -1,0 +1,71 @@
+{
+  "mode": "baseline",
+  "elapsed": 3900,
+  "sourceBinding": [
+    {
+      "file": "src/streak-celebration.js",
+      "sha256": "0e9d87badc700427811290fcf1d776ddfdf1066aaee164f6df4c707baa028b6c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftLeg.png",
+      "sha256": "61016b087a6db34d87021ddccbcd00b5b3c1cc54648fdde339838f46d35c69e5"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightLeg.png",
+      "sha256": "9915973dbeecfbee09923d6e3833bdb7f699cef9c340edb2364cab576a446a8b"
+    }
+  ],
+  "legPalette": {
+    "left": {
+      "offset": [
+        -9,
+        -1,
+        0
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        252,
+        191,
+        158
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "right": {
+      "offset": [
+        -8,
+        1,
+        2
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        251,
+        189,
+        156
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    }
+  },
+  "captures": [
+    {
+      "dpr": 1,
+      "live": "C:\\Users\\David\\Documents\\Codex\\2026-11-06\\streak-v2-review\\edge-baseline-live-dpr1.png",
+      "exported": "C:\\Users\\David\\Documents\\Codex\\2026-11-06\\streak-v2-review\\edge-baseline-exported-dpr1.png"
+    },
+    {
+      "dpr": 2,
+      "live": "C:\\Users\\David\\Documents\\Codex\\2026-11-06\\streak-v2-review\\edge-baseline-live-dpr2.png",
+      "exported": "C:\\Users\\David\\Documents\\Codex\\2026-11-06\\streak-v2-review\\edge-baseline-exported-dpr2.png"
+    }
+  ],
+  "scope": "Actual native DOM SVG and serialized SVG-to-PNG at identical CSS bounds; synthetic metadata, no learner records."
+}

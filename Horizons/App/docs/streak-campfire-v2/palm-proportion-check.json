@@ -1,0 +1,30 @@
+{
+  "targetActualPalmDiameter": 40,
+  "method": "Largest opaque inscribed circle within palm region, excluding wrist peg and thumb-bbox inflation; actual final appearance reviewed in white neutral/extreme poses.",
+  "current": [
+    {
+      "part": "leftPaw",
+      "actualOpaquePalmCircleDiameter": 39.85,
+      "center": [
+        21,
+        27
+      ],
+      "textureSize": [
+        47,
+        48
+      ]
+    },
+    {
+      "part": "rightPaw",
+      "actualOpaquePalmCircleDiameter": 40.05,
+      "center": [
+        21,
+        25
+      ],
+      "textureSize": [
+        46,
+        48
+      ]
+    }
+  ]
+}

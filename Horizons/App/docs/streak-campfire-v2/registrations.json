@@ -1,0 +1,1064 @@
+[
+  {
+    "part": "torso",
+    "source": "assets/art/streak-campfire-v2/native/torso-clean-v3.png",
+    "nativeSha256": "80f30be7d73bb4ea12275a0b296961d6c6920230cb14e14371149fb58d1b5826",
+    "sourceBox": [
+      209,
+      147,
+      937,
+      1172
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": null,
+    "uniformScale": 0.17307692307692307,
+    "axisScale": [
+      0.17307692307692307,
+      0.17307692307692307
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      126,
+      177
+    ],
+    "pivot": [
+      63.0,
+      144.683
+    ],
+    "end": null,
+    "palette": {
+      "offset": [
+        -11,
+        -18,
+        -13
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        254,
+        208,
+        171
+      ],
+      "skinOnly": true,
+      "alphaPreserved": true,
+      "mask": {
+        "greenLow": 110,
+        "greenHigh": 170
+      }
+    },
+    "currentRuntimeSize": [
+      126,
+      177
+    ]
+  },
+  {
+    "part": "leftUpperArm",
+    "source": "assets/art/streak-campfire-v2/native/upper-arm-left-chunky.png",
+    "nativeSha256": "4dce105563e726982374981c41a2c265495bd0447d009451522095e19424522a",
+    "sourceBox": [
+      162,
+      116,
+      425,
+      915
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": [
+      768,
+      0,
+      1536,
+      1024
+    ],
+    "uniformScale": null,
+    "axisScale": [
+      0.13688212927756654,
+      0.10638297872340426
+    ],
+    "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence.",
+    "registeredSize": [
+      36,
+      85
+    ],
+    "pivot": [
+      19.369,
+      12.553
+    ],
+    "end": [
+      16.563,
+      73.404
+    ],
+    "palette": {
+      "offset": [
+        -11,
+        -9,
+        -4
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        254,
+        199,
+        162
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      36,
+      85
+    ]
+  },
+  {
+    "part": "rightUpperArm",
+    "source": "assets/art/streak-campfire-v2/native/upper-arm-right-chunky.png",
+    "nativeSha256": "f89e8dbaf68ee2cc29c1b8c0836ca754db0232696fbb3476881c9c45a87365b3",
+    "sourceBox": [
+      144,
+      100,
+      406,
+      931
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": [
+      768,
+      0,
+      1536,
+      1024
+    ],
+    "uniformScale": null,
+    "axisScale": [
+      0.14885496183206107,
+      0.09747292418772563
+    ],
+    "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence.",
+    "registeredSize": [
+      39,
+      81
+    ],
+    "pivot": [
+      21.212,
+      10.381
+    ],
+    "end": [
+      17.49,
+      70.912
+    ],
+    "palette": {
+      "offset": [
+        -11,
+        -10,
+        -4
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        254,
+        200,
+        162
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      39,
+      81
+    ]
+  },
+  {
+    "part": "leftForearm",
+    "source": "assets/art/streak-campfire-v2/native/forearm-left-chunky.png",
+    "nativeSha256": "31da8e2bfd81060c646c88e635f1020be0222e8a0e2a74e4db83f2da1c47c5d6",
+    "sourceBox": [
+      100,
+      100,
+      443,
+      929
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": [
+      768,
+      0,
+      1536,
+      1024
+    ],
+    "uniformScale": null,
+    "axisScale": [
+      0.12244897959183673,
+      0.0856453558504222
+    ],
+    "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence.",
+    "registeredSize": [
+      42,
+      71
+    ],
+    "pivot": [
+      16.653,
+      11.391
+    ],
+    "end": [
+      27.306,
+      60.979
+    ],
+    "palette": {
+      "offset": [
+        -11,
+        -14,
+        -9
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        254,
+        204,
+        167
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      42,
+      71
+    ]
+  },
+  {
+    "part": "rightForearm",
+    "source": "assets/art/streak-campfire-v2/native/forearm-right-chunky.png",
+    "nativeSha256": "5ee5b345726c94859cfc93492c5c44a648f717b5a84d33bd9eefaec7e3f2234f",
+    "sourceBox": [
+      165,
+      92,
+      437,
+      931
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": [
+      768,
+      0,
+      1536,
+      1024
+    ],
+    "uniformScale": null,
+    "axisScale": [
+      0.15073529411764705,
+      0.08104886769964244
+    ],
+    "proportionDisclosure": "Whole complete ImageGen component registered against accepted exposed-arm Pico poses at identical face size: target opaque shaft 31px upper / 30.5px fore. Independent axes preserve complete hidden material and cap-centre bone reach; no anatomy drawn or truncated. Previous 48/42px registration is user-rejected historical evidence.",
+    "registeredSize": [
+      41,
+      68
+    ],
+    "pivot": [
+      22.309,
+      9.402
+    ],
+    "end": [
+      15.978,
+      60.665
+    ],
+    "palette": {
+      "offset": [
+        -11,
+        -12,
+        -5
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        254,
+        202,
+        163
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      41,
+      68
+    ]
+  },
+  {
+    "part": "leftPaw",
+    "source": "assets/art/streak-campfire-v2/native/paw-left.png",
+    "nativeSha256": "435163f10e906490b50d0adedd6835935ff99a988f957c8a4b63f67c14b63d26",
+    "sourceBox": [
+      397,
+      254,
+      1004,
+      869
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": null,
+    "uniformScale": 0.07742998352553541,
+    "axisScale": [
+      0.07742998352553541,
+      0.07742998352553541
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      47,
+      48
+    ],
+    "pivot": [
+      23.5,
+      5.76
+    ],
+    "end": [
+      23.5,
+      26.88
+    ],
+    "palette": {
+      "offset": [
+        -10,
+        -2,
+        1
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        253,
+        192,
+        157
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      47,
+      48
+    ]
+  },
+  {
+    "part": "rightPaw",
+    "source": "assets/art/streak-campfire-v2/native/paw-right.png",
+    "nativeSha256": "6f916a1b155233688671593e06cf0cf4e1d41bbfd355f887bbe92a2e318e5c58",
+    "sourceBox": [
+      395,
+      241,
+      1004,
+      876
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": null,
+    "uniformScale": 0.0755336617405583,
+    "axisScale": [
+      0.0755336617405583,
+      0.0755336617405583
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      46,
+      48
+    ],
+    "pivot": [
+      23.0,
+      5.76
+    ],
+    "end": [
+      23.0,
+      26.88
+    ],
+    "palette": {
+      "offset": [
+        -10,
+        -1,
+        2
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        253,
+        191,
+        156
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      46,
+      48
+    ]
+  },
+  {
+    "part": "skewer",
+    "source": "assets/art/streak-campfire-v2/native/skewer.png",
+    "nativeSha256": "49d059746bdac2e278b604852f208a34c40a2c58e1cd221b8fadb0348fa37673",
+    "sourceBox": [
+      71,
+      497,
+      1464,
+      527
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.208183776022972,
+    "axisScale": [
+      0.208183776022972,
+      0.208183776022972
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      290,
+      6
+    ],
+    "pivot": [
+      80.0,
+      3.0
+    ],
+    "end": [
+      285.65,
+      3.0
+    ],
+    "palette": null,
+    "currentRuntimeSize": [
+      290,
+      6
+    ]
+  },
+  {
+    "part": "marshmallow",
+    "source": "assets/art/streak-campfire-v2/native/marshmallow.png",
+    "nativeSha256": "547cf8cd020824305f394c2db873dcdc901ce1669d623340e11f31e1bdde6f74",
+    "sourceBox": [
+      479,
+      357,
+      920,
+      765
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.08390022675736962,
+    "axisScale": [
+      0.08390022675736962,
+      0.08390022675736962
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      37,
+      34
+    ],
+    "pivot": [
+      5.18,
+      18.7
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      37,
+      34
+    ]
+  },
+  {
+    "part": "leftLeg",
+    "source": "assets/art/streak-campfire-v2/native/leg-left.png",
+    "nativeSha256": "82e1e099a7a6a91ec739cf038359fe04bbc841bb236a61c590566a6ce02d76ee",
+    "sourceBox": [
+      159,
+      146,
+      1011,
+      1168
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": null,
+    "uniformScale": 0.13013698630136986,
+    "axisScale": [
+      0.13013698630136986,
+      0.13013698630136986
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      111,
+      133
+    ],
+    "pivot": [
+      79.92,
+      13.3
+    ],
+    "end": null,
+    "palette": {
+      "offset": [
+        -9,
+        -1,
+        0
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        252,
+        191,
+        158
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      111,
+      133
+    ]
+  },
+  {
+    "part": "rightLeg",
+    "source": "assets/art/streak-campfire-v2/native/leg-right.png",
+    "nativeSha256": "8337e67d550e3c42215e423b9ba93d5d0a10ebb17e9508e2cac2a14750cb26c9",
+    "sourceBox": [
+      118,
+      196,
+      956,
+      1199
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": true,
+    "componentContextCrop": null,
+    "uniformScale": 0.13260219341974078,
+    "axisScale": [
+      0.13260219341974078,
+      0.13260219341974078
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      111,
+      133
+    ],
+    "pivot": [
+      33.3,
+      13.3
+    ],
+    "end": null,
+    "palette": {
+      "offset": [
+        -8,
+        1,
+        2
+      ],
+      "targetMedian": [
+        243,
+        190,
+        158
+      ],
+      "sourceMedian": [
+        251,
+        189,
+        156
+      ],
+      "skinOnly": false,
+      "alphaPreserved": true
+    },
+    "currentRuntimeSize": [
+      111,
+      133
+    ]
+  },
+  {
+    "part": "seat",
+    "source": "assets/art/streak-campfire-v2/native/seat.png",
+    "nativeSha256": "bbe795e75806946622e8e4f97a7b3b909d92f6ac22882092237e302dc523dd5f",
+    "sourceBox": [
+      410,
+      368,
+      988,
+      768
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.23875432525951557,
+    "axisScale": [
+      0.23875432525951557,
+      0.23875432525951557
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      138,
+      96
+    ],
+    "pivot": null,
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      138,
+      96
+    ]
+  },
+  {
+    "part": "satchel",
+    "source": "assets/art/streak-campfire-v2/native/satchel.png",
+    "nativeSha256": "22eb67466486f6f0a614a9e6b60bf2ea6cc7c62df0c14eb7d9cc05e62c59938b",
+    "sourceBox": [
+      377,
+      302,
+      1025,
+      819
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.09104938271604938,
+    "axisScale": [
+      0.09104938271604938,
+      0.09104938271604938
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      59,
+      47
+    ],
+    "pivot": [
+      42.48,
+      4.7
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      59,
+      47
+    ]
+  },
+  {
+    "part": "fireplace",
+    "source": "assets/art/streak-campfire-v2/native/fireplace.png",
+    "nativeSha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f",
+    "sourceBox": [
+      81,
+      27,
+      1332,
+      1044
+    ],
+    "declaredKey": null,
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.23980815347721823,
+    "axisScale": [
+      0.23980815347721823,
+      0.23980815347721823
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      300,
+      244
+    ],
+    "pivot": null,
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      300,
+      244
+    ]
+  },
+  {
+    "part": "fireEmber",
+    "source": "assets/art/streak-campfire-v2/native/fireEmber.png",
+    "nativeSha256": "e7d3a02a7e28145ab512f817009ec8232bfa75f41b9f442e8113f3e4d8c9b61f",
+    "sourceBox": [
+      421,
+      597,
+      981,
+      769
+    ],
+    "declaredKey": "magenta",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.2,
+    "axisScale": [
+      0.2,
+      0.2
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      112,
+      34
+    ],
+    "pivot": [
+      56.0,
+      33.49
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      112,
+      34
+    ]
+  },
+  {
+    "part": "fireSmall",
+    "source": "assets/art/streak-campfire-v2/native/fireSmall.png",
+    "nativeSha256": "1b8df039ae1fc89dd107a8710a9f2077af1d1532d4a74bd52d26d3c5e43a2058",
+    "sourceBox": [
+      453,
+      286,
+      929,
+      850
+    ],
+    "declaredKey": "magenta",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.23049645390070922,
+    "axisScale": [
+      0.23049645390070922,
+      0.23049645390070922
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      110,
+      130
+    ],
+    "pivot": [
+      55.0,
+      128.05
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      110,
+      130
+    ]
+  },
+  {
+    "part": "fireIgnite",
+    "source": "assets/art/streak-campfire-v2/native/fireIgnite.png",
+    "nativeSha256": "7578d0cea6e4248585e977fdbfd31087ec37ee858b4fa5fd1297abe25f0ac752",
+    "sourceBox": [
+      412,
+      156,
+      973,
+      989
+    ],
+    "declaredKey": "magenta",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.19447779111644659,
+    "axisScale": [
+      0.19447779111644659,
+      0.19447779111644659
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      109,
+      162
+    ],
+    "pivot": [
+      54.5,
+      159.57
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      109,
+      162
+    ]
+  },
+  {
+    "part": "fireFull",
+    "source": "assets/art/streak-campfire-v2/native/fireFull.png",
+    "nativeSha256": "9a9e9b70283fe9e4ff7c52576d23cf4fdb756e825649e2d2e744c4980b972513",
+    "sourceBox": [
+      407,
+      192,
+      986,
+      936
+    ],
+    "declaredKey": "magenta",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.1922043010752688,
+    "axisScale": [
+      0.1922043010752688,
+      0.1922043010752688
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      111,
+      143
+    ],
+    "pivot": [
+      55.5,
+      140.855
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      111,
+      143
+    ]
+  },
+  {
+    "part": "burstCompress",
+    "source": "assets/art/streak-campfire-v2/native/blast-compress.png",
+    "nativeSha256": "fa161a5a78799d12db98c0ed096258dbdfcff2cffd71e5b2a69033028ab84815",
+    "sourceBox": [
+      395,
+      162,
+      1572,
+      651
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.20390824129141885,
+    "axisScale": [
+      0.20390824129141885,
+      0.20390824129141885
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      240,
+      100
+    ],
+    "pivot": [
+      120.0,
+      98.5
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      240,
+      100
+    ]
+  },
+  {
+    "part": "burstPunch",
+    "source": "assets/art/streak-campfire-v2/native/blast-punch.png",
+    "nativeSha256": "481c720720e1a7195109640cf027d92d16751e3a16db94698ff0b514b720efcc",
+    "sourceBox": [
+      381,
+      44,
+      991,
+      1045
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.34965034965034963,
+    "axisScale": [
+      0.34965034965034963,
+      0.34965034965034963
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      213,
+      350
+    ],
+    "pivot": [
+      106.5,
+      344.75
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      213,
+      350
+    ]
+  },
+  {
+    "part": "burstSplit",
+    "source": "assets/art/streak-campfire-v2/native/blast-split.png",
+    "nativeSha256": "452de07d583751cd6b9ae1ae4eb8081a3cec7066bdaf2c8200037c9db9520149",
+    "sourceBox": [
+      98,
+      69,
+      1303,
+      1022
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.26556016597510373,
+    "axisScale": [
+      0.26556016597510373,
+      0.26556016597510373
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      320,
+      253
+    ],
+    "pivot": [
+      160.0,
+      249.205
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      320,
+      253
+    ]
+  },
+  {
+    "part": "burstSettle",
+    "source": "assets/art/streak-campfire-v2/native/blast-settle.png",
+    "nativeSha256": "48a71a3df40f0b403e9af844d54a57b8eeb7b648429a317e8fc62b9bb886e88d",
+    "sourceBox": [
+      322,
+      90,
+      1100,
+      971
+    ],
+    "declaredKey": "cyan",
+    "nativeEdgeMatteDecontamination": false,
+    "componentContextCrop": null,
+    "uniformScale": 0.34704370179948585,
+    "axisScale": [
+      0.34704370179948585,
+      0.34704370179948585
+    ],
+    "proportionDisclosure": null,
+    "registeredSize": [
+      270,
+      306
+    ],
+    "pivot": [
+      135.0,
+      301.41
+    ],
+    "end": null,
+    "palette": null,
+    "currentRuntimeSize": [
+      270,
+      306
+    ]
+  },
+  {
+    "part": "head",
+    "source": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+    "nativeSha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "eyes",
+    "source": "assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+    "nativeSha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "pupils",
+    "source": "assets/art/pico-banner-motion-v1/pupils-native.png",
+    "nativeSha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "browsMouth",
+    "source": "assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+    "nativeSha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "nose",
+    "source": "assets/art/pico-banner-motion-v1/face-nose.png",
+    "nativeSha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "blink",
+    "source": "assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+    "nativeSha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+    "sharedHeadBox": [
+      31,
+      3,
+      209,
+      282
+    ],
+    "sharedHeadScale": 0.8,
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  },
+  {
+    "part": "excited",
+    "source": "assets/art/streak-campfire-v1/excited.png",
+    "nativeSha256": "09914f6b6f226e56ba7c2c175015c41f6333c7c39ad3193dfd5caac6f5f21501",
+    "disclosure": "Existing separately generated expression glyphs transformed with the same accepted head anchors; no new face drawing.",
+    "palette": null,
+    "currentRuntimeSize": [
+      142,
+      223
+    ]
+  }
+]

@@ -1,0 +1,7372 @@
+{
+  "pass": true,
+  "generation": "v2 articulated full-parts rig",
+  "visualAcceptance": "Automated behavior and source checks are separate from direct artwork review; latest torso/limb redesign must be visually inspected.",
+  "scope": "Actual app and backend application with synthetic in-memory store only; headless Edge. No learner records or production writes.",
+  "flowOnly": false,
+  "savedRoundFlow": true,
+  "failedSaveNoCelebration": true,
+  "lostResponseRetryRecovered": true,
+  "repeatRoundNoCelebration": true,
+  "loginReloadNoCelebration": true,
+  "persistedSeenGuard": true,
+  "actualNormalFlowContinueAfterComplete": true,
+  "noEarlyKeyboardSkip": true,
+  "hiddenScreenDefersSeen": true,
+  "jointMaterial": [
+    {
+      "key": "leftUpperArm",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": [
+        {
+          "fraction": 0.25,
+          "width": 31
+        },
+        {
+          "fraction": 0.5,
+          "width": 30
+        },
+        {
+          "fraction": 0.75,
+          "width": 30
+        }
+      ]
+    },
+    {
+      "key": "rightUpperArm",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": [
+        {
+          "fraction": 0.25,
+          "width": 30
+        },
+        {
+          "fraction": 0.5,
+          "width": 31
+        },
+        {
+          "fraction": 0.75,
+          "width": 30
+        }
+      ]
+    },
+    {
+      "key": "leftForearm",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": [
+        {
+          "fraction": 0.25,
+          "width": 29.75
+        },
+        {
+          "fraction": 0.5,
+          "width": 28.75
+        },
+        {
+          "fraction": 0.75,
+          "width": 27.5
+        }
+      ]
+    },
+    {
+      "key": "rightForearm",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "end",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": [
+        {
+          "fraction": 0.25,
+          "width": 32.25
+        },
+        {
+          "fraction": 0.5,
+          "width": 30.25
+        },
+        {
+          "fraction": 0.75,
+          "width": 27.25
+        }
+      ]
+    },
+    {
+      "key": "leftPaw",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": []
+    },
+    {
+      "key": "rightPaw",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": []
+    },
+    {
+      "key": "leftLeg",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": []
+    },
+    {
+      "key": "rightLeg",
+      "samples": [
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": -2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 2,
+          "dy": 0,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": -2,
+          "alpha": 255
+        },
+        {
+          "name": "pivot",
+          "dx": 0,
+          "dy": 2,
+          "alpha": 255
+        }
+      ],
+      "shaftWidths": []
+    }
+  ],
+  "torsoCorrection": {
+    "hemPixel": [
+      22,
+      50,
+      83,
+      255
+    ],
+    "sideSkinPixels": 0,
+    "hemBelowHip": 32.31700000000001
+  },
+  "requestedArmLayering": {
+    "rightUpperBehind": true,
+    "rightForeBehind": true,
+    "rightPawBehind": true,
+    "leftUpperInFront": true,
+    "leftForeInFront": true
+  },
+  "rotatedLegEdge": {
+    "bluePixels": 0,
+    "sampledEdgePoints": 26
+  },
+  "counterImpactZoom": [
+    {
+      "time": 2400,
+      "scale": 0.04
+    },
+    {
+      "time": 2500,
+      "scale": 0.708902400497706
+    },
+    {
+      "time": 2590,
+      "scale": 1.2800036779189599
+    },
+    {
+      "time": 2700,
+      "scale": 1.1180734065563005
+    },
+    {
+      "time": 2830,
+      "scale": 0.910000132641441
+    },
+    {
+      "time": 3140,
+      "scale": 1.05708
+    },
+    {
+      "time": 3420,
+      "scale": 1
+    }
+  ],
+  "sparseWeekRail": [
+    {
+      "value": 0,
+      "segments": [
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    },
+    {
+      "value": 0,
+      "segments": [
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    },
+    {
+      "value": 1,
+      "segments": [
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0.210526
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    },
+    {
+      "value": 2,
+      "segments": [
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 0.421053
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    },
+    {
+      "value": 3,
+      "segments": [
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    },
+    {
+      "value": 3,
+      "segments": [
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": true,
+          "scale": 1
+        },
+        {
+          "active": false,
+          "scale": 0
+        },
+        {
+          "active": false,
+          "scale": 0
+        }
+      ]
+    }
+  ],
+  "continueOnlyAtEnd": true,
+  "noEarlyHeading": true,
+  "noMeshCanvas": true,
+  "noOpacityTransitions": true,
+  "desktopMobileFit": true,
+  "peakAndFinalFit": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 1760,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1106.8125,
+          "y": 357.671875,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 357.671875,
+          "right": 1421.859375,
+          "bottom": 521.296875,
+          "left": 1106.8125
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 758.6006643326671,
+            "right": 949.004928567902,
+            "top": 402.18736418996974,
+            "bottom": 745.4696550587731
+          },
+          {
+            "part": "head",
+            "left": 510.57479719387584,
+            "right": 653.1001874155174,
+            "top": 335.67672481344516,
+            "bottom": 537.9907918056583
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 1839,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1106.8125,
+          "y": 357.671875,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 357.671875,
+          "right": 1421.859375,
+          "bottom": 521.296875,
+          "left": 1106.8125
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 754.9802827988282,
+            "right": 941.2688399229576,
+            "top": 375.03890956297414,
+            "bottom": 742.7852968460825
+          },
+          {
+            "part": "head",
+            "left": 509.58540930001897,
+            "right": 651.629896555901,
+            "top": 335.83726101813255,
+            "bottom": 537.8827116526994
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 2400,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1258.0350341796875,
+          "y": 440.9242858886719,
+          "width": 12.601806640625,
+          "height": 6.54498291015625,
+          "top": 440.9242858886719,
+          "right": 1270.6368408203125,
+          "bottom": 447.4692687988281,
+          "left": 1258.0350341796875
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 728.4205518779675,
+            "right": 966.1919688491575,
+            "top": 474.2616016360552,
+            "bottom": 743.4710278580783
+          },
+          {
+            "part": "head",
+            "left": 527.8415590006182,
+            "right": 652.4111238283438,
+            "top": 369.72597477818783,
+            "bottom": 561.4161103061762
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 2590,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1068.8126220703125,
+          "y": 336.1235046386719,
+          "width": 390.9903564453125,
+          "height": 204.38436889648438,
+          "top": 336.1235046386719,
+          "right": 1459.802978515625,
+          "bottom": 540.5078735351562,
+          "left": 1068.8126220703125
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 706.0819405973705,
+            "right": 962.2537906921979,
+            "top": 487.3648811380906,
+            "bottom": 745.6821480922679
+          },
+          {
+            "part": "head",
+            "left": 531.752534525828,
+            "right": 654.5843874802879,
+            "top": 373.222001484792,
+            "bottom": 563.8240621015666
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 2830,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1117.9991455078125,
+          "y": 359.13592529296875,
+          "width": 293.07373046875,
+          "height": 161.58941650390625,
+          "top": 359.13592529296875,
+          "right": 1411.0728759765625,
+          "bottom": 520.725341796875,
+          "left": 1117.9991455078125
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 734.0018942240692,
+            "right": 956.5638621696467,
+            "top": 532.7581950629063,
+            "bottom": 741.0753785819786
+          },
+          {
+            "part": "head",
+            "left": 529.7834917012642,
+            "right": 659.7497452690379,
+            "top": 362.424422798631,
+            "bottom": 557.4296083320127
+          }
+        ]
+      }
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "time": 7600,
+      "fit": {
+        "height": 1080,
+        "scroll": 1080,
+        "width": 1905,
+        "scrollWidth": 1905,
+        "button": {
+          "x": 1106.8125,
+          "y": 699.234375,
+          "width": 170,
+          "height": 55,
+          "top": 699.234375,
+          "right": 1276.8125,
+          "bottom": 754.234375,
+          "left": 1106.8125
+        },
+        "title": {
+          "x": 1106.8125,
+          "y": 357.671875,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 357.671875,
+          "right": 1421.859375,
+          "bottom": 521.296875,
+          "left": 1106.8125
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 532.5557142857143,
+            "right": 652.93875,
+            "top": 377.8327678571428,
+            "bottom": 566.885
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 1760,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 862.015625,
+          "y": 267.65625,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 267.65625,
+          "right": 1177.0625,
+          "bottom": 431.28125,
+          "left": 862.015625
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 522.9245739477747,
+            "right": 715.5785462813656,
+            "top": 310.35978937655466,
+            "bottom": 657.698107839549
+          },
+          {
+            "part": "head",
+            "left": 271.96817474267124,
+            "right": 416.1775636178664,
+            "top": 243.06329825120935,
+            "bottom": 447.76779277272095
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 1839,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 862.015625,
+          "y": 267.65625,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 267.65625,
+          "right": 1177.0625,
+          "bottom": 431.28125,
+          "left": 862.015625
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 519.2614160523425,
+            "right": 707.7510524289589,
+            "top": 282.8905641067506,
+            "bottom": 654.9820327825208
+          },
+          {
+            "part": "head",
+            "left": 270.96709680622973,
+            "right": 414.6899006407341,
+            "top": 243.22573126005298,
+            "bottom": 447.6584356063697
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 2400,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 1013.2381591796875,
+          "y": 350.9086608886719,
+          "width": 12.601806640625,
+          "height": 6.54498291015625,
+          "top": 350.9086608886719,
+          "right": 1025.8399658203125,
+          "bottom": 357.4536437988281,
+          "left": 1013.2381591796875
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 492.3878705119258,
+            "right": 732.9686588197621,
+            "top": 383.2856148704004,
+            "bottom": 655.6758660007208
+          },
+          {
+            "part": "head",
+            "left": 289.43895075059254,
+            "right": 415.4803584486826,
+            "top": 277.5148547173127,
+            "bottom": 471.4698914648425
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 2590,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 822.0103759765625,
+          "y": 244.99740600585938,
+          "width": 395.0006103515625,
+          "height": 206.48065185546875,
+          "top": 244.99740600585938,
+          "right": 1217.010986328125,
+          "bottom": 451.4780578613281,
+          "left": 822.0103759765625
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 469.7853189519142,
+            "right": 728.9839493977172,
+            "top": 396.54371524332936,
+            "bottom": 657.913111569431
+          },
+          {
+            "part": "head",
+            "left": 293.39613613011875,
+            "right": 417.67930014338106,
+            "top": 281.05218847985645,
+            "bottom": 473.90629424412396
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 2830,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 873.2022705078125,
+          "y": 269.12030029296875,
+          "width": 293.07373046875,
+          "height": 161.58944702148438,
+          "top": 269.12030029296875,
+          "right": 1166.2760009765625,
+          "bottom": 430.7097473144531,
+          "left": 873.2022705078125
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 498.0351588132095,
+            "right": 723.2267919277068,
+            "top": 442.4733706537628,
+            "bottom": 653.2519111002754
+          },
+          {
+            "part": "head",
+            "left": 291.4038282195223,
+            "right": 422.90568885123855,
+            "top": 270.1270317674865,
+            "bottom": 467.4362872589542
+          }
+        ]
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "time": 7600,
+      "fit": {
+        "height": 900,
+        "scroll": 900,
+        "width": 1425,
+        "scrollWidth": 1425,
+        "button": {
+          "x": 862.015625,
+          "y": 609.21875,
+          "width": 170,
+          "height": 55,
+          "top": 609.21875,
+          "right": 1032.015625,
+          "bottom": 664.21875,
+          "left": 862.015625
+        },
+        "title": {
+          "x": 862.015625,
+          "y": 267.65625,
+          "width": 315.046875,
+          "height": 163.625,
+          "top": 267.65625,
+          "right": 1177.0625,
+          "bottom": 431.28125,
+          "left": 862.015625
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 294.2088058035714,
+            "right": 416.01421874999994,
+            "top": 285.7174330357143,
+            "bottom": 477.0033984375
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 1760,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 779.546875,
+          "y": 167.3125,
+          "width": 220.078125,
+          "height": 128.34375,
+          "top": 167.3125,
+          "right": 999.625,
+          "bottom": 295.65625,
+          "left": 779.546875
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 445.1608896616879,
+            "right": 638.9741823245151,
+            "top": 179.4298413529287,
+            "bottom": 528.8583133115368
+          },
+          {
+            "part": "head",
+            "left": 192.69432769260763,
+            "right": 337.7715153168484,
+            "top": 111.7283848417006,
+            "bottom": 317.66471527663896
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 1839,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 779.546875,
+          "y": 167.3125,
+          "width": 220.078125,
+          "height": 128.34375,
+          "top": 167.3125,
+          "right": 999.625,
+          "bottom": 295.65625,
+          "left": 779.546875
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 441.47568823730114,
+            "right": 631.0995855100459,
+            "top": 151.79531644825113,
+            "bottom": 526.1258939196825
+          },
+          {
+            "part": "head",
+            "left": 191.68722563951385,
+            "right": 336.27490013431105,
+            "top": 111.89179531229607,
+            "bottom": 317.5547000393196
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 2400,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 885.1843872070312,
+          "y": 232.61380004882812,
+          "width": 8.8031005859375,
+          "height": 5.133758544921875,
+          "top": 232.61380004882812,
+          "right": 893.9874877929688,
+          "bottom": 237.74755859375,
+          "left": 885.1843872070312
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 414.4404276422385,
+            "right": 656.468942126341,
+            "top": 252.79450748419947,
+            "bottom": 526.823902369492
+          },
+          {
+            "part": "head",
+            "left": 210.27023636687463,
+            "right": 337.07011462490175,
+            "top": 146.38725802856092,
+            "bottom": 341.5094444296148
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 2590,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 748.3349609375,
+          "y": 147.61607360839844,
+          "width": 282.4564208984375,
+          "height": 165.5805206298828,
+          "top": 147.61607360839844,
+          "right": 1030.7913818359375,
+          "bottom": 313.19659423828125,
+          "left": 748.3349609375
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 391.70186228921386,
+            "right": 652.4602541972188,
+            "top": 266.13239020006796,
+            "bottom": 529.07461085432
+          },
+          {
+            "part": "head",
+            "left": 214.25123462397337,
+            "right": 339.2822887371756,
+            "top": 149.94587815697886,
+            "bottom": 343.96050857942504
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 2830,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 787.0924072265625,
+          "y": 169.0118408203125,
+          "width": 205.3009033203125,
+          "height": 125.6451416015625,
+          "top": 169.0118408203125,
+          "right": 992.393310546875,
+          "bottom": 294.656982421875,
+          "left": 787.0924072265625
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 420.1216992351898,
+            "right": 646.6684522835317,
+            "top": 312.33843328414844,
+            "bottom": 524.3853610052473
+          },
+          {
+            "part": "head",
+            "left": 212.24693774146593,
+            "right": 344.5401279186679,
+            "top": 138.95497789349844,
+            "bottom": 337.4515674859296
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "time": 7600,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 1265,
+        "scrollWidth": 1265,
+        "button": {
+          "x": 779.546875,
+          "y": 449.59375,
+          "width": 170,
+          "height": 55,
+          "top": 449.59375,
+          "right": 949.546875,
+          "bottom": 504.59375,
+          "left": 779.546875
+        },
+        "title": {
+          "x": 779.546875,
+          "y": 167.3125,
+          "width": 220.078125,
+          "height": 128.34375,
+          "top": 167.3125,
+          "right": 999.625,
+          "bottom": 295.65625,
+          "left": 779.546875
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 215.06879464285714,
+            "right": 337.6071875,
+            "top": 154.63919642857144,
+            "bottom": 347.07625
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 1760,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 484.96875,
+          "y": 112.75,
+          "width": 222.5625,
+          "height": 116.015625,
+          "top": 112.75,
+          "right": 707.53125,
+          "bottom": 228.765625,
+          "left": 484.96875
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 274.6496437175605,
+            "right": 396.68534150971965,
+            "top": 187.47426520489304,
+            "bottom": 407.49399046750085
+          },
+          {
+            "part": "head",
+            "left": 115.6825644435735,
+            "right": 207.03128249176496,
+            "top": 144.84563858501286,
+            "bottom": 274.5146795475707
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 1839,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 484.96875,
+          "y": 112.75,
+          "width": 222.5625,
+          "height": 116.015625,
+          "top": 112.75,
+          "right": 707.53125,
+          "bottom": 228.765625,
+          "left": 484.96875
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 272.32923462099717,
+            "right": 391.72705457344904,
+            "top": 170.07402147773033,
+            "bottom": 405.77350627075464
+          },
+          {
+            "part": "head",
+            "left": 115.0484366182389,
+            "right": 206.08892979955294,
+            "top": 144.94853096422833,
+            "bottom": 274.445407796033
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 2400,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 591.7987670898438,
+          "y": 171.77874755859375,
+          "width": 8.9024658203125,
+          "height": 4.640625,
+          "top": 171.77874755859375,
+          "right": 600.7012329101562,
+          "bottom": 176.41937255859375,
+          "left": 591.7987670898438
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 255.30632124708853,
+            "right": 407.7010215530705,
+            "top": 233.6687656006628,
+            "bottom": 406.21301146189495
+          },
+          {
+            "part": "head",
+            "left": 126.74934035933512,
+            "right": 206.58964135509368,
+            "top": 166.668805179714,
+            "bottom": 289.5286557350077
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 2590,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 474.17962646484375,
+          "y": 106.39744567871094,
+          "width": 244.10552978515625,
+          "height": 128.06529235839844,
+          "top": 106.39744567871094,
+          "right": 718.28515625,
+          "bottom": 234.46273803710938,
+          "left": 474.17962646484375
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 240.98884770580545,
+            "right": 405.1769272459143,
+            "top": 242.06704314880122,
+            "bottom": 407.63018350772853
+          },
+          {
+            "part": "head",
+            "left": 129.25599969905124,
+            "right": 207.98255000299912,
+            "top": 168.90951160692595,
+            "bottom": 291.07198292245613
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 2830,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 492.86334228515625,
+          "y": 113.80469512939453,
+          "width": 207.0570068359375,
+          "height": 114.5390853881836,
+          "top": 113.80469512939453,
+          "right": 699.9203491210938,
+          "bottom": 228.34378051757812,
+          "left": 492.86334228515625
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 258.8835678521433,
+            "right": 401.53008456397106,
+            "top": 271.16095426556865,
+            "bottom": 404.67756932120363
+          },
+          {
+            "part": "head",
+            "left": 127.99398219096955,
+            "right": 211.29317986009886,
+            "top": 161.9890255835485,
+            "bottom": 286.9735892709194
+          }
+        ]
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "time": 7600,
+      "fit": {
+        "height": 540,
+        "scroll": 540,
+        "width": 785,
+        "scrollWidth": 785,
+        "button": {
+          "x": 484.96875,
+          "y": 404.140625,
+          "width": 170,
+          "height": 55,
+          "top": 404.140625,
+          "right": 654.96875,
+          "bottom": 459.140625,
+          "left": 484.96875
+        },
+        "title": {
+          "x": 484.96875,
+          "y": 112.75,
+          "width": 222.5625,
+          "height": 116.015625,
+          "top": 112.75,
+          "right": 707.53125,
+          "bottom": 228.765625,
+          "left": 484.96875
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 129.77078125,
+            "right": 206.92781250000002,
+            "top": 171.8646875,
+            "bottom": 293.033828125
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 1760,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 89.40625,
+          "y": 348.640625,
+          "width": 196.171875,
+          "height": 109.828125,
+          "top": 348.640625,
+          "right": 285.578125,
+          "bottom": 458.46875,
+          "left": 89.40625
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 210.0753147485058,
+            "right": 307.8906175541858,
+            "top": 142.57366918497362,
+            "bottom": 318.92613357975875
+          },
+          {
+            "part": "head",
+            "left": 82.6583926786864,
+            "right": 155.87715307789665,
+            "top": 108.40553562691105,
+            "bottom": 212.33919385760663
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 1839,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 89.40625,
+          "y": 348.640625,
+          "width": 196.171875,
+          "height": 109.828125,
+          "top": 348.640625,
+          "right": 285.578125,
+          "bottom": 458.46875,
+          "left": 89.40625
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 208.2154366757803,
+            "right": 303.9164006091181,
+            "top": 128.62684755935567,
+            "bottom": 317.5471134592384
+          },
+          {
+            "part": "head",
+            "left": 82.1501200471958,
+            "right": 155.12182889320232,
+            "top": 108.4880069808791,
+            "bottom": 212.2836704535935
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 2400,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 183.56875610351562,
+          "y": 404.52117919921875,
+          "width": 7.8468780517578125,
+          "height": 4.39312744140625,
+          "top": 404.52117919921875,
+          "right": 191.41563415527344,
+          "bottom": 408.914306640625,
+          "left": 183.56875610351562
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 194.57105674082388,
+            "right": 316.7200182831918,
+            "top": 179.5999584258881,
+            "bottom": 317.89939016297205
+          },
+          {
+            "part": "head",
+            "left": 91.52874829484756,
+            "right": 155.52316434921727,
+            "top": 125.89746370417765,
+            "bottom": 224.3733498763857
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 2590,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 61.59908676147461,
+          "y": 331.76251220703125,
+          "width": 251.7471923828125,
+          "height": 141.73931884765625,
+          "top": 331.76251220703125,
+          "right": 313.3462791442871,
+          "bottom": 473.5018310546875,
+          "left": 61.59908676147461
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 183.095168658977,
+            "right": 314.6968803536242,
+            "top": 186.33143189045074,
+            "bottom": 319.0352964207217
+          },
+          {
+            "part": "head",
+            "left": 93.53791157068353,
+            "right": 156.63962275967,
+            "top": 127.69345767677456,
+            "bottom": 225.6103732957594
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 2830,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 96.2197494506836,
+          "y": 349.9349670410156,
+          "width": 182.81344604492188,
+          "height": 107.83853149414062,
+          "top": 349.9349670410156,
+          "right": 279.03319549560547,
+          "bottom": 457.77349853515625,
+          "left": 96.2197494506836
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 197.43832809022825,
+            "right": 311.7738256436287,
+            "top": 209.65108160913326,
+            "bottom": 316.66868684706105
+          },
+          {
+            "part": "head",
+            "left": 92.52636636766171,
+            "right": 159.29319272164338,
+            "top": 122.14647881578563,
+            "bottom": 222.32538682626992
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "time": 7600,
+      "fit": {
+        "height": 740,
+        "scroll": 740,
+        "width": 375,
+        "scrollWidth": 375,
+        "button": {
+          "x": 22,
+          "y": 614.46875,
+          "width": 331,
+          "height": 51.59375,
+          "top": 614.46875,
+          "right": 353,
+          "bottom": 666.0625,
+          "left": 22
+        },
+        "title": {
+          "x": 89.40625,
+          "y": 348.640625,
+          "width": 196.171875,
+          "height": 109.828125,
+          "top": 348.640625,
+          "right": 285.578125,
+          "bottom": 458.46875,
+          "left": 89.40625
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 93.95052455357144,
+            "right": 155.79421875000003,
+            "top": 130.06212053571429,
+            "bottom": 227.1828515625
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 1760,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 70.25,
+          "y": 274.296875,
+          "width": 164.484375,
+          "height": 94.71875,
+          "top": 274.296875,
+          "right": 234.734375,
+          "bottom": 369.015625,
+          "left": 70.25
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 169.5229646095146,
+            "right": 243.28080393444594,
+            "top": 122.68190479416614,
+            "bottom": 255.6608596232148
+          },
+          {
+            "part": "head",
+            "left": 73.44396065270925,
+            "right": 128.65472430820958,
+            "top": 96.91735024368909,
+            "bottom": 175.28874862765264
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 1839,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 70.25,
+          "y": 274.296875,
+          "width": 164.484375,
+          "height": 94.71875,
+          "top": 274.296875,
+          "right": 234.734375,
+          "bottom": 369.015625,
+          "left": 70.25
+        },
+        "phase": "burst",
+        "artwork": [
+          {
+            "part": "burstPunch",
+            "left": 168.12051955115214,
+            "right": 240.28403710483184,
+            "top": 112.16527397005677,
+            "bottom": 254.62100653726927
+          },
+          {
+            "part": "head",
+            "left": 73.06069658245207,
+            "right": 128.08517048324626,
+            "top": 96.97953794541274,
+            "bottom": 175.24688108551447
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 2400,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 149.20249938964844,
+          "y": 322.4897766113281,
+          "width": 6.579376220703125,
+          "height": 3.78875732421875,
+          "top": 322.4897766113281,
+          "right": 155.78187561035156,
+          "bottom": 326.2785339355469,
+          "left": 149.20249938964844
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 157.8319455339546,
+            "right": 249.9386325320756,
+            "top": 150.60165778062037,
+            "bottom": 254.88664154290353
+          },
+          {
+            "part": "head",
+            "left": 80.1326713710267,
+            "right": 128.38779834648517,
+            "top": 110.10717620751944,
+            "bottom": 184.36312983983981
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 2590,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 46.92625427246094,
+          "y": 259.754638671875,
+          "width": 211.0982208251953,
+          "height": 122.2120361328125,
+          "top": 259.754638671875,
+          "right": 258.02447509765625,
+          "bottom": 381.9666748046875,
+          "left": 46.92625427246094
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 149.17852745955275,
+            "right": 248.41308102775042,
+            "top": 155.6775398152095,
+            "bottom": 255.7431740980777
+          },
+          {
+            "part": "head",
+            "left": 81.64768525766833,
+            "right": 129.22966621060385,
+            "top": 111.46144932286734,
+            "bottom": 185.2959100080779
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 2830,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        },
+        "title": {
+          "x": 75.91252136230469,
+          "y": 275.5089111328125,
+          "width": 153.39096069335938,
+          "height": 92.81134033203125,
+          "top": 275.5089111328125,
+          "right": 229.30348205566406,
+          "bottom": 368.32025146484375,
+          "left": 75.91252136230469
+        },
+        "phase": "impact",
+        "artwork": [
+          {
+            "part": "burstSettle",
+            "left": 159.9940176578888,
+            "right": 246.20894534086165,
+            "top": 173.26177180886017,
+            "bottom": 253.95862706226592
+          },
+          {
+            "part": "head",
+            "left": 80.88492742311348,
+            "right": 131.2305963440158,
+            "top": 107.27873799005681,
+            "bottom": 182.8188589000062
+          }
+        ]
+      }
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "time": 7600,
+      "fit": {
+        "height": 640,
+        "scroll": 640,
+        "width": 305,
+        "scrollWidth": 305,
+        "button": {
+          "x": 22,
+          "y": 523.8125,
+          "width": 261,
+          "height": 51.59375,
+          "top": 523.8125,
+          "right": 283,
+          "bottom": 575.40625,
+          "left": 22
+        },
+        "title": {
+          "x": 70.25,
+          "y": 274.296875,
+          "width": 164.484375,
+          "height": 94.71875,
+          "top": 274.296875,
+          "right": 234.734375,
+          "bottom": 369.015625,
+          "left": 70.25
+        },
+        "phase": "complete",
+        "artwork": [
+          {
+            "part": "head",
+            "left": 81.95881696428572,
+            "right": 128.5921875,
+            "top": 113.24754464285715,
+            "bottom": 186.481640625
+          }
+        ]
+      }
+    }
+  ],
+  "visibilityPauseAndResume": true,
+  "reducedMotionImmediateFinal": true,
+  "normalReviewWallStart": 1794002122503,
+  "playback": [
+    {
+      "phase": "anticipation",
+      "time": 0.800000011920929
+    },
+    {
+      "phase": "burst",
+      "time": 1414.5
+    },
+    {
+      "phase": "impact",
+      "time": 2414.699999988079
+    },
+    {
+      "phase": "week",
+      "time": 3815.399999976158
+    },
+    {
+      "phase": "settling",
+      "time": 6515
+    },
+    {
+      "phase": "complete",
+      "time": 7616.300000011921
+    }
+  ],
+  "normalSpeedComplete": true,
+  "previewEvent": {
+    "streak": 3,
+    "activeDays": [
+      "2026-11-04",
+      "2026-11-05",
+      "2026-11-06"
+    ],
+    "dayKey": "2026-11-06"
+  },
+  "failedRigImmediateFinal": true,
+  "failedNativeImmediateFinal": true,
+  "stalledFetchDeadlineFinalContinue": true,
+  "deadlineAcceleratedForTest": true,
+  "disposeAndLateDecode": true,
+  "sourceBinding": [
+    {
+      "file": "assets/art/streak-campfire-v2/blink.png",
+      "sha256": "d5d5294f9dc026f25f70f2d5fe8d4d6d961e1f45274475d5b01b951b0774687c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/browsMouth.png",
+      "sha256": "6cfd787a88d72295c736a48cfd532c505eebba777685d59581fd47979f605f74"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/burstCompress.png",
+      "sha256": "ab4ccf568a12c90eebad0ccc020ecbac6bfabcf4bbbfb31de742319c1a635772"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/burstPunch.png",
+      "sha256": "d706fa6db54a49bcf64a23a0ba5333dbb9f9c05deeaba3a71687aa675298b07a"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/burstSettle.png",
+      "sha256": "b5b820691a7dead75200e26a836d71a95f8d2f8d79c1d5f9db12b84a48645f5c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/burstSplit.png",
+      "sha256": "ee6d5654a0cbc0ab9ab28aa3a5a633d920a69652f7a4f699de94d30a16b3a6af"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/excited.png",
+      "sha256": "48a1ed2b8910d3ed16c423986afbc8f7e5606884d04f4857fae3b2aeaaaf0cb4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/eyeMask.png",
+      "sha256": "bb1dc31cb82e27b2410f693d44c24e80f6cad2c2495a03a6199e514bcc37fbdb"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/eyes.png",
+      "sha256": "bc3095cc05046c982ee90ea416c5542215ef8d24fe391cd5ff51b4f46757e8f4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/faceMask.png",
+      "sha256": "49c16e3d48250891bdda1dbb4b91efe6f31b1fd1f63d16f7bb900c6dc820f79f"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireEmber.png",
+      "sha256": "ec213e635cee9115586454dc37115d23dc2cb5d1bbf75f7a5057c45c27bdb241"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireFull.png",
+      "sha256": "8886f2172d94208db33880f3961aebc0eb2bd0d74eafbdc5ef96c2325ccc3cf4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireIgnite.png",
+      "sha256": "76c09280dfce50de8dd01f12009926db04013b58ba79b810d63ca88b8a8ac5c1"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireMask.png",
+      "sha256": "46e845dbeaa138778b5c1993dd78afa390d23a4847099781433a4cf07bde52dd"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireSmall.png",
+      "sha256": "43721a7ba615fa33ebd9ebcfe7d96fb6e322cf64a217949f884bf3bb4501f6b1"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/fireplace.png",
+      "sha256": "07ccde3cc74378b415f6886b7db07f58ebe8e5a396f33e7f7bcef9c341d8a448"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/head.png",
+      "sha256": "20c259c59289a89e7bf8fb37f173ad32bab1cff915af98163ffd7e2bdf556273"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftForearm.png",
+      "sha256": "f65dbb1bfd7c49394cb3776304a609b4514e81c7255a71612b2408174bd2162e"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftLeg.png",
+      "sha256": "61016b087a6db34d87021ddccbcd00b5b3c1cc54648fdde339838f46d35c69e5"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftPaw.png",
+      "sha256": "df88e7fed984aee852f763feb6e134fd64ba10c9fd864197692a17a043cdff8f"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/leftUpperArm.png",
+      "sha256": "a41ec628555abbd084558ed80f744a4b566aa4ddc00ce1ee6249ef9e675c83d9"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/marshmallow.png",
+      "sha256": "0bb72fb1f52f4ae27248958f963c8acb6e0035f073be5e50d58ae91d286d051c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/nose.png",
+      "sha256": "d9e81a4127c76b4ec22cf90c50d21d150e1d014ab9f20170c74bda9e313fbc36"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/pupils.png",
+      "sha256": "a48563567943393e03823f57734d3ce803daa9805ef59a6c67731a407881a3a6"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/reduced.png",
+      "sha256": "71cd3c081718f47a8d67bfb15e83b95b66e35b847b67e19e9530777db80564aa"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightForearm.png",
+      "sha256": "6014cc46b655b5f81d00444a957073eaa87b7cb0d5ce87e124a57ebadf6510b0"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightLeg.png",
+      "sha256": "9915973dbeecfbee09923d6e3833bdb7f699cef9c340edb2364cab576a446a8b"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightPaw.png",
+      "sha256": "d84eeaf8b485fb2aa5e4d6e82c2bbd758fc9a9ed1f4361ccb5e95687c0cb2855"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rightUpperArm.png",
+      "sha256": "5938423ed448230be53d433d2a21fb0cd46d90bf7184dab6000112bfc5d27df4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/rigs.json",
+      "sha256": "1594e4f82698060e5b0b938647499c0aceb13e97b8ed93f72b30b869167fcf1b"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/satchel.png",
+      "sha256": "d1838a5bf7f81e3ecb95c7496b0ee363d5548d9b3aa33276ab94c839fd160632"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/seat.png",
+      "sha256": "1447ad67153d4758853de927060fe3165eaad555caff2ce6a6447820a17945f4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/skewer.png",
+      "sha256": "4e4e3516b8d5864f599b1304fbf078a98dd9323911d2a00536e54c294bc1298f"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/startup.png",
+      "sha256": "7968d1566042f8913a0c29eb5f369eec04ed6d39006234a0de4a190ca4187a3c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v2/torso.png",
+      "sha256": "52b0973b35b864d20dfa2212c3b687b920e1756ac9323cd21dce0b4113f48d12"
+    },
+    {
+      "file": "index.html",
+      "sha256": "2724d3690c85f698d692d1ab60df5c4d4090346aaf14228a5a805d281bd0e601"
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "81c0635b18fb5cea6fff82e819d085f9f9ec61c62c7357f70060c5974f3bca99"
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "d838989e16a3645ca24233319125b4890a2d1f57431c385c4df50af0d1c3a7ff"
+    },
+    {
+      "file": "src/streak-celebration.js",
+      "sha256": "0e9d87badc700427811290fcf1d776ddfdf1066aaee164f6df4c707baa028b6c"
+    },
+    {
+      "file": "styles/streak-celebration.css",
+      "sha256": "db50c0625c86e6bf355419124ef896541623d5b4d7877440a7deba7c926f3adb"
+    }
+  ],
+  "sourceUnchangedDuringRun": true,
+  "states": [
+    {
+      "label": "01-rest",
+      "time": 0,
+      "phase": "anticipation",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": false,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8486328125,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02678571428572,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 238.46690848214286,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 216.03605223964658,
+            "y": 314.5649445097598
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 259.35477323857117,
+            "y": 323.8692912333702
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 277.06721884769513,
+            "y": 327.67371415884094
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 452.7945160869082,
+            "y": 343.1034132735689
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 162.98186383928572,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 171.04428681357814,
+            "y": 319.2555583421531
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 214.4341738513314,
+            "y": 322.43622331538023
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 197.29324776785714,
+            "y": 250.47310267857145
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000005159071485955636,
+        "point": {
+          "x": 232.50210541473277,
+          "y": 323.7606802565189
+        },
+        "target": {
+          "x": 232.50210908558986,
+          "y": 323.76068388154675
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    },
+    {
+      "label": "02-anticipation",
+      "time": 1150,
+      "phase": "anticipation",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": false,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8486328125,
+            "y": 358.55396205357147
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02678571428572,
+            "y": 358.55396205357147
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 238.46690848214286,
+            "y": 274.49107142857144
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 216.78053204450507,
+            "y": 321.7758105428454
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 259.5708337249615,
+            "y": 333.2680922584731
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 277.06721574260945,
+            "y": 337.9671325375672
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 452.6691457738949,
+            "y": 354.76358392044204
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 162.98186383928572,
+            "y": 274.49107142857144
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 171.38716543035827,
+            "y": 326.0631210237005
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 214.5574243897069,
+            "y": 331.46012650856676
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 197.29324776785714,
+            "y": 259.0509486607143
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000001998343351185438,
+        "point": {
+          "x": 232.53390088463664,
+          "y": 333.70748718187343
+        },
+        "target": {
+          "x": 232.53389958041515,
+          "y": 333.707488695935
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 1.0000000000000004,
+          "angle": 0
+        },
+        {
+          "side": "right",
+          "dot": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "label": "03-burst",
+      "time": 1650,
+      "phase": "burst",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": false,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 169.74707176611363,
+            "y": 322.9095463875537
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 216.54741387791324,
+            "y": 316.9508477508723
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 221.24657190732447,
+            "y": 231.61102770693367
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 213.34340812572285,
+            "y": 283.0278097760311
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 255.2215363805754,
+            "y": 268.5604385287745
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 272.3449428852229,
+            "y": 262.6449239333552
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 441.11199864274005,
+            "y": 211.30449638635457
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 146.36602452844508,
+            "y": 241.14494552562385
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 169.19915301774054,
+            "y": 288.144665074475
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 211.8039602883314,
+            "y": 279.33391458108855
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 178.23583746914247,
+            "y": 219.79304029465573
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000010937513725764035,
+        "point": {
+          "x": 229.5449777140546,
+          "y": 275.66504038470725
+        },
+        "target": {
+          "x": 229.54497678876157,
+          "y": 275.6650512830117
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "label": "04-recoil",
+      "time": 2050,
+      "phase": "burst",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": false,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 170.9557061404366,
+            "y": 325.4498046504859
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 217.81050989061734,
+            "y": 319.9356885149369
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 223.31965691278927,
+            "y": 234.64432746116245
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 246.38920849882678,
+            "y": 281.269870522011
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 271.9503161431687,
+            "y": 245.07992394937577
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 282.4019111676527,
+            "y": 230.28233885260389
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 420.0840187592653,
+            "y": 120.00180630537074
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 148.3519709125001,
+            "y": 243.4669132780408
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 188.6851859556193,
+            "y": 276.6867440808134
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 230.19863694134045,
+            "y": 263.67012723629404
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 180.42305868152283,
+            "y": 222.41853654303037
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "visible"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000007657523283912722,
+        "point": {
+          "x": 247.48520398674447,
+          "y": 258.2498932050516
+        },
+        "target": {
+          "x": 247.4852059460065,
+          "y": 258.24990060768323
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 1,
+          "angle": 0
+        },
+        {
+          "side": "right",
+          "dot": 1,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "label": "05-impact",
+      "time": 2600,
+      "phase": "impact",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": true,
+      "numberScale": 1.278124408772871,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.79464538285566,
+            "y": 347.11722666720726
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 222.96312395713133,
+            "y": 348.07260105056133
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 240.10238402814338,
+            "y": 264.33961629822244
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 256.56839876974686,
+            "y": 313.68549590968723
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 286.8454105562196,
+            "y": 281.3376209529359
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 299.2252757070863,
+            "y": 268.11100755046664
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 450.7145333536628,
+            "y": 177.7275830332528
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 164.6328183093023,
+            "y": 262.8110172848559
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 200.03592829377658,
+            "y": 301.24206199751694
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 242.94098143103696,
+            "y": 294.0340565792501
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 199.2845752299952,
+            "y": 246.353660991195
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "visible"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000007657523256318511,
+        "point": {
+          "x": 260.8070238831323,
+          "y": 291.03257956474306
+        },
+        "target": {
+          "x": 260.80702481001947,
+          "y": 291.03258716596287
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    },
+    {
+      "label": "06-zoom-settle",
+      "time": 3350,
+      "phase": "impact",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": true,
+      "numberScale": 1.00444,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.84982685925598,
+            "y": 349.3441986041367
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02535285817854,
+            "y": 349.8420519452487
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 239.35170004744379,
+            "y": 265.9467758042598
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 256.2955345374457,
+            "y": 315.1306344255118
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 286.2573877520325,
+            "y": 282.4906312257053
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 298.5083887782424,
+            "y": 269.1445704919971
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 449.1139134358648,
+            "y": 177.29613799382082
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 163.8708584491677,
+            "y": 265.1502104584805
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 199.64503704584774,
+            "y": 303.2360810670432
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 242.47816341164364,
+            "y": 295.61228853624453
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 198.36136948151577,
+            "y": 248.35754888877202
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "visible"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000007657523272568877,
+        "point": {
+          "x": 260.31425492186935,
+          "y": 292.4376741017753
+        },
+        "target": {
+          "x": 260.3142559224354,
+          "y": 292.43768169364796
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 1.0000000000000002,
+          "angle": 0
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    },
+    {
+      "label": "07-week-start",
+      "time": 3900,
+      "phase": "week",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": true,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8530098219916,
+            "y": 352.1249373979088
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.0215333028958,
+            "y": 351.1717827117952
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 236.7601562741164,
+            "y": 266.81410843036497
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 253.4048708646842,
+            "y": 316.0999984223132
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 283.2169335516772,
+            "y": 283.3231258551718
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 295.4066872346695,
+            "y": 269.9211010678496
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 444.95022615441883,
+            "y": 176.35353950334598
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 161.2905187046697,
+            "y": 268.3391559281469
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 197.1757760412237,
+            "y": 306.3203841885472
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 239.75253722330672,
+            "y": 297.37508743188386
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 195.2482977140132,
+            "y": 250.49376216337177
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "visible"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.0000035487471115953027,
+        "point": {
+          "x": 257.48187601047204,
+          "y": 293.6501869850797
+        },
+        "target": {
+          "x": 257.48187799401876,
+          "y": 293.6501899277228
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 1.0000000000000002,
+          "angle": 0
+        },
+        {
+          "side": "right",
+          "dot": 1.0000000000000002,
+          "angle": 0
+        }
+      ]
+    },
+    {
+      "label": "08-week-fill",
+      "time": 5200,
+      "phase": "week",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": true,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8486328125,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02678571428572,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 238.46690848214286,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 216.03605223964658,
+            "y": 314.5649445097598
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 259.35477323857117,
+            "y": 323.8692912333702
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 277.06721884769513,
+            "y": 327.67371415884094
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 452.7945160869082,
+            "y": 343.1034132735689
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 162.98186383928572,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 171.04428681357814,
+            "y": 319.2555583421531
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 214.4341738513314,
+            "y": 322.43622331538023
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 197.29324776785714,
+            "y": 250.47310267857145
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000005159071485955636,
+        "point": {
+          "x": 232.50210541473277,
+          "y": 323.7606802565189
+        },
+        "target": {
+          "x": 232.50210908558986,
+          "y": 323.76068388154675
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    },
+    {
+      "label": "09-final-approach",
+      "time": 7599,
+      "phase": "settling",
+      "buttonVisible": false,
+      "buttonDisabled": true,
+      "revealVisible": true,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8486328125,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02678571428572,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 238.46690848214286,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 216.03605223964658,
+            "y": 314.5649445097598
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 259.35477323857117,
+            "y": 323.8692912333702
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 277.06721884769513,
+            "y": 327.67371415884094
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 452.7945160869082,
+            "y": 343.1034132735689
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 162.98186383928572,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 171.04428681357814,
+            "y": 319.2555583421531
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 214.4341738513314,
+            "y": 322.43622331538023
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 197.29324776785714,
+            "y": 250.47310267857145
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000005159071485955636,
+        "point": {
+          "x": 232.50210541473277,
+          "y": 323.7606802565189
+        },
+        "target": {
+          "x": 232.50210908558986,
+          "y": 323.76068388154675
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    },
+    {
+      "label": "10-complete",
+      "time": 7600,
+      "phase": "complete",
+      "buttonVisible": true,
+      "buttonDisabled": false,
+      "revealVisible": true,
+      "numberScale": 1,
+      "opacity": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "jointCount": 11,
+      "joints": [
+        {
+          "name": "leftHip",
+          "point": {
+            "x": 175.8486328125,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightHip",
+          "point": {
+            "x": 223.02678571428572,
+            "y": 351.69168526785717
+          }
+        },
+        {
+          "name": "rightShoulder",
+          "point": {
+            "x": 238.46690848214286,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "rightElbow",
+          "point": {
+            "x": 216.03605223964658,
+            "y": 314.5649445097598
+          }
+        },
+        {
+          "name": "rightWrist",
+          "point": {
+            "x": 259.35477323857117,
+            "y": 323.8692912333702
+          }
+        },
+        {
+          "name": "mainGrip",
+          "point": {
+            "x": 277.06721884769513,
+            "y": 327.67371415884094
+          }
+        },
+        {
+          "name": "skewerTip",
+          "point": {
+            "x": 452.7945160869082,
+            "y": 343.1034132735689
+          }
+        },
+        {
+          "name": "leftShoulder",
+          "point": {
+            "x": 162.98186383928572,
+            "y": 267.62879464285714
+          }
+        },
+        {
+          "name": "leftElbow",
+          "point": {
+            "x": 171.04428681357814,
+            "y": 319.2555583421531
+          }
+        },
+        {
+          "name": "leftWrist",
+          "point": {
+            "x": 214.4341738513314,
+            "y": 322.43622331538023
+          }
+        },
+        {
+          "name": "neck",
+          "point": {
+            "x": 197.29324776785714,
+            "y": 250.47310267857145
+          }
+        }
+      ],
+      "canvasCount": 0,
+      "images": [
+        {
+          "part": "fireMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "faceMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/faceMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyeMask",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyeMask.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireplace",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireplace.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireEmber",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireEmber.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireSmall",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireSmall.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "fireIgnite",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireIgnite.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "fireFull",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/fireFull.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstCompress",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstCompress.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstPunch",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstPunch.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSplit",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSplit.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "burstSettle",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/burstSettle.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "seat",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/seat.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightLeg",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightLeg.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "skewer",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/skewer.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "marshmallow",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/marshmallow.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "rightPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/rightPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "torso",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/torso.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftUpperArm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftUpperArm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftForearm",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftForearm.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "leftPaw",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/leftPaw.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "satchel",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/satchel.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "head",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/head.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "eyes",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/eyes.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "pupils",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/pupils.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "browsMouth",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/browsMouth.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "blink",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/blink.png",
+          "visibility": "hidden"
+        },
+        {
+          "part": "nose",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/nose.png",
+          "visibility": "visible"
+        },
+        {
+          "part": "excited",
+          "href": "http://127.0.0.1:8898/Horizons/App/assets/art/streak-campfire-v2/excited.png",
+          "visibility": "hidden"
+        }
+      ],
+      "gripError": {
+        "pixels": 0.000005159071485955636,
+        "point": {
+          "x": 232.50210541473277,
+          "y": 323.7606802565189
+        },
+        "target": {
+          "x": 232.50210908558986,
+          "y": 323.76068388154675
+        }
+      },
+      "wristAlignment": [
+        {
+          "side": "left",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        },
+        {
+          "side": "right",
+          "dot": 0.9999999999999999,
+          "angle": 8.537736462515939e-7
+        }
+      ]
+    }
+  ],
+  "finiteSceneMs": 7600,
+  "errors": [],
+  "apiCalls": [
+    "getSession",
+    "saveAttempt",
+    "saveAttempt",
+    "saveAttempt",
+    "getSession",
+    "saveAttempt",
+    "getSession"
+  ]
+}

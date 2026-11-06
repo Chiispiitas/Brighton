@@ -1,4 +1,4 @@
-import {shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streak2';
+import {STREAK_DURATION,shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streak3';
 import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
@@ -200,8 +200,8 @@ function render() {
       // Background saves do not consume the visible daily celebration.
       const profileId=profile().id;
       markControls(app);
-      streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent)});
-      app.querySelector('[data-action=streak-results]')?.focus({preventScroll:true});
+      streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent),onImpact:()=>{if(!result.streakSoundPlayed){result.streakSoundPlayed=true;playCompletionSound(result.newIslandMastery);}}});
+      streakPage.focus({preventScroll:true});
     }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
     return;
   }
@@ -378,7 +378,7 @@ async function saveActivityResult(result){
   if(state.active!==result)return;
   render();window.scrollTo({top:0,behavior:'instant'});
   if(result.saved){
-    playCompletionSound(result.newIslandMastery);
+    if(!result.showStreak)playCompletionSound(result.newIslandMastery);
     const rewards=rewardItems().filter(item=>result.oldXp<item.unlockXp&&xp()>=item.unlockXp);
     if(rewards.length)notify(`You earned ${rewards[0].label}. Find it in your avatar’s pins.`,'success');
   }
@@ -489,7 +489,7 @@ on('click','[data-action]',async(_,target)=>{
     case'back-to-path':stopAudio();state.active=null;return route('learn');
     case'play-again':{const previous=state.active.previous;state.active=null;if(previous.kind==='quiz'){const options={...previous.options,audioFallbackQuestionIds:[],audioEnabled:previous.audioDisabled?false:previous.options.audioEnabled};if(options.activityId&&allActivities.some(item=>item.id===options.activityId)){const seed=Date.now(),questions=pathNodeById[options.activityId]?selectIslandQuestions(pathNodeById[options.activityId],progress(),{...options,count:8,seed}):getActivityQuestions(options.activityId,{...options,seed});return beginQuiz(questions,{...options,seed},previous.title);}return startQuiz(options,previous.title);}return startGame(previous.kind,previous.options);}
     case'retry-save':return saveActivityResult(state.active);
-    case'streak-results':{if(state.active?.kind!=='result'||!state.active.saved)return;state.active.showStreak=false;render();window.scrollTo({top:0,behavior:'instant'});app.querySelector('[data-action=back-to-path]')?.focus({preventScroll:true});return;}
+    case'streak-results':{if(state.active?.kind!=='result'||!state.active.saved||Number(state.active.streakElapsed||0)<STREAK_DURATION)return;state.active.showStreak=false;render();window.scrollTo({top:0,behavior:'instant'});app.querySelector('[data-action=back-to-path]')?.focus({preventScroll:true});return;}
     case'leave-activity':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Leave practice?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>This round will not be saved.</p><div class="dialog-actions"><button class="primary-button" data-dialog-close>Continue</button><button class="text-button" data-leave-confirm>Back to lessons</button></div>`);
     case'sign-out':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Sign out?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>You can sign in again with your book code.</p><div class="dialog-actions"><button class="primary-button" data-signout-confirm>Sign out</button><button class="text-button" data-dialog-close>Cancel</button></div>`);
     case'demo-codes':{let codes=window.HORIZONS_CONFIG?.demoCodes || [];if(!codes.length){try{const response=await fetch('./demo-codes.json');if(response.ok){const data=await response.json();codes=data.codes || data;}}catch{}}return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Example codes</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>These example book codes open a shared demonstration profile. Use a made-up name and date.</p>${codes.length?`<div class="demo-code-list">${codes.map(item=>{const code=typeof item==='string'?item:item.code;return `<button data-use-demo="${esc(code)}"><b>${esc(code)}</b><small>${esc(typeof item==='string'?'Horizons A1':item.label || item.title || 'Horizons A1')}</small>${icon('arrow')}</button>`;}).join('')}</div>`:'<p>Example codes are being prepared. Your Brighton book code can be used in the main field.</p>'}`);}
