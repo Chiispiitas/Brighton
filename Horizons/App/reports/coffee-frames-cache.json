@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "baseline": "106b2a43feebb58e645e79a3dcab43666c2f9bb4",
+  "cache": "horizons-companion-coffee-frames-v83",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "8b4aa2171c5b802c0095e7c62932af7f013ad982f11a3ab4b5f795c6b4c38281"
+    },
+    {
+      "path": "src/app.js?v=coffee2",
+      "status": 200,
+      "sha256": "5f6c956aba30de2e1d55c500b04b47f74d9f2d18061672aaa33eacf97c529cbe"
+    },
+    {
+      "path": "src/prop-motion.js?v=coffee2",
+      "status": 200,
+      "sha256": "e385d279b130b78db4791881f60f56cb2a78cea332ac2f79dedb58c3729ece15"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/rigs.json?v=3",
+      "status": 200,
+      "sha256": "2b2eab15e4841ef50b55e865cc121324cce9c07c5c8229363843469608e6d369"
+    },
+    {
+      "path": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+      "status": 200,
+      "sha256": "e1ba29b5b77befada54c81afac8216b41943aa888fa446212fa4e772e13fb3b5"
+    },
+    {
+      "path": "assets/art/coffee-splash-v2/frame-02-peak.png",
+      "status": 200,
+      "sha256": "352db72076b5d3adf53364878285200fb8e5f90c3b5f5469902e84e486ace052"
+    },
+    {
+      "path": "assets/art/coffee-splash-v2/frame-03-breakup.png",
+      "status": 200,
+      "sha256": "5fdd27545ec5a66cb54184f84ec0c4a35c7e633f1ce0879652e06f2d51dacb43"
+    },
+    {
+      "path": "assets/art/coffee-splash-v2/frame-04-fall.png",
+      "status": 200,
+      "sha256": "5ca46631b4be05292a7d0817eb21e39dd35574664bd3caeb42aa1e1016845a58"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v83. New controller and exact current app, prop module, manifest and four splash-frame bytes verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

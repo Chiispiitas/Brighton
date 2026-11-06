@@ -22,28 +22,27 @@ export function mountPropMotion(region){
   if(play&&!r.running){r.running=true;r.animations.forEach(a=>a.play());r.frame=requestAnimationFrame(()=>tick(r));}
   else if(!play){r.running=false;r.animations.forEach(a=>a.pause());cancelAnimationFrame(r.frame);}
  };
- const tick=r=>{if(!r.running||disposed)return;const phase=((Number(r.animations[0]?.currentTime)||0)%r.duration)/r.duration,local=phase-r.start;for(const p of r.specials){const [from,to]=p.dataset.propPart==='coffee-splash'?[.075,.22]:[.035,.22];p.hidden=!(local>from&&local<to);}r.frame=requestAnimationFrame(()=>tick(r));};
+ const tick=r=>{if(!r.running||disposed)return;const phase=((Number(r.animations[0]?.currentTime)||0)%r.duration)/r.duration,local=phase-r.start;for(const p of r.specials){const [from,to]=p.dataset.propFrame!==undefined?[Number(p.dataset.frameFrom),Number(p.dataset.frameTo)]:[.035,.22];p.hidden=!(local>=from&&local<to);}if(r.slot.dataset.propRig==='cups'){const current=r.specials.find(p=>!p.hidden)?.dataset.propFrame??'none';if(r.slot.dataset.coffeeFrame!==current)r.slot.dataset.coffeeFrame=current;}r.frame=requestAnimationFrame(()=>tick(r));};
  const observer=new IntersectionObserver(entries=>{for(const e of entries){const r=records.find(r=>r.slot===e.target);if(r){r.visible=e.isIntersecting;update(r);}}},{threshold:.05});
  const resize=new ResizeObserver(entries=>{for(const e of entries){const r=records.find(r=>r.slot===e.target);if(r){const k=Math.min(r.slot.clientWidth/r.w,r.slot.clientHeight/r.h);r.stage.style.width=r.w*k+'px';r.stage.style.height=r.h*k+'px';r.stage.style.perspective=r.w*k*6+'px';}}});
  const all=()=>records.forEach(update);document.addEventListener('visibilitychange',all);reduced.addEventListener('change',all);
- manifestPromise??=fetch(new URL('../assets/art/prop-motion-v1/rigs.json?v=2',import.meta.url),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Missing prop rigs');return r.json();}).catch(error=>{manifestPromise=null;throw error;});
+ manifestPromise??=fetch(new URL('../assets/art/prop-motion-v1/rigs.json?v=3',import.meta.url),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Missing prop rigs');return r.json();}).catch(error=>{manifestPromise=null;throw error;});
  manifestPromise.then(async manifest=>{
   await Promise.all([...region.querySelectorAll('[data-prop-rig]')].map(async(slot,index)=>{
    const spec=manifest[slot.dataset.propRig],still=slot.querySelector('.prop-still');if(!spec||!still)return;
    const stage=document.createElement('span');stage.className='prop-stage';stage.hidden=true;stage.setAttribute('aria-hidden','true');
-   const imgs=spec.parts.map(p=>{const img=new Image();img.src=asset(p.src);img.alt='';img.draggable=false;img.dataset.propPart=p.id;img.hidden=!!p.special;
+   const parts=spec.parts.flatMap(p=>p.frames?p.frames.map((frame,index)=>({...p,...frame,frameIndex:index})):[p]);
+   const imgs=parts.map(p=>{const img=new Image();img.src=asset(p.src);img.alt='';img.draggable=false;img.dataset.propPart=p.id;img.hidden=!!p.special;
+    if(p.frameIndex!==undefined){img.dataset.propFrame=p.frameIndex;img.dataset.frameFrom=p.from;img.dataset.frameTo=p.to;img.style.transform='translate(-2%,-40%)';}
     // Keep the slot mask fixed while the letter moves inside it.
     if(slot.dataset.propRig==='postbox'&&p.id==='letter'){const mask=document.createElement('span');mask.className='prop-slot-mask';mask.append(img);stage.append(mask);}else stage.append(img);return img;});
    try{await Promise.all(imgs.map(i=>i.decode()));}catch{slot.dataset.propStatus='fallback';return;}if(disposed)return;
    slot.append(stage);const k=Math.min(slot.clientWidth/spec.width,slot.clientHeight/spec.height);stage.style.width=spec.width*k+'px';stage.style.height=spec.height*k+'px';stage.style.perspective=spec.width*k*6+'px';
    const duration=10500+index*650,start=.10+(index%3)*.11,animations=[],specials=imgs.filter(i=>i.hidden);
-   for(const img of imgs){const recipe=img.dataset.propPart==='coffee-splash'?['51% 22%','none','none','none']:recipes[slot.dataset.propRig]?.[img.dataset.propPart];if(!recipe)continue;const[origin,anticipation,peak,settle]=recipe;img.style.transformOrigin=origin;
+   for(const img of imgs){const recipe=recipes[slot.dataset.propRig]?.[img.dataset.propPart];if(!recipe)continue;const[origin,anticipation,peak,settle]=recipe;img.style.transformOrigin=origin;
     const end=slot.dataset.propRig==='globe'&&img.dataset.propPart==='earth'?'rotate(360deg)':'none';
     let frames=[{offset:0,transform:'none'},{offset:start,transform:'none'},{offset:start+.05,transform:anticipation},{offset:start+.11,transform:peak},{offset:start+.17,transform:settle},{offset:start+.24,transform:end},{offset:1,transform:end}];
-    if(img.dataset.propPart==='coffee-splash'){
-     // A large upward burst, outward arc and fall; no opacity interpolation.
-     frames=[[0,'scale(0)'],[start+.075,'scale(.2)'],[start+.12,'translate(-2%,-18%) rotate(-12deg) scale(2.25)'],[start+.16,'translate(4%,-5%) rotate(18deg) scale(1.65)'],[start+.22,'translate(8%,28%) rotate(40deg) scale(.2)'],[1,'scale(0)']].map(([offset,transform])=>({offset,transform}));
-    }else if(slot.dataset.propRig==='postbox'&&img.dataset.propPart==='letter'){
+    if(slot.dataset.propRig==='postbox'&&img.dataset.propPart==='letter'){
      // Spout out through the dark slot, then slide fully back below its fixed lip.
      const inside='translate(-7.5%,29%) scale(.78)',outside='translate(-7.5%,-3%) scale(.78)';
      frames=[[0,inside],[start+.035,inside],[start+.09,outside],[start+.12,outside],[start+.20,inside],[1,inside]].map(([offset,transform])=>({offset,transform}));

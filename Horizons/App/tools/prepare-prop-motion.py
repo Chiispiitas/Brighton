@@ -31,4 +31,10 @@ for i,(prop,(baseline,parts)) in enumerate(placements.items()):
  manifest[prop]={'width':W,'height':H,'baseline':'assets/art/'+baseline,'parts':entries};assembled.save(OUT/(prop+'-reconstructed.png'))
  for col,im in enumerate([target,assembled]):
   im.thumbnail((260,205));xx=(i%2)*600+col*280+10;yy=(i//2)*250+30;board.paste(im,(xx,yy),im);draw.text((xx,yy-20),prop+(' baseline' if col==0 else ' reconstruction'),fill='black')
+# Preserve the separately authored flipbook when rebuilding the original prop registrations.
+sequence=APP/'assets/art/coffee-splash-v2/sequence.json'
+if sequence.exists():
+ frames=json.loads(sequence.read_text())['frames']
+ splash=next(p for p in manifest['cups']['parts'] if p['id']=='coffee-splash')
+ splash.update(src=frames[0]['src'],frames=frames)
 (ROOT/'rigs.json').write_text(json.dumps(manifest,indent=2)+'\n');(DOC/'production-record.json').write_text(json.dumps(d,indent=2)+'\n');(DOC/'reconstruction-check.json').write_text(json.dumps(checks,indent=2)+'\n');board.save(OUT/'reconstruction-board.png');print(json.dumps(checks))

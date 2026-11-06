@@ -1,0 +1,27 @@
+{
+  "frames": [
+    {
+      "src": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+      "from": 0.095,
+      "to": 0.105
+    },
+    {
+      "src": "assets/art/coffee-splash-v2/frame-02-peak.png",
+      "from": 0.105,
+      "to": 0.119
+    },
+    {
+      "src": "assets/art/coffee-splash-v2/frame-03-breakup.png",
+      "from": 0.119,
+      "to": 0.135
+    },
+    {
+      "src": "assets/art/coffee-splash-v2/frame-04-fall.png",
+      "from": 0.135,
+      "to": 0.151
+    }
+  ],
+  "opacity": 1,
+  "timing": "Normalized offsets after the existing cup anticipation starts; impact at .11.",
+  "method": "Discrete frame replacement, no fades or shape interpolation."
+}

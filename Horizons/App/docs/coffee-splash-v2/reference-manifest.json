@@ -1,0 +1,42 @@
+{
+  "generalReferencePack": "../image-references/reference-pack.json",
+  "actor": "coffee-splash",
+  "sourceFiles": [
+    {
+      "file": "assets\\art\\coffee-splash-v2\\native\\emerge-v1.png",
+      "sha256": "7b66c866d7ff498202c472e38a5f9cdeb6dc5dd69781dbe7e92a76bd4b68808c"
+    },
+    {
+      "file": "assets\\art\\coffee-splash-v2\\native\\peak-v1.png",
+      "sha256": "8ca5dd7ce680f69fc2b1a6c768de0bfec7ac66e77f53801d0a8382bfce10a7ae"
+    },
+    {
+      "file": "assets\\art\\coffee-splash-v2\\native\\breakup-v1.png",
+      "sha256": "dfd16e84843d17f8c698c22df372fdb8c03e1f8f60c136a8482754fa8db86899"
+    },
+    {
+      "file": "assets\\art\\coffee-splash-v2\\native\\fall-v1.png",
+      "sha256": "b6b6ff688369978c6cd6d2ac276b3e497075fa58c5436faaccd5952f95758f11"
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "file": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+      "sha256": "e1ba29b5b77befada54c81afac8216b41943aa888fa446212fa4e772e13fb3b5"
+    },
+    {
+      "file": "assets/art/coffee-splash-v2/frame-02-peak.png",
+      "sha256": "352db72076b5d3adf53364878285200fb8e5f90c3b5f5469902e84e486ace052"
+    },
+    {
+      "file": "assets/art/coffee-splash-v2/frame-03-breakup.png",
+      "sha256": "5fdd27545ec5a66cb54184f84ec0c4a35c7e633f1ce0879652e06f2d51dacb43"
+    },
+    {
+      "file": "assets/art/coffee-splash-v2/frame-04-fall.png",
+      "sha256": "5ca46631b4be05292a7d0817eb21e39dd35574664bd3caeb42aa1e1016845a58"
+    }
+  ],
+  "review": "review.png",
+  "productionRecord": "production-record.json"
+}

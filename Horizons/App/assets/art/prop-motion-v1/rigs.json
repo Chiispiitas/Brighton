@@ -16,8 +16,30 @@
       },
       {
         "id": "coffee-splash",
-        "src": "assets/art/prop-motion-v1/cups-coffee-splash.png",
-        "special": true
+        "src": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+        "special": true,
+        "frames": [
+          {
+            "src": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+            "from": 0.095,
+            "to": 0.105
+          },
+          {
+            "src": "assets/art/coffee-splash-v2/frame-02-peak.png",
+            "from": 0.105,
+            "to": 0.119
+          },
+          {
+            "src": "assets/art/coffee-splash-v2/frame-03-breakup.png",
+            "from": 0.119,
+            "to": 0.135
+          },
+          {
+            "src": "assets/art/coffee-splash-v2/frame-04-fall.png",
+            "from": 0.135,
+            "to": 0.151
+          }
+        ]
       }
     ]
   },

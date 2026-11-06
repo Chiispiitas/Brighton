@@ -1,0 +1,106 @@
+{
+  "pass": true,
+  "eightSeparateRigs": true,
+  "wildlifeRemoved": true,
+  "opacityAlwaysOne": true,
+  "noOpacityKeyframes": true,
+  "coverReverseHidden": true,
+  "writingRemoved": true,
+  "globeSmearRemoved": true,
+  "splashFrames": 4,
+  "frameStates": [
+    {
+      "current": "0",
+      "visible": [
+        {
+          "frame": "0",
+          "src": "http://127.0.0.1:8898/Horizons/App/assets/art/coffee-splash-v2/frame-01-emerge.png",
+          "opacity": "1",
+          "animations": 0
+        }
+      ]
+    },
+    {
+      "current": "1",
+      "visible": [
+        {
+          "frame": "1",
+          "src": "http://127.0.0.1:8898/Horizons/App/assets/art/coffee-splash-v2/frame-02-peak.png",
+          "opacity": "1",
+          "animations": 0
+        }
+      ]
+    },
+    {
+      "current": "2",
+      "visible": [
+        {
+          "frame": "2",
+          "src": "http://127.0.0.1:8898/Horizons/App/assets/art/coffee-splash-v2/frame-03-breakup.png",
+          "opacity": "1",
+          "animations": 0
+        }
+      ]
+    },
+    {
+      "current": "3",
+      "visible": [
+        {
+          "frame": "3",
+          "src": "http://127.0.0.1:8898/Horizons/App/assets/art/coffee-splash-v2/frame-04-fall.png",
+          "opacity": "1",
+          "animations": 0
+        }
+      ]
+    },
+    {
+      "current": "none",
+      "visible": []
+    }
+  ],
+  "playback": [
+    {
+      "frame": "0",
+      "time": 7013.899999976158
+    },
+    {
+      "frame": "1",
+      "time": 7122
+    },
+    {
+      "frame": "2",
+      "time": 7263.800000011921
+    },
+    {
+      "frame": "3",
+      "time": 7438.699999988079
+    },
+    {
+      "frame": "none",
+      "time": 7605.199999988079
+    }
+  ],
+  "normalSpeedAllFourFrames": true,
+  "oneFrameAtATime": true,
+  "noSplashTransformAnimation": true,
+  "missingSequenceFrameFallback": true,
+  "splashDistinctPoses": true,
+  "mobileWidth390": true,
+  "fixedMailboxSlot": true,
+  "letterEntersAndFullyOccludes": true,
+  "reducedMotionOriginalStills": true,
+  "offscreenPause": true,
+  "hiddenPauseFixture": true,
+  "disposalCancels": true,
+  "missingPartFallback": true,
+  "reconstructionAndExtremeScreenshots": [
+    "rest.png",
+    "emerge.png",
+    "peak.png",
+    "extreme.png",
+    "fall.png",
+    "inserted.png"
+  ],
+  "scope": "Actual production renderer in Edge with synthetic session; review grid enlarges the same renderer for visual checks. No real learner records.",
+  "errors": []
+}

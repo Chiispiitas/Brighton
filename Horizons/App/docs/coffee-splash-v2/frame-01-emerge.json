@@ -1,0 +1,24 @@
+{
+  "asset_id": "coffee-splash-v2-frame-01-emerge",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/prop-motion-v1/native/cups-coffee-splash.png",
+    "assets/art/lesson-area-tiles-v1/cafe-cups.png"
+  ],
+  "prompt": "Use case: precise-object-edit. One separate native animation frame for the Horizons coffee-cup prop. Image inputs: 1 R01 brand reference, 2 R02 recurring cast/style reference, 3 R07 object/style reference; those sheets are style only, do not reproduce their labels. Input4 is the exact accepted isolated dark-navy coffee splash to animate; input5 is the accepted cups prop for matching coffee color and illustration style only. Generate ONLY the isolated splash/droplets, NO cups, characters, text, background, outlines, shadows, glow or scenery. Actual transparent alpha background. Match the accepted dark navy coffee color, smooth simple flat opaque silhouettes, playful rounded droplet shapes, no realistic liquid shine. Do not copy the magenta matte from the cup reference. This is one drawing in a four-frame hand-drawn sequence, NOT a spritesheet, not four panels. Center the complete shape at large size with generous transparent margins; preserve all detached drops. Frame1 EMERGENCE: a short stout curved coffee jet just starting to pop upward, curling gently to the right, with a single small round drop just above its tip. Low compact silhouette, height about one third of the mature splash. Rounded but narrow bottom attachment pointing down, like the reference jet root. Only2 separated components maximum.",
+  "output": "frame-01-emerge.png",
+  "location": "Unit1 Learn path, cups rig, clink-only opaque flipbook",
+  "acceptance": [
+    "One separate transparent image",
+    "Native ImageGen artwork",
+    "Same coffee/navy palette",
+    "Distinct sequential silhouette",
+    "No cups or new scenery"
+  ]
+}

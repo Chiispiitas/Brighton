@@ -1,0 +1,338 @@
+{
+  "tool": "built-in ImageGen",
+  "perFrameGeneration": true,
+  "records": [
+    {
+      "id": "emerge",
+      "brief": "docs\\coffee-splash-v2\\frame-01-emerge.json",
+      "prompt": "Use case: precise-object-edit. One separate native animation frame for the Horizons coffee-cup prop. Image inputs: 1 R01 brand reference, 2 R02 recurring cast/style reference, 3 R07 object/style reference; those sheets are style only, do not reproduce their labels. Input4 is the exact accepted isolated dark-navy coffee splash to animate; input5 is the accepted cups prop for matching coffee color and illustration style only. Generate ONLY the isolated splash/droplets, NO cups, characters, text, background, outlines, shadows, glow or scenery. Actual transparent alpha background. Match the accepted dark navy coffee color, smooth simple flat opaque silhouettes, playful rounded droplet shapes, no realistic liquid shine. Do not copy the magenta matte from the cup reference. This is one drawing in a four-frame hand-drawn sequence, NOT a spritesheet, not four panels. Center the complete shape at large size with generous transparent margins; preserve all detached drops. Frame1 EMERGENCE: a short stout curved coffee jet just starting to pop upward, curling gently to the right, with a single small round drop just above its tip. Low compact silhouette, height about one third of the mature splash. Rounded but narrow bottom attachment pointing down, like the reference jet root. Only2 separated components maximum.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "coffee-splash-v2-frame-01-emerge",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+            "sha256": "a752c7257a5fbfccc976b4ec502c3b5b9bc2db46e8c228b4b156635a0a9b7a2c"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-5cc2a31a-a08b-4594-93ac-f67dce516667.png",
+      "nativeFile": "assets\\art\\coffee-splash-v2\\native\\emerge-v1.png",
+      "nativeSha256": "7b66c866d7ff498202c472e38a5f9cdeb6dc5dd69781dbe7e92a76bd4b68808c",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "reason": "Distinct native frame; alpha edges and white/pink composites reviewed. Apparent halo in dark preview is RGB in transparent pixels, not visible halo.",
+      "registration": {
+        "crop": [
+          675,
+          462,
+          911,
+          819
+        ],
+        "uniformScale": 0.13445378151260504,
+        "placedSize": [
+          32,
+          48
+        ],
+        "offset": [
+          250,
+          112
+        ],
+        "canvas": [
+          512,
+          265
+        ],
+        "runtimeTransform": "translate(-2%,-40%)"
+      },
+      "runtimeFile": "assets/art/coffee-splash-v2/frame-01-emerge.png",
+      "runtimeSha256": "e1ba29b5b77befada54c81afac8216b41943aa888fa446212fa4e772e13fb3b5"
+    },
+    {
+      "id": "peak",
+      "brief": "docs\\coffee-splash-v2\\frame-02-peak.json",
+      "prompt": "Use case: precise-object-edit. One separate native animation frame for the Horizons coffee-cup prop. Image inputs: 1 R01 brand reference, 2 R02 recurring cast/style reference, 3 R07 object/style reference; those sheets are style only, do not reproduce their labels. Input4 is the exact accepted isolated dark-navy coffee splash to animate; input5 is the accepted cups prop for matching coffee color and illustration style only. Generate ONLY the isolated splash/droplets, NO cups, characters, text, background, outlines, shadows, glow or scenery. Actual transparent alpha background. Match the accepted dark navy coffee color, smooth simple flat opaque silhouettes, playful rounded droplet shapes, no realistic liquid shine. Do not copy the magenta matte from the cup reference. This is one drawing in a four-frame hand-drawn sequence, NOT a spritesheet, not four panels. Center the complete shape at large size with generous transparent margins; preserve all detached drops. Frame2 PEAK: a tall slender curved jet arcing upward and to the right, with a broad teardrop tip and three nearby separated rounded droplets at progressively higher positions. The jet root points down at the lower center. Similar to the attached accepted splash, but a stronger taller elastic arc, complete and clean silhouette.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "coffee-splash-v2-frame-02-peak",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+            "sha256": "a752c7257a5fbfccc976b4ec502c3b5b9bc2db46e8c228b4b156635a0a9b7a2c"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-b648347e-721e-404e-90f0-8570950eaec5.png",
+      "nativeFile": "assets\\art\\coffee-splash-v2\\native\\peak-v1.png",
+      "nativeSha256": "8ca5dd7ce680f69fc2b1a6c768de0bfec7ac66e77f53801d0a8382bfce10a7ae",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "reason": "Distinct native frame; alpha edges and white/pink composites reviewed. Apparent halo in dark preview is RGB in transparent pixels, not visible halo.",
+      "registration": {
+        "crop": [
+          446,
+          77,
+          1168,
+          973
+        ],
+        "uniformScale": 0.13392857142857142,
+        "placedSize": [
+          97,
+          120
+        ],
+        "offset": [
+          241,
+          40
+        ],
+        "canvas": [
+          512,
+          265
+        ],
+        "runtimeTransform": "translate(-2%,-40%)"
+      },
+      "runtimeFile": "assets/art/coffee-splash-v2/frame-02-peak.png",
+      "runtimeSha256": "352db72076b5d3adf53364878285200fb8e5f90c3b5f5469902e84e486ace052"
+    },
+    {
+      "id": "breakup",
+      "brief": "docs\\coffee-splash-v2\\frame-03-breakup.json",
+      "prompt": "Use case: precise-object-edit. One separate native animation frame for the Horizons coffee-cup prop. Image inputs: 1 R01 brand reference, 2 R02 recurring cast/style reference, 3 R07 object/style reference; those sheets are style only, do not reproduce their labels. Input4 is the exact accepted isolated dark-navy coffee splash to animate; input5 is the accepted cups prop for matching coffee color and illustration style only. Generate ONLY the isolated splash/droplets, NO cups, characters, text, background, outlines, shadows, glow or scenery. Actual transparent alpha background. Match the accepted dark navy coffee color, smooth simple flat opaque silhouettes, playful rounded droplet shapes, no realistic liquid shine. Do not copy the magenta matte from the cup reference. This is one drawing in a four-frame hand-drawn sequence, NOT a spritesheet, not four panels. Center the complete shape at large size with generous transparent margins; preserve all detached drops. Frame3 BREAKUP: the top of the jet has separated into four dark navy coffee droplets spreading outward to the right; a short tapering curved tail remains near the bottom-left. The large leading drop is now separate from the tail. The highest small drop is near the top-left; middle drops form a loose arc, not a straight or evenly spaced line. This must look visibly different from the attached connected reference splash.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "coffee-splash-v2-frame-03-breakup",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+            "sha256": "a752c7257a5fbfccc976b4ec502c3b5b9bc2db46e8c228b4b156635a0a9b7a2c"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-2ac854d4-6b46-4510-b57c-9ec549e2c15c.png",
+      "nativeFile": "assets\\art\\coffee-splash-v2\\native\\breakup-v1.png",
+      "nativeSha256": "dfd16e84843d17f8c698c22df372fdb8c03e1f8f60c136a8482754fa8db86899",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "reason": "Distinct native frame; alpha edges and white/pink composites reviewed. Apparent halo in dark preview is RGB in transparent pixels, not visible halo.",
+      "registration": {
+        "crop": [
+          404,
+          127,
+          1247,
+          920
+        ],
+        "uniformScale": 0.13366960907944514,
+        "placedSize": [
+          113,
+          106
+        ],
+        "offset": [
+          249,
+          54
+        ],
+        "canvas": [
+          512,
+          265
+        ],
+        "runtimeTransform": "translate(-2%,-40%)"
+      },
+      "runtimeFile": "assets/art/coffee-splash-v2/frame-03-breakup.png",
+      "runtimeSha256": "5fdd27545ec5a66cb54184f84ec0c4a35c7e633f1ce0879652e06f2d51dacb43"
+    },
+    {
+      "id": "fall",
+      "brief": "docs\\coffee-splash-v2\\frame-04-fall.json",
+      "prompt": "Use case: precise-object-edit. One separate native animation frame for the Horizons coffee-cup prop. Image inputs: 1 R01 brand reference, 2 R02 recurring cast/style reference, 3 R07 object/style reference; those sheets are style only, do not reproduce their labels. Input4 is the exact accepted isolated dark-navy coffee splash to animate; input5 is the accepted cups prop for matching coffee color and illustration style only. Generate ONLY the isolated splash/droplets, NO cups, characters, text, background, outlines, shadows, glow or scenery. Actual transparent alpha background. Match the accepted dark navy coffee color, smooth simple flat opaque silhouettes, playful rounded droplet shapes, no realistic liquid shine. Do not copy the magenta matte from the cup reference. This is one drawing in a four-frame hand-drawn sequence, NOT a spritesheet, not four panels. Center the complete shape at large size with generous transparent margins; preserve all detached drops. Frame4 FALLING: five separate falling dark navy coffee droplets, no connected jet or stem. Arrange them along a loose low descending arc from left-upper to right-lower, with one larger softly stretched teardrop on the right and smaller round drops trailing behind. Compressed vertical spread and wider horizontal spread than the peak. Clearly the gravity/falling phase of the same playful splash, not a duplicate upright squirt.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "coffee-splash-v2-frame-04-fall",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+            "sha256": "a752c7257a5fbfccc976b4ec502c3b5b9bc2db46e8c228b4b156635a0a9b7a2c"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-3790056a-6795-4996-88b4-256e75a491fb.png",
+      "nativeFile": "assets\\art\\coffee-splash-v2\\native\\fall-v1.png",
+      "nativeSha256": "b6b6ff688369978c6cd6d2ac276b3e497075fa58c5436faaccd5952f95758f11",
+      "nativeSize": [
+        2172,
+        724
+      ],
+      "status": "accepted",
+      "reason": "Distinct native frame; alpha edges and white/pink composites reviewed. Apparent halo in dark preview is RGB in transparent pixels, not visible halo.",
+      "registration": {
+        "crop": [
+          365,
+          147,
+          1823,
+          588
+        ],
+        "uniformScale": 0.09945130315500686,
+        "placedSize": [
+          145,
+          44
+        ],
+        "offset": [
+          247,
+          144
+        ],
+        "canvas": [
+          512,
+          265
+        ],
+        "runtimeTransform": "translate(-2%,-40%)"
+      },
+      "runtimeFile": "assets/art/coffee-splash-v2/frame-04-fall.png",
+      "runtimeSha256": "5ca46631b4be05292a7d0817eb21e39dd35574664bd3caeb42aa1e1016845a58"
+    }
+  ],
+  "sourceCommit": "106b2a43feebb58e645e79a3dcab43666c2f9bb4",
+  "preparation": "tools/prepare-coffee-splash-v2.py",
+  "runtimeManifest": "assets/art/prop-motion-v1/rigs.json?v=3",
+  "runtimeActorId": "coffee-splash",
+  "inputCountPerCall": 5,
+  "rawNativeFilesUnchanged": true,
+  "registrationOnly": "Alpha-bounds crop, uniform resampling, shared canvas placement. No pixel painting or recoloring.",
+  "reviewNote": "Initial dark-background previews suggested a halo. White and pink alpha composites plus the alpha-edge check showed it was RGB in transparent pixels; all four originals were accepted without repair calls."
+}

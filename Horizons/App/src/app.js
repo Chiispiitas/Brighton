@@ -2,7 +2,7 @@ import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
-import {mountPropMotion} from './prop-motion.js?v=props2';
+import {mountPropMotion} from './prop-motion.js?v=coffee2';
 import {mountOverworld} from './overworld-motion.js?v=props1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
 import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=screenfit1';
