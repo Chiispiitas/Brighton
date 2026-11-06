@@ -306,3 +306,10 @@ Island details use a compact 240px bubble: title, mastered-item count, question 
 Interface spelling is Practice. Start screen omits the repeated Horizons heading, the vocabulary/grammar/games sentence and the 12-month access footnote. Keep the brand wordmark and book-code form. Access rules are unchanged.
 
 The latest character-animation exception is ONLY the Unit 1 banner Pico generated-part reading rig. Follow docs/ANIMATION-AUDIT.md and docs/pico-banner-animation/production-record.json. All other characters and avatars remain static. The original native still is the reduced-motion/load-failure fallback. Do not revive old articulated rigs.
+
+
+## Short reading answers — 2026-11-06
+
+Class-number reading answers accept the number alone (3), its word form (three), or the full label (Class 3 / Class three). Room-label reading answers accept the letter alone. Canonical feedback stays unchanged. These are scoped content aliases, not global removal of words from grammar answers. Both client and authoritative server retain aliases.
+
+Validation: four app/server regressions pass, including wrong-number and wrong-room controls; all 40 backend application tests pass; backend production build passes. Actual browser reading screen shows Correct for 3 (reports/short-reading-browser.json; external screenshot 2026-11-06/short-reading/class-3-correct.png). Live server save using reserved synthetic demo fixture awards 15 XP, with no real learner records or profile edits (backend/reports/live-short-reading.json). Backend deployment f1c7547c-2aaf-402a-9cbe-4333b014e2b9, source revision b0057048276fc1255e722fce6690478742d90bc6. Existing historical attempts were not rewritten. Worker cache v93 refreshes changed content. Frontend Pages build is not awaited, per user preference.

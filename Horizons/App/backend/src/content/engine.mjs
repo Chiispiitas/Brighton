@@ -44,7 +44,7 @@ function choiceQuestion(template,random) {
   const seen=new Set();const texts=source.filter(text=>{const key=normalizeAnswer(text,template.normalization);if(seen.has(key))return false;seen.add(key);return true;}).slice(0,4);
   if(texts.length<2)throw new TypeError(`Question ${template.id} needs distinct choices.`);
   const choices=shuffle(texts,random).map((text,i)=>({id:`${template.id}-option-${i}`,text}));
-  return {...template,type:'choice',choices,answer:choices.find(x=>x.text===correctText).id,accepted:[correctText],correctText,wordIds:template.wordIds||[],retrieval:true};
+  return {...template,type:'choice',choices,answer:choices.find(x=>x.text===correctText).id,accepted:unique([correctText,...template.accepted||[]]),correctText,wordIds:template.wordIds||[],retrieval:true};
 }
 function orderQuestion(template,random) {
   const source=template.tokens || template.sentenceTokens?.map(x=>typeof x==='string'?x:x.text) || String(template.answer).match(/\S+/g);
@@ -218,7 +218,7 @@ export function checkAnswer(question,submitted) {
   if(question.type==='choice'){
     const value=submitted&&typeof submitted==='object'?submitted.id??submitted.text:submitted;
     const choice=question.choices.find(x=>x.id===value);
-    correct=choice?choice.id===question.answer:matchesAcceptedAnswer(value,[question.correctText,...question.word?.aliases||[]],{mode,allowContractions:question.word?.kind==='question'||question.allowContractions===true});
+    correct=choice?choice.id===question.answer:matchesAcceptedAnswer(value,[...question.accepted||[question.correctText],...question.word?.aliases||[]],{mode,allowContractions:question.word?.kind==='question'||question.allowContractions===true});
   }else{
     let value=submitted;
     if(question.type==='order'&&Array.isArray(submitted))value=submitted.map(token=>typeof token==='object'?token.text:question.sentenceTokens?.find(x=>x.id===token)?.text??token).join(' ');

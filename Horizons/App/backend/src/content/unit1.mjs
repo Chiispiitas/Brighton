@@ -151,7 +151,11 @@ export const chunks = [
 ];
 export const chunkById=Object.fromEntries(chunks.map(value=>[value.id,value]));
 
-const choice = (id,prompt,correct,distractors,explanation,extra={}) => ({id,type:'choice',prompt,correctText:correct,distractors,explanation,wordIds:[],...extra});
+const choice = (id,prompt,correct,distractors,explanation,extra={}) => {
+ const classNumber=/^Class (\d+)$/.exec(correct),room=/^Room ([A-Z])$/.exec(correct);
+ const accepted=classNumber?[correct,classNumber[1],numberToWords(Number(classNumber[1])),`Class ${numberToWords(Number(classNumber[1]))}`]:room?[correct,room[1]]:[correct];
+ return {id,type:'choice',prompt,correctText:correct,accepted,distractors,explanation,wordIds:[],...extra};
+};
 const text = (id,prompt,accepted,explanation,extra={}) => ({id,type:'text',prompt,answer:accepted[0],accepted,explanation,wordIds:[],...extra});
 const order = (id,prompt,sentence,extra={}) => ({id,type:'order',prompt,answer:sentence,accepted:[sentence],tokens:sentence.match(/\S+/g),explanation:sentence,wordIds:[],...extra});
 
