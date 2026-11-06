@@ -171,3 +171,5 @@
 .sentence-builder{overflow-anchor:none}
 .activity-page[data-question-type=order][data-answer-state=correct] .sentence-builder :is([data-token],[data-remove-token]){background:#e4f2e8;color:#356b47;border-color:#bad7c2;box-shadow:0 2px 0 #bad7c2;opacity:1;transition:none}
 .activity-page[data-question-type=order][data-answer-state=incorrect] .sentence-builder :is([data-token],[data-remove-token]){background:#f9e5df;color:#984b3b;border-color:#e5c2b8;box-shadow:0 2px 0 #e5c2b8;opacity:1;transition:none}
+
+.mix-actions>[hidden]{display:none!important}

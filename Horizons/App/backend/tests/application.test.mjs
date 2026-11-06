@@ -49,7 +49,7 @@ test('Audio alternatives are reconstructed on the server, persisted and retry-sa
 
 test('Per-question audio alternative changes only selected listening questions and is saved authoritatively',async()=>{
  const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),activity=pathNodes.find(node=>node.type==='listening');
- const original=getActivityQuestions(activity.id,{seed:'one-offline',count:512}),id=original[0].id,options={seed:'one-offline',audioFallbackQuestionIds:[id],count:512};
+ const original=getActivityQuestions(activity.id,{seed:'one-offline',count:512}),id=original.find(q=>!q.id.includes('alphabet')).id,options={seed:'one-offline',audioFallbackQuestionIds:[id],count:512};
  const questions=getActivityQuestions(activity.id,options),alternative=questions.find(q=>q.id===id);assert.equal(alternative.audioFallback,true);assert.equal(questions.filter(q=>q.audioFallback).length,1);
  const saved=await f.call('saveAttempt',{attempt:{id:'one-audio-alternative',activityId:activity.id,quizOptions:options,answers:[{questionId:id,submitted:alternative.correctText??alternative.answer}]}},session.token);assert.equal(saved.status,200);assert.equal(saved.attempt.awardedXp,15);
  const events=await f.store.list(COLLECTIONS.attempts,session.profile.id);assert.deepEqual(events[0].audioFallbackQuestionIds,[id]);

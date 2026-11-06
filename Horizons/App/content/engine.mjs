@@ -94,9 +94,10 @@ export function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),aud
   const answer=word.kind==='letter'?word.letter:word.term;
   const base={id:`recall-${word.id}`,wordIds:[word.id],word,translation:vocabularyCue(word),explanation:word.example,expectedTerm:answer,kind:'vocabulary',retrieval:true};
   // Sentence-level language is recognition practice here, not grammar composition.
-  if(mode==='choice'||mode==='listening'||word.kind==='question'||word.answerMode==='choice'){
-   const q=choiceQuestion({...base,prompt:mode==='listening'?'Listen and choose.':`Choose the English translation.\n${word.spanish}`,correctText:answer,distractors:shuffle(distractorPool(word),random).map(x=>x.kind==='letter'?x.letter:x.term)},random);
-   if(mode==='listening'){Object.assign(q,{listening:true,audioWordId:word.id,listenFor:'',hint:undefined});return audioEnabled===false?getAudioFallbackQuestion(q):q;}
+  const listening=mode==='listening'||word.kind==='letter';
+  if(mode==='choice'||listening||word.kind==='question'||word.answerMode==='choice'){
+   const q=choiceQuestion({...base,prompt:listening?'Listen and choose.':`Choose the English translation.\n${word.spanish}`,correctText:answer,distractors:shuffle(distractorPool(word),random).map(x=>x.kind==='letter'?x.letter:x.term)},random);
+   if(listening){Object.assign(q,{listening:true,audioWordId:word.id,listenFor:'',hint:undefined});return audioEnabled===false?getAudioFallbackQuestion(q):q;}
    return q;
   }
   return {...base,type:'text',prompt:vocabularyPrompt(word),answer,accepted:[answer,...word.aliases||[]],normalization:word.kind==='letter'?'letter':'normal',choices:[],allowContractions:word.kind==='question'};
@@ -134,7 +135,7 @@ export function buildQuiz(options={}) {
 export function getMatchingPairs(options={}) {
  const selected=selection(options),random=seededRandom(options.seed??Date.now());
  const usedLeft=new Set(),usedRight=new Set(),pairs=[];
- for(const word of shuffle(selected.words,random)){
+ for(const word of shuffle(selected.words.filter(word=>word.kind!=='letter'),random)){
   const left=word.kind==='letter'?word.letter:word.term,right=word.spanish;
   const l=normalizeAnswer(left),r=normalizeAnswer(right);
   if(usedLeft.has(l)||usedRight.has(r))continue;
@@ -154,8 +155,8 @@ export function makeLockerChallenge({seed=Date.now(),rounds=4}={}) {
   }));
 }
 function spellingQuestions(options={}) {
-  const random=seededRandom(options.seed??Date.now());
-  return ['Kim','Luz','Sam','Ida','Ariana','Allison','Bryan','Lindsay'].map((name,i)=>materialize({id:`spell-name-${i}`,type:'order',kind:'game',prompt:`Put the letters in order to spell ${name}.`,answer:name.toUpperCase(),accepted:[name],tokens:[...name.toUpperCase()],normalization:'spelling',explanation:[...name.toUpperCase()].join(' · '),wordIds:[]},random));
+ const random=seededRandom(options.seed??Date.now());
+ return challengeQuestions.filter(q=>q.id.startsWith('listen-spell-')).map(q=>listeningQuestion(q,random));
 }
 function listeningQuestion(template,random){
  const q=materialize(template,random);
@@ -163,7 +164,9 @@ function listeningQuestion(template,random){
  const listenFor=indexed.replace(/^Listen(?: to [^.]+| at [^.]+)?\.\s*/,'').replace(/^Listen\.\s*/,'');
  return {...q,prompt:q.type==='choice'?'Listen and choose.':'Listen and type.',listenFor,listening:true};
 }
+export function isAlphabetQuestion(question){return question.word?.kind==='letter'||question.wordIds?.some(id=>wordById[id]?.kind==='letter')||question.id?.includes('alphabet');}
 export function getAudioFallbackQuestion(question){
+ if(isAlphabetQuestion(question))return question;
  if(!question.listening&&!question.audio&&!question.audioWordId)return question;
  const word=question.word||wordById[question.audioWordId]||vocabulary.find(w=>normalizeAnswer(w.term)===normalizeAnswer(question.correctText??question.answer));
  let q;
