@@ -6,10 +6,10 @@
   "appPath": "Horizons/App",
   "workingBranch": "codex/horizons-companion-app",
   "publicationBranch": "main",
-  "snapshotBeforeHandoffCommit": "3a24ab85abf9f65774b0bf3934907edde1335c7c",
-  "lastRuntimeChange": "3a24ab85abf9f65774b0bf3934907edde1335c7c",
+  "snapshotBeforeHandoffCommit": "ba5f616e69420f4fd8aefef4bc5f8658a8dc67bb",
+  "lastRuntimeChange": "ba5f616e69420f4fd8aefef4bc5f8658a8dc67bb",
   "liveURL": "https://exams.bebrighton.net/Horizons/App/",
-  "cache": "horizons-companion-daily-streak-v102",
+  "cache": "horizons-companion-daily-streak-v103",
   "coverage": {
     "level": "A1",
     "unit": 1,
@@ -42,26 +42,56 @@
     "liveCheckScope": "Reserved synthetic profile save and identical retry; first daily claim creation covered by isolated tests because fixture was already active today."
   },
   "verified": {
-    "runtimeFeatureCommit": "3a24ab85abf9f65774b0bf3934907edde1335c7c",
-    "motionSourceBindings": 27,
-    "cacheExactByteEntries": 27,
-    "sceneActivePngBytes": 725777,
+    "runtimeFeatureCommit": "ba5f616e69420f4fd8aefef4bc5f8658a8dc67bb",
+    "motionSourceBindings": 40,
+    "cacheExactByteEntries": 40,
+    "sceneActivePngBytes": 802233,
     "desktopAndMobileViewports": 6,
-    "motionReport": "reports/streak-motion.json",
-    "cacheReport": "reports/streak-cache.json",
+    "motionReport": "reports/streak-v2-motion.json",
+    "cacheReport": "reports/streak-v2-cache.json",
     "backendLiveReport": "backend/reports/live-daily-streak.json",
     "frontendHostedBytesVerified": false,
-    "publicationWaitRequested": false
+    "publicationWaitRequested": false,
+    "peakAndFinalFitCases": 36,
+    "flowReport": "reports/streak-v2-flow.json",
+    "paletteReport": "reports/streak-v2-palette.json",
+    "edgeReport": "reports/streak-v2-edge.json",
+    "previewReport": "reports/streak-v2-preview.json",
+    "referenceProportionsReport": "reports/streak-v2-reference-proportions.json",
+    "visualReviewReport": "reports/streak-v2-visual-review.json",
+    "helperTests": 4
   },
   "knownLimits": [
-    "Historical transfer Bad Request origin remains unknown. Current streak ImageGen output-filter and input-limit failures are identified in docs/streak-campfire-v1.",
+    "Historical transfer Bad Request origin remains unknown. Current ImageGen input-limit and isolated-limb output-moderation failures are identified in docs/streak-campfire-v2; no app/backend failure is inferred.",
     "Historical no-sidebar-avatar assertions are superseded by the restored bottom shortcut picture.",
     "Browser evidence is Edge/Chromium only; physical phones, Safari and Firefox are unverified.",
     "The reserved live demo was already active today, so live daily-winner creation was not exercised.",
     "Exact winning attempt replay on a different device can return its stored event; there is no global presentation acknowledgement or login replay queue.",
     "Untracked Python caches are deliberately excluded.",
-    "Pages deployment was not awaited, following the standing user instruction."
+    "Pages deployment was not awaited, following the standing user instruction.",
+    "Text source hashes describe the local Windows checkout; Git normalizes text line endings. Hosted frontend byte equality was not checked. Native PNG hashes are unaffected."
   ],
   "secretsIncluded": false,
-  "latestCorrection": "Regenerated shoulder attachments; pinned-shoulder textured part motion, aligned pose changes and gradual flickering fire. Query streak2."
+  "latestCorrection": "Reference-measured arm shafts about 30-31px and gripping palms40px; whole viewer-right arm behind torso, shoulder tucked at [278,312]. Exact skin palette/native-alpha guard; complete articulated parts, fire burst, counter impact, earned-day rail and Continue only after7.6s. Query streak3, cachev103.",
+  "dailyStreakArtwork": {
+    "version": 2,
+    "durationMs": 7600,
+    "nativeOutputs": 26,
+    "generationAttempts": 28,
+    "noOutputFailures": 2,
+    "activeNativeSources": 17,
+    "activePngFiles": 34,
+    "nativeOriginalHashesVerified": 26,
+    "wholeHiddenMaterial": true,
+    "permanentAcceptedHeadAndSeparateExpressions": true,
+    "rightShoulder": [
+      278,
+      312
+    ],
+    "rightArmBehindTorso": true,
+    "leftArmInFront": true,
+    "noOpacityTransitions": true,
+    "continueOnlyAfterAnimation": true,
+    "backendUnchanged": true
+  }
 }
