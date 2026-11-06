@@ -1,0 +1,30 @@
+{
+  "pass": true,
+  "baseline": "3c9609c3",
+  "cache": "horizons-companion-tile-feedback-v95",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "85526ae31bc8d19bbdfff1c8740be3490d509824c9f238c70c375ee496ab429a"
+    },
+    {
+      "path": "styles/viewport.css?v=tileflip1",
+      "status": 200,
+      "sha256": "73dfb5e42ec64a2232364f5f29a3f0c3f84123a2ffb37594eb4622fce36e759c"
+    },
+    {
+      "path": "src/app.js?v=tileflip1",
+      "status": 200,
+      "sha256": "16d04b4128f17e36d7855dc9369b8aab55682fe980c24efaaa41436163ac2d60"
+    },
+    {
+      "path": "src/ui-motion.js?v=tileflip1",
+      "status": 200,
+      "sha256": "41da7a7d5c638ce6f1bb68150aa034ac1c1bfd63088635b0aa213db683fd142c"
+    }
+  ],
+  "errors": [],
+  "scope": "Previous v94 worker installed then upgraded to v95. Exact current index, viewport CSS, app and flip motion module verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

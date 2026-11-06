@@ -165,3 +165,9 @@
  .main-content>.practice-heading h1{font-size:32px}
  .main-content>.practice-heading>.page-character{width:120px;height:145px;max-width:none;margin-right:0}
 }
+
+/* Keep editing geometry steady; checked tiles carry the answer result without fading. */
+.sentence-builder>.sentence-reset:disabled{visibility:hidden;pointer-events:none}
+.sentence-builder{overflow-anchor:none}
+.activity-page[data-question-type=order][data-answer-state=correct] .sentence-builder :is([data-token],[data-remove-token]){background:#e4f2e8;color:#356b47;border-color:#bad7c2;box-shadow:0 2px 0 #bad7c2;opacity:1;transition:none}
+.activity-page[data-question-type=order][data-answer-state=incorrect] .sentence-builder :is([data-token],[data-remove-token]){background:#f9e5df;color:#984b3b;border-color:#e5c2b8;box-shadow:0 2px 0 #e5c2b8;opacity:1;transition:none}

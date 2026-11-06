@@ -88,6 +88,13 @@ export function enhanceMotion(root, before) {
     animateUI(footer,[{transform:'translateY(14px)'},{transform:'translateY(0)'}],{duration:260});
     animateUI(result.querySelector('.answer-feedback-icon'),correct?[{transform:'scale(.55) rotate(-15deg)'},{transform:'scale(1.15) rotate(5deg)',offset:.65},{transform:'scale(1) rotate(0)'}]:[{transform:'scale(.8)'},{transform:'scale(1.05)',offset:.6},{transform:'scale(1)'}],{duration:420});
     animateUI(footer.querySelector('.primary-button'),[{transform:'translateY(3px)'},{transform:'translateY(-2px)',offset:.6},{transform:'translateY(0)'}],{duration:340});
+    const tileColor=correct?'#e4f2e8':'#f9e5df',tileInk=correct?'#356b47':'#984b3b';
+    root.querySelectorAll('.sentence-builder [data-token],.sentence-builder [data-remove-token]').forEach((tile,index)=>{
+      animateUI(tile,[{transform:'perspective(600px) rotateX(0deg)',backgroundColor:'#e9e6df',color:'#173e5c'},
+        {transform:'perspective(600px) rotateX(90deg)',backgroundColor:'#e9e6df',color:'#173e5c',offset:.48},
+        {transform:'perspective(600px) rotateX(-90deg)',backgroundColor:tileColor,color:tileInk,offset:.5},
+        {transform:'perspective(600px) rotateX(0deg)',backgroundColor:tileColor,color:tileInk}],{duration:440,delay:Math.min(index*22,110),fill:'backwards'});
+    });
     const response=root.querySelector('#typed-answer,.sentence-answer,.answer-option.incorrect');
     if(!correct)animateUI(response,[{transform:'translateX(0)'},{transform:'translateX(-5px)',offset:.2},{transform:'translateX(4px)',offset:.4},{transform:'translateX(-2px)',offset:.7},{transform:'translateX(0)'}],{duration:300});
     else animateUI(root.querySelector('.activity-track'),[{transform:'scaleY(1)'},{transform:'scaleY(1.3)',offset:.45},{transform:'scaleY(1)'}],{duration:380});

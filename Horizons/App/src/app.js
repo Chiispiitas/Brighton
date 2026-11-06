@@ -6,7 +6,7 @@ import {mountPropMotion} from './prop-motion.js?v=coffee2';
 import {mountOverworld} from './overworld-motion.js?v=props1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
 import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=screenfit1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=areas1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=tileflip1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
 import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=alex1';
@@ -179,14 +179,14 @@ function profilePage() {
     <section class="profile-details"><form id="profile-form"><label for="display-name">Name</label><input id="display-name" name="displayName" value="${esc(p.displayName || p.name || '')}" maxlength="40" required autocomplete="nickname" placeholder="Your name"><label for="date-of-birth">Date of birth <span class="optional">Optional</span></label><input id="date-of-birth" name="dateOfBirth" type="date" value="${esc((p.dateOfBirth || '').slice(0,10))}" max="${new Date().toISOString().slice(0,10)}"><label for="daily-goal">Daily goal</label><select id="daily-goal" name="goal">${[5,10,15,20].map(goal=>`<option value="${goal}" ${Number(p.goal||5)===goal?'selected':''}>${goal} minutes</option>`).join('')}</select><p id="profile-error" class="form-error" role="alert"></p><button type="submit" class="primary-button">Save profile ${icon('check')}</button></form><section class="your-books"><span class="eyebrow">YOUR BOOKS</span>${bookList().map(book=>`<div class="profile-book"><span class="book-level">${esc(book.level || 'A1')}</span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Expires ${formatDate(book.expiresAt)}`:'Available'}</small></span></div>`).join('')}<button class="text-button" data-action="add-book">Add another book ${icon('plus')}</button></section><button class="sign-out" data-action="sign-out">Sign out ${icon('exit')}</button></section></div>`;
 }
 function render() {
-  const motionBefore=captureUI(app);
+  const motionBefore=captureUI(app),previousQuestion=app.querySelector('.activity-page[data-question-id]')?.dataset.questionId,promptScroll=app.querySelector('.question-content')?.scrollTop||0;
   document.documentElement.classList.toggle('lesson-view',!!state.active&&['quiz','result'].includes(state.active.kind));
   disposeOverworld?.();disposeOverworld=null;
   disposePropMotion?.();disposePropMotion=null;
   disposeArtwork(app);
   app.removeAttribute('aria-busy');
   if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
-  if (state.active) {if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');app.innerHTML=renderActivity();refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});return;}
+  if (state.active) {if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');app.innerHTML=renderActivity();stabilizeSentence();if(previousQuestion&&previousQuestion===app.querySelector('.activity-page[data-question-type=order]')?.dataset.questionId){const content=app.querySelector('.question-content');if(content)content.scrollTop=promptScroll;}refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});return;}
   const pages={learn:home,practice,bank:wordBank,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
@@ -252,9 +252,27 @@ function skipAudio(){
 function renderOrder(q,a) {
   const tokens=q.sentenceTokens || q.tokens || [];
   const value=token=>typeof token==='string'?token:token.text || token.label || token.value;
-  return `<div class="sentence-builder"><div class="sentence-answer" aria-label="Your sentence">${a.order.length?a.order.map(index=>`<button data-remove-token="${index}" ${a.checked?'disabled':''}>${esc(value(tokens[index]))}</button>`).join(''):'<span>Drag words here, or tap them.</span>'}</div><div class="sentence-tokens">${tokens.map((token,index)=>`<button data-token="${index}" ${a.order.includes(index)||a.checked?'disabled':''}>${esc(value(token))}</button>`).join('')}</div>${a.order.length&&!a.checked?'<button class="text-button" data-action="clear-sentence">Start again</button>':''}</div>`;
+  return `<div class="sentence-builder"><div class="sentence-answer" aria-label="Your sentence">${a.order.length?a.order.map(index=>`<button data-remove-token="${index}" ${a.checked?'disabled':''}>${esc(value(tokens[index]))}</button>`).join(''):'<span>Drag words here, or tap them.</span>'}</div><div class="sentence-tokens">${tokens.map((token,index)=>`<button data-token="${index}" ${a.order.includes(index)||a.checked?'disabled':''}>${esc(value(token))}</button>`).join('')}</div><button class="text-button sentence-reset" data-action="clear-sentence" ${!a.order.length||a.checked?'disabled aria-hidden="true"':''}>Start again</button></div>`;
 }
 function hasAnswer(a,q) {return q.type==='order'?a.order.length>0:typeof a.selected==='string'?a.selected.trim().length>0:a.selected!==null;}
+// Reserve a full sentence's wrapped height, so adding words cannot squeeze the prompt.
+function stabilizeSentence(){
+ const builder=app.querySelector('.sentence-builder'),answer=builder?.querySelector('.sentence-answer');if(!answer)return;answer.style.minHeight='';
+ const measure=answer.cloneNode(false);measure.removeAttribute('aria-label');measure.setAttribute('aria-hidden','true');
+ measure.style.cssText=`position:fixed;left:-10000px;top:0;width:${answer.getBoundingClientRect().width}px;min-height:0;height:auto;visibility:hidden;pointer-events:none`;
+ for(const tile of builder.querySelectorAll('.sentence-tokens>button')){const copy=tile.cloneNode(true);copy.disabled=false;copy.removeAttribute('data-token');measure.append(copy);}
+ builder.append(measure);answer.style.minHeight=Math.max(parseFloat(getComputedStyle(answer).minHeight)||0,measure.getBoundingClientRect().height)+'px';measure.remove();
+}
+function updateSentence(){
+ const a=state.active;if(!a||a.kind!=='quiz'||a.checked)return;
+ const builder=app.querySelector('.sentence-builder');if(!builder)return;
+ const before=captureUI(app),content=app.querySelector('.question-content'),scroll=content?.scrollTop||0,focused=document.activeElement,focusIndex=focused?.dataset.removeToken??focused?.dataset.token;
+ builder.outerHTML=renderOrder(a.questions[a.index],a);stabilizeSentence();
+ const check=app.querySelector('[data-action=check-answer]');if(check)check.disabled=!hasAnswer(a,a.questions[a.index]);
+ if(focusIndex!==undefined)app.querySelector(`[data-remove-token="${focusIndex}"],[data-token="${focusIndex}"]:not(:disabled)`)?.focus({preventScroll:true});
+ if(content)content.scrollTop=scroll;enhanceMotion(app,before);
+}
+window.addEventListener('resize',stabilizeSentence);
 function gradeCurrent() {
   const a=state.active;if (!a||a.kind!=='quiz'||a.checked||a.previewVisible) return;const q=a.questions[a.index];
   if (!hasAnswer(a,q)) return;
@@ -409,14 +427,14 @@ app.addEventListener('pointermove',event=>{
 app.addEventListener('pointerup',event=>{
  const d=tileDrag;if(!d||event.pointerId!==d.id)return;
  if(d.ghost){suppressTileClick=true;setTimeout(()=>suppressTileClick=false,0);const target=document.elementFromPoint(event.clientX,event.clientY),answer=target?.closest('.sentence-answer'),bank=target?.closest('.sentence-tokens');
- if(state.active===d.activity&&!d.activity.checked&&(answer||bank)){const order=d.activity.order.filter(i=>i!==d.index);if(answer){const token=target.closest('[data-remove-token]');let pos=order.length;if(token&&Number(token.dataset.removeToken)!==d.index){const r=token.getBoundingClientRect();pos=order.indexOf(Number(token.dataset.removeToken))+(event.clientX>=r.left+r.width/2?1:0);}else if(token)pos=d.activity.order.indexOf(d.index);order.splice(pos,0,d.index);}d.activity.order=order;clearTileDrag();render();}}
+ if(state.active===d.activity&&!d.activity.checked&&(answer||bank)){const order=d.activity.order.filter(i=>i!==d.index);if(answer){const token=target.closest('[data-remove-token]');let pos=order.length;if(token&&Number(token.dataset.removeToken)!==d.index){const r=token.getBoundingClientRect();pos=order.indexOf(Number(token.dataset.removeToken))+(event.clientX>=r.left+r.width/2?1:0);}else if(token)pos=d.activity.order.indexOf(d.index);order.splice(pos,0,d.index);}d.activity.order=order;clearTileDrag();updateSentence();}}
  clearTileDrag();
 });
 app.addEventListener('click',event=>{if(suppressTileClick){event.preventDefault();event.stopImmediatePropagation();}},true);
 app.addEventListener('pointercancel',clearTileDrag);window.addEventListener('blur',clearTileDrag);
 new MutationObserver(()=>{if(tileDrag&&!tileDrag.tile.isConnected)clearTileDrag();}).observe(app,{childList:true,subtree:true});
-on('click','[data-token]',(_,target)=>{state.active.order.push(Number(target.dataset.token));render();});
-on('click','[data-remove-token]',(_,target)=>{state.active.order=state.active.order.filter(index=>index!==Number(target.dataset.removeToken));render();});
+on('click','[data-token]',(_,target)=>{state.active.order.push(Number(target.dataset.token));updateSentence();});
+on('click','[data-remove-token]',(_,target)=>{state.active.order=state.active.order.filter(index=>index!==Number(target.dataset.removeToken));updateSentence();});
 on('click','[data-memory]',(_,target)=>flipCard(target.dataset.memory));
 on('click','[data-match-left]',(_,target)=>chooseMatch('left',target.dataset.matchLeft));
 on('click','[data-match-right]',(_,target)=>chooseMatch('right',target.dataset.matchRight));
@@ -440,7 +458,7 @@ on('click','[data-action]',async(_,target)=>{
     case'select-all':{const clear=allPracticeSelected();state.selected=clear?new Set():new Set(practiceChunkIds);state.selectedGrammar=clear?new Set():new Set(practiceGrammarIds);return render();}
     case'mix-unit':state.selected=new Set(allChunks.map(chunk=>chunk.id));return route('practice');
     case'toggle-feedback-sound':{const enabled=setFeedbackSoundsEnabled(!feedbackSoundsEnabled());target.setAttribute('aria-pressed',String(enabled));target.setAttribute('aria-label',enabled?'Mute sound effects':'Enable sound effects');target.title=enabled?'Sound effects on':'Sound effects off';target.classList.toggle('muted',!enabled);return;}case'skip-audio':return skipAudio();case'check-answer':return gradeCurrent();case'next-question':return nextQuestion();
-    case'clear-sentence':state.active.order=[];return render();
+    case'clear-sentence':state.active.order=[];return updateSentence();
     case'hint':state.active.hintUsed=true;return render();
     case'finish-game':return finishActivity();
     case'back-to-path':stopAudio();state.active=null;return route('learn');
