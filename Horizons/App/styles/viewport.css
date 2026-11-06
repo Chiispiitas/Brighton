@@ -34,15 +34,23 @@
  .profile-details .sign-out{flex:none;margin-top:12px}
  .activity-page{height:100dvh;min-height:0;padding-block:16px;overflow:hidden}
  .activity-page>.activity-header{flex:none;margin-bottom:14px}
- .activity-page>.question-body{flex:1;min-height:0;overflow:auto;overscroll-behavior-y:contain;padding:4px 6px 12px;scrollbar-width:thin}
- .activity-page .question-body>h1{font-size:clamp(24px,4dvh,34px);line-height:1.2}
+ .activity-page>.question-body{flex:1;min-height:0;display:flex;flex-direction:column;overflow:visible;padding:4px 6px 12px;gap:8px}
+ .activity-page>.question-body>*{flex-shrink:0}
+ .activity-page .question-content{flex:1;min-height:0;display:flex;flex-direction:column;overflow:auto;overscroll-behavior-y:contain;padding:0 2px;scrollbar-width:thin}
+ .activity-page .question-content>*{flex-shrink:0}
+ .activity-page .question-content>h1{font-size:clamp(24px,4dvh,34px);line-height:1.2}
  .activity-page .question-cue{font-size:clamp(20px,3.5dvh,29px);margin-top:12px}
- .activity-page .question-body>.question-scene{height:clamp(48px,calc(28dvh - 110px),145px);margin:10px 0}
- .activity-page .question-scene>.question-character,.activity-page .question-scene .question-image{height:100%;max-height:100%}
+ .activity-page .question-content>.question-scene{flex:1 0 150px;min-height:150px;max-height:320px;height:auto;margin:12px 0}
+ .activity-page .question-scene>.question-character{width:clamp(180px,28dvh,280px);height:100%;max-height:100%}
+ .activity-page .question-scene .question-image{width:min(100%,380px);height:100%;max-height:100%;max-width:100%}
  .activity-page>.answer-dock{flex:none;min-height:72px;margin-top:8px}
  .activity-page .answer-footer{min-height:64px;padding:12px 16px}
  .activity-page .answer-footer:is(.feedback-correct,.feedback-gentle){margin:0}
  .activity-page .answer-options{gap:10px}
+ .activity-page[data-listening=true] .question-listen,.activity-page[data-listening=true] .question-audio{margin-top:10px}
+ .activity-page[data-listening=true] .question-listen{min-height:44px;padding:10px 16px}
+ .activity-page[data-listening=true] .listening-alternative-slot{margin-top:4px}
+ .activity-page[data-listening=true] .answer-option{min-height:48px;padding:10px 14px}
  .activity-page .answer-option{min-height:54px;padding:12px 16px}
  .game-page>.game-intro{flex:none;min-height:80px;padding-bottom:8px}
  .game-page .game-intro h1{font-size:28px}
@@ -79,4 +87,55 @@
  .welcome .redeem-panel h2{font-size:30px;margin-bottom:10px}
  .welcome .code-form{margin:16px 0 12px}
  .welcome .demo-codes{margin-top:12px;padding-top:10px}
+}
+
+/* Mobile keeps meaningful artwork instead of the former48px miniatures. */
+@media(max-width:760px){
+ .activity-page:not(.game-page){height:100dvh;min-height:0;padding-block:12px;overflow:hidden}
+ .activity-page:not(.game-page)>.activity-header{flex:none}
+ .activity-page:not(.game-page)>.question-body{flex:1;min-height:0;display:flex;flex-direction:column;overflow:visible;padding:4px 6px 12px;gap:8px}
+ .activity-page:not(.game-page)>.question-body>*{flex-shrink:0}
+ .activity-page:not(.game-page) .question-content{flex:1;min-height:0;display:flex;flex-direction:column;overflow:auto;overscroll-behavior-y:contain;padding:0 2px}
+ .activity-page:not(.game-page) .question-content>*{flex-shrink:0}
+ .activity-page .question-content>h1{font-size:24px;line-height:1.2}
+ .activity-page:is([data-question-type=order],:has(.answer-options)) .question-content>h1{font-size:22px}
+ .activity-page:not(.game-page) .question-content>.question-scene{display:flex;flex:1 0 112px;min-height:112px;max-height:180px;height:auto;margin:8px 0}
+ .activity-page:not(.game-page) .question-scene>.question-character{width:150px;height:100%;max-height:100%}
+ .activity-page:not(.game-page) .question-scene .question-image{width:min(100%,270px);height:100%;max-height:100%;max-width:100%}
+ .activity-page:not(.game-page)>.answer-dock{flex:none;min-height:72px;margin-top:8px}
+ .activity-page:not(.game-page) .answer-footer{min-height:64px;margin:0;padding:12px 0}
+ .activity-page:not(.game-page) .answer-footer:is(.feedback-correct,.feedback-gentle){padding:12px}
+ .activity-page:not(.game-page) .answer-feedback-copy{max-height:28dvh;overflow:auto}
+}
+
+/* Answer widgets stay outside the scrolling prompt/art region, with clear focus rings. */
+.activity-page .question-body>#text-answer-form,.activity-page .question-body>.answer-options,.activity-page .question-body>.sentence-builder{flex:none;min-width:0}
+.activity-page[data-listening=true] .question-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,35%);grid-template-areas:"heading heading" "task task" "play art" "silent art";grid-template-rows:auto auto minmax(44px,1fr) minmax(44px,1fr);gap:6px 16px}
+.activity-page[data-listening=true] .question-content>h1{grid-area:heading}
+.activity-page[data-listening=true] .listening-task{grid-area:task;margin-top:4px}
+.activity-page[data-listening=true] :is(.question-listen,.question-audio){grid-area:play;margin:0;align-self:end;min-width:0}
+.activity-page[data-listening=true] .question-listen{min-height:44px}
+.activity-page[data-listening=true] .question-audio audio{min-width:0;width:100%}
+.activity-page[data-listening=true] .listening-alternative-slot{grid-area:silent;margin:0;align-self:start}
+.activity-page[data-listening=true] .question-content>.question-scene{grid-area:art;height:100%;min-height:150px;margin:0;align-self:center}
+@media(max-width:760px){
+ .activity-page[data-listening=true] .question-content{grid-template-columns:minmax(0,1fr) 112px;column-gap:10px}
+ .activity-page[data-listening=true] .question-listen{padding:8px;font-size:13px;gap:6px}
+ .activity-page[data-listening=true] .question-content>.question-scene{min-height:112px;max-height:180px}
+ .activity-page[data-listening=true] .question-character{max-width:100%}
+ .activity-page[data-question-type=choice][data-listening=false]:has(.question-cue):not(:has(.question-passage)) .question-content{display:grid;grid-template-columns:minmax(0,1fr) 112px;grid-template-areas:"heading heading" "cue art";align-content:start;gap:8px 10px}
+ .activity-page[data-question-type=choice][data-listening=false]:has(.question-cue):not(:has(.question-passage)) .question-content>h1{grid-area:heading}
+ .activity-page[data-question-type=choice][data-listening=false]:has(.question-cue):not(:has(.question-passage)) .question-cue{grid-area:cue;margin:0;align-self:center}
+ .activity-page[data-question-type=choice][data-listening=false]:has(.question-cue):not(:has(.question-passage)) .question-content>.question-scene{grid-area:art;margin:0;height:112px}
+}
+
+/* Short desktop feedback shares width so full artwork and every answer fit together. */
+@media(min-width:761px) and (max-height:650px){
+ .activity-page:not([data-answer-state=unanswered]):not(:has(.question-passage))>.question-body{display:grid;grid-template-columns:minmax(180px,.8fr) minmax(0,1.2fr);grid-template-rows:minmax(0,1fr) auto;gap:8px 20px}
+ .activity-page:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content{grid-column:1;grid-row:1;height:100%}
+ .activity-page:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-body>:is(#text-answer-form,.answer-options,.sentence-builder){grid-column:2;grid-row:1;align-self:center}
+ .activity-page:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-body>.hint-button{grid-column:2;grid-row:2}
+ .activity-page[data-listening=true]:not([data-answer-state=unanswered]) .question-content{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"heading heading" "task task" "play silent" "art art";grid-template-rows:auto auto auto minmax(0,1fr);column-gap:8px}
+ .activity-page[data-listening=true]:not([data-answer-state=unanswered]) .question-listen{font-size:12px;padding:8px;gap:6px;align-self:center}
+ .activity-page[data-listening=true]:not([data-answer-state=unanswered]) .listening-alternative-slot{min-height:0}
 }

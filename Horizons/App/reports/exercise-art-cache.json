@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "baseline": "883869c53988c0546d6591507878dc9230db5614",
+  "cache": "horizons-companion-exercise-art-v84",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "26c54a001e9b0b4d1119f315f99ed1a847310acc2a3c90e8f194d528ee06017b"
+    },
+    {
+      "path": "styles/viewport.css?v=sprites1",
+      "status": 200,
+      "sha256": "55eba6f2377a40a4f22dace07e76342a1c60609047b0bcd2100a413f36d42136"
+    },
+    {
+      "path": "src/app.js?v=sprites1",
+      "status": 200,
+      "sha256": "d9aa29d1ac6968bdd23821df8cf30067c32f6e3f657f55a3b7530be3eeeb111d"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v84. New controller and exact current app and enlarged-exercise stylesheet bytes verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

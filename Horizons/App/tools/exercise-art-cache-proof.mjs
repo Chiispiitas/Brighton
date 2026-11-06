@@ -1,0 +1,21 @@
+import fs from 'node:fs';import crypto from 'node:crypto';import {execFileSync} from 'node:child_process';import {createRequire} from 'node:module';import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url),{chromium}=require('C:/Users/David/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const base='http://127.0.0.1:8898/Horizons/App/',baseline='883869c53988c0546d6591507878dc9230db5614',hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true}),context=await browser.newContext({serviceWorkers:'allow'}),page=await context.newPage();
+let legacy=true;const old=new Map(),errors=[];page.on('pageerror',e=>errors.push(e.message));
+await context.route('**/*',async route=>{const u=new URL(route.request().url());if(legacy&&u.href.startsWith(base)){const rel=decodeURIComponent(u.pathname.slice(new URL(base).pathname.length))||'index.html';if(!old.has(rel)){try{old.set(rel,execFileSync('git',['show',`${baseline}:Horizons/App/${rel}`],{maxBuffer:64*1024*1024,stdio:['ignore','pipe','ignore']}));}catch{old.set(rel,null);}}const body=old.get(rel);if(body)return route.fulfill({body,contentType:/\.m?js$/.test(rel)?'text/javascript':rel.endsWith('.html')?'text/html':rel.endsWith('.json')?'application/json':rel.endsWith('.css')?'text/css':rel.endsWith('.png')?'image/png':rel.endsWith('.woff2')?'font/woff2':'application/octet-stream'});}return route.continue();});
+await page.goto(base);await page.locator('#redeem-form').waitFor();
+await page.evaluate(async()=>{await navigator.serviceWorker.ready;if(!navigator.serviceWorker.controller)await new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));});
+assert.ok((await page.evaluate(()=>caches.keys())).includes('horizons-companion-coffee-frames-v83'));
+legacy=false;await page.evaluate(async()=>{const changed=new Promise(resolve=>navigator.serviceWorker.addEventListener('controllerchange',resolve,{once:true}));await(await navigator.serviceWorker.getRegistration()).update();await changed;});
+const cache='horizons-companion-exercise-art-v84';
+await page.waitForFunction(async name=>(await caches.keys()).includes(name)&&!(await caches.keys()).includes('horizons-companion-coffee-frames-v83'),cache);
+const paths=["index.html", "styles/viewport.css?v=sprites1", "src/app.js?v=sprites1"];
+await page.waitForFunction(async({cache,paths})=>{const c=await caches.open(cache);return(await Promise.all(paths.map(p=>c.match(new URL(p,document.baseURI))))).every(Boolean);},{cache,paths});
+await page.reload();await page.locator('#redeem-form').waitFor();
+await context.setOffline(true);
+const assets=await page.evaluate(async paths=>{const ctx=new AudioContext(),results=[];for(const path of paths){const response=await fetch(new URL(path,document.baseURI)),bytes=await response.arrayBuffer(),digest=await crypto.subtle.digest('SHA-256',bytes);let duration;if(path.endsWith('.mp3'))duration=(await ctx.decodeAudioData(bytes.slice(0))).duration;results.push({path,status:response.status,sha256:[...new Uint8Array(digest)].map(x=>x.toString(16).padStart(2,'0')).join(''),duration});}await ctx.close();return results;},paths);
+for(const item of assets){assert.equal(item.status,200);assert.equal(item.sha256,hash(fs.readFileSync(new URL('../'+item.path.split('?')[0],import.meta.url))));if(item.duration)assert.ok(item.duration<2.5);}
+assert.deepEqual(errors,[]);await browser.close();
+fs.writeFileSync(new URL('../reports/exercise-art-cache.json',import.meta.url),JSON.stringify({pass:true,baseline,cache,oldCacheRemoved:true,offlineAssets:assets,errors,scope:'Real previous worker installed, then updated to v84. New controller and exact current app and enlarged-exercise stylesheet bytes verified through offline fetch. Unauthenticated start screen only; no learner records.'},null,2)+'\n');
+console.log('PASS v83 to v84 worker upgrade, old-cache removal and exact larger-exercise stylesheet bytes offline');
