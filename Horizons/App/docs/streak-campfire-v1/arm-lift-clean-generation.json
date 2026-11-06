@@ -1,0 +1,16 @@
+{
+  "part": "arm-lift-clean",
+  "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 flat rendering are mandatory visual references only. Image4 exact canonical seated Pico locks the exact arm contour, proportions, shoulder anchors, paws and held-stick geometry. Image5 the isolated arm/stick attempt is the exact clean-up target. Return ONLY both full bare peach arms and paws with the thin brown roasting stick and single white marshmallow as ONE connected gripping group, matching the lifted second-keypose geometry of Image5; no head, torso, sleeves, body, satchel, seat, legs, scene or text. Keep full upper arms to shoulder anchors, original generous arm thickness, both complete paws, supported unchanged grips and exact marshmallow. Every surface must be FULLY OPAQUE with crisp confident rounded native geometry. Remove ALL blurry glow/halo, red/yellow/white specks, shadow, gradient, translucent skin and edge contamination from Image5. Render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, no transparency, checkerboard, blur, lighting, texture or isolated bits. Preserve Image5 shoulder anchors exactly from Image4, with both elbows flexed slightly upward and the stick tip lifted by about one marshmallow height above rest. Do not change the lifted arm pose or turn it into bent thin zigzags. This is an intentional key-color intermediate: no magenta bleed in the actual arms, stick or marshmallow.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/arm-lift-clean-preflight.json",
+  "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-981cd2d1-c93f-41a1-992b-32f132584db6.png",
+  "native_path": "assets/art/streak-campfire-v1/native/arm-lift-clean.png",
+  "review": "Root approved native opaque-magenta geometry; mechanical key and actual assembly/shoulder/grip review pending.",
+  "status": "geometry-approved"
+}

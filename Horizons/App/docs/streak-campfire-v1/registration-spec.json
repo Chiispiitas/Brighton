@@ -1,0 +1,231 @@
+{
+  "width": 760,
+  "height": 500,
+  "headTransform": {
+    "scale": 0.86,
+    "offset": [
+      154,
+      22
+    ]
+  },
+  "parts": {
+    "body": {
+      "source": "native/body-seat.png",
+      "sourceBox": [
+        159,
+        527,
+        873,
+        1247
+      ],
+      "box": [
+        124,
+        232,
+        250,
+        244
+      ],
+      "selection": {
+        "minSourceY": 830
+      }
+    },
+    "armRoast": {
+      "source": "native/upper-roast.png",
+      "sourceBox": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "keyMagenta": true,
+      "box": [
+        107,
+        186,
+        384,
+        256
+      ]
+    },
+    "armLift": {
+      "source": "native/upper-lift.png",
+      "sourceBox": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "keyMagenta": true,
+      "box": [
+        107,
+        186,
+        384,
+        256
+      ]
+    },
+    "fireplace": {
+      "source": "native/fireplace.png",
+      "box": [
+        300,
+        190,
+        326,
+        286
+      ]
+    },
+    "fireEmber": {
+      "source": "native/fire-ember.png",
+      "keyMagenta": true,
+      "box": [
+        412,
+        389,
+        100,
+        31
+      ]
+    },
+    "fireSmall": {
+      "source": "native/fire-small.png",
+      "keyMagenta": true,
+      "box": [
+        412,
+        301,
+        100,
+        119
+      ]
+    },
+    "fireIgnite": {
+      "source": "native/fire-ignite.png",
+      "keyMagenta": true,
+      "box": [
+        412,
+        271,
+        100,
+        149
+      ]
+    },
+    "fireFull": {
+      "source": "native/fire-full.png",
+      "keyMagenta": true,
+      "box": [
+        412,
+        291,
+        100,
+        129
+      ]
+    },
+    "satchel": {
+      "source": "native/body-seat.png",
+      "sourceBox": [
+        159,
+        527,
+        873,
+        1247
+      ],
+      "box": [
+        124,
+        232,
+        250,
+        244
+      ],
+      "selection": {
+        "satchelOnly": true
+      }
+    }
+  },
+  "excitedGlyphs": [
+    {
+      "source": "native/face-excited-clean.png",
+      "keyMagenta": true,
+      "sourceBox": [
+        321,
+        252,
+        583,
+        400
+      ],
+      "box": [
+        214,
+        138,
+        29,
+        15
+      ]
+    },
+    {
+      "source": "native/face-excited-clean.png",
+      "keyMagenta": true,
+      "sourceBox": [
+        728,
+        254,
+        979,
+        391
+      ],
+      "box": [
+        257,
+        137,
+        23,
+        14
+      ]
+    },
+    {
+      "source": "native/face-excited-clean.png",
+      "keyMagenta": true,
+      "sourceBox": [
+        372,
+        473,
+        588,
+        585
+      ],
+      "box": [
+        229,
+        165,
+        22,
+        10
+      ]
+    },
+    {
+      "source": "native/face-excited-clean.png",
+      "keyMagenta": true,
+      "sourceBox": [
+        733,
+        473,
+        953,
+        585
+      ],
+      "box": [
+        253,
+        164,
+        21,
+        10
+      ]
+    },
+    {
+      "source": "native/face-excited-clean.png",
+      "keyMagenta": true,
+      "sourceBox": [
+        486,
+        680,
+        800,
+        1006
+      ],
+      "box": [
+        237,
+        193,
+        37,
+        41
+      ]
+    }
+  ],
+  "pivots": {
+    "head": [
+      249,
+      255
+    ],
+    "body": [
+      245,
+      380
+    ],
+    "armRoast": [
+      249,
+      360
+    ],
+    "armLift": [
+      249,
+      360
+    ]
+  },
+  "upperBodyKeyposes": true
+}

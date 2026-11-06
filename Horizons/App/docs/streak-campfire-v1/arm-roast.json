@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-streak-arm-roast-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/seated-reference.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Return ONLY BOTH complete peach bare arms with BOTH paws gripping the roasting stick, plus that stick and its ONE white marshmallow, as a single connected moving group. Preserve exact shoulder attachment points and the original forearm angles, paw positions, stick angle/length and marshmallow size from Image4. The two grips stay joined to the stick. Remove ALL head, ears, shirt, strap, bag, torso, legs, feet and stool. No disconnected fingers, extra hands or cup. This is the roast/rest keypose and must reconstruct to the same original canonical pose."
+}

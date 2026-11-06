@@ -1,0 +1,31 @@
+{
+  "feature": "First daily saved-round streak celebration",
+  "status": "PASS_LOCAL",
+  "date": "2026-11-06",
+  "tests": {
+    "command": "node --test tests/application.test.mjs",
+    "passed": 50,
+    "failed": 0,
+    "newDailyStreakCases": 10
+  },
+  "verified": [
+    "Only successful saveAttempt emits metadata; no login/bootstrap/progress replay",
+    "Server timestamp, configured profile IANA timezone, Monday-Sunday calendar",
+    "New local day, midnight rollover, interrupted streak, fractional timezone offset",
+    "Actual 23-hour and 25-hour daylight-saving days",
+    "Same winning UUID retries preserve metadata and award no duplicate XP",
+    "Old-day retries and pre-feature current-day history remain ineligible",
+    "Different rounds on independent server instances claim exactly one winner",
+    "Concurrent identical deliveries preserve one attempt and claim",
+    "Attempt write, saved-result read, daily claim write and claim acknowledgement failure recovery",
+    "Both Learn and custom Practice count; profiles remain independently scoped",
+    "Submitted completion timestamp, streak, candidate and celebration fields are ignored"
+  ],
+  "storage": "Existing ADMIN-only HzThrottle JSON collection; no collection/schema migration",
+  "presentationLimit": "One durable winning event per profile/day. Same winning UUID can return it again within that day; frontend marks profile/day seen when actually shown. Deliberate replay of exact winning UUID in another browser can present again there; no global display acknowledgement.",
+  "notPerformed": [
+    "No live learner data QA",
+    "No production deployment",
+    "No end-to-end browser animation QA by this backend subtask"
+  ]
+}

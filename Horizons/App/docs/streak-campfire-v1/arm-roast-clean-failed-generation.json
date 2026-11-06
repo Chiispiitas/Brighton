@@ -1,0 +1,19 @@
+{
+  "part": "arm-roast-clean",
+  "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 flat rendering are mandatory visual references only. Image4 exact canonical seated Pico locks the exact arm contour, proportions, shoulder anchors, paws and held-stick geometry. Image5 the isolated arm/stick attempt is the exact clean-up target. Return ONLY both full bare peach arms and paws with the thin brown roasting stick and single white marshmallow as ONE connected gripping group, matching the canonical Image4 pose exactly; no head, torso, sleeves, body, satchel, seat, legs, scene or text. Keep full upper arms to shoulder anchors, original generous arm thickness, both complete paws, supported unchanged grips and exact marshmallow. Every surface must be FULLY OPAQUE with crisp confident rounded native geometry. Remove ALL blurry glow/halo, red/yellow/white specks, shadow, gradient, translucent skin and edge contamination from Image5. Render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, no transparency, checkerboard, blur, lighting, texture or isolated bits. Do not change arm pose or turn it into bent thin zigzags. This is an intentional key-color intermediate: no magenta bleed in the actual arms, stick or marshmallow.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/arm-roast-clean-preflight.json",
+  "status": "failed-output-moderation",
+  "operation": "image_gen.imagegen generating isolated cartoon rabbit paws and roasting stick on magenta",
+  "httpStatus": 400,
+  "requestId": "7b850a47-2964-4d62-8cf0-fd68b4c6a419",
+  "category": "sexual",
+  "imageOutputCreated": false,
+  "interpretation": "Benign cartoon rabbit sprite request; no application/backend operation failed and no source changes were caused."
+}

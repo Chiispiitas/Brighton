@@ -1,0 +1,1158 @@
+{
+  "date": "2026-11-06",
+  "tool": "built-in ImageGen",
+  "perPartGeneration": true,
+  "nativeOutputs": 14,
+  "generationAttempts": 17,
+  "generationFailuresWithoutOutput": 3,
+  "toolValidationFailuresBeforeGeneration": 1,
+  "rejectedNativeOutputs": [
+    "arm-lift",
+    "arm-roast",
+    "face-excited"
+  ],
+  "records": [
+    {
+      "id": "arm-lift-clean",
+      "recordFile": "docs/streak-campfire-v1/arm-lift-clean-generation.json",
+      "part": "arm-lift-clean",
+      "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 flat rendering are mandatory visual references only. Image4 exact canonical seated Pico locks the exact arm contour, proportions, shoulder anchors, paws and held-stick geometry. Image5 the isolated arm/stick attempt is the exact clean-up target. Return ONLY both full bare peach arms and paws with the thin brown roasting stick and single white marshmallow as ONE connected gripping group, matching the lifted second-keypose geometry of Image5; no head, torso, sleeves, body, satchel, seat, legs, scene or text. Keep full upper arms to shoulder anchors, original generous arm thickness, both complete paws, supported unchanged grips and exact marshmallow. Every surface must be FULLY OPAQUE with crisp confident rounded native geometry. Remove ALL blurry glow/halo, red/yellow/white specks, shadow, gradient, translucent skin and edge contamination from Image5. Render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, no transparency, checkerboard, blur, lighting, texture or isolated bits. Preserve Image5 shoulder anchors exactly from Image4, with both elbows flexed slightly upward and the stick tip lifted by about one marshmallow height above rest. Do not change the lifted arm pose or turn it into bent thin zigzags. This is an intentional key-color intermediate: no magenta bleed in the actual arms, stick or marshmallow.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-lift-clean-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-981cd2d1-c93f-41a1-992b-32f132584db6.png",
+      "native_path": "assets/art/streak-campfire-v1/native/arm-lift-clean.png",
+      "review": "Root approved native opaque-magenta geometry; mechanical key and actual assembly/shoulder/grip review pending.",
+      "status": "superseded-unused",
+      "nativeSha256": "37485b384f04a68808a9ce766fae694e51fc9afdb4491dc5ae59a9c45d9b5ef4",
+      "productionRole": "Clean native group, replaced by coherent clothed upper-body keyposes after interaction alignment review.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-lift-clean-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift.png",
+            "sha256": "9cc5febe68851e216dc1f1c3c5cdf944a4474ef99bacd2f236dd3b20bde1aa27"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "arm-lift",
+      "recordFile": "docs/streak-campfire-v1/arm-lift-generation.json",
+      "part": "arm-lift",
+      "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Create ONLY the same BOTH peach bare arms/paws plus roasting stick and ONE white marshmallow group from Image4, in an anticipation-to-surprise LIFT keypose: both shoulder attachment points stay exactly in their original locations but elbows flex slightly, paws raise the stick so its marshmallow tip lifts upward about one marshmallow height. Preserve same paw/stick grips, number of hands, thickness, anatomy, stick length and white marshmallow. This is a separate authored keypose of that same moving group. Remove ALL head, ears, clothing, torso, legs, feet and stump. No flames/fireplace.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-lift-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-dd715e25-b6e3-46a2-8acc-25514b9cb44f.png",
+      "native_path": "assets/art/streak-campfire-v1/native/arm-lift.png",
+      "review": "REJECTED for massive blurry glow around moving arms/stick; exact geometry retained as repair target, inactive.",
+      "status": "rejected",
+      "nativeSha256": "9cc5febe68851e216dc1f1c3c5cdf944a4474ef99bacd2f236dd3b20bde1aa27",
+      "productionRole": "Broad blurry glow around the isolated cartoon forelimbs/skewer.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-lift-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "arm-roast-clean",
+      "recordFile": "docs/streak-campfire-v1/arm-roast-clean-failed-generation.json",
+      "part": "arm-roast-clean",
+      "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 flat rendering are mandatory visual references only. Image4 exact canonical seated Pico locks the exact arm contour, proportions, shoulder anchors, paws and held-stick geometry. Image5 the isolated arm/stick attempt is the exact clean-up target. Return ONLY both full bare peach arms and paws with the thin brown roasting stick and single white marshmallow as ONE connected gripping group, matching the canonical Image4 pose exactly; no head, torso, sleeves, body, satchel, seat, legs, scene or text. Keep full upper arms to shoulder anchors, original generous arm thickness, both complete paws, supported unchanged grips and exact marshmallow. Every surface must be FULLY OPAQUE with crisp confident rounded native geometry. Remove ALL blurry glow/halo, red/yellow/white specks, shadow, gradient, translucent skin and edge contamination from Image5. Render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, no transparency, checkerboard, blur, lighting, texture or isolated bits. Do not change arm pose or turn it into bent thin zigzags. This is an intentional key-color intermediate: no magenta bleed in the actual arms, stick or marshmallow.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-roast-clean-preflight.json",
+      "status": "failed-output-moderation",
+      "operation": "image_gen.imagegen generating isolated cartoon rabbit paws and roasting stick on magenta",
+      "httpStatus": 400,
+      "requestId": "7b850a47-2964-4d62-8cf0-fd68b4c6a419",
+      "category": "sexual",
+      "imageOutputCreated": false,
+      "interpretation": "Benign cartoon rabbit sprite request; no application/backend operation failed and no source changes were caused.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-roast-clean-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png",
+            "sha256": "e0d9a891c11a529bcf90fd9508fb5eb33d171b4cc41da1d5eb35bdba363867cb"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "arm-roast-clean-rabbit",
+      "recordFile": "docs/streak-campfire-v1/arm-roast-clean-rabbit-failed-generation.json",
+      "part": "arm-roast-clean-rabbit",
+      "prompt": "Use case: precise-object-edit. This is a family-friendly animation component for a nonhuman cartoon rabbit named Pico, for a school learning app. Image1 brand, Image2 cast and Image3 flat-rendering are mandatory visual references only. Image4 is the accepted seated cartoon rabbit pose. Image5 is the exact isolated cartoon forelimb-and-skewer drawing to clean. Create the same simple toy-like peach rabbit forelimbs and round paws gripping a thin brown roasting skewer with one white marshmallow, as a single isolated connected sprite group. Preserve Image4 rounded shoulder attachment positions and thick curved forelimb shapes, and Image5 paw/skewer/marshmallow placement. Show only the peach rabbit forelimb shapes, paws, skewer and single marshmallow; no rabbit head, clothing, seat, extra objects, text, scene or labels. Every shape must be fully opaque, clean, flat and geometric. Remove the blurry glow and exterior speckles of Image5. Use deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margins, no transparency, gradients, shadow, texture, blur or lighting. Keep the generated cartoon shapes exactly proportioned, with crisp edges and no magenta contamination.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-roast-clean-rabbit-preflight.json",
+      "status": "failed-output-moderation",
+      "operation": "image_gen.imagegen generating isolated cartoon rabbit paws and roasting stick on magenta",
+      "httpStatus": 400,
+      "requestId": "922a28ff-2ee5-46f0-a5ae-c2ceb7c67bf7",
+      "category": "sexual",
+      "imageOutputCreated": false,
+      "interpretation": "Benign nonhuman cartoon sprite request, no application/backend operation failed. Upward rest pose is unnecessary after approving a new down-right roasting keypose; no additional upward retry.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-roast-clean-rabbit-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png",
+            "sha256": "e0d9a891c11a529bcf90fd9508fb5eb33d171b4cc41da1d5eb35bdba363867cb"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "arm-roast-down",
+      "recordFile": "docs/streak-campfire-v1/arm-roast-down-failed-generation.json",
+      "part": "arm-roast-down",
+      "prompt": "Use case: precise-object-edit. Family-friendly nonhuman cartoon rabbit Pico animation for a school learning app. Image1 brand, Image2 cast, Image3 flat-rendering are mandatory references only. Image4 the exact separate headless seated navy shirt/stump fixes shoulder attachment positions for the NONHUMAN CARTOON RABBIT Pico. Image5 the exact isolated cartoon rabbit forelimbs/skewer attempt fixes the generous curved peach forelimb shapes and round paws. Create ONE isolated connected group of both complete cartoon rabbit forelimbs and paws gripping a thin brown roasting skewer with ONE white marshmallow. Keep the original shoulder attachment positions, thick rounded forelimbs and paws close together at the same relaxed resting grip near the torso. Change ONLY the skewer direction for the roast keypose: it must extend gently DOWN TO THE RIGHT from the held paws, about 15 degrees below horizontal, with the single marshmallow at the far-right end. This deliberately lowered skewer goes into a fireplace opening to the rabbit's right; do not reproduce the upward diagonal of Image5. Do not move or shorten the shoulder attachments or forelimbs to achieve this. Keep both grips physically supported. Return only the cartoon peach forelimbs/paws, thin brown skewer and single white marshmallow; no head, clothing, seat, legs, fireplace, scenery, extra objects or text. All shapes fully opaque, flat, clean and geometric on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparency, blur, glow, lighting, gradients, shadows, texture, speckles or magenta bleed.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-roast-down-preflight.json",
+      "status": "failed-output-moderation",
+      "operation": "image_gen.imagegen generating isolated cartoon rabbit forelimbs and lowered roasting skewer",
+      "httpStatus": 400,
+      "requestId": "149503b6-f845-4006-a9e4-3f5239523117",
+      "category": "sexual",
+      "imageOutputCreated": false,
+      "interpretation": "Benign school-app rabbit animation request. Stop isolated-forelimb retries; next authored keypose is a natural clothed upper-body sprite with attached paws. No application/backend operation failed.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-roast-down-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+            "sha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png",
+            "sha256": "e0d9a891c11a529bcf90fd9508fb5eb33d171b4cc41da1d5eb35bdba363867cb"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "arm-roast",
+      "recordFile": "docs/streak-campfire-v1/arm-roast-generation.json",
+      "part": "arm-roast",
+      "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Return ONLY BOTH complete peach bare arms with BOTH paws gripping the roasting stick, plus that stick and its ONE white marshmallow, as a single connected moving group. Preserve exact shoulder attachment points and the original forearm angles, paw positions, stick angle/length and marshmallow size from Image4. The two grips stay joined to the stick. Remove ALL head, ears, shirt, strap, bag, torso, legs, feet and stool. No disconnected fingers, extra hands or cup. This is the roast/rest keypose and must reconstruct to the same original canonical pose.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/arm-roast-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-c43fc2aa-bc96-4e03-853d-c744d019172a.png",
+      "native_path": "assets/art/streak-campfire-v1/native/arm-roast.png",
+      "review": "REJECTED for massive blurry glow around moving arms/stick; exact geometry retained as repair target, inactive.",
+      "status": "rejected",
+      "nativeSha256": "e0d9a891c11a529bcf90fd9508fb5eb33d171b4cc41da1d5eb35bdba363867cb",
+      "productionRole": "Broad blurry glow around the isolated cartoon forelimbs/skewer.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-arm-roast-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "body-seat",
+      "recordFile": "docs/streak-campfire-v1/body-seat-generation.json",
+      "part": "body-seat",
+      "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Return ONLY Pico's headless seated body and its small wooden stump together as one stationary component. Preserve navy sleeveless explorer shirt, diagonal magenta strap/satchel with yellow button, peach bent legs and supported peach feet. Remove the entire head/ears/face and BOTH complete bare arms/paws, roasting stick and marshmallow. Reconstruct the obscured navy torso with the same solid native clothing surface; no holes or skin patches. Preserve exact shoulder edges and neck aperture/overlap and original seated silhouette from Image4. Feet and stump must remain grounded. Do not change sitting pose or body proportions.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/body-seat-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-e5eb437f-64e7-419b-9096-b60c61f73a07.png",
+      "native_path": "assets/art/streak-campfire-v1/native/body-seat.png",
+      "review": "Geometry approved by root/streak_assets: exact seated silhouette, navy torso reconstructed, both complete arms absent, stationary body/stump; minor exterior fringes, alpha review/registration pending.",
+      "status": "active-native",
+      "nativeSha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-body-seat-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+            "sha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "face-excited-clean",
+      "recordFile": "docs/streak-campfire-v1/face-excited-clean-generation.json",
+      "part": "face-excited-clean",
+      "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 rendering are mandatory visual references only. Image4 exact accepted Pico locks facial identity; Image5 is the exact generated expression-only glyph plate to clean. Return the SAME five separate glyphs from Image5 in the SAME top-to-bottom layout: two lifted navy eyebrows, two happy closed-eye crescent strokes, one delighted open mouth with red/coral tongue. No nose, skin, head, ears, body, geometry changes, connected face, complete expression head, labels or scenery. Keep the exact bold rounded native features. Remove all external red/yellow/white speckles, glow and fringes. Render every feature FULLY OPAQUE with clean antialias edges on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparent pixels, checkerboard, shadows, gradients, blur, lighting, texture or halos. The magenta key color must not bleed into the navy/mouth/tongue shapes. This intentional key-color intermediate is needed to register the native glyphs without eroding their anatomy.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\face-excited.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/face-excited-clean-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-19d02c6f-d0a3-4dd9-94bb-4ac9d0d79cfc.png",
+      "native_path": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+      "review": "Root approved clean native opaque-magenta separate-glyph repair; supersedes rejected glow/scatter plate.",
+      "status": "active-native",
+      "nativeSha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-face-excited-clean-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\face-excited.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\face-excited.png",
+            "sha256": "173e00b91c94cd29cdcb0ef0e96149984f260b58c822a64b2ec181cf01a48648"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "face-excited",
+      "recordFile": "docs/streak-campfire-v1/face-excited-generation.json",
+      "part": "face-excited",
+      "prompt": "Use case: precise-object-edit. Asset: Pico feature-only excited expression sprite. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references; Image4 is the exact approved neutral Pico head/face, identity edit target. Generate ONLY isolated facial marks, aligned like the reference: two lifted gentle dark-navy brows, two happy closed crescent eye strokes, and one delighted open smile with warm red tongue. No skin, head, nose, ears, body, hands, clothes, background or whole character. Five disconnected feature glyphs total, eyes below brows and mouth below; native flat filled contours, solid opaque dark/navy/red feature interiors with genuinely transparent empty space. No white eye discs, glow, shading, outline, text or smiley panel. Do not recreate a face-shaped backing.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/face-excited-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-c5ffb548-c8cc-427f-b59a-c29b5d7b68e7.png",
+      "native_path": "assets/art/streak-campfire-v1/native/face-excited.png",
+      "review": "Root approved separate expressive glyph layout; alpha and mechanical disconnected-noise selection review pending.",
+      "nativeSha256": "173e00b91c94cd29cdcb0ef0e96149984f260b58c822a64b2ec181cf01a48648",
+      "status": "rejected",
+      "productionRole": "Broad exterior semitransparency and red scatter around glyphs.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-face-excited-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "fire-ember",
+      "recordFile": "docs/streak-campfire-v1/fire-ember-generation.json",
+      "part": "fire-ember",
+      "prompt": "Use case: precise-object-edit. Create ONE separately authored native flame flipbook frame for Horizons Pico daily streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory visual references, NOT content to reproduce. Image4 exact compact hearth is only the target context: match its simple warm geometric shapes. Return ONLY the fire shape that would sit above the crossed logs inside its dark arched firebox. Do NOT include the hearth, logs, Pico, room, scenery, letters, numbers, text or a sprite sheet. FRAME1 EMBER: a very low compact cluster of three smooth red/coral ember lobes and a tiny yellow center, no raised flame tongue. The silhouette is only about one fifth as tall as its width. Same base width/center and bottom support point across the four frames, clean curved flat filled shapes, opaque solid orange and golden cores, no lighting, glow, shadows, gradient, texture, outline, blur, translucent smoke, isolated specks or particles. For precise clean sprite extraction, render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margin, no checkerboard and no transparent pixels. The flame artwork itself must be fully opaque too. This is an intentional key-color intermediate; do not blend magenta into its silhouette.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/fire-ember-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-5bfd232d-342b-41b6-9e79-3a2981e621c5.png",
+      "native_path": "assets/art/streak-campfire-v1/native/fire-ember.png",
+      "review": "Root approved low broad coral/orange ember with golden core on intentionally opaque magenta; mechanical key/registration pending.",
+      "status": "active-native",
+      "nativeSha256": "e7d3a02a7e28145ab512f817009ec8232bfa75f41b9f442e8113f3e4d8c9b61f",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-fire-ember-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "fire-full",
+      "recordFile": "docs/streak-campfire-v1/fire-full-generation.json",
+      "part": "fire-full",
+      "prompt": "Use case: precise-object-edit. Create ONE separately authored native flame flipbook frame for Horizons Pico daily streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory visual references, NOT content to reproduce. Image4 exact compact hearth is only the target context: match its simple warm geometric shapes. Return ONLY the fire shape that would sit above the crossed logs inside its dark arched firebox. Do NOT include the hearth, logs, Pico, room, scenery, letters, numbers, text or a sprite sheet. FRAME4 SETTLED FIRE: a broad confident compact orange/coral flame with three rounded pointed tongues, largest tongue leaning LEFT and a smaller tongue to the RIGHT, with inset golden/cream core. About 1.4 times as tall as its base width. Clearly distinct from the tall ignition frame. Same base width/center and bottom support point across the four frames, clean curved flat filled shapes, opaque solid orange and golden cores, no lighting, glow, shadows, gradient, texture, outline, blur, translucent smoke, isolated specks or particles. For precise clean sprite extraction, render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margin, no checkerboard and no transparent pixels. The flame artwork itself must be fully opaque too. This is an intentional key-color intermediate; do not blend magenta into its silhouette.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/fire-full-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-1fd35281-f18b-4dce-a882-56e301631cb7.png",
+      "native_path": "assets/art/streak-campfire-v1/native/fire-full.png",
+      "review": "Root approved native opaque-magenta geometry; mechanical key and actual assembly/shoulder/grip review pending.",
+      "status": "active-native",
+      "nativeSha256": "9a9e9b70283fe9e4ff7c52576d23cf4fdb756e825649e2d2e744c4980b972513",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-fire-full-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "fire-ignite",
+      "recordFile": "docs/streak-campfire-v1/fire-ignite-generation.json",
+      "part": "fire-ignite",
+      "prompt": "Use case: precise-object-edit. Create ONE separately authored native flame flipbook frame for Horizons Pico daily streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory visual references, NOT content to reproduce. Image4 exact compact hearth is only the target context: match its simple warm geometric shapes. Return ONLY the fire shape that would sit above the crossed logs inside its dark arched firebox. Do NOT include the hearth, logs, Pico, room, scenery, letters, numbers, text or a sprite sheet. FRAME3 IGNITION: a tall lively connected orange/coral flame leaping upward in three curved pointed tongues, largest tongue leaning RIGHT, with inset golden/cream core. About twice as tall as its base width. Strongest peak frame, NOT a smear or spark cloud. Same base width/center and bottom support point across the four frames, clean curved flat filled shapes, opaque solid orange and golden cores, no lighting, glow, shadows, gradient, texture, outline, blur, translucent smoke, isolated specks or particles. For precise clean sprite extraction, render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margin, no checkerboard and no transparent pixels. The flame artwork itself must be fully opaque too. This is an intentional key-color intermediate; do not blend magenta into its silhouette.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/fire-ignite-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-cfc2e9f9-62ed-4a60-b506-94e94fac7081.png",
+      "native_path": "assets/art/streak-campfire-v1/native/fire-ignite.png",
+      "review": "Root approved native opaque-magenta geometry; mechanical key and actual assembly/shoulder/grip review pending.",
+      "status": "active-native",
+      "nativeSha256": "7578d0cea6e4248585e977fdbfd31087ec37ee858b4fa5fd1297abe25f0ac752",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-fire-ignite-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "fire-small",
+      "recordFile": "docs/streak-campfire-v1/fire-small-generation.json",
+      "part": "fire-small",
+      "prompt": "Use case: precise-object-edit. Create ONE separately authored native flame flipbook frame for Horizons Pico daily streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory visual references, NOT content to reproduce. Image4 exact compact hearth is only the target context: match its simple warm geometric shapes. Return ONLY the fire shape that would sit above the crossed logs inside its dark arched firebox. Do NOT include the hearth, logs, Pico, room, scenery, letters, numbers, text or a sprite sheet. FRAME2 KINDLE: two small connected orange upward flame tongues with one inset golden/cream core; asymmetrically leaning gently LEFT. The silhouette is about as tall as its base width. Same base width/center and bottom support point across the four frames, clean curved flat filled shapes, opaque solid orange and golden cores, no lighting, glow, shadows, gradient, texture, outline, blur, translucent smoke, isolated specks or particles. For precise clean sprite extraction, render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margin, no checkerboard and no transparent pixels. The flame artwork itself must be fully opaque too. This is an intentional key-color intermediate; do not blend magenta into its silhouette.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/fire-small-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-309bfd9e-c707-4f1a-aee8-53bf69256565.png",
+      "native_path": "assets/art/streak-campfire-v1/native/fire-small.png",
+      "review": "Root approved native opaque-magenta geometry; mechanical key and actual assembly/shoulder/grip review pending.",
+      "status": "active-native",
+      "nativeSha256": "1b8df039ae1fc89dd107a8710a9f2077af1d1532d4a74bd52d26d3c5e43a2058",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-fire-small-v1",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\fireplace.png",
+            "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "fireplace",
+      "recordFile": "docs/streak-campfire-v1/fireplace-generation.json",
+      "part": "fireplace",
+      "prompt": "Use case: stylized-concept. Asset: ONE independent fireplace/logs prop for Horizons streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references, not layouts to reproduce. Produce a compact freestanding warm coral/magenta brick hearth with a small cream cap, an open dark-navy arched firebox and two simple brown crossed wooden logs at its base. The firebox must be empty with NO flame yet so separately generated fire frames can fit inside. Warm flat filled geometric raster style, modest adult playful proportions, a simple readable silhouette at small UI size. Whole single prop centered and uncropped, no room/wall/floor/scenery/chimney panorama, no characters, no text, no outlines, shadows, glow, gradients or texture. True transparent background and fully opaque masonry/logs.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/fireplace-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-788ebcbf-f5b0-4752-b460-8d4c1b03d2e4.png",
+      "native_path": "assets/art/streak-campfire-v1/native/fireplace.png",
+      "review": "Root approved compact freestanding coral/magenta/cream hearth with navy empty firebox and crossed logs; derivative registration review pending.",
+      "nativeSha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f",
+      "status": "active-native",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-fireplace-v1",
+        "input_count": 3,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "seated-reference",
+      "recordFile": "docs/streak-campfire-v1/seated-reference-generation.json",
+      "part": "seated-reference",
+      "prompt": "Use case: precise-object-edit. Asset: one canonical full-body seated Pico pose for Horizons daily streak animation. Image1 R01 brand, Image2 R02 cast and Image3 R07 flat rendering are mandatory visual references; do NOT reproduce their labels or layouts. Image4 is the exact accepted Pico character reference. Image5 is his already-approved permanent faceless head, supplied only to lock the exact outer head/ear/chin geometry, not as a new character. Create ONE complete Pico sitting naturally on a small simple low wooden stump, holding a thin roasting stick with BOTH peach paws together close to his torso; a single white marshmallow is on the stick's far right tip. Same exact rabbit identity: tall peach ears, left ear upright/right ear bent as reference, dark two brows, small white eyes/dark pupils, orange triangular nose, warm open smile, navy sleeveless explorer shirt, diagonal magenta strap and magenta satchel with yellow button, peach legs/feet. Keep his head FRONT/three-quarter in the exact familiar orientation from Image4, subtly looking toward the stick at the RIGHT; NOT a side profile, not a different rabbit. Preserve the familiar long head/ear proportions and broad muzzle. Seated body should be relaxed, knees bent, both feet supported at ground level. Body on the LEFT, stick extends diagonally gently right into empty space. No flames/fireplace yet. Complete head, ears, paws, stump, feet and stick with generous transparent margins. Clean flat filled geometric raster shapes, opaque solid skin/clothes/stump/stick/marshmallow, genuine transparency only outside the silhouette. No glow, shadows, gradients, texture, outlines, scenery, text, extra marshmallows, extra limbs or sprite sheet. This full pose is a geometry/reference still; animation will separately generate body, gripping paws/stick and facial parts.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\head-faceless-registered.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/seated-reference-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-86490ba3-e5e8-42f1-8e8d-0e1e24cd20c4.png",
+      "native_path": "assets/art/streak-campfire-v1/native/seated-reference.png",
+      "review": "Geometry reference only, approved by root and streak_assets; exterior sparse speckles and white fringe not accepted active pixels. Approved prior blank head/features remain active.",
+      "nativeSha256": "fef54e5ed5fe77abf2c9467c015f588851f1ab9352ebfd69fc2a7995631bae9a",
+      "status": "reference-only",
+      "productionRole": "Accepted seated geometry reference; original approved Pico blank head/features are reused.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-seated-reference-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\head-faceless-registered.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+            "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\head-faceless-registered.png",
+            "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-lift",
+      "recordFile": "docs/streak-campfire-v1/upper-lift-generation.json",
+      "part": "upper-lift",
+      "prompt": "Use case: precise-object-edit. Create one separate CLOTHED UPPER-BODY CARTOON RABBIT second-keypose sprite for Horizons. Image1 brand, Image2 cast and Image3 flat-rendering are mandatory references only. Image4 is the exact seated navy-shirt/magenta-strap body. Image5 is the exact accepted clothed roast upper-body keypose and the edit target. Keep its NAVY SHIRT TORSO and MAGENTA DIAGONAL STRAP pixel geometry, neck opening, shoulder anchors, thickness and hem placement unchanged. Keep both complete peach cartoon forelimbs connected to the same shoulder anchors. Change only the held-paw/skewer gesture to a small surprised lift: flex elbows upward slightly, lift the two round gripping paws by about half a paw height, and angle the thin brown skewer gently UP TO THE RIGHT, about25degrees above horizontal. Exactly one white marshmallow remains securely at the far-right tip; both paw grips stay supported. This is a separately authored full-opacity hybrid keypose, not an expression head. Return only the clothed torso, attached cartoon forelimbs/paws and held skewer/marshmallow, no head, face, ears, legs, feet, seat, satchel pouch, fireplace, scenery, labels or text. Do not narrow the arms, detach shoulders or change torso outline between keyposes. Fully opaque clean flat geometric solid fills on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, generous margin, no transparency, glow, blur, gradients, shadows, lighting, texture, extra objects or magenta bleed.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/upper-lift-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-f33126f1-d0b2-4566-b97e-b8d894188384.png",
+      "native_path": "assets/art/streak-campfire-v1/native/upper-lift.png",
+      "review": "Root approved matched opaque clothed torso/strap/neck/hem and connected raised paws/skewer. Actual registered reconstruction review pending.",
+      "status": "active-native",
+      "nativeSha256": "0c96df6c83862da68a6e55eb70614b2a8f4d06721a8769854c9730eff70af739",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-upper-lift-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+            "sha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png",
+            "sha256": "bf5ffc3b714121d6a27e0d34832e3e333f85cfc0ee7fbec8dcd4db9e1974645c"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    },
+    {
+      "id": "upper-roast",
+      "recordFile": "docs/streak-campfire-v1/upper-roast-generation.json",
+      "part": "upper-roast",
+      "prompt": "Use case: precise-object-edit. Create one family-friendly CLOTHED UPPER-BODY CARTOON RABBIT animation keypose for Horizons. Image1 brand, Image2 cast and Image3 flat-rendering are mandatory references only. Image4 is the exact seated navy-shirt/magenta-strap rabbit body, which fixes torso contours, clothing colors, neck overlap and shoulder positions. Image5 fixes the clean cartoon paws and held roasting skewer; keep generous round connected paws and supported grips. Return Pico's complete NAVY SLEEVELESS EXPLORER SHIRT TORSO with the diagonal MAGENTA BAG STRAP and BOTH attached peach cartoon forelimbs/paws holding one thin brown roasting skewer with one white marshmallow. The torso remains in the same seated vertical pose, with original neck opening, shoulder thickness, shirt hem and continuous strap. Both round paws rest together close to the lower chest. The skewer extends gently DOWN TO THE RIGHT, about15degrees below horizontal, so its far-right marshmallow can enter a fireplace opening. Keep its full thin stick length; do not place the marshmallow in the paws. Torso, attached arms/paws and held object must be one coherent opaque native keypose, with intact connected shoulder joins and no seams. Only this clothed upper-body sprite: no rabbit head, ears, face, legs, feet, wooden seat, satchel pouch, fireplace, scenery, labels or text. Preserve exact Image4 navy torso/strap exterior and shirt height; lower hem must overlap behind the seated lower body. Clean flat geometric solid fills with fully opaque interiors, crisp antialias edges and generous margin on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparency, glow, blur, gradients, shadows, lighting, texture, detached limbs, extra limbs, extra marshmallows or magenta bleed.",
+      "referenced_image_paths": [
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+        "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift-clean.png"
+      ],
+      "preflight": "docs/streak-campfire-v1/upper-roast-preflight.json",
+      "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-0f11e14b-2746-4bc7-a020-b0e61d5f1ab3.png",
+      "native_path": "assets/art/streak-campfire-v1/native/upper-roast.png",
+      "review": "Root approved coherent opaque clothed torso/strap plus supported paws and down-right skewer with one white marshmallow. Assembly registration/neck-waist review pending.",
+      "status": "active-native",
+      "nativeSha256": "bf5ffc3b714121d6a27e0d34832e3e333f85cfc0ee7fbec8dcd4db9e1974645c",
+      "productionRole": "Native source used by registered final artwork.",
+      "preflightEvidence": {
+        "pass": true,
+        "asset_id": "pico-streak-upper-roast-v1",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift-clean.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/01-brand.png"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/02-cast.png"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e",
+            "frozenCopy": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+            "sha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-lift-clean.png",
+            "sha256": "37485b384f04a68808a9ce766fae694e51fc9afdb4491dc5ae59a9c45d9b5ef4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      }
+    }
+  ],
+  "inputLimitFailure": {
+    "part": "arm-roast-down",
+    "status": "tool-input-validation-failed",
+    "operation": "image_gen.imagegen",
+    "error": "referenced_image_paths must contain at most 5 paths",
+    "generationStarted": false,
+    "imageOutputCreated": false,
+    "attemptedInputPaths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Family-friendly nonhuman cartoon rabbit Pico animation for a school learning app. Image1 brand, Image2 cast, Image3 flat-rendering are mandatory references only. Image4 is the exact seated rabbit canonical pose. Image5 the separate headless seated navy shirt/stump fixes the shoulder attachment positions. Image6 the isolated cartoon forelimbs/skewer attempt fixes the generous curved peach forelimb shapes and round paws. Create ONE isolated connected group of both complete cartoon rabbit forelimbs and paws gripping a thin brown roasting skewer with ONE white marshmallow. Keep the original shoulder attachment positions, thick rounded forelimbs and paws close together at the same relaxed resting grip near the torso. Change ONLY the skewer direction for the roast keypose: it must extend gently DOWN TO THE RIGHT from the held paws, about 15 degrees below horizontal, with the single marshmallow at the far-right end. This deliberately lowered skewer goes into a fireplace opening to the rabbit's right; do not reproduce the upward diagonal of Image4/Image6. Do not move or shorten the shoulder attachments or forelimbs to achieve this. Keep both grips physically supported. Return only the cartoon peach forelimbs/paws, thin brown skewer and single white marshmallow; no head, clothing, seat, legs, fireplace, scenery, extra objects or text. All shapes fully opaque, flat, clean and geometric on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparency, blur, glow, lighting, gradients, shadows, texture, speckles or magenta bleed.",
+    "auditLimit": 7,
+    "actualToolInputLimit": 5,
+    "resolution": "Keep all three mandatory sheets, exact seated-body target and exact paw/skewer target; omit redundant complete canonical from this part-only call."
+  },
+  "inheritedApprovedSources": [
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-blink-eyelids.png",
+      "original": "assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-neutral-brows-mouth.png",
+      "original": "assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-neutral-eyes.png",
+      "original": "assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-nose.png",
+      "original": "assets/art/pico-banner-motion-v1/face-nose.png",
+      "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/head-faceless-registered.png",
+      "original": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/neutral-reconstruction.png",
+      "original": "assets/art/pico-banner-motion-v1/neutral-reconstruction.png",
+      "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/pupils-native.png",
+      "original": "assets/art/pico-banner-motion-v1/pupils-native.png",
+      "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c",
+      "unchangedBytes": true
+    }
+  ],
+  "registrations": "docs/streak-campfire-v1/registrations.json",
+  "nativeBytesUnchanged": true,
+  "activePngBytes": 725777,
+  "activePngCount": 21,
+  "activeManifestBytes": 2033,
+  "startupStill": "assets/art/streak-campfire-v1/roast-reconstruction.png",
+  "nativeSourcesPrecached": false,
+  "mechanicalDerivatives": [
+    "Uniform crop/scale/translation of separate native sprites onto a760x500canvas.",
+    "Declared magenta key extraction for authored fire frames, new excited glyphs and upper-body keyposes.",
+    "Existing accepted faceless head and all neutral features share one uniform affine transform.",
+    "Source-pixel lower-body/stump crop and separate existing satchel selection preserve fixed support and front occlusion.",
+    "Native navy opening pixels define the flame mask, excluding native crossed logs; no new arch/log geometry is drawn."
+  ],
+  "review": {
+    "rootTwoStateReconstructionApproved": true,
+    "board": "docs/streak-campfire-v1/reconstruction.png",
+    "rootNormalSpeedFramesAndScreensReviewed": true,
+    "motionEvidence": "reports/streak-motion.json",
+    "cacheEvidence": "reports/streak-cache.json",
+    "humanAcceptanceClaimed": false,
+    "runtimeAndCacheEvidence": "See reports/streak-motion.json and reports/streak-cache.json when final QA is complete."
+  }
+}

@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createApplication,COLLECTIONS,DEMO_CODES,idFor,addCalendarMonths,aggregateProgress} from '../src/server/application.mjs';
 import {activities,activityById,wordById,chunks,vocabulary,pathNodes,lessons} from '../src/content/unit1.mjs';
 import {getActivityQuestions,getMatchingPairs,buildQuiz} from '../src/content/engine.mjs';
+import {dailyStreakDetails} from '../src/server/daily-streak.mjs';
 function memoryStore(){const rows=new Map();return{rows,async get(c,id){const v=structuredClone(rows.get(c+':'+id)||null);if(v)delete v._scope;return v},async create(c,id,v,scope){const key=c+':'+id;if(rows.has(key))throw Error('Already exists');rows.set(key,{...structuredClone(v),_scope:scope});return structuredClone(v)},async put(c,id,v,scope){rows.set(c+':'+id,{...structuredClone(v),_scope:scope});return structuredClone(v)},async list(c,scope){return[...rows.entries()].filter(([k,v])=>k.startsWith(c+':')&&v._scope===scope).map(([,v])=>{const x=structuredClone(v);delete x._scope;return x})}}}
 async function fixture(){const store=memoryStore();for(const c of DEMO_CODES)await store.create(COLLECTIONS.codes,await idFor('code:'+c.code),{bookId:c.bookId,disabled:false},'issued');let date='2026-11-04T12:00:00.000Z';const app=createApplication(store,{now:()=>date});return{store,app,setDate:value=>date=value,async call(action,data={},token='',origin='https://exams.bebrighton.net'){const res=await app.handle(new Request('https://test/api/horizons',{method:'POST',headers:{'Content-Type':'application/json','Origin':origin,...token?{'X-Requested-With':token}:{}},body:JSON.stringify({action,...data})}));return{status:res.status,...await res.json()}}}}
 const sampleAttempt={attemptId:'round-12345678',bookId:'horizons-a1',lessonId:'1A',activityId:'quiz-1a-greetings',quizOptions:{seed:'qa-server',mode:'recall'},answers:[{questionId:'recall-v-greetings-hello',correct:true,submitted:'Hello'}],durationSeconds:15};
@@ -172,4 +173,110 @@ test('Retrying a historical accepted synonym remains duplicate-safe after master
  const old=structuredClone(stored),retry=await f.call('saveAttempt',{attempt},session.token);
  assert.equal(retry.status,200);assert.equal(retry.attempt.awardedXp,0);assert.equal(retry.progress.wordStats['v-personal-last-name'].mastered,true);assert.deepEqual(f.store.rows.get(key),old);
  const changed=await f.call('saveAttempt',{attempt:{...attempt,answers:[{...attempt.answers[0],submitted:'first name'}]}},session.token);assert.equal(changed.status,409);
+});
+
+test('First saved daily round supplies server-local streak, weekday and timing facts only in its save response',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ assert.equal(session.attempt,undefined);
+ const saved=await f.call('saveAttempt',{attempt:{...sampleAttempt,createdAt:'1900-01-01T00:00:00Z',dailyStreakCelebration:{streak:9999},streak:9999}},session.token),event=saved.attempt.dailyStreakCelebration;
+ assert.equal(saved.status,200);assert.equal(event.attemptId,sampleAttempt.attemptId);assert.equal(event.firstCompletionToday,true);
+ assert.equal(event.completedAt,'2026-11-04T12:00:00.000Z');assert.equal(event.timeZone,'America/Guayaquil');assert.equal(event.dayKey,'2026-11-04');
+ assert.equal(event.streak,1);assert.deepEqual(event.activeDays,['2026-11-04']);assert.equal(event.localHour,7);assert.equal(event.localMinute,0);assert.equal(event.minutesUntilMidnight,1020);
+ assert.deepEqual(event.weekDays.map(day=>[day.dayKey,day.label,day.active,day.today]),[
+  ['2026-11-02','Mon',false,false],['2026-11-03','Tue',false,false],['2026-11-04','Wed',true,true],['2026-11-05','Thu',false,false],['2026-11-06','Fri',false,false],['2026-11-07','Sat',false,false],['2026-11-08','Sun',false,false]
+ ]);
+ const restored=await f.call('getSession',{},session.token);assert.equal(restored.attempt,undefined);assert.equal(restored.dailyStreakCelebration,undefined);assert.equal(restored.progress.streak,1);
+ const next=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'second-daily-round'}},session.token);assert.equal(next.status,200);assert.equal(next.attempt.dailyStreakCelebration,null);
+ assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,1);
+});
+
+test('Winning daily save retry returns its immutable event across device sessions without additional XP',async()=>{
+ const f=await fixture(),firstDevice=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),first=await f.call('saveAttempt',{attempt:sampleAttempt},firstDevice.token);
+ f.setDate('2026-11-04T20:31:00.000Z');
+ const secondDevice=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),retry=await f.call('saveAttempt',{attempt:sampleAttempt},secondDevice.token);
+ assert.equal(retry.status,200);assert.equal(retry.attempt.duplicate,true);assert.equal(retry.attempt.awardedXp,0);assert.equal(retry.progress.attempts,1);
+ assert.deepEqual(retry.attempt.dailyStreakCelebration,first.attempt.dailyStreakCelebration);
+ const other=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'later-round-other-device'}},secondDevice.token);assert.equal(other.attempt.dailyStreakCelebration,null);
+});
+
+test('Next profile-local day starts one new event; old attempt retries cannot celebrate that new day',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ await f.call('saveAttempt',{attempt:sampleAttempt},session.token);
+ f.setDate('2026-11-05T04:59:30.000Z');
+ const late=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'late-same-local-day'}},session.token);assert.equal(late.attempt.dailyStreakCelebration,null);
+ f.setDate('2026-11-05T05:00:00.000Z');
+ const old=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(old.attempt.duplicate,true);assert.equal(old.attempt.dailyStreakCelebration,null);
+ const next=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'next-local-day-round'}},session.token),event=next.attempt.dailyStreakCelebration;
+ assert.equal(event.dayKey,'2026-11-05');assert.equal(event.streak,2);assert.equal(event.localHour,0);assert.equal(event.minutesUntilMidnight,1440);assert.equal(next.progress.streak,event.streak);
+ assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,2);
+ f.setDate('2026-11-07T12:00:00.000Z');
+ const gap=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'after-gap-local-day'}},session.token);assert.equal(gap.attempt.dailyStreakCelebration.streak,1);
+});
+
+test('Existing daily history cannot be celebrated retroactively or by forging a candidate',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ await f.call('saveAttempt',{attempt:sampleAttempt},session.token);
+ // Reproduce immutable history written before the daily feature existed.
+ for(const [key,row]of f.store.rows){if(key.startsWith(COLLECTIONS.attempts+':'))delete row.dailyStreakCandidate;if(row.kind==='daily-streak')f.store.rows.delete(key);}
+ const legacy=await f.call('saveAttempt',{attempt:{...sampleAttempt,dailyStreakCandidate:{dayKey:'2026-11-04',timeZone:'America/Guayaquil'}}},session.token);assert.equal(legacy.attempt.dailyStreakCelebration,null);
+ const next=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'existing-progress-round',dailyStreakCandidate:{dayKey:'2026-11-04',timeZone:'America/Guayaquil'}}},session.token);assert.equal(next.attempt.dailyStreakCelebration,null);
+ assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,0);
+});
+
+test('Failed attempt storage and failed post-save reads do not consume the daily celebration',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),create=f.store.create,list=f.store.list;let failWrite=true,failRead=true;
+ f.store.create=async(c,...args)=>{if(c===COLLECTIONS.attempts&&failWrite){failWrite=false;throw Error('Synthetic attempt write outage');}return create(c,...args);};
+ const failed=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(failed.status,503);assert.equal(failed.attempt,undefined);assert.equal((await list(COLLECTIONS.attempts,session.profile.id)).length,0);
+ f.store.list=async(c,...args)=>{const events=await list(c,...args);if(c===COLLECTIONS.attempts&&events.length&&failRead){failRead=false;throw Error('Synthetic result read outage');}return events;};
+ const readFailed=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(readFailed.status,503);assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,0);
+ const recovered=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(recovered.status,200);assert.equal(recovered.attempt.duplicate,true);assert.equal(recovered.attempt.awardedXp,0);assert.equal(recovered.attempt.dailyStreakCelebration.streak,1);assert.equal(recovered.progress.attempts,1);
+});
+
+test('A failed daily claim write recovers from its original saved round, and lost claim acknowledgements recover safely',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),create=f.store.create;let failClaim=true,loseAcknowledgement=false;
+ f.store.create=async(c,...args)=>{if(c===COLLECTIONS.throttle&&failClaim){failClaim=false;throw Error('Synthetic daily claim outage');}const value=await create(c,...args);if(c===COLLECTIONS.throttle&&loseAcknowledgement){loseAcknowledgement=false;throw Error('Synthetic lost claim acknowledgement');}return value;};
+ const failed=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(failed.status,503);assert.equal((await f.store.list(COLLECTIONS.attempts,session.profile.id)).length,1);
+ const recovered=await f.call('saveAttempt',{attempt:sampleAttempt},session.token);assert.equal(recovered.status,200);assert.equal(recovered.attempt.duplicate,true);assert.equal(recovered.attempt.dailyStreakCelebration.streak,1);assert.equal(recovered.progress.xp,15);
+ f.setDate('2026-11-05T12:00:00.000Z');loseAcknowledgement=true;
+ const next=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'lost-daily-acknowledgement'}},session.token);assert.equal(next.status,200);assert.equal(next.attempt.dailyStreakCelebration.streak,2);
+ const retry=await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'lost-daily-acknowledgement'}},session.token);assert.deepEqual(retry.attempt.dailyStreakCelebration,next.attempt.dailyStreakCelebration);
+});
+
+test('Concurrent different rounds across independent server instances claim exactly one daily winner',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),second=createApplication(f.store,{now:()=> '2026-11-04T12:00:00.000Z'}),list=f.store.list;
+ let reads=0,release;const bothRead=new Promise(resolve=>release=resolve);
+ f.store.list=async(c,...args)=>{const rows=await list(c,...args);if(c===COLLECTIONS.attempts&&!rows.length&&reads<2){if(++reads===2)release();await bothRead;}return rows;};
+ const request=new Request('https://test/api/horizons',{method:'POST',headers:{'Content-Type':'application/json','Origin':'https://exams.bebrighton.net','X-Requested-With':session.token},body:JSON.stringify({action:'saveAttempt',attempt:{...sampleAttempt,attemptId:'simultaneous-other-round'}})});
+ const [first,other]=await Promise.all([f.call('saveAttempt',{attempt:sampleAttempt},session.token),second.handle(request).then(async response=>({status:response.status,...await response.json()}))]);
+ assert.equal(first.status,200);assert.equal(other.status,200);assert.equal([first,other].filter(result=>result.attempt.dailyStreakCelebration).length,1);assert.equal(other.progress.xp,30);
+ assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,1);
+});
+
+test('Practice rounds and independent profiles can earn their own first daily event',async()=>{
+ const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),b=await f.call('redeem',{code:'DEMO-HZ-A1-002'});
+ const options={seed:'daily-practice',mode:'recall',chunkIds:['1a-greetings'],count:8},questions=buildQuiz(options),attempt={id:'daily-custom-practice',activityId:'mix-recall',quizOptions:options,answers:questions.map(q=>({questionId:q.id,submitted:q.correctText??q.answer}))};
+ const practice=await f.call('saveAttempt',{attempt},a.token),learn=await f.call('saveAttempt',{attempt:sampleAttempt},b.token);
+ assert.equal(practice.status,200);assert.equal(practice.attempt.dailyStreakCelebration.streak,1);assert.equal(practice.progress.completedActivities.length,0);
+ assert.equal(learn.attempt.dailyStreakCelebration.streak,1);assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,2);
+});
+
+test('Concurrent identical delivery preserves one event, one daily claim and one XP award',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ const results=await Promise.all(Array.from({length:4},()=>f.call('saveAttempt',{attempt:sampleAttempt},session.token)));
+ assert.ok(results.every(result=>result.status===200));assert.equal(results.reduce((sum,result)=>sum+result.attempt.awardedXp,0),15);
+ assert.equal(results.filter(result=>!result.attempt.duplicate).length,1);
+ assert.ok(results.every(result=>result.attempt.dailyStreakCelebration?.attemptId===sampleAttempt.attemptId));
+ assert.ok(results.every(result=>JSON.stringify(result.attempt.dailyStreakCelebration)===JSON.stringify(results[0].attempt.dailyStreakCelebration)));
+ assert.equal([...f.store.rows.values()].filter(row=>row.kind==='daily-streak').length,1);
+ assert.equal((await f.call('getProgress',{},session.token)).progress.attempts,1);
+});
+
+test('Daily timing follows the configured profile zone and uses actual daylight-saving day lengths',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ await f.call('updateProfile',{patch:{timeZone:'Asia/Kathmandu'}},session.token);f.setDate('2026-11-04T18:14:30.000Z');
+ const saved=await f.call('saveAttempt',{attempt:sampleAttempt},session.token),event=saved.attempt.dailyStreakCelebration;
+ assert.equal(event.timeZone,'Asia/Kathmandu');assert.equal(event.localHour,23);assert.equal(event.localMinute,59);assert.equal(event.minutesUntilMidnight,0);
+ for(const [completedAt,expected]of[['2026-03-08T05:00:00.000Z',1380],['2026-11-01T04:00:00.000Z',1500]]){
+  const event=dailyStreakDetails({attemptId:'daylight-saving-check',completedAt,timeZone:'America/New_York',activeDays:[]});assert.equal(event.localHour,0);assert.equal(event.minutesUntilMidnight,expected);
+ }
 });

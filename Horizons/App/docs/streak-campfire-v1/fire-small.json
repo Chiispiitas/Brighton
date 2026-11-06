@@ -1,0 +1,15 @@
+{
+  "asset_id": "pico-streak-fire-small-v1",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/fireplace.png"
+  ],
+  "transparent_background": false,
+  "prompt": "Use case: precise-object-edit. Create ONE separately authored native flame flipbook frame for Horizons Pico daily streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory visual references, NOT content to reproduce. Image4 exact compact hearth is only the target context: match its simple warm geometric shapes. Return ONLY the fire shape that would sit above the crossed logs inside its dark arched firebox. Do NOT include the hearth, logs, Pico, room, scenery, letters, numbers, text or a sprite sheet. FRAME2 KINDLE: two small connected orange upward flame tongues with one inset golden/cream core; asymmetrically leaning gently LEFT. The silhouette is about as tall as its base width. Same base width/center and bottom support point across the four frames, clean curved flat filled shapes, opaque solid orange and golden cores, no lighting, glow, shadows, gradient, texture, outline, blur, translucent smoke, isolated specks or particles. For precise clean sprite extraction, render on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margin, no checkerboard and no transparent pixels. The flame artwork itself must be fully opaque too. This is an intentional key-color intermediate; do not blend magenta into its silhouette."
+}

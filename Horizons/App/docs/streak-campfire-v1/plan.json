@@ -1,0 +1,43 @@
+{
+  "canvas": {
+    "width": 760,
+    "height": 500
+  },
+  "reuse": "Accepted permanent faceless Pico head and all neutral face components are frozen in assets/art/streak-campfire-v1/baseline; no new complete expression head will be used.",
+  "plannedCalls": [
+    "seated-reference",
+    "body-seat",
+    "arm-roast",
+    "arm-lift",
+    "fireplace",
+    "fire-ember",
+    "fire-small",
+    "fire-ignite",
+    "fire-full",
+    "face-excited"
+  ],
+  "frameKeyposes": [
+    "roast",
+    "lift"
+  ],
+  "style": "No whole-room backdrop: separate compact fireplace/logs and four fire-frame sprites on CSS paper.",
+  "motion": "Stationary lower body/stump/satchel and hearth/logs; head/face move independently; separately authored clothed torso/paw/skewer roast/lift keyposes switch at full opacity with negligible local motion, and four fire frames swap within native arch/log mask.",
+  "revisions": [
+    {
+      "reason": "Transparent arm/excited outputs had broad glow and scattered exterior alpha.",
+      "action": "Retain rejected natives; use explicitly opaque-magenta replacement calls."
+    },
+    {
+      "reason": "Canonical raised skewer cannot physically reach compact hearth opening when shoulders remain attached.",
+      "action": "Author separate gently down-right roasting keypose; upward skewer is a raised/recoil keypose."
+    },
+    {
+      "reason": "Three benign isolated cartoon forelimb attempts failed ImageGen output moderation400; one six-path attempt failed actual tool five-input validation before generation.",
+      "action": "Stop isolated-forelimb retries. Author natural clothed torso plus connected paws/skewer as two separate hybrid keyposes, with original blank head/features independent and stationary lower support."
+    }
+  ],
+  "finalKeyposePlan": [
+    "upper-roast",
+    "upper-lift"
+  ]
+}

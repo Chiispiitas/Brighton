@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-06T18:26:47.071Z",
+  "scope": "Self-contained, synthetic in-memory server and local browser; no network learner records",
+  "checks": [
+    "Bootstrap alone does not trigger",
+    "Lost response produces retry screen despite safely persisted first round",
+    "Background retry does not mark celebration seen",
+    "Visible presentation marks profile/day seen, uses original server timing and recovers winning duplicate",
+    "Continue reaches normal results",
+    "Reload/session restore does not replay",
+    "A later same-day round goes directly to results",
+    "No runtime exception; exactly two persisted rounds and one daily claim"
+  ],
+  "status": "PASS",
+  "artMode": "Intentionally intercepted streak art requests with synthetic404 responses to verify graceful fallback and once-only presentation; this report does not validate the final generated artwork or motion.",
+  "apiMode": "Actual current frontend and backend application; all server state uses an isolated in-memory store and a fictional profile. No live learner records or real API persistence.",
+  "limits": [
+    "Flow, retry, visibility, deduplication and fallback verification only; final-art visual QA is separate.",
+    "Headless Edge desktop viewport1440x900.",
+    "The initial save was persisted successfully then its response deliberately replaced by503."
+  ]
+}

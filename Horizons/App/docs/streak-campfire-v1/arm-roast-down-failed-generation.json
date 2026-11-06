@@ -1,0 +1,19 @@
+{
+  "part": "arm-roast-down",
+  "prompt": "Use case: precise-object-edit. Family-friendly nonhuman cartoon rabbit Pico animation for a school learning app. Image1 brand, Image2 cast, Image3 flat-rendering are mandatory references only. Image4 the exact separate headless seated navy shirt/stump fixes shoulder attachment positions for the NONHUMAN CARTOON RABBIT Pico. Image5 the exact isolated cartoon rabbit forelimbs/skewer attempt fixes the generous curved peach forelimb shapes and round paws. Create ONE isolated connected group of both complete cartoon rabbit forelimbs and paws gripping a thin brown roasting skewer with ONE white marshmallow. Keep the original shoulder attachment positions, thick rounded forelimbs and paws close together at the same relaxed resting grip near the torso. Change ONLY the skewer direction for the roast keypose: it must extend gently DOWN TO THE RIGHT from the held paws, about 15 degrees below horizontal, with the single marshmallow at the far-right end. This deliberately lowered skewer goes into a fireplace opening to the rabbit's right; do not reproduce the upward diagonal of Image5. Do not move or shorten the shoulder attachments or forelimbs to achieve this. Keep both grips physically supported. Return only the cartoon peach forelimbs/paws, thin brown skewer and single white marshmallow; no head, clothing, seat, legs, fireplace, scenery, extra objects or text. All shapes fully opaque, flat, clean and geometric on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparency, blur, glow, lighting, gradients, shadows, texture, speckles or magenta bleed.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/arm-roast-down-preflight.json",
+  "status": "failed-output-moderation",
+  "operation": "image_gen.imagegen generating isolated cartoon rabbit forelimbs and lowered roasting skewer",
+  "httpStatus": 400,
+  "requestId": "149503b6-f845-4006-a9e4-3f5239523117",
+  "category": "sexual",
+  "imageOutputCreated": false,
+  "interpretation": "Benign school-app rabbit animation request. Stop isolated-forelimb retries; next authored keypose is a natural clothed upper-body sprite with attached paws. No application/backend operation failed."
+}

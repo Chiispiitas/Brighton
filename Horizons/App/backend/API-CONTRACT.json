@@ -65,8 +65,38 @@
           "durationMs": 35000
         }
       },
-      "response": "Bootstrap plus attempt accepted/duplicate and awardedXp",
-      "maxAnswers": 512
+      "response": "Bootstrap plus attempt accepted/duplicate, awardedXp, and dailyStreakCelebration (object for the winning daily round, null otherwise)",
+      "maxAnswers": 512,
+      "dailyStreakCelebration": {
+        "attemptId": "winning saved round UUID",
+        "dayKey": "YYYY-MM-DD in the saved profile time zone",
+        "completedAt": "server-created ISO timestamp of the original saved round",
+        "timeZone": "validated profile IANA zone, default America/Guayaquil",
+        "firstCompletionToday": true,
+        "streak": "integer contiguous active days ending on dayKey",
+        "activeDays": [
+          "YYYY-MM-DD"
+        ],
+        "weekDays": [
+          {
+            "dayKey": "YYYY-MM-DD",
+            "weekday": "Monday",
+            "label": "Mon",
+            "active": false,
+            "today": false
+          }
+        ],
+        "localHour": "integer 0..23",
+        "localMinute": "integer 0..59",
+        "minutesUntilMidnight": "non-negative integer, rounded down using the actual next local date boundary; 0 means less than one minute; supports DST"
+      },
+      "dailyStreakPolicy": {
+        "eligibility": "First accepted finished Learn or Practice round in the profile-local day; correctness and mastery are not prerequisites. Existing history today suppresses new candidates.",
+        "claim": "Unique create-only daily-streak/profile/date claim in existing private HzThrottle JSON collection, after attempt and result reads succeed.",
+        "retry": "Same winning attempt UUID returns the same immutable event within its local day; other attempts and old-day retries return null. XP remains idempotent.",
+        "presentation": "Frontend persists profile/day seen only when shown. No bootstrap/login trigger. Exact winning UUID replay on another browser can present it again; there is no global display acknowledgement.",
+        "trust": "Server timestamp and profile timezone only; client streak, completion date, celebration, and candidate flags are ignored."
+      }
     },
     "getProgress": {
       "request": {
@@ -148,7 +178,8 @@
     "Only registered activity IDs enter completedActivities; historical activity completions remain valid, and synthetic mixed rounds retain XP/history and vocabulary progress",
     "Lesson completion follows the compact path topic IDs and their linked historical chunk/grammar completions without creating attempts, XP or mastery",
     "Audio alternatives are reconstructed on the server from audioEnabled and original listening question IDs; clients cannot substitute arbitrary questions",
-    "Avatar badge none is free; star-pin/trophy-pin/compass-pin require25/100/250storedXP and locked selections return403 BADGE_LOCKED"
+    "Avatar badge none is free; star-pin/trophy-pin/compass-pin require25/100/250storedXP and locked selections return403 BADGE_LOCKED",
+    "Only saveAttempt can return a daily streak celebration; its winning event is claimed once per profile/local day and duplicate presentation is guarded by the client when actually shown"
   ],
   "islandMastery": {
     "responseFields": [

@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "date": "2026-11-06",
+  "character": "pico",
+  "scene": "daily-streak-campfire",
+  "canvas": {
+    "width": 760,
+    "height": 500
+  },
+  "keyposes": [
+    "upper-roast",
+    "upper-lift"
+  ],
+  "productionRecord": "docs/streak-campfire-v1/production-record.json",
+  "mandatoryReferenceSnapshots": [
+    {
+      "id": "R01",
+      "file": "docs/streak-campfire-v1/inputs/01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "id": "R02",
+      "file": "docs/streak-campfire-v1/inputs/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "id": "R07",
+      "file": "docs/streak-campfire-v1/inputs/07-scenes-vocabulary-ui.png",
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+    }
+  ],
+  "inheritedApprovedSources": [
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-blink-eyelids.png",
+      "original": "assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-neutral-brows-mouth.png",
+      "original": "assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-neutral-eyes.png",
+      "original": "assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/face-nose.png",
+      "original": "assets/art/pico-banner-motion-v1/face-nose.png",
+      "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/head-faceless-registered.png",
+      "original": "assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/neutral-reconstruction.png",
+      "original": "assets/art/pico-banner-motion-v1/neutral-reconstruction.png",
+      "sha256": "8dd096c360b8ab6e6ec9bb09480051a2188e86168c82778e29548d47783ca2ad",
+      "unchangedBytes": true
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/baseline/pupils-native.png",
+      "original": "assets/art/pico-banner-motion-v1/pupils-native.png",
+      "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c",
+      "unchangedBytes": true
+    }
+  ],
+  "sourceBinding": [
+    {
+      "file": "tools/prepare-streak-campfire.py",
+      "sha256": "e5e6c8eda46f7380d7e9089f30af32940de2b82df9ea6b913b4e2eea2951aeb0"
+    },
+    {
+      "file": "src/streak-celebration.js",
+      "sha256": "db1cfb1b90335afc77ffe0c23f8d11c693ef25afef0577481e2ef57673cc75c4"
+    },
+    {
+      "file": "styles/streak-celebration.css",
+      "sha256": "582b40de0ac6cfe40bf74560015e1497469d08386a69dc2b67608ee75ba85dc5"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/rigs.json",
+      "sha256": "0c984828e789ed7d6e478e1dd58bf15acb69b4e98c0f73454465217fc80d8f19"
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "d54885b3bc2968c7b7502ddf1a2dd431cf84dc49b4c22fa55af79169f62b01f5"
+    },
+    {
+      "file": "index.html",
+      "sha256": "03fbee0921ae2d1efee277f8cd68a64e7a7128593fa04a21a9da235ee55f69ea"
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "48f6211448d9a759a779b1a92dc6ecf3ed4d70cd32099e02568747125c789bb7"
+    },
+    {
+      "file": "docs/streak-campfire-v1/registration-spec.json",
+      "sha256": "cf20172f225d0b49bf94880ddd65f5cbb1fad96b0218c55aa9b156e36f67b038"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/armLift.png",
+      "sha256": "ef9eea3b6fd0ec072d64895423532be844db425fa251be5c8d8264bf2146aac7"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/armRoast.png",
+      "sha256": "059414ae49a9b0c62c327d3492206d0d4a433b954f44fd9691b82d9256a81df7"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/blink.png",
+      "sha256": "0af4272c0ca0088adcc0d7ca10da99716a073ffdc40819206560900d7cb81486"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/body.png",
+      "sha256": "aa912103737d218d9310f645917a6ee59064b6e7379540a32f2dabfb542d626c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/browsMouth.png",
+      "sha256": "2454a1a189df21ed58166073693d9c25133b79f77fb690530294bed8db425d05"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/excited.png",
+      "sha256": "09914f6b6f226e56ba7c2c175015c41f6333c7c39ad3193dfd5caac6f5f21501"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/eyeMask.png",
+      "sha256": "ac99c4d9a94b6a976d66fc2060d413b61713def9b245b1708ca53ffb753da59e"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/eyes.png",
+      "sha256": "2b3ffc75f02f77a0144e25a605839fadbaed1a34e6f333eb7bcc6bae23ee08e0"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/faceMask.png",
+      "sha256": "bd6bffce91b93df4d8f32895964d3bd123477a324239d0e9d6ad44634e0c058f"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireEmber.png",
+      "sha256": "5da8c9368f86faad86675c2b7e3fed2daa83fd7495fcf1d9d97a74d42b7e6cf7"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireFull.png",
+      "sha256": "1368240019b95532bbbc3a2478b908963767fb442634b0d9a61b5876ee38fe51"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireIgnite.png",
+      "sha256": "d973b9796db1381cb11e50bfc5e1c75aeff4551ed321d313d37f089d4f405c24"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireMask.png",
+      "sha256": "bf5ae8efe21b0b786d9d692dc494c5a3f0401772e501966a295d38cb53817b94"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireSmall.png",
+      "sha256": "72e22193a62a7b405cb76a02c81e42f2000b01fc2af83e9ae9fd9fe7a8bd1d2c"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/fireplace.png",
+      "sha256": "49d746c2023b50ffb1426e2a0f8e0710b7b0a6dde324191777f3405873784a42"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/head.png",
+      "sha256": "f52ec37c9a98ec106115d8e9a367a1e3922a9c229bad6a0d637344d290be0248"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/nose.png",
+      "sha256": "3a33b2aed7a0939765fffb85144f14ca7415d9ca14cc412ad9ad20121339f22d"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/pupils.png",
+      "sha256": "0dee436053220f6a303713e941092e7f1e9cac407293ecffbda06581cfacadc8"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/reduced.png",
+      "sha256": "5484de8ee7acf628319b3f73373922c9ee7169f3ff02aa8564a780576464a055"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/roast-reconstruction.png",
+      "sha256": "a035411141408de4f2cfce1bf129e3e9441dc5ee4103fbde644e8ace5baff0e4"
+    },
+    {
+      "file": "assets/art/streak-campfire-v1/satchel.png",
+      "sha256": "19b0a9bdda5012ee75515c87ef43e87e6d65fe666ebd00e5f36866523e0d3b20"
+    }
+  ],
+  "reconstruction": "docs/streak-campfire-v1/reconstruction.png",
+  "notes": [
+    "Native images remain unchanged; active PNGs are disclosed registered derivatives.",
+    "No whole-head expression swap, runtime skin patch, fade, extra wildlife or whole-room environment image."
+  ]
+}

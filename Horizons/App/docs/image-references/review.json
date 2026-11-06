@@ -62,5 +62,10 @@
     "date": "2026-11-06",
     "reviewer": "Codex root",
     "scope": "Current loader/style fingerprints refreshed after enabling existing map-reading Pico rig on login. No new native artwork. Actual1440/1024/390/320 login compositions inspected; native identity references remain unchanged."
+  },
+  "streakCampfireReferenceReview": {
+    "date": "2026-11-06",
+    "reviewer": "Codex streak_assets subagent",
+    "scope": "Current mandatory R01/R02/R07 and accepted Pico faceless-head/neutral reconstruction inspected for campfire pose. Their exact bytes and manifest frozen under docs/streak-campfire-v1/inputs. New scene is individual sprites, not an environment panel."
   }
 }

@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-streak-face-excited-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/baseline/neutral-reconstruction.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: Pico feature-only excited expression sprite. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references; Image4 is the exact approved neutral Pico head/face, identity edit target. Generate ONLY isolated facial marks, aligned like the reference: two lifted gentle dark-navy brows, two happy closed crescent eye strokes, and one delighted open smile with warm red tongue. No skin, head, nose, ears, body, hands, clothes, background or whole character. Five disconnected feature glyphs total, eyes below brows and mouth below; native flat filled contours, solid opaque dark/navy/red feature interiors with genuinely transparent empty space. No white eye discs, glow, shading, outline, text or smiley panel. Do not recreate a face-shaped backing."
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "part": "head",
+    "source": "assets/art/streak-campfire-v1/baseline/head-faceless-registered.png",
+    "sha256": "ce93bcc2a55ed80a06f0b444dd581f9b50de962cd740b0135c11d09425814106",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "eyes",
+    "source": "assets/art/streak-campfire-v1/baseline/face-neutral-eyes.png",
+    "sha256": "8c6d3de6d4a2efee9e75d4b00981540f206267bda871a9df76b6b0efa05bb4ff",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "pupils",
+    "source": "assets/art/streak-campfire-v1/baseline/pupils-native.png",
+    "sha256": "3cbfee6de3be9cd8913f448e066b8da196e0816843b4bc9364b97de1ad1d5b2c",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "browsMouth",
+    "source": "assets/art/streak-campfire-v1/baseline/face-neutral-brows-mouth.png",
+    "sha256": "41e7f8c40dda4bc5d2623e9eaf7e98062312f3a50ef5618dd4c5ef2392047e6d",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "nose",
+    "source": "assets/art/streak-campfire-v1/baseline/face-nose.png",
+    "sha256": "cdeac7a3a0e21cccfe1530532dda39a94c7951389f44eb60f9face63e6ab2132",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "blink",
+    "source": "assets/art/streak-campfire-v1/baseline/face-blink-eyelids.png",
+    "sha256": "da2ac8ea29419963b95472b65624423220ccfe8c3ce2ea890f38ceef52652ddc",
+    "sharedHeadTransform": {
+      "scale": 0.86,
+      "offset": [
+        154,
+        22
+      ]
+    }
+  },
+  {
+    "part": "body",
+    "source": "assets/art/streak-campfire-v1/native/body-seat.png",
+    "sha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a",
+    "sourceBox": [
+      159,
+      527,
+      873,
+      1247
+    ],
+    "targetBox": [
+      124,
+      232,
+      250,
+      244
+    ],
+    "uniformScale": 0.3388888888888889,
+    "offset": [
+      128,
+      232
+    ],
+    "size": [
+      242,
+      244
+    ],
+    "keyMagenta": false,
+    "selection": {
+      "minSourceY": 830
+    }
+  },
+  {
+    "part": "armRoast",
+    "source": "assets/art/streak-campfire-v1/native/upper-roast.png",
+    "sha256": "bf5ffc3b714121d6a27e0d34832e3e333f85cfc0ee7fbec8dcd4db9e1974645c",
+    "sourceBox": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "targetBox": [
+      107,
+      186,
+      384,
+      256
+    ],
+    "uniformScale": 0.25,
+    "offset": [
+      107,
+      186
+    ],
+    "size": [
+      384,
+      256
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "armLift",
+    "source": "assets/art/streak-campfire-v1/native/upper-lift.png",
+    "sha256": "0c96df6c83862da68a6e55eb70614b2a8f4d06721a8769854c9730eff70af739",
+    "sourceBox": [
+      0,
+      0,
+      1536,
+      1024
+    ],
+    "targetBox": [
+      107,
+      186,
+      384,
+      256
+    ],
+    "uniformScale": 0.25,
+    "offset": [
+      107,
+      186
+    ],
+    "size": [
+      384,
+      256
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "fireplace",
+    "source": "assets/art/streak-campfire-v1/native/fireplace.png",
+    "sha256": "5ebcadf3dd62227f86fe64247d4d0af64e5422ebb9256661bb9dd54eefe4041f",
+    "sourceBox": [
+      260,
+      198,
+      1141,
+      977
+    ],
+    "targetBox": [
+      300,
+      190,
+      326,
+      286
+    ],
+    "uniformScale": 0.36713735558408217,
+    "offset": [
+      302,
+      190
+    ],
+    "size": [
+      323,
+      286
+    ],
+    "keyMagenta": false,
+    "selection": null
+  },
+  {
+    "part": "fireEmber",
+    "source": "assets/art/streak-campfire-v1/native/fire-ember.png",
+    "sha256": "e7d3a02a7e28145ab512f817009ec8232bfa75f41b9f442e8113f3e4d8c9b61f",
+    "sourceBox": [
+      421,
+      597,
+      981,
+      769
+    ],
+    "targetBox": [
+      412,
+      389,
+      100,
+      31
+    ],
+    "uniformScale": 0.17857142857142858,
+    "offset": [
+      412,
+      389
+    ],
+    "size": [
+      100,
+      31
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "fireSmall",
+    "source": "assets/art/streak-campfire-v1/native/fire-small.png",
+    "sha256": "1b8df039ae1fc89dd107a8710a9f2077af1d1532d4a74bd52d26d3c5e43a2058",
+    "sourceBox": [
+      453,
+      286,
+      929,
+      850
+    ],
+    "targetBox": [
+      412,
+      301,
+      100,
+      119
+    ],
+    "uniformScale": 0.21008403361344538,
+    "offset": [
+      412,
+      302
+    ],
+    "size": [
+      100,
+      118
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "fireIgnite",
+    "source": "assets/art/streak-campfire-v1/native/fire-ignite.png",
+    "sha256": "7578d0cea6e4248585e977fdbfd31087ec37ee858b4fa5fd1297abe25f0ac752",
+    "sourceBox": [
+      412,
+      156,
+      973,
+      989
+    ],
+    "targetBox": [
+      412,
+      271,
+      100,
+      149
+    ],
+    "uniformScale": 0.17825311942959002,
+    "offset": [
+      412,
+      272
+    ],
+    "size": [
+      100,
+      148
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "fireFull",
+    "source": "assets/art/streak-campfire-v1/native/fire-full.png",
+    "sha256": "9a9e9b70283fe9e4ff7c52576d23cf4fdb756e825649e2d2e744c4980b972513",
+    "sourceBox": [
+      407,
+      192,
+      986,
+      936
+    ],
+    "targetBox": [
+      412,
+      291,
+      100,
+      129
+    ],
+    "uniformScale": 0.17271157167530224,
+    "offset": [
+      412,
+      292
+    ],
+    "size": [
+      100,
+      128
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "satchel",
+    "source": "assets/art/streak-campfire-v1/native/body-seat.png",
+    "sha256": "3047d9bf0686865887dcab450d09f60b3725344e803defa6514e14f78b93b86a",
+    "sourceBox": [
+      159,
+      527,
+      873,
+      1247
+    ],
+    "targetBox": [
+      124,
+      232,
+      250,
+      244
+    ],
+    "uniformScale": 0.3388888888888889,
+    "offset": [
+      128,
+      232
+    ],
+    "size": [
+      242,
+      244
+    ],
+    "keyMagenta": false,
+    "selection": {
+      "satchelOnly": true
+    }
+  },
+  {
+    "part": "excited-glyph",
+    "source": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+    "sha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+    "sourceBox": [
+      321,
+      252,
+      583,
+      400
+    ],
+    "targetBox": [
+      214,
+      138,
+      29,
+      15
+    ],
+    "uniformScale": 0.10135135135135136,
+    "offset": [
+      215,
+      138
+    ],
+    "size": [
+      27,
+      15
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "excited-glyph",
+    "source": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+    "sha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+    "sourceBox": [
+      728,
+      254,
+      979,
+      391
+    ],
+    "targetBox": [
+      257,
+      137,
+      23,
+      14
+    ],
+    "uniformScale": 0.09163346613545817,
+    "offset": [
+      257,
+      138
+    ],
+    "size": [
+      23,
+      13
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "excited-glyph",
+    "source": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+    "sha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+    "sourceBox": [
+      372,
+      473,
+      588,
+      585
+    ],
+    "targetBox": [
+      229,
+      165,
+      22,
+      10
+    ],
+    "uniformScale": 0.08928571428571429,
+    "offset": [
+      230,
+      165
+    ],
+    "size": [
+      19,
+      10
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "excited-glyph",
+    "source": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+    "sha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+    "sourceBox": [
+      733,
+      473,
+      953,
+      585
+    ],
+    "targetBox": [
+      253,
+      164,
+      21,
+      10
+    ],
+    "uniformScale": 0.08928571428571429,
+    "offset": [
+      254,
+      164
+    ],
+    "size": [
+      20,
+      10
+    ],
+    "keyMagenta": true,
+    "selection": null
+  },
+  {
+    "part": "excited-glyph",
+    "source": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+    "sha256": "8fb9589cb01cfa0895536a304bc88e417f4849ef568060a799abc2a849ad2433",
+    "sourceBox": [
+      486,
+      680,
+      800,
+      1006
+    ],
+    "targetBox": [
+      237,
+      193,
+      37,
+      41
+    ],
+    "uniformScale": 0.1178343949044586,
+    "offset": [
+      237,
+      194
+    ],
+    "size": [
+      37,
+      38
+    ],
+    "keyMagenta": true,
+    "selection": null
+  }
+]

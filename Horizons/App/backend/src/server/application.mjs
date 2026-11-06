@@ -1,6 +1,7 @@
 import {activityById,wordById,chunkById,lessonById,lessons as lessonDefinitions} from '../content/unit1.mjs';
 import {getActivityQuestions,buildQuiz,getMatchingPairs,checkAnswer,normalizeAnswer} from '../content/engine.mjs';
 import {summarizeIslands} from '../content/island-mastery.mjs';
+import {localDayKey,dailyStreakDetails} from './daily-streak.mjs';
 const enc=new TextEncoder();
 export const COLLECTIONS={codes:'HzIssuedCodes',claims:'HzClaims',profiles:'HzProfiles',sessions:'HzSessions',attempts:'HzAttempts',throttle:'HzThrottle'};
 export const BOOKS={
@@ -17,7 +18,7 @@ export function addCalendarMonths(iso,months){const d=new Date(iso),day=d.getUTC
 const tokenString=()=>{const bytes=crypto.getRandomValues(new Uint8Array(32));return btoa(String.fromCharCode(...bytes)).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');};
 function object(value){return value&&typeof value==='object'&&!Array.isArray(value);}
 function safeText(value,max=80){return String(value??'').normalize('NFKC').replace(/[\u0000-\u001f\u007f]/g,'').trim().slice(0,max);}
-function dayKey(iso,timeZone='America/Guayaquil'){return new Intl.DateTimeFormat('en-CA',{timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(iso));}
+const dayKey=localDayKey;
 function previousDay(day){const d=new Date(day+'T12:00:00Z');d.setUTCDate(d.getUTCDate()-1);return d.toISOString().slice(0,10);}
 function initialProfile(id,bookId,now){return{id,displayName:'Brighton learner',dateOfBirth:'',goal:5,timeZone:'America/Guayaquil',avatar:{skin:'warm',hair:'short',hairColor:'brown',outfit:'magenta',accessory:'none'},defaultBookId:bookId,createdAt:now,updatedAt:now};}
 const bookId=value=>value==='a1'?'horizons-a1':value==='a2'?'horizons-a2-preview':value;
@@ -101,7 +102,7 @@ function cleanAttempt(raw,now){
 // Retry identity is the submitted work, not derived grading fields that can change
 // when a mastery policy improves. Stored events remain immutable.
 function sameAttempt(a,b){
- const identity=attempt=>({...attempt,createdAt:'',xp:0,answers:attempt.answers.map(answer=>({questionId:answer.questionId,answer:answer.answer,hintUsed:!!answer.hintUsed}))});
+ const identity=({dailyStreakCandidate,...attempt})=>({...attempt,createdAt:'',xp:0,answers:attempt.answers.map(answer=>({questionId:answer.questionId,answer:answer.answer,hintUsed:!!answer.hintUsed}))});
  return JSON.stringify(identity(a))===JSON.stringify(identity(b));
 }
 export function createApplication(store,{now=()=>new Date().toISOString(),trustedOrigins=['https://exams.bebrighton.net','https://chiispiitas.github.io'],allowLocal=true}={}){
@@ -120,6 +121,22 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
  async function booksFor(id){const claims=await claimsFor(id),group=new Map(),at=now();for(const c of claims){const issue=await store.get(COLLECTIONS.codes,c.codeId);const expired=new Date(c.expiresAt)<=new Date(at),status=!issue||issue.disabled?'revoked':expired?'expired':'active';const row={...BOOKS[c.bookId],activatedAt:c.activatedAt,expiresAt:c.expiresAt,status};const previous=group.get(c.bookId);if(!previous||row.status==='active'&&previous.status!=='active'||row.status===previous.status&&row.expiresAt>previous.expiresAt)group.set(c.bookId,row);}return[...group.values()];}
  async function sessionFrom(request){const token=request.headers.get('X-Requested-With')||request.headers.get('Authorization')?.replace(/^Bearer\s+/i,'')||'';if(!/^[A-Za-z0-9_-]{40,100}$/.test(token))fail(401,'SESSION_REQUIRED','Enter your book code to continue.');const id=await idFor('session:'+token),s=await store.get(COLLECTIONS.sessions,id);if(!s||s.revoked||new Date(s.expiresAt)<=new Date(now()))fail(401,'SESSION_EXPIRED','Enter your book code to reopen your profile.');return{id,...s};}
  async function bootstrap(profileId){const[profile,books,events,claims]=await Promise.all([store.get(COLLECTIONS.profiles,profileId),booksFor(profileId),store.list(COLLECTIONS.attempts,profileId),claimsFor(profileId)]);if(!profile)fail(401,'PROFILE_MISSING','Enter your book code to reopen your profile.');const issues=await Promise.all(claims.map(c=>store.get(COLLECTIONS.codes,c.codeId)));const demo=issues.some(issue=>issue?.kind==='example');return{ok:true,demo,profile,books,progress:aggregateProgress(events,now(),profile.timeZone)};}
+ async function dailyCelebration(profileId,attempt,result){
+  const candidate=attempt.dailyStreakCandidate;
+  // Only a server-marked, newly completed day can win. Historical attempts and
+  // a retry from a previous local day must never create a new celebration.
+  if(!candidate||dayKey(now(),candidate.timeZone)!==candidate.dayKey)return null;
+  const id=await idFor('daily-streak:'+profileId+':'+candidate.dayKey);
+  let claim=await store.get(COLLECTIONS.throttle,id);
+  if(!claim){
+   const activeDays=result.profile.timeZone===candidate.timeZone?result.progress.activeDays:(await store.list(COLLECTIONS.attempts,profileId)).map(event=>dayKey(event.createdAt,candidate.timeZone));
+   const celebration=dailyStreakDetails({attemptId:attempt.id,completedAt:attempt.createdAt,timeZone:candidate.timeZone,activeDays});
+   claim=await createOnce(COLLECTIONS.throttle,id,{kind:'daily-streak',profileId,attemptId:attempt.id,dayKey:candidate.dayKey,celebration},profileId);
+  }
+  // Identical retries receive the same event, allowing a lost response to be
+  // recovered. The frontend marks its profile/day seen only when it plays.
+  return claim.kind==='daily-streak'&&claim.attemptId===attempt.id?claim.celebration:null;
+ }
  async function rateLimit(request){const at=new Date(now()).getTime(),source=request.headers.get('cf-connecting-ip')||request.headers.get('x-forwarded-for')?.split(',')[0]||request.headers.get('user-agent')||'anonymous',key=await idFor('rate:'+source+':'+Math.floor(at/60000));const n=(localRate.get(key)||0)+1;localRate.set(key,n);if(localRate.size>1000)localRate.clear();if(n>80)fail(429,'TRY_LATER','Please wait a minute before trying another code.');}
  async function handle(request){const origin=request.headers.get('Origin')||'';
   try{
@@ -140,10 +157,19 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
     const current=await store.get(COLLECTIONS.profiles,session.profileId);if(!current)fail(401,'PROFILE_MISSING','Please enter your book code again.');const updated=cleanProfile(body.patch||body.profile,current,now());if(updated.defaultBookId!==current.defaultBookId){const books=await booksFor(session.profileId);if(!books.some(x=>x.id===updated.defaultBookId))fail(400,'BOOK_NOT_LINKED','Add this book to your profile first.');}const badgeXp={'star-pin':25,'trophy-pin':100,'compass-pin':250}[updated.avatar?.badge];if(badgeXp){const events=await store.list(COLLECTIONS.attempts,session.profileId);if(aggregateProgress(events,now(),updated.timeZone).xp<badgeXp)fail(403,'BADGE_LOCKED',`Keep practising to unlock this badge at ${badgeXp} XP.`);}await store.put(COLLECTIONS.profiles,session.profileId,updated,session.profileId);return json(await bootstrap(session.profileId),200,origin);
    }
    if(action==='saveAttempt'){
-    const attempt=cleanAttempt(body.attempt,now()),books=await booksFor(session.profileId);if(!books.some(x=>x.id===attempt.bookId&&x.status==='active'))fail(403,'BOOK_EXPIRED','Add an active book code before starting this practice.');const id=await idFor('attempt:'+session.profileId+':'+attempt.id),existing=await store.get(COLLECTIONS.attempts,id);let duplicate=!!existing;
+    const attempt=cleanAttempt(body.attempt,now()),books=await booksFor(session.profileId);if(!books.some(x=>x.id===attempt.bookId&&x.status==='active'))fail(403,'BOOK_EXPIRED','Add an active book code before starting this practice.');const id=await idFor('attempt:'+session.profileId+':'+attempt.id),existing=await store.get(COLLECTIONS.attempts,id);let duplicate=!!existing,savedAttempt=existing;
     if(existing&&!sameAttempt(existing,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');
-    if(!existing){try{await store.create(COLLECTIONS.attempts,id,{...attempt,profileId:session.profileId},session.profileId);}catch(error){const saved=await store.get(COLLECTIONS.attempts,id);if(!saved)throw error;if(!sameAttempt(saved,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');duplicate=true;}}
-    return json({...await bootstrap(session.profileId),attempt:{accepted:true,duplicate,id:attempt.id,awardedXp:duplicate?0:attempt.xp}},200,origin);
+    if(!existing){
+     const[profile,events]=await Promise.all([store.get(COLLECTIONS.profiles,session.profileId),store.list(COLLECTIONS.attempts,session.profileId)]);if(!profile)fail(401,'PROFILE_MISSING','Enter your book code to reopen your profile.');
+     const timeZone=profile.timeZone||'America/Guayaquil',today=dayKey(attempt.createdAt,timeZone),activeDays=events.map(event=>dayKey(event.createdAt,timeZone));
+     // Keep this proof on the immutable event so a failed claim write can be
+     // retried, while pre-feature history and later rounds remain ineligible.
+     const candidate=activeDays.includes(today)?null:{dayKey:today,timeZone};
+     const value={...attempt,profileId:session.profileId,...candidate?{dailyStreakCandidate:candidate}:{}};
+     try{savedAttempt=await store.create(COLLECTIONS.attempts,id,value,session.profileId);}catch(error){const saved=await store.get(COLLECTIONS.attempts,id);if(!saved)throw error;if(!sameAttempt(saved,{...attempt,profileId:session.profileId}))fail(409,'ATTEMPT_CONFLICT','That practice round was already saved with different answers.');duplicate=true;savedAttempt=saved;}
+    }
+    const result=await bootstrap(session.profileId),dailyStreakCelebration=await dailyCelebration(session.profileId,savedAttempt,result);
+    return json({...result,attempt:{accepted:true,duplicate,id:attempt.id,awardedXp:duplicate?0:attempt.xp,dailyStreakCelebration}},200,origin);
    }
    fail(400,'UNKNOWN_ACTION','This app action is not available.');
   }catch(error){if(error instanceof AppError)return json({ok:false,error:error.code,message:error.message},error.status,origin);console.error('Horizons private CMS operation failed:',safeText(error?.message,180));return json({ok:false,error:'SERVICE_UNAVAILABLE',message:'Your progress is safe. Please try again in a moment.'},503,origin);}

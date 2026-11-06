@@ -1,0 +1,14 @@
+{
+  "asset_id": "pico-streak-arm-lift-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/native/seated-reference.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Create ONLY the same BOTH peach bare arms/paws plus roasting stick and ONE white marshmallow group from Image4, in an anticipation-to-surprise LIFT keypose: both shoulder attachment points stay exactly in their original locations but elbows flex slightly, paws raise the stick so its marshmallow tip lifts upward about one marshmallow height. Preserve same paw/stick grips, number of hands, thickness, anatomy, stick length and white marshmallow. This is a separate authored keypose of that same moving group. Remove ALL head, ears, clothing, torso, legs, feet and stump. No flames/fireplace."
+}

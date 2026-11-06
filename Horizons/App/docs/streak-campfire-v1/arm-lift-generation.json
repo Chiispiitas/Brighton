@@ -1,0 +1,15 @@
+{
+  "part": "arm-lift",
+  "prompt": "Use case: precise-object-edit. Asset: one separate Horizons streak-campfire animation component. Inputs1 R01 brand,2 R02 cast,3 R07 flat rendering are mandatory style/identity references, NOT content to reproduce. Image4 is the exact accepted canonical seated Pico with a roasting stick, the edit target. Keep the same outline proportions, local palette, confident geometric shapes and supported grips. No text, outlines, shadows, glow, gradient, modeled light, texture, extra limbs or scenery. One component only, fully opaque solid interiors on genuine transparent alpha with generous margins. Create ONLY the same BOTH peach bare arms/paws plus roasting stick and ONE white marshmallow group from Image4, in an anticipation-to-surprise LIFT keypose: both shoulder attachment points stay exactly in their original locations but elbows flex slightly, paws raise the stick so its marshmallow tip lifts upward about one marshmallow height. Preserve same paw/stick grips, number of hands, thickness, anatomy, stick length and white marshmallow. This is a separate authored keypose of that same moving group. Remove ALL head, ears, clothing, torso, legs, feet and stump. No flames/fireplace.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/arm-lift-preflight.json",
+  "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-dd715e25-b6e3-46a2-8acc-25514b9cb44f.png",
+  "native_path": "assets/art/streak-campfire-v1/native/arm-lift.png",
+  "review": "REJECTED for massive blurry glow around moving arms/stick; exact geometry retained as repair target, inactive.",
+  "status": "rejected"
+}

@@ -1,0 +1,120 @@
+{
+  "pass": true,
+  "cacheName": "horizons-companion-daily-streak-v101",
+  "exactBytes": true,
+  "previousCacheRemoved": true,
+  "offlineReload": true,
+  "offlineNativeRigReady": true,
+  "entries": [
+    {
+      "file": "./src/ui-motion.js?v=areas1",
+      "sha256": "41da7a7d5c638ce6f1bb68150aa034ac1c1bfd63088635b0aa213db683fd142c"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/rigs.json?v=1",
+      "sha256": "0c984828e789ed7d6e478e1dd58bf15acb69b4e98c0f73454465217fc80d8f19"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/armLift.png",
+      "sha256": "ef9eea3b6fd0ec072d64895423532be844db425fa251be5c8d8264bf2146aac7"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/armRoast.png",
+      "sha256": "059414ae49a9b0c62c327d3492206d0d4a433b954f44fd9691b82d9256a81df7"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/blink.png",
+      "sha256": "0af4272c0ca0088adcc0d7ca10da99716a073ffdc40819206560900d7cb81486"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/body.png",
+      "sha256": "aa912103737d218d9310f645917a6ee59064b6e7379540a32f2dabfb542d626c"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/browsMouth.png",
+      "sha256": "2454a1a189df21ed58166073693d9c25133b79f77fb690530294bed8db425d05"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/excited.png",
+      "sha256": "09914f6b6f226e56ba7c2c175015c41f6333c7c39ad3193dfd5caac6f5f21501"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/eyeMask.png",
+      "sha256": "ac99c4d9a94b6a976d66fc2060d413b61713def9b245b1708ca53ffb753da59e"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/eyes.png",
+      "sha256": "2b3ffc75f02f77a0144e25a605839fadbaed1a34e6f333eb7bcc6bae23ee08e0"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/faceMask.png",
+      "sha256": "bd6bffce91b93df4d8f32895964d3bd123477a324239d0e9d6ad44634e0c058f"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireEmber.png",
+      "sha256": "5da8c9368f86faad86675c2b7e3fed2daa83fd7495fcf1d9d97a74d42b7e6cf7"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireFull.png",
+      "sha256": "1368240019b95532bbbc3a2478b908963767fb442634b0d9a61b5876ee38fe51"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireIgnite.png",
+      "sha256": "d973b9796db1381cb11e50bfc5e1c75aeff4551ed321d313d37f089d4f405c24"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireMask.png",
+      "sha256": "bf5ae8efe21b0b786d9d692dc494c5a3f0401772e501966a295d38cb53817b94"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireSmall.png",
+      "sha256": "72e22193a62a7b405cb76a02c81e42f2000b01fc2af83e9ae9fd9fe7a8bd1d2c"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/fireplace.png",
+      "sha256": "49d746c2023b50ffb1426e2a0f8e0710b7b0a6dde324191777f3405873784a42"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/head.png",
+      "sha256": "f52ec37c9a98ec106115d8e9a367a1e3922a9c229bad6a0d637344d290be0248"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/nose.png",
+      "sha256": "3a33b2aed7a0939765fffb85144f14ca7415d9ca14cc412ad9ad20121339f22d"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/pupils.png",
+      "sha256": "0dee436053220f6a303713e941092e7f1e9cac407293ecffbda06581cfacadc8"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/reduced.png",
+      "sha256": "5484de8ee7acf628319b3f73373922c9ee7169f3ff02aa8564a780576464a055"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/roast-reconstruction.png",
+      "sha256": "a035411141408de4f2cfce1bf129e3e9441dc5ee4103fbde644e8ace5baff0e4"
+    },
+    {
+      "file": "./assets/art/streak-campfire-v1/satchel.png",
+      "sha256": "19b0a9bdda5012ee75515c87ef43e87e6d65fe666ebd00e5f36866523e0d3b20"
+    },
+    {
+      "file": "./src/streak-celebration.js?v=streak1",
+      "sha256": "db1cfb1b90335afc77ffe0c23f8d11c693ef25afef0577481e2ef57673cc75c4"
+    },
+    {
+      "file": "./styles/streak-celebration.css?v=streak1",
+      "sha256": "582b40de0ac6cfe40bf74560015e1497469d08386a69dc2b67608ee75ba85dc5"
+    },
+    {
+      "file": "./index.html",
+      "sha256": "03fbee0921ae2d1efee277f8cd68a64e7a7128593fa04a21a9da235ee55f69ea"
+    },
+    {
+      "file": "./src/app.js?v=streak1",
+      "sha256": "d54885b3bc2968c7b7502ddf1a2dd431cf84dc49b4c22fa55af79169f62b01f5"
+    }
+  ],
+  "errors": [],
+  "scope": "Fresh headless Edge service worker and offline reload, synthetic celebration metadata. Only already saved display is tested offline; no offline save claim."
+}

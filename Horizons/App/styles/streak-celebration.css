@@ -1,0 +1,41 @@
+/* Daily saved streak celebration: native opaque sprites, finite shared clock. */
+.streak-celebration-page{height:100dvh;min-height:0;overflow:auto;padding:24px clamp(20px,5vw,72px);display:flex;flex-direction:column;background:var(--paper);color:var(--ink)}
+.streak-celebration-page>header{flex:none;max-width:1180px;width:100%;margin:0 auto;color:var(--pink)}
+.streak-celebration-page .wordmark{font-size:36px}
+.streak-celebration-layout{max-width:1120px;width:100%;margin:auto;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.85fr);align-items:center;gap:clamp(20px,4vw,70px);padding:24px 0}
+.streak-campfire{position:relative;width:100%;aspect-ratio:760/500;min-width:0;overflow:visible;isolation:isolate}
+.streak-campfire-still,.streak-campfire-stage{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;max-width:none}
+.streak-campfire-stage{overflow:visible}
+.streak-campfire-stage[hidden],.streak-campfire-still[hidden],.streak-rig-image[hidden],.streak-rig-group[hidden]{display:none!important}
+.streak-rig-group,.streak-rig-image{position:absolute;display:block;inset:0;width:100%;height:100%;max-width:none;pointer-events:none;opacity:1}
+.streak-rig-face,.streak-rig-pupil-mask,.streak-rig-fire-mask{mask-repeat:no-repeat;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;-webkit-mask-size:100% 100%}
+.streak-celebration-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.streak-reveal{min-height:286px;width:100%;display:flex;flex-direction:column;justify-content:center;gap:26px}
+.streak-reveal[hidden]{display:flex!important;visibility:hidden}
+.streak-celebration-copy h1{display:flex;flex-direction:column;gap:6px;font-size:clamp(28px,3.4vw,44px);line-height:1.12}
+.streak-celebration-number{display:block;align-self:flex-start;color:var(--pink);font-size:clamp(76px,9vw,116px);line-height:.98;transform-origin:center}
+.streak-celebration-copy h1>span:last-child{font-size:clamp(23px,2.7vw,34px)}
+.streak-week{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;width:100%;max-width:370px}
+.streak-week-day{display:flex;flex-direction:column;align-items:center;gap:10px;font-size:11px;color:var(--muted);min-width:0}
+.streak-week-day>b{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f1eee8;font-size:13px;color:#7b8589;font-weight:700}
+.streak-week-day.is-active>b{background:#f8d9aa;color:#8a571b}
+.streak-week-day.is-today>b{background:var(--orange);color:#663d0b;outline:2px solid #e9c889;outline-offset:3px}
+.streak-week-day.is-today>span{color:var(--ink);font-weight:800}
+.streak-time-note{font-size:13px;line-height:1.65;max-width:350px;color:var(--muted)}
+.streak-continue{min-width:170px;gap:30px;justify-content:space-between}
+@media(max-width:760px){
+ .streak-celebration-page{padding:18px 22px;overflow:auto}
+ .streak-celebration-page .wordmark{font-size:31px}
+ .streak-celebration-layout{grid-template-columns:minmax(0,1fr);gap:5px;max-width:520px;padding:12px 0;margin:auto}
+ .streak-campfire{width:min(100%,55dvh);justify-self:center}
+ .streak-celebration-copy{align-items:center;gap:18px}
+ .streak-reveal{min-height:230px;align-items:center;gap:19px;text-align:center}
+ .streak-celebration-copy h1{align-items:center;gap:4px}
+ .streak-celebration-number{align-self:center;font-size:76px}
+ .streak-celebration-copy h1>span:last-child{font-size:28px}
+ .streak-week{max-width:345px;gap:6px}
+ .streak-time-note{font-size:12px}
+ .streak-continue{width:min(100%,345px);min-height:48px}
+}
+@media(max-height:650px) and (min-width:761px){.streak-celebration-page{padding-block:16px}.streak-celebration-layout{padding:10px 0}.streak-reveal{min-height:250px;gap:18px}.streak-celebration-number{font-size:86px}.streak-celebration-copy{gap:18px}}
+@media(max-height:700px) and (max-width:760px){.streak-celebration-layout{padding:7px 0;gap:0}.streak-campfire{width:min(100%,45dvh)}.streak-reveal{min-height:205px;gap:15px}.streak-celebration-number{font-size:64px}.streak-celebration-copy{gap:12px}.streak-celebration-copy h1>span:last-child{font-size:25px}.streak-week-day>b{width:30px;height:30px}.streak-week-day{gap:7px}}

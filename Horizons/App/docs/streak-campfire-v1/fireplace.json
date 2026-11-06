@@ -1,0 +1,12 @@
+{
+  "asset_id": "pico-streak-fireplace-v1",
+  "kind": "scene",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "Use case: stylized-concept. Asset: ONE independent fireplace/logs prop for Horizons streak animation. Inputs1 R01 brand,2 R02 cast,3 R07 style are mandatory references, not layouts to reproduce. Produce a compact freestanding warm coral/magenta brick hearth with a small cream cap, an open dark-navy arched firebox and two simple brown crossed wooden logs at its base. The firebox must be empty with NO flame yet so separately generated fire frames can fit inside. Warm flat filled geometric raster style, modest adult playful proportions, a simple readable silhouette at small UI size. Whole single prop centered and uncropped, no room/wall/floor/scenery/chimney panorama, no characters, no text, no outlines, shadows, glow, gradients or texture. True transparent background and fully opaque masonry/logs."
+}

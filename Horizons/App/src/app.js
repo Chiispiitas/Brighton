@@ -1,3 +1,4 @@
+import {shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streak1';
 import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
@@ -21,6 +22,7 @@ let toastTimer;
 let wordPlayer;
 let disposeOverworld;
 let disposePropMotion;
+let streakCelebrationController;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const icons = {
  lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>',
@@ -184,10 +186,25 @@ function render() {
   document.documentElement.classList.toggle('lesson-view',!!state.active&&['quiz','result'].includes(state.active.kind));
   disposeOverworld?.();disposeOverworld=null;
   disposePropMotion?.();disposePropMotion=null;
+  streakCelebrationController?.dispose();streakCelebrationController=null;
   disposeArtwork(app);
   app.removeAttribute('aria-busy');
   if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
-  if (state.active) {if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');app.innerHTML=renderActivity();stabilizeSentence();if(previousQuestion&&previousQuestion===app.querySelector('.activity-page[data-question-type=order]')?.dataset.questionId){const content=app.querySelector('.question-content');if(content)content.scrollTop=promptScroll;}refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});return;}
+  if (state.active) {
+    if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');
+    app.innerHTML=renderActivity();stabilizeSentence();
+    if(previousQuestion&&previousQuestion===app.querySelector('.activity-page[data-question-type=order]')?.dataset.questionId){const content=app.querySelector('.question-content');if(content)content.scrollTop=promptScroll;}
+    const streakPage=app.querySelector('.streak-celebration-page');
+    if(streakPage){
+      const result=state.active;
+      // Background saves do not consume the visible daily celebration.
+      const profileId=profile().id;
+      markControls(app);
+      streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent)});
+      app.querySelector('[data-action=streak-results]')?.focus({preventScroll:true});
+    }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
+    return;
+  }
   const pages={learn:home,practice,bank:wordBank,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
@@ -351,6 +368,8 @@ async function saveActivityResult(result){
   try{
     const response=await api.saveAttempt(result.attempt);setSession(response);
     result.saved=true;result.earnedXp=Math.max(0,xp()-result.oldXp);
+    result.streakEvent=response.attempt?.dailyStreakCelebration||null;
+    result.showStreak=shouldShowStreakCelebration(profile().id,result.streakEvent);
     if(state.active===result)rememberPathCursor(result.attempt.activityId);
     result.newIslandMastery=Object.entries(progress().islands||{}).some(([id,island])=>island.mastered&&!result.masteredBefore.includes(id));
   }catch(error){result.error=error.message;}
@@ -367,6 +386,7 @@ async function saveActivityResult(result){
 function renderResult(a){
  if(a.saving)return `<div class="boot-screen" role="status" aria-live="polite"><span class="wordmark">HORIZONS</span><span class="boot-dot" aria-hidden="true"></span><span class="sr-only">Loading results</span></div>`;
  if(!a.saved)return `<main class="recovery-screen completion-error"><span class="wordmark">HORIZONS</span><h1>Your round couldn’t be saved</h1><div class="save-error" role="alert"><p>${esc(a.error||'Please try again.')}</p></div><button class="primary-button" data-action="retry-save">Retry save ${icon('repeat')}</button><button class="text-button" data-action="back-to-path">Back to lessons ${icon('arrow')}</button></main>`;
+ if(a.showStreak)return streakCelebrationMarkup(a.streakEvent);
  const percent=a.total?Math.round(a.correct/a.total*100):0,companion=a.previous.options.character||allActivities.find(item=>item.id===a.attempt.activityId)?.character||'alex';
  return `<main class="result-page" data-saved="true"><a class="result-brand wordmark" href="#learn" data-route="learn">HORIZONS</a><div class="result-character">${characterMarkup(companion,'result-pico','celebrate',({pico:'jump',mina:'skip',alex:'dance',jo:'clap'})[companion])}</div><h1>Results</h1><p>${a.correct} of ${a.total} correct</p><div class="result-stats"><div><b>${percent}%</b><span>Score</span></div><div><b>${Math.max(1,Math.round(a.attempt.durationMs/60000))}</b><span>min</span></div></div><div class="result-actions"><button class="primary-button" data-action="back-to-path" ${a.saving?'disabled':''}>Back to lessons ${icon('arrow')}</button><button class="text-button" data-action="play-again" ${a.saving?'disabled':''}>Practice again ${icon('repeat')}</button></div></main>`;
 }
@@ -469,6 +489,7 @@ on('click','[data-action]',async(_,target)=>{
     case'back-to-path':stopAudio();state.active=null;return route('learn');
     case'play-again':{const previous=state.active.previous;state.active=null;if(previous.kind==='quiz'){const options={...previous.options,audioFallbackQuestionIds:[],audioEnabled:previous.audioDisabled?false:previous.options.audioEnabled};if(options.activityId&&allActivities.some(item=>item.id===options.activityId)){const seed=Date.now(),questions=pathNodeById[options.activityId]?selectIslandQuestions(pathNodeById[options.activityId],progress(),{...options,count:8,seed}):getActivityQuestions(options.activityId,{...options,seed});return beginQuiz(questions,{...options,seed},previous.title);}return startQuiz(options,previous.title);}return startGame(previous.kind,previous.options);}
     case'retry-save':return saveActivityResult(state.active);
+    case'streak-results':{if(state.active?.kind!=='result'||!state.active.saved)return;state.active.showStreak=false;render();window.scrollTo({top:0,behavior:'instant'});app.querySelector('[data-action=back-to-path]')?.focus({preventScroll:true});return;}
     case'leave-activity':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Leave practice?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>This round will not be saved.</p><div class="dialog-actions"><button class="primary-button" data-dialog-close>Continue</button><button class="text-button" data-leave-confirm>Back to lessons</button></div>`);
     case'sign-out':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Sign out?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>You can sign in again with your book code.</p><div class="dialog-actions"><button class="primary-button" data-signout-confirm>Sign out</button><button class="text-button" data-dialog-close>Cancel</button></div>`);
     case'demo-codes':{let codes=window.HORIZONS_CONFIG?.demoCodes || [];if(!codes.length){try{const response=await fetch('./demo-codes.json');if(response.ok){const data=await response.json();codes=data.codes || data;}}catch{}}return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Example codes</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>These example book codes open a shared demonstration profile. Use a made-up name and date.</p>${codes.length?`<div class="demo-code-list">${codes.map(item=>{const code=typeof item==='string'?item:item.code;return `<button data-use-demo="${esc(code)}"><b>${esc(code)}</b><small>${esc(typeof item==='string'?'Horizons A1':item.label || item.title || 'Horizons A1')}</small>${icon('arrow')}</button>`;}).join('')}</div>`:'<p>Example codes are being prepared. Your Brighton book code can be used in the main field.</p>'}`);}

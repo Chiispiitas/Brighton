@@ -1,0 +1,16 @@
+{
+  "part": "upper-lift",
+  "prompt": "Use case: precise-object-edit. Create one separate CLOTHED UPPER-BODY CARTOON RABBIT second-keypose sprite for Horizons. Image1 brand, Image2 cast and Image3 flat-rendering are mandatory references only. Image4 is the exact seated navy-shirt/magenta-strap body. Image5 is the exact accepted clothed roast upper-body keypose and the edit target. Keep its NAVY SHIRT TORSO and MAGENTA DIAGONAL STRAP pixel geometry, neck opening, shoulder anchors, thickness and hem placement unchanged. Keep both complete peach cartoon forelimbs connected to the same shoulder anchors. Change only the held-paw/skewer gesture to a small surprised lift: flex elbows upward slightly, lift the two round gripping paws by about half a paw height, and angle the thin brown skewer gently UP TO THE RIGHT, about25degrees above horizontal. Exactly one white marshmallow remains securely at the far-right tip; both paw grips stay supported. This is a separately authored full-opacity hybrid keypose, not an expression head. Return only the clothed torso, attached cartoon forelimbs/paws and held skewer/marshmallow, no head, face, ears, legs, feet, seat, satchel pouch, fireplace, scenery, labels or text. Do not narrow the arms, detach shoulders or change torso outline between keyposes. Fully opaque clean flat geometric solid fills on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background, generous margin, no transparency, glow, blur, gradients, shadows, lighting, texture, extra objects or magenta bleed.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\body-seat.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\upper-roast.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/upper-lift-preflight.json",
+  "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-f33126f1-d0b2-4566-b97e-b8d894188384.png",
+  "native_path": "assets/art/streak-campfire-v1/native/upper-lift.png",
+  "review": "Root approved matched opaque clothed torso/strap/neck/hem and connected raised paws/skewer. Actual registered reconstruction review pending.",
+  "status": "geometry-approved"
+}

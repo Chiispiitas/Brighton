@@ -1,0 +1,16 @@
+{
+  "part": "face-excited-clean",
+  "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 rendering are mandatory visual references only. Image4 exact accepted Pico locks facial identity; Image5 is the exact generated expression-only glyph plate to clean. Return the SAME five separate glyphs from Image5 in the SAME top-to-bottom layout: two lifted navy eyebrows, two happy closed-eye crescent strokes, one delighted open mouth with red/coral tongue. No nose, skin, head, ears, body, geometry changes, connected face, complete expression head, labels or scenery. Keep the exact bold rounded native features. Remove all external red/yellow/white speckles, glow and fringes. Render every feature FULLY OPAQUE with clean antialias edges on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparent pixels, checkerboard, shadows, gradients, blur, lighting, texture or halos. The magenta key color must not bleed into the navy/mouth/tongue shapes. This intentional key-color intermediate is needed to register the native glyphs without eroding their anatomy.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\baseline\\neutral-reconstruction.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\face-excited.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/face-excited-clean-preflight.json",
+  "output_path": "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-19d02c6f-d0a3-4dd9-94bb-4ac9d0d79cfc.png",
+  "native_path": "assets/art/streak-campfire-v1/native/face-excited-clean.png",
+  "review": "Root approved clean native opaque-magenta separate-glyph repair; supersedes rejected glow/scatter plate.",
+  "status": "geometry-approved"
+}

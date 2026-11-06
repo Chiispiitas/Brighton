@@ -1,0 +1,16 @@
+{
+  "asset_id": "pico-streak-face-excited-clean-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/baseline/neutral-reconstruction.png",
+    "assets/art/streak-campfire-v1/native/face-excited.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Image1 R01 brand, Image2 R02 cast, Image3 R07 rendering are mandatory visual references only. Image4 exact accepted Pico locks facial identity; Image5 is the exact generated expression-only glyph plate to clean. Return the SAME five separate glyphs from Image5 in the SAME top-to-bottom layout: two lifted navy eyebrows, two happy closed-eye crescent strokes, one delighted open mouth with red/coral tongue. No nose, skin, head, ears, body, geometry changes, connected face, complete expression head, labels or scenery. Keep the exact bold rounded native features. Remove all external red/yellow/white speckles, glow and fringes. Render every feature FULLY OPAQUE with clean antialias edges on deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background. No transparent pixels, checkerboard, shadows, gradients, blur, lighting, texture or halos. The magenta key color must not bleed into the navy/mouth/tongue shapes. This intentional key-color intermediate is needed to register the native glyphs without eroding their anatomy.",
+  "transparent_background": false
+}

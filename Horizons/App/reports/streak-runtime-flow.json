@@ -1,0 +1,19 @@
+{
+  "scope": "Actual app and backend application with synthetic in-memory store only; headless Edge. No learner records or production writes.",
+  "flowOnly": true,
+  "savedRoundFlow": true,
+  "failedSaveNoCelebration": true,
+  "lostResponseRetryRecovered": true,
+  "repeatRoundNoCelebration": true,
+  "loginReloadNoCelebration": true,
+  "persistedSeenGuard": true,
+  "hiddenScreenDefersSeen": true,
+  "errors": [],
+  "apiCalls": [
+    "getSession",
+    "saveAttempt",
+    "saveAttempt",
+    "saveAttempt",
+    "getSession"
+  ]
+}

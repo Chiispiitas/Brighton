@@ -1,0 +1,19 @@
+{
+  "part": "arm-roast-clean-rabbit",
+  "prompt": "Use case: precise-object-edit. This is a family-friendly animation component for a nonhuman cartoon rabbit named Pico, for a school learning app. Image1 brand, Image2 cast and Image3 flat-rendering are mandatory visual references only. Image4 is the accepted seated cartoon rabbit pose. Image5 is the exact isolated cartoon forelimb-and-skewer drawing to clean. Create the same simple toy-like peach rabbit forelimbs and round paws gripping a thin brown roasting skewer with one white marshmallow, as a single isolated connected sprite group. Preserve Image4 rounded shoulder attachment positions and thick curved forelimb shapes, and Image5 paw/skewer/marshmallow placement. Show only the peach rabbit forelimb shapes, paws, skewer and single marshmallow; no rabbit head, clothing, seat, extra objects, text, scene or labels. Every shape must be fully opaque, clean, flat and geometric. Remove the blurry glow and exterior speckles of Image5. Use deliberately FULLY OPAQUE SOLID MAGENTA #ff00ff background with generous margins, no transparency, gradients, shadow, texture, blur or lighting. Keep the generated cartoon shapes exactly proportioned, with crisp edges and no magenta contamination.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\seated-reference.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\streak-campfire-v1\\native\\arm-roast.png"
+  ],
+  "preflight": "docs/streak-campfire-v1/arm-roast-clean-rabbit-preflight.json",
+  "status": "failed-output-moderation",
+  "operation": "image_gen.imagegen generating isolated cartoon rabbit paws and roasting stick on magenta",
+  "httpStatus": 400,
+  "requestId": "922a28ff-2ee5-46f0-a5ae-c2ceb7c67bf7",
+  "category": "sexual",
+  "imageOutputCreated": false,
+  "interpretation": "Benign nonhuman cartoon sprite request, no application/backend operation failed. Upward rest pose is unnecessary after approving a new down-right roasting keypose; no additional upward retry."
+}

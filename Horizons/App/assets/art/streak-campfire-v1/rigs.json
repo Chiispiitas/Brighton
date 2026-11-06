@@ -1,0 +1,70 @@
+{
+  "width": 760,
+  "height": 500,
+  "parts": {
+    "head": "assets/art/streak-campfire-v1/head.png",
+    "eyes": "assets/art/streak-campfire-v1/eyes.png",
+    "pupils": "assets/art/streak-campfire-v1/pupils.png",
+    "browsMouth": "assets/art/streak-campfire-v1/browsMouth.png",
+    "nose": "assets/art/streak-campfire-v1/nose.png",
+    "blink": "assets/art/streak-campfire-v1/blink.png",
+    "eyeMask": "assets/art/streak-campfire-v1/eyeMask.png",
+    "faceMask": "assets/art/streak-campfire-v1/faceMask.png",
+    "body": "assets/art/streak-campfire-v1/body.png",
+    "armRoast": "assets/art/streak-campfire-v1/armRoast.png",
+    "armLift": "assets/art/streak-campfire-v1/armLift.png",
+    "fireplace": "assets/art/streak-campfire-v1/fireplace.png",
+    "fireEmber": "assets/art/streak-campfire-v1/fireEmber.png",
+    "fireSmall": "assets/art/streak-campfire-v1/fireSmall.png",
+    "fireIgnite": "assets/art/streak-campfire-v1/fireIgnite.png",
+    "fireFull": "assets/art/streak-campfire-v1/fireFull.png",
+    "satchel": "assets/art/streak-campfire-v1/satchel.png",
+    "fireMask": "assets/art/streak-campfire-v1/fireMask.png",
+    "excited": "assets/art/streak-campfire-v1/excited.png"
+  },
+  "pivots": {
+    "head": [
+      249,
+      255
+    ],
+    "body": [
+      245,
+      380
+    ],
+    "armRoast": [
+      249,
+      360
+    ],
+    "armLift": [
+      249,
+      360
+    ]
+  },
+  "upperBodyKeyposes": true,
+  "fallback": "assets/art/streak-campfire-v1/reduced.png",
+  "faceMask": "assets/art/streak-campfire-v1/faceMask.png",
+  "eyeMask": "assets/art/streak-campfire-v1/eyeMask.png",
+  "fireMask": "assets/art/streak-campfire-v1/fireMask.png",
+  "keyposes": [
+    "armRoast",
+    "armLift"
+  ],
+  "flameFrames": [
+    "fireEmber",
+    "fireSmall",
+    "fireIgnite",
+    "fireFull"
+  ],
+  "layerOrder": [
+    "fireplace",
+    "body",
+    "head",
+    "fireEmber",
+    "browsMouth",
+    "eyes",
+    "pupils",
+    "nose",
+    "armRoast",
+    "satchel"
+  ]
+}

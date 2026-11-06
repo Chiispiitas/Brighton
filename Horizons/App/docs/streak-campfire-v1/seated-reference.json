@@ -1,0 +1,15 @@
+{
+  "asset_id": "pico-streak-seated-reference-v1",
+  "kind": "cast",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/streak-campfire-v1/baseline/neutral-reconstruction.png",
+    "assets/art/streak-campfire-v1/baseline/head-faceless-registered.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Asset: one canonical full-body seated Pico pose for Horizons daily streak animation. Image1 R01 brand, Image2 R02 cast and Image3 R07 flat rendering are mandatory visual references; do NOT reproduce their labels or layouts. Image4 is the exact accepted Pico character reference. Image5 is his already-approved permanent faceless head, supplied only to lock the exact outer head/ear/chin geometry, not as a new character. Create ONE complete Pico sitting naturally on a small simple low wooden stump, holding a thin roasting stick with BOTH peach paws together close to his torso; a single white marshmallow is on the stick's far right tip. Same exact rabbit identity: tall peach ears, left ear upright/right ear bent as reference, dark two brows, small white eyes/dark pupils, orange triangular nose, warm open smile, navy sleeveless explorer shirt, diagonal magenta strap and magenta satchel with yellow button, peach legs/feet. Keep his head FRONT/three-quarter in the exact familiar orientation from Image4, subtly looking toward the stick at the RIGHT; NOT a side profile, not a different rabbit. Preserve the familiar long head/ear proportions and broad muzzle. Seated body should be relaxed, knees bent, both feet supported at ground level. Body on the LEFT, stick extends diagonally gently right into empty space. No flames/fireplace yet. Complete head, ears, paws, stump, feet and stick with generous transparent margins. Clean flat filled geometric raster shapes, opaque solid skin/clothes/stump/stick/marshmallow, genuine transparency only outside the silhouette. No glow, shadows, gradients, texture, outlines, scenery, text, extra marshmallows, extra limbs or sprite sheet. This full pose is a geometry/reference still; animation will separately generate body, gripping paws/stick and facial parts."
+}

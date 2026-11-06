@@ -1,0 +1,160 @@
+{
+  "pass": true,
+  "nativeOutputs": 14,
+  "generationAttempts": 17,
+  "toolValidationFailures": 1,
+  "rejectedNativeOutputs": [
+    "arm-lift",
+    "arm-roast",
+    "face-excited"
+  ],
+  "callChecks": [
+    {
+      "id": "arm-lift-clean",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "arm-lift",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "arm-roast-clean",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": null,
+      "noOutputCreated": true
+    },
+    {
+      "id": "arm-roast-clean-rabbit",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": null,
+      "noOutputCreated": true
+    },
+    {
+      "id": "arm-roast-down",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": null,
+      "noOutputCreated": true
+    },
+    {
+      "id": "arm-roast",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "body-seat",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "face-excited-clean",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "face-excited",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "fire-ember",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "fire-full",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "fire-ignite",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "fire-small",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "fireplace",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "seated-reference",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "upper-lift",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    },
+    {
+      "id": "upper-roast",
+      "mandatoryReferencesAttached": true,
+      "actualPathsMatchPreflight": true,
+      "exactInputHashesMatch": true,
+      "nativeBytesPreserved": true,
+      "noOutputCreated": false
+    }
+  ],
+  "activePngBytes": 725777,
+  "activePngCount": 21,
+  "activeSourceHashesCurrent": true,
+  "inheritedApprovedBytesExact": true,
+  "runtimeEvidence": {
+    "motionSourceBindingExact": true,
+    "motionReport": "reports/streak-motion.json",
+    "cacheSourceBytesExact": true,
+    "cacheReport": "reports/streak-cache.json",
+    "cacheName": "horizons-companion-daily-streak-v101"
+  }
+}

@@ -29,7 +29,7 @@ All collections require ADMIN permission for read, insert, update and remove. Th
 | HzProfiles | Display name, optional date of birth, avatar, daily goal, preferred book and time zone |
 | HzSessions | Hashed opaque token; profile;90day expiry; revocation flag |
 | HzAttempts | Create-only, profile-scoped, server-graded practice events |
-| HzThrottle | Reserved for a future distributed rate limiter |
+| HzThrottle | Create-only, profile/day-scoped daily streak celebration claims; reserved namespace for a future distributed rate limiter |
 
 There are no public staff, reset or seed endpoints. Public samplecodes intentionally provide shared example access; `demo:true` tells the app to request fictional profile details. Production codes should be individually printed, random and kept private. The current application-level code-entry rate limit is per running worker, with Wix's hosting protections underneath; a distributed limit should replace it before a broad public code campaign.
 
@@ -38,6 +38,16 @@ There are no public staff, reset or seed endpoints. Public samplecodes intention
 `scripts/sync-content.mjs` copies the reviewed Unit1 content and engine into this self-contained backend. Run it whenever the frontend content engine changes, then test and redeploy both together. The server reconstructs questions from the submitted activity, selected word sets, mode and seed, and grades the submitted answer. It ignores claimed correctness, XP, word IDs and mastery flags. Unknown/repeated questions are rejected. Choice answers should be text, ordered sentences should be arrays of token text, and matching answers should be the matched right-hand text.
 
 An attempt ID is unique within its profile. Identical delivery retries award no additional XP; changing previously saved answers returns409. XP is five per correct answer plus ten for completing a round. Word mastery requires one unaided correct answer. Accepted synonyms credit the prompted item. Earlier/later errors do not undo mastery. Memory/matching recognition and hinted answers cannot create mastery. Incorrect vocabulary answers populate the review collection. Progress and local-calendar streaks are derived from stored events, not trusted client totals. Only registered path nodes enter completedActivities; custom mixes retain XP, attempts and word progress without increasing the path total. Avatar badges none/star-pin/trophy-pin/compass-pin are validated; earned badges require25/100/250storedXP. Basic avatar customization remains free.
+
+## Daily streak celebration
+
+Only a successful `saveAttempt` can return `attempt.dailyStreakCelebration`. The first saved round of the profile-local calendar day is eligible, whether Learn or Practice; it does not require completing every island in a lesson, earning mastery, or answering everything correctly. The existing completed-round API and XP rules remain unchanged. The app submits attempts only at the end of a round.
+
+The server uses its own completion timestamp and the saved profile's validated IANA time zone (default `America/Guayaquil`). It returns the completion date, streak, active dates, a Monday–Sunday week, local hour/minute and actual minutes until the next local midnight. Time remaining accounts for daylight-saving day lengths; client clocks and submitted celebration flags are ignored.
+
+Before a new event is inserted, existing daily history determines its eligibility. The immutable attempt stores a server-only candidate proof; historical events and later daily rounds cannot become candidates through retries. After the saved result can be read successfully, one uniquely identified `daily-streak:<profile>:<local-date>` claim is inserted into the existing private `HzThrottle` JSON collection. Concurrent workers and devices share this claim. A failed attempt write never consumes it; failed result reads or claim writes can recover through the original attempt ID without adding XP.
+
+The winning attempt receives the same immutable metadata on identical retries within that local day. This recovers a lost response. Other attempts receive `null`, and a retry after the winning local date has ended also receives `null`. Bootstrap, login, profile updates and progress requests never return a celebration. The frontend must persist a per-profile/day seen marker only when the celebration is actually shown, and must not trigger it from streak totals. This is one durable winning event, with client deduplication of its presentation; deliberately replaying the exact winning UUID in another browser could show it again there. There is no global display acknowledgement API.
 
 ## Examples and QA
 
