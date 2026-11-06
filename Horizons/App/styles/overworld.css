@@ -73,9 +73,9 @@
 .overworld-map .landmark-art{width:108px;height:112px}
 
 /* Neutral unfinished islands, a fixed location ring, and per-lesson sequence locks. */
-.overworld-map .path-stop:not(.completed):not(.mastered) .stop-orb{background:#eeebe5;color:#68737b}
-.overworld-map .path-stop:not(.completed):not(.mastered):not(:disabled):hover .stop-orb{background:#e2dfd8}
-.overworld-map .path-symbol-star:not(.completed):not(.mastered) .stop-orb>.generated-icon{filter:grayscale(1)}
+.overworld-map .path-stop:not(.completed):not(.mastered):not(.locked) .stop-orb{background:#d5e0e5;color:#345466;border:2px solid #9bafb8}
+.overworld-map .path-stop:not(.completed):not(.mastered):not(:disabled):hover .stop-orb{background:#c7d7df}
+.overworld-map .path-symbol-star:not(.completed):not(.mastered):not(.locked) .stop-orb>.generated-icon{filter:grayscale(1) brightness(.65)}
 .overworld-map .path-stop.completed:not(.mastered) .stop-orb{background:var(--pink);color:white}
 .overworld-map .path-stop.mastered .stop-orb{background:#ffd24a;color:#714808}
 .overworld-map .path-stop.current-path .stop-orb{outline:3px solid #496f82;outline-offset:6px}
@@ -92,3 +92,6 @@
 .prop-stage{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;overflow:visible;perspective:300px}
 .prop-stage>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:1;pointer-events:none}
 .prop-stage[hidden],.prop-still[hidden],.prop-stage>img[hidden]{display:none!important}
+
+/* Available unfinished landmarks share the open-island treatment, not the lock palette. */
+.overworld-map .path-stop:not(.completed):not(.mastered):not(.locked) .landmark-state{background:#d5e0e5;color:#345466}
