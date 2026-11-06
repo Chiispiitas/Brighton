@@ -1,0 +1,186 @@
+{
+  "scope": "Eight path prop rigs; original identity references plus separately generated moving components.",
+  "generalReferencePack": "../image-references/reference-pack.json",
+  "reconstructionBoard": "review/reconstruction-board.png",
+  "nativePartsBoard": "review/generated-parts.png",
+  "motionStates": [
+    "review/rest.png",
+    "review/extreme.png",
+    "review/settle.png"
+  ],
+  "rigs": {
+    "cups": {
+      "width": 512,
+      "height": 265,
+      "baseline": "assets/art/lesson-area-tiles-v1/cafe-cups.png",
+      "parts": [
+        {
+          "id": "cup-red",
+          "src": "assets/art/prop-motion-v1/cups-cup-red.png",
+          "special": false
+        },
+        {
+          "id": "cup-yellow",
+          "src": "assets/art/prop-motion-v1/cups-cup-yellow.png",
+          "special": false
+        },
+        {
+          "id": "coffee-splash",
+          "src": "assets/art/prop-motion-v1/cups-coffee-splash.png",
+          "special": true
+        }
+      ]
+    },
+    "notebook": {
+      "width": 512,
+      "height": 372,
+      "baseline": "assets/art/lesson-props-v1/greetings.png",
+      "parts": [
+        {
+          "id": "pages",
+          "src": "assets/art/prop-motion-v1/notebook-pages.png",
+          "special": false
+        },
+        {
+          "id": "writing",
+          "src": "assets/art/prop-motion-v1/notebook-writing.png",
+          "special": true
+        },
+        {
+          "id": "cover",
+          "src": "assets/art/prop-motion-v1/notebook-cover.png",
+          "special": false
+        },
+        {
+          "id": "pencil",
+          "src": "assets/art/prop-motion-v1/notebook-pencil.png",
+          "special": false
+        }
+      ]
+    },
+    "bag": {
+      "width": 512,
+      "height": 410,
+      "baseline": "assets/art/lesson-area-tiles-v1/work-bag.png",
+      "parts": [
+        {
+          "id": "body",
+          "src": "assets/art/prop-motion-v1/bag-body.png",
+          "special": false
+        },
+        {
+          "id": "handle-clasp",
+          "src": "assets/art/prop-motion-v1/bag-handle-clasp.png",
+          "special": false
+        }
+      ]
+    },
+    "chef": {
+      "width": 512,
+      "height": 370,
+      "baseline": "assets/art/lesson-props-v1/jobs.png",
+      "parts": [
+        {
+          "id": "hat",
+          "src": "assets/art/prop-motion-v1/chef-hat.png",
+          "special": false
+        },
+        {
+          "id": "spoon",
+          "src": "assets/art/prop-motion-v1/chef-spoon.png",
+          "special": false
+        }
+      ]
+    },
+    "map": {
+      "width": 512,
+      "height": 421,
+      "baseline": "assets/art/lesson-props-v1/countries.png",
+      "parts": [
+        {
+          "id": "panel-left",
+          "src": "assets/art/prop-motion-v1/map-panel-left.png",
+          "special": false
+        },
+        {
+          "id": "panel-middle",
+          "src": "assets/art/prop-motion-v1/map-panel-middle.png",
+          "special": false
+        },
+        {
+          "id": "panel-right",
+          "src": "assets/art/prop-motion-v1/map-panel-right.png",
+          "special": false
+        },
+        {
+          "id": "compass",
+          "src": "assets/art/prop-motion-v1/map-compass.png",
+          "special": false
+        }
+      ]
+    },
+    "globe": {
+      "width": 370,
+      "height": 512,
+      "baseline": "assets/art/lesson-area-tiles-v1/globe.png",
+      "parts": [
+        {
+          "id": "stand",
+          "src": "assets/art/prop-motion-v1/globe-stand.png",
+          "special": false
+        },
+        {
+          "id": "earth",
+          "src": "assets/art/prop-motion-v1/globe-earth.png",
+          "special": false
+        },
+        {
+          "id": "smear",
+          "src": "assets/art/prop-motion-v1/globe-smear.png",
+          "special": true
+        }
+      ]
+    },
+    "keys": {
+      "width": 492,
+      "height": 512,
+      "baseline": "assets/art/lesson-props-v1/personal.png",
+      "parts": [
+        {
+          "id": "ring",
+          "src": "assets/art/prop-motion-v1/keys-ring.png",
+          "special": false
+        },
+        {
+          "id": "key",
+          "src": "assets/art/prop-motion-v1/keys-key.png",
+          "special": false
+        }
+      ]
+    },
+    "postbox": {
+      "width": 392,
+      "height": 512,
+      "baseline": "assets/art/lesson-area-tiles-v1/postbox.png",
+      "parts": [
+        {
+          "id": "body",
+          "src": "assets/art/prop-motion-v1/postbox-body.png"
+        },
+        {
+          "id": "letter",
+          "src": "assets/art/prop-motion-v1/postbox-letter.png",
+          "special": true
+        }
+      ]
+    }
+  },
+  "runtimeSources": {
+    "src/prop-motion.js": "8aca44d6acf9b05fe9519a9be2376277a65c3a484f15efb7675d2e31774cc857",
+    "src/overworld-motion.js": "1a60878c73eecf0ccab3c1d3788c5f0100bcbf3d15e3a6984f22767659d393e6",
+    "styles/overworld.css": "755076e331ae959e8872337f31631ac1009ea9af9b5decbfe4e6fb38b474b11f",
+    "assets/art/prop-motion-v1/rigs.json": "91728b4545976cff54f256dc083334b9fa55be1a71e0dbc4dad424b7882a1edd",
+    "src/app.js": "55ee3a3ac556e98eeb204782adb85b2ca252137719918dbf90c20f0fbea3237d",
+    "service-worker.js": "c6716baab9ef444927147eef8339589a5fb0168edda457a4470a2a1b9615109c"
+  }
+}

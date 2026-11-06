@@ -1,0 +1,15 @@
+{
+  "asset_id": "prop-motion-v1-cups-cup-yellow",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "assets/art/lesson-area-tiles-v1/cafe-cups.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete yellow right cup including handle and dark coffee surface; remove the red cup entirely. Center this isolated part at large scale. Other components must be absent.",
+  "output": "cups-cup-yellow.png"
+}

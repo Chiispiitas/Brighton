@@ -87,3 +87,8 @@
 /* Offset the greeting props horizontally and vary their angles. */
 .overworld-map .lesson-1 .area-prop-0{left:24%;bottom:26px;transform:rotate(-7deg)}
 .overworld-map .lesson-1 .area-prop-1{left:44%;top:20px;transform:rotate(5deg)}
+
+.prop-still{display:block;width:100%;height:100%;object-fit:contain}
+.prop-stage{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;overflow:visible;perspective:300px}
+.prop-stage>img{position:absolute;inset:0;width:100%;height:100%;max-width:none;opacity:1;pointer-events:none}
+.prop-stage[hidden],.prop-still[hidden],.prop-stage>img[hidden]{display:none!important}

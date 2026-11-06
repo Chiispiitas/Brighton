@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "eightSeparateRigs": true,
+  "wildlifeRemoved": true,
+  "opacityAlwaysOne": true,
+  "noOpacityKeyframes": true,
+  "reducedMotionOriginalStills": true,
+  "offscreenPause": true,
+  "hiddenPauseFixture": true,
+  "disposalCancels": true,
+  "missingPartFallback": true,
+  "reconstructionAndExtremeScreenshots": [
+    "rest.png",
+    "extreme.png",
+    "settle.png"
+  ],
+  "scope": "Actual production renderer in Edge with synthetic session; review grid enlarges the same renderer for visual checks. No real learner records.",
+  "errors": []
+}

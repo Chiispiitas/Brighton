@@ -1,0 +1,1993 @@
+{
+  "tool": "built-in ImageGen",
+  "perPartGeneration": true,
+  "records": [
+    {
+      "id": "cups-cup-red",
+      "prop": "cups",
+      "part": "cup-red",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\cups-cup-red.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete red left cup including handle and dark coffee surface; remove the yellow cup entirely. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-cups-cup-red",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8dedf2cd-5068-4eac-98c5-80b7b73d0bb8.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-cup-red.png",
+      "nativeSha256": "29292c5ae98a509ba8f649a5802c36c76377d6a8e6a7e2e1f67b1d3b78fc7450",
+      "nativeSize": [
+        1374,
+        1145
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          142,
+          131,
+          1133,
+          1003
+        ],
+        "uniformScale": 0.27685153475964747,
+        "outputSize": [
+          512,
+          265
+        ],
+        "placedSize": [
+          274,
+          241
+        ],
+        "offset": [
+          7,
+          0
+        ],
+        "targetBox": [
+          0,
+          0,
+          574,
+          480
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/cups-cup-red.png",
+      "runtimeSha256": "c1826c5da0fa5a7afabb509f441485475c08058d64ccf8dd7fb74ea779f6c999",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 701513
+    },
+    {
+      "id": "cups-cup-yellow",
+      "prop": "cups",
+      "part": "cup-yellow",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\cups-cup-yellow.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete yellow right cup including handle and dark coffee surface; remove the red cup entirely. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-cups-cup-yellow",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d9799ae6-6a4d-439b-81f1-f64a117b527e.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-cup-yellow.png",
+      "nativeSha256": "3e6560aae2c30eca89f69e4437478f3c3efe5a5da887323c018cf4fc0c0c1576",
+      "nativeSize": [
+        1370,
+        1148
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          207,
+          138,
+          1172,
+          989
+        ],
+        "uniformScale": 0.2635891208540051,
+        "outputSize": [
+          512,
+          265
+        ],
+        "placedSize": [
+          254,
+          224
+        ],
+        "offset": [
+          250,
+          40
+        ],
+        "targetBox": [
+          480,
+          80,
+          538,
+          446
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/cups-cup-yellow.png",
+      "runtimeSha256": "b0ebcf05140e5b4016445023f7f081f775c75ca22df12d62ea602960a7a9c3ac",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 666188
+    },
+    {
+      "id": "cups-coffee-splash",
+      "prop": "cups",
+      "part": "coffee-splash",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\cups-coffee-splash.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: One small dark coffee splash arc with three connected/nearby droplets, shaped to emerge upward from a cup; no cups. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-cups-coffee-splash",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\cafe-cups.png",
+            "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-030a6e9e-9f5c-42ba-9945-ced096c2be12.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\cups-coffee-splash.png",
+      "nativeSha256": "a752c7257a5fbfccc976b4ec502c3b5b9bc2db46e8c228b4b156635a0a9b7a2c",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          481,
+          134,
+          1092,
+          889
+        ],
+        "uniformScale": 0.07993858884450747,
+        "outputSize": [
+          512,
+          265
+        ],
+        "placedSize": [
+          49,
+          60
+        ],
+        "offset": [
+          237,
+          0
+        ],
+        "targetBox": [
+          420,
+          0,
+          200,
+          120
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/cups-coffee-splash.png",
+      "runtimeSha256": "91852492098e099ca4b31ccc09d2ea1e266a8014e9730219aacd7281c9a0d653",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 877503
+    },
+    {
+      "id": "notebook-pages",
+      "prop": "notebook",
+      "part": "pages",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\notebook-pages.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Address notebook with front magenta cover removed: cream interior page block and magenta rear cover/spine, matching the exact notebook silhouette and binding, no pencil, no text. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-notebook-pages",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png",
+            "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-04c523b9-dcd9-4aad-a376-c5fdd9a6d3b5.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\notebook-pages.png",
+      "nativeSha256": "9d29833c71bdd19ee7a390b84d9854a52b5c580c0ff9d258d3b55069002c1cf4",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          150,
+          65,
+          1089,
+          1124
+        ],
+        "uniformScale": 0.3512035205872397,
+        "outputSize": [
+          512,
+          372
+        ],
+        "placedSize": [
+          330,
+          372
+        ],
+        "offset": [
+          8,
+          0
+        ],
+        "targetBox": [
+          0,
+          0,
+          500,
+          539
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/notebook-pages.png",
+      "runtimeSha256": "174c962f332bf1b821e0a4b1c862e7e5345f3f1885c35dcc4e971b3c99a4eb4a",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 852250
+    },
+    {
+      "id": "notebook-cover",
+      "prop": "notebook",
+      "part": "cover",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\notebook-cover.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the magenta front cover including cream person symbol and binding accents; preserve exact original contour. No pencil, no page block. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-notebook-cover",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png",
+            "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9f89ffac-84d4-42f5-bd05-84cb44dc2f0c.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\notebook-cover.png",
+      "nativeSha256": "1d6da35e308df3b8fd6265aa5d1bfed1be454ed059dbe1c9ad8fceb8812b0d9e",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          156,
+          64,
+          1091,
+          1097
+        ],
+        "uniformScale": 0.3600431058101518,
+        "outputSize": [
+          512,
+          372
+        ],
+        "placedSize": [
+          337,
+          372
+        ],
+        "offset": [
+          4,
+          0
+        ],
+        "targetBox": [
+          0,
+          0,
+          500,
+          539
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/notebook-cover.png",
+      "runtimeSha256": "942ca11313927a3a766457f2d34f67ab4fa8155316a6dfe3be3c298b53d49658",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 889778
+    },
+    {
+      "id": "notebook-pencil",
+      "prop": "notebook",
+      "part": "pencil",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\notebook-pencil.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete original orange pencil with magenta eraser and navy tip. Remove notebook. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-notebook-pencil",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png",
+            "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-4fa00623-5145-493d-be7d-8a8cbcef365f.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\notebook-pencil.png",
+      "nativeSha256": "93b4c3226efd1893631e7661bc24f823b938801188007ef19edf7dd2e3e55f8c",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          178,
+          67,
+          846,
+          1477
+        ],
+        "uniformScale": 0.23758413092951564,
+        "outputSize": [
+          512,
+          372
+        ],
+        "placedSize": [
+          159,
+          335
+        ],
+        "offset": [
+          352,
+          29
+        ],
+        "targetBox": [
+          510,
+          35,
+          230,
+          500
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/notebook-pencil.png",
+      "runtimeSha256": "8e137149e9c2aaa948091029df52e028968228c72cfef90e36f045999435f98e",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1123089
+    },
+    {
+      "id": "notebook-writing",
+      "prop": "notebook",
+      "part": "writing",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\notebook-writing.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: A single small navy handwritten curved squiggle and two short lines, no readable text, no notebook or pencil. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-notebook-writing",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png",
+            "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8f28218f-3dc9-4661-804c-a4219b575efa.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\notebook-writing.png",
+      "nativeSha256": "5f415948996e11eabccf96b17422dbbed44465e794b122a7fcba75e75b511fdd",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          272,
+          252,
+          1264,
+          769
+        ],
+        "uniformScale": 0.17389792191983305,
+        "outputSize": [
+          512,
+          372
+        ],
+        "placedSize": [
+          173,
+          90
+        ],
+        "offset": [
+          69,
+          121
+        ],
+        "targetBox": [
+          100,
+          150,
+          250,
+          180
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/notebook-writing.png",
+      "runtimeSha256": "5fa3ba261210b8a490ee7bf476128dca139028c15de435047861c6f260caac87",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 849028
+    },
+    {
+      "id": "bag-body",
+      "prop": "bag",
+      "part": "body",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\bag-body.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the navy medical bag body with cream cross and clean top edge; remove the top arch handle and gold clasp completely. Preserve the full body silhouette. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-bag-body",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\work-bag.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\work-bag.png",
+            "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-6bc9df55-5002-46fb-be20-03fa68e7e112.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\bag-body.png",
+      "nativeSha256": "33baf57bf89f19bd3b3a228cc8b999abb4776df32595c5fdd549dc4c589211cf",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          45,
+          114,
+          1491,
+          922
+        ],
+        "uniformScale": 0.35408022130013833,
+        "outputSize": [
+          512,
+          410
+        ],
+        "placedSize": [
+          512,
+          286
+        ],
+        "offset": [
+          0,
+          112
+        ],
+        "targetBox": [
+          0,
+          160,
+          826,
+          502
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/bag-body.png",
+      "runtimeSha256": "804a58dd06af892f821869e8e1f32187ccda8266f3f47db330abfbb6fb4a570d",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1105519
+    },
+    {
+      "id": "bag-handle-clasp",
+      "prop": "bag",
+      "part": "handle-clasp",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\bag-handle-clasp.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the navy arch handle and gold clasp as one connected rigid upper group, with extra navy overlap below handle ends. Remove bag body and cross. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-bag-handle-clasp",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\work-bag.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\work-bag.png",
+            "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-3af80c2f-5af5-4db7-8ec0-a02b7286ddaf.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\bag-handle-clasp.png",
+      "nativeSha256": "3176f40a68061a49b7e8a424c6b1588b80f7d2a12449ac9253615197508ca742",
+      "nativeSize": [
+        1774,
+        887
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          386,
+          104,
+          1384,
+          765
+        ],
+        "uniformScale": 0.267071673613571,
+        "outputSize": [
+          512,
+          410
+        ],
+        "placedSize": [
+          267,
+          177
+        ],
+        "offset": [
+          124,
+          1
+        ],
+        "targetBox": [
+          200,
+          0,
+          430,
+          290
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/bag-handle-clasp.png",
+      "runtimeSha256": "a72031abc1a78c04109594db1adb29409c9ea5a13790d4d7c909e932af5358d2",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 470351
+    },
+    {
+      "id": "chef-hat",
+      "prop": "chef",
+      "part": "hat",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\chef-hat.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete cream chef hat including navy brim, same silhouette; remove the spoon entirely. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-chef-hat",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\jobs.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\jobs.png",
+            "sha256": "03fa23bfb6ac2a113e0679f2c5fc226dabc8d56fbeb0c136d80b976751172ec8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-18c6c11e-b9fc-4c04-bcb7-fb3ab44afb91.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\chef-hat.png",
+      "nativeSha256": "d0c9d1ce3d0e3500c5f85d072979ca0b9d9bedbfc4fdb3c99591f38a71e35d7a",
+      "nativeSize": [
+        1475,
+        1066
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          163,
+          58,
+          1303,
+          1012
+        ],
+        "uniformScale": 0.3215311004784689,
+        "outputSize": [
+          512,
+          370
+        ],
+        "placedSize": [
+          367,
+          307
+        ],
+        "offset": [
+          0,
+          6
+        ],
+        "targetBox": [
+          0,
+          0,
+          630,
+          550
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/chef-hat.png",
+      "runtimeSha256": "882c7ed708124e058950c7a36562865f773ea18d4cf685a910128056937fb68f",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 762837
+    },
+    {
+      "id": "chef-spoon",
+      "prop": "chef",
+      "part": "spoon",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\chef-spoon.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete yellow-orange spoon, exact original angle and silhouette; remove chef hat. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-chef-spoon",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\jobs.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\jobs.png",
+            "sha256": "03fa23bfb6ac2a113e0679f2c5fc226dabc8d56fbeb0c136d80b976751172ec8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d3c9075a-022a-4346-8244-35a9ac19295e.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\chef-spoon.png",
+      "nativeSha256": "666055f418eaa46f31c7927d3aa566369877257498cc8bc0ea494df4ced4efc0",
+      "nativeSize": [
+        1475,
+        1066
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          425,
+          58,
+          1101,
+          1022
+        ],
+        "uniformScale": 0.32275416890801506,
+        "outputSize": [
+          512,
+          370
+        ],
+        "placedSize": [
+          218,
+          311
+        ],
+        "offset": [
+          293,
+          46
+        ],
+        "targetBox": [
+          504,
+          59,
+          375,
+          576
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/chef-spoon.png",
+      "runtimeSha256": "52307068518cd63875537629d2c8bac4f68ad3f67da2d8f4a40f86c900261c58",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 281901
+    },
+    {
+      "id": "map-panel-left",
+      "prop": "map",
+      "part": "panel-left",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\map-panel-left.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the left teal folded map panel, its cream island and orange route fragment. Remove other two panels and compass; straight complete hidden edges. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-map-panel-left",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+            "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-454d6940-7af6-4ac4-a1d2-3e1e01f24994.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-left.png",
+      "nativeSha256": "bb50b9ef29586b541feff1c413ac831e7334d5569850068890c9f15a13eed03e",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          176,
+          99,
+          801,
+          1438
+        ],
+        "uniformScale": 0.2672279177133546,
+        "outputSize": [
+          512,
+          421
+        ],
+        "placedSize": [
+          167,
+          358
+        ],
+        "offset": [
+          2,
+          0
+        ],
+        "targetBox": [
+          0,
+          0,
+          293,
+          615
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/map-panel-left.png",
+      "runtimeSha256": "467fe2ae3e83267c4799dea25f1496a1830a45694c2febcc858e19eaccc958a1",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1153530
+    },
+    {
+      "id": "map-panel-middle",
+      "prop": "map",
+      "part": "panel-middle",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\map-panel-middle.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the cream middle folded map panel, its teal islands and orange route fragment. Remove other panels and compass; preserve original panel geometry. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-map-panel-middle",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+            "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-459e4f44-bd84-4fe6-842d-6fed49a5ddc5.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-middle.png",
+      "nativeSha256": "0c6fc77f6115084301075b9cf0f08d7cb53b7a68d14b80af613ac4536711460b",
+      "nativeSize": [
+        1305,
+        1206
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          347,
+          83,
+          959,
+          1140
+        ],
+        "uniformScale": 0.27950089126559713,
+        "outputSize": [
+          512,
+          421
+        ],
+        "placedSize": [
+          171,
+          295
+        ],
+        "offset": [
+          170,
+          31
+        ],
+        "targetBox": [
+          293,
+          0,
+          294,
+          615
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/map-panel-middle.png",
+      "runtimeSha256": "6914e280ec92c8f2fab3bd9e3983dc4d81fa9de0a96a86fa3e321cc1aeb061c1",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 623488
+    },
+    {
+      "id": "map-panel-right",
+      "prop": "map",
+      "part": "panel-right",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\map-panel-right.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the right teal folded map panel, its cream island, orange pin and orange route fragment. Remove other panels and compass; complete lower edge hidden behind compass. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-map-panel-right",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+            "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-0295d36e-e8fc-4819-96dc-49b32df98024.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-right.png",
+      "nativeSha256": "6e7da367305d466bc842306e09d80acf2bde425de2987732fc40b76c7778b75f",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "status": "rejected",
+      "rejectionReason": "Repair the missing lower-left crescent: this map panel must have a COMPLETE straight/diagonal lower edge, not a circular compass-shaped cutout. Keep existing panel, pin, islands and colors unchanged. The compass is a separate sprite. No extra objects.",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1134222
+    },
+    {
+      "id": "map-compass",
+      "prop": "map",
+      "part": "compass",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\map-compass.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete orange rim compass, cream face, navy/orange needle and teal ticks; preserve original circle; remove map and complete any hidden rim. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-map-compass",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+            "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-9bbbabeb-ac29-406c-86d0-6ab7c7e4dddd.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-compass.png",
+      "nativeSha256": "1d3bdca2a01f478f722f713208843c8764ee9a25711aeae9b0a2667307362aca",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          243,
+          64,
+          1059,
+          1111
+        ],
+        "uniformScale": 0.18838239124772077,
+        "outputSize": [
+          512,
+          421
+        ],
+        "placedSize": [
+          154,
+          197
+        ],
+        "offset": [
+          322,
+          224
+        ],
+        "targetBox": [
+          510,
+          385,
+          350,
+          339
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/map-compass.png",
+      "runtimeSha256": "afb2ac9b727ae1cc9c477422cc913119f2e7443807c8c7f9cc4c5742ec666b47",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 638673
+    },
+    {
+      "id": "globe-stand",
+      "prop": "globe",
+      "part": "stand",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\globe-stand.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the yellow globe stand, axis/yellow upper and lower caps, curved meridian and foot, complete behind the missing Earth. Remove all teal water and cream land. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-globe-stand",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+            "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e8f3986c-5ffc-41c5-9dfd-de0a0ff68466.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-stand.png",
+      "nativeSha256": "bf5d3747e67039eb66ef87196aab1b6ba46c2bac4de5f00eac14f476454b47f7",
+      "nativeSize": [
+        1066,
+        1475
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          183,
+          5,
+          1013,
+          1435
+        ],
+        "uniformScale": 0.35804195804195804,
+        "outputSize": [
+          370,
+          512
+        ],
+        "placedSize": [
+          297,
+          512
+        ],
+        "offset": [
+          66,
+          0
+        ],
+        "targetBox": [
+          110,
+          0,
+          584,
+          960
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/globe-stand.png",
+      "runtimeSha256": "cf3b53224c70a18bb6f9c96fe2dc90a0b57dba4a27cd2f201dffa26514dc0427",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 365124
+    },
+    {
+      "id": "globe-earth",
+      "prop": "globe",
+      "part": "earth",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\globe-earth.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the round teal Earth disc and cream continents, preserving original geography/silhouette. Remove all yellow stand and caps. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-globe-earth",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+            "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-8a7f759a-d59b-4b7e-9495-f95f7ec66dfc.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-earth.png",
+      "nativeSha256": "3973d85425d0528927e574d0d12aef591336d79d13915a351ceb8ab3ec7860ad",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "status": "rejected",
+      "rejectionReason": "Repair the pale/transparent blotch near the bottom of the Earth. All ocean pixels must be SOLID teal with no holes or pale spot. Preserve this exact round outline and every continent. No stand or yellow pixels.",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 1100170
+    },
+    {
+      "id": "globe-smear",
+      "prop": "globe",
+      "part": "smear",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\globe-smear.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: A short curved teal-and-cream rotational smear crescent that matches this Earth palette, no globe or stand. Solid filled shapes, no translucency or blur. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-globe-smear",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+            "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-41f710f1-4c5d-4122-a62a-2fa72f65287a.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-smear.png",
+      "nativeSha256": "ffdf7c01e7a7aed5ad521f7e927994454b0192e0817a8a73df54aecdef358e06",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          192,
+          252,
+          1350,
+          840
+        ],
+        "uniformScale": 0.19047619047619047,
+        "outputSize": [
+          370,
+          512
+        ],
+        "placedSize": [
+          221,
+          112
+        ],
+        "offset": [
+          56,
+          283
+        ],
+        "targetBox": [
+          0,
+          530,
+          625,
+          210
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/globe-smear.png",
+      "runtimeSha256": "63d7052e3a4c6b6796259e7516358a0e42434a023271846c4391e4a15caa0d5a",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 993971
+    },
+    {
+      "id": "keys-ring",
+      "prop": "keys",
+      "part": "ring",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\keys-ring.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the complete magenta key ring, complete the hidden lower right arc. Remove navy key. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-keys-ring",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\personal.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\personal.png",
+            "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-e7426f28-2a3f-4c15-9b85-aaf9eb499b90.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\keys-ring.png",
+      "nativeSha256": "eeb6a37fede9ee9e6a4e6a09e58342228f72adae6ec2aaf0add1f00325489106",
+      "nativeSize": [
+        1280,
+        1229
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          165,
+          150,
+          1101,
+          1083
+        ],
+        "uniformScale": 0.28217044186625934,
+        "outputSize": [
+          492,
+          512
+        ],
+        "placedSize": [
+          264,
+          263
+        ],
+        "offset": [
+          2,
+          4
+        ],
+        "targetBox": [
+          3,
+          2,
+          407,
+          413
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/keys-ring.png",
+      "runtimeSha256": "e7b54462a22ff5f0a277fdafd46446d83cf39703af61efcaa34e0b722192e640",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 406152
+    },
+    {
+      "id": "keys-key",
+      "prop": "keys",
+      "part": "key",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\keys-key.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: Only the navy key with round bow and cut teeth, remove magenta ring and complete all hidden contours. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-keys-key",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\personal.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\personal.png",
+            "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cdbde6b6-e6c2-434c-a9b6-080cdf2efc94.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\keys-key.png",
+      "nativeSha256": "4e66d8146f850fccbc27620c62b73caf937e524ea1f65313a77238f4388291d7",
+      "nativeSize": [
+        1280,
+        1229
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          153,
+          97,
+          1127,
+          1109
+        ],
+        "uniformScale": 0.37062975598270687,
+        "outputSize": [
+          492,
+          512
+        ],
+        "placedSize": [
+          361,
+          375
+        ],
+        "offset": [
+          121,
+          136
+        ],
+        "targetBox": [
+          171,
+          209,
+          586,
+          578
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/keys-key.png",
+      "runtimeSha256": "c3a5494e73e39a7ba4c8f11512783a1110e28b30971042e384a164066391a424",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 511705
+    },
+    {
+      "id": "postbox-letter",
+      "prop": "postbox",
+      "part": "letter",
+      "brief": "Horizons\\App\\docs\\prop-motion-v1\\postbox-letter.json",
+      "prompt": "Use case: precise-object-edit. Separate animation sprite for Horizons. Inputs 1 R01 brand, 2 R02 cast/style, 3 R07 objects/style are reference sheets only; input 4 is the exact accepted prop to decompose. Generate ONE isolated requested component in ONE image, not a sheet or alternative poses. Match the original flat filled shapes, palette, proportions and viewing angle exactly. Do not redesign. Full clean contours, solid interiors, transparent background with generous clear margin. No outline, shadow, glow, gradients, text labels, ground, scenery or unrelated objects. Component: One loose cream envelope matching the cream envelope symbol in this mailbox, with teal closed flap line, horizontally oriented. No mailbox, no pole, no red roof. Center this isolated part at large scale. Other components must be absent.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "prop-motion-v1-postbox-letter",
+        "input_count": 4,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\postbox.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\postbox.png",
+            "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-28a0f7ed-fa81-49a5-8742-9a2495bb3436.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\postbox-letter.png",
+      "nativeSha256": "6192e734994684c44fbeb2800e00954100118038c8b267ffc462898c5133a3b6",
+      "nativeSize": [
+        1536,
+        1024
+      ],
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          208,
+          167,
+          1328,
+          863
+        ],
+        "uniformScale": 0.16709359605911328,
+        "outputSize": [
+          392,
+          512
+        ],
+        "placedSize": [
+          187,
+          116
+        ],
+        "offset": [
+          102,
+          23
+        ],
+        "targetBox": [
+          145,
+          30,
+          265,
+          170
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/postbox-letter.png",
+      "runtimeSha256": "431673e8af6936713d3a0143f17a827a164d70aa8370d1e5c12b06416f3f77af",
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1209585
+    },
+    {
+      "id": "map-panel-right-v2",
+      "prop": "map",
+      "part": "panel-right",
+      "replaces": "map-panel-right",
+      "prompt": "Use case: precise-object-edit. Inputs 1/2/3 mandatory brand/cast/objects references. Input 4 original complete prop is identity reference. Input 5 is the EXACT SPRITE TO REPAIR. Repair the missing lower-left crescent: this map panel must have a COMPLETE straight/diagonal lower edge, not a circular compass-shaped cutout. Keep existing panel, pin, islands and colors unchanged. The compass is a separate sprite. No extra objects. Keep true transparent background only OUTSIDE the component. No shadow, glow, blur, gradients, labels or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "map-panel-right-repair-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-right.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+            "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-right.png",
+            "sha256": "6e7da367305d466bc842306e09d80acf2bde425de2987732fc40b76c7778b75f"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-cc3e84e8-d172-4b41-a942-4e097d477604.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\map-panel-right-v2.png",
+      "nativeSha256": "ca772bc067ee31f71421bdaacd02aad9041ec5040ef536b3517762550f4d894d",
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          211,
+          113,
+          855,
+          1399
+        ],
+        "uniformScale": 0.2647092038396386,
+        "outputSize": [
+          512,
+          421
+        ],
+        "placedSize": [
+          170,
+          340
+        ],
+        "offset": [
+          342,
+          9
+        ],
+        "targetBox": [
+          587,
+          0,
+          293,
+          615
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/map-panel-right.png",
+      "runtimeSha256": "0fc5408d4a7f0da3f02ec9e471aeeebc2469dbc81108940c9936e2b205473e35",
+      "nativeSize": [
+        1024,
+        1536
+      ],
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        254
+      ],
+      "nativeBytes": 1085508
+    },
+    {
+      "id": "globe-earth-v2",
+      "prop": "globe",
+      "part": "earth",
+      "replaces": "globe-earth",
+      "prompt": "Use case: precise-object-edit. Inputs 1/2/3 mandatory brand/cast/objects references. Input 4 original complete prop is identity reference. Input 5 is the EXACT SPRITE TO REPAIR. Repair the pale/transparent blotch near the bottom of the Earth. All ocean pixels must be SOLID teal with no holes or pale spot. Preserve this exact round outline and every continent. No stand or yellow pixels. Keep true transparent background only OUTSIDE the component. No shadow, glow, blur, gradients, labels or redesign.",
+      "preflight": {
+        "pass": true,
+        "asset_id": "globe-earth-repair-v2",
+        "input_count": 5,
+        "input_paths": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-earth.png"
+        ],
+        "inputs": [
+          {
+            "role": "reference",
+            "id": "R01",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+            "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+          },
+          {
+            "role": "reference",
+            "id": "R02",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+            "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+          },
+          {
+            "role": "reference",
+            "id": "R07",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+            "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+            "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+          },
+          {
+            "role": "edit target",
+            "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-earth.png",
+            "sha256": "3973d85425d0528927e574d0d12aef591336d79d13915a351ceb8ab3ec7860ad"
+          }
+        ],
+        "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+      },
+      "nativePath": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-c35f7881-bb6f-49e9-a7ac-b3a039b68bd1.png",
+      "nativeFile": "Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-earth-v2.png",
+      "nativeSha256": "21f8c3b481efaca7f3756f5227f74f2e3e5f7dd8972ac8b142eddda678e92126",
+      "status": "accepted",
+      "registration": {
+        "crop": [
+          141,
+          96,
+          1162,
+          1130
+        ],
+        "uniformScale": 0.3223726627981947,
+        "outputSize": [
+          370,
+          512
+        ],
+        "placedSize": [
+          329,
+          333
+        ],
+        "offset": [
+          2,
+          62
+        ],
+        "targetBox": [
+          0,
+          115,
+          625,
+          625
+        ]
+      },
+      "runtimeFile": "assets/art/prop-motion-v1/globe-earth.png",
+      "runtimeSha256": "3fd93d2b472bf27dcafaf4a42eb85deaa9ff9f4bbf9db460b68db74c530ec8a2",
+      "nativeSize": [
+        1312,
+        1199
+      ],
+      "nativeMode": "RGBA",
+      "nativeAlphaRange": [
+        0,
+        255
+      ],
+      "nativeBytes": 1060034
+    }
+  ],
+  "inputSnapshots": [
+    {
+      "file": "inputs/01-brand.png",
+      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+    },
+    {
+      "file": "inputs/02-cast.png",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "file": "inputs/07-scenes-vocabulary-ui.png",
+      "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+    }
+  ],
+  "review": {
+    "reconstruction": "review/reconstruction-board.png",
+    "rest": "review/rest.png",
+    "extremes": [
+      "review/extreme.png",
+      "review/settle.png"
+    ],
+    "normalSpeedVideo": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\prop-motion\\normal-speed-review.webm",
+    "reviewer": "Root agent using actual renderer, not an independent or human review",
+    "decision": "Very similar reconstructions accepted; not pixel-identical. Original native stills retained as reduced-motion/failure fallbacks.",
+    "limits": [
+      "Edge/Chromium only; no physical-phone or Safari/Firefox testing.",
+      "The globe rotates its illustrated Earth disc, not a simulated 3D spherical surface."
+    ],
+    "normalSpeedVideoSha256": "abe829df73f9d22c1a9a1bcd3ffabbd973e22f963b7fe7539b13b77062d11816"
+  }
+}

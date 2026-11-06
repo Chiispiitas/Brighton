@@ -1,0 +1,42 @@
+[
+  {
+    "prop": "cups",
+    "silhouetteIoU": 0.895,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "notebook",
+    "silhouetteIoU": 0.954,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "bag",
+    "silhouetteIoU": 0.929,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "chef",
+    "silhouetteIoU": 0.919,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "map",
+    "silhouetteIoU": 0.905,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "globe",
+    "silhouetteIoU": 0.906,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "keys",
+    "silhouetteIoU": 0.857,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  },
+  {
+    "prop": "postbox",
+    "silhouetteIoU": 1.0,
+    "limit": "Supporting geometry only; visual reconstruction review required."
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "asset_id": "globe-earth-repair-v2",
+  "kind": "scene",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-area-tiles-v1\\globe.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\prop-motion-v1\\native\\globe-earth.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Inputs 1/2/3 mandatory brand/cast/objects references. Input 4 original complete prop is identity reference. Input 5 is the EXACT SPRITE TO REPAIR. Repair the pale/transparent blotch near the bottom of the Earth. All ocean pixels must be SOLID teal with no holes or pale spot. Preserve this exact round outline and every continent. No stand or yellow pixels. Keep true transparent background only OUTSIDE the component. No shadow, glow, blur, gradients, labels or redesign."
+}

@@ -5,8 +5,7 @@ export function mountOverworld(region){
  if(!region)return()=>{};
  if(mounts.has(region))return mounts.get(region);
  const reduced=matchMedia('(prefers-reduced-motion: reduce)');
- const fauna=[...region.querySelectorAll('.world-fauna > img,.world-fauna > .bird-rig')].filter(img=>!img.closest('.avatar,.character'));
- let disposed=false,visible=false,animations=[];
+ let disposed=false;
 
  // Wheel input stays entirely native: vertical wheel scrolls the page.
  const input=new AbortController(),listen=(el,type,fn,options={})=>el.addEventListener(type,fn,{...options,signal:input.signal});
@@ -55,52 +54,5 @@ export function mountOverworld(region){
  listen(window,'pointerup',endDrag);listen(window,'pointercancel',endDrag);
  listen(region,'click',event=>{if(suppressClick){suppressClick=false;event.preventDefault();event.stopImmediatePropagation();}},{capture:true});
  listen(region,'dragstart',event=>event.preventDefault());
- function flightFrames(kind,index){
-  const frames=[],steps=48,amplitude=kind==='butterfly'?38:65;
-  for(let i=0;i<=steps;i++){
-   const t=i/steps,angle=t*Math.PI*2,wing=i%2?.76:1;
-   // Closed local flight loop; full-opacity PNGs provide all anatomy.
-   const x=(kind==='bird'?3:8)*Math.sin(angle),y=8*(Math.cos(angle)-1)+3*Math.sin(angle*2);
-   const rotate=(kind==='butterfly'?7:3)*Math.sin(angle)+(index%2?1:-1);
-   const scale=kind==='butterfly'?`scaleX(${wing})`:'';
-   frames.push({offset:t,transform:`translate(${x}px,${y}px) rotate(${rotate}deg) ${scale}`});
-  }
-  return frames;
- }
- const sync=()=>{
-  if(disposed)return;
-  if(reduced.matches){animations.forEach(a=>a.cancel());animations=[];return;}
-  if(!visible||document.hidden){animations.forEach(a=>a.pause());return;}
-  if(!animations.length){
-   const clock=document.timeline.currentTime;
-   animations=fauna.map((img,index)=>{
-    const kind=img.parentElement.dataset.fauna==='butterfly'?'butterfly':'bird';
-    const duration=(kind==='butterfly'?16000:20000)+(index%4)*1000;
-    const animation=img.animate(flightFrames(kind,index),{duration,iterations:Infinity,easing:'linear'});
-    // Explicit shared document clock plus a deterministic phase offset.
-    animation.startTime=clock-(index*1379)%duration;
-    if(kind==='bird')for(const wing of img.querySelectorAll('.bird-near,.bird-far')){
-     const flap=wing.animate([{transform:'rotate(-35deg)'},{transform:'rotate(55deg)',offset:.5},{transform:'rotate(-35deg)'}],{duration:620,iterations:Infinity,easing:'ease-in-out'});wing.__flight=flap;
-    }
-    return animation;
-   });
-  }
-  for(const wing of region.querySelectorAll('.bird-rig img'))if(wing.__flight&&!animations.includes(wing.__flight))animations.push(wing.__flight);
-  animations.forEach(a=>a.play());
- };
- const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting===true;sync();},{threshold:.01});
- observer.observe(region);
- reduced.addEventListener('change',sync);
- document.addEventListener('visibilitychange',sync);
-
- const dispose=()=>{
-  if(disposed)return;disposed=true;
-  observer.disconnect();animations.forEach(a=>a.cancel());animations=[];
-  stopPan();input.abort();drag=null;
-  reduced.removeEventListener('change',sync);
-  document.removeEventListener('visibilitychange',sync);
-  mounts.delete(region);
- };
- mounts.set(region,dispose);
- return dispose;
+ const dispose=()=>{disposed=true;stopPan();endDrag();input.abort();mounts.delete(region);};mounts.set(region,dispose);return dispose;
 }

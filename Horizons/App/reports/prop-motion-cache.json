@@ -1,0 +1,204 @@
+{
+  "pass": true,
+  "baseline": "022c76ac17e8c321bfcda41812a9af5fdfda6cb0",
+  "cache": "horizons-companion-prop-motion-v67",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "src/prop-motion.js?v=props1",
+      "status": 200,
+      "sha256": "8aca44d6acf9b05fe9519a9be2376277a65c3a484f15efb7675d2e31774cc857"
+    },
+    {
+      "path": "src/overworld-motion.js?v=props1",
+      "status": 200,
+      "sha256": "1a60878c73eecf0ccab3c1d3788c5f0100bcbf3d15e3a6984f22767659d393e6"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/rigs.json",
+      "status": 200,
+      "sha256": "91728b4545976cff54f256dc083334b9fa55be1a71e0dbc4dad424b7882a1edd"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-cup-red.png",
+      "status": 200,
+      "sha256": "c1826c5da0fa5a7afabb509f441485475c08058d64ccf8dd7fb74ea779f6c999"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-cup-yellow.png",
+      "status": 200,
+      "sha256": "b0ebcf05140e5b4016445023f7f081f775c75ca22df12d62ea602960a7a9c3ac"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/cups-coffee-splash.png",
+      "status": 200,
+      "sha256": "91852492098e099ca4b31ccc09d2ea1e266a8014e9730219aacd7281c9a0d653"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-pages.png",
+      "status": 200,
+      "sha256": "174c962f332bf1b821e0a4b1c862e7e5345f3f1885c35dcc4e971b3c99a4eb4a"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-writing.png",
+      "status": 200,
+      "sha256": "5fa3ba261210b8a490ee7bf476128dca139028c15de435047861c6f260caac87"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-cover.png",
+      "status": 200,
+      "sha256": "942ca11313927a3a766457f2d34f67ab4fa8155316a6dfe3be3c298b53d49658"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/notebook-pencil.png",
+      "status": 200,
+      "sha256": "8e137149e9c2aaa948091029df52e028968228c72cfef90e36f045999435f98e"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/bag-body.png",
+      "status": 200,
+      "sha256": "804a58dd06af892f821869e8e1f32187ccda8266f3f47db330abfbb6fb4a570d"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/bag-handle-clasp.png",
+      "status": 200,
+      "sha256": "a72031abc1a78c04109594db1adb29409c9ea5a13790d4d7c909e932af5358d2"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/chef-hat.png",
+      "status": 200,
+      "sha256": "882c7ed708124e058950c7a36562865f773ea18d4cf685a910128056937fb68f"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/chef-spoon.png",
+      "status": 200,
+      "sha256": "52307068518cd63875537629d2c8bac4f68ad3f67da2d8f4a40f86c900261c58"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-left.png",
+      "status": 200,
+      "sha256": "467fe2ae3e83267c4799dea25f1496a1830a45694c2febcc858e19eaccc958a1"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-middle.png",
+      "status": 200,
+      "sha256": "6914e280ec92c8f2fab3bd9e3983dc4d81fa9de0a96a86fa3e321cc1aeb061c1"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-panel-right.png",
+      "status": 200,
+      "sha256": "0fc5408d4a7f0da3f02ec9e471aeeebc2469dbc81108940c9936e2b205473e35"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/map-compass.png",
+      "status": 200,
+      "sha256": "afb2ac9b727ae1cc9c477422cc913119f2e7443807c8c7f9cc4c5742ec666b47"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/globe-stand.png",
+      "status": 200,
+      "sha256": "cf3b53224c70a18bb6f9c96fe2dc90a0b57dba4a27cd2f201dffa26514dc0427"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/globe-earth.png",
+      "status": 200,
+      "sha256": "3fd93d2b472bf27dcafaf4a42eb85deaa9ff9f4bbf9db460b68db74c530ec8a2"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/globe-smear.png",
+      "status": 200,
+      "sha256": "63d7052e3a4c6b6796259e7516358a0e42434a023271846c4391e4a15caa0d5a"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/keys-ring.png",
+      "status": 200,
+      "sha256": "e7b54462a22ff5f0a277fdafd46446d83cf39703af61efcaa34e0b722192e640"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/keys-key.png",
+      "status": 200,
+      "sha256": "c3a5494e73e39a7ba4c8f11512783a1110e28b30971042e384a164066391a424"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/postbox-body.png",
+      "status": 200,
+      "sha256": "92e828ce43ba1928cc8eb5ed917f9035a57e6330bba5f47c1ede32558ec8362b"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/postbox-letter.png",
+      "status": 200,
+      "sha256": "431673e8af6936713d3a0143f17a827a164d70aa8370d1e5c12b06416f3f77af"
+    },
+    {
+      "path": "src/path-progress.js?v=pathprogress1",
+      "status": 200,
+      "sha256": "5c0f01d4f0d9e84e5bd392d57f9dd8a57920a593cdd8f3f7edefe9f3d8aa7a3a"
+    },
+    {
+      "path": "src/app.js?v=props1",
+      "status": 200,
+      "sha256": "55ee3a3ac556e98eeb204782adb85b2ca252137719918dbf90c20f0fbea3237d"
+    },
+    {
+      "path": "styles/app.css?v=loading1",
+      "status": 200,
+      "sha256": "1204ca54e31029c9af30bb974ca3c068e6ad5b5b0eabd0db54e20ee8991aff78"
+    },
+    {
+      "path": "styles/overworld.css?v=props1",
+      "status": 200,
+      "sha256": "755076e331ae959e8872337f31631ac1009ea9af9b5decbfe4e6fb38b474b11f"
+    },
+    {
+      "path": "src/feedback-sound.js?v=areas1",
+      "status": 200,
+      "sha256": "6bddfd17c0d7386f126a0582cf7baf1fe7aad20dc2b304935dd4a594ec1cd9f7"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/cafe-cups.png",
+      "status": 200,
+      "sha256": "8c0afc64027ec53d25dd1be0dff56062bbe81df21543c4d92ccc466d9f7e13ad"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/work-bag.png",
+      "status": 200,
+      "sha256": "77c2da506a05424a3b324b751317fc61ab4ce4244e879cb826732d0079fb62d9"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/globe.png",
+      "status": 200,
+      "sha256": "38ab9a16d1d940587ff166479f45ce55069636151f89148f3af7fa88430423b5"
+    },
+    {
+      "path": "assets/art/lesson-area-tiles-v1/postbox.png",
+      "status": 200,
+      "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3"
+    },
+    {
+      "path": "assets/audio/feedback-v1/correct.mp3",
+      "status": 200,
+      "sha256": "993cd9258129338ef708f07277f62298597025d0c3daa57b5a399c838a8c7d9b",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/feedback-v1/wrong.mp3",
+      "status": 200,
+      "sha256": "7aabb61c1f1974bc27c12df194497fd17d0faeb96e85ea2fc108776d898db44e",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/milestones-v1/lesson-complete.mp3",
+      "status": 200,
+      "sha256": "3fe328b108de40266ca432780459705909f2cfa54ff52c2db9035c8c91aa6231",
+      "duration": 1.36
+    },
+    {
+      "path": "assets/audio/milestones-v1/island-mastered.mp3",
+      "status": 200,
+      "sha256": "32efcba28136dc824c621ec61cf2bdf1207925229790fb635046a36d7b9390b6",
+      "duration": 1.88
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v67. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+}

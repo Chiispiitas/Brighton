@@ -1,5 +1,32 @@
 # Horizons animation production audit
 
+## Path prop animation release — 5 November 2026
+
+The user authorized animation of the eight lesson props and removal of all path birds/butterflies. Character/avatar/Pico rigs are unchanged. Current renderer: `src/prop-motion.js`; registrations: `assets/art/prop-motion-v1/rigs.json`; exact sprite calls: [production record](prop-motion-v1/production-record.json); [reference manifest](prop-motion-v1/reference-manifest.json).
+
+| Prop | Separate parts and motion |
+| --- | --- |
+| Cups | Separate red/yellow cups clink; a separate native coffee splash appears briefly. |
+| Address notebook | Interior/pages, cover, pencil and writing mark. Pencil nudges the opening cover, writes on the exposed page and returns as the cover closes. |
+| Medical bag | Body and handle/clasp group; small body rock and lift/click of the upper group. |
+| Chef tools | Independent hat and spoon; hat tips and spoon swings. |
+| Map | Three panels fold about their creases; independent compass turns. |
+| Globe | Fixed stand, rotating illustrated Earth disc and a separate opaque smear contained within the Earth silhouette. This is an illustrated disc turn, not simulated 3D geography. |
+| Keys | Separate ring and key; local hinge/swing motion. |
+| Mailbox | Existing fixed native mailbox plus a separately generated letter, briefly spouted and received through a slot mask. |
+
+Production followed the existing audit: 21 distinct part briefs, each preflighted with actual R01/R02/R07 and accepted-target paths (four total inputs). Each moving component was generated in its own image/call. Two faulty outputs were rejected: a map panel retained a compass-shaped cutout; the Earth had a pale blotch. Their repair calls each attached the original prop plus exact faulty target and the three mandatory references (five total inputs). All 23 native outputs remain unchanged under `assets/art/prop-motion-v1/native/`; both rejections and their reasons remain in the production record. Frozen copies of the attached reference sheets are under `prop-motion-v1/inputs/`. No whole scenery or character anatomy was generated.
+
+`tools/prepare-prop-motion.py` performs only alpha-bounds cropping (a median-filtered threshold finds bounds), uniform scaling and translation onto shared transparent canvases. It does not redraw or recolor parts. Part placement was checked against the source props and adjusted where the chef tools were initially undersized. [Reconstruction board](prop-motion-v1/review/reconstruction-board.png) and `reconstruction-check.json` record the visual comparison and supporting silhouette IoU (0.857–1.000). The result is very similar, not pixel-identical; geometry scores are not visual acceptance by themselves. The original stills remain the static fallback.
+
+The production renderer decodes every required component before swapping in a rig. Each prop uses a shared clock, transform-only anticipation/action/overshoot/settling and a long neutral rest; different timings prevent synchronized motion. Special splash/ink/smear/letter sprites switch with `hidden`, always at opacity 1. No opacity keyframes, fades or crossfades. Notebook perspective scales with render size; globe smear stays inside an elliptical Earth mask and the letter is contained at the mailbox slot. Review frames: [rest](prop-motion-v1/review/rest.png), [extreme](prop-motion-v1/review/extreme.png), [settle](prop-motion-v1/review/settle.png). A normal-speed actual-renderer review is saved locally at `C:/Users/David/Documents/Codex/2026-11-05/prop-motion/normal-speed-review.webm` to avoid adding a video to the public site.
+
+Reduced motion displays the exact accepted original stills. Offscreen and hidden-document clocks pause; navigation disposes observers/listeners/animations/frame callbacks, including late-decode guards. Missing sprite/manifest/module retains the original prop. No new sounds or decorative labels. Wildlife markup, wildlife animation code and its precache entries are removed; original wildlife art stays in the asset library for provenance. Existing vertical wheel, horizontal hold/hover arrows, native swipe/drag, location ring, lesson locks, crowns and 308px trail are retained.
+
+Verification: `reports/prop-motion.json` covers all eight rigs, full opacity, missing-part fallback, reduced motion, hidden/offscreen pause and disposal. `reports/prop-motion-cache.json` covers actual previous-worker upgrade and exact offline runtime/part bytes. `reports/path-progress.json` retains path behavior checks. Review is by the root agent in Edge/Chromium; enlarged review grids use the same renderer. No independent/human review, physical-phone test or Safari/Firefox check is claimed. No real learner records or backend writes were used.
+
+For a new prop animation: pin the actual accepted prop and its baseline; list only moving parts and fixed supports; create one brief and preflight per separate sprite; attach the exact returned images; preserve raw output and inputs; reject/repair holes or missing contours through ImageGen; register uniformly and reconstruct before motion; inspect rest and true extremes at both review and actual slot sizes; add one full-opacity clock with pause/fallback/disposal; test lifecycle/cache; update this audit and the prop reference manifest with exact files, prompts, hashes and known limits. Do not replace sprite generation with code-drawn substitute shapes.
+
 Latest map cleanup: wildlife is reduced from8 to4 accents, one per lesson: birds in1A/1C and butterflies in1B/1D, locally hovering in the lower decoration lane. The two bird rigs retain rotation-only wing flaps; no new motion or anatomy was authored. All existing reduced-motion, visibility and disposal rules apply. Pico/avatar motion is unchanged. Older assertions requiring four bird rigs/eight wildlife elements are historical.
 
 Latest milestone audio: saved lesson rounds and newly earned island crowns have distinct native ElevenLabs cues. Audio is independent of reduced motion, shares remembered sound-effects mute, and adds no character motion. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md).
