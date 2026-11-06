@@ -1,10 +1,14 @@
 """Create Jessica word models using the existing private Windows credential."""
 from pathlib import Path
 from datetime import datetime,timezone
-import os,json,re,hashlib,subprocess,urllib.request,urllib.error,time,uuid,concurrent.futures,threading
+import argparse,os,json,re,hashlib,subprocess,urllib.request,urllib.error,time,uuid,concurrent.futures,threading
 import imageio_ffmpeg
 from num2words import num2words
 root=Path(__file__).resolve().parent.parent;folder=root/'assets/audio';plan=json.loads((folder/'plan.json').read_text(encoding='utf8'))
+parser=argparse.ArgumentParser();parser.add_argument('--only',nargs='+');options=parser.parse_args()
+if options.only:
+ assert set(options.only).issubset({r['id'] for r in plan}),'Unknown word audio ID'
+ plan=[r for r in plan if r['id'] in options.only]
 key=os.getenv('ELEVENLABS_API_KEY')
 if not key:
  saved=Path(os.environ['ELEVENLABS_CREDENTIAL_FILE']).read_text(encoding='utf-8-sig').strip()
@@ -55,5 +59,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=3)as pool:
   except Exception as e:failures.append({'id':row['id'],'error':str(e)[:200]})
   if (len(done)+len(failures))%10==0:print(json.dumps({'completed':len(done),'failed':len(failures),'total':len(plan)}),flush=True)
 manifest={'voice':'Jessica','voiceId':VOICE,'model':MODEL,'files':{r['id']:{'src':'assets/audio/'+r['file'],'durationSeconds':r['durationSeconds'],'sha256':r['sha256'],'transcriptVerified':r['transcriptExactNormalizedMatch'],'events':len(r['audioEvents'])}for r in done},'failures':failures,'reviewRequired':[{'id':r['id'],'expected':r['script'],'heard':r['transcript'],'events':r['audioEvents']}for r in done if not r['transcriptExactNormalizedMatch']or r['audioEvents']]}
+if options.only and (folder/'manifest.json').exists():
+ previousManifest=json.loads((folder/'manifest.json').read_text());previousManifest['files'].update(manifest['files']);manifest={**manifest,'files':previousManifest['files'],'failures':[r for r in previousManifest.get('failures',[]) if r['id'] not in options.only]+manifest['failures'],'reviewRequired':[r for r in previousManifest.get('reviewRequired',[]) if r['id'] not in options.only]+manifest['reviewRequired']}
 (folder/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps({'completed':len(done),'failures':failures,'reviewRequired':manifest['reviewRequired']},indent=2),flush=True)
 raise SystemExit(bool(failures))

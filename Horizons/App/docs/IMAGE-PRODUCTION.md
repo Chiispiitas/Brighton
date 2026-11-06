@@ -196,3 +196,10 @@ The current six-piece plant atlas used the built-in ImageGen tool, preflighted R
 Tool-specific input caps can be tighter than the seven-total project ceiling. For this call the tool rejected six paths (maximum five). Optional reference_bundles in check-image-brief.py losslessly stack complete selected reference sheets vertically; the preflight verifies their exact pixels against mandatory pinned sheets and returns the actual bundle path. This retains every mandatory reference plus target; it does not authorize dropping references or passing unverified collages.
 
 Rounder avatar runtime 4f195a56a07815b98e96693629360619d13c065d is live; hosted240-combination proof and432-file byte parity pass, including12 unchanged book recordings. Root inspected the hosted profile and complete costume matrices. See reports/round-avatar-release.json and docs/rounder-avatar/production-record.json. The original head atlas remains unchanged; the new silhouette version preserves saved IDs and costume/eye anchors. Cache round-v40.
+
+
+### Distinct occupation forms — 6 November 2026
+
+User chose to split only different English terms. Actor/actress now have actor/actriz cues, explicit male/female job-title questions, separate pictures and new actress audio. Existing waiter/waitress pair/art verified; gender-neutral English jobs unchanged. Newactress stableID appended to Jobs2, Learn/Practice/word bank and mastery; oldIDs/progress retained and no historical answers rewritten. One built-in ImageGen edit used actualR01/R02/R07+actor target after successfulfour-input preflight; rawsource, prompt, frozenreferences, derivative and QA in docs/occupation-variants-v1/README.md and production-record.json.
+
+43 content/backend checks, desktop/mobile actual-round/save, native MP3 transcript/decode and v98→v99 offline cache pass. Live reserved synthetic actress grading passes; no real learner QA. API d96e60ee-9751-4bde-8282-3fd377c64a94/source06527ddf44a9af0fca8d5a31082260144affaf11. Cacheoccupation-variants-v99/appoccupations1. Backend code synchronized, printed book and existing art/audio unchanged. Pages build not awaited.

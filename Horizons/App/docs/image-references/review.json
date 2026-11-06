@@ -52,5 +52,10 @@
     "pass": true,
     "reviewer": "Codex jo_assets subagent",
     "scope": "Rebuilt seven sheets after current Jo art-loader integration and prior viewport changes. Directly inspected R01/R02/R07, the mandatory Jo call references. Accepted native Jo baseline art remains static. Exact generation-time mandatory sheet PNGs and manifest frozen in docs/jo-motion-v1/inputs; all15 preflights pass with four or five actual images total."
+  },
+  "occupationVariantsReview": {
+    "date": "2026-11-06",
+    "reviewer": "Codex root",
+    "scope": "Mandatory R01/R02/R07 inspected before actual four-image actress edit. Generation-time bytes and manifest frozen under docs/occupation-variants-v1/inputs. Final pack rebuilt after new vocabulary manifest integration; unrelated wardrobe source unchanged."
   }
 }

@@ -1,0 +1,28 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "term": "waitress",
+      "cue": "mesera",
+      "image": "accepted existing native atlas"
+    },
+    {
+      "term": "waiter",
+      "cue": "mesero",
+      "image": "accepted existing native atlas"
+    },
+    {
+      "term": "actress",
+      "cue": "actriz",
+      "image": "http://127.0.0.1:8898/Horizons/App/assets/art/occupation-variants-v1/actress.png"
+    },
+    {
+      "term": "actor",
+      "cue": "actor",
+      "image": "accepted existing native atlas"
+    }
+  ],
+  "syntheticUiFixture": true,
+  "correctAnswersAndSave": true,
+  "errors": []
+}

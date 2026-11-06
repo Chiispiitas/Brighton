@@ -1,0 +1,13 @@
+# Distinct occupation forms
+
+The user explicitly selected only occupations with different English terms. Actor and actress are now independent Unit1B vocabulary items: actor / actor and actress / actriz. Explicit male/female job-title instructions distinguish the requested lexical form; this does not claim that actor cannot be used as a gender-neutral term in other contexts. Waiter/mesero and waitress/mesera were already separate and their correct native pictures remain. Doctor, teacher, nurse and other shared English titles are unchanged.
+
+The original actor ID/art is preserved. New v-jobs-actress has its own illustrationKey, Jobs2 chunk membership, Learn/Practice/matching/word-bank entry, example and Jessica pronunciation file. Existing progress is retained; actress is a new item to learn/master. Historical ambiguous answers are not rewritten.
+
+One built-in ImageGen edit attached the actual successful four-image preflight paths: R01/R02/R07 and the exact original actor crop. The raw output is retained at assets/art/occupation-variants-v1/actress-native.png; its registered derivative uses only alpha speck selection and cropping, without repainting RGB/anatomy. Exact prompt, native output path, hashes, crop and frozen generation-time reference sheets are in production-record.json and inputs/. Existing pictures were directly inspected in existing-pairs.png. No character animation is introduced.
+
+Pronunciation uses the established ElevenLabs Jessica eleven_v3 workflow. Only the new word was generated, decoded and transcribed back; transcript matches, with no detected audio events. tools/generate-word-audio.py --only now supports additive updates without regenerating or dropping existing recordings. No credentials are included.
+
+Validation: tests/occupation-variants.test.mjs and all40 backend application tests pass (43 total). Real app synthetic Jobs round covers actor, actress, waiter and waitress with correct cues, pictures, accepted answers and saved results at1440/390px (reports/occupation-variants-browser.json). v98→v99 cache upgrade verifies exact engine, translations, art/audio manifests, actress PNG and MP3 offline (reports/occupation-variants-cache.json). Live reserved synthetic QA confirms actress accepted and the other form rejected (backend/reports/live-occupation-variants.json); no real learner records used.
+
+API deployment d96e60ee-9751-4bde-8282-3fd377c64a94, source revision06527ddf44a9af0fca8d5a31082260144affaf11. Worker occupation-variants-v99, app occupations1. Printed book/backend collections/profile data unchanged. Pages build is not awaited unless requested.

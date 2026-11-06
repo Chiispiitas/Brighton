@@ -1,0 +1,51 @@
+{
+  "pass": true,
+  "baseline": "ead94a9f",
+  "cache": "horizons-companion-occupation-variants-v99",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "0ffdb85cbd80ea50ed00b61341432489b74436fe2fbb5b6d7e4fef9ef86f60c5"
+    },
+    {
+      "path": "src/app.js?v=occupations1",
+      "status": 200,
+      "sha256": "8ad0fe71116eb53d1fd986a8f701854b9c299d9bebae8923d7d29b0bccdceb8d"
+    },
+    {
+      "path": "content/engine.mjs",
+      "status": 200,
+      "sha256": "0059303e51d5981d640ee3d8c740b1240f8c46c74a78ea959d38dd2fdc180e71"
+    },
+    {
+      "path": "content/translations.mjs",
+      "status": 200,
+      "sha256": "a4d6ebb23cccc162f476b4154a7df0ef4ae5bd9fa79f797856fb49f35c3839fa"
+    },
+    {
+      "path": "assets/art/manifest.json?round=1",
+      "status": 200,
+      "sha256": "1b4806804712cd0701970cf2329cd0cdee6427b79f5d176dd7e31bd5518e686f"
+    },
+    {
+      "path": "assets/audio/manifest.json",
+      "status": 200,
+      "sha256": "5dfdb40bf89b06b3400a3ec5613d213d04dc6ee353a3a3200926faa360cb1d49"
+    },
+    {
+      "path": "assets/art/occupation-variants-v1/actress.png",
+      "status": 200,
+      "sha256": "9829e6cde7c38ba8fd74fc1a10b0c43d900f0b6e4ab0b0914c77333bd82fb14e"
+    },
+    {
+      "path": "assets/audio/v-jobs-actress.mp3",
+      "status": 200,
+      "sha256": "efc4982eebd3993ad40c8b5e5c995c3e7d6568cc3d6cbb6dd131c7a9c55c575d",
+      "duration": 1.04
+    }
+  ],
+  "errors": [],
+  "scope": "Previous v98 worker installed then upgraded to v99. Exact current HTML, app, vocabulary engine/translations, art/audio manifests, actress PNG and MP3 verified offline. Synthetic fixture; no learner data."
+}

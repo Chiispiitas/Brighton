@@ -1,0 +1,72 @@
+{
+  "tool": "built-in ImageGen",
+  "prompt": "Use case: precise-object-edit. Create ONE new female counterpart to the existing Horizons actor illustration. Image1 R01 brand, Image2 R02 recurring cast and Image3 R07 flat object/vocabulary style are mandatory visual references. Image4 is the exact accepted male actor, the edit target. Produce an adult ACTRESS, full body, retaining the same stage-performer theme, cheerful yellow theatre mask held in her left hand, open right-hand presenting gesture, cream long-sleeve blouse, burgundy waistcoat, navy trousers and dark flat shoes. Give her clearly feminine adult facial design and burgundy swept shoulder-length hair; remove the moustache. Keep the same friendly geometric facial style, warm peach skin, body proportions, restrained flat filled palette and uncluttered silhouette. Complete connected anatomy and supported mask grip, feet and hair fully inside canvas. One person only, generous transparent margins, genuine alpha background with fully opaque clothing/skin. No text, borders, outlines, shading, gradients, shadows, glow, scenery, extra people or sprite sheet. This is vocabulary art for actress, paired with the unchanged male actor.",
+  "referenced_image_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\occupation-variants-v1\\actor-original.png"
+  ],
+  "preflight": {
+    "pass": true,
+    "asset_id": "job-actress-v1",
+    "input_count": 4,
+    "input_paths": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\occupation-variants-v1\\actor-original.png"
+    ],
+    "inputs": [
+      {
+        "role": "reference",
+        "id": "R01",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+        "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      },
+      {
+        "role": "reference",
+        "id": "R02",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+        "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+      },
+      {
+        "role": "reference",
+        "id": "R07",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png",
+        "sha256": "181c032a095bc7cf56ea3b9874f7ff83d66c36210f60993acf93e290d14a568e"
+      },
+      {
+        "role": "edit target",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\occupation-variants-v1\\actor-original.png",
+        "sha256": "844a2f36e95714139ea1ee12117b401efa89047f7ae89d277f9bd4b18f38e945"
+      }
+    ],
+    "next_step": "Attach these exact paths to built-in ImageGen referenced_image_paths."
+  },
+  "nativeOutput": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-d5c28e29-7dba-48ba-ad15-01906c67d0cb.png",
+  "rawFile": "assets/art/occupation-variants-v1/actress-native.png",
+  "review": "Accepted feminine adult counterpart with the same theatre mask, costume palette and gesture; original actor/waiter/waitress retained.",
+  "nativeSha256": "116e96dfde9f30330e0a7ded9f903e9135c2f9c3d5cd5ce019e68080bf65e5db",
+  "runtimeFile": "assets/art/occupation-variants-v1/actress.png",
+  "derivative": "Mechanical alpha-neighbourhood speck selection and crop; no RGB repainting, anatomy, recoloring or warping. Raw native bytes retained.",
+  "crop": [
+    90,
+    87,
+    958,
+    1421
+  ],
+  "runtimeSize": [
+    868,
+    1334
+  ],
+  "audio": {
+    "wordId": "v-jobs-actress",
+    "recordFile": "assets/audio/generation-records.json",
+    "voice": "Jessica",
+    "model": "eleven_v3",
+    "file": "assets/audio/v-jobs-actress.mp3",
+    "transcriptVerified": true
+  },
+  "scope": "Only distinct English occupation forms: actor/actress and waiter/waitress. Existing actor/waiter/waitress art retained unchanged; no duplicates for gender-neutral English jobs."
+}

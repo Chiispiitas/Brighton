@@ -2838,5 +2838,25 @@
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
     "forbiddenTagPreflight": true
+  },
+  "v-jobs-actress": {
+    "id": "v-jobs-actress",
+    "term": "actress",
+    "file": "v-jobs-actress.mp3",
+    "script": "Actress.",
+    "scriptSha256": "ac162f15037e38ab60f23bc16adc9412d8f81861e7a8445b4f8ba7640361ae97",
+    "model": "eleven_v3",
+    "voice": "Jessica",
+    "voiceId": "cgSgspJ2msm6clMCkdW9",
+    "bytes": 17597,
+    "durationSeconds": 1.07,
+    "sha256": "efc4982eebd3993ad40c8b5e5c995c3e7d6568cc3d6cbb6dd131c7a9c55c575d",
+    "generatedAt": "2026-11-06T17:51:58.920522+00:00",
+    "requestId": "HIQ99Pzc299DzgHVXC3N",
+    "transcriptionRequestId": null,
+    "transcript": "Actress",
+    "transcriptExactNormalizedMatch": true,
+    "audioEvents": [],
+    "forbiddenTagPreflight": true
   }
 }

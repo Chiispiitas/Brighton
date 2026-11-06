@@ -76,7 +76,7 @@ function materialize(template,random,{typed=false}={}) {
  return {...template,choices:template.choices||[],accepted:template.accepted||[template.answer],wordIds:template.wordIds||[],retrieval:template.retrieval!==false};
 }
 function vocabularyCue(word){return word.kind==='letter'?spanishLetterName(word.letter):word.spanish;}
-function vocabularyPrompt(word){return word.kind==='letter'?`Write the capital letter.\n${vocabularyCue(word)}`:`Write in English.\n${word.spanish}`;}
+function vocabularyPrompt(word){if(word.occupationForm)return `Write the ${word.occupationForm} job title in English.\n${word.spanish}`;return word.kind==='letter'?`Write the capital letter.\n${vocabularyCue(word)}`:`Write in English.\n${word.spanish}`;}
 function distractorPool(word) {
   let pool=vocabulary.filter(other=>other.id!==word.id);
   if(word.kind==='country'||word.kind==='nationality'||word.kind==='letter'||word.kind==='number')pool=pool.filter(other=>other.kind===word.kind);

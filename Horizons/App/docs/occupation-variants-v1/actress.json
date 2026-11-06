@@ -1,0 +1,14 @@
+{
+  "asset_id": "job-actress-v1",
+  "kind": "vocabulary",
+  "intent": "edit",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [
+    "docs/occupation-variants-v1/actor-original.png"
+  ],
+  "prompt": "Use case: precise-object-edit. Create ONE new female counterpart to the existing Horizons actor illustration. Image1 R01 brand, Image2 R02 recurring cast and Image3 R07 flat object/vocabulary style are mandatory visual references. Image4 is the exact accepted male actor, the edit target. Produce an adult ACTRESS, full body, retaining the same stage-performer theme, cheerful yellow theatre mask held in her left hand, open right-hand presenting gesture, cream long-sleeve blouse, burgundy waistcoat, navy trousers and dark flat shoes. Give her clearly feminine adult facial design and burgundy swept shoulder-length hair; remove the moustache. Keep the same friendly geometric facial style, warm peach skin, body proportions, restrained flat filled palette and uncluttered silhouette. Complete connected anatomy and supported mask grip, feet and hair fully inside canvas. One person only, generous transparent margins, genuine alpha background with fully opaque clothing/skin. No text, borders, outlines, shading, gradients, shadows, glow, scenery, extra people or sprite sheet. This is vocabulary art for actress, paired with the unchanged male actor."
+}
