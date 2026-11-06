@@ -74,9 +74,10 @@ export function mountStreakCelebration(root,{elapsed=0,onTime=()=>{},onPresented
   revealAt(t);if(!ready)return;
   const a=spec.anchors,r=a.root,restGrip=a.rightGrip||[290,372],restTip=a.skewerTip||[445,395],restAngle=Math.atan2(restTip[1]-restGrip[1],restTip[0]-restGrip[0]);
   const anticipation=pulse(t,250,1150,1550),blast=pulse(t,1370,1760,2640),rebound=pulse(t,2450,2860,3520),settle=pulse(t,3300,3720,4400);
-  const jump=blast*46+rebound*15,lean=-blast*9+rebound*4-settle*1.4;
+  const idle=t>=DURATION?(1-Math.cos((t-DURATION)*Math.PI*2/4200)):0;
+  const jump=blast*46+rebound*15+idle*1.5,lean=-blast*9+rebound*4-settle*1.4+idle*.6;
   setTransform(nodes.character,`translate(${r[0]-blast*10} ${r[1]+anticipation*8-jump}) rotate(${lean})`);
-  const handLift=ease((t-1370)/650)*(1-ease((t-3750)/1450)),check=anticipation*4;
+  const handLift=ease((t-1370)/650)*(1-ease((t-3750)/1450)),check=anticipation*4+idle*.8;
   const mainGrip=[restGrip[0]+handLift*24,restGrip[1]-handLift*67+check],stickAngle=restAngle-rad(handLift*37)+rad(Math.sin(t*.008)*anticipation*2);
   const gripDistance=spec.secondaryGripDistance||Math.hypot(...sub(a.leftGrip||[232,374],restGrip));
   const leftGrip=add(mainGrip,rotate([-gripDistance,0],stickAngle));
@@ -91,11 +92,11 @@ export function mountStreakCelebration(root,{elapsed=0,onTime=()=>{},onPresented
    setTransform(limb.paw,`translate(${limb.foreLength} 0) rotate(${-deg(pawNativeAngle)})`);
    if(side==='right')setTransform(nodes.held,`translate(${pawVector[0]} ${pawVector[1]}) rotate(${deg(stickAngle-pawWorldAngle)})`);
   }
-  setTransform(nodes.head,`translate(${a.neck[0]-r[0]} ${a.neck[1]-r[1]+anticipation*2}) rotate(${blast*16-rebound*7+Math.sin(t*.005)*anticipation*2})`);
+  setTransform(nodes.head,`translate(${a.neck[0]-r[0]} ${a.neck[1]-r[1]+anticipation*2}) rotate(${blast*16-rebound*7+Math.sin(t*.005)*anticipation*2+idle*.8})`);
   setTransform(nodes.leftLeg,`translate(${a.leftHip[0]-r[0]} ${a.leftHip[1]-r[1]}) rotate(${-blast*20+rebound*7})`);
   setTransform(nodes.rightLeg,`translate(${a.rightHip[0]-r[0]} ${a.rightHip[1]-r[1]}) rotate(${blast*24-rebound*10})`);
   if(nodes.satchel)setTransform(nodes.satchel,`translate(${(a.satchel||r)[0]-r[0]} ${(a.satchel||r)[1]-r[1]+blast*3}) rotate(${blast*8-rebound*5})`);
-  const excited=t>=1680&&t<4350,blink=!excited&&((t>600&&t<750)||(t>6100&&t<6240));svgHidden(nodes.neutral,excited);svgHidden(nodes.excited,!excited);svgHidden(nodes.eyes,excited||blink);svgHidden(nodes.pupils,excited||blink);svgHidden(nodes.blink,excited||!blink);setTransform(nodes.pupils,`translate(${t<1300?1.5:0} ${t<1300?1:0})`);
+  const excited=t>=1680&&t<4350,blink=!excited&&((t>600&&t<750)||(t>6100&&t<6240)||(t>DURATION&&(t-DURATION)%4700>3100&&(t-DURATION)%4700<3240));svgHidden(nodes.neutral,excited);svgHidden(nodes.excited,!excited);svgHidden(nodes.eyes,excited||blink);svgHidden(nodes.pupils,excited||blink);svgHidden(nodes.blink,excited||!blink);setTransform(nodes.pupils,`translate(${t<1300?1.5:0} ${t<1300?1:0})`);
   const f=t<950?0:t<1450?1:2+(Math.floor(t/105)%2),base=spec.fireBase;
   nodes.fires.forEach((node,index)=>{svgHidden(node,index!==Math.min(f,nodes.fires.length-1));setTransform(node,`translate(${base[0]} ${base[1]}) rotate(${Math.sin(t*.017)*2.5}) scale(${.98+Math.sin(t*.019)*.045} ${t<1400?.3+ease(t/1400)*.5:1+Math.sin(t*.021)*.065})`);});
   const burstOn=t>=1370&&t<3450,burstAge=t-1370,burstFrame=burstAge<180?0:burstAge<470?1:burstAge<1000?2:3;
@@ -103,8 +104,8 @@ export function mountStreakCelebration(root,{elapsed=0,onTime=()=>{},onPresented
   const jolt=blast*Math.sin(t*.065)*2.2;setTransform(nodes.world,`translate(${jolt} ${Math.abs(jolt)*.5})`);
  };
  const cancel=()=>{cancelAnimationFrame(frame);frame=0;last=null;};
- const canPlay=()=>ready&&!disposed&&visible&&!document.hidden&&!reduced.matches&&clock<DURATION;
- const tick=now=>{if(!canPlay()){cancel();if(reduced.matches)sync();return;}if(last!==null)clock=Math.min(DURATION,clock+now-last);last=now;onTime(clock);draw(clock);present();if(clock<DURATION)frame=requestAnimationFrame(tick);else cancel();};
+ const canPlay=()=>ready&&!disposed&&visible&&!document.hidden&&!reduced.matches;
+ const tick=now=>{if(!canPlay()){cancel();if(reduced.matches)sync();return;}if(last!==null)clock=clock+now-last;last=now;onTime(clock);draw(clock);present();frame=requestAnimationFrame(tick);};
  const sync=()=>{if(disposed)return;cancel();if(failed||reduced.matches){clock=DURATION;onTime(clock);revealAt(clock);stage.hidden=true;if(still.src!==finalStill)still.src=finalStill;still.hidden=false;root.dataset.streakMotion=failed?'fallback':'reduced';present();return;}if(ready){stage.hidden=false;still.hidden=true;root.dataset.streakMotion='ready';draw(clock);present();if(canPlay())frame=requestAnimationFrame(tick);}};
  const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting!==false;sync();},{threshold:.05});observer.observe(root);reduced.addEventListener('change',sync);document.addEventListener('visibilitychange',sync);
  const controller={get elapsed(){return clock;},dispose(){if(disposed)return;disposed=true;cancel();clearTimeout(loadTimer);loadAbort.abort();observer.disconnect();reduced.removeEventListener('change',sync);document.removeEventListener('visibilitychange',sync);stage.replaceChildren();}};
