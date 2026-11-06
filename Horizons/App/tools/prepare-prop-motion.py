@@ -30,4 +30,3 @@ for i,(prop,(baseline,parts)) in enumerate(placements.items()):
  for col,im in enumerate([target,assembled]):
   im.thumbnail((260,205));xx=(i%2)*600+col*280+10;yy=(i//2)*250+30;board.paste(im,(xx,yy),im);draw.text((xx,yy-20),prop+(' baseline' if col==0 else ' reconstruction'),fill='black')
 (ROOT/'rigs.json').write_text(json.dumps(manifest,indent=2)+'\n');(DOC/'production-record.json').write_text(json.dumps(d,indent=2)+'\n');(DOC/'reconstruction-check.json').write_text(json.dumps(checks,indent=2)+'\n');board.save(OUT/'reconstruction-board.png');print(json.dumps(checks))
-
