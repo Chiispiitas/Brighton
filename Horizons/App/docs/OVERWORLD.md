@@ -1,5 +1,7 @@
 # Unit 1 overworld: New Friends Town
 
+Latest island palette: available unfinished and completed regular islands again share the accepted reddish pink surface with white activity/check icons; landmark badges match. Locked islands stay pale, mastery stays gold, and the selection ring remains removed. Mobile arrows remain below the full-width map. Cache red-islands-v71; overworld query redislands1.
+
 Latest mobile path correction: at widths up to 680px, the swipeable map spans the full available width and the left/right arrows occupy a separate bottom row. The arrows no longer reserve side gutters or obstruct islands. Desktop side arrows, hover/hold navigation, boundary hiding and native swipe/vertical wheel behavior are preserved. Cache mobile-arrows-v70; overworld stylesheet query mobilearrows1.
 
 Latest island simplification: removed the visible selected-island ring. Available unfinished and completed islands now share the same blue-gray surface, border and dark icon color, including landmark badges. Unfinished listening uses headphones, reading uses a book, and regular/grammar/game islands use a star; completion replaces these with a check. Locked islands remain pale with padlocks; full mastery retains gold/crowns. Selection is still tracked internally for Continue and return positioning. This supersedes earlier ring and pink-completion instructions. No new artwork or backend changes. Cache path-states-v69; app and overworld queries pathstates2.

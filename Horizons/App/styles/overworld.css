@@ -73,8 +73,8 @@
 .overworld-map .landmark-art{width:108px;height:112px}
 
 /* Available and completed islands share one palette; icons communicate progress. */
-.overworld-map .path-stop:not(.mastered):not(.locked) .stop-orb{background:#d5e0e5;color:#345466;border:2px solid #9bafb8}
-.overworld-map .path-stop:not(.mastered):not(:disabled):hover .stop-orb{background:#c7d7df}
+.overworld-map .path-stop:not(.mastered):not(.locked) .stop-orb{background:var(--pink);color:white;border:2px solid var(--pink)}
+.overworld-map .path-stop:not(.mastered):not(:disabled):hover .stop-orb{background:#942052}
 .overworld-map .path-stop.mastered .stop-orb{background:#ffd24a;color:#714808}
 .overworld-map .path-stop.locked{opacity:1;cursor:not-allowed}
 .overworld-map .path-stop.locked .stop-orb{background:#f1eee9;color:#969b9e}
@@ -90,7 +90,7 @@
 .prop-stage[hidden],.prop-still[hidden],.prop-stage>img[hidden]{display:none!important}
 
 /* Landmark status badges follow the same available/completed palette. */
-.overworld-map .path-stop:not(.mastered):not(.locked) .landmark-state{background:#d5e0e5;color:#345466}
+.overworld-map .path-stop:not(.mastered):not(.locked) .landmark-state{background:var(--pink);color:white}
 
 /* Mobile navigation has its own bottom row, leaving the full width for the trail. */
 @media(max-width:680px){
