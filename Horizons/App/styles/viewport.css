@@ -181,12 +181,14 @@
  .activity-page[data-question-type=text][data-listening=false]:not([data-answer-state=unanswered]):not(:has(.question-passage)) .question-content>.question-scene{grid-column:2;grid-row:1 / span 2;margin:0}
 }
 
+/* Keep both the native-size character and typed answer visible beside short mobile cues. */
 @media(max-width:760px){
  html.exercise-keyboard-open .activity-page:not(.game-page){height:var(--exercise-visible-height);min-height:0}
- /* Reserve the answer controls when the keyboard leaves a short visible area. */
- html.exercise-keyboard-open .activity-page[data-question-type=text] .question-content{min-height:0}
- html.exercise-keyboard-open .activity-page[data-question-type=text] .question-scene{display:none!important}
+ .activity-page[data-question-type=text][data-listening=false]:not(:has(.question-passage)) .question-content{display:grid;grid-template-columns:minmax(0,1fr) var(--cast-width);grid-template-rows:auto auto;align-content:start;align-items:center;gap:8px 12px}
+ .activity-page[data-question-type=text][data-listening=false]:not(:has(.question-passage)) .question-content>h1{grid-column:1;grid-row:1;align-self:end;font-size:22px}
+ .activity-page[data-question-type=text][data-listening=false]:not(:has(.question-passage)) .question-content>.question-cue{grid-column:1;grid-row:2;align-self:start;margin-top:0}
+ .activity-page[data-question-type=text][data-listening=false]:not(:has(.question-passage)) .question-content>.question-scene{grid-column:2;grid-row:1 / span 2;margin:0}
 }
-@media(max-width:760px) and (max-height:560px){
- .activity-page[data-question-type=text]:has(#typed-answer:focus) .question-scene{display:none!important}
-}
+/* Exercise panels retain touch/wheel scrolling for long content, without visible scrollbars. */
+html:has(.activity-page),body:has(.activity-page),.activity-page,.activity-page *{scrollbar-width:none}
+html:has(.activity-page)::-webkit-scrollbar,body:has(.activity-page)::-webkit-scrollbar,.activity-page::-webkit-scrollbar,.activity-page *::-webkit-scrollbar{display:none;width:0;height:0}

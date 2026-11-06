@@ -1,0 +1,571 @@
+{
+  "pass": true,
+  "scope": "Actual app renderer and synthetic backend store; resized mobile viewport simulates keyboard. No physical phone keyboard or learner data.",
+  "checks": [
+    {
+      "label": "typing",
+      "width": 320,
+      "height": 430,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 252
+      },
+      "input": {
+        "top": 260,
+        "bottom": 325
+      },
+      "button": {
+        "bottom": 406
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "typing",
+      "width": 390,
+      "height": 450,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 272
+      },
+      "input": {
+        "top": 280,
+        "bottom": 345
+      },
+      "button": {
+        "bottom": 426
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "typing",
+      "width": 430,
+      "height": 500,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 322
+      },
+      "input": {
+        "top": 330,
+        "bottom": 395
+      },
+      "button": {
+        "bottom": 476
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "typing",
+      "width": 390,
+      "height": 844,
+      "scene": {
+        "top": 81,
+        "bottom": 241,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 81,
+        "bottom": 666
+      },
+      "input": {
+        "top": 674,
+        "bottom": 739
+      },
+      "button": {
+        "bottom": 820
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "overlay-keyboard",
+      "keyboardClass": true,
+      "inputBottom": 325,
+      "sceneBottom": 241
+    },
+    {
+      "label": "wrong",
+      "width": 320,
+      "height": 640,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 320.203125
+      },
+      "input": {
+        "top": 328.203125,
+        "bottom": 393.203125
+      },
+      "button": {
+        "bottom": 615
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "width": 390,
+      "height": 740,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 420.203125
+      },
+      "input": {
+        "top": 428.203125,
+        "bottom": 493.203125
+      },
+      "button": {
+        "bottom": 715
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "width": 1440,
+      "height": 768,
+      "scene": {
+        "top": 169.15625,
+        "bottom": 409.15625,
+        "height": 240,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 500.3125
+      },
+      "input": {
+        "top": 508.3125,
+        "bottom": 576.3125
+      },
+      "button": {
+        "bottom": 701.65625
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "width": 1920,
+      "height": 1080,
+      "scene": {
+        "top": 325.15625,
+        "bottom": 565.15625,
+        "height": 240,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 812.3125
+      },
+      "input": {
+        "top": 820.3125,
+        "bottom": 888.3125
+      },
+      "button": {
+        "bottom": 1013.65625
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "correct",
+      "width": 320,
+      "height": 640,
+      "scene": {
+        "top": 68.40625,
+        "bottom": 228.40625,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 369.703125
+      },
+      "input": {
+        "top": 377.703125,
+        "bottom": 442.703125
+      },
+      "button": {
+        "bottom": 615
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "correct",
+      "width": 390,
+      "height": 740,
+      "scene": {
+        "top": 68,
+        "bottom": 228,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 469.703125
+      },
+      "input": {
+        "top": 477.703125,
+        "bottom": 542.703125
+      },
+      "button": {
+        "bottom": 715
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "correct",
+      "width": 1440,
+      "height": 768,
+      "scene": {
+        "top": 193.90625,
+        "bottom": 433.90625,
+        "height": 240,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 549.8125
+      },
+      "input": {
+        "top": 557.8125,
+        "bottom": 625.8125
+      },
+      "button": {
+        "bottom": 726.40625
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "width": 390,
+      "height": 640,
+      "scene": {
+        "top": 1853.625,
+        "bottom": 2013.625,
+        "height": 160,
+        "display": "flex"
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 369.703125
+      },
+      "input": {
+        "top": 377.703125,
+        "bottom": 442.703125
+      },
+      "button": {
+        "bottom": 615
+      },
+      "bars": [
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "question-content",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "sr-only",
+          "width": "none",
+          "webkit": "none"
+        },
+        {
+          "tag": "raster-fit",
+          "width": "none",
+          "webkit": "none"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
