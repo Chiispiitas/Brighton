@@ -1,0 +1,26 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "character": "mina",
+      "answered": 2,
+      "immediatePhase": "accent",
+      "entryTime": 8016.6,
+      "returnsToIdle": true,
+      "repeatedResultsRestart": true,
+      "reducedMotionStatic": true
+    },
+    {
+      "character": "alex",
+      "answered": 8,
+      "immediatePhase": "accent",
+      "entryTime": 8016.600000000002,
+      "returnsToIdle": true,
+      "repeatedResultsRestart": true,
+      "reducedMotionStatic": true
+    }
+  ],
+  "syntheticUiFixture": true,
+  "realLearnerRecordsUsed": false,
+  "errors": []
+}

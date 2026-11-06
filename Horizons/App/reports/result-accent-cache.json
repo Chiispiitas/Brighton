@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "baseline": "8dfa1965",
+  "cache": "horizons-companion-result-accent-v96",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "8297a1fa130a5d6203c2392de324c1b3e5910980d28aa07aeb829e83c4cea571"
+    },
+    {
+      "path": "src/app.js?v=resultaccent1",
+      "status": 200,
+      "sha256": "80c957b5d496bd7b0197d4eeb261e2e0b409ed1ff9a8061d55ddf8b38db9c262"
+    },
+    {
+      "path": "src/art.js?v=resultaccent1",
+      "status": 200,
+      "sha256": "683aed149d64aed0d23bed923ad9cf863fbce26dd345516f0285106f904c0526"
+    },
+    {
+      "path": "src/mina-motion.js?v=resultaccent1",
+      "status": 200,
+      "sha256": "1a4fcac142842bfd5c148062d86454a36e4a8767d77af51a93f2a0d58eba574b"
+    },
+    {
+      "path": "src/alex-motion.js?v=resultaccent1",
+      "status": 200,
+      "sha256": "8537971d8f6d2da20487d74394f964098aaae71510b7dcb9611dd57bb287342d"
+    }
+  ],
+  "errors": [],
+  "scope": "Previous v95 worker installed then upgraded to v96. Exact current HTML, app, artwork loader and both character animation modules verified offline. Unauthenticated start screen only; no learner records."
+}

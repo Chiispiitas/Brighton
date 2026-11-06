@@ -105,7 +105,7 @@ export function mountMina(slot){
   slot.dataset.minaMotion='ready';slot.dataset.anatomySource='generated-parts-mina-v1';
   if(!animations.length){
    const motion=tracks(pose),timing={duration:DURATION,iterations:Infinity,easing:'linear',fill:'both'};
-   const add=(node,frames)=>{const animation=node.animate(frames,timing);animation.pause();animation.currentTime=elapsedByPose.get(pose)||0;animations.push(animation);};
+   const add=(node,frames)=>{const animation=node.animate(frames,timing);animation.pause();animation.currentTime=slot.closest('.result-page')?IDLE:(elapsedByPose.get(pose)||0);animations.push(animation);};
    add(nodes.body,motion.body);add(nodes.head,motion.head);if(nodes.gesture)add(nodes.gesture,motion.gesture);
    add(nodes.root,motion.root);add(nodes.pupils,motion.gaze);add(nodes.face,motion.face);
   }
