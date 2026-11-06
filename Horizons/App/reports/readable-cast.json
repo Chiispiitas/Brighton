@@ -1,0 +1,2610 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 161.234375,
+        "bottom": 361.234375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 497
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 409
+      },
+      "control": {
+        "top": 517,
+        "bottom": 572
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 417,
+          "bottom": 485,
+          "left": 180.5,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 165.1875,
+        "bottom": 365.1875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 537
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 449
+      },
+      "control": {
+        "top": 557,
+        "bottom": 612
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 457,
+          "bottom": 525,
+          "left": 308.5,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 123.90625,
+        "h": 240,
+        "top": 177.828125,
+        "bottom": 417.828125
+      },
+      "body": {
+        "top": 74,
+        "bottom": 665
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 577
+      },
+      "control": {
+        "top": 685,
+        "bottom": 740
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 585,
+          "bottom": 653,
+          "left": 351.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 123.90625,
+        "h": 240,
+        "top": 184.84375,
+        "bottom": 424.84375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 977
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 889
+      },
+      "control": {
+        "top": 997,
+        "bottom": 1052
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 897,
+          "bottom": 965,
+          "left": 628.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 159.796875,
+        "bottom": 359.796875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 437
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 349
+      },
+      "control": {
+        "top": 457,
+        "bottom": 512
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 357,
+          "bottom": 425,
+          "left": 68.5,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 181.484375,
+        "bottom": 341.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 547
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 462
+      },
+      "control": {
+        "top": 567,
+        "bottom": 616
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 470,
+          "bottom": 535,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 64,
+          "bodyBottom": 547,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 555,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 181.484375,
+        "bottom": 341.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 647
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 562
+      },
+      "control": {
+        "top": 667,
+        "bottom": 716
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 570,
+          "bottom": 635,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 64,
+          "bodyBottom": 647,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 655,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "typed",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 156.140625,
+        "bottom": 316.140625
+      },
+      "body": {
+        "top": 72,
+        "bottom": 541
+      },
+      "clip": {
+        "top": 76,
+        "bottom": 453
+      },
+      "control": {
+        "top": 561,
+        "bottom": 616
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 461,
+          "bottom": 529,
+          "left": 48.5,
+          "right": 696.5,
+          "bodyTop": 72,
+          "bodyBottom": 541,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 549,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 191.671875,
+        "bottom": 391.671875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 420.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 400.3125
+      },
+      "control": {
+        "top": 478.65625,
+        "bottom": 533.65625
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 205.15625,
+          "bottom": 273.15625,
+          "left": 451.6875,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 420.3125,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 428.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 197.671875,
+        "bottom": 397.671875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 460.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 440.3125
+      },
+      "control": {
+        "top": 518.65625,
+        "bottom": 573.65625
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 225.15625,
+          "bottom": 293.15625,
+          "left": 579.6875,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 460.3125,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 468.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 123.90625,
+        "h": 240,
+        "top": 177.828125,
+        "bottom": 417.828125
+      },
+      "body": {
+        "top": 74,
+        "bottom": 588.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 500.3125
+      },
+      "control": {
+        "top": 646.65625,
+        "bottom": 701.65625
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 508.3125,
+          "bottom": 576.3125,
+          "left": 351.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 588.3125,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 596.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 123.90625,
+        "h": 240,
+        "top": 184.84375,
+        "bottom": 424.84375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 900.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 812.3125
+      },
+      "control": {
+        "top": 958.65625,
+        "bottom": 1013.65625
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 820.3125,
+          "bottom": 888.3125,
+          "left": 628.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 900.3125,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 908.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 103.25,
+        "h": 200,
+        "top": 188.796875,
+        "bottom": 388.796875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 360.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 340.3125
+      },
+      "control": {
+        "top": 418.65625,
+        "bottom": 473.65625
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 175.15625,
+          "bottom": 243.15625,
+          "left": 339.6875,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 360.3125,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 368.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 181.484375,
+        "bottom": 341.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 405.203125
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 320.203125
+      },
+      "control": {
+        "top": 566,
+        "bottom": 615
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 328.203125,
+          "bottom": 393.203125,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 64,
+          "bodyBottom": 405.203125,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 413.203125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 181.484375,
+        "bottom": 341.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 505.203125
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 420.203125
+      },
+      "control": {
+        "top": 666,
+        "bottom": 715
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 428.203125,
+          "bottom": 493.203125,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 64,
+          "bodyBottom": 505.203125,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 513.203125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "wrong",
+      "kind": "cast",
+      "art": {
+        "w": 82.59375,
+        "h": 160,
+        "top": 156.140625,
+        "bottom": 316.140625
+      },
+      "body": {
+        "top": 72,
+        "bottom": 464.3125
+      },
+      "clip": {
+        "top": 76,
+        "bottom": 376.3125
+      },
+      "control": {
+        "top": 522.65625,
+        "bottom": 577.65625
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 384.3125,
+          "bottom": 452.3125,
+          "left": 48.5,
+          "right": 696.5,
+          "bodyTop": 72,
+          "bodyBottom": 464.3125,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 472.3125,
+          "ring": 4
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 144.890625,
+        "bottom": 344.890625
+      },
+      "body": {
+        "top": 74,
+        "bottom": 497
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 371
+      },
+      "control": {
+        "top": 517,
+        "bottom": 572
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 379,
+          "bottom": 427,
+          "left": 180.5,
+          "right": 499.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 379,
+          "bottom": 427,
+          "left": 509.5,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 437,
+          "bottom": 485,
+          "left": 180.5,
+          "right": 499.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 437,
+          "bottom": 485,
+          "left": 509.5,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 165.84375,
+        "bottom": 365.84375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 537
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 411
+      },
+      "control": {
+        "top": 557,
+        "bottom": 612
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 419,
+          "bottom": 467,
+          "left": 308.5,
+          "right": 627.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 419,
+          "bottom": 467,
+          "left": 637.5,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 477,
+          "bottom": 525,
+          "left": 308.5,
+          "right": 627.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 477,
+          "bottom": 525,
+          "left": 637.5,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 163.109375,
+        "h": 240,
+        "top": 212.921875,
+        "bottom": 452.921875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 665
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 539
+      },
+      "control": {
+        "top": 685,
+        "bottom": 740
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 547,
+          "bottom": 595,
+          "left": 351.5,
+          "right": 670.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 547,
+          "bottom": 595,
+          "left": 680.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 605,
+          "bottom": 653,
+          "left": 351.5,
+          "right": 670.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 605,
+          "bottom": 653,
+          "left": 680.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 163.109375,
+        "h": 240,
+        "top": 370.890625,
+        "bottom": 610.890625
+      },
+      "body": {
+        "top": 74,
+        "bottom": 977
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 851
+      },
+      "control": {
+        "top": 997,
+        "bottom": 1052
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 859,
+          "bottom": 907,
+          "left": 628.5,
+          "right": 947.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 859,
+          "bottom": 907,
+          "left": 957.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 917,
+          "bottom": 965,
+          "left": 628.5,
+          "right": 947.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 917,
+          "bottom": 965,
+          "left": 957.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 114.90625,
+        "bottom": 314.90625
+      },
+      "body": {
+        "top": 74,
+        "bottom": 437
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 311
+      },
+      "control": {
+        "top": 457,
+        "bottom": 512
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 319,
+          "bottom": 367,
+          "left": 68.5,
+          "right": 387.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 319,
+          "bottom": 367,
+          "left": 397.5,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 377,
+          "bottom": 425,
+          "left": 68.5,
+          "right": 387.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 377,
+          "bottom": 425,
+          "left": 397.5,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 96.203125,
+        "bottom": 256.203125
+      },
+      "body": {
+        "top": 60,
+        "bottom": 468
+      },
+      "clip": {
+        "top": 64,
+        "bottom": 250
+      },
+      "control": {
+        "top": 567,
+        "bottom": 616
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 258,
+          "bottom": 303,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 468,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 309,
+          "bottom": 354,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 468,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 360,
+          "bottom": 405,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 468,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 411,
+          "bottom": 456,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 468,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 476,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 146.1875,
+        "bottom": 306.1875
+      },
+      "body": {
+        "top": 60,
+        "bottom": 568
+      },
+      "clip": {
+        "top": 64,
+        "bottom": 350
+      },
+      "control": {
+        "top": 667,
+        "bottom": 716
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 358,
+          "bottom": 403,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 568,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 576,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 409,
+          "bottom": 454,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 568,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 576,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 460,
+          "bottom": 505,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 568,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 576,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 511,
+          "bottom": 556,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 568,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 576,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "listening",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 149.1875,
+        "bottom": 309.1875
+      },
+      "body": {
+        "top": 68,
+        "bottom": 468
+      },
+      "clip": {
+        "top": 72,
+        "bottom": 348
+      },
+      "control": {
+        "top": 561,
+        "bottom": 616
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "answer-option   ",
+          "top": 356,
+          "bottom": 403,
+          "left": 48.5,
+          "right": 369.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 356,
+          "bottom": 403,
+          "left": 375.5,
+          "right": 696.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 409,
+          "bottom": 456,
+          "left": 48.5,
+          "right": 369.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 409,
+          "bottom": 456,
+          "left": 375.5,
+          "right": 696.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 184.546875,
+        "bottom": 384.546875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 420.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 400.3125
+      },
+      "control": {
+        "top": 478.65625,
+        "bottom": 533.65625
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 186.15625,
+          "bottom": 234.15625,
+          "left": 451.6875,
+          "right": 635.09375,
+          "bodyTop": 74,
+          "bodyBottom": 420.3125,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 428.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 186.15625,
+          "bottom": 234.15625,
+          "left": 645.09375,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 420.3125,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 428.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 244.15625,
+          "bottom": 292.15625,
+          "left": 451.6875,
+          "right": 635.09375,
+          "bodyTop": 74,
+          "bodyBottom": 420.3125,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 428.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 244.15625,
+          "bottom": 292.15625,
+          "left": 645.09375,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 420.3125,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 428.3125,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 205.5,
+        "bottom": 405.5
+      },
+      "body": {
+        "top": 74,
+        "bottom": 460.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 440.3125
+      },
+      "control": {
+        "top": 518.65625,
+        "bottom": 573.65625
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 206.15625,
+          "bottom": 254.15625,
+          "left": 579.6875,
+          "right": 763.09375,
+          "bodyTop": 74,
+          "bodyBottom": 460.3125,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 468.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 206.15625,
+          "bottom": 254.15625,
+          "left": 773.09375,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 460.3125,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 468.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 264.15625,
+          "bottom": 312.15625,
+          "left": 579.6875,
+          "right": 763.09375,
+          "bodyTop": 74,
+          "bodyBottom": 460.3125,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 468.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 264.15625,
+          "bottom": 312.15625,
+          "left": 773.09375,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 460.3125,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 468.3125,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 163.109375,
+        "h": 240,
+        "top": 174.578125,
+        "bottom": 414.578125
+      },
+      "body": {
+        "top": 74,
+        "bottom": 588.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 462.3125
+      },
+      "control": {
+        "top": 646.65625,
+        "bottom": 701.65625
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 470.3125,
+          "bottom": 518.3125,
+          "left": 351.5,
+          "right": 670.5,
+          "bodyTop": 74,
+          "bodyBottom": 588.3125,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 596.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 470.3125,
+          "bottom": 518.3125,
+          "left": 680.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 588.3125,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 596.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 528.3125,
+          "bottom": 576.3125,
+          "left": 351.5,
+          "right": 670.5,
+          "bodyTop": 74,
+          "bodyBottom": 588.3125,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 596.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 528.3125,
+          "bottom": 576.3125,
+          "left": 680.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 588.3125,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 596.3125,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 163.109375,
+        "h": 240,
+        "top": 332.546875,
+        "bottom": 572.546875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 900.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 774.3125
+      },
+      "control": {
+        "top": 958.65625,
+        "bottom": 1013.65625
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 782.3125,
+          "bottom": 830.3125,
+          "left": 628.5,
+          "right": 947.5,
+          "bodyTop": 74,
+          "bodyBottom": 900.3125,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 908.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 782.3125,
+          "bottom": 830.3125,
+          "left": 957.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 900.3125,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 908.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 840.3125,
+          "bottom": 888.3125,
+          "left": 628.5,
+          "right": 947.5,
+          "bodyTop": 74,
+          "bodyBottom": 900.3125,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 908.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 840.3125,
+          "bottom": 888.3125,
+          "left": 957.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 900.3125,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 908.3125,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 135.921875,
+        "h": 200,
+        "top": 154.5625,
+        "bottom": 354.5625
+      },
+      "body": {
+        "top": 74,
+        "bottom": 360.3125
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 340.3125
+      },
+      "control": {
+        "top": 418.65625,
+        "bottom": 473.65625
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 156.15625,
+          "bottom": 204.15625,
+          "left": 339.6875,
+          "right": 523.09375,
+          "bodyTop": 74,
+          "bodyBottom": 360.3125,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 368.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 156.15625,
+          "bottom": 204.15625,
+          "left": 533.09375,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 360.3125,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 368.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 214.15625,
+          "bottom": 262.15625,
+          "left": 339.6875,
+          "right": 523.09375,
+          "bodyTop": 74,
+          "bodyBottom": 360.3125,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 368.3125,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 214.15625,
+          "bottom": 262.15625,
+          "left": 533.09375,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 360.3125,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 368.3125,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 69.75,
+        "bottom": 229.75
+      },
+      "body": {
+        "top": 60,
+        "bottom": 415.109375
+      },
+      "clip": {
+        "top": 64,
+        "bottom": 197.109375
+      },
+      "control": {
+        "top": 566,
+        "bottom": 615
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 205.109375,
+          "bottom": 250.109375,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 415.109375,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 423.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 256.109375,
+          "bottom": 301.109375,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 415.109375,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 423.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 307.109375,
+          "bottom": 352.109375,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 415.109375,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 423.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 358.109375,
+          "bottom": 403.109375,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 60,
+          "bodyBottom": 415.109375,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 423.109375,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 119.75,
+        "bottom": 279.75
+      },
+      "body": {
+        "top": 60,
+        "bottom": 515.109375
+      },
+      "clip": {
+        "top": 64,
+        "bottom": 297.109375
+      },
+      "control": {
+        "top": 666,
+        "bottom": 715
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 305.109375,
+          "bottom": 350.109375,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 515.109375,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 523.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 356.109375,
+          "bottom": 401.109375,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 515.109375,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 523.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 407.109375,
+          "bottom": 452.109375,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 515.109375,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 523.109375,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 458.109375,
+          "bottom": 503.109375,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 60,
+          "bodyBottom": 515.109375,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 523.109375,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "choice-feedback",
+      "kind": "cast",
+      "art": {
+        "w": 108.734375,
+        "h": 160,
+        "top": 149.1875,
+        "bottom": 309.1875
+      },
+      "body": {
+        "top": 68,
+        "bottom": 468
+      },
+      "clip": {
+        "top": 72,
+        "bottom": 348
+      },
+      "control": {
+        "top": 526.546875,
+        "bottom": 581.546875
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "answer-option selected  incorrect",
+          "top": 356,
+          "bottom": 403,
+          "left": 48.5,
+          "right": 369.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 356,
+          "bottom": 403,
+          "left": 375.5,
+          "right": 696.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option   ",
+          "top": 409,
+          "bottom": 456,
+          "left": 48.5,
+          "right": 369.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        },
+        {
+          "part": "answer-option  correct ",
+          "top": 409,
+          "bottom": 456,
+          "left": 375.5,
+          "right": 696.5,
+          "bodyTop": 68,
+          "bodyBottom": 468,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 476,
+          "ring": 0
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 215.09375,
+        "h": 235.765625,
+        "top": 161.2265625,
+        "bottom": 396.9921875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 497
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 409
+      },
+      "control": {
+        "top": 517,
+        "bottom": 572
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 417,
+          "bottom": 485,
+          "left": 180.5,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 247.984375,
+        "h": 271.8125,
+        "top": 165.1875,
+        "bottom": 437
+      },
+      "body": {
+        "top": 74,
+        "bottom": 537
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 449
+      },
+      "control": {
+        "top": 557,
+        "bottom": 612
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 457,
+          "bottom": 525,
+          "left": 308.5,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 291.953125,
+        "h": 320,
+        "top": 177.828125,
+        "bottom": 497.828125
+      },
+      "body": {
+        "top": 74,
+        "bottom": 665
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 577
+      },
+      "control": {
+        "top": 685,
+        "bottom": 740
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 585,
+          "bottom": 653,
+          "left": 351.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 291.953125,
+        "h": 320,
+        "top": 184.84375,
+        "bottom": 504.84375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 977
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 889
+      },
+      "control": {
+        "top": 997,
+        "bottom": 1052
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 897,
+          "bottom": 965,
+          "left": 628.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 161.671875,
+        "h": 177.203125,
+        "top": 159.7890625,
+        "bottom": 336.9921875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 437
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 349
+      },
+      "control": {
+        "top": 457,
+        "bottom": 512
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 357,
+          "bottom": 425,
+          "left": 68.5,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 164.21875,
+        "h": 180,
+        "top": 181.484375,
+        "bottom": 361.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 547
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 462
+      },
+      "control": {
+        "top": 567,
+        "bottom": 616
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 470,
+          "bottom": 535,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 64,
+          "bodyBottom": 547,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 555,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 164.21875,
+        "h": 180,
+        "top": 181.484375,
+        "bottom": 361.484375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 647
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 562
+      },
+      "control": {
+        "top": 667,
+        "bottom": 716
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 570,
+          "bottom": 635,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 64,
+          "bodyBottom": 647,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 655,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "picture",
+      "kind": "topic",
+      "art": {
+        "w": 164.21875,
+        "h": 180,
+        "top": 156.140625,
+        "bottom": 336.140625
+      },
+      "body": {
+        "top": 72,
+        "bottom": 541
+      },
+      "clip": {
+        "top": 76,
+        "bottom": 453
+      },
+      "control": {
+        "top": 561,
+        "bottom": 616
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 461,
+          "bottom": 529,
+          "left": 48.5,
+          "right": 696.5,
+          "bodyTop": 72,
+          "bodyBottom": 541,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 549,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 136.84375,
+        "h": 150,
+        "top": 916.234375,
+        "bottom": 1066.234375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 497
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 409
+      },
+      "control": {
+        "top": 517,
+        "bottom": 572
+      },
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1009,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 417,
+          "bottom": 485,
+          "left": 180.5,
+          "right": 828.5,
+          "bodyTop": 74,
+          "bodyBottom": 497,
+          "bodyLeft": 174.5,
+          "bodyRight": 834.5,
+          "dockTop": 505,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 136.84375,
+        "h": 150,
+        "top": 920.1875,
+        "bottom": 1070.1875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 537
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 449
+      },
+      "control": {
+        "top": 557,
+        "bottom": 612
+      },
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1265,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 457,
+          "bottom": 525,
+          "left": 308.5,
+          "right": 956.5,
+          "bodyTop": 74,
+          "bodyBottom": 537,
+          "bodyLeft": 302.5,
+          "bodyRight": 962.5,
+          "dockTop": 545,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 136.84375,
+        "h": 150,
+        "top": 932.828125,
+        "bottom": 1082.828125
+      },
+      "body": {
+        "top": 74,
+        "bottom": 665
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 577
+      },
+      "control": {
+        "top": 685,
+        "bottom": 740
+      },
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1351,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 585,
+          "bottom": 653,
+          "left": 351.5,
+          "right": 999.5,
+          "bodyTop": 74,
+          "bodyBottom": 665,
+          "bodyLeft": 345.5,
+          "bodyRight": 1005.5,
+          "dockTop": 673,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 136.84375,
+        "h": 150,
+        "top": 939.84375,
+        "bottom": 1089.84375
+      },
+      "body": {
+        "top": 74,
+        "bottom": 977
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 889
+      },
+      "control": {
+        "top": 997,
+        "bottom": 1052
+      },
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1905,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 897,
+          "bottom": 965,
+          "left": 628.5,
+          "right": 1276.5,
+          "bodyTop": 74,
+          "bodyBottom": 977,
+          "bodyLeft": 622.5,
+          "bodyRight": 1282.5,
+          "dockTop": 985,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 136.84375,
+        "h": 150,
+        "top": 914.796875,
+        "bottom": 1064.796875
+      },
+      "body": {
+        "top": 74,
+        "bottom": 437
+      },
+      "clip": {
+        "top": 78,
+        "bottom": 349
+      },
+      "control": {
+        "top": 457,
+        "bottom": 512
+      },
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 785,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 357,
+          "bottom": 425,
+          "left": 68.5,
+          "right": 716.5,
+          "bodyTop": 74,
+          "bodyBottom": 437,
+          "bodyLeft": 62.5,
+          "bodyRight": 722.5,
+          "dockTop": 445,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 102.171875,
+        "h": 112,
+        "top": 1444.828125,
+        "bottom": 1556.828125
+      },
+      "body": {
+        "top": 64,
+        "bottom": 547
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 462
+      },
+      "control": {
+        "top": 567,
+        "bottom": 616
+      },
+      "width": 320,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 320,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 470,
+          "bottom": 535,
+          "left": 23,
+          "right": 297,
+          "bodyTop": 64,
+          "bodyBottom": 547,
+          "bodyLeft": 17,
+          "bodyRight": 303,
+          "dockTop": 555,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 102.171875,
+        "h": 112,
+        "top": 1204.359375,
+        "bottom": 1316.359375
+      },
+      "body": {
+        "top": 64,
+        "bottom": 647
+      },
+      "clip": {
+        "top": 68,
+        "bottom": 562
+      },
+      "control": {
+        "top": 667,
+        "bottom": 716
+      },
+      "width": 390,
+      "height": 740,
+      "pageHeight": 740,
+      "pageWidth": 375,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 570,
+          "bottom": 635,
+          "left": 26,
+          "right": 349,
+          "bodyTop": 64,
+          "bodyBottom": 647,
+          "bodyLeft": 20,
+          "bodyRight": 355,
+          "dockTop": 655,
+          "ring": 7
+        }
+      ]
+    },
+    {
+      "label": "long-content",
+      "kind": "topic",
+      "art": {
+        "w": 102.171875,
+        "h": 112,
+        "top": 808.203125,
+        "bottom": 920.203125
+      },
+      "body": {
+        "top": 72,
+        "bottom": 541
+      },
+      "clip": {
+        "top": 76,
+        "bottom": 453
+      },
+      "control": {
+        "top": 561,
+        "bottom": 616
+      },
+      "width": 760,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 745,
+      "widgetBounds": [
+        {
+          "part": "typed-answer",
+          "top": 461,
+          "bottom": 529,
+          "left": 48.5,
+          "right": 696.5,
+          "bodyTop": 72,
+          "bodyBottom": 541,
+          "bodyLeft": 42.5,
+          "bodyRight": 702.5,
+          "dockTop": 549,
+          "ring": 7
+        }
+      ]
+    }
+  ],
+  "nativeBoundsMeasured": true,
+  "castMinimumDesktop240": true,
+  "shortDesktop200": true,
+  "castMinimumMobile160": true,
+  "topicImageLarger": true,
+  "answerDockVisible": true,
+  "answerFieldsAndOptionsFullyVisible": true,
+  "focusRingsClear": true,
+  "noPageOverflow": true,
+  "longContentInnerScroll": true,
+  "sourceArtworkUnchanged": true,
+  "scope": "Actual production renderer with synthetic session/store. Native raster-fit bounds are measured, not just scene boxes. Physical keyboard/browser chrome not tested.",
+  "errors": []
+}

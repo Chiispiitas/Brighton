@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "baseline": "0b385ed8",
+  "cache": "horizons-companion-readable-cast-v94",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "de53962a1802d778a77f4073214b9a0a58044a7d164842f227d537aea88694cf"
+    },
+    {
+      "path": "styles/viewport.css?v=castlarge2",
+      "status": 200,
+      "sha256": "194a2943c31ee31ba3e38b654a7d7ecdf8c10d3489c570279353315e6ee84ebf"
+    }
+  ],
+  "errors": [],
+  "scope": "Previous v93 worker installed then upgraded to v94. Exact current index and enlarged stable cast CSS verified through offline fetch. Unauthenticated start screen only; no learner records."
+}
