@@ -390,3 +390,38 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 
 /* The shared loading indicator is independent of legacy character-motion rules. */
 @media(prefers-reduced-motion:no-preference){.boot-screen>.boot-dot{animation:boot-hop .8s ease-in-out infinite!important}}
+
+/* Mobile video review: fit entry, map and short choice exercises to the viewport. */
+@media(max-width:760px){
+ .welcome{padding:18px 23px 20px;min-height:100dvh}
+ .welcome-layout{display:grid;grid-template-columns:1fr;gap:8px;min-height:0;padding-top:12px}
+ .welcome-story{height:clamp(96px,calc(100dvh - 410px),200px);min-height:0;padding:0;overflow:hidden}
+ .welcome-companions{height:100%;bottom:0}
+ .welcome-town{height:65%}
+ .redeem-panel{padding:8px 0 0}
+ .redeem-panel h2{font-size:26px}
+ .code-form{margin-top:14px}
+ .demo-codes{margin-top:10px}
+ .main-content:has(>.learning-path){height:calc(100dvh - 183px);min-height:400px;display:flex;flex-direction:column;padding-bottom:0}
+ .learn-hero.compact-hero{flex:none;min-height:92px;height:92px;padding:12px 20px;border-radius:22px}
+ .compact-hero .hero-copy{width:75%}
+ .compact-hero .hero-copy .eyebrow{display:none}
+ .compact-hero .hero-copy h1{font-size:24px;line-height:1.12}
+ .compact-hero .hero-continue{display:none}
+ .compact-hero .hero-pico{width:65px;height:82px;right:14px;bottom:5px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)){min-height:100dvh;padding-top:12px;padding-bottom:12px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .activity-header{margin-bottom:12px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .question-body h1{font-size:22px;line-height:1.2}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .question-cue{font-size:18px;margin-top:8px;line-height:1.3}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .question-scene{height:48px;margin:8px 0}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .question-scene>.question-character{height:100%;max-height:100%}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-options{gap:6px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-option{min-height:44px;padding:10px 12px;font-size:13px;line-height:1.3}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-dock{min-height:152px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-footer{min-height:64px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-footer:is(.feedback-correct,.feedback-gentle){padding:12px;gap:8px;margin:0}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-feedback-icon{width:32px;height:32px}
+ .activity-page:has(.answer-options):not(:has(.question-passage)) .answer-feedback .answer-feedback-copy>b{font-size:18px}
+}
+
+@media(max-width:760px){.activity-page[data-answer-state=incorrect]:has(.answer-options):not(:has(.question-passage)) .question-scene{display:none}}
