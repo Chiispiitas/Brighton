@@ -464,3 +464,6 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 
 .practice-lesson:nth-child(n+3){border-top:1px solid #e9e4dd;padding-top:18px}
 @media(max-width:600px){.practice-lesson:nth-child(n+2){border-top:1px solid #e9e4dd;padding-top:18px}}
+
+/* Preserve authored colours and native artwork under browser automatic darkening. */
+:root{color-scheme:only light}
