@@ -1,6 +1,6 @@
 // Mina-only native ImageGen part rigs. Original complete poses remain the fallback.
 const controllers=new WeakMap(),elapsedByPose=new Map();
-const DURATION=19000,IDLE=8000;
+const DURATION=11000,IDLE=8000;
 const asset=path=>new URL('../'+path,import.meta.url).href;
 let manifestPromise;
 const loadManifest=()=>manifestPromise??=fetch(new URL('../assets/art/mina-motion-v1/rigs.json?v=2',import.meta.url),{cache:'no-cache'})
@@ -12,7 +12,7 @@ function tracks(pose){
  const rest='translate(0px,0px) rotate(0deg) scale(1,1)';
  const idle=(values,action)=>{
   const frames=[];
-  for(let loop=0;loop<2;loop++)for(const [time,transform]of values){
+  for(let loop=0;loop<1;loop++)for(const [time,transform]of values){
    const offset=(loop*IDLE+time)/DURATION;
    // Avoid duplicate offsets at the idle-loop seam.
    if(frames.at(-1)?.offset===offset)continue;
@@ -21,19 +21,19 @@ function tracks(pose){
   for(const [time,transform]of action)frames.push({offset:time/DURATION,transform,easing:'cubic-bezier(.34,1.3,.64,1)'});
   return frames;
  };
- const body=idle([[0,rest],[2000,'scale(1.001,1.003)'],[4000,rest],[6000,'scale(1.001,1.002)'],[8000,rest]],[[19000,rest]]);
+ const body=idle([[0,rest],[2000,'scale(1.001,1.003)'],[4000,rest],[6000,'scale(1.001,1.002)'],[8000,rest]],[[11000,rest]]);
  const headAction=pose==='read'||pose==='map'
-  ?[[16250,'translateY(-1px) rotate(-1.5deg)'],[16600,'translateY(3px) rotate(4deg)'],[17100,'translateY(2px) rotate(3.5deg)'],[18100,'translateY(2px) rotate(3.5deg)'],[18600,'translateY(-1px) rotate(-.5deg)'],[19000,rest]]
-  :[[16250,'translateY(1px) rotate(-1.5deg)'],[16600,'translateY(-2px) rotate(3deg)'],[17200,'translateY(-1px) rotate(-2deg)'],[17800,'rotate(1.5deg)'],[18500,'rotate(-.3deg)'],[19000,rest]];
+  ?[[8250,'translateY(-1px) rotate(-1.5deg)'],[8600,'translateY(3px) rotate(4deg)'],[9100,'translateY(2px) rotate(3.5deg)'],[10100,'translateY(2px) rotate(3.5deg)'],[10600,'translateY(-1px) rotate(-.5deg)'],[11000,rest]]
+  :[[8250,'translateY(1px) rotate(-1.5deg)'],[8600,'translateY(-2px) rotate(3deg)'],[9200,'translateY(-1px) rotate(-2deg)'],[9800,'rotate(1.5deg)'],[10500,'rotate(-.3deg)'],[11000,rest]];
  const head=idle([[0,rest],[2000,'translateY(-1px) rotate(1deg)'],[2600,'translateY(-1px) rotate(1deg)'],[4000,rest],[6000,'translateY(-.6px) rotate(-.8deg)'],[6500,'translateY(-.6px) rotate(-.8deg)'],[8000,rest]],headAction);
  const gestureAction=pose==='read'||pose==='map'
-  ?[[16250,'translateY(3px) rotate(1deg)'],[16600,'translateY(-20px) rotate(-3deg)'],[17100,'translateY(-18px) rotate(-2deg)'],[18100,'translateY(-18px) rotate(-2deg)'],[18600,'translateY(-3px) rotate(.5deg)'],[19000,rest]]
-  :[[16250,'rotate(2deg)'],[16600,'rotate(-10deg)'],[16950,'rotate(8deg)'],[17300,'rotate(-9deg)'],[17600,'rotate(6deg)'],[17900,'rotate(-5deg)'],[18500,'rotate(1deg)'],[19000,rest]];
+  ?[[8250,'translateY(3px) rotate(1deg)'],[8600,'translateY(-20px) rotate(-3deg)'],[9100,'translateY(-18px) rotate(-2deg)'],[10100,'translateY(-18px) rotate(-2deg)'],[10600,'translateY(-3px) rotate(.5deg)'],[11000,rest]]
+  :[[8250,'rotate(2deg)'],[8600,'rotate(-10deg)'],[8950,'rotate(8deg)'],[9300,'rotate(-9deg)'],[9600,'rotate(6deg)'],[9900,'rotate(-5deg)'],[10500,'rotate(1deg)'],[11000,rest]];
  const gesture=idle([[0,rest],[2000,'translateY(-.6px) rotate(-.4deg)'],[4000,rest],[6000,'translateY(-.4px) rotate(.3deg)'],[8000,rest]],gestureAction);
- const gaze=idle([[0,'translate(0px,0px)'],[1800,'translate(1.2px,.3px)'],[2700,'translate(1.2px,.3px)'],[4100,'translate(0px,0px)'],[5800,'translate(-.9px,.2px)'],[6500,'translate(-.9px,.2px)'],[8000,'translate(0px,0px)']],[[19000,'translate(0px,0px)']]);
+ const gaze=idle([[0,'translate(0px,0px)'],[1800,'translate(1.2px,.3px)'],[2700,'translate(1.2px,.3px)'],[4100,'translate(0px,0px)'],[5800,'translate(-.9px,.2px)'],[6500,'translate(-.9px,.2px)'],[8000,'translate(0px,0px)']],[[11000,'translate(0px,0px)']]);
  const face=gaze.map(frame=>({...frame,transform:frame.transform.replace(/(-?[\d.]+)px/g,(_,n)=>Number(n)*.25+'px')}));
  const root=pose==='skip'
-  ?[[0,rest],[16000,rest],[16250,'translateY(2px) scale(1.02,.98)'],[16600,'translateY(-14px) scale(.99,1.02)'],[17000,'translateY(-10px) scale(1,1)'],[17400,'translateY(1px) scale(1.02,.98)'],[17750,rest],[19000,rest]].map(([time,transform])=>({offset:time/DURATION,transform,easing:'cubic-bezier(.34,1.3,.64,1)'}))
+  ?[[0,rest],[8000,rest],[8250,'translateY(2px) scale(1.02,.98)'],[8600,'translateY(-14px) scale(.99,1.02)'],[9000,'translateY(-10px) scale(1,1)'],[9400,'translateY(1px) scale(1.02,.98)'],[9750,rest],[11000,rest]].map(([time,transform])=>({offset:time/DURATION,transform,easing:'cubic-bezier(.34,1.3,.64,1)'}))
   :[{offset:0,transform:rest},{offset:1,transform:rest}];
  return{body,head,gesture,gaze,face,root};
 }
@@ -51,10 +51,10 @@ export function mountMina(slot){
  const renderFace=()=>{
   if(!ready||disposed)return;
   const time=phaseOf(animations[0]?.currentTime??elapsedByPose.get(pose));
-  const local=time%IDLE,accent=time>=16000;
+  const local=time%IDLE,accent=time>=8000;
   const blink=!accent&&((local>=2350&&local<2490)||(local>=6100&&local<6240));
-  const focus=(pose==='read'||pose==='map')&&time>=16600&&time<18300;
-  const joy=!(pose==='read'||pose==='map')&&time>=(pose==='skip'?16500:16600)&&time<(pose==='skip'?17900:18200);
+  const focus=(pose==='read'||pose==='map')&&time>=8600&&time<10300;
+  const joy=!(pose==='read'||pose==='map')&&time>=(pose==='skip'?8500:8600)&&time<(pose==='skip'?9900:10200);
   setHidden(nodes.focus,!focus);setHidden(nodes.joy,!joy);setHidden(nodes.neutral,focus||joy);
   setHidden(nodes.openEyes,blink);setHidden(nodes.blink,!blink);
   const expression=focus?'focus':joy?'joy':blink?'blink':'neutral';

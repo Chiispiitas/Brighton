@@ -6,8 +6,8 @@
     "map",
     "skip"
   ],
-  "duration": 19000,
-  "idleLoops": 2,
+  "duration": 11000,
+  "idleLoops": 1,
   "idleLoopMs": 8000,
   "accentMs": 3000,
   "allTracksSharedClock": true,
@@ -15,51 +15,35 @@
   "playback": [
     {
       "value": "idle:blink",
-      "time": 2363.599999964237
+      "time": 2363.5
     },
     {
       "value": "idle:neutral",
-      "time": 2496.899999976158
+      "time": 2496.599999964237
     },
     {
       "value": "idle:blink",
-      "time": 6113.599999964237
+      "time": 6113.299999952316
     },
     {
       "value": "idle:neutral",
-      "time": 6247
-    },
-    {
-      "value": "idle:blink",
-      "time": 10363.5
-    },
-    {
-      "value": "idle:neutral",
-      "time": 10496.800000011921
-    },
-    {
-      "value": "idle:blink",
-      "time": 14110.5
-    },
-    {
-      "value": "idle:neutral",
-      "time": 14246.699999988079
+      "time": 6246.399999976158
     },
     {
       "value": "accent:neutral",
-      "time": 16005.099999964237
+      "time": 8004.899999976158
     },
     {
       "value": "accent:joy",
-      "time": 16613.30000001192
+      "time": 8605.299999952316
     },
     {
       "value": "accent:neutral",
-      "time": 18213.5
+      "time": 10213.099999964237
     },
     {
       "value": "idle:neutral",
-      "time": 19013.599999964237
+      "time": 11013.099999964237
     }
   ],
   "noOpacityKeyframes": true,
@@ -68,7 +52,7 @@
   "headAndPupilMasks": true,
   "discreteBlinkSprites": true,
   "perPosePhaseAcrossAnswerRender": true,
-  "remountPhase": 12524.999999999998,
+  "remountPhase": 4524.9,
   "idempotentMount": true,
   "reducedOriginalStills": true,
   "offscreenPause": true,
@@ -450,7 +434,7 @@
     },
     {
       "label": "before-accent",
-      "time": 15900,
+      "time": 7900,
       "poses": [
         {
           "pose": "step",
@@ -524,7 +508,7 @@
     },
     {
       "label": "accent",
-      "time": 17300,
+      "time": 9300,
       "poses": [
         {
           "pose": "step",
@@ -598,7 +582,7 @@
     },
     {
       "label": "settle",
-      "time": 18700,
+      "time": 10700,
       "poses": [
         {
           "pose": "step",
@@ -672,7 +656,7 @@
     },
     {
       "label": "restored",
-      "time": 19000,
+      "time": 11000,
       "poses": [
         {
           "pose": "step",

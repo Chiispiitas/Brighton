@@ -7,15 +7,15 @@
   },
   "schedule": {
     "idleLoopMs": 8000,
-    "idleLoopsBeforeAccent": 2,
+    "idleLoopsBeforeAccent": 1,
     "accentMs": 3000,
-    "cycleMs": 19000
+    "cycleMs": 11000
   },
   "activeRuntime": [
     {
       "file": "src/mina-motion.js",
-      "sha256": "2ce50960666e4070b3280ab2ad9f45eca564d2dc1b74420da377e03b40cc069c",
-      "bytes": 10891
+      "sha256": "fa46a304cadca1551ec6ca8706199a4c4c3290c8df4d2a2c2d072bc0fb94d9f3",
+      "bytes": 10864
     },
     {
       "file": "styles/mina-motion.css",
@@ -24,8 +24,8 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "e8175bbf8c6e5e5f65e94726efb8b19ba778ae201122a52aafd8d4af76b54464",
-      "bytes": 8539
+      "sha256": "49047a01381e61c0bf7b227f4bbdd75a86cd60875456a14ebd3983d499ba4a8e",
+      "bytes": 8540
     },
     {
       "file": "tools/prepare-mina-motion.py",
