@@ -464,7 +464,14 @@ window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(h
 window.addEventListener('resize',layoutPaths);
 window.addEventListener('offline',()=>notify('You are offline.'));
 window.addEventListener('online',()=>notify('Connected.','success'));
-document.addEventListener('keydown',event=>{if(event.key==='Enter'&&state.active?.kind==='quiz'&&!['TEXTAREA','BUTTON'].includes(document.activeElement?.tagName)){event.preventDefault();state.active.checked?nextQuestion():gradeCurrent();}});
+document.addEventListener('keydown',event=>{
+ const active=state.active,target=event.target;
+ if(active?.kind==='quiz'&&!active.checked&&!event.defaultPrevented&&!event.repeat&&!event.ctrlKey&&!event.altKey&&!event.metaKey&&!event.shiftKey&&/^[1-9]$/.test(event.key)&&!document.querySelector('dialog[open]')&&!target?.closest?.('input,textarea,select,[contenteditable]:not([contenteditable="false"])')){
+  const option=document.querySelectorAll('.activity-page .answer-options [data-choice]')[Number(event.key)-1];
+  if(option&&!option.disabled){event.preventDefault();option.click();return;}
+ }
+ if(event.key==='Enter'&&active?.kind==='quiz'&&!['TEXTAREA','BUTTON'].includes(document.activeElement?.tagName)){event.preventDefault();active.checked?nextQuestion():gradeCurrent();}
+});
 
 async function boot() {
   await Promise.all([loadArt(),fetch('./assets/audio/manifest.json').then(response=>response.ok?response.json():{}).then(data=>{state.audioManifest=data.files || {};}).catch(()=>{})]);
