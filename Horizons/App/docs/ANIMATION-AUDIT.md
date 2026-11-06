@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest Mina shoulder repair (6 November 2026): the skip pose arm previously met the body with insufficient overlap and separated during its wave. Shifted the existing native arm registration left18 logical pixels and moved its rotation pivot to the shoulder (205,180). No new artwork or face changes. Native-alpha overlap passes every angle from -12 to +12 degrees (minimum235 opaque pixels); full runtime cycle, mobile placement, masks, fallback and original head fidelity pass. See reports/mina-shoulder.json and mina-motion.json. Cache mina-shoulder-v87; app/art/Mina/style queries shoulder1; rig v=2. Fixed exercise sizes remain.
+
 Latest stable exercise character size (6 November 2026): cast slots now remain fixed at 110x160px desktop and 90x128px mobile, with a matching reserved scene height. Question length, activity type and answer feedback no longer shrink or expand characters. Existing inner scrolling handles long prompts; answer fields/options retain clear bounds. Animation gestures and breathing remain, with original still/reduced-motion fallback. Verified unchanged rendered character height across feedback at eight desktop/mobile viewports, listening, answer controls and long content. See reports/exercise-art.json. Cache fixed-cast-v86; viewport query castfixed1. This supersedes the earlier flexible 150-320px/112-180px scene rules. No artwork, grading or backend changes.
 
 ## Mina release and identity correction — 6 November 2026

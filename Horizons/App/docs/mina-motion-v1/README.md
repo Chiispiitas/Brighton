@@ -1,5 +1,7 @@
 # Mina animation production - four accepted poses
 
+Latest Mina shoulder repair (6 November 2026): the skip pose arm previously met the body with insufficient overlap and separated during its wave. Shifted the existing native arm registration left18 logical pixels and moved its rotation pivot to the shoulder (205,180). No new artwork or face changes. Native-alpha overlap passes every angle from -12 to +12 degrees (minimum235 opaque pixels); full runtime cycle, mobile placement, masks, fallback and original head fidelity pass. See reports/mina-shoulder.json and mina-motion.json. Cache mina-shoulder-v87; app/art/Mina/style queries shoulder1; rig v=2. Fixed exercise sizes remain.
+
 The user authorized Mina (the red-blazer character) to animate in every current accepted pose, with a subtle idle and occasional pose-specific accents like the established Pico rig. Current accepted poses are `step`, `read`, `map` and `skip`, all from `assets/art/cast-static-mina-v2.png`. Older articulated Mina assets remain historical and are not used.
 
 ## Production sources

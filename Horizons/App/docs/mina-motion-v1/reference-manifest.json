@@ -14,7 +14,7 @@
   "activeRuntime": [
     {
       "file": "src/mina-motion.js",
-      "sha256": "71d039db811806d401a5a8f445c023ff7c0ab6761d526ed750d8e2406200df6f",
+      "sha256": "2ce50960666e4070b3280ab2ad9f45eca564d2dc1b74420da377e03b40cc069c",
       "bytes": 10891
     },
     {
@@ -24,17 +24,17 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "3613eb1c6f86047887457753f851057d7cd33f9bcbebf6de3585bf9e8edbe30d",
-      "bytes": 8535
+      "sha256": "e8175bbf8c6e5e5f65e94726efb8b19ba778ae201122a52aafd8d4af76b54464",
+      "bytes": 8539
     },
     {
       "file": "tools/prepare-mina-motion.py",
-      "sha256": "2cf563f5e4ea1bd8c3b079f8c45c553a5b494c009dd2933b90047ce5e8b8478c",
+      "sha256": "a9962265ee15ad8180549d7dbb2d01d5e55ef5e8b633b830ba069e3665308f1d",
       "bytes": 16983
     },
     {
       "file": "assets/art/mina-motion-v1/rigs.json",
-      "sha256": "2748fb9bcd5c46d5e0d1e036678a2f87d190681c092eb584be6efef62fc10e7e",
+      "sha256": "44a9034ac72c45adba3b88f603a5d9a237a2f5dc570a5354dacb0778527e78b1",
       "bytes": 3234
     },
     {
@@ -149,8 +149,8 @@
     },
     {
       "file": "assets/art/mina-motion-v1/skip-gesture.png",
-      "sha256": "ce158f8a8d06e3cd3fc4ef509f892626dc6ff6011d506c0a0a7f8676af89bd9f",
-      "bytes": 9610
+      "sha256": "c121c62ada2d98b4371b47fa8a5c028dd72a2bc6f32ef874494bc490c29a82c2",
+      "bytes": 9635
     },
     {
       "file": "assets/art/mina-motion-v1/skip-head.png",
@@ -321,7 +321,7 @@
   "preparationAndReviews": [
     {
       "file": "docs/mina-motion-v1/registrations.json",
-      "sha256": "92fdc1a9a665cdf0feca8a5f22c1438819621c27c7b15ad9d5cc630bc402f5cb",
+      "sha256": "5cf42c0c1f2a3e97898552e7b08e55aa80d411cb4678b8ac52e5af46161e1c82",
       "bytes": 13355
     },
     {
@@ -336,8 +336,8 @@
     },
     {
       "file": "docs/mina-motion-v1/reconstruction.png",
-      "sha256": "cce15f3910f020726301de76754a5339486bf52c22f79e2a90447345e1002231",
-      "bytes": 251190
+      "sha256": "0fca9c27e068e57141a3fca8dba9b06af0d2a243aa425baa35db44c27fcbbfdf",
+      "bytes": 250856
     }
   ],
   "limitations": [

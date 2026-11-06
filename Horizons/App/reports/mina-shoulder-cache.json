@@ -1,0 +1,225 @@
+{
+  "pass": true,
+  "baseline": "309dd398",
+  "cache": "horizons-companion-mina-shoulder-v87",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "d06e67dfb1025d1e183e5567b50d0fba8bc6b60e7fa096021282ef7f873ace52"
+    },
+    {
+      "path": "styles/viewport.css?v=castfixed1",
+      "status": 200,
+      "sha256": "4070d09d0adba81ef3c9e7785e67f24ea4d3dbd21b89133de13eb74c9c0edea6"
+    },
+    {
+      "path": "src/app.js?v=shoulder1",
+      "status": 200,
+      "sha256": "f7de0d0b72d79d8abc5fa6d859b1d23fa3bb4b09f628bfac6b52797592a201fc"
+    },
+    {
+      "path": "src/art.js?v=shoulder1",
+      "status": 200,
+      "sha256": "e8175bbf8c6e5e5f65e94726efb8b19ba778ae201122a52aafd8d4af76b54464"
+    },
+    {
+      "path": "src/mina-motion.js?v=shoulder1",
+      "status": 200,
+      "sha256": "2ce50960666e4070b3280ab2ad9f45eca564d2dc1b74420da377e03b40cc069c"
+    },
+    {
+      "path": "styles/mina-motion.css?v=shoulder1",
+      "status": 200,
+      "sha256": "0262aee74c96905f932335743b71c491d2201dc89ed0d9016a3dd58c6810a7fe"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/rigs.json?v=2",
+      "status": 200,
+      "sha256": "44a9034ac72c45adba3b88f603a5d9a237a2f5dc570a5354dacb0778527e78b1"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-head.png",
+      "status": 200,
+      "sha256": "ede1c21fd6a229ef0fdd5e19873f19768912907a2f11a71c53840476797f7739"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-body.png",
+      "status": 200,
+      "sha256": "d82aff528264ff73bc2bac4875613d4ed4f640ef7ccd3d046f1a00778e03a9aa"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-gesture.png",
+      "status": 200,
+      "sha256": "0bd5975dc3445d193f052b54ff682cbea649d0b38095362f2d351feec201e9a6"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-neutral.png",
+      "status": 200,
+      "sha256": "1461dd125507ea4b15bd61237bfd96f2b2c82292137f545a8f90d2eabc31d8c8"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-eyes.png",
+      "status": 200,
+      "sha256": "d045f71e7ea2044c1eaa829b6c7f2accacba46a807a64c3dee1dfd9d06302cef"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-pupils.png",
+      "status": 200,
+      "sha256": "fcfdb8beee39cceda7589fe05b5e563e34867b7cec67613e7279b0e56564099a"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-blink.png",
+      "status": 200,
+      "sha256": "9e03e3367bb3254bca1c7678e97099dee3b4f70798d2095f8b882a0ac91911f2"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-focus.png",
+      "status": 200,
+      "sha256": "cb574aa2502358922f3ecea603ed4299984ca6d9c1609bf21bcd167f0a19b283"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/step-joy.png",
+      "status": 200,
+      "sha256": "9e361a5e1fa8154f14ce037eda5aeb9e9a252c1f76af44140621c4f2759f057d"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-head.png",
+      "status": 200,
+      "sha256": "8d80856dbe33167bce8e0305958a335410c55a043accedb95ea78cf12024aa6e"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-body.png",
+      "status": 200,
+      "sha256": "0e90e271ba8ed2b230010463ed190d01bc8f6ed351b4677e5121de4ffe3ba71d"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-gesture.png",
+      "status": 200,
+      "sha256": "9ddb3fd8393708d62cd2ebcb0206d002721168737ad2cac174775d5367b56469"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-neutral.png",
+      "status": 200,
+      "sha256": "8293fc72cee5148a68404c11829e13614526567d38a1355ca2f184fc37e90379"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-eyes.png",
+      "status": 200,
+      "sha256": "ca2e339db7d7e38beb283c3c5e7424da25f026e9c269ef0736152cad6a4bb08d"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-pupils.png",
+      "status": 200,
+      "sha256": "cfedcb16dd73e63ab003b6b1e9dab8e3d6baa82c10cf165ff5cbbedeeb7ade2b"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-blink.png",
+      "status": 200,
+      "sha256": "08f4c6cd61d4acb5e01c3f0b3d7000f96a66670f70110e178b995d571b5cdf1d"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-focus.png",
+      "status": 200,
+      "sha256": "06846676ce0755d329fadf0e2a6407785325eba36343236de69af4a44abe9cef"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/read-joy.png",
+      "status": 200,
+      "sha256": "ead3f6b60e2666654425672c541e8dba1663105640244016699049f94893b649"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-head.png",
+      "status": 200,
+      "sha256": "a7f0c3a177aec4f948e8c7cbdfad3e097714bd250d6168b0e26f5aa73f6572e9"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-body.png",
+      "status": 200,
+      "sha256": "96242c6688cef5a5a2bf3eb9aba9d1dc21db442399a38488fb13c2db7e18ac35"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-gesture.png",
+      "status": 200,
+      "sha256": "4b5302a8d4e0e34b8c85189d2b9f8dc9e1e042740dc59c4458b8b8a914117001"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-neutral.png",
+      "status": 200,
+      "sha256": "232fd8021eb41e36ce28eedfaf8dd05ed2d8f91d3fd33e3f2ca38a94dacbfbd1"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-eyes.png",
+      "status": 200,
+      "sha256": "f1952fabc5d4e98f1ba7f0f63994bcd413a250afa7021e65ec517643cb4d516c"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-pupils.png",
+      "status": 200,
+      "sha256": "3babae31bb301f00d93db2a4e2e09b2a37b3672901a6907fe499f526d7396bb1"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-blink.png",
+      "status": 200,
+      "sha256": "8206768fccda82cd31f7bdda47687d813e4cefe4079ec63ad3a60abe24ea9035"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-focus.png",
+      "status": 200,
+      "sha256": "bba6b9a5e3b1ac9b2418107a15319ee15dfaf24c63798f419f3b7d4d15337d73"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/map-joy.png",
+      "status": 200,
+      "sha256": "dc30189bc047c809e96481037125cf65873f7bf0c9e465eff6cef81d5f771ca7"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-head.png",
+      "status": 200,
+      "sha256": "59f1d8bec360318d79b35675f2eef8b1383233c7549120a095386a970c83db18"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-body.png",
+      "status": 200,
+      "sha256": "fa3d17189a2db3ae50c4fd83186da21ba9b7c13d5fdc81235afc9f638532c239"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-gesture.png",
+      "status": 200,
+      "sha256": "c121c62ada2d98b4371b47fa8a5c028dd72a2bc6f32ef874494bc490c29a82c2"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-neutral.png",
+      "status": 200,
+      "sha256": "db6679a2f6fcf38b11215f3da9b1faad6f6fd81df0e22c96c45db1d7f9bb7e00"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-eyes.png",
+      "status": 200,
+      "sha256": "28d01bcb70869f74474bc0c0679e4fdcb431150b4b326225372057e83e815eb9"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-pupils.png",
+      "status": 200,
+      "sha256": "9d55865bf6cd020546235d8c15bdb6b3793c38610d7c83e988f133f58d4ceedd"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-blink.png",
+      "status": 200,
+      "sha256": "16f140773cbe68e5811cd080ee57a1911c66bf8d74750bc5eb014853595a20da"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-focus.png",
+      "status": 200,
+      "sha256": "39c5c314ce422d3b56dc5cdbc186ab577c5c65383e72af27864b6d1f5f3e00be"
+    },
+    {
+      "path": "assets/art/mina-motion-v1/skip-joy.png",
+      "status": 200,
+      "sha256": "39ddd72ec670fc41d57f46c601703fd253d4d0325dc068ce767937b9ddfc1b01"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v85. New controller and exact current app, art loader, Mina module/styles/manifest and every registered part byte verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

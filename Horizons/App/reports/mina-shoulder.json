@@ -1,0 +1,107 @@
+{
+  "pass": true,
+  "pose": "skip",
+  "checks": [
+    {
+      "angle": -12,
+      "opaqueOverlapPixels": 269
+    },
+    {
+      "angle": -11,
+      "opaqueOverlapPixels": 265
+    },
+    {
+      "angle": -10,
+      "opaqueOverlapPixels": 263
+    },
+    {
+      "angle": -9,
+      "opaqueOverlapPixels": 258
+    },
+    {
+      "angle": -8,
+      "opaqueOverlapPixels": 258
+    },
+    {
+      "angle": -7,
+      "opaqueOverlapPixels": 254
+    },
+    {
+      "angle": -6,
+      "opaqueOverlapPixels": 254
+    },
+    {
+      "angle": -5,
+      "opaqueOverlapPixels": 255
+    },
+    {
+      "angle": -4,
+      "opaqueOverlapPixels": 257
+    },
+    {
+      "angle": -3,
+      "opaqueOverlapPixels": 258
+    },
+    {
+      "angle": -2,
+      "opaqueOverlapPixels": 254
+    },
+    {
+      "angle": -1,
+      "opaqueOverlapPixels": 254
+    },
+    {
+      "angle": 0,
+      "opaqueOverlapPixels": 254
+    },
+    {
+      "angle": 1,
+      "opaqueOverlapPixels": 251
+    },
+    {
+      "angle": 2,
+      "opaqueOverlapPixels": 248
+    },
+    {
+      "angle": 3,
+      "opaqueOverlapPixels": 247
+    },
+    {
+      "angle": 4,
+      "opaqueOverlapPixels": 246
+    },
+    {
+      "angle": 5,
+      "opaqueOverlapPixels": 244
+    },
+    {
+      "angle": 6,
+      "opaqueOverlapPixels": 241
+    },
+    {
+      "angle": 7,
+      "opaqueOverlapPixels": 239
+    },
+    {
+      "angle": 8,
+      "opaqueOverlapPixels": 238
+    },
+    {
+      "angle": 9,
+      "opaqueOverlapPixels": 239
+    },
+    {
+      "angle": 10,
+      "opaqueOverlapPixels": 240
+    },
+    {
+      "angle": 11,
+      "opaqueOverlapPixels": 239
+    },
+    {
+      "angle": 12,
+      "opaqueOverlapPixels": 235
+    }
+  ],
+  "method": "Native body/arm alpha overlap across -12 to +12 degrees, exceeding production -10 to +8 degree wave. Original native PNGs unchanged; registration shifted left18px and shoulder pivot corrected. Actual runtime captures reviewed separately."
+}

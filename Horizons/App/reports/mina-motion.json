@@ -15,51 +15,51 @@
   "playback": [
     {
       "value": "idle:blink",
-      "time": 2357.199999988079
+      "time": 2363.599999964237
     },
     {
       "value": "idle:neutral",
-      "time": 2498.900000035763
+      "time": 2496.899999976158
     },
     {
       "value": "idle:blink",
-      "time": 6115.5
+      "time": 6113.599999964237
     },
     {
       "value": "idle:neutral",
-      "time": 6248.600000023842
+      "time": 6247
     },
     {
       "value": "idle:blink",
-      "time": 10365.600000023842
+      "time": 10363.5
     },
     {
       "value": "idle:neutral",
-      "time": 10498.699999988079
+      "time": 10496.800000011921
     },
     {
       "value": "idle:blink",
-      "time": 14107.199999988079
+      "time": 14110.5
     },
     {
       "value": "idle:neutral",
-      "time": 14248.699999988079
+      "time": 14246.699999988079
     },
     {
       "value": "accent:neutral",
-      "time": 16007.199999988079
+      "time": 16005.099999964237
     },
     {
       "value": "accent:joy",
-      "time": 16615.30000001192
+      "time": 16613.30000001192
     },
     {
       "value": "accent:neutral",
-      "time": 18207.400000035763
+      "time": 18213.5
     },
     {
       "value": "idle:neutral",
-      "time": 19015.400000035763
+      "time": 19013.599999964237
     }
   ],
   "noOpacityKeyframes": true,
@@ -68,7 +68,7 @@
   "headAndPupilMasks": true,
   "discreteBlinkSprites": true,
   "perPosePhaseAcrossAnswerRender": true,
-  "remountPhase": 12533.199999999999,
+  "remountPhase": 12524.999999999998,
   "idempotentMount": true,
   "reducedOriginalStills": true,
   "offscreenPause": true,

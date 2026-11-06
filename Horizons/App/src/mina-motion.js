@@ -3,7 +3,7 @@ const controllers=new WeakMap(),elapsedByPose=new Map();
 const DURATION=19000,IDLE=8000;
 const asset=path=>new URL('../'+path,import.meta.url).href;
 let manifestPromise;
-const loadManifest=()=>manifestPromise??=fetch(new URL('../assets/art/mina-motion-v1/rigs.json?v=1',import.meta.url),{cache:'no-cache'})
+const loadManifest=()=>manifestPromise??=fetch(new URL('../assets/art/mina-motion-v1/rigs.json?v=2',import.meta.url),{cache:'no-cache'})
  .then(response=>{if(!response.ok)throw Error('Missing Mina motion registrations');return response.json();})
  .catch(error=>{manifestPromise=null;throw error;});
 const phaseOf=time=>((Number(time)||0)%DURATION+DURATION)%DURATION;

@@ -98,7 +98,7 @@ specs={
  'step':{'width':285,'height':552,'body':[0,163,245,389],'gesture':[158,132,127,125],'pivots':{'head':[127,180],'gesture':[180,181]}},
  'read':{'width':202,'height':552,'body':[0,163,202,389],'gesture':[29,187,171,98],'pivots':{'head':[116,180],'gesture':[110,265]}},
  'map':{'width':231,'height':563,'body':[0,159,231,404],'gesture':[10,178,216,118],'pivots':{'head':[119,180],'gesture':[118,269]}},
- 'skip':{'width':308,'height':562,'body':[0,160,239,402],'gesture':[211,61,97,151],'pivots':{'head':[172,181],'gesture':[223,170]}}
+ 'skip':{'width':308,'height':562,'body':[0,160,239,402],'gesture':[193,61,97,151],'pivots':{'head':[172,181],'gesture':[205,180]}}
 }
 repair=native('head-fidelity-v2')
 # An opaque, facial-feature-free skin-material rectangle from the actual ImageGen repair.
