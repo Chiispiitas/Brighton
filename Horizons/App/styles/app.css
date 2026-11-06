@@ -461,3 +461,6 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 .word-bank-lesson[open]>summary>.icon,.word-bank-lesson[open]>summary>.generated-icon{transform:rotate(180deg)}
 .word-bank-lesson .word-grid{margin:14px 0 20px}
 @media(max-width:600px){.practice-topics{grid-template-columns:1fr;gap:22px}.practice-topic{font-size:13px}.word-bank-lesson>summary{font-size:16px}}
+
+.practice-lesson:nth-child(n+3){border-top:1px solid #e9e4dd;padding-top:18px}
+@media(max-width:600px){.practice-lesson:nth-child(n+2){border-top:1px solid #e9e4dd;padding-top:18px}}

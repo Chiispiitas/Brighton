@@ -112,3 +112,6 @@
 }
 @media(max-width:540px){.main-content:has(>.learning-path)>.learning-path{margin-inline:-20px}}
 @media(max-width:360px){.main-content:has(>.learning-path)>.learning-path{margin-inline:-16px}}
+
+/* Quiet lesson boundaries do not take space from the trail or capture input. */
+.overworld-map .path-lesson+.path-lesson::before{content:'';position:absolute;left:0;top:12px;bottom:18px;width:1px;background:linear-gradient(to bottom,transparent,#ded8d1 20%,#ded8d1 80%,transparent);pointer-events:none}
