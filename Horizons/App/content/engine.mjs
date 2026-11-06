@@ -59,8 +59,8 @@ function typedGrammar(template,random){
  const instructions={
   'be-not':'Make this negative: She is a teacher.',
   'be-question':'Make this a question: She is a teacher.',
-  'be-short-positive':'Is she a teacher? (Yes) Write a short answer.',
-  'be-short-negative':'Are they in Class 2? (No) Write a short answer.',
+  'be-short-positive':'Is she a teacher? Write a short answer with Yes.',
+  'be-short-negative':'Are they in Class 2? Write a short answer with No.',
   'contract-youre':'Write the short form: You are a student.',
   'caps-country':'Write it with capital letters and a full stop: i am from ecuador.'
  };
