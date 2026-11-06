@@ -1,0 +1,45 @@
+{
+  "pass": true,
+  "baseline": "a6816cce5ec089abe9bab017ef840700cafc759e",
+  "cache": "horizons-companion-screen-fit-v82",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "sha256": "e4573e3316c77bd2a70ab932580ce9ee0c2ea8ff574e6cd324571a5127591a1e"
+    },
+    {
+      "path": "src/app.js?v=screenfit1",
+      "status": 200,
+      "sha256": "6c572a024cd53de065a57daa8fc0961ff261fffb7a03831d22863ab6cbc2f171"
+    },
+    {
+      "path": "src/studio-ui.js?v=screenfit1",
+      "status": 200,
+      "sha256": "3d30bff67583568f722ef221c43a1275aa59743fa0ae5cc7417e18de52d7153c"
+    },
+    {
+      "path": "styles/viewport.css?v=screenfit1",
+      "status": 200,
+      "sha256": "2406d408edf4699a7838c59bcdf3134b02ad353ac431863b728172646d9c0a42"
+    },
+    {
+      "path": "styles/overworld.css?v=desktopfit1",
+      "status": 200,
+      "sha256": "7282ee65ebe3209c3cdaba1eab52f5d8307f40c7cfc7c621a056ff440f569239"
+    },
+    {
+      "path": "src/prop-motion.js?v=props2",
+      "status": 200,
+      "sha256": "a6e78fb62d44b7862e13b6bd4b2710e5e1649a1adf75e0b004b477cb50706ebf"
+    },
+    {
+      "path": "assets/art/prop-motion-v1/rigs.json?v=2",
+      "status": 200,
+      "sha256": "0e035ed058f081c696c8f645d97b4e31d294488f9cd8969180dfae66327340a8"
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v82. New controller and exact current app, studio, layout stylesheet, prop module and manifest bytes verified through offline fetch. Unauthenticated start screen only; no learner records."
+}

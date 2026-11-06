@@ -1,0 +1,256 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "pageHeight": 1080,
+      "pageWidth": 1920,
+      "hero": {
+        "top": 106,
+        "bottom": 370,
+        "left": 550,
+        "right": 1620,
+        "height": 264
+      },
+      "map": {
+        "top": 382,
+        "bottom": 770,
+        "left": 602,
+        "right": 1568,
+        "height": 388
+      },
+      "profile": {
+        "top": 982,
+        "bottom": 1052,
+        "left": 40,
+        "right": 225,
+        "height": 70
+      }
+    },
+    {
+      "width": 2048,
+      "height": 1078,
+      "pageHeight": 1078,
+      "pageWidth": 2048,
+      "hero": {
+        "top": 106,
+        "bottom": 370,
+        "left": 614,
+        "right": 1684,
+        "height": 264
+      },
+      "map": {
+        "top": 382,
+        "bottom": 770,
+        "left": 666,
+        "right": 1632,
+        "height": 388
+      },
+      "profile": {
+        "top": 980,
+        "bottom": 1050,
+        "left": 40,
+        "right": 225,
+        "height": 70
+      }
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "pageHeight": 900,
+      "pageWidth": 1440,
+      "hero": {
+        "top": 90,
+        "bottom": 324,
+        "left": 284,
+        "right": 1376,
+        "height": 234
+      },
+      "map": {
+        "top": 336,
+        "bottom": 724,
+        "left": 336,
+        "right": 1324,
+        "height": 388
+      },
+      "profile": {
+        "top": 802,
+        "bottom": 872,
+        "left": 30,
+        "right": 195,
+        "height": 70
+      }
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "pageHeight": 768,
+      "pageWidth": 1366,
+      "hero": {
+        "top": 76.796875,
+        "bottom": 276.46875,
+        "left": 264,
+        "right": 1322,
+        "height": 199.671875
+      },
+      "map": {
+        "top": 288.46875,
+        "bottom": 676.46875,
+        "left": 316,
+        "right": 1270,
+        "height": 388
+      },
+      "profile": {
+        "top": 670,
+        "bottom": 740,
+        "left": 30,
+        "right": 195,
+        "height": 70
+      }
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "pageHeight": 720,
+      "pageWidth": 1280,
+      "hero": {
+        "top": 72,
+        "bottom": 259.1875,
+        "left": 264,
+        "right": 1236,
+        "height": 187.1875
+      },
+      "map": {
+        "top": 271.1875,
+        "bottom": 659.1875,
+        "left": 316,
+        "right": 1184,
+        "height": 388
+      },
+      "profile": {
+        "top": 622,
+        "bottom": 692,
+        "left": 30,
+        "right": 195,
+        "height": 70
+      }
+    },
+    {
+      "width": 1280,
+      "height": 640,
+      "pageHeight": 640,
+      "pageWidth": 1280,
+      "hero": {
+        "top": 64,
+        "bottom": 230.390625,
+        "left": 264,
+        "right": 1236,
+        "height": 166.390625
+      },
+      "map": {
+        "top": 242.390625,
+        "bottom": 624,
+        "left": 316,
+        "right": 1184,
+        "height": 381.609375
+      },
+      "profile": {
+        "top": 542,
+        "bottom": 612,
+        "left": 30,
+        "right": 195,
+        "height": 70
+      }
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "pageHeight": 600,
+      "pageWidth": 1024,
+      "hero": {
+        "top": 64,
+        "bottom": 208,
+        "left": 220,
+        "right": 994,
+        "height": 144
+      },
+      "map": {
+        "top": 220,
+        "bottom": 584,
+        "left": 272,
+        "right": 942,
+        "height": 364
+      },
+      "profile": {
+        "top": 502,
+        "bottom": 572,
+        "left": 20,
+        "right": 170,
+        "height": 70
+      }
+    },
+    {
+      "width": 1024,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 1024,
+      "hero": {
+        "top": 64,
+        "bottom": 208,
+        "left": 220,
+        "right": 994,
+        "height": 144
+      },
+      "map": {
+        "top": 220,
+        "bottom": 524,
+        "left": 272,
+        "right": 942,
+        "height": 304
+      },
+      "profile": {
+        "top": 442,
+        "bottom": 512,
+        "left": 20,
+        "right": 170,
+        "height": 70
+      }
+    },
+    {
+      "width": 800,
+      "height": 540,
+      "pageHeight": 540,
+      "pageWidth": 800,
+      "hero": {
+        "top": 64,
+        "bottom": 208,
+        "left": 220,
+        "right": 770,
+        "height": 144
+      },
+      "map": {
+        "top": 220,
+        "bottom": 524,
+        "left": 272,
+        "right": 718,
+        "height": 304
+      },
+      "profile": {
+        "top": 442,
+        "bottom": 512,
+        "left": 20,
+        "right": 170,
+        "height": 70
+      }
+    }
+  ],
+  "allFourLessonAreasClearVerticalEdges": true,
+  "bannerContinueRemoved": true,
+  "profileFits": true,
+  "desktopDetailsFits": true,
+  "mobileUnchanged": true,
+  "practiceViewportHeight": true,
+  "scope": "Actual production renderer in Edge with isolated synthetic server store; no real learner records. Desktop viewport heights 540-1080, widths 800-2048. Mobile regression 320/390/760 at 640 height. Physical screens and browser UI zoom not directly tested.",
+  "errors": []
+}

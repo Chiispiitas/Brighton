@@ -19,7 +19,8 @@ export async function openPathBubble(content,anchor,event){
  const original=anchor?.getBoundingClientRect();if(!original){closePathBubble();return;}
  const gap=anchor.classList.contains('landmark-stop')?36:12;
  const overflow=Math.max(0,original.bottom+gap+measured.height-safeBottom);
- if(overflow){
+ const desktopFit=matchMedia('(min-width:761px)').matches;
+ if(overflow&&!desktopFit){
   const max=Math.max(0,document.documentElement.scrollHeight-innerHeight),needed=Math.max(0,scrollY+overflow-max);
   if(needed){if(!bubbleSpace?.isConnected){bubbleSpace=document.createElement('div');bubbleSpace.dataset.pathDetailsSpace='';bubbleSpace.setAttribute('aria-hidden','true');bubbleSpace.style.cssText='grid-column:1/-1;pointer-events:none;overflow-anchor:none';anchor.closest('.learning-path').append(bubbleSpace);}bubbleSpace.style.height=((parseFloat(bubbleSpace.style.height)||0)+needed+2)+'px';}
   window.scrollBy({top:overflow,behavior:'instant'});
@@ -29,7 +30,8 @@ export async function openPathBubble(content,anchor,event){
  if(request!==bubbleRequest||!anchor.isConnected||!bubble.matches(':popover-open'))return;
  const a=anchor.getBoundingClientRect(),r=bubble.getBoundingClientRect(),x=a.left+a.width/2;
  const left=Math.max(12,Math.min(x-r.width/2,innerWidth-r.width-12));
- bubble.style.left=left+'px';bubble.style.top=(a.bottom+gap)+'px';bubble.dataset.side='below';bubble.style.setProperty('--tip-x',Math.max(20,Math.min(x-left,r.width-20))+'px');
+ const below=a.bottom+gap,above=desktopFit&&below+r.height>safeBottom,top=above?Math.max(12,a.top-gap-r.height):below;
+ bubble.style.left=left+'px';bubble.style.top=top+'px';bubble.dataset.side=above?'above':'below';bubble.style.setProperty('--tip-x',Math.max(20,Math.min(x-left,r.width-20))+'px');
  bubblePreparing=false;bubble.style.visibility='visible';
  markControls(bubble);bubble.getAnimations().forEach(a=>a.cancel());bubble.style.transformOrigin=`${x-left}px 0%`;animateUI(bubble,[{transform:'scale(.92)'},{transform:'scale(1.015)',offset:.7},{transform:'scale(1)'}],{duration:240});
  if(event?.detail===0)bubble.querySelector('button')?.focus({preventScroll:true});

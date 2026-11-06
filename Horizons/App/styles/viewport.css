@@ -1,0 +1,82 @@
+/* Desktop screens keep navigation and primary actions in the viewport.
+   Long lists and reading content scroll within their own panels. */
+@media(min-width:761px){
+ .workspace>.topbar{height:clamp(64px,10dvh,106px);padding-block:12px}
+ .workspace>.main-content{height:calc(100dvh - clamp(64px,10dvh,106px));min-height:0;display:flex;flex-direction:column;padding-bottom:16px;overflow:auto;overscroll-behavior-y:contain}
+ .main-content:has(>.learning-path){overflow:visible}
+ .main-content>.page-heading{flex:none;min-height:0;height:clamp(68px,10dvh,110px);padding:0 0 8px}
+ .main-content>.page-heading h1,.profile-heading h1{font-size:clamp(28px,4dvh,41px)}
+ .main-content>.page-heading>.page-character{height:100%;width:70px}
+ .main-content>.practice-toolbar,.main-content>.bank-toolbar{flex:none;margin:8px 0 12px}
+ .main-content>.practice-topics,.main-content>.word-bank-lessons{flex:1;min-height:0;overflow:auto;overscroll-behavior-y:contain;padding:4px 8px 8px 0;scrollbar-width:thin}
+ .practice-topics{gap:18px 24px}
+ .main-content>.mix-launch{flex:none;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 16px;padding:14px 18px;margin:12px 0 0;border-radius:22px}
+ .mix-launch h2{font-size:17px}
+ .mix-launch .round-length{gap:10px}
+ .mix-launch .round-length select{max-width:170px}
+ .mix-launch .mix-actions,.mix-launch>.quiet-note{grid-column:1/-1}
+ .mix-launch .mix-actions{gap:8px}
+ .mix-launch .mix-actions>button{min-height:42px;padding:10px 14px}
+ .main-content>.profile-heading{flex:none;padding:0 0 12px}
+ .main-content>.profile-layout{flex:1;min-height:0;grid-template-columns:minmax(0,1fr) 250px;gap:24px;padding-top:0}
+ .profile-layout>.avatar-studio{min-height:0;grid-template-columns:minmax(120px,.8fr) minmax(0,1.2fr);gap:20px}
+ .avatar-studio>.avatar-preview{position:relative;top:0;align-self:start;width:min(100%,32dvh);margin:0}
+ .avatar-studio>.avatar-options{display:flex;flex-direction:column;min-height:0;height:100%;overflow:hidden}
+ .avatar-options>.avatar-tabs{flex:none;margin-bottom:12px}
+ .avatar-options>fieldset{flex:1;min-height:0;overflow:auto;scrollbar-width:none;overscroll-behavior-y:contain}
+ .avatar-options>fieldset::-webkit-scrollbar{display:none}
+ .profile-layout>.profile-details{display:flex;flex-direction:column;min-height:0;margin:0;overflow:auto}
+ .profile-details>form{flex:none}
+ .profile-details form>label{margin:8px 0 4px}
+ .profile-details form>input,.profile-details form>select{min-height:40px;padding:8px 12px}
+ .profile-details form>.primary-button{min-height:42px;padding:10px 14px;margin-top:10px}
+ .profile-details .your-books{min-height:0;overflow:auto;margin-top:16px;padding-top:12px}
+ .profile-details .sign-out{flex:none;margin-top:12px}
+ .activity-page{height:100dvh;min-height:0;padding-block:16px;overflow:hidden}
+ .activity-page>.activity-header{flex:none;margin-bottom:14px}
+ .activity-page>.question-body{flex:1;min-height:0;overflow:auto;overscroll-behavior-y:contain;padding:4px 6px 12px;scrollbar-width:thin}
+ .activity-page .question-body>h1{font-size:clamp(24px,4dvh,34px);line-height:1.2}
+ .activity-page .question-cue{font-size:clamp(20px,3.5dvh,29px);margin-top:12px}
+ .activity-page .question-body>.question-scene{height:clamp(48px,calc(28dvh - 110px),145px);margin:10px 0}
+ .activity-page .question-scene>.question-character,.activity-page .question-scene .question-image{height:100%;max-height:100%}
+ .activity-page>.answer-dock{flex:none;min-height:72px;margin-top:8px}
+ .activity-page .answer-footer{min-height:64px;padding:12px 16px}
+ .activity-page .answer-footer:is(.feedback-correct,.feedback-gentle){margin:0}
+ .activity-page .answer-options{gap:10px}
+ .activity-page .answer-option{min-height:54px;padding:12px 16px}
+ .game-page>.game-intro{flex:none;min-height:80px;padding-bottom:8px}
+ .game-page .game-intro h1{font-size:28px}
+ .game-page .game-character{height:85px;width:65px}
+ .game-page>.memory-grid,.game-page>.matching-board{flex:1;min-height:0;overflow:auto;align-content:start;margin-top:8px;margin-bottom:12px}
+ .game-page .memory-card{min-height:clamp(64px,14dvh,126px)}
+ .game-page .matching-word{min-height:clamp(44px,8dvh,76px);padding:10px 14px}
+ .game-page>.game-footer{flex:none;margin-top:auto;padding:12px 0}
+ .game-page .matching-board{align-content:stretch}
+ .game-page .matching-board>div{height:100%;gap:8px}
+ .game-page .matching-word{flex:1;min-height:44px;padding:8px 12px}
+ .activity-page .answer-feedback-copy{max-height:32dvh;overflow:auto}
+ .result-page{height:100dvh;min-height:0;overflow:auto;padding:16px 24px}
+ .result-page .result-character{height:clamp(90px,calc(40dvh - 80px),265px)}
+ .result-page .result-stats{margin:14px 0 8px}
+ .result-page .result-actions{flex:none;margin-top:12px}
+ .welcome{height:100dvh;min-height:0;display:flex;flex-direction:column;padding-block:20px;overflow:auto}
+ .welcome>.welcome-brand{flex:none}
+ .welcome>.welcome-layout{flex:1;min-height:0;padding-top:16px}
+ .welcome-story{min-height:0;padding-block:0}
+ .welcome-companions{max-height:100%}
+ .redeem-panel{padding-block:12px}
+ .app-dialog{max-height:calc(100dvh - 32px);overflow:auto}
+ .recovery-screen,.coming-book{min-height:0;max-height:100dvh;overflow:auto}
+}
+@media(min-width:761px) and (max-width:1120px){
+ .main-content>.profile-layout{grid-template-columns:minmax(0,1fr) 215px;gap:18px}
+ .profile-layout>.avatar-studio{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr);gap:12px}
+ .avatar-studio>.avatar-preview{width:min(100%,24dvh);justify-self:center}
+ .avatar-tabs button{font-size:12px;padding:9px 10px}
+}
+@media(min-width:761px) and (max-height:650px){
+ .welcome .welcome-sun{width:38px;height:38px;margin-bottom:12px}
+ .welcome .redeem-panel h2{font-size:30px;margin-bottom:10px}
+ .welcome .code-form{margin:16px 0 12px}
+ .welcome .demo-codes{margin-top:12px;padding-top:10px}
+}

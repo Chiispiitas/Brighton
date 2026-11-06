@@ -1,11 +1,11 @@
 import {presentQuestion} from './exercise-presentation.js?v=practiceretry1';
-import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor,nextPathActivity} from './path-progress.js?v=pathprogress1';
+import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
 import {mountPropMotion} from './prop-motion.js?v=props2';
 import {mountOverworld} from './overworld-motion.js?v=props1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=areas1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=screenfit1';
 import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=areas1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
@@ -113,13 +113,11 @@ function rememberPathCursor(id){
   const current=button.dataset.pathNode===id;button.classList.toggle('current-path',current);
   if(current)button.setAttribute('aria-current','step');else button.removeAttribute('aria-current');
  }
- const next=nextPathActivity(pathNodes,progress(),id),hero=app.querySelector('.hero-continue');if(next&&hero)hero.dataset.pathNode=next.id;
 }
 function home(){
  if(!hasBookAccess())return accessPage();
  if(!isA1Book())return `<section class="coming-book"><h1>${esc(bookTitle(activeBook()))}</h1>${characterMarkup('pico','coming-pico')}<p>Activities for this book are not available yet.</p><button class="primary-button" data-action="books">Choose a book ${icon('book')}</button></section>`;
- const next=nextPathActivity(pathNodes,progress(),state.pathCursorId);
- return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1><button class="hero-continue" data-path-node="${esc(next.id)}">Continue ${icon('arrow')}</button></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><div class="horizontal-path-scroll overworld-map" role="region" aria-label="New Friends Town overworld" tabindex="0"><div class="horizontal-path-track">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</div></div><div class="path-scroll-toolbar"><div class="path-scroll-buttons"><button class="round-button path-pan-prev" data-path-pan="-1" aria-label="Scroll path left">${icon('arrow')}</button><button class="round-button" data-path-pan="1" aria-label="Scroll path right">${icon('arrow')}</button></div></div></section>`;
+ return `<section class="learn-hero compact-hero"><div class="hero-copy"><span class="eyebrow">HORIZONS A1</span><h1>Unit 1<br>New friends</h1></div>${characterMarkup('pico','hero-pico unit1-banner-pico')}</section><section class="learning-path" aria-label="Unit 1 learning path"><div class="horizontal-path-scroll overworld-map" role="region" aria-label="New Friends Town overworld" tabindex="0"><div class="horizontal-path-track">${allLessons.map((lesson,index)=>lessonPath(lesson,index)).join('')}</div></div><div class="path-scroll-toolbar"><div class="path-scroll-buttons"><button class="round-button path-pan-prev" data-path-pan="-1" aria-label="Scroll path left">${icon('arrow')}</button><button class="round-button" data-path-pan="1" aria-label="Scroll path right">${icon('arrow')}</button></div></div></section>`;
 }
 function lessonPath(lesson,index){
  const nodes=pathNodes.filter(node=>node.lessonId===lesson.id);

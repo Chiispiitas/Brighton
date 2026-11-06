@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "d81ca152509a605d595a5e929cd5002c9bcc0e1fc91769b1a24307cf252f33db"
+      "sha256": "7282ee65ebe3209c3cdaba1eab52f5d8307f40c7cfc7c621a056ff440f569239"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -184,6 +184,10 @@
     {
       "file": "assets/art/lesson-area-tiles-v1/postbox.png",
       "sha256": "72198b9ae75a4c05d5689b8bb7ed771a9b4ce2fdaec9d52ea8bb92b621ee0dd3"
+    },
+    {
+      "file": "styles/viewport.css",
+      "sha256": "2406d408edf4699a7838c59bcdf3134b02ad353ac431863b728172646d9c0a42"
     }
   ],
   "references": [
