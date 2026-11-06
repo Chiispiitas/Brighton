@@ -443,3 +443,21 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
  .activity-page[data-question-type=order] .answer-feedback-icon{width:32px;height:32px}
  .activity-page[data-question-type=order] .answer-feedback .answer-feedback-copy>b{font-size:18px}
 }
+
+/* Broad book topics replace the smaller practice chunks. */
+.practice-topics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 28px}
+.practice-lesson .pick-heading{margin-bottom:12px}
+.practice-lesson .pick-heading h2{font-size:18px}
+.practice-topic-list{display:flex;flex-wrap:wrap;gap:8px}
+.practice-topic{display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 14px;border-radius:14px;background:#f3f1eb;color:var(--ink);font-size:14px;font-weight:700;cursor:pointer;max-width:100%;text-align:left}
+.practice-topic input{appearance:auto;width:18px;height:18px;min-height:0;padding:0;margin:0;accent-color:var(--pink);flex:none}
+.practice-topic.chosen{background:var(--pink-soft);color:var(--pink)}
+.grammar-topic{background:transparent;border:1px solid #ded9d1}
+.grammar-topic .icon,.grammar-topic>.generated-icon,.grammar-topic>.generated-icon>.icon{width:18px;height:18px}
+.word-bank-lesson{border-bottom:1px solid #e9e4dd;padding:10px 0}
+.word-bank-lesson>summary{display:flex;align-items:center;gap:12px;min-height:60px;font-size:18px;font-weight:800;cursor:pointer;list-style:none}
+.word-bank-lesson>summary::-webkit-details-marker{display:none}
+.word-bank-lesson>summary>.icon,.word-bank-lesson>summary>.generated-icon{margin-left:auto;flex:none}
+.word-bank-lesson[open]>summary>.icon,.word-bank-lesson[open]>summary>.generated-icon{transform:rotate(180deg)}
+.word-bank-lesson .word-grid{margin:14px 0 20px}
+@media(max-width:600px){.practice-topics{grid-template-columns:1fr;gap:22px}.practice-topic{font-size:13px}.word-bank-lesson>summary{font-size:16px}}
