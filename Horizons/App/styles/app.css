@@ -425,3 +425,21 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 }
 
 @media(max-width:760px){.activity-page[data-answer-state=incorrect]:has(.answer-options):not(:has(.question-passage)) .question-scene{display:none}}
+
+/* Sentence ordering uses neutral touch targets and leaves room for feedback. */
+.sentence-answer>button,.sentence-tokens>button{min-height:44px;min-width:44px}
+@media(max-width:760px){
+ .activity-page[data-question-type=order]{min-height:100dvh;padding-top:12px;padding-bottom:12px}
+ .activity-page[data-question-type=order] .activity-header{margin-bottom:12px}
+ .activity-page[data-question-type=order] .question-body h1{font-size:22px;line-height:1.2}
+ .activity-page[data-question-type=order] .question-scene{height:48px;margin:8px 0}
+ .activity-page[data-question-type=order] .question-scene>.question-character{height:100%;max-height:100%}
+ .activity-page[data-question-type=order] .sentence-answer{min-height:96px;padding:8px;gap:6px}
+ .activity-page[data-question-type=order] .sentence-tokens{gap:6px;margin-top:10px}
+ .activity-page[data-question-type=order] .sentence-builder button{font-size:14px;padding:8px 12px}
+ .activity-page[data-question-type=order] .answer-dock{min-height:152px}
+ .activity-page[data-question-type=order] .answer-footer{min-height:64px}
+ .activity-page[data-question-type=order] .answer-footer:is(.feedback-correct,.feedback-gentle){padding:12px;gap:8px;margin:0}
+ .activity-page[data-question-type=order] .answer-feedback-icon{width:32px;height:32px}
+ .activity-page[data-question-type=order] .answer-feedback .answer-feedback-copy>b{font-size:18px}
+}

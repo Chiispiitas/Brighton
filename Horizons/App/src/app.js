@@ -1,3 +1,4 @@
+import {presentQuestion} from './exercise-presentation.js?v=tiles1';
 import {pathNodeComplete,pathNodeUnlocked,resolvePathCursor,nextPathActivity} from './path-progress.js?v=pathprogress1';
 import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=areas1';
 import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=areas1';
@@ -215,6 +216,7 @@ function startQuiz(options,title='Vocabulary') {
 function beginQuiz(questions,options,title) {
   if (!Array.isArray(questions)) questions=questions?.questions || [];
   if (!questions.length) {notify('No questions available for this selection.');return;}
+  questions=questions.map(q=>presentQuestion(q,options.seed));
   stopAudio();
   state.active={kind:'quiz',title,questions,options,index:0,selected:null,order:[],checked:false,answers:[],started:Date.now(),hintUsed:false,saving:false,previewVisible:Boolean(questions[0]?.preview)};
   render();schedulePreview();window.scrollTo({top:0,behavior:'instant'});
@@ -247,7 +249,7 @@ function skipAudio(){
 function renderOrder(q,a) {
   const tokens=q.sentenceTokens || q.tokens || [];
   const value=token=>typeof token==='string'?token:token.text || token.label || token.value;
-  return `<div class="sentence-builder"><div class="sentence-answer" aria-label="Your sentence">${a.order.length?a.order.map(index=>`<button data-remove-token="${index}" ${a.checked?'disabled':''}>${esc(value(tokens[index]))}</button>`).join(''):'<span>Select words in order.</span>'}</div><div class="sentence-tokens">${tokens.map((token,index)=>`<button data-token="${index}" ${a.order.includes(index)||a.checked?'disabled':''}>${esc(value(token))}</button>`).join('')}</div>${a.order.length&&!a.checked?'<button class="text-button" data-action="clear-sentence">Start again</button>':''}</div>`;
+  return `<div class="sentence-builder"><div class="sentence-answer" aria-label="Your sentence">${a.order.length?a.order.map(index=>`<button data-remove-token="${index}" ${a.checked?'disabled':''}>${esc(value(tokens[index]))}</button>`).join(''):'<span>Drag words here, or tap them.</span>'}</div><div class="sentence-tokens">${tokens.map((token,index)=>`<button data-token="${index}" ${a.order.includes(index)||a.checked?'disabled':''}>${esc(value(token))}</button>`).join('')}</div>${a.order.length&&!a.checked?'<button class="text-button" data-action="clear-sentence">Start again</button>':''}</div>`;
 }
 function hasAnswer(a,q) {return q.type==='order'?a.order.length>0:typeof a.selected==='string'?a.selected.trim().length>0:a.selected!==null;}
 function gradeCurrent() {
@@ -257,7 +259,7 @@ function gradeCurrent() {
   const submitted=q.type==='order'?a.order.map(index=>typeof tokens[index]==='string'?tokens[index]:tokens[index].text || tokens[index].label || tokens[index].value):a.selected;
   let feedback;
   try {feedback=checkAnswer(q,submitted);} catch {feedback={correct:false,expected:q.answer,feedback:q.explanation,wordIds:q.wordIds || []};}
-  const serverSubmitted=q.type==='choice'?(q.choices.find(choice=>String(choice.id)===String(submitted))?.text || submitted):submitted;
+  const serverSubmitted=q.serverAnswerType==='text'&&Array.isArray(submitted)?submitted.join(' '):q.type==='choice'?(q.choices.find(choice=>String(choice.id)===String(submitted))?.text || submitted):submitted;
   stopAudio();playFeedbackSound(Boolean(feedback.correct));
   a.feedback=feedback;a.checked=true;a.answers.push({questionId:q.id,submitted:serverSubmitted,correct:Boolean(feedback.correct),wordIds:feedback.wordIds || [],hintUsed:a.hintUsed,masteryEligible:Boolean(feedback.masteryEligible)&&!a.hintUsed});
   render();app.querySelector('[data-action=next-question]')?.focus({preventScroll:true});
