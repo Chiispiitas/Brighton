@@ -23,7 +23,7 @@ for(const p of Object.values(W.PROFILES)) {
  const selections=p.choice?[2,3,4]:[2];
  for(const selection of selections) {
   const row=fixture(p,selection);const tasks=W.tasksFor(row);
-  const expected={a1rw:39,a2rw:60,b1:30,b1plus:30,b2:40}[p.id];
+  const expected={a1rw:39,a2rw:60,b1:30,b1plus:30,b2:40,b2v1:40}[p.id];
   const ai={scores:scores(row),objective:objective(row)};row.writingAiJson=JSON.stringify(ai);
   assert.equal(W.apply(row).score,expected);assert.equal(W.apply(row).maxScore,expected);assert.equal(W.apply(row).percentage,100);
   row.writingTeacherJson=JSON.stringify({scores:scores(row,0)});

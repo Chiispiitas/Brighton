@@ -53,6 +53,7 @@
   });
 
   const WRITING_TASK_META_BY_EXAM = {
+    b2v1: Object.fromEntries((Writing?.PROFILES.b2v1?.tasks || []).map(task => [task.question, task])),
     b1: {
   "1": {
     "part": 1,
@@ -1195,6 +1196,7 @@
   }
 
   function getWritingRubricProfile(row = {}, payload = {}) {
+    if (String(row.examId || payload.examId || "").split("@@")[0] === "brighton-b2-writing-variation-1") return {...WRITING_RUBRIC_PROFILES.b2, id: "b2v1"};
     const raw = [payload.rubricProfile, row.rubricProfile, payload.examType, row.examType, payload.examId, row.examId, payload.examTitle, row.examTitle, payload.level, row.level, payload.skill, row.skill]
       .filter(Boolean)
       .join(" ")

@@ -1,6 +1,82 @@
 // Generated from backend/writing-rubric.js; keep the scoring contracts identical.
 (function() {
 const PROFILES = {
+  "b2v1": {
+  "examId": "brighton-b2-writing-variation-1",
+  "level": "B2",
+  "choice": true,
+  "id": "b2v1",
+  "tasks": [
+    {
+      "part": 1,
+      "partId": "part1",
+      "question": 1,
+      "label": "Part 1",
+      "taskType": "Essay",
+      "title": "Essay: practical skills at school",
+      "targetReader": "Your English teacher",
+      "prompt": "In your English class, you have been discussing how teenagers learn useful skills. Your teacher has asked you to write an essay.\n\nSchools should spend more time teaching practical skills for everyday life. Do you agree?\n\nNotes: managing money; preparing food; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 2,
+      "label": "Part 2",
+      "taskType": "Article",
+      "title": "Article: a place to switch off",
+      "targetReader": "Young readers of an English-language website",
+      "prompt": "You see this announcement on an English-language website for young people.\n\nA PLACE TO SWITCH OFF\n\nWhere do you go when you need a break from your daily routine? Describe the place, explain what you enjoy doing there, and say why you would recommend it to other young people.\n\nWrite your article.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 3,
+      "label": "Part 2",
+      "taskType": "Email",
+      "title": "Email: an activity for everyone",
+      "targetReader": "Your English-speaking friend Jamie",
+      "prompt": "You receive this email from your English-speaking friend Jamie.\n\nOur school wants to organise a weekend activity to help students get to know each other better. We’re considering a sports day or a creative workshop. Which would you recommend, and why? What could we do to make sure everyone feels included?\n\nWrite your email to Jamie.\n\nWrite your email.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 4,
+      "label": "Part 2",
+      "taskType": "Review",
+      "title": "Review: something worth learning",
+      "targetReader": "Readers of an English-language student magazine",
+      "prompt": "You see this announcement in an English-language student magazine.\n\nREVIEWS WANTED: SOMETHING WORTH LEARNING\n\nHave you recently tried a course, an app or a website that helped you learn a new skill? Write a review describing it and explaining what worked well and what could be improved. Say who would benefit most from using it.\n\nWrite your review.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    }
+  ]
+},
   "b1": {
   "examId": "brighton-b1-writing-final",
   "level": "B1",
