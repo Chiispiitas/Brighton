@@ -70,7 +70,7 @@ export const POST: APIRoute = async ({ request }) => {
     const hash = await digest(b.token), code = String(b.code || '');
     if (!/^\d{6}$/.test(code)) throw new GameError('Enter a six-digit village code.');
     if (b.type === 'create') {
-      const state = createRoom(code, hash, b.name);
+      const state = createRoom(code, hash, b.name, Date.now(), b.mode || 'online');
       try { await persist(state); await compact(state); }
       catch (error) {
         // A network retry of creation returns the original host room, without overwriting it.
@@ -80,7 +80,8 @@ export const POST: APIRoute = async ({ request }) => {
       }
       return new Response(JSON.stringify(view(state, hash)), { headers: h });
     }
-    if (b.type === 'state') return new Response(JSON.stringify(view(await latest(code), hash)), { headers: h });
+    if (b.type === 'state') return new Response(JSON.stringify(view(await latest(code), hash, b.screen === true)), { headers: h });
+    if (b.screen === true) throw new GameError('The shared screen is read-only.', 403);
     for (let attempt = 0; attempt < 8; attempt++) {
       const old = await latest(code, true);
       const state = command(old, hash, b, random);

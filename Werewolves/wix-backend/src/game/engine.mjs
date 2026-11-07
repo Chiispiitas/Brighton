@@ -14,13 +14,15 @@ export function cleanName(value) {
   need(name.length >= 1 && name.length <= 24 && !/[\x00-\x1f<>]/.test(name), 'Use a name between 1 and 24 characters, without angle brackets.');
   return name;
 }
-export function createRoom(code, hash, name, now = Date.now()) {
-  return { code, host: hash, hostName: cleanName(name), version: 0, phase: 'lobby', day: 0, phaseId: 0,
+export function createRoom(code, hash, name, now = Date.now(), mode = 'online') {
+  need(['online', 'classroom'].includes(mode), 'Choose Online or Classroom.');
+  return { code, host: hash, hostName: cleanName(name), mode, awake: false, version: 0, phase: 'lobby', day: 0, phaseId: 0,
     players: [], settings: { wolves: 0, fortune: true, girl: true, witch: true, hunter: true },
     actions: {}, votes: {}, notes: {}, potions: { heal: true, poison: true }, hunterUsed: false,
     pendingHunter: null, resumePhase: null, winner: null, log: [], receipts: [], expiresAt: now + 86400000 };
 }
-function setPhase(s, phase) { s.phase = phase; s.phaseId++; s.actions = {}; }
+function setPhase(s, phase) { s.phase = phase; s.phaseId++; s.actions = {}; s.awake = false; }
+const gated = s => s.mode === 'classroom' && [...NIGHT, 'hunter'].includes(s.phase);
 function checkWin(s) {
   if (s.pendingHunter) return false;
   const living = alive(s), wolves = living.filter(p => p.role === 'werewolf').length;
@@ -100,6 +102,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
   const host = hash === s.host, actor = s.players.find(p => p.key === hash);
   if (cmd.type === 'join') {
     need(s.phase === 'lobby', 'This game has already started.');
+    need(!(host && s.mode === 'classroom'), 'The classroom host is the moderator. Join players on their own devices.', 403);
     if (!actor) {
       need(s.players.length < MAX_PLAYERS, `This village is full (${MAX_PLAYERS} players).`);
       const name = cleanName(cmd.name);
@@ -133,10 +136,16 @@ export function command(inputState, hash, cmd, random = Math.random) {
     for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
     s.players.forEach((p, i) => { p.role = deck[i]; });
     setPhase(s, 'reveal'); event(s, 'Game started.');
+  } else if (cmd.type === 'wake') {
+    need(host && gated(s), 'Only the moderator can wake the current role.', 403);
+    need(cmd.phaseId === s.phaseId, 'This phase has already ended.');
+    need(!s.awake, 'This role is already awake.');
+    s.awake = true;
   } else if (cmd.type === 'advance') {
     const activeWolf = s.phase === 'werewolf' && actor?.alive && actor.role === 'werewolf';
-    need(host || activeWolf, 'Only the host or an active werewolf can move this phase forward.', 403);
+    need(host || activeWolf && s.mode !== 'classroom', 'Only the host or an active werewolf can move this phase forward.', 403);
     need(cmd.phaseId === s.phaseId, 'This phase has already ended.');
+    need(!gated(s) || s.awake, 'Wake the role before continuing.');
     if (s.phase === 'day') { if (s.day === 1) startNight(s); else { s.votes = {}; setPhase(s, 'vote'); } }
     else if (s.phase === 'dusk') startNight(s);
     else {
@@ -161,6 +170,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
       s.votes[actor.id] = cmd.target || null;
     } else if (cmd.type === 'action') {
       need(eligible(s).some(p => p.id === actor.id), 'It is not your turn.', 403);
+      need(!gated(s) || s.awake, 'Wait until the moderator wakes your role.', 403);
       need(s.phase === 'werewolf' || !s.actions[actor.id], 'Your action is already locked in.');
       if (s.phase === 'fortune') {
         if (cmd.target) { const target = choose(s, cmd.target, actor); note(s, actor.id, `${target.name} is ${target.role}.`); }
@@ -189,13 +199,16 @@ export function command(inputState, hash, cmd, random = Math.random) {
   s.receipts.push(`${hash}:${cmd.requestId}`); s.receipts = s.receipts.slice(-120);
   s.version++; return s;
 }
-export function view(s, hash) {
+export function view(s, hash, screen = false) {
+  if (screen) hash = null;
   const me = s.players.find(p => p.key === hash), host = s.host === hash;
   const pack = me?.role === 'werewolf' ? s.players.filter(p => p.role === 'werewolf').map(p => p.id) : [];
-  return { code: s.code, version: s.version, phase: s.phase, phaseId: s.phaseId, day: s.day,
+  const sleeping = gated(s) && !s.awake;
+  return { code: s.code, mode: s.mode || 'online', awake: !!s.awake, version: s.version, phase: sleeping && !host ? 'sleep' : s.phase, phaseId: s.phaseId, day: s.day,
     host, hostName: s.hostName, settings: s.settings, winner: s.winner, expiresAt: s.expiresAt,
     players: s.players.map(p => ({ id: p.id, name: p.name, alive: p.alive, ...(s.phase === 'finished' || !p.alive ? { role: p.role } : {}), ...(pack.includes(p.id) ? { pack: true } : {}) })),
-    me: me ? { id: me.id, role: me.role, alive: me.alive, acted: s.phase === 'vote' ? Object.hasOwn(s.votes, me.id) : !!s.actions[me.id], target: s.phase === 'werewolf' && me.role === 'werewolf' ? s.actions[me.id]?.target || null : null, vote: s.votes[me.id] || null, notes: s.notes[me.id] || [], canAct: eligible(s).some(p => p.id === me.id), ...(me.role === 'witch' ? { potions: s.potions, victim: s.phase === 'witch' ? s.night?.victim : null } : {}) } : null,
+    me: me ? { id: me.id, role: me.role, alive: me.alive, acted: s.phase === 'vote' ? Object.hasOwn(s.votes, me.id) : !!s.actions[me.id], target: s.phase === 'werewolf' && me.role === 'werewolf' ? s.actions[me.id]?.target || null : null, vote: s.votes[me.id] || null, notes: s.notes[me.id] || [], canAct: !sleeping && eligible(s).some(p => p.id === me.id), ...(me.role === 'witch' ? { potions: s.potions, victim: s.phase === 'witch' && !sleeping ? s.night?.victim : null } : {}) } : null,
+    ...(host && s.mode === 'classroom' ? { moderatorPlayers: s.players.map(p => ({ id: p.id, role: p.role })) } : {}),
     ...(s.phase === 'werewolf' && (host || me?.alive && me.role === 'werewolf') ? { packDecision: { agreed: packDecision(s).agreed } } : {}),
     ...(s.phase === 'werewolf' && me?.alive && me.role === 'werewolf' ? { packChoices: alive(s).filter(p => p.role === 'werewolf').map(p => ({ wolfId: p.id, target: s.actions[p.id]?.target || null })) } : {}),
     progress: host || s.phase === 'vote' || s.phase === 'reveal' ? progress(s) : null,
