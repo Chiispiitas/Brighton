@@ -44,6 +44,7 @@ export const api = {
   linkBook: code => request('linkBook', {code: code.trim()}),
   updateProfile: patch => request('updateProfile', {patch}),
   saveAttempt: attempt => request('saveAttempt', {attempt}),
+  getLeaderboard: () => request('getLeaderboard'),
   getProgress: () => request('getProgress'),
   signOut: async () => { try { await request('signOut'); } finally { forgetSession(); } }
 };

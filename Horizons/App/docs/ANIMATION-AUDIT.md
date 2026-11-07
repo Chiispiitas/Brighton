@@ -1,5 +1,8 @@
 # Horizons animation production audit
 
+Weekly leaderboard material badges: see leaderboard-v1/README.md and production-record.json. Native ImageGen Wood through Masters props, full-opacity old-badge departure/new-badge overshoot/text pop, FLIP row translation, static reduced-motion mode. Existing avatars remain static here. Superseded journey and rejected glow atlases are historical provenance.
+
+
 Reference-proportion correction (6 November 2026): match accepted Pico exposed-arm greet/jump poses at identical cheek/head size before approving registration. The accepted cheek width is 141 source pixels versus 121 active pixels (scale 121/141); clean exposed shafts support 31 px upper arms and 30–31 px forearms, with actual gripping palm 40 px. The current targets are 31 / 30.5 / 40 px. Measure opaque cross-sections and actual palm material, not curved texture bounding boxes, map-hidden arms or adjectives such as chunky. A folded-arm 52.4 px sample is excluded because it merges adjacent skin. Both earlier thin 20–26 px and overwide 48/42 px registrations are user-rejected historical QA evidence. The latest complete native components are reused at corrected proportions; no new anatomy is drawn or truncated. Controlled whole-component independent-axis registration is disclosed, keeps cap-centre bone lengths about 61/52 px and preserves every concealed end. Final appearance requires actual white neutral/recoil/reach review against the exposed-arm reference; numeric widths do not establish user acceptance.
 
 

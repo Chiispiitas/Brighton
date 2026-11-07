@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Weekly leaderboard: new navigation and authenticated getLeaderboard action, mixed-rank human-first20-place weekly groups, disclosed practice bots, server-derived XP and top-quarter +100 XP promotion. Personal Wood/Stone/Iron/Gold/Diamond/Obsidian/Masters progression. Read docs/leaderboard-v1/README.md for enrollment, UTC boundaries, ties, lazy immutable settlement, privacy, motion and planned-only friend profiles. Existing learning records remain untouched. Final backend deployment efa2748c-85b5-4bb1-9e05-c20c17ec22a6, source revision 9c13eeb08c6bd8724c74ae04d6b8f67b0eebbe01. 60 backend tests and actual four-viewport synthetic browser proof pass. Live checks use only health and unauthenticated rejection, no learner records.
+
+
 Word bank header art (6 November 2026): Mina now uses the accepted larger Practice-header slot dimensions (180px desktop, 130px short desktop, 145px mobile) instead of the generic 70px-wide slot. Art/rig remain unchanged. Eight synthetic desktop/mobile viewport checks in reports/bank-art.json confirm clear controls and desktop height fit.
 
 

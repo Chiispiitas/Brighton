@@ -1,0 +1,83 @@
+{
+  "method": "Built-in ImageGen; attached exact preflight paths. First output rejected for glow. Four-input native edit removes glows on opaque chroma magenta. Mechanical chroma removal and independent cell crops only; no drawn replacements. Native files preserved.",
+  "calls": [
+    {
+      "asset_id": "journey-rank-emblems-v1",
+      "kind": "ui",
+      "intent": "generate",
+      "reference_ids": [
+        "R01",
+        "R06",
+        "R07"
+      ],
+      "target_paths": [],
+      "prompt": "Six isolated rank emblems, seedling, trail boot, compass, lighthouse, mountain summit, sunrise. Warm adult playful Horizons flat illustration. Native transparent sprite atlas, separate full silhouettes."
+    },
+    {
+      "asset_id": "journey-rank-emblems-v1",
+      "kind": "ui",
+      "intent": "edit",
+      "reference_ids": [
+        "R01",
+        "R06",
+        "R07"
+      ],
+      "target_paths": [
+        "C:/Users/David/.codex/generated_images/01a1a9d5-5815-78c1-981e-ce1309780714/exec-2fb4ebd5-4717-4020-9fc3-448888e96744.png"
+      ],
+      "prompt": "Remove every glow halo. Keep six flat isolated rank objects, use solid chroma magenta #ff00ff background, not transparent. No shadows, atmospheric glows, gradients extending outside hard silhouettes."
+    }
+  ],
+  "assets": [
+    {
+      "id": "material-rank-0",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-0.png",
+      "sha256": "d3a4a1a58c336c772d43da7c4703856aca25c0e108ca0b204072bbcaaa9f8480"
+    },
+    {
+      "id": "material-rank-1",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-1.png",
+      "sha256": "4d478e45897bb7f110be880ea80111d565f977c3f4626d043590cc97cda1c215"
+    },
+    {
+      "id": "material-rank-2",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-2.png",
+      "sha256": "d499fecd252b33dd11154409e17c6cfd6298308b5d438f66aedf229809a46cd6"
+    },
+    {
+      "id": "material-rank-3",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-3.png",
+      "sha256": "a463dd97b4ada04450e003e1c1f33d57dea20f3a72c7e530a7cfe7691041b15e"
+    },
+    {
+      "id": "material-rank-4",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-4.png",
+      "sha256": "44bdf115c017dd493439350c3dd109c7de226181b50d0de1e8b6edd21f1a8d4c"
+    },
+    {
+      "id": "material-rank-5",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-5.png",
+      "sha256": "4e83e56e3b1a2fdfd1086b467d3f31b4e01ff0b0dd9f0ceb9bf4e4dc6e71c29a"
+    },
+    {
+      "id": "material-rank-6",
+      "file": "Horizons\\App\\assets\\art\\journey-ranks-v1\\rank-6.png",
+      "sha256": "b0489fef9a2785d2059b07a0ec3ba0ef76190f9dfe8b8ffeef9f1145083c4b9f"
+    }
+  ],
+  "superseded": "Journey theme superseded by user material progression before release; old atlas kept as provenance only.",
+  "currentBrief": {
+    "asset_id": "material-ranks-v1",
+    "kind": "ui",
+    "intent": "generate",
+    "reference_ids": [
+      "R01",
+      "R06",
+      "R07"
+    ],
+    "target_paths": [],
+    "prompt": "Seven isolated rank tokens: carved wood, stone, iron, gold, diamond, obsidian, Masters crown. 4x2 atlas with final cell empty. Opaque uniform chroma magenta background; flat Horizons chunky art, no glows, no shields, no words."
+  },
+  "currentNative": "native-material-atlas.png",
+  "currentMethod": "Native ImageGen on solid chroma magenta; mechanical chroma removal, per-cell cropping and downsampling only."
+}

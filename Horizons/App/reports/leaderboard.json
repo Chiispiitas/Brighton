@@ -1,0 +1,79 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "page": 900,
+      "viewport": 900,
+      "list": {
+        "x": 284,
+        "y": 373.140625,
+        "width": 1092,
+        "height": 490.859375,
+        "top": 373.140625,
+        "right": 1376,
+        "bottom": 864,
+        "left": 284
+      },
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "page": 600,
+      "viewport": 600,
+      "list": {
+        "x": 220,
+        "y": 325.6875,
+        "width": 774,
+        "height": 212.3125,
+        "top": 325.6875,
+        "right": 994,
+        "bottom": 538,
+        "left": 220
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "page": 878,
+      "viewport": 844,
+      "list": {
+        "x": 20,
+        "y": 300.4375,
+        "width": 350,
+        "height": 452.5625,
+        "top": 300.4375,
+        "right": 370,
+        "bottom": 753,
+        "left": 20
+      },
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "page": 674,
+      "viewport": 640,
+      "list": {
+        "x": 16,
+        "y": 314.578125,
+        "width": 288,
+        "height": 234.421875,
+        "top": 314.578125,
+        "right": 304,
+        "bottom": 549,
+        "left": 16
+      },
+      "overflow": false
+    }
+  ],
+  "syntheticOnly": true,
+  "twentyPlaces": true,
+  "humanPriority": true,
+  "promotionOnce": true,
+  "reducedMotion": true,
+  "errors": []
+}

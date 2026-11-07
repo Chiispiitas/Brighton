@@ -1,3 +1,4 @@
+import {leaderboardMarkup,dismissRank} from './leaderboard.js';
 import {audioKey} from './answer-audio.js';
 import {applyClientContent} from '../content/admin-content.mjs';
 import {STREAK_DURATION,shouldShowStreakCelebration,markStreakCelebrationSeen,streakCelebrationMarkup,mountStreakCelebration} from './streak-celebration.js?v=streakidle1';
@@ -19,7 +20,7 @@ import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, isAlphabetQue
 const app = document.getElementById('app');
 const dialog = document.getElementById('app-dialog');
 const toastBox = document.getElementById('toast');
-const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
+const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,leaderboard:null,boardError:null,boardBusy:false,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
 let toastTimer;
 let wordPlayer;
 let disposeOverworld;
@@ -71,6 +72,7 @@ let contentRevision='base';
 function setSession(value) {
   if (!value) return;
   const previousProfileId=profile().id;
+  if(value.profile&&value.profile.id!==previousProfileId){state.leaderboard=null;state.boardError=null;}
   if(value.contentSnapshot&&(!state.active||state.active.kind==='result')){applyClientContent(value.contentSnapshot.patches);contentRevision=value.contentSnapshot.revision;}
   if (value.profile || value.books || value.progress) state.session = {...(state.session || {}),...value};
   else if (value.session) state.session = value.session;
@@ -106,7 +108,7 @@ function setupAvatarChoices(){const groups=avatarOptions();for(const button of a
 function shell(body,current=state.route){
  return `<div class="app-shell"><aside class="sidebar"><a class="brand" href="#learn" data-route="learn"><span class="wordmark">HORIZONS</span></a><nav class="desktop-nav" aria-label="Main navigation">${navItems(current,true)}</nav><button class="sidebar-person" data-route="profile">${avatarMarkup(profile().avatar,'avatar-small',name())}<span><strong>${esc(name())}</strong><small>My profile</small></span></button></aside><div class="workspace"><header class="topbar"><button class="book-switch" data-action="books">${icon('book')}<span>${esc(bookTitle(activeBook()))}</span>${icon('chevron')}</button></header><main id="main-content" class="main-content">${body}</main></div><nav class="mobile-nav" aria-label="Main navigation">${navItems(current)}</nav></div>`;
 }
-function navItems(current,sidebar=false){return [['learn','home','Learn'],['practice','practice','Practice'],['profile','profile','Profile']].filter(([id])=>!sidebar||id!=='profile').map(([id,i,title])=>`<button data-route="${id}" class="nav-item ${id===current?'active':''}" ${id===current?'aria-current="page"':''}>${id==='profile'?avatarMarkup(profile().avatar,'nav-profile-avatar',name()):icon(i)}<span>${title}</span></button>`).join('');}
+function navItems(current,sidebar=false){return [['learn','home','Learn'],['practice','practice','Practice'],['leaderboard','star','Leaderboard'],['profile','profile','Profile']].filter(([id])=>!sidebar||id!=='profile').map(([id,i,title])=>`<button data-route="${id}" class="nav-item ${id===current?'active':''}" ${id===current?'aria-current="page"':''}>${id==='profile'?avatarMarkup(profile().avatar,'nav-profile-avatar',name()):icon(i)}<span>${title}</span></button>`).join('');}
 function welcome(){
  return `<main class="welcome"><div class="welcome-brand"><span class="wordmark">HORIZONS</span><span class="brighton-label">BY BRIGHTON</span></div><div class="welcome-layout"><section class="welcome-story">${sceneMarkup('town','welcome-town')}<div class="welcome-companions">${characterMarkup('pico','welcome-pico')}${characterMarkup('mina','welcome-mina')}${characterMarkup('alex','welcome-alex')}${characterMarkup('jo','welcome-jo')}</div></section><section class="redeem-panel"><h2>Open your book</h2><form id="redeem-form" class="code-form"><label for="book-code">Book code</label><input id="book-code" name="code" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Book code" required maxlength="80"><p id="code-error" class="form-error" role="alert"></p><button class="primary-button full-width" type="submit">Open ${icon('arrow')}</button></form><div class="demo-codes"><button type="button" data-action="demo-codes">Example codes</button></div></section></div></main>`;
 }
@@ -209,7 +211,7 @@ function render() {
     }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
     return;
   }
-  const pages={learn:home,practice,bank:wordBank,profile:profilePage};
+  const pages={learn:home,practice,bank:wordBank,profile:profilePage,leaderboard:()=>leaderboardMarkup(state.leaderboard,avatarMarkup,state.boardError)};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
   setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
@@ -439,7 +441,7 @@ async function saveProfile(form) {
   catch(issue){error.textContent=issue.message;button.disabled=false;}
   finally{state.busy=false;}
 }
-on('click','[data-route]',(event,target)=>{event.preventDefault();route(target.dataset.route);});
+on('click','[data-route]',(event,target)=>{event.preventDefault();route(target.dataset.route);if(target.dataset.route==='leaderboard')loadLeaderboard();});
 on('click','[data-jump]',(_,target)=>document.getElementById(`lesson-${target.dataset.jump}`)?.closest('.path-lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'}));
 on('click','[data-start-chunk]',(_,target)=>startChunk(target.dataset.startChunk));
 app.addEventListener('scroll',event=>{if(event.target.matches?.('.horizontal-path-scroll')){closePathBubble();syncPathPan();}},{capture:true,passive:true});
@@ -493,6 +495,7 @@ on('submit','#profile-form',(event,form)=>{event.preventDefault();saveProfile(fo
 on('submit','#text-answer-form',event=>{event.preventDefault();gradeCurrent();});
 on('click','[data-action]',async(_,target)=>{
   switch(target.dataset.action){
+    case'refresh-board':return loadLeaderboard();case'dismiss-rank':dismissRank(state.leaderboard);return render();
     case'books':return booksDialog();case'add-book':return booksDialog(true);
     case'word-bank':return route('bank');case'practice-sets':return route('practice');
     case'select-all':{const clear=allPracticeSelected();state.selected=clear?new Set():new Set(practiceChunkIds);state.selectedGrammar=clear?new Set():new Set(practiceGrammarIds);return render();}
@@ -517,9 +520,9 @@ on('click','[data-select-book]',(_,target)=>{state.bookId=target.dataset.selectB
 on('click','[data-use-demo]',(_,target)=>{closeDialog();const input=document.getElementById('book-code');if(input){input.value=target.dataset.useDemo;input.focus();}},dialog);
 on('click','[data-speak]',(_,target)=>speak(target.dataset.speak),dialog);
 on('click','[data-leave-confirm]',()=>{stopAudio();closeDialog();state.active=null;route('learn');},dialog);
-on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOut();}catch{}state.session=null;state.active=null;state.bookId=null;state.avatarDraft=null;location.hash='';render();},dialog);
+on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOut();}catch{}state.session=null;state.leaderboard=null;state.boardError=null;state.active=null;state.bookId=null;state.avatarDraft=null;location.hash='';render();},dialog);
 dialog.addEventListener('click',event=>{if(event.target===dialog){const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)closeDialog();}});
-window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;render();window.scrollTo({top:0,behavior:'instant'});}});
+window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile','leaderboard'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;render();window.scrollTo({top:0,behavior:'instant'});}});
 window.addEventListener('resize',layoutPaths);
 window.addEventListener('offline',()=>notify('You are offline.'));
 window.addEventListener('online',()=>notify('Connected.','success'));
@@ -534,14 +537,14 @@ document.addEventListener('keydown',event=>{
 
 async function boot() {
   await Promise.all([fetch('./assets/audio/answer-models-v1/lookup.json').then(r=>r.ok?r.json():{}).then(data=>{state.answerAudio=data;}).catch(()=>{}),loadArt(),fetch('./assets/audio/manifest.json').then(response=>response.ok?response.json():{}).then(data=>{state.audioManifest=data.files || {};}).catch(()=>{})]);
-  state.route=['learn','practice','bank','profile'].includes(location.hash.slice(1))?location.hash.slice(1):'learn';if(location.hash==='#progress')history.replaceState(null,'','#learn');
+  state.route=['learn','practice','bank','profile','leaderboard'].includes(location.hash.slice(1))?location.hash.slice(1):'learn';if(location.hash==='#progress')history.replaceState(null,'','#learn');
   if(getSessionToken()) {
     try {setSession(await api.getSession());}catch(error){if(error.status===401)forgetSession();else notify(error.message);}
   }
   render();
   if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).catch(()=>{});
 }
-boot().catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Unable to open Horizons</h1><p>Check your connection and try again.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
+boot().then(()=>{if(state.route==='leaderboard')loadLeaderboard();}).catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Unable to open Horizons</h1><p>Check your connection and try again.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
 window.HorizonsApp={getState:()=>{const a=state.active,q=a?.questions?.[a.index];return{signedIn:Boolean(state.session),route:state.route,bookId:state.bookId,activity:a?.kind||null,activityId:a?.options?.activityId||null,options:a?.options?Object.fromEntries(['seed','mode','count','chunkIds','lessonIds','grammarSetIds','audioEnabled','audioFallbackQuestionIds'].filter(k=>a.options[k]!==undefined).map(k=>[k,a.options[k]])):null,index:a?.index??null,checked:Boolean(a?.checked),saved:Boolean(a?.saved),question:q?Object.fromEntries(['id','type','prompt','listening','listenFor','wordIds','originListening'].filter(k=>q[k]!==undefined).map(k=>[k,q[k]])):null};},reload:()=>boot()};
 
 // Track the visible area on browsers that overlay the keyboard on the layout viewport.
@@ -556,3 +559,9 @@ window.visualViewport?.addEventListener('resize',syncExerciseKeyboardViewport);
 window.addEventListener('resize',syncExerciseKeyboardViewport);
 document.addEventListener('focusin',syncExerciseKeyboardViewport);
 document.addEventListener('focusout',()=>requestAnimationFrame(syncExerciseKeyboardViewport));
+
+async function loadLeaderboard(){if(state.boardBusy||!state.session)return;state.boardBusy=true;state.boardError=null;const old=new Map([...app.querySelectorAll('[data-competitor]')].map(el=>[el.dataset.competitor,el.getBoundingClientRect().top])),scroll=app.querySelector('.board-list')?.scrollTop||0;const owner=profile().id;try{const response=await api.getLeaderboard();if(profile().id!==owner)return;state.leaderboard=response;}catch(error){state.boardError=error.message;}finally{state.boardBusy=false;}if(state.route!=='leaderboard'||state.active)return;render();const list=app.querySelector('.board-list');if(list)list.scrollTop=scroll;if(!matchMedia('(prefers-reduced-motion:reduce)').matches)for(const el of app.querySelectorAll('[data-competitor]')){const top=old.get(el.dataset.competitor);if(top!==undefined){const dy=top-el.getBoundingClientRect().top;if(Math.abs(dy)>1)el.animate([{transform:`translateY(${dy}px)`},{transform:'none'}],{duration:650,easing:'cubic-bezier(.2,.8,.3,1)'});}}app.querySelector('.rank-reveal')?.focus({preventScroll:true});}
+setInterval(()=>{if(state.route==='leaderboard'&&!state.active&&!document.hidden)loadLeaderboard();},45000);
+window.addEventListener('hashchange',()=>{if(location.hash==='#leaderboard')loadLeaderboard();});
+
+window.addEventListener('keydown',event=>{const reveal=app.querySelector('.rank-reveal');if(!reveal)return;if(event.key==='Tab'){event.preventDefault();reveal.querySelector('button')?.focus();}if(event.key==='Escape'){dismissRank(state.leaderboard);render();app.querySelector('[data-action=refresh-board]')?.focus();}});

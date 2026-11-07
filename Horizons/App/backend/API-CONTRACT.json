@@ -111,6 +111,12 @@
       "response": {
         "ok": true
       }
+    },
+    "getLeaderboard": {
+      "request": {
+        "action": "getLeaderboard"
+      },
+      "response": "Authenticated public standings: week, endsAt, personal rank/name/nextRank, cutoff, minimumXp, previous result,20 rows with pseudonymous ID/name/avatar/weekly XP/self/bot/position. Enrolls caller; scores only from immutable server-graded attempts."
     }
   },
   "bootstrap": {

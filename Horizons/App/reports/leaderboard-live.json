@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "health": {
+    "ok": true,
+    "name": "Horizons Companion API",
+    "version": 1,
+    "masteryPolicy": "one-correct-answer",
+    "competitionPolicy": "weekly-xp-v1"
+  },
+  "unauthenticatedStatus": 401,
+  "noLearnerDataRead": true,
+  "deployment": "efa2748c-85b5-4bb1-9e05-c20c17ec22a6"
+}
