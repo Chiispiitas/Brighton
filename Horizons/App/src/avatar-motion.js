@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // Avatar-only motion: editor preview and main profile portraits. Native art stays intact.
 const mounts=new WeakMap();
 export function requestAvatarFeedback(element,kind='select'){
@@ -6,7 +7,7 @@ export function requestAvatarFeedback(element,kind='select'){
 }
 export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils,eyewear}){
  mounts.get(element)?.dispose();
- const reduced=matchMedia('(prefers-reduced-motion: reduce)'),input=new AbortController();
+ const reduced=motionPreference,input=new AbortController();
  let disposed=false,visible=false,ready=false,raf=0,idleAnimation,effect,feedbackBlinkUntil=0;
  const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.4/3.2}cqw,${y*.4/3.2}cqw)`;if(eyewear)eyewear.style.transform=face.style.transform;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
  const reset=()=>{feedbackBlinkUntil=0;eyes.hidden=false;closed.hidden=true;gaze();frame.dataset.avatarBlink='open';};

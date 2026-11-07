@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // Jo-only native ImageGen part rigs. Original complete poses remain the fallback.
 const controllers=new WeakMap(),elapsedByPose=new Map();
 const reactedAnswers=new Set();
@@ -49,7 +50,7 @@ function tracks(pose){
 export function mountJo(slot){
  if(!slot||slot.dataset.character!=='jo')return null;
  if(controllers.has(slot))return controllers.get(slot);
- const requestedPose=slot.dataset.posture,pose=requestedPose,reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const requestedPose=slot.dataset.posture,pose=requestedPose,reduced=motionPreference;
  const fallback=slot.querySelector(':scope>.character-art'),originalSource=slot.dataset.anatomySource;
  const stage=document.createElement('span');stage.className='jo-motion-stage';stage.hidden=true;stage.setAttribute('aria-hidden','true');slot.append(stage);
  let disposed=false,ready=false,visible=false,animations=[],faceFrame=0,spec,nodes,reaction=null;

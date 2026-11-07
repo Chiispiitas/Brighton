@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // ImageGen-separated decoration rigs. Character/avatar animation is untouched.
 let manifestPromise;
 const asset=p=>new URL('../'+p,import.meta.url).href;
@@ -12,7 +13,7 @@ const recipes={
  postbox:{letter:['50% 16%','none','none','none']}
 };
 export function mountPropMotion(region){
- if(!region)return()=>{};let disposed=false;const records=[],reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ if(!region)return()=>{};let disposed=false;const records=[],reduced=motionPreference;
  const restore=r=>{r.stage.hidden=true;r.still.hidden=false;for(const a of r.animations){a.pause();a.currentTime=0;}for(const p of r.specials)p.hidden=true;};
  const update=r=>{
   if(disposed)return;

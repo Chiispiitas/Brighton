@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 /* Native ImageGen cutouts with measured, connected shoulder/elbow/hip/knee pivots. */
 const appURL=new URL('../',import.meta.url),mounts=new WeakMap();
 let artwork;
@@ -142,7 +143,7 @@ function groundOffset(name,posture,g){
 export function unmountCast(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountCast(element,{character='mina',mood='idle',posture='step'}={}){
  styles();unmountCast(element);delete element.dataset.rigReady;delete element.dataset.rigError;let disposed=false,observer,timer,animationList=[],generation=0;
- const media=matchMedia('(prefers-reduced-motion:reduce)');
+ const media=motionPreference;
  const state={
   dispose(){disposed=true;clearTimeout(timer);observer?.disconnect();for(const a of animationList)a.cancel();animationList=[];media.removeEventListener('change',motionPreference);element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);if(state.frame)delete state.frame.__articulatedRig;element.replaceChildren();delete element.dataset.rigReady;delete element.__articulatedRig;},
   setMood(next='idle'){clearTimeout(timer);if(state.play)state.play(next);if(next!=='idle')timer=setTimeout(()=>{if(!disposed)state.play('idle');},state.getDuration()+440);},

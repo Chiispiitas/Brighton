@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // Continuous articulated motion over native ImageGen parts, with registered
 // shoulder/elbow/hip/knee/ankle anchors. The face is a single native image.
 const appURL=new URL('../',import.meta.url),mounts=new WeakMap();let kitPromise;
@@ -10,7 +11,7 @@ const envelope=(q,a,b,c,d)=>smooth((q-a)/(b-a))*(1-smooth((q-c)/(d-c)));
 function ik(x,y,tx,ty,a,b,bend){const dx=tx-x,dy=ty-y,d=Math.max(Math.abs(a-b)+.01,Math.min(a+b-.01,Math.hypot(dx,dy)));const theta=Math.atan2(dy,dx),offset=Math.acos(Math.max(-1,Math.min(1,(a*a+d*d-b*b)/(2*a*d)))),u=theta+bend*offset;const ex=x+a*Math.cos(u),ey=y+a*Math.sin(u),f=Math.atan2(ty-ey,tx-ex);return[(u*deg-90),((f-u)*deg)];}
 export function unmountPico(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountPico(element,{mood='idle',posture='greet'}={}){
- install();unmountPico(element);let disposed=false,observer,timer,animations=[],currentMood=mood,generation=0,initialized=false,enterCycle;const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ install();unmountPico(element);let disposed=false,observer,timer,animations=[],currentMood=mood,generation=0,initialized=false,enterCycle;const reduced=motionPreference;
  const controller={setMood(next='idle'){currentMood=next;clearTimeout(timer);const cycle=start();if(next!=='idle')timer=setTimeout(()=>{currentMood='idle';start();},cycle||8000);},seek(ms){enterCycle?.();for(const a of animations){a.pause();a.currentTime=Math.max(0,ms);}},dispose(){disposed=true;generation++;clearTimeout(timer);animations.forEach(a=>a.cancel());observer?.disconnect();reduced.removeEventListener('change',onMotion);element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);delete element.__articulatedRig;element.replaceChildren();}};
  const onMotion=()=>start(),greet=()=>controller.setMood('wave');mounts.set(element,controller);element.__articulatedRig=controller;
  let stage,actor,meta,nodes={};

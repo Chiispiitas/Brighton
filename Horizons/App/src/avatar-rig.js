@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 /* Native ImageGen bust layers. One body coordinate system keeps every joint registered. */
 const mounts = new WeakMap();
 const appURL = new URL('../', import.meta.url);
@@ -78,7 +79,7 @@ function armGestureTrack(geometry,start,original,target,duration,returning){
 }
 export function unmountAvatar(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='portrait'}={}){
- installStyle();unmountAvatar(element);let disposed=false,observer;const pose=['portrait','wave','think'].includes(posture)?posture:'portrait',motionPreference=matchMedia('(prefers-reduced-motion:reduce)');
+ installStyle();unmountAvatar(element);let disposed=false,observer;const pose=['portrait','wave','think'].includes(posture)?posture:'portrait',motionPreference=motionPreference;
  const state={actions:[],base:new Map(),actionGeneration:0,dispose(){disposed=true;state.actionGeneration++;state.actions.forEach(a=>a.cancel());observer?.disconnect();motionPreference.removeEventListener('change',motionChanged);element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);element.replaceChildren();},setMood(next='idle'){
   if(!state.frame||!state.body)return;
   if(motionPreference.matches){state.frame.dataset.mood='idle';return;}

@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // Mina-only native ImageGen part rigs. Original complete poses remain the fallback.
 const controllers=new WeakMap(),elapsedByPose=new Map();
 const reactedAnswers=new Set();
@@ -42,7 +43,7 @@ function tracks(pose){
 export function mountMina(slot){
  if(!slot||slot.dataset.character!=='mina')return null;
  if(controllers.has(slot))return controllers.get(slot);
- const pose=slot.dataset.posture,reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const pose=slot.dataset.posture,reduced=motionPreference;
  const fallback=slot.querySelector(':scope>.character-art'),originalSource=slot.dataset.anatomySource;
  const stage=document.createElement('span');stage.className='mina-motion-stage';stage.hidden=true;stage.setAttribute('aria-hidden','true');slot.append(stage);
  let disposed=false,ready=false,visible=false,animations=[],faceFrame=0,spec,nodes,reaction=null;

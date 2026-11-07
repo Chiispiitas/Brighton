@@ -1,5 +1,6 @@
+import {motionPreference} from './preferences.js';
 // Finite interface feedback. Never animate a character or a container holding one.
-const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+const reduced = motionPreference;
 const protectedArt = '.character,.avatar,[data-avatar-static]';
 const running = new Set();
 const ease = 'cubic-bezier(.2,.8,.2,1)';

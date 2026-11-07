@@ -1,3 +1,4 @@
+import {motionPreference} from './preferences.js';
 // Saved daily streak event only. Native art uses one finite shared clock and opaque swaps.
 const ROOT=new URL('../assets/art/streak-campfire-v2/',import.meta.url);
 export const STREAK_DURATION=7600;
@@ -47,7 +48,7 @@ function solveArm(shoulder,wrist,upper,fore,bend){
 
 export function mountStreakCelebration(root,{elapsed=0,onTime=()=>{},onPresented=()=>{},onImpact=()=>{}}={}){
  if(!root)return{dispose(){},ready:Promise.resolve()};
- const stage=root.querySelector('.streak-campfire-stage'),still=root.querySelector('.streak-campfire-still'),reveal=root.querySelector('[data-streak-reveal]'),button=root.querySelector('[data-action=streak-results]'),title=root.querySelector('h1'),rays=root.querySelector('.streak-impact-rays'),confetti=root.querySelector('.streak-impact-confetti'),rail=root.querySelector('.streak-week-rail'),reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const stage=root.querySelector('.streak-campfire-stage'),still=root.querySelector('.streak-campfire-still'),reveal=root.querySelector('[data-streak-reveal]'),button=root.querySelector('[data-action=streak-results]'),title=root.querySelector('h1'),rays=root.querySelector('.streak-impact-rays'),confetti=root.querySelector('.streak-impact-confetti'),rail=root.querySelector('.streak-week-rail'),reduced=motionPreference;
  let finalStill=src('reduced.png'),disposed=false,ready=false,failed=false,presented=false,impacted=false,frame=0,last=null,visible=true,clock=Math.max(0,Math.min(DURATION,Number(elapsed)||0)),spec,nodes={},loadTimer;
  const loadAbort=new AbortController();
  const isVisible=()=>{const rect=root.getBoundingClientRect();return root.isConnected&&!document.hidden&&visible&&rect.bottom>0&&rect.top<innerHeight;};

@@ -1,10 +1,11 @@
+import {motionPreference} from './preferences.js';
 // Decorative world motion and map input only. No learner state or anatomy edits.
 const mounts=new WeakMap();
 
 export function mountOverworld(region){
  if(!region)return()=>{};
  if(mounts.has(region))return mounts.get(region);
- const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+ const reduced=motionPreference;
  let disposed=false;
 
  // Wheel input stays entirely native: vertical wheel scrolls the page.

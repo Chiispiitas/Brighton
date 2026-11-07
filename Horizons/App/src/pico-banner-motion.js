@@ -1,8 +1,9 @@
+import {motionPreference} from './preferences.js';
 // New, isolated trial. All artwork comes from the documented ImageGen parts.
 // Feet/body stay fixed. Head/neck and map+both grips share one 14-second clock.
 const controllers=new WeakMap();
 const source=new URL('../assets/art/pico-banner-motion-v1/',import.meta.url);
-const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const reduced=motionPreference;
 export function mountBannerPico(slot){
  if(controllers.has(slot))return controllers.get(slot);
  const fallback=slot.querySelector(':scope > .character-art');
