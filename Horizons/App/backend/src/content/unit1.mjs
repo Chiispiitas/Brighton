@@ -187,8 +187,8 @@ export const grammarSets=[
   models:{columns:['First sound','Article','Examples'],rows:[['Consonant sound','a','a teacher · a taxi driver'],['Vowel sound','an','an actor · an office worker']]},
   questions:[...['teacher','student','chef','doctor','receptionist','salesclerk','taxi driver','waiter','waitress','farmer','nurse','dentist','police officer','driver'].map((job,i)=>choice(`article-a-${i}`,`Complete: I am ___ ${job}.`,'a',['an'],`I am a ${job}.`)),
    ...['actor','office worker'].map((job,i)=>choice(`article-an-${i}`,`Complete: I am ___ ${job}.`,'an',['a'],`I am an ${job}.`)),
-   text('article-repair-office','Fix one word: I am a office worker.',['I am an office worker.'],'I am an office worker.'),
-   text('article-repair-teacher','Fix one word: She is an teacher.',['She is a teacher.'],'She is a teacher.'),
+   text('article-repair-office','Correct the mistake. Write the whole sentence.\nI am a office worker.',['I am an office worker.'],'I am an office worker.'),
+   text('article-repair-teacher','Correct the mistake. Write the whole sentence.\nShe is an teacher.',['She is a teacher.'],'She is a teacher.'),
    order('article-order-actor','Build the sentence.','Alex is an actor.')
   ]},
  {id:'1b-contractions',lessonId:'1B',title:'Contractions',description:'Full forms and contractions of be.',
