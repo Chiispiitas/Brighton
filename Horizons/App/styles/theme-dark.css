@@ -13,8 +13,6 @@
 :root[data-theme=dark] :is(.hero-continue:hover){background:var(--surface)}
 :root[data-theme=dark] :is(.hero-progress-track){background:var(--surface)}
 :root[data-theme=dark] :is(.hero-progress-track i){background:var(--surface)}
-:root[data-theme=dark] :is(.lesson-marker){color:var(--muted)}
-:root[data-theme=dark] :is(.lesson-4 .lesson-marker){background:var(--surface);color:var(--muted)}
 :root[data-theme=dark] :is(.trail-line path){stroke:var(--line)}
 :root[data-theme=dark] :is(.lesson-2 .trail-line path){stroke:var(--line)}
 :root[data-theme=dark] :is(.lesson-3 .trail-line path){stroke:var(--line)}
@@ -160,3 +158,7 @@
 :root[data-theme=dark] .path-stop.mastered .stop-orb>.icon{fill:#ffe398;color:#714808}
 :root[data-theme=dark] .path-stop.mastered .landmark-state{background:#ffd650;color:#714808}
 :root[data-theme=dark] .path-stop.mastered .landmark-state>.icon{fill:#ffdc55;color:#714808}
+:root[data-theme=dark] .lesson-marker{background:#f6d891;color:#654110}
+:root[data-theme=dark] .lesson-2 .lesson-marker{background:#ecc0d7;color:#6d2148}
+:root[data-theme=dark] .lesson-3 .lesson-marker{background:#baded7;color:#174f48}
+:root[data-theme=dark] .lesson-4 .lesson-marker{background:#c6d9ec;color:#234867}
