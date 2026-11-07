@@ -192,6 +192,7 @@ function profileEditorPage() {
 function profilePage(){if(state.profileEditing)return profileEditorPage();const p=profile(),g=progress();return socialProfileMarkup(state.social,{avatar:avatarMarkup,icon,own:true,tab:state.socialTab,error:state.socialError,loading:!state.social,fallback:{name:name(),avatar:p.avatar,stats:{xp:g.xp,streak:g.streak,bestStreak:g.bestStreak,wordsMastered:Object.values(g.wordStats||{}).filter(w=>w.mastered).length,lessonsCompleted:g.completedLessons?.length,activeDays:g.activeDays?.length}}});}
 function personPage(){return socialProfileMarkup(state.personData,{avatar:avatarMarkup,icon,own:false,tab:state.socialTab,error:state.personError});}
 function render() {
+  const socialScroll=app.querySelector('.social-page[data-profile-scroll-key]'),socialScrollKey=socialScroll?.dataset.profileScrollKey,socialScrollTop=socialScroll?.querySelector('.social-scroll')?.scrollTop||0;
   const motionBefore=captureUI(app),previousQuestion=app.querySelector('.activity-page[data-question-id]')?.dataset.questionId,promptScroll=app.querySelector('.question-content')?.scrollTop||0;
   document.documentElement.classList.toggle('lesson-view',!!state.active&&['quiz','result'].includes(state.active.kind));
   disposeOverworld?.();disposeOverworld=null;
@@ -218,6 +219,7 @@ function render() {
   const pages={learn:home,practice,bank:wordBank,profile:profilePage,person:personPage,leaderboard:()=>leaderboardMarkup(state.leaderboard,avatarMarkup,state.boardError)};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route==='person'?'profile':state.route);
+  const updatedSocial=app.querySelector('.social-page[data-profile-scroll-key]');if(socialScrollKey&&updatedSocial?.dataset.profileScrollKey===socialScrollKey)updatedSocial.querySelector('.social-scroll').scrollTop=socialScrollTop;
   setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
   refreshArtwork(app);
   enhanceMotion(app,motionBefore);
