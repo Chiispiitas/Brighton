@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Mobile More: fifth mobile navigation item opens the shared Settings/Help/Log out disclosure upward. Profile remains accessible. Both layouts share rendering and dismissal behavior. Menu bounds and all three mobile actions checked at390/320 widths; desktop behavior retained.
+
 Sidebar More menu: native disclosure beside existing navigation, with Settings, Help and Log out. Settings saves daily goal through existing authenticated profile API and sound effects through existing preference controller. Help has book/mastery/friend/audio topics. Log out reuses confirmation. Escape returns focus to More; outside click and item selection dismiss it. Desktop bounds verified at1440/1024/820, mobile navigation unchanged. See tools/more-menu-proof.mjs and reports/more-menu.json. No backend change.
 
 Friend challenges implemented: private mutual-friend eight-question A1 vocabulary rounds, shared server snapshot, one server-graded score each, expiry/decline and delayed comparison. Challenges on own profile; Challenge on mutual friend profile. No XP or progress awards. Rank card/banner backgrounds now reflect Wood through Masters. Read docs/FRIEND-CHALLENGES.md and docs/SOCIAL-PROFILES.md.71 backend tests and synthetic UI round/comparison/mobile checks pass.
