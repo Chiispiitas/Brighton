@@ -117,6 +117,34 @@
         "action": "getLeaderboard"
       },
       "response": "Authenticated public standings: week, endsAt, personal rank/name/nextRank, cutoff, minimumXp, previous result,20 rows with pseudonymous ID/name/avatar/weekly XP/self/bot/position. Enrolls caller; scores only from immutable server-graded attempts."
+    },
+    "getSocialHome": {
+      "request": {
+        "action": "getSocialHome"
+      },
+      "response": "Public own profile/statistics/counts plus human-first suggestions and following/followers/mutual friends lists."
+    },
+    "getPublicProfile": {
+      "request": {
+        "action": "getPublicProfile",
+        "targetId": "Opaque public competitor ID or stable bot persona ID"
+      },
+      "response": "Public profile, aggregate statistics, relationship state and social lists; no private learner fields."
+    },
+    "setFollow": {
+      "request": {
+        "action": "setFollow",
+        "targetId": "Public target ID",
+        "following": true
+      },
+      "response": "Updated public target relationship. Human friendship requires reciprocal active follows. Bots never reciprocate."
+    },
+    "searchPeople": {
+      "request": {
+        "action": "searchPeople",
+        "query": "Name or public ID"
+      },
+      "response": "Up to12 public cards; minimum2 characters; humans first."
     }
   },
   "bootstrap": {

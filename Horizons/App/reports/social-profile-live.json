@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "checkedAt": "2026-11-07T12:46:34.449Z",
+  "deployment": "544df747-2798-4225-a7cf-379ca88361d1",
+  "sourceRevision": "ec043079752a32c96656cdf5941a9584e8f7af6b",
+  "health": {
+    "ok": true,
+    "name": "Horizons Companion API",
+    "version": 1,
+    "masteryPolicy": "one-correct-answer",
+    "competitionPolicy": "weekly-xp-v1",
+    "socialPolicy": "mutual-follow-v1"
+  },
+  "unauthenticated": [
+    {
+      "action": "getSocialHome",
+      "status": 401
+    },
+    {
+      "action": "getPublicProfile",
+      "status": 401
+    },
+    {
+      "action": "setFollow",
+      "status": 401
+    },
+    {
+      "action": "searchPeople",
+      "status": 401
+    }
+  ],
+  "noLearnerDataAccessed": true
+}

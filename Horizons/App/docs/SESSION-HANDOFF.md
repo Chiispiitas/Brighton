@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Social profiles: Profile now shows statistics, human-first suggestions and social lists; the pencil opens the existing editor. Rank names/avatars and social cards open authenticated public profiles. Directed follows become friends only when mutual; bots may be followed but never reciprocate. Find friends and native share/copy invite links work without exposing codes or granting access. Pending invites survive login without auto-following. New actions getSocialHome/getPublicProfile/setFollow/searchPeople use private HzThrottle social-out/social-in records. Read docs/SOCIAL-PROFILES.md and reports/social-profile.json. This implements the previously planned profile/friend feature; old plan-only wording is historical.
+
+
 Streak fire audio: restore gesture-based audio resume when Continue enters the streak from Results. All completion stages now prepare the existing sound controller. Actual synthetic saved-round proof suspends AudioContext on Results and verifies native fire-streak playback exactly once after resume. No new audio asset or backend change. Cache streak-resume-v123; app query streakresume1.
 
 

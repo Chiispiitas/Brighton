@@ -1,3 +1,4 @@
+import {createSocial} from './social.mjs';
 import {createLeaderboard} from './leaderboard.mjs';
 import {createContentRepository} from './admin-content-repository.mjs';
 import {activityById,wordById,chunkById,lessonById,lessons as lessonDefinitions} from '../content/unit1.mjs';
@@ -146,7 +147,7 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
   try{
    if(!isAllowed(origin))return json({ok:false,error:'ORIGIN_REJECTED',message:'This request is not allowed.'},403);
    if(request.method==='OPTIONS')return new Response(null,{status:204,headers:json({},200,origin).headers});
-   if(request.method==='GET')return json({ok:true,name:'Horizons Companion API',version:1,masteryPolicy:'one-correct-answer',competitionPolicy:'weekly-xp-v1'},200,origin);
+   if(request.method==='GET')return json({ok:true,name:'Horizons Companion API',version:1,masteryPolicy:'one-correct-answer',competitionPolicy:'weekly-xp-v1',socialPolicy:'mutual-follow-v1'},200,origin);
    if(request.method!=='POST')return json({ok:false,error:'METHOD_NOT_ALLOWED',message:'Please use the app to continue.'},405,origin);
    const text=await request.text();if(text.length>100000)fail(413,'REQUEST_TOO_LARGE','That practice round is too large.');let body;try{body=JSON.parse(text);}catch{fail(400,'INVALID_JSON','The app could not read that request.');}if(!object(body))fail(400,'INVALID_REQUEST','Please try again.');
    const action=body.action;
@@ -154,6 +155,10 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
     await rateLimit(request);const c=await claimCode(body.code);const raw=tokenString(),id=await idFor('session:'+raw),at=now(),expiresAt=new Date(new Date(at).getTime()+90*86400000).toISOString();await store.create(COLLECTIONS.sessions,id,{profileId:c.profileId,createdAt:at,expiresAt,revoked:false},c.profileId);return json({...await bootstrap(c.profileId),token:raw,sessionExpiresAt:expiresAt},200,origin);
    }
    const session=await sessionFrom(request);
+   if(['getSocialHome','getPublicProfile','setFollow','searchPeople'].includes(action)){
+    const social=createSocial(store,{now,idFor,collections:COLLECTIONS,aggregateProgress});
+    try{const result=action==='getSocialHome'?await social.home(session.profileId):action==='getPublicProfile'?await social.get(session.profileId,body.targetId):action==='setFollow'?await social.follow(session.profileId,body.targetId,body.following):await social.search(session.profileId,body.query);return json(result,200,origin);}catch(error){if(error.status)fail(error.status,'SOCIAL_REQUEST',error.message);throw error;}
+   }
    if(action==='getLeaderboard')return json(await createLeaderboard(store,{now,idFor,collections:COLLECTIONS}).get(session.profileId),200,origin);
    if(action==='signOut'){await store.put(COLLECTIONS.sessions,session.id,{...session,revoked:true,revokedAt:now()},session.profileId);return json({ok:true},200,origin);}
    if(action==='getSession'||action==='getProgress')return json(await bootstrap(session.profileId),200,origin);

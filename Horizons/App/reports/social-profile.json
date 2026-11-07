@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900
+    },
+    {
+      "width": 1024,
+      "height": 600
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 320,
+      "height": 640
+    }
+  ],
+  "syntheticOnly": true,
+  "editorBehindPencil": true,
+  "realStats": true,
+  "humanSuggestionsFirst": true,
+  "mutualFriendship": true,
+  "unfollow": true,
+  "search": true,
+  "inviteLinkNoSecrets": true,
+  "inviteSurvivesLogin": true,
+  "botFollowNoReciprocity": true,
+  "clickableRankProfiles": true,
+  "errors": []
+}

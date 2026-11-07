@@ -4,6 +4,8 @@ export function weekAt(value){const d=new Date(value);d.setUTCHours(0,0,0,0);d.s
 const endOf=week=>new Date(Date.parse(week)+7*86400000).toISOString();
 const seed=value=>{let h=2166136261;for(const c of value)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;};
 const names=['Emily','Mateo','Liam','Valentina','Ava','José','Noah','Camila','Chloe','Sebastián','Ethan','Doménica','Grace','Nicolás','Lucas','Daniela','Olivia','Andrés','Jacob','Fernanda'];
+export function botPersona(index){const i=((Number(index)||0)%names.length+names.length)%names.length,s=seed('horizons-social-bot:'+i);return {id:'bot-'+i,name:names[i],avatar:{body:s%2?'female':'male',skin:'skin-'+(1+s%6),hair:'hair-'+(1+s%12),hairColor:['color-black','color-brown','color-auburn','color-blond'][s%4],outfit:'outfit-'+(1+s%10),background:['bg-cream','bg-sky','bg-mint','bg-rose'][s%4],accessory:s%3?'none':'accessory-1'},bot:true};}
+
 export function createLeaderboard(store,{now,idFor,collections:C}){
  const T=C.throttle;
  async function once(id,value,scope){try{return await store.create(T,id,value,scope);}catch(error){const row=await store.get(T,id);if(!row)throw error;return row;}}
@@ -38,7 +40,7 @@ export function createLeaderboard(store,{now,idFor,collections:C}){
   const rows=[...humans];
   for(let slot=0;slot<20;slot++)if(!occupied.has(slot)){
    const s=seed(member.lobby+':'+slot),target=150+s%751;
-   rows.push({id:'practice-'+slot,name:names[(slot+seed(member.lobby))%names.length],avatar:{body:s%2?'female':'male',skin:'skin-'+(1+s%6),hair:'hair-'+(1+s%12),hairColor:['color-black','color-brown','color-auburn','color-blond'][s%4],outfit:'outfit-'+(1+s%10),background:['bg-cream','bg-sky','bg-mint','bg-rose'][s%4],accessory:s%3?'none':'accessory-1'},xp:Math.floor(target*phase/5)*5,bot:true,slot});
+   rows.push({...botPersona((slot+seed(member.lobby))%names.length),xp:Math.floor(target*phase/5)*5,slot});
   }
   rows.sort((a,b)=>b.xp-a.xp||seed(a.id+member.week)-seed(b.id+member.week));
   return rows.map((r,i)=>({...r,position:i+1}));

@@ -1,3 +1,4 @@
+import {socialProfileMarkup,personCard} from './social-profile.js';
 import {overtakingEvent,nextCompletionStage} from '../content/completion-flow.mjs';
 import {leaderboardMarkup,dismissRank,overtakingMarkup} from './leaderboard.js';
 import {audioKey} from './answer-audio.js';
@@ -21,7 +22,7 @@ import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, isAlphabetQue
 const app = document.getElementById('app');
 const dialog = document.getElementById('app-dialog');
 const toastBox = document.getElementById('toast');
-const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,leaderboard:null,boardError:null,boardBusy:false,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
+const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,profileEditing:false,social:null,socialError:null,socialTab:'friends',personTarget:null,personData:null,personError:null,leaderboard:null,boardError:null,boardBusy:false,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
 let toastTimer;
 let wordPlayer;
 let disposeOverworld;
@@ -73,7 +74,7 @@ let contentRevision='base';
 function setSession(value) {
   if (!value) return;
   const previousProfileId=profile().id;
-  if(value.profile&&value.profile.id!==previousProfileId){state.leaderboard=null;state.boardError=null;}
+  if(value.profile&&value.profile.id!==previousProfileId){state.leaderboard=null;state.boardError=null;state.social=null;state.personData=null;state.profileEditing=false;}
   if(value.contentSnapshot&&(!state.active||state.active.kind==='result')){applyClientContent(value.contentSnapshot.patches);contentRevision=value.contentSnapshot.revision;}
   if (value.profile || value.books || value.progress) state.session = {...(state.session || {}),...value};
   else if (value.session) state.session = value.session;
@@ -178,16 +179,18 @@ function wordBank(){
  return `<section class="page-heading bank-heading"><div><h1>Word bank</h1></div>${characterMarkup('mina','page-character')}</section><div class="bank-toolbar"><label class="search-field">${icon('search')}<input id="word-search" type="search" value="${esc(state.search)}" placeholder="Find a word" aria-label="Find a word"></label><button class="text-button" data-route="practice">Practice ${icon('arrow')}</button></div><section class="word-bank-lessons" aria-label="Vocabulary word bank">${allLessons.map(lesson=>{const group=words.filter(word=>word.lessonIds?.includes(lesson.id));return group.length?`<details class="word-bank-lesson" data-bank-lesson="${esc(lesson.id)}" ${query||state.bankOpen.has(lesson.id)?'open':''}><summary><span class="mini-lesson">${esc(lesson.id)}</span><span>${esc(lesson.title)}</span>${icon('chevron')}</summary><div class="word-grid">${group.map(word=>`<button class="word-tile" data-word="${esc(word.id)}"><b>${esc(word.term)}</b><span lang="es">${esc(word.spanish||'')}</span></button>`).join('')}</div></details>`:'';}).join('')}${words.length?'':'<p class="empty-message">No words found.</p>'}</section>`;
 }
 
-function profilePage() {
+function profileEditorPage() {
   const p = profile();
   const profileGroups=avatarOptions().filter(group=>group.id!=='body');
   const colorIndex=profileGroups.findIndex(group=>group.id==='hairColor');
   if(colorIndex>=0&&profileGroups.some(group=>group.id==='hair')){const [color]=profileGroups.splice(colorIndex,1);profileGroups.splice(profileGroups.findIndex(group=>group.id==='hair')+1,0,color);}
 
   if (!state.avatarDraft){state.avatarDraft=normalizeAvatar({...defaultAvatar(),...(p.avatar || {})});if(!['male','female'].includes(state.avatarDraft.body))state.avatarDraft.body='male';}
-  return `<section class="profile-heading"><h1>My profile</h1></section><div class="profile-layout"><section class="avatar-studio"><div class="avatar-preview" id="avatar-preview">${avatarMarkup(state.avatarDraft,'avatar-large',name())}<span class="avatar-studio-spark" aria-hidden="true">✦</span></div><div class="avatar-options">${profileGroups.map(group=>`<fieldset><legend>${esc(group.label)}</legend><div class="avatar-option-row">${(group.options||[]).map(option=>`<button type="button" class="avatar-option ${state.avatarDraft[group.id]===option.id?'selected':''}" data-avatar-group="${esc(group.id)}" data-avatar-value="${esc(option.id)}" aria-pressed="${state.avatarDraft[group.id]===option.id}" aria-label="${esc(option.label || option.name || option.id)}">${option.swatch?`<span class="avatar-swatch" style="background:${esc(option.swatch)}"></span>`:option.thumbnail?rasterMarkup(option.thumbnail,'',''):esc(option.label || option.name || option.id)}</button>`).join('')}</div></fieldset>`).join('')}${avatarOptions().length?'':'<p>Your avatar will appear here when the character artwork finishes loading.</p>'}</div></section>
+  return `<button class="text-button social-editor-back" data-action="close-profile-editor">← My profile</button><section class="profile-heading"><h1>Edit profile</h1></section><div class="profile-layout"><section class="avatar-studio"><div class="avatar-preview" id="avatar-preview">${avatarMarkup(state.avatarDraft,'avatar-large',name())}<span class="avatar-studio-spark" aria-hidden="true">✦</span></div><div class="avatar-options">${profileGroups.map(group=>`<fieldset><legend>${esc(group.label)}</legend><div class="avatar-option-row">${(group.options||[]).map(option=>`<button type="button" class="avatar-option ${state.avatarDraft[group.id]===option.id?'selected':''}" data-avatar-group="${esc(group.id)}" data-avatar-value="${esc(option.id)}" aria-pressed="${state.avatarDraft[group.id]===option.id}" aria-label="${esc(option.label || option.name || option.id)}">${option.swatch?`<span class="avatar-swatch" style="background:${esc(option.swatch)}"></span>`:option.thumbnail?rasterMarkup(option.thumbnail,'',''):esc(option.label || option.name || option.id)}</button>`).join('')}</div></fieldset>`).join('')}${avatarOptions().length?'':'<p>Your avatar will appear here when the character artwork finishes loading.</p>'}</div></section>
     <section class="profile-details"><form id="profile-form"><label for="display-name">Name</label><input id="display-name" name="displayName" value="${esc(p.displayName || p.name || '')}" maxlength="40" required autocomplete="nickname" placeholder="Your name"><label for="date-of-birth">Date of birth <span class="optional">Optional</span></label><input id="date-of-birth" name="dateOfBirth" type="date" value="${esc((p.dateOfBirth || '').slice(0,10))}" max="${new Date().toISOString().slice(0,10)}"><label for="daily-goal">Daily goal</label><select id="daily-goal" name="goal">${[5,10,15,20].map(goal=>`<option value="${goal}" ${Number(p.goal||5)===goal?'selected':''}>${goal} minutes</option>`).join('')}</select><p id="profile-error" class="form-error" role="alert"></p><button type="submit" class="primary-button">Save profile ${icon('check')}</button></form><section class="your-books"><span class="eyebrow">YOUR BOOKS</span>${bookList().map(book=>`<div class="profile-book"><span class="book-level">${esc(book.level || 'A1')}</span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Expires ${formatDate(book.expiresAt)}`:'Available'}</small></span></div>`).join('')}<button class="text-button" data-action="add-book">Add another book ${icon('plus')}</button></section><button class="sign-out" data-action="sign-out">Sign out ${icon('exit')}</button></section></div>`;
 }
+function profilePage(){if(state.profileEditing)return profileEditorPage();const p=profile(),g=progress();return socialProfileMarkup(state.social,{avatar:avatarMarkup,icon,own:true,tab:state.socialTab,error:state.socialError,loading:!state.social,fallback:{name:name(),avatar:p.avatar,stats:{xp:g.xp,streak:g.streak,bestStreak:g.bestStreak,wordsMastered:Object.values(g.wordStats||{}).filter(w=>w.mastered).length,lessonsCompleted:g.completedLessons?.length,activeDays:g.activeDays?.length}}});}
+function personPage(){return socialProfileMarkup(state.personData,{avatar:avatarMarkup,icon,own:false,tab:state.socialTab,error:state.personError});}
 function render() {
   const motionBefore=captureUI(app),previousQuestion=app.querySelector('.activity-page[data-question-id]')?.dataset.questionId,promptScroll=app.querySelector('.question-content')?.scrollTop||0;
   document.documentElement.classList.toggle('lesson-view',!!state.active&&['quiz','result'].includes(state.active.kind));
@@ -212,9 +215,9 @@ function render() {
     }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
     return;
   }
-  const pages={learn:home,practice,bank:wordBank,profile:profilePage,leaderboard:()=>leaderboardMarkup(state.leaderboard,avatarMarkup,state.boardError)};
+  const pages={learn:home,practice,bank:wordBank,profile:profilePage,person:personPage,leaderboard:()=>leaderboardMarkup(state.leaderboard,avatarMarkup,state.boardError)};
   const learningRoute=['learn','practice','bank'].includes(state.route);
-  app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
+  app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route==='person'?'profile':state.route);
   setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
   refreshArtwork(app);
   enhanceMotion(app,motionBefore);
@@ -428,7 +431,7 @@ function speak(id) {const word=getWord(id);if(word)speakSelection(word.term);}
 async function redeem(form) {
   if(state.busy)return;const button=form.querySelector('button[type=submit]');const error=form.querySelector('.form-error');const input=form.elements.code;
   state.busy=true;button.disabled=true;button.innerHTML='Opening your book…';error.textContent='';
-  try {const response=await api.redeem(input.value);input.value='';setSession(response);state.avatarDraft=null;state.route=(!profile().displayName||profile().displayName==='Brighton learner')?'profile':'learn';location.hash=state.route;render();notify('Book opened.','success');}
+  try {const response=await api.redeem(input.value);input.value='';setSession(response);state.avatarDraft=null;state.route=(!profile().displayName||profile().displayName==='Brighton learner')?'profile':'learn';location.hash=state.route;render();if(state.route==='profile')loadSocial();handleInvite();notify('Book opened.','success');}
   catch(issue){error.textContent=issue.message;button.disabled=false;button.innerHTML=`Open ${icon('arrow')}`;}
   finally{state.busy=false;}
 }
@@ -442,11 +445,11 @@ async function saveProfile(form) {
   if(state.busy)return;state.busy=true;const button=form.querySelector('button[type=submit]');button.disabled=true;const error=form.querySelector('.form-error');error.textContent='';
   const patch={displayName:form.elements.displayName.value.trim(),dateOfBirth:form.elements.dateOfBirth.value || null,goal:Number(form.elements.goal.value),avatar:state.avatarDraft,timeZone:Intl.DateTimeFormat().resolvedOptions().timeZone};
   if(!patch.displayName){error.textContent='Name';button.disabled=false;state.busy=false;return;}
-  try {const response=await api.updateProfile(patch);setSession(response.profile?response:{profile:{...profile(),...patch}});notify('Profile saved.','success');render();}
+  try {const response=await api.updateProfile(patch);setSession(response.profile?response:{profile:{...profile(),...patch}});notify('Profile saved.','success');state.profileEditing=false;state.social=null;render();loadSocial();}
   catch(issue){error.textContent=issue.message;button.disabled=false;}
   finally{state.busy=false;}
 }
-on('click','[data-route]',(event,target)=>{event.preventDefault();route(target.dataset.route);if(target.dataset.route==='leaderboard'){prepareCompletionSound();loadLeaderboard(true);}});
+on('click','[data-route]',(event,target)=>{event.preventDefault();if(target.dataset.route==='profile')state.profileEditing=false;route(target.dataset.route);if(target.dataset.route==='profile')loadSocial();if(target.dataset.route==='leaderboard'){prepareCompletionSound();loadLeaderboard(true);}});
 on('click','[data-jump]',(_,target)=>document.getElementById(`lesson-${target.dataset.jump}`)?.closest('.path-lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'}));
 on('click','[data-start-chunk]',(_,target)=>startChunk(target.dataset.startChunk));
 app.addEventListener('scroll',event=>{if(event.target.matches?.('.horizontal-path-scroll')){closePathBubble();syncPathPan();}},{capture:true,passive:true});
@@ -500,6 +503,7 @@ on('submit','#profile-form',(event,form)=>{event.preventDefault();saveProfile(fo
 on('submit','#text-answer-form',event=>{event.preventDefault();gradeCurrent();});
 on('click','[data-action]',async(_,target)=>{
   switch(target.dataset.action){
+    case'edit-profile':state.profileEditing=true;state.avatarDraft=null;state.profileDraft=null;return render();case'close-profile-editor':state.profileEditing=false;state.avatarDraft=null;state.profileDraft=null;render();return loadSocial();case'find-friends':return findFriends();case'invite-friends':return inviteFriends();case'retry-social':return state.route==='person'?openPerson(state.personTarget):loadSocial();
     case'refresh-board':prepareCompletionSound();return loadLeaderboard(true);case'dismiss-rank':dismissRank(state.leaderboard);return render();
     case'books':return booksDialog();case'add-book':return booksDialog(true);
     case'word-bank':return route('bank');case'practice-sets':return route('practice');
@@ -526,9 +530,9 @@ on('click','[data-select-book]',(_,target)=>{state.bookId=target.dataset.selectB
 on('click','[data-use-demo]',(_,target)=>{closeDialog();const input=document.getElementById('book-code');if(input){input.value=target.dataset.useDemo;input.focus();}},dialog);
 on('click','[data-speak]',(_,target)=>speak(target.dataset.speak),dialog);
 on('click','[data-leave-confirm]',()=>{stopAudio();closeDialog();state.active=null;route('learn');},dialog);
-on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOut();}catch{}state.session=null;state.leaderboard=null;state.boardError=null;state.active=null;state.bookId=null;state.avatarDraft=null;location.hash='';render();},dialog);
+on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOut();}catch{}state.session=null;state.leaderboard=null;state.boardError=null;state.social=null;state.personData=null;state.profileEditing=false;state.active=null;state.bookId=null;state.avatarDraft=null;location.hash='';render();},dialog);
 dialog.addEventListener('click',event=>{if(event.target===dialog){const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)closeDialog();}});
-window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile','leaderboard'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;render();window.scrollTo({top:0,behavior:'instant'});}});
+window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash.startsWith('person/')){const id=decodeURIComponent(hash.slice(7));if(state.route!=='person'||state.personTarget!==id)openPerson(id);return;}if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile','leaderboard'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;if(hash==='profile'){state.profileEditing=false;loadSocial();}render();window.scrollTo({top:0,behavior:'instant'});}});
 window.addEventListener('resize',layoutPaths);
 window.addEventListener('offline',()=>notify('You are offline.'));
 window.addEventListener('online',()=>notify('Connected.','success'));
@@ -550,7 +554,7 @@ async function boot() {
   render();
   if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).catch(()=>{});
 }
-boot().then(()=>{if(state.route==='leaderboard')loadLeaderboard();}).catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Unable to open Horizons</h1><p>Check your connection and try again.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
+boot().then(()=>{if(state.route==='leaderboard')loadLeaderboard();if(state.route==='profile')loadSocial();if(state.session&&location.hash.startsWith('#person/'))openPerson(decodeURIComponent(location.hash.slice(8)));handleInvite();}).catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Unable to open Horizons</h1><p>Check your connection and try again.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
 window.HorizonsApp={getState:()=>{const a=state.active,q=a?.questions?.[a.index];return{signedIn:Boolean(state.session),route:state.route,bookId:state.bookId,activity:a?.kind||null,activityId:a?.options?.activityId||null,options:a?.options?Object.fromEntries(['seed','mode','count','chunkIds','lessonIds','grammarSetIds','audioEnabled','audioFallbackQuestionIds'].filter(k=>a.options[k]!==undefined).map(k=>[k,a.options[k]])):null,index:a?.index??null,checked:Boolean(a?.checked),saved:Boolean(a?.saved),question:q?Object.fromEntries(['id','type','prompt','listening','listenFor','wordIds','originListening'].filter(k=>q[k]!==undefined).map(k=>[k,q[k]])):null};},reload:()=>boot()};
 
 // Track the visible area on browsers that overlay the keyboard on the layout viewport.
@@ -576,3 +580,17 @@ function replayResult(){const previous=state.active.previous;state.active=null;i
 function advanceCompletion(target){const result=state.active;if(result?.kind!=='result'||!result.saved)return;if(target)result.completionTarget=target;result.completionStage=nextCompletionStage(result);result.showStreak=result.completionStage==='streak';if(result.completionStage!=='done'){prepareCompletionSound();if(['achievement','overtake'].includes(result.completionStage)){playProgressionSound(result.completionStage);}clearTimeout(toastTimer);toastBox.className='toast';render();window.scrollTo({top:0,behavior:'instant'});app.querySelector('.overtake-page [data-action=completion-continue],.achievement-page [data-action=completion-continue]')?.focus({preventScroll:true});return;}if(result.completionTarget==='repeat')return replayResult();stopAudio();state.active=null;return route('learn');}
 
 function achievementMarkup(result){const rewards=result.achievements||[];return `<main class="achievement-page"><span class="eyebrow">ACHIEVEMENT UNLOCKED</span><h1>${rewards.length===1?esc(rewards[0].label):'New achievements!'}</h1><div class="achievement-rewards ${rewards.length>1?'multiple':''}">${rewards.map((reward,i)=>`<section class="achievement-reward" style="--reward-index:${i}">${rasterMarkup(reward.asset||reward,'achievement-badge',reward.label)}${rewards.length>1?`<h2>${esc(reward.label)}</h2>`:''}<p>${reward.unlockXp} XP</p></section>`).join('')}</div><p>Ready to wear in your avatar’s pins.</p><button class="primary-button" data-action="completion-continue">Continue ${icon('arrow')}</button></main>`;}
+
+let socialLoad=0,searchSequence=0;
+async function loadSocial(){const request=++socialLoad,owner=profile().id;if(!state.session)return;try{const data=await api.getSocialHome();if(profile().id!==owner||request!==socialLoad)return;state.social=data;state.socialError=null;}catch(error){if(profile().id!==owner)return;state.socialError=error.message;}if(state.route==='profile'&&!state.profileEditing)render();}
+async function openPerson(id){if(!/^(?:bot-(?:[0-9]|1[0-9])|[a-f0-9-]{36})$/.test(String(id)))return;closeDialog();if(id===state.social?.profile.id){state.profileEditing=false;route('profile');return loadSocial();}state.personTarget=id;state.personData=null;state.personError=null;state.socialTab='friends';state.active=null;state.route='person';location.hash='person/'+encodeURIComponent(id);render();window.scrollTo({top:0,behavior:'instant'});const owner=profile().id;try{const data=await api.getPublicProfile(id);if(profile().id!==owner||state.personTarget!==id)return;state.personData=data;}catch(error){if(state.personTarget!==id)return;state.personError=error.message;}if(state.route==='person')render();}
+on('click','[data-person]',(_,target)=>openPerson(target.dataset.person));
+on('click','[data-person]',(_,target)=>openPerson(target.dataset.person),dialog);
+async function followPerson(button){if(button.disabled)return;const id=button.dataset.followPerson,owner=profile().id;button.disabled=true;try{const response=await api.setFollow(id,button.dataset.unfollow!=='true');if(profile().id!==owner)return;if(state.personTarget===id&&state.route==='person'){const updated=await api.getPublicProfile(id);if(profile().id===owner&&state.personTarget===id&&state.route==='person'){state.personData=updated;render();}}state.social=null;await loadSocial();if(dialog.open){button.textContent=response.profile.isFriend?'Friends ✓':response.profile.isFollowing?'Following ✓':'Follow';button.dataset.unfollow=String(response.profile.isFollowing);button.disabled=false;}}catch(error){notify(error.message);if(button.isConnected)button.disabled=false;}}
+on('click','[data-follow-person]',(_,target)=>followPerson(target));on('click','[data-follow-person]',(_,target)=>followPerson(target),dialog);
+on('click','[data-social-tab]',(_,target)=>{state.socialTab=target.dataset.socialTab;render();});
+function findFriends(){showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Find friends</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><label for="friend-search">Name</label><input id="friend-search" class="invite-link" type="search" maxlength="60" autocomplete="off" placeholder="Search by name"><div class="friend-search-results" aria-live="polite"><p>Enter at least two letters.</p></div>`,'friends-dialog');dialog.querySelector('input').focus();}
+let friendSearchTimer;
+on('input','#friend-search',(_,input)=>{clearTimeout(friendSearchTimer);const query=input.value,sequence=++searchSequence;friendSearchTimer=setTimeout(async()=>{try{const data=await api.searchPeople(query);if(sequence!==searchSequence||!dialog.open||dialog.querySelector('#friend-search')?.value!==query)return;dialog.querySelector('.friend-search-results').innerHTML=data.people.length?data.people.map(p=>personCard(p,avatarMarkup,{follow:true})).join(''):`<p>${query.trim().length<2?'Enter at least two letters.':'No people found.'}</p>`;refreshArtwork(dialog);}catch(error){if(sequence===searchSequence&&dialog.open&&dialog.querySelector('.friend-search-results'))dialog.querySelector('.friend-search-results').textContent=error.message;}},250);},dialog);
+async function inviteFriends(){const id=state.social?.profile.id;if(!id)return;const url=new URL(location.pathname,location.origin);url.searchParams.set('invite',id);url.hash='profile';const text='Join me on Horizons';if(navigator.share){try{await navigator.share({title:'Horizons',text,url:url.href});return;}catch(error){if(error.name==='AbortError')return;}}try{await navigator.clipboard.writeText(url.href);notify('Invite link copied.');}catch{showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Invite friends</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>Share this link with your friend.</p><input class="invite-link" readonly aria-label="Invite link" value="${esc(url.href)}">`);const field=dialog.querySelector('input');field.focus();field.select();}}
+function handleInvite(){let id;try{const incoming=new URL(location.href).searchParams.get('invite');if(incoming)sessionStorage.setItem('hz-pending-invite',incoming);id=sessionStorage.getItem('hz-pending-invite');if(state.session&&id){sessionStorage.removeItem('hz-pending-invite');const url=new URL(location.href);url.searchParams.delete('invite');history.replaceState(null,'',url);openPerson(id);}}catch{}}
