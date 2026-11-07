@@ -33,11 +33,15 @@ export function rolePool(count) {
   const saboteurs = count <= 4 ? 1 : count <= 6 ? 2 : count <= 9 ? 3 : 4;
   return [...Array(saboteurs).fill('saboteur'), ...Array(count + 1 - saboteurs).fill('miner')];
 }
-export function createRoom(code, hash, name, now = Date.now(), mode = 'online') {
+export const BLITZ_BOUNDS = Object.freeze({ minX:0, maxX:4, minY:-2, maxY:2 });
+export const BLITZ_TURNS = 30;
+const rounds = s => s.variant === 'blitz' ? 1 : 3;
+export function createRoom(code, hash, name, now = Date.now(), mode = 'online', variant = 'standard') {
   need(/^\d{6}$/.test(code), 'Enter a six-digit room code.');
   need(typeof hash === 'string' && hash.length > 0, 'Your room key is missing.', 401);
   need(['online','classroom'].includes(mode), 'Choose Online or Classroom.');
-  return { code, host: hash, hostName: cleanName(name), mode, version: 0, phase: 'lobby', round: 0,
+  need(['standard','blitz'].includes(variant), 'Choose Standard or Blitz.');
+  return { code, host: hash, hostName: cleanName(name), mode, variant, version: 0, phase: 'lobby', round: 0,
     players: [], board: [], deck: [], discard: [], bank: [], unusedRole: null, turnId: null,
     result: null, history: [], goldChoice: null, log: [], receipts: [], expiresAt: now + 86400000 };
 }
@@ -62,6 +66,7 @@ export function reachablePorts(state) {
 }
 export function placementError(state, card, x, y, rotation = 0) {
   if (!Number.isInteger(x) || !Number.isInteger(y) || Math.abs(x) > 75 || Math.abs(y) > 75) return 'Choose a space on the board.';
+  if (state.variant === 'blitz' && (x < BLITZ_BOUNDS.minX || x > BLITZ_BOUNDS.maxX || y < BLITZ_BOUNDS.minY || y > BLITZ_BOUNDS.maxY)) return 'Keep tunnels inside the 5 × 5 Blitz board.';
   if (![0,180].includes(rotation)) return 'Rotate a card by 180° only.';
   const def = typeof card === 'string' ? CARD_DEFS[card] : card;
   if (def?.kind !== 'path') return 'Choose a tunnel card.';
@@ -87,7 +92,7 @@ export function legalPlacements(state, card, rotation = 0) {
   return [...candidates.values()].filter(({x,y}) => !placementError(state,card,x,y,rotation));
 }
 function startRound(s,random,firstId) {
-  s.round++; s.lastPlacement = null;
+  s.round++; s.lastPlacement = null; s.turnsPlayed = 0;
   if (s.round > 1) s.bank = shuffle(s.bank,random);
   const roles = shuffle(rolePool(s.players.length),random); s.unusedRole = roles.pop();
   s.deck = shuffle(DECK.map((defId,i) => makeCard(defId,`r${s.round}-c${i}`)),random);
@@ -102,7 +107,7 @@ function startRound(s,random,firstId) {
     { gold: false, groups: [['n','e']] }
   ],random);
   s.board = [{ x: 0, y: 0, kind: 'start', defId: 'cross', rotation: 0, groups: [['n','e','s','w']] },
-    ...goals.map((goal,i) => ({ ...goal, id: `goal-${i}`, kind: 'goal', x: 8, y: (i-1)*2, rotation: 0, revealed: false }))];
+    ...goals.map((goal,i) => ({ ...goal, id: `goal-${i}`, kind: 'goal', x: s.variant === 'blitz' ? 4 : 8, y: (i-1)*2, rotation: 0, revealed: false }))];
   event(s,`Round ${s.round}. ${player(s,firstId).name} starts.`);
 }
 function revealReachedGoals(s) {
@@ -151,13 +156,14 @@ function goldCombination(bank,value) {
   throw new GameError('The gold bank cannot make this reward. Contact the host.', 500);
 }
 function closeRound(s) {
-  s.goldChoice = null; s.turnId = null; s.phase = s.round === 3 ? 'finished' : 'roundEnd';
+  s.goldChoice = null; s.turnId = null; s.phase = s.round >= rounds(s) ? 'finished' : 'roundEnd';
   s.history.push({ ...s.result, roles: s.players.map(p => ({id:p.id,role:p.role})) });
-  if (s.phase === 'finished') event(s,'Three rounds complete. Reveal the gold.');
+  if (s.phase === 'finished') event(s,s.variant === 'blitz' ? 'Blitz complete. Reveal the gold.' : 'Three rounds complete. Reveal the gold.');
 }
-function endRound(s,winner,lastActorId) {
+function endRound(s,winner,lastActorId,reason = winner === 'miners' ? 'gold' : 'exhausted') {
   s.lastActorId = lastActorId; s.turnId = null;
-  s.result = { winner, finderId: winner === 'miners' ? lastActorId : null, reason: winner === 'miners' ? 'gold' : 'exhausted', round: s.round };
+  s.result = { winner, finderId: winner === 'miners' ? lastActorId : null, reason, round: s.round };
+  if (reason === 'turnLimit') event(s,'30 turns used. The gold stayed hidden.');
   event(s,winner === 'miners' ? 'The gold miners win this round.' : 'The saboteurs win this round.');
   if (winner === 'saboteurs') {
     const saboteurs = s.players.filter(p => p.role === 'saboteur');
@@ -179,9 +185,11 @@ function endRound(s,winner,lastActorId) {
   s.goldChoice = { playerId: order[0], order, options }; s.phase = 'gold';
 }
 function finishTurn(s,actor,won) {
+  s.turnsPlayed = (s.turnsPlayed || 0) + 1;
   if (won) { endRound(s,'miners',actor.id); return; }
   if (s.deck.length) actor.hand.push(s.deck.pop());
   s.lastActorId = actor.id;
+  if (s.variant === 'blitz' && s.turnsPlayed >= BLITZ_TURNS) { endRound(s,'saboteurs',actor.id,'turnLimit'); return; }
   if (!s.players.some(p => p.hand.length)) { endRound(s,'saboteurs',actor.id); return; }
   const current = s.players.findIndex(p => p.id === actor.id);
   for (let offset = 1; offset <= s.players.length; offset++) {
@@ -221,11 +229,12 @@ export function command(inputState, hash, cmd, random = Math.random) {
     s.bank = shuffle(GOLD_VALUES.map((value,i) => ({ id:`gold-${i}`, value })),random);
     startRound(s,random,first);
   } else if (cmd.type === 'nextRound') {
-    need(host && s.phase === 'roundEnd' && s.round < 3, 'Only the host can start the next round.', 403);
+    need(host && s.phase === 'roundEnd' && s.round < rounds(s), 'Only the host can start the next round.', 403);
     const last = s.players.findIndex(p => p.id === s.lastActorId);
     startRound(s,random,s.players[(last+1)%s.players.length].id);
   } else if (cmd.type === 'rematch') {
-    need(host && s.phase === 'finished', 'A rematch is available after three rounds.', 403);
+    need(host && s.phase === 'finished', 'A rematch is available after the game ends.', 403);
+    s.turnsPlayed = 0;
     s.lastPlacement = null; s.phase = 'lobby'; s.round = 0; s.board = []; s.deck = []; s.discard = []; s.bank = []; s.result = null; s.history = []; s.goldChoice = null; s.turnId = null; s.log = [];
     for (const p of s.players) { p.role = null; p.hand = []; p.broken = []; p.notes = []; p.gold = []; }
   } else if (cmd.type === 'chooseGold') {
@@ -284,7 +293,9 @@ export function view(s, hash, screen = false) {
     ? {id:c.id,kind:'goal',x:c.x,y:c.y,revealed:false}
     : structuredClone(c));
   const maxGold = Math.max(0,...s.players.map(total));
-  return { code:s.code, mode:s.mode, host, hostName:s.hostName, version:s.version, phase:s.phase, round:s.round, turnId:s.turnId,
+  return { code:s.code, mode:s.mode, variant:s.variant || 'standard', totalRounds:rounds(s), boardBounds:s.variant === 'blitz' ? {...BLITZ_BOUNDS} : null,
+    turnsRemaining:s.variant === 'blitz' ? Math.max(0,BLITZ_TURNS-(s.turnsPlayed || 0)) : null,
+    host, hostName:s.hostName, version:s.version, phase:s.phase, round:s.round, turnId:s.turnId,
     lastPlacement:s.lastPlacement ? structuredClone(s.lastPlacement) : null, deckCount:s.deck.length, players:publicPlayers, board, result:s.result && structuredClone(s.result),
     history:structuredClone(s.history), log:structuredClone(s.log), expiresAt:s.expiresAt, rulesEdition:RULES_EDITION,
     winners:s.phase === 'finished' ? s.players.filter(p => total(p) === maxGold).map(p => p.id) : [],
