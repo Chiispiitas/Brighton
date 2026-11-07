@@ -8,7 +8,7 @@ export function notifyPlacement(placement) {
   const tile=[...document.querySelectorAll('[data-tile]')].find(el=>el.dataset.tile===`${placement.x},${placement.y}`);
   const rect=tile?.getBoundingClientRect();
   if(rect?.width && rect.top>=0 && rect.bottom<=innerHeight && rect.left>=0 && rect.right<=innerWidth) return;
-  const notice=document.createElement('div');notice.className='inspection-cursor inspection-message';notice.setAttribute('role','status');notice.textContent=`${placement.actorName} placed a tunnel`;document.body.append(notice);setTimeout(()=>notice.remove(),3200);
+  const notice=document.createElement('div');notice.className='inspection-cursor inspection-message';notice.setAttribute('role','status');notice.textContent=`${placement.actorName} placed a tunnel`;document.body.append(notice);
 }
 export function labelPlacement(state) {
   const placement=state.lastPlacement;
@@ -32,5 +32,5 @@ export function notifyInspection(event) {
   marker.append(cursor,label);
   if (visible) { marker.style.left=`${Math.min(innerWidth-250, Math.max(12,rect.left+rect.width/2))}px`; marker.style.top=`${Math.max(12,rect.top+rect.height/2)}px`; goal.classList.add('inspection-highlight'); }
   document.body.append(marker);
-  setTimeout(()=>{marker.remove();goal?.classList.remove('inspection-highlight');},3200);
+  setTimeout(()=>{goal?.classList.remove('inspection-highlight');},3200);
 }
