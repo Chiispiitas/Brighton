@@ -1,3 +1,4 @@
+import {publicActionCues,animatePublicAction} from './action-cues.mjs';
 import {newInspections,notifyInspection} from './inspection.mjs';
 import { createRoom, command, view, CARD_DEFS, cardGroups } from './server/engine.mjs';
 import { esc } from './board.mjs';
@@ -88,7 +89,7 @@ export async function createTutorial(api){
   function act(body){
     try{const prior=view(raw,'',true);raw=command(raw,YOU,{...body,expectedVersion:raw.version,requestId:`practice-action-${++serial}`},()=>.4);completed=true;
       feedback=body.type==='chooseGold'?'You kept that gold card. Your total is private.':body.type==='discard'?'One card discarded privately. You drew a replacement; your turn ended.':kindOf(body)==='map'?'Goal 2 contains gold. Your note is private.':step().scene==='double-repair'?'Rowan’s lantern works again. Their cart is still broken.':step().scene==='dead'?'The blocked tunnel is placed. Its two ends do not connect.':step().scene==='win'?'The tunnel reached gold. Miners win this round.':step().scene==='break'?'Rowan’s pickaxe is broken. Your card was replaced and your turn ended.':step().scene==='repair'?'Your pickaxe works again. You can place tunnels on a later turn.':step().scene==='rockfall'?'The tunnel is removed. The farther tunnel is now disconnected.':'Card played. You drew a replacement and your turn ended.';
-      api.resetSelection();api.render(view(raw,YOU));newInspections(prior,view(raw,'',true)).forEach(notifyInspection);return true;
+      api.resetSelection();api.render(view(raw,YOU));newInspections(prior,view(raw,'',true)).forEach(notifyInspection);publicActionCues(prior,view(raw,'',true)).forEach(animatePublicAction);return true;
     }catch(e){api.toast(e.message);return false;}
   }
   function kindOf(body){return raw.players[0].notes.length&&body.type==='play'&&step().scene==='map'?'map':'';}
