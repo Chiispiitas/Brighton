@@ -1,0 +1,51 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "cue": "achievement",
+      "decodedSeconds": 1.6,
+      "hash": "700a4d825592ef0b5aa102a6c212375f8beb622e11e7ec23aa1d5a761be2ae6f"
+    },
+    {
+      "cue": "wood",
+      "decodedSeconds": 1.28,
+      "hash": "7317f7f56f5c81fb7d3c220eda5e53aa6bbd68d151c9757f6a4517c383b7f9b9"
+    },
+    {
+      "cue": "stone",
+      "decodedSeconds": 1.44,
+      "hash": "04397b259bd28935faaf49b5dc0a734a454810e0e22810d8a19a7977f58aff8b"
+    },
+    {
+      "cue": "iron",
+      "decodedSeconds": 1.6,
+      "hash": "7a88e94ebb0ecfcad2a70de985048e704d20609ff62c59ebac07a2541795f4c9"
+    },
+    {
+      "cue": "gold",
+      "decodedSeconds": 1.76,
+      "hash": "63d959779ec9bebe3301a5d4a3efa54f58ac3b528ac441f6d9f4dafcc1b88fc6"
+    },
+    {
+      "cue": "diamond",
+      "decodedSeconds": 2,
+      "hash": "5eb9c341550b22d5e94060d6a026cfed54004d12852be53be00699e0ee4ba63d"
+    },
+    {
+      "cue": "obsidian",
+      "decodedSeconds": 2.08,
+      "hash": "e627fd2fbff8acb66f69f3017d01ca6d0b492e51e73f7f2faa14372ad64ce183"
+    },
+    {
+      "cue": "masters",
+      "decodedSeconds": 2.48,
+      "hash": "8a67cc9bca8e8c9dac4eb5ed66b636cd82ab8a4fd5416723e6fee34c12b6a92f"
+    }
+  ],
+  "mute": true,
+  "interruption": true,
+  "hiddenSilence": true,
+  "invalidCueSilent": true,
+  "realBrowserDecode": true,
+  "errors": []
+}

@@ -32,21 +32,24 @@ export function prepareCompletionSound(){
   const Context=window.AudioContext||window.webkitAudioContext;if(!Context)return;
   completionContext??=new Context();
   completionResume=completionContext.resume().catch(()=>{});
-  completionBuffers??=Promise.all(['lesson-complete','island-mastered','fire-streak'].map(async name=>{
-   const response=await fetch(new URL(name==='fire-streak'?'../assets/audio/streak-v1/fire-streak.mp3':`../assets/audio/milestones-v1/${name}.mp3`,import.meta.url));
-   if(!response.ok)throw Error('Completion sound unavailable');
-   return[name,await completionContext.decodeAudioData(await response.arrayBuffer())];
-  })).then(Object.fromEntries).catch(()=>{completionBuffers=null;return null;});
+  completionBuffers??=Promise.all(['lesson-complete','island-mastered','fire-streak','achievement','wood','stone','iron','gold','diamond','obsidian','masters'].map(async name=>{
+   const progression=['achievement','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name);
+   try{const response=await fetch(new URL(progression?`../assets/audio/progression-v1/${name}.mp3`:name==='fire-streak'?'../assets/audio/streak-v1/fire-streak.mp3':`../assets/audio/milestones-v1/${name}.mp3`,import.meta.url));
+   if(!response.ok)return[name,null];
+   return[name,await completionContext.decodeAudioData(await response.arrayBuffer())];}catch{return[name,null];}
+  })).then(entries=>{const buffers=Object.fromEntries(entries);if(Object.values(buffers).some(value=>!value))completionBuffers=null;return buffers;}).catch(()=>{completionBuffers=null;return null;});
  }catch{/* Sound must never block saving or the results screen. */}
 }
-export function playCompletionSound(mastered=false,streak=false){
+export function playCompletionSound(mastered=false,streak=false){return playNamedCompletion(streak?'fire-streak':mastered?'island-mastered':'lesson-complete',.45);}
+export function playProgressionSound(name){if(!['achievement','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name))return;return playNamedCompletion(name,({achievement:.8,wood:.5,stone:.9,iron:.6,gold:.9,diamond:.45,obsidian:.55,masters:.45})[name]);}
+function playNamedCompletion(name,volume){
  stopFeedbackSound();if(!enabled||document.hidden)return;
  const generation=playbackGeneration;
  Promise.all([completionBuffers,completionResume]).then(([buffers])=>{
   if(!buffers||generation!==playbackGeneration||!enabled||document.hidden||completionContext?.state!=='running')return;
   const source=completionContext.createBufferSource(),gain=completionContext.createGain();
-  source.buffer=buffers[streak?'fire-streak':mastered?'island-mastered':'lesson-complete'];
-  gain.gain.value=.45;source.connect(gain);gain.connect(completionContext.destination);
+  source.buffer=buffers[name];if(!source.buffer)return;
+  gain.gain.value=volume;source.connect(gain);gain.connect(completionContext.destination);
   source.onended=()=>{source.disconnect();gain.disconnect();if(completionSource===source)completionSource=null;};
   try{source.start();completionSource=source;}catch{source.disconnect();gain.disconnect();}
  }).catch(()=>{});

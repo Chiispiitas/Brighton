@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Progression sound update: eight dedicated native ElevenLabs cues (achievement plus Wood through Masters), recorded under assets/audio/progression-v1 with generation metadata and quality measurements. Achievement plays on its queued screen; Rank entry/promotion uses the corresponding sound without replaying on unchanged refreshes. Existing sound toggle and interruption/hidden guards apply. See docs/SOUND-PRODUCTION.md and reports/progression-sounds.json. Cache progression-sounds-v120; feedback module query progressionsound1.
+
+
 Achievement presentation update: remove the avatar-pin unlock toast. Newly crossed XP pin milestones are captured on the saved result and presented once on a dedicated achievement screen after streak and overtaking. Final flow is Results → streak → overtaking → achievement → Learn (or requested replay); absent stages skip. Multiple pins appear together. Native ImageGen pin sprites are reused with full-opacity spring/pop transforms and static reduced motion. No XP, unlock thresholds, art or backend records change. See completion-flow tests and actual saved-round browser proof.
 
 

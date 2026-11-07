@@ -1,5 +1,14 @@
 # Horizons answer sound production
 
+## Achievement and material-rank cues
+
+Eight native ElevenLabs eleven_text_to_sound_v3 one-shots in assets/audio/progression-v1: achievement, Wood, Stone, Iron, Gold, Diamond, Obsidian, Masters. Exact prompts, request IDs, native hashes, decoded durations, peak/RMS and clipped-sample counts are in generation-records.json. Original files remain unmodified; runtime gains balance perceived levels. Two Masters takes failed decoded-peak checks and were regenerated; the first rejected native is preserved outside the repository. All current cues have zero clipped decoded samples.
+
+Achievement plays on entry to its post-results stage once. Rank entry/promotion chooses the matching material cue, once per player/week/rank within the current app session; refreshing unchanged standings remains silent. Web Audio is unlocked from the user gesture before asynchronous work. Existing sound preference, interruption and hidden-page silence apply; reduced motion does not mute sound. New cues are precached. No browser synthesis, runtime generation or credentials ship.
+
+Browser evidence: reports/progression-sounds.json checks real MP3 decoding and exact source hashes for all eight cues, mute, interruption, hidden-page silence and invalid-cue handling. Completion-order and leaderboard synthetic app proofs pass with the new controller. Full human listening review and physical phone speaker tests are not claimed.
+
+
 Latest Results flow: the branded boot loader stays visible until save confirmation, and completion/mastery cues play with the revealed saved Results page. A failed save remains silent and exposes retry; the original attempt is reused. The milestone regression proof now waits for the saved result state and tests browser-route navigation during loading. Cue files, levels, preferences and mastery comparison remain unchanged.
 
 ## Current lesson and mastery cues — 5 November 2026

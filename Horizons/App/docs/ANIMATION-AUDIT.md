@@ -1,5 +1,8 @@
 # Horizons animation production audit
 
+Progression audio: native achievement one-shot starts on achievement-stage entry. Seven separate material cues accompany the corresponding Rank entry/promotion badge reveal; unchanged automatic refreshes remain silent. Same completion audio controller handles gesture unlocking, sound preference, interruption and hidden-page silence. Animation ordering and native sprites are unchanged. Exact sound prompts/hashes and playback checks are in SOUND-PRODUCTION.md and reports/progression-sounds.json.
+
+
 Achievement unlock screen: existing native ui-static-v1 pin artwork is reused unchanged, with one transform-only overshoot/bounce per reward and a short stagger for simultaneous unlocks. No new raster artwork is needed. Full opacity throughout; reduced motion is static. Achievement notification toast is removed. Presentation runs after Results, streak and overtaking, then returns to the requested destination. Captured reward list prevents repeated presentation within the same completion flow.
 
 
