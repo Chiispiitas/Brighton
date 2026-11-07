@@ -1,5 +1,8 @@
 # Horizons answer sound production
 
+Overtaking counter cue: assets/audio/progression-v1/overtake.mp3 is a dedicated native ElevenLabs one-shot with a quick rising plink counter and bright landing, triggered once on entry to the post-results overtaking screen. It uses the shared sound controller at gain0.65, with mute, interruption and hidden-page guards. It never plays merely from a changed weekly position without a valid overtaking event. Exact prompt, native hash and decoded measurements are in progression-v1/generation-records.json.
+
+
 ## Achievement and material-rank cues
 
 Eight native ElevenLabs eleven_text_to_sound_v3 one-shots in assets/audio/progression-v1: achievement, Wood, Stone, Iron, Gold, Diamond, Obsidian, Masters. Exact prompts, request IDs, native hashes, decoded durations, peak/RMS and clipped-sample counts are in generation-records.json. Original files remain unmodified; runtime gains balance perceived levels. Two Masters takes failed decoded-peak checks and were regenerated; the first rejected native is preserved outside the repository. All current cues have zero clipped decoded samples.

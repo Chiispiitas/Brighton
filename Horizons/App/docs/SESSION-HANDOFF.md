@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Overtaking sound: dedicated generated rising-counter cue on entry to the post-results overtaking animation, using the existing shared audio/mute/hidden/interruption controls. Native file and provenance in assets/audio/progression-v1/overtake.mp3 and generation-records.json. Cache overtake-sound-v121.
+
+
 Human lobby enrollment correction: standings now reconcile all activated, unexpired, enabled individual/production A1 key holders before adding the caller, using existing profiles and saved weekly XP. Peers no longer need to open Rank or complete a new lesson. Demo/QA and unused keys do not auto-enroll; existing memberships and learning data remain unchanged. Live authorized inventory confirmed four eligible individual-key accounts (aggregate only, no learner details exposed). 61 backend tests pass, including pre-existing peers never opening Rank.
 
 

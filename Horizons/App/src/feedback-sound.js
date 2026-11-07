@@ -32,8 +32,8 @@ export function prepareCompletionSound(){
   const Context=window.AudioContext||window.webkitAudioContext;if(!Context)return;
   completionContext??=new Context();
   completionResume=completionContext.resume().catch(()=>{});
-  completionBuffers??=Promise.all(['lesson-complete','island-mastered','fire-streak','achievement','wood','stone','iron','gold','diamond','obsidian','masters'].map(async name=>{
-   const progression=['achievement','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name);
+  completionBuffers??=Promise.all(['lesson-complete','island-mastered','fire-streak','achievement','overtake','wood','stone','iron','gold','diamond','obsidian','masters'].map(async name=>{
+   const progression=['achievement','overtake','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name);
    try{const response=await fetch(new URL(progression?`../assets/audio/progression-v1/${name}.mp3`:name==='fire-streak'?'../assets/audio/streak-v1/fire-streak.mp3':`../assets/audio/milestones-v1/${name}.mp3`,import.meta.url));
    if(!response.ok)return[name,null];
    return[name,await completionContext.decodeAudioData(await response.arrayBuffer())];}catch{return[name,null];}
@@ -41,7 +41,7 @@ export function prepareCompletionSound(){
  }catch{/* Sound must never block saving or the results screen. */}
 }
 export function playCompletionSound(mastered=false,streak=false){return playNamedCompletion(streak?'fire-streak':mastered?'island-mastered':'lesson-complete',.45);}
-export function playProgressionSound(name){if(!['achievement','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name))return;return playNamedCompletion(name,({achievement:.8,wood:.5,stone:.9,iron:.6,gold:.9,diamond:.45,obsidian:.55,masters:.45})[name]);}
+export function playProgressionSound(name){if(!['achievement','overtake','wood','stone','iron','gold','diamond','obsidian','masters'].includes(name))return;return playNamedCompletion(name,({achievement:.8,overtake:.65,wood:.5,stone:.9,iron:.6,gold:.9,diamond:.45,obsidian:.55,masters:.45})[name]);}
 function playNamedCompletion(name,volume){
  stopFeedbackSound();if(!enabled||document.hidden)return;
  const generation=playbackGeneration;

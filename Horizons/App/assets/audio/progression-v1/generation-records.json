@@ -110,5 +110,19 @@
     "peak": 0.6461048126220703,
     "rms": 0.10689497739076614,
     "clippedSamples": 0
+  },
+  "overtake": {
+    "id": "overtake",
+    "duration": 1.15,
+    "prompt": "Horizons friendly adult learning game UI overtaking reward. A quick ascending counter: five rounded woody digital plinks rapidly stepping upward in pitch, accelerating gently into one bright satisfying bell-pop landing. Warm marimba and clean soft sparkle, playful and rewarding. Compact one-shot, immediate onset, finished within 1.15 seconds. No voice, music bed, ambience, harsh clicks, loud booms or distortion.",
+    "model": "eleven_text_to_sound_v3",
+    "requestId": null,
+    "promptSha256": "301ce37b58ec38e69825e535b5d0035da06e817bbf64e58f1a9cfdb2b5b65ded",
+    "sha256": "ba96f269fcec5e68ef35527d052d977ccafc8665558245e716c72b47f0bf6ebf",
+    "bytes": 18851,
+    "decodedSeconds": 1.12,
+    "peak": 0.5182660222053528,
+    "rms": 0.08175371587276459,
+    "clippedSamples": 0
   }
 }
