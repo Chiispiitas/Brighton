@@ -1,3 +1,4 @@
+import {createCodeVault} from './code-vault.mjs';
 import {createChallenges} from './challenges.mjs';
 import {createSocial} from './social.mjs';
 import {createLeaderboard} from './leaderboard.mjs';
@@ -117,7 +118,7 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
  const json=(data,status=200,origin='')=>new Response(JSON.stringify(data),{status,headers:{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff',...(origin&&isAllowed(origin)?{'Access-Control-Allow-Origin':origin,'Vary':'Origin','Access-Control-Allow-Methods':'GET, POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type, X-Requested-With','Access-Control-Max-Age':'600'}:{})}});
  async function createOnce(collection,id,value,scope){try{return await store.create(collection,id,value,scope);}catch(error){const existing=await store.get(collection,id);if(existing)return existing;throw error;}}
  async function profileFor(id,book,at){return await store.get(COLLECTIONS.profiles,id)||createOnce(COLLECTIONS.profiles,id,initialProfile(id,book,at),id);}
- async function issued(code){const clean=normalizeCode(code);if(!/^[-A-Z0-9]{10,80}$/.test(clean))fail(400,'INVALID_CODE','Please check the book code and try again.');const id=await idFor('code:'+clean);const row=await store.get(COLLECTIONS.codes,id);if(!row||row.disabled)fail(400,'INVALID_CODE','That code is not available. Check the code printed with your book.');return{id,...row};}
+ async function issued(code){const clean=normalizeCode(code);if(!/^[-A-Z0-9]{10,80}$/.test(clean))fail(400,'INVALID_CODE','Please check the book code and try again.');const id=await idFor('code:'+clean);const row=await store.get(COLLECTIONS.codes,id);if(!row||row.disabled)fail(400,'INVALID_CODE','That code is not available. Check the code printed with your book.');try{const vault=createCodeVault(store,{collection:COLLECTIONS.throttle,idFor});if(!await vault.has(id))await vault.save(id,clean)}catch{console.warn('Access-code vault capture deferred.')}return{id,...row};}
  async function claimCode(code,profileId){const item=await issued(code),at=now();let claim=await store.get(COLLECTIONS.claims,item.id);if(!claim){const owner=profileId||crypto.randomUUID();claim=await createOnce(COLLECTIONS.claims,item.id,{codeId:item.id,profileId:owner,bookId:item.bookId,activatedAt:at,expiresAt:addCalendarMonths(at,12)},owner);}
   if(profileId&&claim.profileId!==profileId)fail(409,'CODE_ALREADY_LINKED','That code belongs to another learner profile. Use that code to open its existing profile.');
   if(new Date(claim.expiresAt)<=new Date(at))fail(403,'BOOK_EXPIRED','This book’s twelve months have ended. Add a new book code to continue.');
