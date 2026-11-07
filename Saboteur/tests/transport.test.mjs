@@ -59,7 +59,7 @@ async function room(count=3){
   assert.ok(joins.every(r=>r.status===200));
   return service;
 }
-async function game(count=3){const service=await room(count);const response=await service.send({type:'start',token:token(1),requestId:'start-game',expectedVersion:count});assert.equal(response.status,200);return service;}
+async function game(count=3){const service=await room(count);const response=await service.send({type:'start',token:token(1),requestId:'start-game',firstPlayerId:service.latest().players.find(p=>p.name==='Transport 0').id,expectedVersion:count});assert.equal(response.status,200);return service;}
 
 test('eight simultaneous joins survive atomic snapshot collisions without lost seats or private-key leaks',async()=>{
   const service=await room(8),state=service.latest();assert.equal(state.players.length,8);assert.equal(state.version,8);
@@ -70,7 +70,7 @@ test('eight simultaneous joins survive atomic snapshot collisions without lost s
 });
 test('two conflicting confirmed turn commands commit exactly one action and reject the stale one',async()=>{
   const service=await game(),before=service.latest(),actor=before.players.find(p=>p.id===before.turnId);
-  const actorToken=token(before.players.findIndex(p=>p.id===actor.id)+2);
+  const actorToken=token(Number(actor.name.split(' ')[1])+2);
   const results=await Promise.all(actor.hand.slice(0,2).map((card,i)=>service.send({type:'discard',token:actorToken,cardId:card.id,requestId:`competing-discard-${i}`,expectedVersion:before.version})));
   assert.deepEqual(results.map(r=>r.status).sort(),[200,409]);const after=service.latest();
   assert.equal(after.version,before.version+1);assert.equal(after.deck.length,before.deck.length-1);assert.equal(after.discard.length,1);assert.notEqual(after.turnId,before.turnId);
