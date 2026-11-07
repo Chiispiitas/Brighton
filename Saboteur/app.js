@@ -1,3 +1,4 @@
+import { newInspections, notifyInspection, labelPlacement, notifyPlacement } from './inspection.mjs';
 import { API_URL } from './config.js';
 import { CARD_DEFS, legalPlacements } from './server/engine.mjs';
 import { esc, cardHtml, cardName, TOOL_NAMES, boardHtml, TunnelBoard } from './board.mjs';
@@ -44,7 +45,7 @@ async function send(body,inRoom=true){
   const signature=JSON.stringify(body);if(pending?.signature!==signature)pending={signature,body:{...body,expectedVersion:state?.version,requestId:crypto.randomUUID()}};
   try{const data=await api(pending.body);pending=null;accept(data);errors=0;return true;}catch(e){if(e.status&&e.status<500)pending=null;if(inRoom){toast(e.message);if(e.status===409)await refresh(false,true);}else {$('#entry-error').hidden=false;$('#entry-error').textContent=e.message;}return false;}finally{busy=false;root.querySelectorAll('button').forEach(b=>b.disabled=false);if(state)render();}
 }
-function accept(data){if(data.code===state?.code&&data.version===state.version)return;if(data.code!==state?.code||data.version>=viewVersion){const changed=data.version!==state?.version;if(data.round!==state?.round){revealed=false;board=null;boardOpen=false;focusAction=false;}state=data;viewVersion=data.version;if(changed){selectedId=null;target=null;rotation=0;tool=null;}render();}}
+function accept(data){if(data.code===state?.code&&data.version===state.version)return;if(data.code!==state?.code||data.version>=viewVersion){const placementChanged=state&&data.lastPlacement?.version>state.version;const inspections=newInspections(state,data);const changed=data.version!==state?.version;if(data.round!==state?.round){revealed=false;board=null;boardOpen=false;focusAction=false;}state=data;viewVersion=data.version;if(changed){selectedId=null;target=null;rotation=0;tool=null;}render();if(placementChanged)notifyPlacement(data.lastPlacement);inspections.forEach((event,i)=>setTimeout(()=>notifyInspection(event),i*3300));}}
 async function refresh(initial=false,force=false){if(tutorialMode||busy&&!force)return;try{accept(await api({type:'state'}));errors=0;$('.connection-banner')?.remove();if(initial)startPolling();}catch(e){errors++;if(initial){toast(e.message);state=null;landing();}else if(!$('.connection-banner'))root.insertAdjacentHTML('afterbegin','<p class="connection-banner" role="status">Connection interrupted. Reconnecting…</p>');}}
 function startPolling(){clearTimeout(timer);timer=setTimeout(async()=>{if(!document.hidden)await refresh();startPolling();},errors?Math.min(25000,4000*errors):2500);}
 document.addEventListener('visibilitychange',()=>{revealed=false;if(modal.open)modal.close();if(state){if(document.hidden)render();else refresh(true);}});
@@ -80,7 +81,7 @@ export function render(next){
     board.update(state,{placements,selectedCell:kind(selectedCard())==='path'?target:null,selectedCard:selectedCard(),rotation,actionType:kind(selectedCard()),actionTarget:target});if(presenter||!state.me)root.querySelector('.board-feedback').textContent=state.phase==='playing'?`Public board · ${playerName(state.turnId)} acts on their device.`:'Public board · Results are shown above.';if(state.me?.broken.length&&kind(selectedCard())==='path')root.querySelector('.board-feedback').textContent='Repair all your broken tools before placing a tunnel. You can discard this card.';if(focusAction){const c=selectedCard();const point=kind(c)==='map'?{x:8,y:0}:placements[0]||state.board.find(t=>t.kind==='path')||{x:0,y:0};board.focusOn(point.x,point.y);focusAction=false;}
     if(state.mode==='classroom'&&!presenter&&!tutorialMode){const details=$('.phone-board');details.ontoggle=()=>{boardOpen=details.open;if(details.open)requestAnimationFrame(()=>{const c=selectedCard();if(state.me?.canAct&&['path','map','rockfall'].includes(kind(c))){const point=kind(c)==='map'?{x:8,y:0}:placements[0]||state.board.find(t=>t.kind==='path')||{x:0,y:0};board.focusOn(point.x,point.y);}else board.fit();});};}
   }
-  wire();tutorial?.decorate();
+  labelPlacement(state);wire();tutorial?.decorate();
 }
 function wire(){
   $('#reveal-gold')?.addEventListener('click',()=>{revealed=true;render();});$('#privacy')?.addEventListener('click',()=>{revealed=!revealed;render();});$('#reveal')?.addEventListener('click',()=>{revealed=true;render();});
