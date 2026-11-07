@@ -1,0 +1,26 @@
+name: Saboteur rules and service
+on:
+  pull_request:
+    paths: ['Saboteur/**', '.github/workflows/saboteur.yml', '_config.yml']
+  push:
+    branches: [main]
+    paths: ['Saboteur/**', '.github/workflows/saboteur.yml', '_config.yml']
+jobs:
+  game:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: Saboteur/wix-backend/package-lock.json
+      - run: node --check Saboteur/app.js
+      - run: node --check Saboteur/board.mjs
+      - run: node --check Saboteur/tutorial.mjs
+      - run: node --test Saboteur/tests/*.test.mjs
+      - run: diff -r Saboteur/server Saboteur/wix-backend/src/game
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: Saboteur/wix-backend
+      - run: cp .env.example .env.local && npx tsc --noEmit -p . && npx astro build
+        working-directory: Saboteur/wix-backend

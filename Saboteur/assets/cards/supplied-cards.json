@@ -1,0 +1,116 @@
+{
+  "miner": {
+    "source": "MINEROS/mineros.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "saboteur": {
+    "source": "SABOTEADORES/saboteadores.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "rockfall": {
+    "source": "CARTAS ACCION/cartas de accion1.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "break-pick": {
+    "source": "CARTAS ACCION/cartas de accion1.jpg",
+    "column": 1,
+    "row": 2,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-pick": {
+    "source": "CARTAS ACCION/cartas de accion1.jpg",
+    "column": 1,
+    "row": 3,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "break-lantern": {
+    "source": "CARTAS ACCION/cartas de accion3.jpg",
+    "column": 2,
+    "row": 3,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-cart": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-pick-lantern": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 3,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-lantern": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 1,
+    "row": 2,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-pick-cart": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 3,
+    "row": 2,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "repair-lantern-cart": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 1,
+    "row": 3,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "map": {
+    "source": "CARTAS ACCION/cartas de accion2.jpg",
+    "column": 2,
+    "row": 3,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "break-cart": {
+    "source": "CARTAS ACCION/cartas de accion3.jpg",
+    "column": 2,
+    "row": 2,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "gold-1": {
+    "source": "CARTAS PEPITAS/cartas de pepitas3.jpg",
+    "column": 1,
+    "row": 2,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "gold-2": {
+    "source": "CARTAS PEPITAS/cartas de pepitas2.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "gold-3": {
+    "source": "CARTAS PEPITAS/cartas de pepitas3.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "back": {
+    "source": "CAMINOS 1/dorso caminos IMPRIMIR 4.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "role-back": {
+    "source": "MINEROS/dorso enanos IMPRIMIR 1.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  },
+  "gold-back": {
+    "source": "CAMINOS 2/dorso caminos IMPRIMIR 1.jpg",
+    "column": 1,
+    "row": 1,
+    "operation": "Exact sheet-cell extraction and WebP conversion; no redraw."
+  }
+}
