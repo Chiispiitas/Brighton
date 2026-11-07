@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Achievement presentation update: remove the avatar-pin unlock toast. Newly crossed XP pin milestones are captured on the saved result and presented once on a dedicated achievement screen after streak and overtaking. Final flow is Results → streak → overtaking → achievement → Learn (or requested replay); absent stages skip. Multiple pins appear together. Native ImageGen pin sprites are reused with full-opacity spring/pop transforms and static reduced motion. No XP, unlock thresholds, art or backend records change. See completion-flow tests and actual saved-round browser proof.
+
+
 Completion ordering update: sidebar/mobile navigation label is Rank (route remains leaderboard). Saved Results now appear BEFORE any daily streak or leaderboard overtaking celebration. Continue / Practice again queue streak first, then a real same-week overtaking event, then the selected destination. Missing events skip cleanly. Baseline and post-save authenticated standings measure actual position and XP gain; a failed leaderboard request never fails the lesson save. Replaced bot seats, weekly rollover and unchanged XP cannot fabricate an overtake. Existing avatars and material emblems are reused with transform-only movement. See tests/completion-flow.test.mjs and reports/completion-order.json; synthetic actual-app proof, no real learner QA. This supersedes the older streak-before-results instructions.
 
 

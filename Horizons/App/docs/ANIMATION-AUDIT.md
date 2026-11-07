@@ -1,5 +1,8 @@
 # Horizons animation production audit
 
+Achievement unlock screen: existing native ui-static-v1 pin artwork is reused unchanged, with one transform-only overshoot/bounce per reward and a short stagger for simultaneous unlocks. No new raster artwork is needed. Full opacity throughout; reduced motion is static. Achievement notification toast is removed. Presentation runs after Results, streak and overtaking, then returns to the requested destination. Captured reward list prevents repeated presentation within the same completion flow.
+
+
 Post-results sequence: Results → daily streak → overtaking → chosen destination. Overtaking uses existing native avatar layers and material rank emblem; no new artwork or expressions. Self row translates upward and crossed competitor rows move down, full opacity, static reduced motion. Events require same-week position improvement, earned XP and an actual crossed competitor still in that lobby. No event on bot disappearance or weekly reset. Completion-flow unit tests and actual synthetic saved-round browser proof cover sequence and skips. Explicit important-scoped UI animation declarations override the old global static-art baseline; a normal-motion browser check asserts a real running overtaking animation, while reduced-motion declarations remain final and explicit.
 
 

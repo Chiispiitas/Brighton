@@ -9,5 +9,6 @@ export function overtakingEvent(before,after){
 export function nextCompletionStage(result){
  if(result.completionStage==='streak')result.streakDone=true;
  if(result.completionStage==='overtake')result.overtakeDone=true;
- return result.pendingStreak&&!result.streakDone?'streak':result.overtake&&!result.overtakeDone?'overtake':'done';
+ if(result.completionStage==='achievement')result.achievementDone=true;
+ return result.pendingStreak&&!result.streakDone?'streak':result.overtake&&!result.overtakeDone?'overtake':result.achievements?.length&&!result.achievementDone?'achievement':'done';
 }
