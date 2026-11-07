@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Friend challenges implemented: private mutual-friend eight-question A1 vocabulary rounds, shared server snapshot, one server-graded score each, expiry/decline and delayed comparison. Challenges on own profile; Challenge on mutual friend profile. No XP or progress awards. Rank card/banner backgrounds now reflect Wood through Masters. Read docs/FRIEND-CHALLENGES.md and docs/SOCIAL-PROFILES.md.71 backend tests and synthetic UI round/comparison/mobile checks pass.
+
 Social profiles: Profile now shows statistics, human-first suggestions and social lists; the pencil opens the existing editor. Rank names/avatars and social cards open authenticated public profiles. Directed follows become friends only when mutual; bots may be followed but never reciprocate. Find friends and native share/copy invite links work without exposing codes or granting access. Pending invites survive login without auto-following. New actions getSocialHome/getPublicProfile/setFollow/searchPeople use private HzThrottle social-out/social-in records. Read docs/SOCIAL-PROFILES.md and reports/social-profile.json. This implements the previously planned profile/friend feature; old plan-only wording is historical.
 
 

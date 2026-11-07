@@ -1,3 +1,4 @@
+import {createChallenges} from './challenges.mjs';
 import {createSocial} from './social.mjs';
 import {createLeaderboard} from './leaderboard.mjs';
 import {createContentRepository} from './admin-content-repository.mjs';
@@ -158,6 +159,10 @@ export function createApplication(store,{now=()=>new Date().toISOString(),truste
    if(['getSocialHome','getPublicProfile','setFollow','searchPeople'].includes(action)){
     const social=createSocial(store,{now,idFor,collections:COLLECTIONS,aggregateProgress});
     try{const result=action==='getSocialHome'?await social.home(session.profileId):action==='getPublicProfile'?await social.get(session.profileId,body.targetId):action==='setFollow'?await social.follow(session.profileId,body.targetId,body.following):await social.search(session.profileId,body.query);return json(result,200,origin);}catch(error){if(error.status)fail(error.status,'SOCIAL_REQUEST',error.message);throw error;}
+   }
+   if(['listChallenges','createChallenge','openChallenge','declineChallenge','submitChallenge'].includes(action)){
+    const social=createSocial(store,{now,idFor,collections:COLLECTIONS,aggregateProgress}),challenges=createChallenges(store,{now,idFor,collections:COLLECTIONS,social,buildQuiz,checkAnswer,chunkIds:Object.keys(chunkById).filter(id=>!id.includes('alphabet'))});
+    try{const owner=session.profileId,result=action==='listChallenges'?await challenges.list(owner):action==='createChallenge'?await challenges.create(owner,body.targetId,body.requestId):action==='openChallenge'?await challenges.open(owner,body.challengeId):action==='declineChallenge'?await challenges.decline(owner,body.challengeId):await challenges.submit(owner,body.challengeId,body.answers);return json(result,200,origin)}catch(error){if(error.status)fail(error.status,'CHALLENGE_REQUEST',error.message);throw error}
    }
    if(action==='getLeaderboard')return json(await createLeaderboard(store,{now,idFor,collections:COLLECTIONS}).get(session.profileId),200,origin);
    if(action==='signOut'){await store.put(COLLECTIONS.sessions,session.id,{...session,revoked:true,revokedAt:now()},session.profileId);return json({ok:true},200,origin);}
