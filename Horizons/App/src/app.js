@@ -446,7 +446,7 @@ app.addEventListener('scroll',event=>{if(event.target.matches?.('.horizontal-pat
 on('click','[data-path-node]',(event,target)=>pathDetails(target.dataset.pathNode,target,event));
 on('click','[data-start-activity]',(_,target)=>startActivity(target.dataset.startActivity));
 on('click','[data-audio-text]',(_,target)=>speakSelection(target.dataset.audioText));
-on('click','[data-choice]',(_,target)=>{if(state.active?.checked)return;state.active.selected=target.dataset.choice;const q=state.active.questions[state.active.index],choice=q.choices.find(c=>String(c.id)===target.dataset.choice);if(choice) speakSelection(choice.text);render();});
+on('click','[data-choice]',(_,target)=>{if(state.active?.checked)return;state.active.selected=target.dataset.choice;const q=state.active.questions[state.active.index],choice=q.choices.find(c=>String(c.id)===target.dataset.choice);if(choice&&!q.listening) speakSelection(choice.text);render();});
 on('input','#typed-answer',(_,target)=>{if(state.active?.kind!=='quiz')return;state.active.selected=target.value;const check=app.querySelector('[data-action=check-answer]');if(check)check.disabled=!target.value.trim();});
 // Pointer-based tile dragging works with mouse, pen and touch; clicks remain available.
 let tileDrag=null,suppressTileClick=false;

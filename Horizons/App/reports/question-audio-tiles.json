@@ -44,6 +44,9 @@
   ],
   "deviceSpeechForbidden": true,
   "correctTypedAnswerRecordedPlayback": true,
+  "listeningChoicesSilent": true,
+  "alphabetClickAndKeyboardSilent": true,
+  "explicitListeningPlayback": true,
   "reducedMotionNoFlip": true,
   "noRealLearnerRecords": true,
   "errors": []
