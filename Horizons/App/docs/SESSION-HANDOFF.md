@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Word bank header art (6 November 2026): Mina now uses the accepted larger Practice-header slot dimensions (180px desktop, 130px short desktop, 145px mobile) instead of the generic 70px-wide slot. Art/rig remain unchanged. Eight synthetic desktop/mobile viewport checks in reports/bank-art.json confirm clear controls and desktop height fit.
+
+
 Listening choice exception (6 November 2026): selecting options in Listen and choose must be silent, including alphabet and numeric-key selection. Explicit Play audio remains available; non-listening choices, tile placement and correct typed-answer models retain generated playback. This supersedes the earlier universal choice-selection playback rule.
 
 
