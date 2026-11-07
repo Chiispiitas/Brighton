@@ -1,4 +1,4 @@
-import {publicActionCues,animatePublicAction} from './action-cues.mjs';
+import {publicActionCues,animatePublicAction,clearActionNotices} from './action-cues.mjs';
 import {newInspections,notifyInspection} from './inspection.mjs';
 import { createRoom, command, view, CARD_DEFS, cardGroups } from './server/engine.mjs';
 import { esc } from './board.mjs';
@@ -69,7 +69,7 @@ export async function createTutorial(api){
     api.root.querySelectorAll('[data-lesson]').forEach(b=>b.onclick=()=>start(b.dataset.lesson));
   }
   function start(name){if(!LESSONS[name])return menu();lesson=name;index=0;load(0);}
-  function load(i){cancel();api.closeModal();index=i;completed=false;feedback='';raw=fixture(step());api.resetSelection();api.resetBoard();api.setReveal(step().scene!=='role');history.replaceState(null,'',`?tutorial=${lesson}`);api.render(view(raw,YOU));window.scrollTo({top:0,behavior:'instant'});}
+  function load(i){clearActionNotices();cancel();api.closeModal();index=i;completed=false;feedback='';raw=fixture(step());api.resetSelection();api.resetBoard();api.setReveal(step().scene!=='role');history.replaceState(null,'',`?tutorial=${lesson}`);api.render(view(raw,YOU));window.scrollTo({top:0,behavior:'instant'});}
   function decorate(){
     if(!lesson)return;const current=step();
     const existing=[api.root.querySelector('.turn-banner'),api.root.querySelector('.room-layout'),...api.root.querySelectorAll('.result-banner,.gold-choice')].filter(Boolean);
@@ -87,7 +87,7 @@ export async function createTutorial(api){
     if(current.scene==='map-note'){const notes=api.root.querySelector('.private-notes');if(notes)notes.open=true;}
   }
   function act(body){
-    try{const prior=view(raw,'',true);raw=command(raw,YOU,{...body,expectedVersion:raw.version,requestId:`practice-action-${++serial}`},()=>.4);completed=true;
+    try{clearActionNotices();const prior=view(raw,'',true);raw=command(raw,YOU,{...body,expectedVersion:raw.version,requestId:`practice-action-${++serial}`},()=>.4);completed=true;
       feedback=body.type==='chooseGold'?'You kept that gold card. Your total is private.':body.type==='discard'?'One card discarded privately. You drew a replacement; your turn ended.':kindOf(body)==='map'?'Goal 2 contains gold. Your note is private.':step().scene==='double-repair'?'Rowan’s lantern works again. Their cart is still broken.':step().scene==='dead'?'The blocked tunnel is placed. Its two ends do not connect.':step().scene==='win'?'The tunnel reached gold. Miners win this round.':step().scene==='break'?'Rowan’s pickaxe is broken. Your card was replaced and your turn ended.':step().scene==='repair'?'Your pickaxe works again. You can place tunnels on a later turn.':step().scene==='rockfall'?'The tunnel is removed. The farther tunnel is now disconnected.':'Card played. You drew a replacement and your turn ended.';
       api.resetSelection();api.render(view(raw,YOU));newInspections(prior,view(raw,'',true)).forEach(notifyInspection);publicActionCues(prior,view(raw,'',true)).forEach(animatePublicAction);return true;
     }catch(e){api.toast(e.message);return false;}

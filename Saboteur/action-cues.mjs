@@ -1,3 +1,4 @@
+export function clearActionNotices(){document.querySelectorAll('.public-action-cue,.inspection-cursor').forEach(n=>n.remove());document.querySelectorAll('.inspection-highlight,.action-break,.action-repair').forEach(n=>n.classList.remove('inspection-highlight','action-break','action-repair'));}
 // Consume only the public log and board. Never inspect hands, notes or gold values.
 export function publicActionCues(previous,next) {
   if(!previous || previous.code!==next.code || next.version<=previous.version)return [];
@@ -24,5 +25,5 @@ export function animatePublicAction(cue) {
     const world=document.querySelector('.board-world'),tile=document.querySelector('[data-tile="0,0"]');
     if(world&&tile){const dust=document.createElement('span');dust.className='rockfall-dust';dust.textContent='◆ · ◆';dust.style.left=`${parseFloat(tile.style.left)+cue.x*78}px`;dust.style.top=`${parseFloat(tile.style.top)+cue.y*120}px`;world.append(dust);setTimeout(()=>dust.remove(),2200);}
   }
-  setTimeout(()=>{notice.remove();target?.classList.remove(`action-${cue.kind}`);},3000);
+  setTimeout(()=>{target?.classList.remove(`action-${cue.kind}`);},3000);
 }
