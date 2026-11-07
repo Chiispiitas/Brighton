@@ -31,6 +31,9 @@ html.brighton-exam-player {
   background: radial-gradient(circle at 12% 16%, #f8a83229, transparent 25%), radial-gradient(circle at 85% 82%, #00a9a51a, transparent 24%), #fff !important;
 }
 .brighton-exam-player .start-card { width: min(1120px, 100%) !important; min-width: 0 !important; border: 2px solid var(--yellow) !important; border-radius: 28px !important; background: #fff !important; box-shadow: var(--shadow) !important; overflow: hidden !important; }
+/* The screen owns scrolling. Legacy phone styles cap the card's height;
+   combined with its hidden overflow that makes the form unreachable on iOS. */
+.brighton-exam-player .start-card { max-height: none !important; }
 .brighton-exam-player .start-logo-row { display: flex !important; justify-content: center !important; padding: 20px 24px 16px !important; }
 .brighton-exam-player .start-logo-row img { display: block !important; width: 170px !important; max-width: 100% !important; height: 42px !important; object-fit: contain !important; }
 .brighton-exam-player .brand-strip { display: flex !important; align-items: center !important; justify-content: space-around !important; height: 48px !important; background: var(--yellow) !important; color: #fff !important; font-size: 28px !important; font-weight: 800 !important; letter-spacing: 0 !important; }
