@@ -1,5 +1,6 @@
 import { API_URL } from './config.js';
 import { spyPresentation, privateNoteText } from './player-copy.mjs?v=spying-3';
+import { classroomHtml } from './classroom.mjs?v=classroom-1';
 const $ = s => document.querySelector(s);
 const root = $('#app'), modal = $('#modal');
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -31,20 +32,25 @@ let revealedRoom=null, revealedDeaths=new Set();
 const PACK_WAIT='Impossible to continue because the decision has not been made.';
 const params = new URLSearchParams(location.search), tutorialMode=params.has('tutorial'), projector=!tutorialMode&&params.has('screen');
 let tutorial=null;
+const classroomReadNotes=new Set();
 const saved = () => { try { return JSON.parse(localStorage.getItem('brighton-werewolves-session')); } catch { return null; } };
 function saveSession() { if(tutorialMode)return; try { localStorage.setItem('brighton-werewolves-session',JSON.stringify(session)); } catch { toast('Keep this tab open. This browser cannot save your game session.'); } }
 const token = () => [...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
 function toast(message) { $('#notice').textContent=message; $('#notice').classList.add('show'); clearTimeout(toast.id); toast.id=setTimeout(()=>$('#notice').classList.remove('show'),5500); }
-function showModal(html) { $('#modal-content').innerHTML=html; if(!modal.open)modal.showModal(); }
+function showModal(html) { $('#modal-content').innerHTML=html; if(state?.mode==='classroom'&&state.me&&!state.host&&!projector){$('#modal-content').insertAdjacentHTML('beforeend','<button class="primary wide" id="close-result">Close and put phone face down</button>');$('#close-result').onclick=()=>modal.close();} if(!modal.open)modal.showModal(); }
 $('.close').onclick=()=>modal.close(); modal.addEventListener('click', e=>{if(e.target===modal)modal.close();});
 function rules() {
-  showModal(`<div class="eyebrow">Rules</div><h2 style="margin-top:16px">Roles</h2><p class="guide-intro">Each player uses a device. The host starts the game and controls the night and day phases.</p><div class="rule-grid">${Object.keys(roleNames).map(r=>`<div class="rule"><img src="assets/${r}-icon.webp" alt=""><h3>${roleNames[r]}</h3><p>${roleCopy[r]}</p></div>`).join('')}</div><div class="rule-order"><b>THE NIGHT ORDER</b><br>Fortune teller → Werewolves → Little girl → Witch → Dawn.<br><br><b>FIRST DAY</b><br>Discuss what happened. Nobody is voted out on day one. Voting starts on day two.<br><br><b>THE VOTE</b><br>One secret vote per living player. The unique highest vote eliminates that player. Ties and an all-abstain vote eliminate nobody. Eliminated players reveal their cards to the village, then watch quietly and cannot act or vote.<br><br><b>WINNING</b><br>The village wins when no werewolves remain. Werewolves win when they equal or outnumber the other living players. The hunter’s final shot always happens first.<br><br><b>THE HOST</b><br>Host as narrator, or join the roster to play too. Read the current phase aloud. Continue after the players have acted. Missing roles are skipped. Rooms last 24 hours; keep the same browser to reconnect.</div><p class="guide-intro">The witch’s healing potion saves that night’s werewolf victim; it does not bring back someone eliminated on an earlier day. If the same player is also poisoned, they still die.</p>`);
+  showModal(`<div class="eyebrow">Rules</div><h2 style="margin-top:16px">Roles</h2><p class="guide-intro">Each player uses a device. The host starts the game and controls the night and day phases.</p><div class="rule-grid">${Object.keys(roleNames).map(r=>`<div class="rule"><img src="assets/${r}-icon.webp" alt=""><h3>${roleNames[r]}</h3><p>${roleCopy[r]}</p></div>`).join('')}</div><div class="rule-order"><b>THE NIGHT ORDER</b><br>Fortune teller → Werewolves → Little girl → Witch → Dawn.<br><br><b>FIRST DAY</b><br>Discuss what happened. Nobody is voted out on day one. Voting starts on day two.<br><br><b>THE VOTE</b><br>One secret vote per living player. The unique highest vote eliminates that player. Ties and an all-abstain vote eliminate nobody. Eliminated players reveal their cards to the village, then watch quietly and cannot act or vote.<br><br><b>WINNING</b><br>The village wins when no werewolves remain. Werewolves win when they equal or outnumber the other living players. The hunter’s final shot always happens first.<br><br><b>THE HOST</b><br>In an online game, host as narrator or join the roster to play too. In a classroom game, the host moderates, calls each role with Wake, then puts them to sleep after their choice. Players keep phones face down between turns. A separate presenter screen shows public information only. Read the current phase aloud. Continue after the players have acted. Missing roles are skipped. Rooms last 24 hours; keep the same browser to reconnect.</div><p class="guide-intro">The witch’s healing potion saves that night’s werewolf victim; it does not bring back someone eliminated on an earlier day. If the same player is also poisoned, they still die.</p>`);
 }
 $('#guide').onclick=rules;
 function landing() {
+  document.body.classList.remove('classroom-page');
   root.className='entry-page';
   root.innerHTML=`<div class="landing"><section class="entry"><h1>Werewolves</h1><div class="tabset"><button class="tab ${mode==='join'?'active':''}" data-mode="join">Join game</button><button class="tab ${mode==='host'?'active':''}" data-mode="host">Host game</button></div><p class="entry-instructions">${mode==='join'?'Enter your name and the room code.':'Create a room and share its code with the players.'}</p><form id="entry-form"><div class="field"><label for="name">${mode==='join'?'Your name':'Host name'}</label><input id="name" name="name" placeholder="Name" maxlength="24" autocomplete="nickname" required></div>${mode==='join'?`<div class="field"><label for="code">Room code</label><input id="code" class="code" name="code" placeholder="000000" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" value="${escape(params.get('room')?.replace(/\D/g,'').slice(0,6)||'')}" required autocomplete="off"></div>`:''}<div id="entry-error" class="hidden error-box" role="alert"></div><button class="primary wide" type="submit">${mode==='join'?'Join':'Create room'}</button></form>${saved()?'<button id="restore" class="secondary wide restore">Return to your previous village</button>':''}<p class="player-range">4–12 players · one device per player</p></section><section class="board-preview" aria-label="Village board"><div class="preview-title">The village</div>${previewHouses()}<span class="square-marker">4–12<br><small>players</small></span></section></div><section class="roles-preview"><h2>Role tutorials</h2><div class="mini-roles">${Object.keys(roleNames).map(r=>`<a href="?tutorial=${r}" class="mini-role" aria-label="Learn to play: ${roleNames[r]}"><img src="assets/${r}-icon.webp" alt="">${roleNames[r]}</a>`).join('')}</div></section>`;
   root.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;landing();});
+  if(mode==='host')$('#entry-form').insertAdjacentHTML('afterbegin',`<fieldset class="play-mode"><legend>How are you playing?</legend><label><input type="radio" name="play-mode" value="online" checked><span><b>Online game</b><small>The full village on every device. The host can play too.</small></span></label><label><input type="radio" name="play-mode" value="classroom"><span><b>Classroom with devices</b><small>A moderator remote, one shared screen, and private cards on players’ phones.</small></span></label></fieldset>`);
+  if(mode==='join')$('#entry-form').insertAdjacentHTML('afterend','<button id="join-screen" class="quiet screen-entry">Connect as the presenter screen</button>');
+  $('#join-screen')?.addEventListener('click',()=>{showModal('<h2>Presenter screen</h2><p class="guide-intro">Enter the room code. This screen shows only public information.</p><form id="screen-form"><div class="field"><label for="screen-code">Room code</label><input id="screen-code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required></div><button class="primary wide">Connect screen</button></form>');$('#screen-form').onsubmit=e=>{e.preventDefault();location.href=`?room=${$('#screen-code').value}&screen=1`;};});
   $('#restore')?.addEventListener('click',()=>{session=saved();reveal=false;refresh(true);});
   $('#entry-form').onsubmit=async e=>{
     e.preventDefault(); if(busy)return;
@@ -53,7 +59,7 @@ function landing() {
     // Retain the same player capability when reopening a join link on the same browser.
     const prior=saved();
     session={ code, token:prior?.code===code?prior.token:token() };
-    const result=await send({type:mode==='host'?'create':'join', name},false);
+    const result=await send({type:mode==='host'?'create':'join', name, ...(mode==='host'?{mode:root.querySelector('[name="play-mode"]:checked').value}:{})},false);
     if(result) { saveSession(); history.replaceState(null,'',`?room=${code}`); startPolling(); }
   };
 }
@@ -62,7 +68,7 @@ async function api(body) {
   if(!API_URL)throw new Error('The game service is unavailable. Please retry later.');
   const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),20000);
   try {
-    const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...body,code:session.code,token:session.token}),signal:controller.signal,cache:'no-store'});
+    const res=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...body,code:session.code,token:session.token,screen:projector}),signal:controller.signal,cache:'no-store'});
     const data=await res.json(); if(!res.ok){const e=new Error(data.error||'Could not connect. Please retry.');e.status=res.status;throw e;} return data;
   } catch(e) { if(e.name==='AbortError')throw new Error('Connection timed out. Please retry.'); throw e; }
   finally { clearTimeout(timeout); }
@@ -102,7 +108,7 @@ async function refresh(initial=false) {
 function startPolling() {
   if(tutorialMode)return;
   clearTimeout(timer);
-  timer=setTimeout(async()=>{if(!document.hidden)await refresh();startPolling();},errors?Math.min(25000,6000*errors):(state?.phase==='werewolf'&&state.me?.alive&&state.me?.role==='werewolf'?1800:state?.host?3500:6000));
+  timer=setTimeout(async()=>{if(!document.hidden)await refresh();startPolling();},errors?Math.min(25000,6000*errors):(state?.mode==='classroom'?2000:state?.phase==='werewolf'&&state.me?.alive&&state.me?.role==='werewolf'?1800:state?.host?3500:6000));
 }
 document.addEventListener('visibilitychange',()=>{
   if(tutorialMode)return;
@@ -162,13 +168,14 @@ function mePanel() {
   if(state.phase==='reveal')return `<section class="panel private-card"><div class="private-tag">Private</div><h3>Your role</h3>${reveal?`<img class="role-card" src="assets/${me.role}-card.webp" alt="Your ${roleNames[me.role]} card"><div class="role-title">${roleNames[me.role]}</div><p>${roleCopy[me.role]}</p>`:'<button class="card-back" id="reveal" aria-label="Reveal your secret card"></button><p>Keep your card hidden from other players.</p>'}<div class="reveal-tools">${reveal?'<button class="quiet" id="hide">Hide card</button>':''}${me.acted?'<p class="status-line">✓ Ready</p>':reveal?'<button class="primary" id="ready">Ready</button>':''}</div></section>`;
   if(state.phase==='finished')return `<section class="panel private-card"><div class="private-tag">Your role</div><img class="role-card" src="assets/${me.role}-card.webp" alt="${roleNames[me.role]}"><h3>${roleNames[me.role]}</h3><p>${me.alive?'You finished alive.':'Eliminated.'}</p></section>`;
   const yourTurn=me.canAct&&(!me.acted||state.phase==='werewolf');
+  const place=state.mode==='classroom'?'player':'player’s house';
   let body='';
   if(!me.alive&&state.phase!=='hunter')body='<div class="sleep"><span class="moon">◇</span><h3>Eliminated</h3><p>You can watch, but cannot act or vote.</p></div>';
   else if(!yourTurn)body=`<div class="sleep"><span class="moon">${NIGHT_PHASES.includes(state.phase)?'☾':'☀'}</span><h3>${me.acted?'Choice recorded.':NIGHT_PHASES.includes(state.phase)?'Close your eyes.':state.phase==='hunter'?'Hunter’s turn':'Discussion'}</h3><p>${me.acted?'Wait for the next phase.':NIGHT_PHASES.includes(state.phase)?'Wait until the host calls your role.':state.phase==='hunter'?'The hunter is choosing a final target.':'Discuss with the other players.'}</p></div>`;
   else if(state.phase==='werewolf')body=packPanel();
   else if(state.phase==='girl')body='<h3>Spy or stay asleep</h3><p class="action-prompt">Spying reveals one werewolf. You may stay unseen, or be discovered by that werewolf.</p><div class="action-buttons"><button class="primary" id="spy">Spy</button><button class="secondary" id="pass">Stay asleep</button></div>';
   else if(state.phase==='witch')body=witchPanel();
-  else body=`<h3>${state.phase==='fortune'?'Check a role':state.phase==='werewolf'?'Choose a player':state.phase==='hunter'?'Hunter’s choice':'Cast your vote'}</h3><p class="action-prompt">${state.phase==='fortune'?'Choose another living player’s house to learn their role privately.':state.phase==='werewolf'?'Choose a living player’s house. Your pack is marked. Only one victim can be attacked tonight.':state.phase==='hunter'?'Choose a living player’s house to take them with you, or pass.':'Choose a living player’s house to vote for them. You may also abstain.'}</p><p class="target-label" id="target-name">${selected?escape(playerName(selected)):'Choose a house in the village'}</p><div class="action-buttons"><button class="primary" id="confirm-target" ${selected?'':'disabled'}>${state.phase==='vote'?'Cast my vote':'Confirm choice'}</button>${state.phase!=='werewolf'?`<button class="secondary" id="pass">${state.phase==='vote'?'Abstain':'Pass'}</button>`:''}</div>`;
+  else body=`<h3>${state.phase==='fortune'?'Check a role':state.phase==='werewolf'?'Choose a player':state.phase==='hunter'?'Hunter’s choice':'Cast your vote'}</h3><p class="action-prompt">${state.phase==='fortune'?`Choose another living ${place} to learn their role privately.`:state.phase==='werewolf'?'Choose a living player’s house. Your pack is marked. Only one victim can be attacked tonight.':state.phase==='hunter'?`Choose a living ${place} to take them with you, or pass.`:`Choose a living ${place} to vote for them. You may also abstain.`}</p><p class="target-label" id="target-name">${selected?escape(playerName(selected)):state.mode==='classroom'?'Choose a player above':'Choose a house in the village'}</p><div class="action-buttons"><button class="primary" id="confirm-target" ${selected?'':'disabled'}>${state.phase==='vote'?'Cast my vote':'Confirm choice'}</button>${state.phase!=='werewolf'?`<button class="secondary" id="pass">${state.phase==='vote'?'Abstain':'Pass'}</button>`:''}</div>`;
   return `<section class="panel"><div class="private-tag">Private</div>${body}<div class="host-tools"><button class="quiet" id="peek-role">View my role</button></div>${me.notes?.length?`<details class="notes"><summary class="quiet">Your notes (${me.notes.length})</summary>${me.notes.slice().reverse().map(n=>`<div class="note"><small>NIGHT ${n.day}</small>${escape(privateNoteText(n.text).replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</div>`).join('')}</details>`:''}</section>`;
 }
 function logText(text) {
@@ -201,7 +208,7 @@ function updateWitchChoices() {
   $('#cast').disabled=poisoning&&!poison.value;
 }
 function packPanel() {
-  return `<h3>Pack selection</h3><p class="action-prompt">Tap a living villager’s house to share your highlight with the pack. You can change your choice until the night continues.</p><ul class="pack-choices">${(state.packChoices||[]).map(c=>`<li><b>${escape(playerName(c.wolfId))}${c.wolfId===state.me.id?' · you':''}</b><span>${c.target?escape(playerName(c.target)):'Choosing…'}</span></li>`).join('')}</ul><p class="status-line">${state.packDecision?.agreed?'All living wolves selected the same player. You or the host can continue.':'Every living werewolf must highlight the same person.'}</p><button class="primary wide" id="pack-continue" ${state.packDecision?.agreed?'':'disabled'}>${state.packDecision?.agreed?'Continue the night →':PACK_WAIT}</button>`;
+  return `<h3>Pack selection</h3><p class="action-prompt">Tap a living ${state.mode==='classroom'?'player':'villager’s house'} to share your highlight with the pack. You can change your choice until the night continues.</p><ul class="pack-choices">${(state.packChoices||[]).map(c=>`<li><b>${escape(playerName(c.wolfId))}${c.wolfId===state.me.id?' · you':''}</b><span>${c.target?escape(playerName(c.target)):'Choosing…'}</span></li>`).join('')}</ul><p class="status-line">${state.packDecision?.agreed?'All living wolves selected the same player.':'Every living werewolf must highlight the same person.'}</p>${state.mode!=='classroom'?`<button class="primary wide" id="pack-continue" ${state.packDecision?.agreed?'':'disabled'}>${state.packDecision?.agreed?'Continue the night →':PACK_WAIT}</button>`:''}`;
 }
 function revealedCards() {
   const dead=state.players.filter(p=>!p.alive&&p.role);
@@ -220,7 +227,20 @@ function renderRoom() {
   newlyRevealed.forEach(p=>revealedDeaths.add(p.id));
   if(phaseChanged){selected=null;reveal=false;lastPhase=state.phaseId;if(modal.open)modal.close();}
   if(state.phase==='werewolf'&&state.me?.role==='werewolf')selected=state.me.target||null;
+  const classroom=state.mode==='classroom'&&!tutorialMode;
+  document.body.classList.toggle('classroom-page',classroom);
   root.className=projector?'projector':state.phase==='witch'&&state.me?.role==='witch'?'witch-turn':'';
+  if(classroom){
+    root.innerHTML=classroomHtml(state,{escape,roleNames,projector,link,mePanel,selected,packWait:PACK_WAIT,houseArt});
+    wireRoom();
+    if(witchDraft&&$('#use-poison')){$('#heal').checked=witchDraft.heal&&!$('#heal').disabled;$('#use-poison').checked=witchDraft.usePoison&&!$('#use-poison').disabled;$('#poison').value=witchDraft.poison;updateWitchChoices();}
+    if(phaseChanged)window.scrollTo({top:0});
+    if(!projector&&!state.host&&state.phase==='day'){
+      const notes=(state.me?.notes||[]).filter(n=>/You spotted /.test(n.text)&&!classroomReadNotes.has(`${state.code}:${state.me.id}:${n.day}:${n.text}`));
+      if(notes.length){notes.forEach(n=>classroomReadNotes.add(`${state.code}:${state.me.id}:${n.day}:${n.text}`));showModal(`<div class="private-tag">Private</div><h2>You discovered a spy</h2><p class="guide-intro">${notes.map(n=>escape(privateNoteText(n.text))).join('<br>')}</p>`);}
+    }
+    return;
+  }
   root.innerHTML=`<div class="room-head"><div><div class="eyebrow">${state.phase==='lobby'?'Lobby':state.phase==='finished'?'Game over':`${NIGHT_PHASES.includes(state.phase)?'Night':'Day'} ${state.day||1}`}</div><h1>${state.phase==='lobby'?'Lobby':state.phase==='finished'?(state.winner==='village'?'Villagers win.':'Werewolves win.'):'Werewolves'}</h1></div><div class="room-tools"><button class="room-code" data-copy title="Copy invitation link">${state.code}</button><span class="live-dot">${projector?'Shared screen':state.host?'Host connected':'Connected'}</span><button class="quiet" id="home">Leave this view</button></div></div>${state.phase==='finished'?`<div class="success-banner"><h2>${state.winner==='village'?'Villagers win.':'Werewolves win.'}</h2><p>All roles are revealed below. ${state.host&&!projector?'You can start another game.':''}</p></div>`:''}<div class="room-layout">${mapHtml()}<aside class="sidebar">${mePanel()}${hostPanel()}${rosterPanel()}</aside></div>${revealedCards()}`;
   wireRoom();
   if(witchDraft&&$('#use-poison')){
@@ -236,7 +256,7 @@ function renderRoom() {
 const act = extra => send({type:'action',phaseId:state.phaseId,...extra});
 function wireRoom() {
   root.querySelectorAll('[data-copy]').forEach(b=>b.onclick=async()=>{try{await navigator.clipboard.writeText(link(false));toast('Room link copied.');}catch{showModal(`<h3>Invite players</h3><p class="guide-intro">Room code: <b>${state.code}</b></p><input readonly value="${escape(link(false))}" onfocus="this.select()">`);}});
-  $('#home').onclick=()=>{clearTimeout(timer);state=null;reveal=false;lastPhase=null;landing();history.replaceState(null,'',location.pathname);};
+  $('#home').onclick=()=>{clearTimeout(timer);if(projector){location.href=location.pathname;return;}state=null;reveal=false;lastPhase=null;landing();history.replaceState(null,'',location.pathname);};
   root.querySelectorAll('[data-player]').forEach(b=>b.onclick=async()=>{const p=state.players.find(p=>p.id===b.dataset.player);if(!p.alive&&p.role){showEliminatedCards([p]);return;}if(!targetable(p))return;if(state.phase==='werewolf'){selected=p.id;await act({target:p.id});return;}selected=p.id;root.querySelectorAll('[data-player]').forEach(x=>{x.classList.toggle('selected',x.dataset.player===selected);x.setAttribute('aria-pressed',String(x.dataset.player===selected));});$('#target-name').textContent=p.name;$('#confirm-target').textContent=state.phase==='vote'?`Vote for ${p.name}`:`Choose ${p.name}`;$('#confirm-target').disabled=false;});
   $('#reveal')?.addEventListener('click',()=>{reveal=true;renderRoom();});
   $('#hide')?.addEventListener('click',()=>{reveal=false;renderRoom();});
@@ -255,6 +275,7 @@ function wireRoom() {
     act({heal:$('#heal').checked,poison:poisoning?$('#poison').value:null});
   });
   $('#start')?.addEventListener('click',()=>send({type:'start'}));
+  $('#wake')?.addEventListener('click',()=>send({type:'wake',phaseId:state.phaseId}));
   $('#pack-continue')?.addEventListener('click',()=>send({type:'advance',phaseId:state.phaseId}));
   root.querySelectorAll('[data-revealed]').forEach(b=>b.onclick=()=>showEliminatedCards([state.players.find(p=>p.id===b.dataset.revealed)]));
   $('#advance')?.addEventListener('click',()=>send({type:'advance',phaseId:state.phaseId}));

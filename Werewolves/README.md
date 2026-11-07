@@ -4,7 +4,7 @@ Play: https://exams.bebrighton.net/Werewolves/
 
 The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a **separate** Wix site and CMS, not the exam or Spelling Bee data stores.
 
-## Classroom use
+## Online mode
 
 1. The teacher chooses **Host a game**, enters a name and shares the six-digit code or invitation link.
 2. Each player joins on their own device. Four to twelve players are supported. The host is a narrator by default and can choose **I'm playing too** in the lobby.
@@ -27,7 +27,7 @@ Tutorials use a calm, high-contrast layout and readable type. Each step hides un
 - A room supports 4–12 players. A thirteenth player cannot join, and an older oversized lobby cannot start. Wolf counts that would begin at parity are rejected.
 - Night order: Fortune Teller → Werewolves → Little Girl → Witch → Dawn. Absent or eliminated roles are skipped.
 - Villager: no night action.
-- Werewolves: every living wolf must highlight the same living non-wolf. House selections are shared only with the living pack and can be revised until the phase ends. Missing selections, split choices and a majority without unanimity all block continuation with “Impossible to continue because the decision has not been made.” The host cannot force a pass. After agreement, the host or a living wolf may continue. No more than one werewolf victim per night.
+- Werewolves: every living wolf must highlight the same living non-wolf. House selections are shared only with the living pack and can be revised until the phase ends. Missing selections, split choices and a majority without unanimity all block continuation with “Impossible to continue because the decision has not been made.” The host cannot force a pass. After agreement, the host or a living wolf may continue in online mode; only the moderator can continue in classroom mode. No more than one werewolf victim per night.
 - Fortune Teller: learns the exact role of one other living player, privately, once each night. Passing is allowed.
 - Little Girl: may spy or stay asleep. Spying reveals one randomly selected living wolf. There is an equal chance of staying undiscovered or being discovered. If discovered, only that selected wolf privately learns who the girl is. The information can be discussed aloud the next day.
 - Witch: one healing potion and one poison potion per game. Healing saves that night's wolf victim, including the witch herself. The witch privately sees a marked, darkened house and a prominent named revival target; the checkbox and confirmation button name exactly who will be revived. Map labels distinguish alive, attacked tonight, and previously eliminated players. Poison can target any living player, including the witch. Both can be used on the same night. A healed and poisoned player still dies. No resurrection of earlier-day eliminations.
@@ -45,11 +45,17 @@ The witch interpretation, tie behavior, auto balance, and parity victory are imp
 - API: `https://headless-cdpoaidonzo-chiispiitas-140b.wix-site-host.com/api/game`.
 - Dashboard: https://manage.wix.com/dashboard/b23cf550-cf21-4b59-b909-da9a7ec8658b
 - Private CMS collection: `WerewolvesStates`. All four collection permissions are ADMIN/CMS_EDITOR. Browsers cannot query it directly.
-- A narrowly scoped Astro endpoint validates a 256-bit room capability, command, actor, phase and target; only the necessary Wix calls are elevated. Capability hashes are stored server-side. Each player receives their own role and discoveries; living wolves also receive their pack's current highlights. Eliminated roles are public. Host controls use a separate capability and do not expose living role maps or pack targets.
+- A narrowly scoped Astro endpoint validates a 256-bit room capability, command, actor, phase and target; only the necessary Wix calls are elevated. Capability hashes are stored server-side. Each player receives their own role and discoveries; living wolves also receive their pack's current highlights. Eliminated roles are public. Host controls use a separate capability. Online hosts receive no living role maps or pack targets; classroom moderators have a private role roster. The presenter always receives a public projection, even if a host key is supplied.
 - Immutable snapshots are committed with a unique room/version item ID. A duplicate insert cannot overwrite another action: the losing request reloads consistent data and retries. Command IDs make uncertain network retries idempotent.
 - Reads use a short in-process coalescing cache. Clients stop polling in hidden tabs and back off after errors. Cache entries expire after 1.8 seconds; client views never regress to an older version.
 - Every eighth mutation prunes snapshots older than the retry window. Room creation also removes up to 100 expired snapshots. No indefinite full-state history is retained. This reduces usage but does not remove Wix plan limits.
 - Narration and discussion happen in the room, not through an online chat or microphone. Optional ambient sound is synthesized locally and starts only after a click.
+
+## Classroom mode
+
+Choose **Host game → Classroom with devices**. The host moderates and does not receive a card. Open the presenter link on the classroom display, or choose **Connect as the presenter screen** and enter the room code. The display is read-only and receives no private roles, pack choices, or notes.
+
+Players join with their names and the same code, check their cards, and select Ready. Keep phones face down between turns. The moderator selects **Wake** for each role, waits for its choices, then puts that role to sleep. Only that role's players can act. Werewolves still need unanimous agreement. Voting remains on devices from day two; discussion takes place in person. Eliminated cards appear on the shared screen. The original online mode remains available, including the option for its host to play.
 
 ## Development and checks
 
