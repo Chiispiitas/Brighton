@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Streak fire audio: restore gesture-based audio resume when Continue enters the streak from Results. All completion stages now prepare the existing sound controller. Actual synthetic saved-round proof suspends AudioContext on Results and verifies native fire-streak playback exactly once after resume. No new audio asset or backend change. Cache streak-resume-v123; app query streakresume1.
+
+
 Competitor presentation: user explicitly removed visible simulation labels from leaderboard and overtaking rows and requested mixed American/Ecuadorian-style fabricated names. Internal bot flags and human-priority matchmaking remain; no real learner names, scores or records are edited. This supersedes earlier visible bot-label instructions.
 
 

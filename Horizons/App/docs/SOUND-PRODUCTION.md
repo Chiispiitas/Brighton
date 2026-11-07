@@ -1,5 +1,8 @@
 # Horizons answer sound production
 
+Streak audio resume correction: every completion-stage Continue gesture now calls prepareCompletionSound, including entry to the streak. Previously the results-first transition only resumed audio for overtaking/achievement, leaving fire silent when the context suspended on Results. The synthetic saved-round proof explicitly suspends the real AudioContext on Results, enters streak, verifies a new resume call and exactly one start of the decoded native fire-streak MP3 hash. Asset, impact timing and gain are unchanged. Physical-device verification remains outstanding.
+
+
 Overtaking counter cue: assets/audio/progression-v1/overtake.mp3 is a dedicated native ElevenLabs one-shot with a quick rising plink counter and bright landing, triggered once on entry to the post-results overtaking screen. It uses the shared sound controller at gain0.65, with mute, interruption and hidden-page guards. It never plays merely from a changed weekly position without a valid overtaking event. Exact prompt, native hash and decoded measurements are in progression-v1/generation-records.json.
 
 
