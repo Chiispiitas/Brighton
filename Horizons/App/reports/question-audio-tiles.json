@@ -42,11 +42,9 @@
       "softGreen": true
     }
   ],
+  "deviceSpeechForbidden": true,
+  "correctTypedAnswerRecordedPlayback": true,
   "reducedMotionNoFlip": true,
   "noRealLearnerRecords": true,
-  "errors": [],
-  "multipleChoiceRepeatedPlayback": true,
-  "transcriptHiddenBeforeAnswer": true,
-  "transcriptVisibleAfterAnswer": true,
-  "platformListeningSource": true
+  "errors": []
 }

@@ -1,3 +1,4 @@
+import {audioKey} from '../src/answer-audio.js';
 import {createRequire} from 'node:module';
 import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
@@ -23,7 +24,7 @@ await context.route('**/api/horizons',async route=>{const data=route.request().p
 await context.addCookies([{url:base,name:'hz_companion_session',value:session.token}]);
 
 
-await context.addInitScript(()=>{window.spokenSelections=[];speechSynthesis.speak=u=>window.spokenSelections.push(u.text);});const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));await page.emulateMedia({reducedMotion:'no-preference'});
+await context.addInitScript(()=>{window.spokenSelections=[];speechSynthesis.speak=()=>{throw Error('Device speech is forbidden');};HTMLMediaElement.prototype.play=function(){spokenSelections.push(this.src);return Promise.resolve();};});const page=await context.newPage();page.on('pageerror',error=>errors.push(error.message));await page.emulateMedia({reducedMotion:'no-preference'});
 const map=()=>page.locator('.overworld-map'),nodeButton=id=>page.locator('.learning-path [data-path-node="'+id+'"]');
 async function assertUncroppedTiles(){const bounds=await page.locator('.sentence-builder button:visible').evaluateAll(els=>els.map(el=>{const r=el.getBoundingClientRect(),b=el.closest('.question-body').getBoundingClientRect(),dock=document.querySelector('.answer-dock').getBoundingClientRect();return {text:el.textContent,top:r.top,bottom:r.bottom,left:r.left,right:r.right,bodyTop:b.top,bodyBottom:b.bottom,bodyLeft:b.left,bodyRight:b.right,dockTop:dock.top};}));for(const b of bounds)assert.ok(b.top>=b.bodyTop-1&&b.bottom<=b.bodyBottom+1&&b.bottom<=b.dockTop&&b.left>=b.bodyLeft-1&&b.right<=b.bodyRight+1,JSON.stringify(b));}
 
@@ -73,6 +74,11 @@ try{
   for(const color of await page.locator('.sentence-builder [data-token]:visible,.sentence-builder [data-remove-token]:visible').evaluateAll(els=>els.map(el=>getComputedStyle(el).backgroundColor)))assert.equal(color,'rgb(228, 242, 232)');
   await assertUncroppedTiles();await page.screenshot({path:path.join(out,'correct-'+width+'.png')});checks.at(-1).softGreen=true;
  }
+ // Correct typed answers automatically play a generated model; wrong answers do not.
+ await page.goto(base+'?typedaudioproof=1#practice');await page.locator('.practice-heading').waitFor();await page.locator('input[value=topic-1a-greetings]').check();await page.locator('[data-mix=recall]').click();await page.locator('#typed-answer').waitFor();
+ const typedState=await page.evaluate(()=>HorizonsApp.getState()),typedQuestion=buildQuiz(typedState.options).find(q=>q.id===typedState.question.id);
+ const lookup=JSON.parse(fs.readFileSync(new URL('../assets/audio/answer-models-v1/lookup.json',import.meta.url))),typedModel=lookup[audioKey(typedQuestion.correctText||typedQuestion.answer)].src,beforeTyped=await page.evaluate(()=>spokenSelections.length);await page.locator('#typed-answer').fill(typedQuestion.correctText||typedQuestion.answer);await page.locator('[data-action=check-answer]').click();assert.equal(await page.locator('.activity-page').getAttribute('data-answer-state'),'correct');assert.ok(await page.evaluate(({beforeTyped,typedModel})=>spokenSelections.slice(beforeTyped).some(src=>src.endsWith(typedModel)),{beforeTyped,typedModel}));
+ await page.locator('[data-action=next-question]').click();await page.locator('#typed-answer').fill('not the correct answer');const beforeWrong=await page.evaluate(()=>spokenSelections.length);await page.locator('[data-action=check-answer]').click();assert.equal(await page.locator('.activity-page').getAttribute('data-answer-state'),'incorrect');assert.equal(await page.evaluate(i=>spokenSelections.slice(i).some(src=>src.includes('/answer-models-v1/')||/\/v-[^/]+\.mp3/.test(src)),beforeWrong),false);
  // A listening option must speak on every click, while the transcript stays hidden until grading.
  await page.goto(base+'?audioproof=1#practice');await page.locator('.practice-heading').waitFor();
  await page.evaluate(()=>{const b=document.createElement('button');b.dataset.startActivity='listen-1a';b.id='synthetic-listen-start';document.getElementById('app').append(b);});
@@ -84,5 +90,5 @@ try{
  assert.ok((await page.locator('.question-audio audio').getAttribute('src')).includes('platform-listening-v1'));
  await page.emulateMedia({reducedMotion:'reduce'});await launchOrder(390,740);await page.locator('.sentence-tokens button').first().click();await page.locator('[data-action=check-answer]').click();
  assert.equal(await page.locator('.sentence-builder').evaluate(el=>el.getAnimations({subtree:true}).some(a=>a.effect.getKeyframes().some(f=>String(f.transform).includes('rotateX')))),false);
- assert.ok(await page.evaluate(()=>spokenSelections.length)>0);assert.deepEqual(errors,[]);fs.writeFileSync(reportFile,JSON.stringify({pass:true,checks,reducedMotionNoFlip:true,noRealLearnerRecords:true,errors},null,2)+'\n');console.log('PASS tile drag/tap/return/reset preserve scroll and artwork; all tiles flip red/green; reduced motion respected.');
+ assert.ok(await page.evaluate(()=>spokenSelections.length)>0);assert.deepEqual(errors,[]);fs.writeFileSync(reportFile,JSON.stringify({pass:true,checks,deviceSpeechForbidden:true,correctTypedAnswerRecordedPlayback:true,reducedMotionNoFlip:true,noRealLearnerRecords:true,errors},null,2)+'\n');console.log('PASS tile drag/tap/return/reset preserve scroll and artwork; all tiles flip red/green; reduced motion respected.');
 }catch(error){await page.screenshot({path:path.join(out,'failure.png')});throw error;}finally{await browser.close();}

@@ -1,0 +1,1415 @@
+{
+  "voice": "Jessica",
+  "voiceId": "cgSgspJ2msm6clMCkdW9",
+  "model": "eleven_v3",
+  "files": {
+    "answer-12bda5096b4e8318": {
+      "src": "assets/audio/answer-12bda5096b4e8318.mp3",
+      "durationSeconds": 4.52,
+      "sha256": "1f610479239858f94ba5cb6a10f8ea1f52a5b0c011bd55e4c0ae504a09032f31",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-17def64f941e07d4": {
+      "src": "assets/audio/answer-17def64f941e07d4.mp3",
+      "durationSeconds": 5.64,
+      "sha256": "7856b1f467ec9684ddf9337fdf94a0302472859ec879c8dea728ca4eebaafb97",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-44fd15689534905a": {
+      "src": "assets/audio/answer-44fd15689534905a.mp3",
+      "durationSeconds": 5.64,
+      "sha256": "e10fb8224c0a2d863e38e190fe663b022dfb66267482453d7b7993764ff93a5e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-da8132d50db7c099": {
+      "src": "assets/audio/answer-da8132d50db7c099.mp3",
+      "durationSeconds": 7.31,
+      "sha256": "902280b4a4dbc86ec162c213772e751536d8df1d749aedf0b8efb5772d1deb04",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-2d4652a570f54436": {
+      "src": "assets/audio/answer-2d4652a570f54436.mp3",
+      "durationSeconds": 6.03,
+      "sha256": "90bf2655ea6d1fe0a8fe787c99e70337e41160713c6f6183dbefe250cb6780a6",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-b89c1cbb4e5d9622": {
+      "src": "assets/audio/answer-b89c1cbb4e5d9622.mp3",
+      "durationSeconds": 10.19,
+      "sha256": "e4dbec4ec41865008d96cefd60bce10b0a136bbb24ef1e482955c67131bb5af3",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-d4735e3a265e16ee": {
+      "src": "assets/audio/answer-d4735e3a265e16ee.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "b834b37dcac8001f238c6cac1a49b56a33921da03be5239fab84542e1d592cfb",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-cbdf76ae09f8d8c4": {
+      "src": "assets/audio/answer-cbdf76ae09f8d8c4.mp3",
+      "durationSeconds": 2.43,
+      "sha256": "ceb9052855c68262bf5c68d8028d111af949024b36bf658a7674732a6b9d13ff",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-fb90fea2a4de0895": {
+      "src": "assets/audio/answer-fb90fea2a4de0895.mp3",
+      "durationSeconds": 3.16,
+      "sha256": "5205f84aeda09cf58dd19b65e476d2156240232d891e40c334bc19fc9fcfa27d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ef2d127de37b942b": {
+      "src": "assets/audio/answer-ef2d127de37b942b.mp3",
+      "durationSeconds": 1.72,
+      "sha256": "5b76776ca0be50f27132129e2891b91c743ab2b03831638fa88da28a33526c8b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2c624232cdd22177": {
+      "src": "assets/audio/answer-2c624232cdd22177.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "e2f4c6d212b1245309a0a33f4270003d34f6d3ada8c2be2b31d5fbd18206e9d5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-e23e6225407ac2aa": {
+      "src": "assets/audio/answer-e23e6225407ac2aa.mp3",
+      "durationSeconds": 2.35,
+      "sha256": "2e65305ee2602653b1ce6e1ecce18649f29bfc1465c2febeb43dd100a5782998",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ca978112ca1bbdca": {
+      "src": "assets/audio/answer-ca978112ca1bbdca.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "fbc69374da6be9cdad7832abd7bd45573e5cec425e74a7d4a85d0d1fc05990f5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-0e9f64031fcb2bc7": {
+      "src": "assets/audio/answer-0e9f64031fcb2bc7.mp3",
+      "durationSeconds": 2.19,
+      "sha256": "1ad04fe6e614a9f336d71ebd9a5c6e583560cfd8de688279fdf6a608c3453594",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4135aa9dc1b842a6": {
+      "src": "assets/audio/answer-4135aa9dc1b842a6.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "73db26574f7bca18d26506f6cb5540930ada3e6b89e41695cea9e08175589b37",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-febb12be322d7593": {
+      "src": "assets/audio/answer-febb12be322d7593.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "181c19ac72cffc24a8ddac15c689f803e88ae0a329190d6d0f09fbdf09ae80de",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ecd18c6a66631988": {
+      "src": "assets/audio/answer-ecd18c6a66631988.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "5c885531c6b1f20ce45fa688c417c625c4fa321ab9550ebde6074e9b82c36bb2",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-33db7a9acd993064": {
+      "src": "assets/audio/answer-33db7a9acd993064.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "9ed6b30c6a70eb04bc28c79b6b42ff348303324c494725975bfdea84464922fa",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-7e516d744468d1ab": {
+      "src": "assets/audio/answer-7e516d744468d1ab.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "69021acb811a60c2f2aa274ca5e44948a9f1607b015aa88730e2dd30f9121a0e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-d6712a0acc11880a": {
+      "src": "assets/audio/answer-d6712a0acc11880a.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "d3593c5da976b239529b1ada008a7c66999e93a2cb03f0a09125defc9c8d6a03",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-b943d0a777fba475": {
+      "src": "assets/audio/answer-b943d0a777fba475.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "18d1cf8924349ae35febbba9325ef482d55c9e10be12ab34b7e24eb51de08eec",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-6ae95ca5f8098007": {
+      "src": "assets/audio/answer-6ae95ca5f8098007.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "1e52d44dd40f3a73f03ebbe6ef403d7b6ec80c4b341a43325d0a6b742452b23e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-e58608fecbb970c8": {
+      "src": "assets/audio/answer-e58608fecbb970c8.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "59195f82361e45e80457407f615bdee81f3e3dc68c47b2e44cb185f6f9ccdcf9",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-24d4b96f58da6d4a": {
+      "src": "assets/audio/answer-24d4b96f58da6d4a.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "cf00ec8d679306fc681ae2b7257bc763623c2b209ecbc05601ca5990481b7d80",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-a36309fc2e63e876": {
+      "src": "assets/audio/answer-a36309fc2e63e876.mp3",
+      "durationSeconds": 2.43,
+      "sha256": "34c3354c65c135a09893eecc6d9737a03deea21461e1b4515e00a0d1a53a8321",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ba78973ddcf98d4e": {
+      "src": "assets/audio/answer-ba78973ddcf98d4e.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "fdf9f288b08d49a828e176cc452f7308e676aa2254c7a9af4e609c9a48b1ba78",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-63948458714d0860": {
+      "src": "assets/audio/answer-63948458714d0860.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "efe471db92fb7a3adce893ba8c56cb3cd6a30838ac590218acb645394db142d6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-5263cb7423e4cc90": {
+      "src": "assets/audio/answer-5263cb7423e4cc90.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "899ff70bf9dd54eabb98089de062c06a03a9e2b5d477697d71cfc2710e97ea6c",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-909c99c07883cb84": {
+      "src": "assets/audio/answer-909c99c07883cb84.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "623f3d0eb8aa21784aff24a7fd6582e325f1f05690981db0c9349e310afbf8e3",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3e23e8160039594a": {
+      "src": "assets/audio/answer-3e23e8160039594a.mp3",
+      "durationSeconds": 2.04,
+      "sha256": "5973b8157c8688b3178c3f2a1a5ec943e280544682d0aad954b6ef890c7fffac",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-488a18d5567cf130": {
+      "src": "assets/audio/answer-488a18d5567cf130.mp3",
+      "durationSeconds": 2.85,
+      "sha256": "35b94ee0d72a9005eb7a7f07893a25f26b3a3da682d32273043bd870df540c97",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-6700869c8ff7480e": {
+      "src": "assets/audio/answer-6700869c8ff7480e.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "b12df8bbf4ca1b8f41be2f3c3152ee8006952ce828e190051a6390654acffa92",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-947f49c220b35fe9": {
+      "src": "assets/audio/answer-947f49c220b35fe9.mp3",
+      "durationSeconds": 2.12,
+      "sha256": "845bf84b55373b746729b48e68553dfa2380fd5dbeabc62f06372eab2a236f0d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-cddb9b0b958454be": {
+      "src": "assets/audio/answer-cddb9b0b958454be.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "df534ecb3cefbd72f83bec485f06230004f19965e40ac247e78870b31bb41ad8",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ead3990a8ed862c2": {
+      "src": "assets/audio/answer-ead3990a8ed862c2.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "97c4745d2aa841657f676d2aea395a774f7878d32d3e1ef4afb1a2b7573d273c",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-f3fe5a51a2be8c6d": {
+      "src": "assets/audio/answer-f3fe5a51a2be8c6d.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "49073110280ee2f43d607a2d53f08e0ce757a149d7cdab26387d29a264d4461d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-bd1558ab55194889": {
+      "src": "assets/audio/answer-bd1558ab55194889.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "205d26373805b2736f62b7bb78c4512dbed67c4c5907f51730ecfaaccab78834",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-0bcf62b62f026b79": {
+      "src": "assets/audio/answer-0bcf62b62f026b79.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "c10720637aa41676de71e46dd4b435f40c937c041fe4bee53aaa1b29952a83a5",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-2e7d2c03a9507ae2": {
+      "src": "assets/audio/answer-2e7d2c03a9507ae2.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "1b8b070396ceaeceab673f4fd46cb8b3b662683118a210974c2f37806adb069f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3ab51c407e836f36": {
+      "src": "assets/audio/answer-3ab51c407e836f36.mp3",
+      "durationSeconds": 2.59,
+      "sha256": "3b92b4fd10d68ea27de9789eab1ed3407c2d7cef4b1a0c5db47746669aa3276b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-80f563ecc98a3145": {
+      "src": "assets/audio/answer-80f563ecc98a3145.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "2c2e9e855940dcdfb58f0a51b47ebdd7cca3071ff0dc49ed85424d9fa4cf8711",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-a6e13bc9170fd9da": {
+      "src": "assets/audio/answer-a6e13bc9170fd9da.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "aa8cc72580c8a219bfc728fe141f524ece9cead5fcaf0db2f9db56cb73f184f3",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-530249041d69fa1e": {
+      "src": "assets/audio/answer-530249041d69fa1e.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "46637ff026ed8f14835818f4aec99a1c1c82727be7876d2a34973afc8bf9e3ae",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-53f288f605db4b9d": {
+      "src": "assets/audio/answer-53f288f605db4b9d.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "01ea180d7c14747710e11c40cf60feb8598768804d19986fbc9c2ead3c65d92e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3ceac4eec5cac3b2": {
+      "src": "assets/audio/answer-3ceac4eec5cac3b2.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "87c06fee0456eafd1c242acf3eebb68b89210c0f2a8b1ef1d9379fe5ace6c46e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8dc658e87bbc27be": {
+      "src": "assets/audio/answer-8dc658e87bbc27be.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "8dbdb4ba1ac7ebfdb7ecb66c62b8c53b201aaba76a4ea79a5ec1110682b181ed",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-70a4aa51da35c67c": {
+      "src": "assets/audio/answer-70a4aa51da35c67c.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "c90387080a01371953526a06e5398b152445a980ce5badbbc52dc38a79e3a479",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-18ac3e7343f01689": {
+      "src": "assets/audio/answer-18ac3e7343f01689.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "30b295283fc0101e4f18d89cd26c9b0cf6c4e78d8bf63d309bb49722074a16c6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-fb326f9aa1f901d9": {
+      "src": "assets/audio/answer-fb326f9aa1f901d9.mp3",
+      "durationSeconds": 2.69,
+      "sha256": "1e9cf9bddea41370f6ec7f43fcd475b7b90866e20fbd616d19efe1fdaba3a896",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3f79bb7b435b0532": {
+      "src": "assets/audio/answer-3f79bb7b435b0532.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "097a5a6e7b29688eb6500aa326e5d4dc15bd572d5ffa9abc3cc7570614d5eda5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9bda4e0581cefb27": {
+      "src": "assets/audio/answer-9bda4e0581cefb27.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "3dfa7a595daf92519ca391d0b8b6b77e499ef7f515ca46e77ef1bc641ea864b2",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-252f10c83610ebca": {
+      "src": "assets/audio/answer-252f10c83610ebca.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "ecdb14bd4944cb433868653e1b1abbd2260f91bdfaea87442048ed934ec33e72",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-cd0aa9856147b6c5": {
+      "src": "assets/audio/answer-cd0aa9856147b6c5.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "12b2547139800816d16b9a348468a6f2387014531f9d374b92e2ad5c5cf0f7ed",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-aaa9402664f1a41f": {
+      "src": "assets/audio/answer-aaa9402664f1a41f.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "bcf6626ad7a525f271d836707d50db99c056b4fff8a3165c5f181a09ba3010df",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2adf424cbfd12f7f": {
+      "src": "assets/audio/answer-2adf424cbfd12f7f.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "4767241b37993fb8cb033998e87ae39fa5f22f9c0604be94fd772d3f1cc538d3",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ac88c595ceb0bf98": {
+      "src": "assets/audio/answer-ac88c595ceb0bf98.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "933f6b9660f619a5f9b066ba79baad6f37cad16584781ae5ffb711b45945f221",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8868ae7c54d64aad": {
+      "src": "assets/audio/answer-8868ae7c54d64aad.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "8ce13d5123681323472739957ee19bff667aceafcdf00c546715944abd26dbc2",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-01892a749e011341": {
+      "src": "assets/audio/answer-01892a749e011341.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "3a007404912b6eeac53b3b26a17fa113647633419dfa28832168c5270aba8d08",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8a6593ee7ff98bc7": {
+      "src": "assets/audio/answer-8a6593ee7ff98bc7.mp3",
+      "durationSeconds": 3.32,
+      "sha256": "24debd022ede2fc69c95b2c14a6e355ea3c1104990c132f59f8cdc1fa6878297",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-21bd3229a131a2cc": {
+      "src": "assets/audio/answer-21bd3229a131a2cc.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "87f46504a64a3d789e95b89fd062a786381f072c39640f8340f5eb105caa0e9a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-de7d1b721a1e0632": {
+      "src": "assets/audio/answer-de7d1b721a1e0632.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "5c68ea2116fca82f265d615d1a90ae6101c9a8924ce254486e42a10b79ec5aef",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-788efea5f739e3ce": {
+      "src": "assets/audio/answer-788efea5f739e3ce.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "9ab25d9b3787b390ac32be5b876fee24134a33d45c4cb119d08ef982c753d9ea",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-135cc1990ae2d7bb": {
+      "src": "assets/audio/answer-135cc1990ae2d7bb.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "77ca02c4acb9d2d7d4a98cf58dda469ecb8d3d2ffa81d634f8f3f062db007ad1",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-875544f1b1f7b087": {
+      "src": "assets/audio/answer-875544f1b1f7b087.mp3",
+      "durationSeconds": 1.65,
+      "sha256": "49a9f108a758eb6e5f8298faae9734ae7fd1265c0d3348a884e236e9e1f39b58",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-bb4153755834a83d": {
+      "src": "assets/audio/answer-bb4153755834a83d.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "e684e899f97c128bdc65c7dba5d017800efda49b059ca9a48edb864b8120bbfd",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-876804b4e79df105": {
+      "src": "assets/audio/answer-876804b4e79df105.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "a12c8f99b7e72a26a50ae4cb228679313637d3b0b76926e8ba78389aced14761",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-c981e9123c0078c4": {
+      "src": "assets/audio/answer-c981e9123c0078c4.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "846d940a223429cfd5aacf547d21d025ca4cbf82e6ba3e29311db6aab5125b87",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-78f267c0e62e1f64": {
+      "src": "assets/audio/answer-78f267c0e62e1f64.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "53bf0c45b50b7cb6b9a80905817737217bc5ec5b0f6ed9b1a577920fcf6acf66",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3e27ab2517766351": {
+      "src": "assets/audio/answer-3e27ab2517766351.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "0eff6844c6a2d13068a3bc3bf8c73482348912bb213bb346e718b5681a456cdf",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-0e61e2dcfe19bbdf": {
+      "src": "assets/audio/answer-0e61e2dcfe19bbdf.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "cfd2a7071ea8ef2e4da791ee28ef9e91950c8164f86741538317b48ae64c8cef",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9b09ace70c2459fb": {
+      "src": "assets/audio/answer-9b09ace70c2459fb.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "a2ddb73887be90283233e25220d764603ada007822b19f2aa28d6007bf4d8ccd",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-1c74ccfaf4ecd7a5": {
+      "src": "assets/audio/answer-1c74ccfaf4ecd7a5.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "4373c88d69acd1c8dbec1aa70250a7fe8ceeb74b9615680d9673b5c34b10b28c",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ee6f7bc341e47f6f": {
+      "src": "assets/audio/answer-ee6f7bc341e47f6f.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "cdf141c9d682d6df6cca013d8e2de641cb50962ba30da11ececad616703b5c4c",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-c43f4d394282290a": {
+      "src": "assets/audio/answer-c43f4d394282290a.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "ca88073aac3bdbe9eade9b16a8f9efb8ec4b36de369357af241c016cbe6f1457",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-189f40034be7a199": {
+      "src": "assets/audio/answer-189f40034be7a199.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "64d53c01d4ed186824009ee897e159d1d3a77c889392af9c5a5561b2a5ecdb71",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-c278ec5a69c34aac": {
+      "src": "assets/audio/answer-c278ec5a69c34aac.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "2ad287887957cb221074ef7462a8adba6a22224d723898abfc7af14d7c5fa278",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-8254c329a92850f6": {
+      "src": "assets/audio/answer-8254c329a92850f6.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "5b7eebd04944fa7af083e8614848e8faa35eda9dd20dd0f54e363128909bf74b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-acac86c0e609ca90": {
+      "src": "assets/audio/answer-acac86c0e609ca90.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "24ba3beb83801d16603ccf2c74d2c1bbd435aef5f3bb84cf46e5189ecbc9cd77",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8535e86c8118bbbb": {
+      "src": "assets/audio/answer-8535e86c8118bbbb.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "7573f4af71ef121fbc29de662572d79b947b07d5b8b2e15cb232fbfe0c23634e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-fbcaebefcb926027": {
+      "src": "assets/audio/answer-fbcaebefcb926027.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "4f7e46739d195a729f503de11c463a05c6baaf11fa7234a5724e6872530e28ff",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9ad241dcbf432e7b": {
+      "src": "assets/audio/answer-9ad241dcbf432e7b.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "335c4d738962394fbd81b8305279c9073b2811fc45120d0415dfdede6b616d50",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-438b200d6313254b": {
+      "src": "assets/audio/answer-438b200d6313254b.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "adc58d473ff3e1e6671d00520d97443bd9f6a1a7578a33fbab5599f300058b41",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-611d43b20014538c": {
+      "src": "assets/audio/answer-611d43b20014538c.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "58f334421de37081fca1229a281294ef20dd4dbba215ce6db46507532a612a31",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-d84fe7e07bedb227": {
+      "src": "assets/audio/answer-d84fe7e07bedb227.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "85e0f0ea7c4d4cca8f4787905bea4b0d099e05fb485a55ce261d70ddc2cdc00a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-62c66a7a5dd70c31": {
+      "src": "assets/audio/answer-62c66a7a5dd70c31.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "b145f90407d422f3df747c392ec10dc43e02263a1a5fb9a6a4f331af0962e836",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-34c698ec952a0d34": {
+      "src": "assets/audio/answer-34c698ec952a0d34.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "fda44d4b502d90fb8651bffc0d0fae7ccc9dd6289df59784164ff4b6ee885c38",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-7c8ccc86c11654af": {
+      "src": "assets/audio/answer-7c8ccc86c11654af.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "173cb1b452dcb666b32c0cc5951081dffb099d90b25ef76a519846c486137f47",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-6915771be1c5aa0c": {
+      "src": "assets/audio/answer-6915771be1c5aa0c.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "9ab30e3d5b62be786719983cf7cb37ea9707eedbd01ab849333b54b663a2f2a4",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9bb840df7f699d65": {
+      "src": "assets/audio/answer-9bb840df7f699d65.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "ba0e4484acdc5c35056bbb7d28c877d09630008975886763cc57f05a3e0a55af",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-856f9d89cdd9f5e7": {
+      "src": "assets/audio/answer-856f9d89cdd9f5e7.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "734b125333294ca2f84ed9ae630292ceac3bf84c99b60d4595edc22f65041b3b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3e3c47a6b12f0336": {
+      "src": "assets/audio/answer-3e3c47a6b12f0336.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "f58383daeaa9ee50c4dcd45d36502147580e61043fced9078c1a4dd03adf44bd",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4537010a224dfab3": {
+      "src": "assets/audio/answer-4537010a224dfab3.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "c6e20e4735647f69479d1684844c13569bc5c2281d8de9c9e04e96e69ec8f468",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-1b16b1df538ba12d": {
+      "src": "assets/audio/answer-1b16b1df538ba12d.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "8d1c5af51798716405d09e59d29328ffba9dc98ab2b52ce39fe282da477ea0cf",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-a5c299e2fdd21869": {
+      "src": "assets/audio/answer-a5c299e2fdd21869.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "819759f09f646b3cd46b3c43e8abf8d1b58022d78e5998d5f985e12c5d93120e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-02d1c31508b81aa8": {
+      "src": "assets/audio/answer-02d1c31508b81aa8.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "f11ab15d84843fc19e8d006535ff11ede6180248272dd4d6c60f0d3cdb20c802",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-716dac1b6a1da607": {
+      "src": "assets/audio/answer-716dac1b6a1da607.mp3",
+      "durationSeconds": 1.65,
+      "sha256": "e45be6fe1eaf213083e2957646b2fffdaeb564ee5f5b445eed24a3d0fb889d6e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-40456bfd9b39a025": {
+      "src": "assets/audio/answer-40456bfd9b39a025.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "35bd1cb4080cedb181749c49ffd04117775f673d845576e54b89d4d90b7d9c0c",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-5d466ca77371ce43": {
+      "src": "assets/audio/answer-5d466ca77371ce43.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "264f1f6e80e935a72efcf21dd871d0de73c9eb48c87d80c0bb1974aff167fc11",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-65c74c15a686187b": {
+      "src": "assets/audio/answer-65c74c15a686187b.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "cf1ea162373396f57a789652fcf37b3c3480fccf96957bbfb8b3d575bfbbb5ad",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-21297e6e966afbd0": {
+      "src": "assets/audio/answer-21297e6e966afbd0.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "dbc0e49e2561edc64349da1a2e567f74f004882fc93a2ffbf6f5f94b60720cc1",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-148de9c5a7a44d19": {
+      "src": "assets/audio/answer-148de9c5a7a44d19.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "028c68158df40be0f3569d979cd885410bc395dabd888f7f381452f2d8bcc2c6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8e35c2cd3bf6641b": {
+      "src": "assets/audio/answer-8e35c2cd3bf6641b.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "85db2dbdc53f1bf9807f9399656fa4910f66a1135d4759d104bc6d0dc5fa7132",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-454349e422f05297": {
+      "src": "assets/audio/answer-454349e422f05297.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "c3d5740d6197354ed09521e578938ec3b89ecbd33a34aec3afc307cdbd7d4218",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2f54e9dfcabf0f57": {
+      "src": "assets/audio/answer-2f54e9dfcabf0f57.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "f5b56e10ee41987b2cf216661fd2bce152d94a6e1b6727e7fce72e9c43b3cef3",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-a3ed4a2ab3abf4f3": {
+      "src": "assets/audio/answer-a3ed4a2ab3abf4f3.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "83f7957dc6b2d6fd666de56acbcd600a91e8a182e3ca750c63e5b8760949da5b",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-0e7621226f3803c2": {
+      "src": "assets/audio/answer-0e7621226f3803c2.mp3",
+      "durationSeconds": 2.04,
+      "sha256": "f9bc790a388bf03ac7fb11a5dd5a915aa23f7c60e99687c9bbe485ab5298c6b4",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-f2035b4d66bb5f8e": {
+      "src": "assets/audio/answer-f2035b4d66bb5f8e.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "b3de7e7c3f29afdf16b26eaa87895b161ebd08f3b210221ff40867472bd55636",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-043a718774c572bd": {
+      "src": "assets/audio/answer-043a718774c572bd.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "4cdfd41567759d50d18952eba13722db27a68eda4a7ac0c35a8badd4e37586a5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-e96e02d8e47f2a7c": {
+      "src": "assets/audio/answer-e96e02d8e47f2a7c.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "414d535af2e951365033a8159bb16911aa4ad0a61b9171f35e002835a542602d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3a6d64c24cf80b69": {
+      "src": "assets/audio/answer-3a6d64c24cf80b69.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "a28b1c9383b31b88a5bfb3f5129e893395d1f22921b1c71de78e76b3a611fae4",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-d233633d9524e84c": {
+      "src": "assets/audio/answer-d233633d9524e84c.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "223ec4863542ce606892b577d3f0f1784f90bcc4114a56eb943b461b94f79519",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-da0372e98cb58f03": {
+      "src": "assets/audio/answer-da0372e98cb58f03.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "2c6236ad65fa20f797b32a9a1eb08e5d0cbca86c96e21ac59271dce17220026d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ed70840ffc85b827": {
+      "src": "assets/audio/answer-ed70840ffc85b827.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "d5164904cd04978c798fd3bf1f169b2897b3977e20017790feba42937dd4db63",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-6bf1400153728f85": {
+      "src": "assets/audio/answer-6bf1400153728f85.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "ad3a048e1d6c94f7f0041854b8cd8fd46b9e95fcd124e1b58fb95a50db63c808",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9dce3c9f585bd3d8": {
+      "src": "assets/audio/answer-9dce3c9f585bd3d8.mp3",
+      "durationSeconds": 1.8,
+      "sha256": "61418ee76079b9d6763adfb8fbb87c796a351082d1af96776d749c2d24f77a3a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-62ade2d9ad93007e": {
+      "src": "assets/audio/answer-62ade2d9ad93007e.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "c7a883c8054256079dfdeb27ce8f363da55e6ef468e19bbab514a21a2696ed22",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-da8ab1553589c756": {
+      "src": "assets/audio/answer-da8ab1553589c756.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "fe3ff2c29cc2cd47552c948fd2a29474a276de788587aa96eaf599dd2c937a3e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2daa25b08abff46b": {
+      "src": "assets/audio/answer-2daa25b08abff46b.mp3",
+      "durationSeconds": 1.88,
+      "sha256": "d7ec4acb3bf83ef68ff6d73a0df05bdc327e0b4de071b912c8450cba1e133097",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-aff7dd72161b86d4": {
+      "src": "assets/audio/answer-aff7dd72161b86d4.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "12b81e24ff21f4c55f7126b95db52744f48a8fbbbc5f71bd1b44309da899a3c7",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-d590a07b7fad0751": {
+      "src": "assets/audio/answer-d590a07b7fad0751.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "e3b4afaf869a06e43f718d11d5a5ed7c8c7b776901448ebee075cafe79214419",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2560ce96340987e5": {
+      "src": "assets/audio/answer-2560ce96340987e5.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "2695ba8ac257083fb77a6ff6a39cef8cdb64d6984e9b6abf3757101fc81b82b5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-543ef5adb3ec5c41": {
+      "src": "assets/audio/answer-543ef5adb3ec5c41.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "f8875ae509bc641f9dda7da2448434ecdec3120167831e11ee9230e11e56b0f8",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-52518386cc33022d": {
+      "src": "assets/audio/answer-52518386cc33022d.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "588d4f37d3d40744577f1c4168b54000fce737c1febf17e41515d9f4ff8e7cd6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-dab15e9fc243cf5f": {
+      "src": "assets/audio/answer-dab15e9fc243cf5f.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "6e5e7f8dded1b3816307787ff869a9742b8183f8131866358afdb5bdde816923",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-267eed33dc459584": {
+      "src": "assets/audio/answer-267eed33dc459584.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "e7b89e0f4ddce15d51e7ac25c715623b8df8a09786025f27256a99b37d50fa2a",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-c7c084318b6f1bec": {
+      "src": "assets/audio/answer-c7c084318b6f1bec.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "cfe69275a0b18715290a81ce6699768a93318f5e32bf5e6281623e0f1d89a6f0",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-e3b98a4da31a127d": {
+      "src": "assets/audio/answer-e3b98a4da31a127d.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "3db10858885de1eeaa2e34abfc4a8d77b6da719682ba2aa05058162d1138e557",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-613f79b9c82b57fc": {
+      "src": "assets/audio/answer-613f79b9c82b57fc.mp3",
+      "durationSeconds": 3.32,
+      "sha256": "56b6df62b30cad47177fc169952f33a90b2a781568f5d52b5f7b504218c5c041",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8779213990fc191c": {
+      "src": "assets/audio/answer-8779213990fc191c.mp3",
+      "durationSeconds": 1.88,
+      "sha256": "a8e9aa1d4b8f12ccdfc959ac1a33abf2b1ae0dc68c3e720e732e7dc692cb76b7",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-eba1e1887aed4c08": {
+      "src": "assets/audio/answer-eba1e1887aed4c08.mp3",
+      "durationSeconds": 2.27,
+      "sha256": "404fd89642b505cb3602bf4a7cb1c1efc5f3a0a7e646887c499545cf8f415e80",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-151e58a831306903": {
+      "src": "assets/audio/answer-151e58a831306903.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "0288e407daa2260a402dc9e8e2b1a841af644308d3e770280094cb9800efcc59",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-eea4a43b835789b4": {
+      "src": "assets/audio/answer-eea4a43b835789b4.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "75cb6d4a57886d9649463b8393f000794da622058cf13ec2edcdba7b1cc6fa15",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-d06691eed5834b97": {
+      "src": "assets/audio/answer-d06691eed5834b97.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "d3a84fc8be1e469778dd47921e5fd093a81eaf1aef69b8e59df3507907795076",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4b589616a2e8277a": {
+      "src": "assets/audio/answer-4b589616a2e8277a.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "46c91493fdbb7da7d0bae846c2788aa807ec0c241c498387a8b6458f9c13e5fa",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-e1608f75c5d7813f": {
+      "src": "assets/audio/answer-e1608f75c5d7813f.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "c940bebc8f5c644d5feab4884539a13b5d089e2821172274a9a7656d9d92c46b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-141256c5c1405ee3": {
+      "src": "assets/audio/answer-141256c5c1405ee3.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "d3e14f5214a884980c6f3686a6fbbaf4794d07ce90f55627aa2a73b2dd03c48a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-0bfe935e70c321c7": {
+      "src": "assets/audio/answer-0bfe935e70c321c7.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "0a8b334cd6544047301f510bf08ce220c10e11e8a87a3573fe606fb6bc26feb2",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-3d91a04d0013dee8": {
+      "src": "assets/audio/answer-3d91a04d0013dee8.mp3",
+      "durationSeconds": 2.85,
+      "sha256": "b86585bccbbe0753b004c9a46945e8e8e091e3cc6c623f8283a9a08ad4e084b8",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4c94485e0c21ae6c": {
+      "src": "assets/audio/answer-4c94485e0c21ae6c.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "c534e866beae910b1f6595e8ae3d807ed8346115d02e61834c98256ea3fb12a2",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-313ce7d71787960e": {
+      "src": "assets/audio/answer-313ce7d71787960e.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "1d7ad14bc83976a811183771125bf313cc1f3d20378e65f24d9c29ccc8ef006f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-50e721e49c013f00": {
+      "src": "assets/audio/answer-50e721e49c013f00.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "b5591c1de105bbfef1fe526a4d3714f858017dc6cbd3ab64c8e467f80df09cf2",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-5da3de2091c60ac4": {
+      "src": "assets/audio/answer-5da3de2091c60ac4.mp3",
+      "durationSeconds": 3.24,
+      "sha256": "1d82f65f8cd1b7533b94015415ac1bdb2f3ccaa6fd941041b22bb5158cede4ec",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-f618ded913ec1c5b": {
+      "src": "assets/audio/answer-f618ded913ec1c5b.mp3",
+      "durationSeconds": 2.43,
+      "sha256": "0bf1f8cee8f3aec528f8b3cf9236ac85e37245855f8f55a6f2c7a49f24b72e73",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-65df17b1aa1ddd76": {
+      "src": "assets/audio/answer-65df17b1aa1ddd76.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "00f72495434929b34ea0e2215951fcf9711cefa95582893fb95deeb2bbfd6067",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-9901af0c2596654d": {
+      "src": "assets/audio/answer-9901af0c2596654d.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "db085f7ba84f3a693b245fe35f2c53196870ff6a80641a530ff76b0fc7a494b7",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2d711642b726b044": {
+      "src": "assets/audio/answer-2d711642b726b044.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "316c9270690ac15faca3dd19f7f0092805f21e12026e7d75b58de6b73f6fe031",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2fcac515f19af662": {
+      "src": "assets/audio/answer-2fcac515f19af662.mp3",
+      "durationSeconds": 2.43,
+      "sha256": "19c4a84af17ca96bbc1f3d702a2f2777fdd5f9058d8b2dd56426d38752d22b14",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-a1fce4363854ff88": {
+      "src": "assets/audio/answer-a1fce4363854ff88.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "e5037eaadd2e190347caa1512de8cae2773a60b9f51698db58b8b23d6beb5a8e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-505c83acba0cfc7f": {
+      "src": "assets/audio/answer-505c83acba0cfc7f.mp3",
+      "durationSeconds": 1.15,
+      "sha256": "f1f5a1721bc969701dafe57fafd614d4395e80c71c4893cb61f757ae49f84892",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-882d704aad720d85": {
+      "src": "assets/audio/answer-882d704aad720d85.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "a35e6e26303122c2c787378d2ed0a343395214d24fdf41e80d140941b298f991",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-c9bd190476c005b3": {
+      "src": "assets/audio/answer-c9bd190476c005b3.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "70f17010efd892cdb8dc9853db49139bfc3ab012281009b4208c4c8fe6082b8d",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-8969feb8cf304a4f": {
+      "src": "assets/audio/answer-8969feb8cf304a4f.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "4b729870dbd79b34776be1ec8a92bd7d5cfb621278cff69c3a4d77359ed3d8be",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-ce2bde287032f2ce": {
+      "src": "assets/audio/answer-ce2bde287032f2ce.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "8b0afd8b764516f3bfec9721d6b76986e9042d0dc3bcbc5ddebc659a22d44792",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-870f268da4dda049": {
+      "src": "assets/audio/answer-870f268da4dda049.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "418a51adf9589c0b02ad9edd8b0b66769c2d2f9b209ecc8dd5c2b51b4630d65a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-b9776d7ddf459c9a": {
+      "src": "assets/audio/answer-b9776d7ddf459c9a.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "1ac0fc740a13a783918eaa75d25ca228126f828cae1d3d93719d8ba49486c40f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-7dece7d7d99ed7de": {
+      "src": "assets/audio/answer-7dece7d7d99ed7de.mp3",
+      "durationSeconds": 0.76,
+      "sha256": "c24ec4078a799dc636cb28b42638b6e4bcd3c057f3f630b87d0f95b6cbaee5af",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-f5c1534a90b9b2f0": {
+      "src": "assets/audio/answer-f5c1534a90b9b2f0.mp3",
+      "durationSeconds": 0.99,
+      "sha256": "d86ab97300256f31061dc80b178eb72113f37bb4f7e9913b50e2a94a71f00ce6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4c3e55c3b623831c": {
+      "src": "assets/audio/answer-4c3e55c3b623831c.mp3",
+      "durationSeconds": 1.07,
+      "sha256": "6b135ecdbec3f9fcc39515e74ef4d10c15ef0338e857b291482ecdf2630cbd3e",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-243ee286cadb4a5f": {
+      "src": "assets/audio/answer-243ee286cadb4a5f.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "7f885d9487fc2f059e4c4a90458e383da670e45fa5dd76da5fb35da0771a58df",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-3cb557d856fb2767": {
+      "src": "assets/audio/answer-3cb557d856fb2767.mp3",
+      "durationSeconds": 0.68,
+      "sha256": "14aa44c7305e72713fb16b37662c5bc6ca02ca8740c5d195f31a05adbcf8c149",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-594e519ae499312b": {
+      "src": "assets/audio/answer-594e519ae499312b.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "4aafdf25904640a6dabb2fc361a945bf1256bc763f1405f311b7aa0349930488",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ab6db599234d2636": {
+      "src": "assets/audio/answer-ab6db599234d2636.mp3",
+      "durationSeconds": 2.27,
+      "sha256": "ed8a18767c0bca4de4ce908fa5e7c95279cff07461b8a4d54e5946aaf727b995",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2ebe0504fd57b949": {
+      "src": "assets/audio/answer-2ebe0504fd57b949.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "b35ec5b56ee1f0da161b7fbf4a7ef65873057ea32c97496504b4c97d179c0e81",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-2954066880f87f66": {
+      "src": "assets/audio/answer-2954066880f87f66.mp3",
+      "durationSeconds": 2.85,
+      "sha256": "17773b12fbb676a8aaf3e92acc20e9d50da7cffb9f72ad5fc50479dbee011e6e",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-f4e98b2272470580": {
+      "src": "assets/audio/answer-f4e98b2272470580.mp3",
+      "durationSeconds": 1.96,
+      "sha256": "4a838a2ccd49bbac102e5884492da6f5c5a416a109b92e21af705eddb8dca47d",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-75857a45899985be": {
+      "src": "assets/audio/answer-75857a45899985be.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "fb55a67ac96205f98a7695d63f42e15580467bbc2140173c9571347c701281c0",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-fa51fd49abf67705": {
+      "src": "assets/audio/answer-fa51fd49abf67705.mp3",
+      "durationSeconds": 2.04,
+      "sha256": "040ca90fd8976d926e8b27284e3a829a08cfe77256a9f4a185ac370c62333e14",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-254bb97b57f12e16": {
+      "src": "assets/audio/answer-254bb97b57f12e16.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "d8ceae0b34cd2993f22381dfbecde8dd55872206a6835aeefbcc5238a028f90a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4d3971de62245c94": {
+      "src": "assets/audio/answer-4d3971de62245c94.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "92dba3ee0a8a3ff4b3cd10774a85b9874e1d4ac03dfe010f425045dbce950b9f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-f434d56d24bbc7bf": {
+      "src": "assets/audio/answer-f434d56d24bbc7bf.mp3",
+      "durationSeconds": 1.65,
+      "sha256": "8e8bb01fb0082f560c4ec64cba8e3d6427d6cee4560ec5f147a8227e70924d14",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-bb0347a468d97e98": {
+      "src": "assets/audio/answer-bb0347a468d97e98.mp3",
+      "durationSeconds": 1.23,
+      "sha256": "f3be17e3fa42b10198430e37c93fb41e55f4567453c293ba76a93bd6c24ba1d2",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-ea325d761f98c6b7": {
+      "src": "assets/audio/answer-ea325d761f98c6b7.mp3",
+      "durationSeconds": 1.57,
+      "sha256": "1dfd2114971f536fcea50837dddc967e82ea1a1b4d1297124cdbd5817824bd5f",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "answer-09b9d8e1a543de05": {
+      "src": "assets/audio/answer-09b9d8e1a543de05.mp3",
+      "durationSeconds": 6.53,
+      "sha256": "259d666ff0532bf721c7b8610a2a8e2b91a7837fb7ff7071ae91c67913cbc731",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-4e07408562bedb8b": {
+      "src": "assets/audio/answer-4e07408562bedb8b.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "401065d5e69eb8dfcd71643f56d3a7477b2355bc36dc651847c9e4653d1c7ded",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "answer-01cc365783225809": {
+      "src": "assets/audio/answer-01cc365783225809.mp3",
+      "durationSeconds": 6.03,
+      "sha256": "b6925f7c3923d5c0086824ddb688d5b061dcb367c23fc963ce3b927412700d79",
+      "transcriptVerified": false,
+      "events": 0
+    }
+  },
+  "failures": [],
+  "reviewRequired": [
+    {
+      "id": "answer-12bda5096b4e8318",
+      "expected": "zero, seven, four, one, zero, six, three, two.",
+      "heard": "07410632",
+      "events": []
+    },
+    {
+      "id": "answer-da8132d50db7c099",
+      "expected": "zero, nine, six, three, two, one, five, zero, eight, four.",
+      "heard": "0963215084",
+      "events": []
+    },
+    {
+      "id": "answer-2d4652a570f54436",
+      "expected": "zero, nine, nine, seven, six, zero, one, four, two, five.",
+      "heard": "0997601425",
+      "events": []
+    },
+    {
+      "id": "answer-ecd18c6a66631988",
+      "expected": "Alison",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-33db7a9acd993064",
+      "expected": "Alisson",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-e58608fecbb970c8",
+      "expected": "Alyson",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-24d4b96f58da6d4a",
+      "expected": "Ana",
+      "heard": "Anna",
+      "events": []
+    },
+    {
+      "id": "answer-ba78973ddcf98d4e",
+      "expected": "Are",
+      "heard": "R",
+      "events": []
+    },
+    {
+      "id": "answer-ead3990a8ed862c2",
+      "expected": "Brayan",
+      "heard": "Brian",
+      "events": []
+    },
+    {
+      "id": "answer-bd1558ab55194889",
+      "expected": "Briyan",
+      "heard": "Brianne",
+      "events": []
+    },
+    {
+      "id": "answer-0bcf62b62f026b79",
+      "expected": "Bryan",
+      "heard": "Brian",
+      "events": []
+    },
+    {
+      "id": "answer-189f40034be7a199",
+      "expected": "J",
+      "heard": "Jay",
+      "events": []
+    },
+    {
+      "id": "answer-c278ec5a69c34aac",
+      "expected": "Jo",
+      "heard": "Joe",
+      "events": []
+    },
+    {
+      "id": "answer-9ad241dcbf432e7b",
+      "expected": "Lindsey",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-438b200d6313254b",
+      "expected": "Lindsy",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-611d43b20014538c",
+      "expected": "Linsay",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-65c74c15a686187b",
+      "expected": "O",
+      "heard": "Oh",
+      "events": []
+    },
+    {
+      "id": "answer-a3ed4a2ab3abf4f3",
+      "expected": "Rios",
+      "heard": "Riose",
+      "events": []
+    },
+    {
+      "id": "answer-3a6d64c24cf80b69",
+      "expected": "Sara",
+      "heard": "Sarah",
+      "events": []
+    },
+    {
+      "id": "answer-543ef5adb3ec5c41",
+      "expected": "Sofia Lopez",
+      "heard": "Sophia Lopez",
+      "events": []
+    },
+    {
+      "id": "answer-dab15e9fc243cf5f",
+      "expected": "Stephan",
+      "heard": "Stefan",
+      "events": []
+    },
+    {
+      "id": "answer-267eed33dc459584",
+      "expected": "Stephen",
+      "heard": "Steven",
+      "events": []
+    },
+    {
+      "id": "answer-0bfe935e70c321c7",
+      "expected": "U",
+      "heard": "You",
+      "events": []
+    },
+    {
+      "id": "answer-8969feb8cf304a4f",
+      "expected": "Yes, she\u2019s.",
+      "heard": "Yes, she is",
+      "events": []
+    },
+    {
+      "id": "answer-7dece7d7d99ed7de",
+      "expected": "You're",
+      "heard": "Your",
+      "events": []
+    },
+    {
+      "id": "answer-3cb557d856fb2767",
+      "expected": "Your a student.",
+      "heard": "You're a student",
+      "events": []
+    },
+    {
+      "id": "answer-2954066880f87f66",
+      "expected": "ana at club.example",
+      "heard": "Anna at club dot example",
+      "events": []
+    },
+    {
+      "id": "answer-f4e98b2272470580",
+      "expected": "ana@club Example",
+      "heard": "Anna at Club Example",
+      "events": []
+    },
+    {
+      "id": "answer-ea325d761f98c6b7",
+      "expected": "An.",
+      "heard": "Anne",
+      "events": []
+    },
+    {
+      "id": "answer-01cc365783225809",
+      "expected": "zero, nine, five, two, one, zero, seven, one, six, eight.",
+      "heard": "0952107168",
+      "events": []
+    }
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "method": "Automated transcription plus editorial comparison of scripts and recognized text. Not a claim of full human listening review.",
+  "regenerated": [
+    "Digit sequences now authored as individual digit names",
+    "The isolated article the",
+    "Malformed contraction distractors expanded to their deliberately incorrect subject/verb forms"
+  ],
+  "remainingAsrDifferences": [
+    {
+      "id": "answer-12bda5096b4e8318",
+      "expected": "zero, seven, four, one, zero, six, three, two.",
+      "heard": "07410632",
+      "events": []
+    },
+    {
+      "id": "answer-da8132d50db7c099",
+      "expected": "zero, nine, six, three, two, one, five, zero, eight, four.",
+      "heard": "0963215084",
+      "events": []
+    },
+    {
+      "id": "answer-2d4652a570f54436",
+      "expected": "zero, nine, nine, seven, six, zero, one, four, two, five.",
+      "heard": "0997601425",
+      "events": []
+    },
+    {
+      "id": "answer-ecd18c6a66631988",
+      "expected": "Alison",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-33db7a9acd993064",
+      "expected": "Alisson",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-e58608fecbb970c8",
+      "expected": "Alyson",
+      "heard": "Allison",
+      "events": []
+    },
+    {
+      "id": "answer-24d4b96f58da6d4a",
+      "expected": "Ana",
+      "heard": "Anna",
+      "events": []
+    },
+    {
+      "id": "answer-ba78973ddcf98d4e",
+      "expected": "Are",
+      "heard": "R",
+      "events": []
+    },
+    {
+      "id": "answer-ead3990a8ed862c2",
+      "expected": "Brayan",
+      "heard": "Brian",
+      "events": []
+    },
+    {
+      "id": "answer-bd1558ab55194889",
+      "expected": "Briyan",
+      "heard": "Brianne",
+      "events": []
+    },
+    {
+      "id": "answer-0bcf62b62f026b79",
+      "expected": "Bryan",
+      "heard": "Brian",
+      "events": []
+    },
+    {
+      "id": "answer-189f40034be7a199",
+      "expected": "J",
+      "heard": "Jay",
+      "events": []
+    },
+    {
+      "id": "answer-c278ec5a69c34aac",
+      "expected": "Jo",
+      "heard": "Joe",
+      "events": []
+    },
+    {
+      "id": "answer-9ad241dcbf432e7b",
+      "expected": "Lindsey",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-438b200d6313254b",
+      "expected": "Lindsy",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-611d43b20014538c",
+      "expected": "Linsay",
+      "heard": "Lindsay",
+      "events": []
+    },
+    {
+      "id": "answer-65c74c15a686187b",
+      "expected": "O",
+      "heard": "Oh",
+      "events": []
+    },
+    {
+      "id": "answer-a3ed4a2ab3abf4f3",
+      "expected": "Rios",
+      "heard": "Riose",
+      "events": []
+    },
+    {
+      "id": "answer-3a6d64c24cf80b69",
+      "expected": "Sara",
+      "heard": "Sarah",
+      "events": []
+    },
+    {
+      "id": "answer-543ef5adb3ec5c41",
+      "expected": "Sofia Lopez",
+      "heard": "Sophia Lopez",
+      "events": []
+    },
+    {
+      "id": "answer-dab15e9fc243cf5f",
+      "expected": "Stephan",
+      "heard": "Stefan",
+      "events": []
+    },
+    {
+      "id": "answer-267eed33dc459584",
+      "expected": "Stephen",
+      "heard": "Steven",
+      "events": []
+    },
+    {
+      "id": "answer-0bfe935e70c321c7",
+      "expected": "U",
+      "heard": "You",
+      "events": []
+    },
+    {
+      "id": "answer-8969feb8cf304a4f",
+      "expected": "Yes, she\u2019s.",
+      "heard": "Yes, she is",
+      "events": []
+    },
+    {
+      "id": "answer-7dece7d7d99ed7de",
+      "expected": "You're",
+      "heard": "Your",
+      "events": []
+    },
+    {
+      "id": "answer-3cb557d856fb2767",
+      "expected": "Your a student.",
+      "heard": "You're a student",
+      "events": []
+    },
+    {
+      "id": "answer-2954066880f87f66",
+      "expected": "ana at club.example",
+      "heard": "Anna at club dot example",
+      "events": []
+    },
+    {
+      "id": "answer-f4e98b2272470580",
+      "expected": "ana@club Example",
+      "heard": "Anna at Club Example",
+      "events": []
+    },
+    {
+      "id": "answer-ea325d761f98c6b7",
+      "expected": "An.",
+      "heard": "Anne",
+      "events": []
+    },
+    {
+      "id": "answer-01cc365783225809",
+      "expected": "zero, nine, five, two, one, zero, seven, one, six, eight.",
+      "heard": "0952107168",
+      "events": []
+    }
+  ],
+  "assessment": "Remaining differences are digit formatting, name spelling and homophones, contraction expansion, and spoken email punctuation. No audio events detected.",
+  "failures": []
+}
