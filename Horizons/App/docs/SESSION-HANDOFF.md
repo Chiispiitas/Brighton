@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Human lobby enrollment correction: standings now reconcile all activated, unexpired, enabled individual/production A1 key holders before adding the caller, using existing profiles and saved weekly XP. Peers no longer need to open Rank or complete a new lesson. Demo/QA and unused keys do not auto-enroll; existing memberships and learning data remain unchanged. Live authorized inventory confirmed four eligible individual-key accounts (aggregate only, no learner details exposed). 61 backend tests pass, including pre-existing peers never opening Rank.
+
+
 Progression sound update: eight dedicated native ElevenLabs cues (achievement plus Wood through Masters), recorded under assets/audio/progression-v1 with generation metadata and quality measurements. Achievement plays on its queued screen; Rank entry/promotion uses the corresponding sound without replaying on unchanged refreshes. Existing sound toggle and interruption/hidden guards apply. See docs/SOUND-PRODUCTION.md and reports/progression-sounds.json. Cache progression-sounds-v120; feedback module query progressionsound1.
 
 

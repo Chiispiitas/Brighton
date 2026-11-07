@@ -4,7 +4,7 @@ Personal progression: Wood, Stone, Iron, Gold, Diamond, Obsidian, Masters. No ra
 
 ## Rules and persistence
 
-Monday 00:00 UTC to Monday; 20 seats. Enrollment on opening Rank or finishing a lesson, fixed across devices for that week. Human groups fill before new groups open, with stable hashed seat allocation and no rank filter. Vacant seats contain explicitly marked Practice players: fabricated pseudonyms and native avatar presets. Their deterministic scores grow with elapsed week time. Humans replace bot seats.
+Monday 00:00 UTC to Monday; 20 seats. Existing accounts with active individual/production A1 keys are reconciled into human lobbies on each standings request, without requiring those peers to open Rank or complete another lesson. Unclaimed, expired, disabled and demo/QA keys do not auto-enroll competitors. Caller enrollment on opening Rank or finishing a lesson remains, fixed across devices for that week. Human groups fill before new groups open, with stable hashed seat allocation and no rank filter. Vacant seats contain explicitly marked Practice players: fabricated pseudonyms and native avatar presets. Their deterministic scores grow with elapsed week time. Humans replace bot seats.
 
 Weekly XP is read from immutable server-graded attempts, including earlier attempts in that week. No client score write. Top quarter (five of twenty) plus at least 100 XP advances one personal rank. Fixed weekly tie ordering; no demotions. Masters is capped. Closed weeks settle lazily on next request and persist create-only; retries cannot award twice. Browser acknowledgement suppresses repeated promotion presentation on that device; another device may show the same earned celebration again.
 

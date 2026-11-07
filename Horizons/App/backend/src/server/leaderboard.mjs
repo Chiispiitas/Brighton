@@ -43,8 +43,16 @@ export function createLeaderboard(store,{now,idFor,collections:C}){
   rows.sort((a,b)=>b.xp-a.xp||seed(a.id+member.week)-seed(b.id+member.week));
   return rows.map((r,i)=>({...r,position:i+1}));
  }
+ async function enrollHumans(week,at){
+  if(typeof store.scan!=='function')return;
+  async function scanAll(collection){const rows=[];for(let offset=0;offset<20000;offset+=100){const page=await store.scan(collection,offset,100);rows.push(...page);if(page.length<100)return rows;}throw Error('Competition account inventory exceeds safe paging bound');}
+  const [codes,claims]=await Promise.all([scanAll(C.codes),scanAll(C.claims)]);
+  const eligible=new Set(codes.filter(c=>!c.disabled&&['individual','production'].includes(c.kind)).map(c=>c.id));
+  const humans=[...new Set(claims.filter(c=>eligible.has(c.codeId)&&c.bookId==='horizons-a1'&&c.expiresAt>at).map(c=>c.profileId))].sort((a,b)=>seed(a+week)-seed(b+week));
+  for(const id of humans)if(await store.get(C.profiles,id))await join(id,week);
+ }
  async function get(profileId){
-  const at=now(),week=weekAt(at),member=await join(profileId,week),history=(await store.list(T,'league-profile:'+profileId)).filter(x=>x.week<week).sort((a,b)=>a.week.localeCompare(b.week));
+  const at=now(),week=weekAt(at);await enrollHumans(week,at);const member=await join(profileId,week),history=(await store.list(T,'league-profile:'+profileId)).filter(x=>x.week<week).sort((a,b)=>a.week.localeCompare(b.week));
   let rank=0,lastResult=null;
   for(const past of history){
    const resultId=await idFor('league-result:'+past.week+':'+profileId);let result=await store.get(T,resultId);
