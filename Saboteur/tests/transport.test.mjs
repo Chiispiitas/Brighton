@@ -61,6 +61,17 @@ async function room(count=3){
 }
 async function game(count=3){const service=await room(count);const response=await service.send({type:'start',token:token(1),requestId:'start-game',firstPlayerId:service.latest().players.find(p=>p.name==='Transport 0').id,expectedVersion:count});assert.equal(response.status,200);return service;}
 
+test('creation carries Blitz rules to storage and reconnection without changing standard defaults',async()=>{
+  const service=setup();
+  const created=await service.send({type:'create',token:token(1),name:'Blitz host',mode:'classroom',variant:'blitz'});
+  assert.equal(created.status,200);assert.equal(created.data.variant,'blitz');assert.equal(service.latest().variant,'blitz');
+  const reconnected=await service.send({type:'state',token:token(1)});
+  assert.equal(reconnected.data.totalRounds,1);assert.equal(reconnected.data.host,true);
+  const publicView=await service.send({type:'state',screen:true});assert.equal(publicView.data.variant,'blitz');assert.equal(publicView.data.me,null);
+  const standard=await setup().send({type:'create',token:token(1),name:'Standard host'});
+  assert.equal(standard.data.variant,'standard');assert.equal(standard.data.totalRounds,3);
+  assert.equal((await setup().send({type:'create',token:token(1),name:'Invalid',variant:'other'})).status,400);
+});
 test('eight simultaneous joins survive atomic snapshot collisions without lost seats or private-key leaks',async()=>{
   const service=await room(8),state=service.latest();assert.equal(state.players.length,8);assert.equal(state.version,8);
   assert.equal(new Set(state.players.map(p=>p.key)).size,8);assert.equal(new Set(state.players.map(p=>p.id)).size,8);

@@ -74,7 +74,7 @@ export const POST: APIRoute = async ({ request }) => {
     if (typeof b.token !== 'string' || !/^[a-f0-9]{64}$/.test(b.token)) throw new GameError('Your room key is missing. Reconnect from your original device.', 401);
     const hash = await digest(b.token);
     if (b.type === 'create') {
-      const state = createRoom(code, hash, b.name, Date.now(), b.mode || 'online');
+      const state = createRoom(code, hash, b.name, Date.now(), b.mode || 'online', b.variant ?? 'standard');
       try { await persist(state); await compact(state); }
       catch (error) {
         // A network retry of creation returns the original host room, without overwriting it.

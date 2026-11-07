@@ -61,9 +61,10 @@ export class TunnelBoard{
   fit(){if(!this.viewport.clientWidth||!this.viewport.clientHeight)return;const w=this.bounds.width*78,h=this.bounds.height*120;this.scale=Math.max(.25,Math.min(1.05,(this.viewport.clientWidth-32)/w,(this.viewport.clientHeight-32)/h));this.x=(this.viewport.clientWidth-w*this.scale)/2;this.y=(this.viewport.clientHeight-h*this.scale)/2;this.transform();this.fitted=true;}
   focusOn(x,y,minScale=.62){if(!this.viewport.clientWidth)return;this.scale=Math.max(this.scale,minScale);this.x=this.viewport.clientWidth/2-((x-this.bounds.minX)*78+39)*this.scale;this.y=this.viewport.clientHeight/2-((y-this.bounds.minY)*120+60)*this.scale;this.transform();}
   update(state,{placements=[],selectedCell=null,selectedCard=null,rotation=0,actionType=null,actionTarget=null}={}){
+    this.root.querySelector('.board-caption').textContent=state.variant==='blitz'?'Blitz · 5 × 5':'The mine';
     let tiles=Array.isArray(state.board)?state.board:Object.entries(state.board||{}).map(([key,v])=>({...v,x:v.x??Number(key.split(',')[0]),y:v.y??Number(key.split(',')[1])}));
-    const goals=state.goals||tiles.filter(t=>t.kind==='goal');tiles=tiles.filter(t=>t.kind!=='goal');const all=[...tiles,...goals,...placements,{x:0,y:0},{x:8,y:-2},{x:8,y:2}];
-    const minX=Math.min(...all.map(t=>t.x)),maxX=Math.max(...all.map(t=>t.x)),minY=Math.min(...all.map(t=>t.y)),maxY=Math.max(...all.map(t=>t.y));
+    const goals=state.goals||tiles.filter(t=>t.kind==='goal');tiles=tiles.filter(t=>t.kind!=='goal');const all=[...tiles,...goals,...placements,{x:0,y:0},...(state.boardBounds?[]:[{x:8,y:-2},{x:8,y:2}])];
+    const minX=state.boardBounds?.minX??Math.min(...all.map(t=>t.x)),maxX=state.boardBounds?.maxX??Math.max(...all.map(t=>t.x)),minY=state.boardBounds?.minY??Math.min(...all.map(t=>t.y)),maxY=state.boardBounds?.maxY??Math.max(...all.map(t=>t.y));
     this.bounds={minX,minY,width:maxX-minX+1,height:maxY-minY+1};
     const pos=(x,y)=>`left:${(x-minX)*78}px;top:${(y-minY )*120}px`;
     const distinct=new Map(placements.map(p=>[`${p.x},${p.y}`,p]));

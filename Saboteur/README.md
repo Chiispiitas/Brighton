@@ -4,6 +4,10 @@ Play: https://exams.bebrighton.net/Saboteur/
 
 The original base game for **3–10 players**, in three rounds. Create a room, share its six-digit code, and join with a name. No account is required.
 
+## Game length
+
+Choose **Standard** (original board and three rounds) or **Blitz** when creating a room. Blitz is a house-rule variant: a fixed 5 × 5 grid (columns 0–4, rows −2–2), goals in column 4, and one round with at most 30 turns total. Three intermediate tunnels reach the nearest goal. Finding gold on turn 30 wins; otherwise saboteurs win at the cap. Original roles, the 67-card deck, starting hands, drawing and gold rewards are unchanged. The highest gold total wins after that round. Rematches keep the selected length. Both lengths support online and classroom play. Existing rooms remain Standard.
+
 ## Play modes
 
 - **Online game:** every player has the shared mine and private controls on their device.
@@ -13,7 +17,7 @@ The host selects the first player (normally the youngest) and deals. Take turns 
 
 The board supports drag, touch pan/pinch, zoom buttons, Fit board, and keyboard arrows/+/- while focused. The ordinary mouse wheel continues scrolling the page. All important card and target controls are keyboard accessible. Motion respects reduced-motion preferences.
 
-The host's **Presenter link** contains only the room code and a public-screen flag. A presenter can also enter the code from the landing page. It never receives hands, current secret roles, private map notes, private gold choices or unearned reward values, even if a host/player capability is supplied to the presenter request. Roles become public after each round; cumulative gold becomes public only after round three. Room management has no secret roster.
+The host's **Presenter link** contains only the room code and a public-screen flag. A presenter can also enter the code from the landing page. It never receives hands, current secret roles, private map notes, private gold choices or unearned reward values, even if a host/player capability is supplied to the presenter request. Roles become public after each round; cumulative gold becomes public only when the game finishes. Room management has no secret roster.
 
 **Show privately** reveals the player's role, hand and notes; hiding them or switching away from the tab covers them again. Gold choices have their own private reveal. Saved device capabilities reconnect after refresh. Use the same browser/device to return; clearing local storage loses that identity. Room codes and invitation links contain no capabilities. Rooms expire after 24 hours.
 
