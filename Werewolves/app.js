@@ -1,6 +1,6 @@
 import { API_URL } from './config.js';
 import { spyPresentation, privateNoteText } from './player-copy.mjs?v=spying-3';
-import { classroomHtml } from './classroom.mjs?v=classroom-1';
+import { classroomHtml } from './classroom.mjs?v=classroom-2';
 const $ = s => document.querySelector(s);
 const root = $('#app'), modal = $('#modal');
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
