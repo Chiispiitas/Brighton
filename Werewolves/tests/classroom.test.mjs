@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createRoom, command, view} from '../server/engine.mjs';
+import {classroomHtml} from '../classroom.mjs';
 let sequence=0;
 const act=(s,key,cmd)=>command(s,key,{requestId:`classroom-${++sequence}`,phaseId:s.phaseId,...cmd},()=>.2);
 function room(n=8){
@@ -89,4 +90,14 @@ test('hunter must be called before the final shot; rematch preserves classroom m
   s.phase='finished';s.winner='village';s=act(s,'host',{type:'reset'});
   assert.equal(s.mode,'classroom');assert.equal(s.awake,false);assert.equal(s.players.length,8);
   assert.throws(()=>act(s,'host',{type:'join',name:'Teacher'}),/moderator/);
+});
+test('waiting for a daytime Hunter gives the presenter and Hunter the moderator cue',()=>{
+  const s=room(),hunter=rolePlayer(s,'hunter');
+  s.phase='hunter';s.actions={};s.pendingHunter=hunter.id;hunter.alive=false;s.resumePhase='dusk';
+  const ui={escape:String,roleNames:{hunter:'Hunter'},houseArt:()=>''};
+  const screen=classroomHtml(view(s,'screen',true),{...ui,projector:true});
+  assert.match(screen,/Wait for the Hunter/);assert.match(screen,/moderator will call/);
+  assert.ok(!screen.includes('The village sleeps'));assert.ok(!screen.includes('opens their eyes'));
+  const phone=classroomHtml(view(s,hunter.key),{...ui,projector:false});
+  assert.match(phone,/Wait for the moderator to call you/);
 });
