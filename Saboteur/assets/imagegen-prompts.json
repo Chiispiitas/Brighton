@@ -12,5 +12,5 @@
     "mine.webp",
     "saboteur-share-v1.jpg"
   ],
-  "packaging": "WebP conversion and 1200x630 JPEG share crop. See cards/supplied-cards.json and cards/paths-manifest.json for provided-card extraction."
+  "packaging": "WebP background conversion. The 1200x630 JPEG sharing graphic lays out the supplied dwarf card faces and plain title over that background; it does not redraw the cards. See tools/prepare-share.py, cards/supplied-cards.json and cards/paths-manifest.json for reproducible layout and extraction."
 }
