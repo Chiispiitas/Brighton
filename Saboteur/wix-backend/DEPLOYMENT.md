@@ -16,3 +16,5 @@ POST bodies use `{ type, code, token, requestId, expectedVersion, ...actionField
 SHA-256 capability hashes stay inside admin-only immutable snapshots. Each write inserts an item with unique ID `roomCode-version`; duplicate inserts cannot overwrite a winner. Conflict losers reload consistent state before retrying the command. Actor-bound request receipts run before version checks. Responses forbid caching; frontend views never move to an older version. Rooms expire after 24 hours. Every eighth write prunes old snapshots beyond the conflict window, and room creation cleans a bounded expired batch. Receipts are bounded to the most recent 256 mutations.
 
 The Wix CLI generator reports HTTP_ENDPOINT unsupported for this editorless Site project. Astro filesystem routing follows the existing deployed Werewolves pattern and the Wix Backend API runtime reference; `/api/game` was verified in the build output.
+
+Public action-cue release: `b358eda5-7b87-4140-814c-a086fe3cb94b`; current Wix source revision `286d5f126e3823fd1a1813965b11338620f55781`. This is an additive snapshot update. No collections, identities, hands or active turns are reset.
