@@ -87,7 +87,7 @@ export function legalPlacements(state, card, rotation = 0) {
   return [...candidates.values()].filter(({x,y}) => !placementError(state,card,x,y,rotation));
 }
 function startRound(s,random,firstId) {
-  s.round++;
+  s.round++; s.lastPlacement = null;
   if (s.round > 1) s.bank = shuffle(s.bank,random);
   const roles = shuffle(rolePool(s.players.length),random); s.unusedRole = roles.pop();
   s.deck = shuffle(DECK.map((defId,i) => makeCard(defId,`r${s.round}-c${i}`)),random);
@@ -226,7 +226,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
     startRound(s,random,s.players[(last+1)%s.players.length].id);
   } else if (cmd.type === 'rematch') {
     need(host && s.phase === 'finished', 'A rematch is available after three rounds.', 403);
-    s.phase = 'lobby'; s.round = 0; s.board = []; s.deck = []; s.discard = []; s.bank = []; s.result = null; s.history = []; s.goldChoice = null; s.turnId = null; s.log = [];
+    s.lastPlacement = null; s.phase = 'lobby'; s.round = 0; s.board = []; s.deck = []; s.discard = []; s.bank = []; s.result = null; s.history = []; s.goldChoice = null; s.turnId = null; s.log = [];
     for (const p of s.players) { p.role = null; p.hand = []; p.broken = []; p.notes = []; p.gold = []; }
   } else if (cmd.type === 'chooseGold') {
     need(actor && s.phase === 'gold' && s.goldChoice.playerId === actor.id, 'Wait for your turn to choose gold.', 403);
@@ -238,12 +238,14 @@ export function command(inputState, hash, cmd, random = Math.random) {
   } else if (cmd.type === 'play' || cmd.type === 'discard') {
     need(actor && s.phase === 'playing' && s.turnId === actor.id, 'It is not your turn.', 403);
     const index = actor.hand.findIndex(c => c.id === cmd.cardId), card = actor.hand[index]; need(card, 'Choose a card from your hand.');
+    s.lastPlacement = null;
     let won = false;
     if (cmd.type === 'discard') event(s,`${actor.name} discarded one card.`);
     else if (card.kind === 'path') {
       need(!actor.broken.length, 'Repair all your broken tools before placing a tunnel.');
       const rotation = cmd.rotation ?? 0, error = placementError(s,card,cmd.x,cmd.y,rotation); need(!error,error);
       s.board.push({ x:cmd.x, y:cmd.y, kind:'path', defId:card.defId, cardId:card.id, rotation, groups:cardGroups(card,rotation) });
+      s.lastPlacement = { actorId:actor.id, actorName:actor.name, x:cmd.x, y:cmd.y, version:s.version+1 };
       event(s,`${actor.name} placed a tunnel.`); won = revealReachedGoals(s);
     } else if (card.kind === 'break') {
       const target = player(s,cmd.target), tool = card.tools[0]; need(target && target.id !== actor.id, 'Choose another player.');
@@ -256,7 +258,10 @@ export function command(inputState, hash, cmd, random = Math.random) {
     } else if (card.kind === 'map') {
       const goal = s.board.find(c => c.kind === 'goal' && c.id === cmd.target); need(goal && !goal.revealed, 'Choose a face-down goal.');
       actor.notes = actor.notes.filter(n => n.goalId !== goal.id);
-      actor.notes.push({ goalId:goal.id, gold:goal.gold, groups:goal.groups.map(g => [...g]) }); event(s,`${actor.name} inspected a goal privately.`);
+      actor.notes.push({ goalId:goal.id, gold:goal.gold, groups:goal.groups.map(g => [...g]) });
+      const goalNumber = s.board.filter(c => c.kind === 'goal').findIndex(c => c.id === goal.id) + 1;
+      event(s,`${actor.name} inspected goal ${goalNumber}.`);
+      Object.assign(s.log[s.log.length-1], { kind:'inspection', version:s.version+1, actorId:actor.id, actorName:actor.name, goalId:goal.id, goalNumber, x:goal.x, y:goal.y });
     } else if (card.kind === 'rockfall') {
       const cell = s.board.find(c => c.kind === 'path' && (c.x === cmd.x && c.y === cmd.y || c.cardId === cmd.target));
       need(cell, 'Choose a tunnel card. The entrance and goals cannot be removed.');
@@ -280,7 +285,7 @@ export function view(s, hash, screen = false) {
     : structuredClone(c));
   const maxGold = Math.max(0,...s.players.map(total));
   return { code:s.code, mode:s.mode, host, hostName:s.hostName, version:s.version, phase:s.phase, round:s.round, turnId:s.turnId,
-    deckCount:s.deck.length, players:publicPlayers, board, result:s.result && structuredClone(s.result),
+    lastPlacement:s.lastPlacement ? structuredClone(s.lastPlacement) : null, deckCount:s.deck.length, players:publicPlayers, board, result:s.result && structuredClone(s.result),
     history:structuredClone(s.history), log:structuredClone(s.log), expiresAt:s.expiresAt, rulesEdition:RULES_EDITION,
     winners:s.phase === 'finished' ? s.players.filter(p => total(p) === maxGold).map(p => p.id) : [],
     goldChoice:s.goldChoice ? { playerId:s.goldChoice.playerId, ...(me?.id === s.goldChoice.playerId ? {options:structuredClone(s.goldChoice.options)} : {}) } : null,
