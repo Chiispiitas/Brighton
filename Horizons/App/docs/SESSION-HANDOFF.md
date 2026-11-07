@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Completion ordering update: sidebar/mobile navigation label is Rank (route remains leaderboard). Saved Results now appear BEFORE any daily streak or leaderboard overtaking celebration. Continue / Practice again queue streak first, then a real same-week overtaking event, then the selected destination. Missing events skip cleanly. Baseline and post-save authenticated standings measure actual position and XP gain; a failed leaderboard request never fails the lesson save. Replaced bot seats, weekly rollover and unchanged XP cannot fabricate an overtake. Existing avatars and material emblems are reused with transform-only movement. See tests/completion-flow.test.mjs and reports/completion-order.json; synthetic actual-app proof, no real learner QA. This supersedes the older streak-before-results instructions.
+
+
 Weekly leaderboard: new navigation and authenticated getLeaderboard action, mixed-rank human-first20-place weekly groups, disclosed practice bots, server-derived XP and top-quarter +100 XP promotion. Personal Wood/Stone/Iron/Gold/Diamond/Obsidian/Masters progression. Read docs/leaderboard-v1/README.md for enrollment, UTC boundaries, ties, lazy immutable settlement, privacy, motion and planned-only friend profiles. Existing learning records remain untouched. Final backend deployment efa2748c-85b5-4bb1-9e05-c20c17ec22a6, source revision 9c13eeb08c6bd8724c74ae04d6b8f67b0eebbe01. 60 backend tests and actual four-viewport synthetic browser proof pass. Live checks use only health and unauthenticated rejection, no learner records.
 
 

@@ -1,5 +1,8 @@
 # Horizons animation production audit
 
+Post-results sequence: Results → daily streak → overtaking → chosen destination. Overtaking uses existing native avatar layers and material rank emblem; no new artwork or expressions. Self row translates upward and crossed competitor rows move down, full opacity, static reduced motion. Events require same-week position improvement, earned XP and an actual crossed competitor still in that lobby. No event on bot disappearance or weekly reset. Completion-flow unit tests and actual synthetic saved-round browser proof cover sequence and skips. Explicit important-scoped UI animation declarations override the old global static-art baseline; a normal-motion browser check asserts a real running overtaking animation, while reduced-motion declarations remain final and explicit.
+
+
 Weekly leaderboard material badges: see leaderboard-v1/README.md and production-record.json. Native ImageGen Wood through Masters props, full-opacity old-badge departure/new-badge overshoot/text pop, FLIP row translation, static reduced-motion mode. Existing avatars remain static here. Superseded journey and rejected glow atlases are historical provenance.
 
 
