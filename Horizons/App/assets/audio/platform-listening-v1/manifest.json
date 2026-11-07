@@ -1,0 +1,286 @@
+{
+  "voice": "Jessica",
+  "voiceId": "cgSgspJ2msm6clMCkdW9",
+  "model": "eleven_v3",
+  "files": {
+    "listen-class": {
+      "src": "assets/audio/listen-class.mp3",
+      "durationSeconds": 3.79,
+      "sha256": "a6fa80b69af4cc9c3c167333264258f568131cfcdbb6526fc17ba983de69be15",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-teacher": {
+      "src": "assets/audio/listen-teacher.mp3",
+      "durationSeconds": 3.47,
+      "sha256": "fb7cbaafdfe6acfb27d5e6e246dcd55df363fd83068a9e0af9df011bfdb8f09b",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "listen-short-0": {
+      "src": "assets/audio/listen-short-0.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "0f12e09142e86c98adaad1f7d26834524b076cc1e1e90dc98b0d61c714ae473c",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-short-1": {
+      "src": "assets/audio/listen-short-1.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "e7fbd970e70eacdd9f3a3c271a5db10a97eb54739461f8bd4c4b9fc8e25d18cf",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-short-2": {
+      "src": "assets/audio/listen-short-2.mp3",
+      "durationSeconds": 0.91,
+      "sha256": "5b3561e051d51915173e9440983b9dc35443579aca4b4fe7538a331297287125",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-short-3": {
+      "src": "assets/audio/listen-short-3.mp3",
+      "durationSeconds": 1.41,
+      "sha256": "43d6c30b649a4a3f57b7a0c69fc05918b602008a94259d51a3ad8dc92161f81b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-ariana-phone": {
+      "src": "assets/audio/listen-ariana-phone.mp3",
+      "durationSeconds": 6.92,
+      "sha256": "94bd93e90992a9da022aee7471600826563c4e6c46955b221ac3065dfbae4679",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-ariana-name": {
+      "src": "assets/audio/listen-ariana-name.mp3",
+      "durationSeconds": 4.36,
+      "sha256": "737a26238f2242502343616a5085b3df2b0fcc62fd5bdf094585682085c5e47b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-spell-0": {
+      "src": "assets/audio/listen-spell-0.mp3",
+      "durationSeconds": 4.99,
+      "sha256": "89d80361ec92c1d5e684b407a8553f02c99ba4aaec61d21c89d281e2b12989b1",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-alphabet-end": {
+      "src": "assets/audio/listen-alphabet-end.mp3",
+      "durationSeconds": 5.33,
+      "sha256": "8a84becb01393a5764852689ffef6750a4acbcece333d04db2d5dc9e50a62f8a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-alphabet-start": {
+      "src": "assets/audio/listen-alphabet-start.mp3",
+      "durationSeconds": 3.71,
+      "sha256": "df073b685d5000e5a9f82bf06fc890b2b5c0420223a7ba25a565ca75cfd37219",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-spell-1": {
+      "src": "assets/audio/listen-spell-1.mp3",
+      "durationSeconds": 4.28,
+      "sha256": "df9ecbe60845907bc29dc9d5b03cd5564fbe2e60020d2ba0aeccc0dc9f595ff6",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-spell-2": {
+      "src": "assets/audio/listen-spell-2.mp3",
+      "durationSeconds": 3.87,
+      "sha256": "9f5ff702ae26ab90f5abfac2999fbb5402d45b9b8bdc414a8b622a33279bb367",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-spell-3": {
+      "src": "assets/audio/listen-spell-3.mp3",
+      "durationSeconds": 4.99,
+      "sha256": "f8010f54f3208de47b0949f0d1d26bdac0d3748345bf19052e92b86a22e9d1e7",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-number-start": {
+      "src": "assets/audio/listen-number-start.mp3",
+      "durationSeconds": 4.91,
+      "sha256": "ceee961624b5699a5eef4836abd236c7285b4b68d4c6333018c028bfd93ee9f8",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-number-end": {
+      "src": "assets/audio/listen-number-end.mp3",
+      "durationSeconds": 4.28,
+      "sha256": "a6ac7ffc97f03a0c2167ac137a83862f34a85b4137da465d3d2ac2a709a5f84a",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-profile-phone-0": {
+      "src": "assets/audio/listen-profile-phone-0.mp3",
+      "durationSeconds": 7.71,
+      "sha256": "05d0dd7e0b065fd3a6d1d735a6b99b2ce37e55507ed5786ee4cd317b72dd82f8",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-profile-class-1": {
+      "src": "assets/audio/listen-profile-class-1.mp3",
+      "durationSeconds": 2.59,
+      "sha256": "e5c546c50614fbafbfd5b181a47423f2b4eba7d8b624b81bdbb1a9719b05af9d",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "listen-profile-phone-1": {
+      "src": "assets/audio/listen-profile-phone-1.mp3",
+      "durationSeconds": 7.89,
+      "sha256": "c17c0de19d14cd235df2faf321a71885d75da798f1e803f2ebc9d0fef27c3681",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "listen-profile-class-2": {
+      "src": "assets/audio/listen-profile-class-2.mp3",
+      "durationSeconds": 2.35,
+      "sha256": "1775ba44c30e51312082eb6b5bab5d9e2802129d8c7f64063d15e29e4cb04c56",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-profile-phone-2": {
+      "src": "assets/audio/listen-profile-phone-2.mp3",
+      "durationSeconds": 7.47,
+      "sha256": "809a659c0217afc84e7a171b4bb321558e4f41d1ad247df637f53454b4bd5bd5",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-list": {
+      "src": "assets/audio/listen-job-list.mp3",
+      "durationSeconds": 5.41,
+      "sha256": "4723436e9c2bd9acba919552d8df0dcfd1df70817c7edc8d380ba8cbbde03c7f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-1": {
+      "src": "assets/audio/listen-job-1.mp3",
+      "durationSeconds": 1.31,
+      "sha256": "e804127c1da000c5e88b8883e140ff26b0fcfdf6cb8deb533c4b596156629450",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-0": {
+      "src": "assets/audio/listen-job-0.mp3",
+      "durationSeconds": 1.65,
+      "sha256": "24e9bc5357bdf8f220de362e6e7d43f4b7382ce9440ddb60cec80e4e6c638028",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-3": {
+      "src": "assets/audio/listen-job-3.mp3",
+      "durationSeconds": 1.49,
+      "sha256": "cf010edafd6dad1eadd167b30b3366c6b87ef153131ab2fed64d72e8fc470025",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-2": {
+      "src": "assets/audio/listen-job-2.mp3",
+      "durationSeconds": 2.85,
+      "sha256": "98f764988d7571c692d0cec72e26bf414054445255cd6861e224bff4b31d9fab",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-job-4": {
+      "src": "assets/audio/listen-job-4.mp3",
+      "durationSeconds": 1.72,
+      "sha256": "49df5c19f155de93142ee760e5dfaae5b1c24c2d50c159e25ea8ff3884ce059d",
+      "transcriptVerified": false,
+      "events": 0
+    },
+    "listen-two-jobs": {
+      "src": "assets/audio/listen-two-jobs.mp3",
+      "durationSeconds": 9.95,
+      "sha256": "8cc0f20e4b4439126370f88578fad2613358c852fae022271f82e7d882936e49",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-country-1": {
+      "src": "assets/audio/listen-country-1.mp3",
+      "durationSeconds": 3.24,
+      "sha256": "a208780dfed937df37693849cbe13f2c640c33cc64afcc312114bc64cbc2d4ef",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-profile-class-0": {
+      "src": "assets/audio/listen-profile-class-0.mp3",
+      "durationSeconds": 2.35,
+      "sha256": "8b57aca8b98cc873fe6bea04826821bbbadf9ae2c93263450f2988ce989a4e9b",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-country-2": {
+      "src": "assets/audio/listen-country-2.mp3",
+      "durationSeconds": 3.32,
+      "sha256": "169739f0702d2d84f3a78d6b489d836c8ab731be8cb6fd272bfd19fd4f1ae6a9",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-country-4": {
+      "src": "assets/audio/listen-country-4.mp3",
+      "durationSeconds": 3.87,
+      "sha256": "54652168b6aaf4e5629198cd9a85bea02bd7a2421cba64b91cf0b5b112cc4699",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-emma-country": {
+      "src": "assets/audio/listen-emma-country.mp3",
+      "durationSeconds": 2.19,
+      "sha256": "6b036ccdc5fb4eed9f56289f401ee113e8398d8b86802ae1fb455bd4c55eb5eb",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-emma-last": {
+      "src": "assets/audio/listen-emma-last.mp3",
+      "durationSeconds": 7.0,
+      "sha256": "154e3ef05bafdcc269a911c1e964296f558263858843925cb2ef9765482203e9",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-country-3": {
+      "src": "assets/audio/listen-country-3.mp3",
+      "durationSeconds": 4.05,
+      "sha256": "da2208410f0620b6f0ed03bd30ec2e888a6ffc880dae1cdbab0e42dc2038ef3f",
+      "transcriptVerified": true,
+      "events": 0
+    },
+    "listen-country-0": {
+      "src": "assets/audio/listen-country-0.mp3",
+      "durationSeconds": 3.4,
+      "sha256": "ea393c7bb6c411e07ccdcd9c58f06dd407e40634597e10528e87fa7331629cdb",
+      "transcriptVerified": true,
+      "events": 0
+    }
+  },
+  "failures": [],
+  "reviewRequired": [
+    {
+      "id": "listen-teacher",
+      "expected": "Hello, I'm Mary. My teacher is Mister Wilson.",
+      "heard": "Hello, I'm Mary. My teacher is Mr. Wilson",
+      "events": []
+    },
+    {
+      "id": "listen-profile-class-1",
+      "expected": "My name is Bryan. I'm in Class five.",
+      "heard": "My name is Brian. I'm in class five",
+      "events": []
+    },
+    {
+      "id": "listen-profile-phone-1",
+      "expected": "My name is Bryan. My phone number is zero, nine, six, three, two, one, five, zero, eight, four.",
+      "heard": "My name is Brian. My phone number is zero nine six three two one five zero eight four",
+      "events": []
+    },
+    {
+      "id": "listen-job-4",
+      "expected": "Bryan is a salesclerk.",
+      "heard": "Brian is a sales clerk",
+      "events": []
+    }
+  ]
+}

@@ -66,8 +66,8 @@ test('listening questions have generic instructions and never supply a text or p
  for(const q of makeVocabularyQuestions(vocabulary,{mode:'listening',seed:'audio'})){assert.equal(q.prompt,'Listen and choose.');assert.equal(q.listening,true);assert.ok(q.audioWordId);assert.equal(q.passage,undefined);assert.equal(q.image,undefined);assert.equal(q.hint,undefined);}
  for(const lesson of lessons)for(const q of getActivityQuestions(`listen-${lesson.id.toLowerCase()}`,{count:'all',seed:'source-listening'})){assert.ok(['Listen and choose.','Listen and type.'].includes(q.prompt));assert.equal(q.listening,true);assert.ok(q.audio&&q.listenFor);assert.equal(q.passage,undefined);}
  const group=getActivityQuestions('listen-1a',{count:'all',seed:'source-listening'});
- assert.ok(group.find(q=>q.id==='listen-short-0').listenFor.startsWith('Pair 1:'));
- assert.ok(group.find(q=>q.id==='listen-spell-2').listenFor.startsWith('Name 3:'));
+ assert.ok(group.find(q=>q.id==='listen-short-0').listenFor.includes('Which short form'));
+ assert.ok(group.find(q=>q.id==='listen-spell-2').listenFor.includes('Choose the spelling'));
 });
 
 test('a selected no-audio alternative has a deterministic different task and is replayed by question ID',()=>{

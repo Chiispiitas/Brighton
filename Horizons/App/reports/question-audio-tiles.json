@@ -1,0 +1,52 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "scrollPreserved": 50,
+      "stableBuilder": true,
+      "characterNodePreserved": true,
+      "flipCount": 1,
+      "softRed": true,
+      "softGreen": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "scrollPreserved": 50,
+      "stableBuilder": true,
+      "characterNodePreserved": true,
+      "flipCount": 1,
+      "softRed": true,
+      "softGreen": true
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "scrollPreserved": 50,
+      "stableBuilder": true,
+      "characterNodePreserved": true,
+      "flipCount": 1,
+      "softRed": true,
+      "softGreen": true
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "scrollPreserved": 50,
+      "stableBuilder": true,
+      "characterNodePreserved": true,
+      "flipCount": 1,
+      "softRed": true,
+      "softGreen": true
+    }
+  ],
+  "reducedMotionNoFlip": true,
+  "noRealLearnerRecords": true,
+  "errors": [],
+  "multipleChoiceRepeatedPlayback": true,
+  "transcriptHiddenBeforeAnswer": true,
+  "transcriptVisibleAfterAnswer": true,
+  "platformListeningSource": true
+}

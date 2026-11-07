@@ -182,11 +182,11 @@ verify('all path activities produce real questions; mixed reviews contain vocabu
  }
 });
 
-verify('real listening questions point only to existing book recordings with source-key answers',()=>{
+verify('platform listening questions use unique existing short recordings and matching answers',()=>{
  const checks={'listen-class':'Class 4','listen-teacher':'Mr. Wilson','listen-job-0':'doctor','listen-job-1':'farmer','listen-job-2':'office worker','listen-job-3':'waitress','listen-job-4':'salesclerk','listen-two-jobs':'Tom','listen-emma-country':'Canada','listen-emma-last':'Carter'};
  const all=['listen-1a','listen-1b','listen-1c','listen-1d'].flatMap(id=>getActivityQuestions(id,{count:'all',seed:id}));
  for(const q of all){assert.ok(fs.existsSync(path.resolve(app,q.audio)),q.audio);if(checks[q.id])assert.equal(q.correctText,checks[q.id]);}
- assert.equal(new Set(all.map(q=>q.audio)).size,12);
+ assert.equal(new Set(all.map(q=>q.audio)).size,all.length);for(const q of all){assert.ok(q.transcript);assert.ok(q.audio.includes('platform-listening-v1'));}
  assert.equal(all.some(q=>q.audio.includes('Track 1.11.mp3')),false,'The duplicate legacy1.11 is not an active source.');
 });
 

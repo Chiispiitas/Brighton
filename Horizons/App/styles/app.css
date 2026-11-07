@@ -467,3 +467,6 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 
 /* Preserve authored colours and native artwork under browser automatic darkening. */
 :root{color-scheme:only light}
+
+.sentence-tokens[hidden]{display:none!important}
+.answer-transcript{font-size:14px;line-height:1.45;margin:8px 0 0}.answer-transcript p{margin:4px 0}

@@ -226,27 +226,53 @@ export const grammarSets=[
 ];
 
 const listeningQuestions=[
- choice('listen-class','Listen to Tom and Mary. What class is Mary in?','Class 4',['Class 1','Class 2','Class 3'],'Mary says, “I am in Class 4.”',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.1.mp3',audioLabel:'Track 1.1 · New friends'}),
- choice('listen-teacher','Listen to Tom and Mary. Who is Mary’s teacher?','Mr. Wilson',['Tom','Mary','Jo'],'Mary confirms that Mr. Wilson is her teacher.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.1.mp3',audioLabel:'Track 1.1 · New friends'}),
- ...["I'm","You're","He's","She's"].map((short,i)=>choice(`listen-short-${i}`,`Listen to pair ${i+1}. Which short form do you hear?`,short,["I'm","You're","He's","She's"].filter(x=>x!==short),short,{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.2.mp3',audioLabel:'Track 1.2 · Two words, one short form'})),
- choice('listen-ariana-name','Listen to the new student. What is her name?','Ariana',['Allison','Ana','Lindsay'],'Her name is Ariana. A-R-I-A-N-A.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.3.mp3',audioLabel:'Track 1.3 · Personal information'}),
- text('listen-ariana-phone','Listen to Ariana. Type her phone number.',['0952107168'],'095 210 7168',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.3.mp3',audioLabel:'Track 1.3 · Personal information',normalization:'digits'}),
- choice('listen-alphabet-start','Listen to the alphabet. Which group comes first?','A, B, C',['C, B, A','B, C, D','D, E, F'],'The alphabet begins A, B, C.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.4.mp3',audioLabel:'Track 1.4 · The alphabet'}),
- choice('listen-alphabet-end','Listen to the alphabet. Which group comes last?','W, X, Y, Z',['W, Y, X, Z','U, V, W, X','X, W, Z, Y'],'The final group is W, X, Y, Z.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.4.mp3',audioLabel:'Track 1.4 · The alphabet'}),
- ...[['Stephen',['Steven','Stefan','Stephan']],['Allison',['Alisson','Alison','Alyson']],['Bryan',['Brayan','Brian','Briyan']],['Lindsay',['Lindsey','Lindsy','Linsay']]].map(([name,wrong],i)=>choice(`listen-spell-${i}`,`Listen to name ${i+1}. Choose the spelling you hear.`,name,wrong,name,{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.5.mp3',audioLabel:'Track 1.5 · Names and letters'})),
- choice('listen-number-start','Listen to the number list. Which number comes first?','zero',['one','two','ten'],'The first number is zero.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.6.mp3',audioLabel:'Track 1.6 · Numbers'}),
- choice('listen-number-end','Listen to the number list. Which number comes last?','ten',['nine','eleven','twelve'],'The last number is ten.',{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.6.mp3',audioLabel:'Track 1.6 · Numbers'}),
+ choice('listen-class','Listen to Tom and Mary. What class is Mary in?','Class 4',['Class 1','Class 2','Class 3'],'Mary says, “I am in Class 4.”',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ choice('listen-teacher','Listen to Tom and Mary. Who is Mary’s teacher?','Mr. Wilson',['Tom','Mary','Jo'],'Mary confirms that Mr. Wilson is her teacher.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ ...["I'm","You're","He's","She's"].map((short,i)=>choice(`listen-short-${i}`,`Listen to pair ${i+1}. Which short form do you hear?`,short,["I'm","You're","He's","She's"].filter(x=>x!==short),short,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'})),
+ choice('listen-ariana-name','Listen to the new student. What is her name?','Ariana',['Allison','Ana','Lindsay'],'Her name is Ariana. A-R-I-A-N-A.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ text('listen-ariana-phone','Listen to Ariana. Type her phone number.',['0952107168'],'095 210 7168',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening',normalization:'digits'}),
+ choice('listen-alphabet-start','Listen to the alphabet. Which group comes first?','A, B, C',['C, B, A','B, C, D','D, E, F'],'The alphabet begins A, B, C.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ choice('listen-alphabet-end','Listen to the alphabet. Which group comes last?','W, X, Y, Z',['W, Y, X, Z','U, V, W, X','X, W, Z, Y'],'The final group is W, X, Y, Z.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ ...[['Stephen',['Steven','Stefan','Stephan']],['Allison',['Alisson','Alison','Alyson']],['Bryan',['Brayan','Brian','Briyan']],['Lindsay',['Lindsey','Lindsy','Linsay']]].map(([name,wrong],i)=>choice(`listen-spell-${i}`,`Listen to name ${i+1}. Choose the spelling you hear.`,name,wrong,name,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'})),
+ choice('listen-number-start','Listen to the number list. Which number comes first?','zero',['one','two','ten'],'The first number is zero.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+ choice('listen-number-end','Listen to the number list. Which number comes last?','ten',['nine','eleven','twelve'],'The last number is ten.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
  ...[['Allison','2','0984102376'],['Bryan','5','0963215084'],['Lindsay','3','0997601425']].flatMap(([name,classNumber,phone],i)=>[
-  choice(`listen-profile-class-${i}`,`Listen to the interviews. What class is ${name} in?`,`Class ${classNumber}`,['Class 2','Class 3','Class 5','Class 4'].filter(x=>x!==`Class ${classNumber}`),`${name} is in Class ${classNumber}.`,{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.7.mp3',audioLabel:'Track 1.7 · Names, classes and numbers'}),
-  text(`listen-profile-phone-${i}`,`Listen to the interviews. Type ${name}’s phone number.`,[phone],phone,{lessonId:'1A',audio:'./assets/audio/book-unit1/Track 1.7.mp3',audioLabel:'Track 1.7 · Names, classes and numbers',normalization:'digits'})
+  choice(`listen-profile-class-${i}`,`Listen to the interviews. What class is ${name} in?`,`Class ${classNumber}`,['Class 2','Class 3','Class 5','Class 4'].filter(x=>x!==`Class ${classNumber}`),`${name} is in Class ${classNumber}.`,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
+  text(`listen-profile-phone-${i}`,`Listen to the interviews. Type ${name}’s phone number.`,[phone],phone,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening',normalization:'digits'})
  ]),
- choice('listen-job-list','Listen to the job list. Which job comes just after doctor?','office worker',['receptionist','teacher','salesclerk'],'The list says “A doctor. An office worker.”',{lessonId:'1B',audio:'./assets/audio/book-unit1/Track 1.8.mp3',audioLabel:'Track 1.8 · Jobs'}),
- ...[['Allison','doctor'],['Mike','farmer'],['John','office worker'],['Lisa','waitress'],['Bryan','salesclerk']].map(([name,job],i)=>choice(`listen-job-${i}`,`Listen. What is ${name}’s job?`,job,['doctor','farmer','office worker','waitress','salesclerk'].filter(x=>x!==job),`${name} is a ${job}.`,{lessonId:'1B',audio:'./assets/audio/book-unit1/Track 1.9.mp3',audioLabel:'Track 1.9 · Jobs in town'})),
- choice('listen-two-jobs','Listen to the three people. Who has two jobs?','Tom',['Sarah','Marco','All three people'],'Tom is a taxi driver in the morning and a teacher in the evening.',{lessonId:'1B',audio:'./assets/audio/book-unit1/Track 1.8 - Exercise 4.1.mp3',audioLabel:'Track 1.8 · At work, in their words'}),
- ...[['Lionel Messi','Argentina'],['Taylor Swift','the US'],['Keanu Reeves','Canada'],['Millie B. Brown','the UK'],['Lee Jung-jae','South Korea']].map(([name,country],i)=>choice(`listen-country-${i}`,`Listen. Where is ${name} from in the recording?`,country,['Argentina','the US','Canada','the UK','South Korea'].filter(x=>x!==country),`The recording says ${name} is from ${country}.`,{lessonId:'1C',audio:'./assets/audio/book-unit1/Track 1.10.mp3',audioLabel:'Track 1.10 · People and countries'})),
- choice('listen-emma-country','Listen at the hotel. Where is Emma from?','Canada',['Argentina','Ecuador','the UK'],'Emma says she is from Canada.',{lessonId:'1D',audio:'./assets/audio/book-unit1/Track 1.12.mp3',audioLabel:'Track 1.12 · At the hotel'}),
- choice('listen-emma-last','Listen at the hotel. What is Emma’s last name?','Carter',['Toronto','Lisa','Canada'],'Carter. C-A-R-T-E-R.',{lessonId:'1D',audio:'./assets/audio/book-unit1/Track 1.12.mp3',audioLabel:'Track 1.12 · At the hotel'})
+ choice('listen-job-list','Listen to the job list. Which job comes just after doctor?','office worker',['receptionist','teacher','salesclerk'],'The list says “A doctor. An office worker.”',{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'}),
+ ...[['Allison','doctor'],['Mike','farmer'],['John','office worker'],['Lisa','waitress'],['Bryan','salesclerk']].map(([name,job],i)=>choice(`listen-job-${i}`,`Listen. What is ${name}’s job?`,job,['doctor','farmer','office worker','waitress','salesclerk'].filter(x=>x!==job),`${name} is a ${job}.`,{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'})),
+ choice('listen-two-jobs','Listen to the three people. Who has two jobs?','Tom',['Sarah','Marco','All three people'],'Tom is a taxi driver in the morning and a teacher in the evening.',{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'}),
+ ...[['Lionel Messi','Argentina'],['Taylor Swift','the US'],['Keanu Reeves','Canada'],['Millie B. Brown','the UK'],['Lee Jung-jae','South Korea']].map(([name,country],i)=>choice(`listen-country-${i}`,`Listen. Where is ${name} from in the recording?`,country,['Argentina','the US','Canada','the UK','South Korea'].filter(x=>x!==country),`The recording says ${name} is from ${country}.`,{lessonId:'1C',audio:'platform-question',audioLabel:'Horizons listening'})),
+ choice('listen-emma-country','Listen at the hotel. Where is Emma from?','Canada',['Argentina','Ecuador','the UK'],'Emma says she is from Canada.',{lessonId:'1D',audio:'platform-question',audioLabel:'Horizons listening'}),
+ choice('listen-emma-last','Listen at the hotel. What is Emma’s last name?','Carter',['Toronto','Lisa','Canada'],'Carter. C-A-R-T-E-R.',{lessonId:'1D',audio:'platform-question',audioLabel:'Horizons listening'})
 ];
+
+// Original platform listening: one short script and recording per question.
+for (const q of listeningQuestions) {
+ const answer = q.correctText || (Array.isArray(q.answer)?q.answer[0]:q.answer);
+ const id = q.id;
+ let script = q.explanation;
+ if(id==='listen-class') script="Hello, I'm Mary. I'm a student. I'm in Class four.";
+ if(id==='listen-teacher') script="Hello, I'm Mary. My teacher is Mister Wilson.";
+ if(id.startsWith('listen-short-')) script=["I'm a student.","You're a teacher.","He's a doctor.","She's a receptionist."][Number(id.split('-').at(-1))];
+ if(id==='listen-ariana-name') script="Hello, my name is Ariana. A, R, I, A, N, A.";
+ if(id==='listen-ariana-phone') script="My phone number is zero, nine, five, two, one, zero, seven, one, six, eight.";
+ if(id==='listen-alphabet-start') script="A, B, C. D, E, F.";
+ if(id==='listen-alphabet-end') script="T, U, V. W, X, Y, Z.";
+ if(id.startsWith('listen-spell-')) {const name=['Stephen','Allison','Bryan','Lindsay'][Number(id.split('-').at(-1))];script="My name is "+name+". "+name.toUpperCase().split('').join(', ')+".";}
+ if(id==='listen-number-start') script="Zero, one, two, three, four.";
+ if(id==='listen-number-end') script="Six, seven, eight, nine, ten.";
+ if(id.startsWith('listen-profile-')) {const i=Number(id.split('-').at(-1)),name=['Allison','Bryan','Lindsay'][i];script=id.includes('-phone-')?"My name is "+name+". My phone number is "+['0984102376','0963215084','0997601425'][i].split('').map(n=>['zero','one','two','three','four','five','six','seven','eight','nine'][n]).join(', ')+".":"My name is "+name+". I'm in Class "+['two','five','three'][i]+".";}
+ if(id==='listen-job-list') script="A teacher. A doctor. An office worker. A receptionist.";
+ if(id==='listen-two-jobs') script="I'm Sarah. I'm a nurse. I'm Tom. I'm a taxi driver in the morning and a teacher in the evening. I'm Marco. I'm a chef.";
+ if(id==='listen-emma-country') script="Hello, I'm Emma. I'm from Canada.";
+ if(id==='listen-emma-last') script="My name is Emma Carter. My last name is Carter. C, A, R, T, E, R.";
+ q.transcript=script;
+ q.audio='./assets/audio/platform-listening-v1/'+id+'.mp3';
+ q.audioLabel='Horizons listening';
+ q.prompt=q.prompt.replace('Listen to the interviews.', 'Listen.').replace('Listen to the new student.', 'Listen.').replace('Listen to Tom and Mary.', 'Listen to Mary.').replace(/Listen to (name|pair) \d+\./, 'Listen.');
+}
 
 const readingQuestions=[
  choice('read-club-role','Read the club card. What is Alex’s job?','student',['teacher','doctor','chef'],'Alex is a student.',{lessonId:'1A',passage:'Town Club\nName: Alex Chen\nClass: 3\nJob: student\nTeacher: Sam'}),
@@ -284,7 +310,7 @@ export const games=[
 const grammarActivities=grammarSets.map(set=>({id:`practice-${set.id}`,lessonId:set.lessonId,title:set.title,type:'grammar',description:set.description,grammarSetIds:[set.id],character:set.lessonId==='1B'?'alex':'mina',estimatedMinutes:3}));
 const vocabActivities=chunks.map(set=>({id:`quiz-${set.id}`,lessonId:set.lessonId,title:set.title,type:'quiz',description:set.description,chunkIds:[set.id],character:set.character,estimatedMinutes:3}));
 const archivedActivities=[...vocabActivities,...grammarActivities,...games.map(game=>({...game,estimatedMinutes:3})),
- ...['1A','1B','1C','1D'].map(lessonId=>({id:`listen-${lessonId.toLowerCase()}`,lessonId,title:'Listening',type:'listening',description:'Listen to a real book recording and find the details.',character:'jo',estimatedMinutes:4})),
+ ...['1A','1B','1C','1D'].map(lessonId=>({id:`listen-${lessonId.toLowerCase()}`,lessonId,title:'Listening',type:'listening',description:'Listen to a short recording and find the details.',character:'jo',estimatedMinutes:4})),
  ...['1A','1B','1C','1D'].map(lessonId=>({id:`read-${lessonId.toLowerCase()}`,lessonId,title:'Reading',type:'reading',description:'Read a short message and find the information.',character:'mina',estimatedMinutes:3})),
  ...['1A','1B','1C','1D'].map(lessonId=>({id:`review-${lessonId.toLowerCase()}`,lessonId,title:'Review',type:'review',description:'Combine the lesson’s words and grammar.',character:'pico',estimatedMinutes:4}))
 ];
