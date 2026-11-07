@@ -1,0 +1,306 @@
+{
+  "origin": "Owner-supplied CARTAS SABOTEUR sheets",
+  "operations": "Crop, optional 180-degree rotation, resize to 330×514, WebP quality 94",
+  "cards": {
+    "cross": {
+      "file": "cross.webp",
+      "source": "CAMINOS 1/cartas de camino1.jpg",
+      "row": 1,
+      "column": 2,
+      "rotation": 0,
+      "bounds": [
+        331,
+        0,
+        661,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "tee-east": {
+      "file": "tee-east.webp",
+      "source": "CAMINOS 1/cartas de camino1.jpg",
+      "row": 2,
+      "column": 1,
+      "rotation": 180,
+      "bounds": [
+        0,
+        514,
+        331,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "tee-north": {
+      "file": "tee-north.webp",
+      "source": "CAMINOS 1/cartas de camino1.jpg",
+      "row": 1,
+      "column": 1,
+      "rotation": 0,
+      "bounds": [
+        0,
+        0,
+        331,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "corner-ne": {
+      "file": "corner-ne.webp",
+      "source": "CAMINOS 1/cartas de camino2.jpg",
+      "row": 2,
+      "column": 3,
+      "rotation": 0,
+      "bounds": [
+        661,
+        514,
+        991,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "corner-nw": {
+      "file": "corner-nw.webp",
+      "source": "CAMINOS 1/cartas de camino2.jpg",
+      "row": 1,
+      "column": 1,
+      "rotation": 0,
+      "bounds": [
+        0,
+        0,
+        330,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "straight-ns": {
+      "file": "straight-ns.webp",
+      "source": "CAMINOS 1/cartas de camino2.jpg",
+      "row": 3,
+      "column": 1,
+      "rotation": 0,
+      "bounds": [
+        0,
+        1027,
+        330,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "straight-ew": {
+      "file": "straight-ew.webp",
+      "source": "CAMINOS 1/cartas de camino2.jpg",
+      "row": 2,
+      "column": 1,
+      "rotation": 0,
+      "bounds": [
+        0,
+        514,
+        330,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-n": {
+      "file": "dead-n.webp",
+      "source": "CAMINOS 1/cartas de camino1.jpg",
+      "row": 2,
+      "column": 3,
+      "rotation": 180,
+      "bounds": [
+        661,
+        514,
+        992,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-e": {
+      "file": "dead-e.webp",
+      "source": "CAMINOS 1/cartas de camino4.jpg",
+      "row": 3,
+      "column": 1,
+      "rotation": 180,
+      "bounds": [
+        0,
+        1027,
+        330,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-ne": {
+      "file": "dead-ne.webp",
+      "source": "CAMINOS 1/cartas de camino3.jpg",
+      "row": 3,
+      "column": 3,
+      "rotation": 180,
+      "bounds": [
+        661,
+        1027,
+        991,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-nw": {
+      "file": "dead-nw.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 3,
+      "column": 2,
+      "rotation": 180,
+      "bounds": [
+        330,
+        1027,
+        661,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-ns": {
+      "file": "dead-ns.webp",
+      "source": "CAMINOS 1/cartas de camino2.jpg",
+      "row": 1,
+      "column": 2,
+      "rotation": 0,
+      "bounds": [
+        330,
+        0,
+        661,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-ew": {
+      "file": "dead-ew.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 3,
+      "column": 3,
+      "rotation": 0,
+      "bounds": [
+        661,
+        1027,
+        991,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-nes": {
+      "file": "dead-nes.webp",
+      "source": "CAMINOS 1/cartas de camino1.jpg",
+      "row": 3,
+      "column": 3,
+      "rotation": 180,
+      "bounds": [
+        661,
+        1027,
+        992,
+        1541
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-new": {
+      "file": "dead-new.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 2,
+      "column": 3,
+      "rotation": 0,
+      "bounds": [
+        661,
+        514,
+        991,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "dead-cross": {
+      "file": "dead-cross.webp",
+      "source": "CAMINOS 1/cartas de camino4.jpg",
+      "row": 2,
+      "column": 1,
+      "rotation": 0,
+      "bounds": [
+        0,
+        514,
+        330,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "start": {
+      "file": "start.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 2,
+      "column": 2,
+      "rotation": 0,
+      "bounds": [
+        330,
+        514,
+        661,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "goal-gold": {
+      "file": "goal-gold.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 1,
+      "column": 2,
+      "rotation": 0,
+      "bounds": [
+        330,
+        0,
+        661,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "goal-stone-ne": {
+      "file": "goal-stone-ne.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 1,
+      "column": 1,
+      "rotation": 180,
+      "bounds": [
+        0,
+        0,
+        330,
+        514
+      ],
+      "width": 330,
+      "height": 514
+    },
+    "goal-stone-nw": {
+      "file": "goal-stone-nw.webp",
+      "source": "CAMINOS 2/cartas de camino5.jpg",
+      "row": 2,
+      "column": 1,
+      "rotation": 180,
+      "bounds": [
+        0,
+        514,
+        330,
+        1027
+      ],
+      "width": 330,
+      "height": 514
+    }
+  }
+}

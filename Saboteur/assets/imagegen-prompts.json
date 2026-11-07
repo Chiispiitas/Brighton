@@ -1,0 +1,16 @@
+{
+  "tool": "Built-in ImageGen",
+  "visualRevision": "User rejected the initial sepia fantasy artwork. All card faces/reverses now use exact provided artwork. Only this background is generated.",
+  "prompt": "Use case: stylized-concept. Asset type: subtle background illustration for a digital Saboteur board game. Input images are STYLE REFERENCES and visual base: the user's actual printed Saboteur cards (dwarves and tunnel/action cards). Match their SAME understated late-20th-century hand-painted card illustration style: simple irregular pen contours, matte watercolor and colored pencil, muted blue-gray cracked stone, off-white stone dust paths, small reddish wooden supports. Make a wide landscape view of an empty underground mine entrance and tunnel, with a few rough timber beams and a small unlit cart at far right. No people or faces, no text, no gold glows, no orange sepia wash, no dramatic lighting, no shiny rendering, no photorealism, no highly ornate engraving or AI fantasy detail. Preserve the humble slightly uneven hand-drawn printed-boardgame look and spare detail of the references. Left half calm very light warm ivory with only sparse gray stone at the edges for dark title text; tunnel opening on right in muted dark slate. Full-frame flat illustration suitable as a quiet background behind actual cards, landscape1536x1024.",
+  "styleReferences": [
+    "MINEROS/mineros.jpg",
+    "CAMINOS 1/cartas de camino1.jpg",
+    "CARTAS ACCION/cartas de accion1.jpg"
+  ],
+  "source": "exec-34f53b1a-7c89-4993-88ae-3038559a444b.png",
+  "outputs": [
+    "mine.webp",
+    "saboteur-share-v1.jpg"
+  ],
+  "packaging": "WebP background conversion. The 1200x630 JPEG sharing graphic lays out the supplied dwarf card faces and plain title over that background; it does not redraw the cards. See tools/prepare-share.py, cards/supplied-cards.json and cards/paths-manifest.json for reproducible layout and extraction."
+}
