@@ -3,7 +3,7 @@ export const RANKS=['Wood','Stone','Iron','Gold','Diamond','Obsidian','Masters']
 export function weekAt(value){const d=new Date(value);d.setUTCHours(0,0,0,0);d.setUTCDate(d.getUTCDate()-((d.getUTCDay()+6)%7));return d.toISOString();}
 const endOf=week=>new Date(Date.parse(week)+7*86400000).toISOString();
 const seed=value=>{let h=2166136261;for(const c of value)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0;};
-const names=['Emily Parker','Mateo Andrade','Liam Brooks','Valentina Cevallos','Ava Bennett','José Zambrano','Noah Miller','Camila Vera','Chloe Wilson','Sebastián Paredes','Ethan Carter','Doménica Mendoza','Grace Turner','Nicolás Cedeño','Lucas Reed','Daniela Moreira','Olivia Hayes','Andrés Toapanta','Jacob Collins','Fernanda Vélez'];
+const names=['Emily','Mateo','Liam','Valentina','Ava','José','Noah','Camila','Chloe','Sebastián','Ethan','Doménica','Grace','Nicolás','Lucas','Daniela','Olivia','Andrés','Jacob','Fernanda'];
 export function createLeaderboard(store,{now,idFor,collections:C}){
  const T=C.throttle;
  async function once(id,value,scope){try{return await store.create(T,id,value,scope);}catch(error){const row=await store.get(T,id);if(!row)throw error;return row;}}
