@@ -1,5 +1,8 @@
 # Horizons website session handoff
 
+Competitor presentation: user explicitly removed visible simulation labels from leaderboard and overtaking rows and requested mixed American/Ecuadorian-style fabricated names. Internal bot flags and human-priority matchmaking remain; no real learner names, scores or records are edited. This supersedes earlier visible bot-label instructions.
+
+
 Overtaking sound: dedicated generated rising-counter cue on entry to the post-results overtaking animation, using the existing shared audio/mute/hidden/interruption controls. Native file and provenance in assets/audio/progression-v1/overtake.mp3 and generation-records.json. Cache overtake-sound-v121.
 
 
