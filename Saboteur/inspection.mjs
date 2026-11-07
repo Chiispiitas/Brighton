@@ -12,7 +12,7 @@ export function notifyPlacement(placement) {
 }
 export function labelPlacement(state) {
   const placement=state.lastPlacement;
-  if (!placement) return;
+  if (!placement) { animatedPlacement=''; return; }
   const tile=[...document.querySelectorAll('[data-tile]')].find(el=>el.dataset.tile===`${placement.x},${placement.y}`);
   if (!tile) return;
   const label=document.createElement('span'); label.className='placement-label'; label.textContent=placement.actorName; tile.append(label);
