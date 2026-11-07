@@ -228,7 +228,7 @@ export const grammarSets=[
 const listeningQuestions=[
  choice('listen-class','Listen to Tom and Mary. What class is Mary in?','Class 4',['Class 1','Class 2','Class 3'],'Mary says, “I am in Class 4.”',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
  choice('listen-teacher','Listen to Tom and Mary. Who is Mary’s teacher?','Mr. Wilson',['Tom','Mary','Jo'],'Mary confirms that Mr. Wilson is her teacher.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
- ...["I'm","You're","He's","She's"].map((short,i)=>choice(`listen-short-${i}`,`Listen to pair ${i+1}. Which short form do you hear?`,short,["I'm","You're","He's","She's"].filter(x=>x!==short),short,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'})),
+ ...["I'm","You're","He's","She's"].map((short,i)=>choice(`listen-short-${i}`,`Listen to pair ${i+1}. Which contraction do you hear?`,short,["I'm","You're","He's","She's"].filter(x=>x!==short),short,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'})),
  choice('listen-ariana-name','Listen to the new student. What is her name?','Ariana',['Allison','Ana','Lindsay'],'Her name is Ariana. A-R-I-A-N-A.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
  text('listen-ariana-phone','Listen to Ariana. Type her phone number.',['0952107168'],'095 210 7168',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening',normalization:'digits'}),
  choice('listen-alphabet-start','Listen to the alphabet. Which group comes first?','A, B, C',['C, B, A','B, C, D','D, E, F'],'The alphabet begins A, B, C.',{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening'}),
