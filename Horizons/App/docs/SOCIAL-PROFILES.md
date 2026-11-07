@@ -19,3 +19,5 @@ Release verification: backend deployment 544df747-2798-4225-a7cf-379ca88361d1, s
 Profile refinement: visible stats are Day streak, Total XP and Current rank only. Rank uses finalized earned promotions, capped at Masters. Saved portrait background is applied to the static avatar wrapper, behind all moving layers. Background palette expands from6 to24 stable options; bg-navy is lightened and Charcoal uses #93969f to separate black hair. No saved IDs removed. Four-size synthetic UI proof and social backend tests pass.
 
 Privacy correction: Friends/Following/Followers lists and counts are owner-only. Public profile get responses and follow responses omit counts; viewing another human or bot returns no connection arrays. Public UI has no connection tabs or count links. Own dashboard retains the lists. This supersedes the earlier public graph-list description.
+
+Latest correction: connection counts remain public as noninteractive totals. Names/lists remain owner-only; no public list endpoint or tabs. This supersedes the previous count-hiding rule.
