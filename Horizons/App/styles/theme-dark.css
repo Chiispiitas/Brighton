@@ -64,11 +64,8 @@
 :root[data-theme=dark] :is(.example-profile-note){color:var(--muted)}
 :root[data-theme=dark] :is(.lesson-jumps>button:hover){background:var(--surface)}
 :root[data-theme=dark] :is(.path-bubble){background:var(--surface)}
-:root[data-theme=dark] :is(.path-bubble:before){background:var(--surface)}
+:root[data-theme=dark] .path-bubble::before{background:var(--surface)}
 :root[data-theme=dark] :is(.floating-unit,.floating-metrics){background:var(--surface)}
-:root[data-theme=dark] :is(.lesson-trail .path-stop.mastered .stop-orb){background:var(--surface);color:var(--ink)}
-:root[data-theme=dark] :is(.lesson-trail .path-stop.mastered:hover .stop-orb){background:var(--surface)}
-:root[data-theme=dark] :is(.mastered .stop-orb>.icon){fill:var(--line)}
 :root[data-theme=dark] :is(.lesson-crown){color:var(--muted);background:var(--surface)}
 :root[data-theme=dark] :is(.lesson-crown .icon){fill:var(--line)}
 :root[data-theme=dark] :is(.sentence-answer>button,.sentence-tokens>button){background:var(--surface);border:1px solid var(--line);box-shadow:0 2px 0 var(--line)}
@@ -97,14 +94,10 @@
 :root[data-theme=dark] :is(.overworld-map .trail-line path){stroke:var(--trail-color,var(--line))}
 :root[data-theme=dark] :is(.overworld-map .landmark-stop .stop-orb){background:var(--surface);border-color:var(--line)}
 :root[data-theme=dark] :is(.landmark-state){background:var(--surface)}
-:root[data-theme=dark] :is(.mastered .landmark-state){background:var(--surface);color:var(--muted)}
-:root[data-theme=dark] :is(.mastered .landmark-state>.icon){fill:var(--line)}
 :root[data-theme=dark] :is(.landmark-label){background:var(--surface);color:var(--ink)}
 :root[data-theme=dark] :is(.overworld-map .path-player-caption){color:var(--ink);background:var(--surface)}
 :root[data-theme=dark] :is(.overworld-map .path-player:before){border-top:7px solid var(--line)}
-:root[data-theme=dark] :is(.overworld-map .path-stop.mastered .stop-orb){background:var(--surface);color:var(--ink)}
 :root[data-theme=dark] :is(.overworld-map .path-stop.locked .stop-orb){background:var(--surface);color:var(--muted)}
-:root[data-theme=dark] :is(.overworld-map .path-stop:not(.mastered) .landmark-state){background:var(--surface);color:var(--muted)}
 :root[data-theme=dark] :is(/* Quiet lesson boundaries do not take space from the trail or capture input. */
 .overworld-map .path-lesson+.path-lesson::before){background:linear-gradient(to bottom,transparent,var(--surface) 20%,var(--surface) 80%,transparent)}
 :root[data-theme=dark] :is(.social-identity p){color:var(--muted)}
@@ -161,3 +154,9 @@
 :root[data-theme=dark] .activity-page[data-question-type=order][data-answer-state=incorrect] .sentence-builder :is([data-token],[data-remove-token]){background:var(--coral-soft);color:var(--coral);border-color:#8b6154}
 
 :root[data-theme=dark] .trail-line path{stroke:#6c596d!important}
+/* Semantic mastery gold stays gold in both palettes. */
+:root[data-theme=dark] .lesson-trail .path-stop.mastered .stop-orb{background:#ffd24a;color:#714808;border-color:#e6af35}
+:root[data-theme=dark] .lesson-trail .path-stop.mastered:hover .stop-orb{background:#ffd96c;color:#714808}
+:root[data-theme=dark] .path-stop.mastered .stop-orb>.icon{fill:#ffe398;color:#714808}
+:root[data-theme=dark] .path-stop.mastered .landmark-state{background:#ffd650;color:#714808}
+:root[data-theme=dark] .path-stop.mastered .landmark-state>.icon{fill:#ffdc55;color:#714808}
