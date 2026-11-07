@@ -1,6 +1,6 @@
 import {rankArtForName} from './leaderboard.js';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function personCard(person,avatar,{follow=false}={}){return `<div class="person-card"><button class="person-open" data-person="${esc(person.id)}">${avatar(person.avatar,'social-avatar-small',person.name)}<b>${esc(person.name)}</b></button>${follow?`<button class="social-follow" data-follow-person="${esc(person.id)}">Follow</button>`:''}</div>`;}
+export function personCard(person,avatar,{follow=false}={}){return `<div class="person-card"><button class="person-open" data-person="${esc(person.id)}">${avatar(person.avatar,'social-avatar-small',person.name)}<span><b>${esc(person.name)}</b>${person.followsYou?'<small class="suggestion-follows-you">Follows you</small>':''}</span></button>${follow?`<button class="social-follow" data-follow-person="${esc(person.id)}">Follow</button>`:''}</div>`;}
 export function socialProfileMarkup(data,{avatar,own=false,loading=false,error='',fallback,icon,tab='friends'}={}){
  const p=data?.profile||fallback;if(!p)return `<section class="social-page"><h1>Profile</h1><p role="status">${esc(error||'Loading profile…')}</p><button class="text-button" data-route="profile">My profile</button></section>`;
  const stats=p.stats||{},list=data?.[tab]||[];

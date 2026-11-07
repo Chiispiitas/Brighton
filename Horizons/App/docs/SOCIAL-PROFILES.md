@@ -21,3 +21,5 @@ Profile refinement: visible stats are Day streak, Total XP and Current rank only
 Privacy correction: Friends/Following/Followers lists and counts are owner-only. Public profile get responses and follow responses omit counts; viewing another human or bot returns no connection arrays. Public UI has no connection tabs or count links. Own dashboard retains the lists. This supersedes the earlier public graph-list description.
 
 Latest correction: connection counts remain public as noninteractive totals. Names/lists remain owner-only; no public list endpoint or tabs. This supersedes the previous count-hiding rule.
+
+Suggestion selection: eligible humans are sampled without replacement. 80% of draws prefer the same active/default book level, otherwise draw from all remaining humans. Incoming followers carry twice the sampling weight, without reserved places or guaranteed display. Suggestions that follow the viewer show Follows you. Self/already-followed/QA exclusions persist; random stable bot personas only fill vacant slots. Seeded 1000-sample test verifies majority same-level, variety, follower boost and no guaranteed follower.
