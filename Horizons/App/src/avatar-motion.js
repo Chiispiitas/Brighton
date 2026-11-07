@@ -1,4 +1,4 @@
-// Avatar-only motion: editor preview and selected path portrait. Native art stays intact.
+// Avatar-only motion: editor preview and main profile portraits. Native art stays intact.
 const mounts=new WeakMap();
 export function requestAvatarFeedback(element,kind='select'){
  if(!element)return;element.dataset.pendingAvatarFeedback=kind;

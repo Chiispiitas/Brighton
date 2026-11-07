@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Profile-view avatar idle: main portraits on own and other-user profile pages now opt into the existing faceless-v2 avatar rig. Native blank head, separate eyes/eyelids/pupils/face and moving glasses are reused unchanged. Same subtle breathing, blink and look-around timing as the editor; saved background remains outside moving layers. Suggestion cards/sidebar portraits stay static. No new sprites or ImageGen required. Reduced motion remains static and offscreen/hidden animation pauses. Actual browser proof verifies minimal motion, static background wrapper, reduced-motion switching, and social flows at four sizes.
+
 Progression audio: native achievement one-shot starts on achievement-stage entry. Seven separate material cues accompany the corresponding Rank entry/promotion badge reveal; unchanged automatic refreshes remain silent. Same completion audio controller handles gesture unlocking, sound preference, interruption and hidden-page silence. Animation ordering and native sprites are unchanged. Exact sound prompts/hashes and playback checks are in SOUND-PRODUCTION.md and reports/progression-sounds.json.
 
 

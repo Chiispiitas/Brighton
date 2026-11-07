@@ -1,5 +1,5 @@
 import {mountAvatarMotion} from './avatar-motion.js?v=areas1';
-/* Native bitmap portraits; only the editor and selected path portrait opt into motion. */
+/* Native bitmap portraits; editor and main profile portraits opt into motion. */
 const mounts=new WeakMap();
 const appURL=new URL('../',import.meta.url);
 let atlasPromise,faceAnchorsPromise;
@@ -20,7 +20,7 @@ export function mountAvatar(element,{avatar={},manifest}={}){
   const base=avatar.body==='female'?'female':'male',skin=data.bases[base].skins[avatar.skin]||data.bases[base].skins['skin-1'];frame.dataset.avatarBase=base;
   function layer(asset,part){if(!asset)return;const f=asset.frame,original=asset.position,isClothes=part==='clothes'||part==='clothes-overlay',p=isClothes?{...original,x:160+(original.x-160)*1.06,w:original.w*1.06}:original,node=document.createElement('span');node.className='hzn-avatar-static-pixels';node.dataset.staticPart=part;node.dataset.nativeFrame=JSON.stringify(f);node.dataset.nativeAtlas=JSON.stringify(asset.atlas);node.style.cssText=`left:${p.x/3.2}%;top:${p.y/3.2}%;width:${p.w/3.2}%;height:${p.w*f.h/f.w/3.2}%;z-index:${p.z}`;const img=document.createElement('img');img.alt='';img.draggable=false;img.decoding='async';img.src=new URL(asset.src,appURL).href;img.style.cssText=`width:${asset.atlas.width/f.w*100}%;height:${asset.atlas.height/f.h*100}%;left:${-f.x/f.w*100}%;top:${-f.y/f.h*100}%`;if(isClothes)node.style.clipPath=`circle(50cqw at ${(160-p.x)/3.2}cqw ${(160-p.y)/3.2}cqw)`;if(part==='hair'){const color=manifest?.avatar?.hairColor?.find(c=>c.id===avatar.hairColor)?.swatch;if(color&&avatar.hairColor!=='color-original'){img.style.setProperty('filter','url(#'+hairFilter(color)+')','important');node.dataset.hairColor=avatar.hairColor;}}node.append(img);idle.append(node);return node;}
   const clothes=data.clothes[avatar.outfit]||data.clothes['outfit-1'];
-  const active=!!element.closest('#avatar-preview,.path-player');
+  const active=!!element.closest('#avatar-preview,.path-player,.social-identity .social-avatar');
   if(skin.neckExtension){const neck=layer(skin.neckExtension,'neck-extension');neck.style.height=skin.neckExtension.height/3.2+'%';}
   const fallback=layer(skin,active?'still-fallback':'head');let blank,face,eyes,closed,eyewear,pupils=[];
   layer(clothes,'clothes');
