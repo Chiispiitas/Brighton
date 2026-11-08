@@ -1,3 +1,4 @@
+import {studyDeck} from './study-deck.js';
 import {createQuestionAudio} from './question-audio.js';
 import {motionPreference} from './preferences.js';
 import {animationsEnabled,setAnimationsEnabled,themePreference,setTheme} from './preferences.js';
@@ -26,6 +27,7 @@ const app = document.getElementById('app');
 const dialog = document.getElementById('app-dialog');
 const toastBox = document.getElementById('toast');
 const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,profileEditing:false,social:null,socialError:null,socialTab:'friends',personTarget:null,personData:null,personError:null,leaderboard:null,boardError:null,boardBusy:false,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
+let practiceTab='topics',practiceScroll={topics:0,words:0};const unitOpen=new Map();
 let toastTimer;
 let wordPlayer;
 const questionAudio=createQuestionAudio({beforePlay:()=>{stopFeedbackSound();wordPlayer?.pause();}});
@@ -99,7 +101,7 @@ function on(type, selector, handler, element = app) {
   element.addEventListener(type, event => {const target = event.target.closest(selector);if (target && element.contains(target)) handler(event,target);});
 }
 function route(target) {
-  if(target==='progress')target='learn';
+  if(target==='bank'){practiceTab='words';target='practice';}if(target==='progress')target='learn';
   stopAudio();
   if (state.active && target !== 'activity') state.active = null;
   state.route = target; location.hash = target; render(); window.scrollTo({top:0,behavior:'instant'});
@@ -180,16 +182,47 @@ function layoutPaths(){
  if(region&&cursor&&region.clientWidth&&(!region.dataset.cursorRevealed||region.dataset.cursorViewport!==String(region.clientWidth))){const box=region.getBoundingClientRect(),orb=cursor.getBoundingClientRect();region.scrollLeft+=orb.left+orb.width/2-box.left-region.clientWidth/2;region.dataset.cursorRevealed='true';region.dataset.cursorViewport=String(region.clientWidth);}
  syncPathPan();
 }
-function practice(){
+function practiceTopicsPage(){
  const selectedWords=state.selected.size?getWordsForChunks([...state.selected]):[];
  const alphabetOnly=!state.selectedGrammar.size&&selectedWords.length>0&&selectedWords.every(word=>word.kind==='letter');
- return `<section class="page-heading practice-heading"><div><h1>Practice</h1></div>${characterMarkup('alex','page-character')}</section><div class="practice-toolbar"><div class="segmented"><button class="selected" data-action="practice-sets">Topics</button><button data-action="word-bank">Word bank</button></div><button class="text-button" data-action="select-all">${allPracticeSelected()?'Clear all':'Select all'}</button></div><section class="practice-topics" aria-label="Practice by lesson">${allLessons.map(lesson=>`<section class="practice-lesson" aria-labelledby="practice-${esc(lesson.id)}"><div class="pick-heading"><span class="mini-lesson">${esc(lesson.id)}</span><h2 id="practice-${esc(lesson.id)}">${esc(lesson.title)}</h2></div><div class="practice-topic-list">${practiceTopics.filter(topic=>topic.lessonId===lesson.id).map(topic=>`<label class="practice-topic ${topicSelected(topic)?'chosen':''}"><input type="checkbox" name="practice-topic" value="${esc(topic.id)}" ${topicSelected(topic)?'checked':''}><span>${esc(topic.title)}</span></label>`).join('')}</div></section>`).join('')}</section><section class="mix-launch"><div><h2>${state.selected.size?selectedWords.length+' words':''}${state.selected.size&&state.selectedGrammar.size?' · ':''}${state.selectedGrammar.size?state.selectedGrammar.size+' grammar topic'+(state.selectedGrammar.size===1?'':'s'):''}${state.selected.size||state.selectedGrammar.size?' selected':'0 topics selected'}</h2></div><label class="round-length">Round length<select id="round-length"><option value="8" ${state.roundLength===8?'selected':''}>8 questions</option><option value="16" ${state.roundLength===16?'selected':''}>16 questions</option><option value="all" ${state.roundLength==='all'?'selected':''}>All selected items</option></select></label><div class="mix-actions"><button class="primary-button" data-mix="recall" ${alphabetOnly?'hidden':''} ${state.selected.size||state.selectedGrammar.size?'':'disabled'}>${state.selectedGrammar.size?'Practice':'Type answers'} ${icon('practice')}</button><button class="${alphabetOnly?'primary-button':'secondary-button'}" data-mix="listening" ${state.selected.size?'':'disabled'}>Listening ${icon('sound')}</button><button class="secondary-button" data-mix="memory" ${selectedWords.filter(word=>word.kind!=='letter').length>=3?'':'disabled'}>Memory ${icon('spark')}</button><button class="secondary-button" data-mix="matching" ${selectedWords.filter(word=>word.kind!=='letter').length>=3?'':'disabled'}>Matching ${icon('repeat')}</button></div>${state.selectedGrammar.size?'<p class="quiet-note">Listening and games use selected vocabulary only.</p>':''}</section>`;
+ return `<section class="page-heading practice-heading"><div><h1>Practice</h1></div>${characterMarkup('alex','page-character')}</section><div class="practice-toolbar"><div class="segmented"><button class="selected" data-action="practice-sets">Topics</button><button data-action="word-bank">Word bank</button></div><button class="text-button" data-action="select-all">${allPracticeSelected()?'Clear all':'Select all'}</button></div><section class="practice-topics" aria-label="Practice by lesson">${allLessons.map(lesson=>`<section class="practice-lesson" aria-labelledby="practice-${esc(lesson.id)}"><div class="pick-heading"><span class="mini-lesson">${esc(lesson.id)}</span><h2 id="practice-${esc(lesson.id)}">${esc(lesson.title)}</h2></div><div class="practice-topic-list">${practiceTopics.filter(topic=>topic.lessonId===lesson.id).map(topic=>`<label class="practice-topic ${topicSelected(topic)?'chosen':''}"><input type="checkbox" name="practice-topic" value="${esc(topic.id)}" ${topicSelected(topic)?'checked':''}><span>${esc(topic.title)}</span></label>`).join('')}</div></section>`).join('')}</section><section class="mix-launch"><div><h2>${state.selected.size?selectedWords.length+' words':''}${state.selected.size&&state.selectedGrammar.size?' · ':''}${state.selectedGrammar.size?state.selectedGrammar.size+' grammar topic'+(state.selectedGrammar.size===1?'':'s'):''}${state.selected.size||state.selectedGrammar.size?' selected':'0 topics selected'}</h2></div><label class="round-length">Round length<select id="round-length"><option value="8" ${state.roundLength===8?'selected':''}>8 questions</option><option value="16" ${state.roundLength===16?'selected':''}>16 questions</option><option value="all" ${state.roundLength==='all'?'selected':''}>All selected items</option></select></label><div class="mix-actions"><button class="primary-button" data-mix="recall" ${alphabetOnly?'hidden':''} ${state.selected.size||state.selectedGrammar.size?'':'disabled'}>${state.selectedGrammar.size?'Practice':'Type answers'} ${icon('practice')}</button><button class="${alphabetOnly?'primary-button':'secondary-button'}" data-mix="listening" ${state.selected.size?'':'disabled'}>Listening ${icon('sound')}</button><button class="secondary-button" data-mix="flashcards" ${state.selected.size||state.selectedGrammar.size?'':'disabled'}>Flashcards ${icon('book')}</button><button class="secondary-button" data-mix="memory" ${selectedWords.filter(word=>word.kind!=='letter').length>=3?'':'disabled'}>Memory ${icon('spark')}</button><button class="secondary-button" data-mix="matching" ${selectedWords.filter(word=>word.kind!=='letter').length>=3?'':'disabled'}>Matching ${icon('repeat')}</button></div>${state.selectedGrammar.size?'<p class="quiet-note">Listening and games use selected vocabulary only.</p>':''}</section>`;
 }
-function wordBank(){
+function wordBankPage(){
  const query=state.search.trim().toLowerCase(),words=vocabulary.filter(word=>!query||`${word.term} ${word.spanish||''}`.toLowerCase().includes(query));
  return `<section class="page-heading bank-heading"><div><h1>Word bank</h1></div>${characterMarkup('mina','page-character')}</section><div class="bank-toolbar"><label class="search-field">${icon('search')}<input id="word-search" type="search" value="${esc(state.search)}" placeholder="Find a word" aria-label="Find a word"></label><button class="text-button" data-route="practice">Practice ${icon('arrow')}</button></div><section class="word-bank-lessons" aria-label="Vocabulary word bank">${allLessons.map(lesson=>{const group=words.filter(word=>word.lessonIds?.includes(lesson.id));return group.length?`<details class="word-bank-lesson" data-bank-lesson="${esc(lesson.id)}" ${query||state.bankOpen.has(lesson.id)?'open':''}><summary><span class="mini-lesson">${esc(lesson.id)}</span><span>${esc(lesson.title)}</span>${icon('chevron')}</summary><div class="word-grid">${group.map(word=>`<button class="word-tile" data-word="${esc(word.id)}"><b>${esc(word.term)}</b><span lang="es">${esc(word.spanish||'')}</span></button>`).join('')}</div></details>`:'';}).join('')}${words.length?'':'<p class="empty-message">No words found.</p>'}</section>`;
 }
 
+function practice(){
+ const topics=practiceTopicsPage(),header=topics.slice(0,topics.indexOf('</section>')+10);
+ let body=practiceTab==='topics'?topics.slice(topics.indexOf('</section>')+10).replace(/<div class="segmented">.*?<\/div>/,''):wordBankPage().replace(/^.*?<\/section>/,'').replace(/<button class="text-button" data-route="practice">.*?<\/button>/,'');
+ return header+`<div class="practice-tabs" role="tablist" aria-label="Practice"><button id="tab-topics" role="tab" data-practice-tab="topics" aria-selected="${practiceTab==='topics'}" aria-controls="practice-panel" tabindex="${practiceTab==='topics'?0:-1}">Topics</button><button id="tab-words" role="tab" data-practice-tab="words" aria-selected="${practiceTab==='words'}" aria-controls="practice-panel" tabindex="${practiceTab==='words'?0:-1}">Word bank</button></div><section class="practice-panel" id="practice-panel" role="tabpanel" aria-labelledby="tab-${practiceTab}" data-tab="${practiceTab}">${body}</section>`;
+}
+function wordBank(){practiceTab='words';return practice();}
+function enhancePractice(){
+ const panel=app.querySelector('.practice-panel');if(!panel)return;
+ const list=panel.querySelector('.practice-topics,.word-bank-lessons');if(!list)return;
+ const groups=new Map();
+ for(const child of [...list.children]){
+  const lessonId=child.dataset.bankLesson||child.querySelector('h2')?.id.replace('practice-','');if(!lessonId)continue;
+  const unit=String(lessonId).match(/^\d+/)?.[0]||String(course.unit);
+  if(!groups.has(unit)){
+   const d=document.createElement('details');d.className='practice-unit';d.dataset.practiceUnit=panel.dataset.tab+':'+unit;d.open=panel.dataset.tab==='words'&&state.search.trim()?true:(unitOpen.get(d.dataset.practiceUnit)??true);
+   const summary=document.createElement('summary');summary.textContent='Unit '+unit+(Number(unit)===course.unit?' · '+course.unitTitle:'');d.append(summary);
+   const content=document.createElement('div');content.className='practice-unit-content';d.append(content);groups.set(unit,content);list.append(d);
+  }groups.get(unit).append(child);
+ }
+ list.scrollTop=practiceScroll[panel.dataset.tab]||0;
+}
+function startStudy(){
+ if(!requirePracticeAccess())return;
+ const cards=studyDeck(getWordsForChunks([...state.selected]),allGrammar.filter(g=>state.selectedGrammar.has(g.id)));
+ if(!cards.length)return;stopAudio();state.active={kind:'study',cards,index:0,flipped:false};render();
+}
+function renderStudy(a){
+ const c=a.cards[a.index];
+ if(!c)return `<main class="study-page"><h1>Study complete</h1><p>${a.cards.length} cards</p><button class="primary-button" data-study="restart">Study again</button><button class="text-button" data-study="close">Back to Practice</button></main>`;
+ return `<main class="study-page"><header><button class="round-button" data-study="close" aria-label="Back to Practice">${icon('close')}</button><h1>Flashcards <small>Study mode</small></h1><span>${a.index+1} / ${a.cards.length}</span></header><p class="study-topic">${esc(c.title)}</p><button class="study-card" data-study="flip" aria-label="Flip card"><small>${a.flipped?'English / model':'Cue'}</small><strong>${esc(a.flipped?c.back:c.front)}</strong>${a.flipped&&c.example?`<span>${esc(c.example)}</span>`:''}<small>Flip card ${icon('repeat')}</small></button><div class="study-audio">${c.wordId&&(a.flipped||c.listening)?`<button class="text-button" data-speak="${esc(c.wordId)}">${icon('sound')} Play audio</button>`:''}</div><footer><button class="secondary-button" data-study="previous" ${a.index?'':'disabled'}>Previous</button><button class="text-button" data-study="shuffle">Shuffle</button><button class="primary-button" data-study="next">${a.index+1===a.cards.length?'Finish study':'Next'} ${icon('arrow')}</button></footer></main>`;
+}
 function profileEditorPage() {
   const p = profile();
   const profileGroups=avatarOptions().filter(group=>group.id!=='body');
@@ -204,6 +237,7 @@ function needsAvatarSetup(){return !profile().displayName||profile().displayName
 function profilePage(){if(state.profileEditing)return profileEditorPage();const p=profile(),g=progress();return socialProfileMarkup(state.social,{avatar:avatarMarkup,icon,own:true,books:bookList(),tab:state.socialTab,error:state.socialError,loading:!state.social,fallback:{name:name(),avatar:p.avatar,stats:{xp:g.xp,streak:g.streak,bestStreak:g.bestStreak,wordsMastered:Object.values(g.wordStats||{}).filter(w=>w.mastered).length,lessonsCompleted:g.completedLessons?.length,activeDays:g.activeDays?.length}}});}
 function personPage(){return socialProfileMarkup(state.personData,{avatar:avatarMarkup,icon,own:false,tab:state.socialTab,error:state.personError});}
 function render() {
+ const previousPractice=app.querySelector('.practice-panel');if(previousPractice)practiceScroll[previousPractice.dataset.tab]=previousPractice.querySelector('.practice-topics,.word-bank-lessons')?.scrollTop||0;
   const socialScroll=app.querySelector('.social-page[data-profile-scroll-key]'),socialScrollKey=socialScroll?.dataset.profileScrollKey,socialScrollTop=socialScroll?.querySelector('.social-scroll')?.scrollTop||0;
   const motionBefore=captureUI(app),previousQuestion=app.querySelector('.activity-page[data-question-id]')?.dataset.questionId,promptScroll=app.querySelector('.question-content')?.scrollTop||0;
   document.documentElement.classList.toggle('lesson-view',!!state.active&&['quiz','result'].includes(state.active.kind));
@@ -234,7 +268,7 @@ function render() {
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route==='person'?'profile':state.route);
   const updatedSocial=app.querySelector('.social-page[data-profile-scroll-key]');if(socialScrollKey&&updatedSocial?.dataset.profileScrollKey===socialScrollKey)updatedSocial.querySelector('.social-scroll').scrollTop=socialScrollTop;
-  setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
+  enhancePractice();setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
   refreshArtwork(app);
   enhanceMotion(app,motionBefore);
   const region=app.querySelector('.overworld-map');if(region){disposeOverworld=mountOverworld(region);disposePropMotion=mountPropMotion(region);}
@@ -274,6 +308,7 @@ function activityHeader(title,index,total) {return `<header class="activity-head
 
 function renderActivity(){
  const a=state.active;
+ if(a.kind==='study')return renderStudy(a);
  if(a.kind==='challenge-result')return challengeResult(a);
  if(a.kind==='result')return renderResult(a);
  if(a.kind==='memory'||a.kind==='matching')return renderGame(a);
@@ -513,7 +548,14 @@ on('click','[data-word]',(_,target)=>wordDialog(target.dataset.word));
 on('click','[data-speak]',(_,target)=>{if(target.matches('.question-listen')&&state.active?.questions?.[state.active.index]?.listening)questionAudio.replay();else speak(target.dataset.speak);});
 on('click','[data-grammar]',(_,target)=>{const set=allGrammar.find(g=>g.id===target.dataset.grammar);startQuiz({mode:'grammar',grammarSetIds:[target.dataset.grammar],count:8,activityId:`practice-${target.dataset.grammar}`},set?.title || 'Grammar');});
 on('change','#round-length',(_,target)=>{state.roundLength=target.value==='all'?'all':Number(target.value);});
-on('click','[data-mix]',(_,target)=>{const mode=target.dataset.mix,grammar=mode==='recall'&&state.selectedGrammar.size>0,words=state.selected.size>0;if(!words&&!grammar)return;const options={chunkIds:[...state.selected],...(grammar?{grammarSetIds:[...state.selectedGrammar]}:{}),mode:grammar?(words?'mixed':'grammar'):mode==='listening'?'listening':'recall',count:state.roundLength,activityId:`mix-${mode}`};['memory','matching'].includes(mode)?startGame(mode,options):startQuiz(options,grammar?(words?'Mixed practice':'Grammar practice'):'Vocabulary practice');});
+on('click','[data-practice-tab]',(_,target)=>{practiceTab=target.dataset.practiceTab;state.route='practice';history.replaceState(null,'','#practice');render();app.querySelector('[data-practice-tab="'+practiceTab+'"]').focus({preventScroll:true});});
+app.addEventListener('keydown',event=>{if(!event.target.matches('[role=tab]')||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();app.querySelector('[data-practice-tab="'+(event.key==='Home'?'topics':event.key==='End'?'words':practiceTab==='topics'?'words':'topics')+'"]').click();});
+app.addEventListener('toggle',event=>{const d=event.target;if(d.isConnected&&d.matches?.('[data-practice-unit]')&&!(d.dataset.practiceUnit.startsWith('words:')&&state.search.trim()))unitOpen.set(d.dataset.practiceUnit,d.open);},true);
+on('click','[data-study]',(_,target)=>{
+ const a=state.active;if(a?.kind!=='study')return;stopAudio();
+ switch(target.dataset.study){case'close':state.active=null;return route('practice');case'flip':a.flipped=!a.flipped;break;case'previous':a.index=Math.max(0,a.index-1);a.flipped=false;break;case'next':a.index++;a.flipped=false;break;case'restart':a.index=0;a.flipped=false;break;case'shuffle':for(let i=a.cards.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a.cards[i],a.cards[j]]=[a.cards[j],a.cards[i]];}a.index=0;a.flipped=false;break;}render();app.querySelector('.study-card')?.focus({preventScroll:true});
+});
+on('click','[data-mix]',(_,target)=>{const mode=target.dataset.mix;if(mode==='flashcards')return startStudy();const grammar=mode==='recall'&&state.selectedGrammar.size>0,words=state.selected.size>0;if(!words&&!grammar)return;const options={chunkIds:[...state.selected],...(grammar?{grammarSetIds:[...state.selectedGrammar]}:{}),mode:grammar?(words?'mixed':'grammar'):mode==='listening'?'listening':'recall',count:state.roundLength,activityId:`mix-${mode}`};['memory','matching'].includes(mode)?startGame(mode,options):startQuiz(options,grammar?(words?'Mixed practice':'Grammar practice'):'Vocabulary practice');});
 on('click','[data-avatar-group]',(_,target)=>{state.avatarDraft[target.dataset.avatarGroup]=target.dataset.avatarValue;const form=app.querySelector('#profile-form');state.profileDraft=form?Object.fromEntries(new FormData(form)):state.profileDraft;const scroll=window.scrollY;render();if(state.profileDraft){for(const [key,value]of Object.entries(state.profileDraft)){const input=app.querySelector(`#profile-form [name="${key}"]`);if(input)input.value=value;}}window.scrollTo({top:scroll,behavior:'instant'});avatarFeedback();});
 on('submit','#redeem-form',(event,form)=>{event.preventDefault();redeem(form);});
 on('submit','#profile-form',(event,form)=>{event.preventDefault();saveProfile(form);});

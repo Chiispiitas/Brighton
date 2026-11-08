@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "width": 1440,
+      "height": 900,
+      "theme": "light",
+      "tabs": true,
+      "unitCollapse": true,
+      "selectionPreserved": true,
+      "flashcardFlip": true,
+      "studyFits": true
+    },
+    {
+      "width": 1024,
+      "height": 600,
+      "theme": "dark",
+      "tabs": true,
+      "unitCollapse": true,
+      "selectionPreserved": true,
+      "flashcardFlip": true,
+      "studyFits": true
+    },
+    {
+      "width": 390,
+      "height": 740,
+      "theme": "dark",
+      "tabs": true,
+      "unitCollapse": true,
+      "selectionPreserved": true,
+      "flashcardFlip": true,
+      "studyFits": true
+    },
+    {
+      "width": 320,
+      "height": 640,
+      "theme": "light",
+      "tabs": true,
+      "unitCollapse": true,
+      "selectionPreserved": true,
+      "flashcardFlip": true,
+      "studyFits": true
+    }
+  ],
+  "noProgressWrites": true,
+  "noRealLearnerRecords": true,
+  "errors": []
+}
