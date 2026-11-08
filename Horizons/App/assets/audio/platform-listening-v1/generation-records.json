@@ -2,23 +2,39 @@
   "listen-teacher": {
     "id": "listen-teacher",
     "term": "listen-teacher",
-    "file": "listen-teacher.mp3",
+    "file": "listen-teacher-voices2.mp3",
     "script": "Hello, I'm Mary. My teacher is Mister Wilson.",
     "scriptSha256": "f5cfc03e719a9c63d42313319a50bb29b38e8dd04d1656186140d387c7ef796c",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 56049,
-    "durationSeconds": 3.47,
-    "sha256": "fb7cbaafdfe6acfb27d5e6e246dcd55df363fd83068a9e0af9df011bfdb8f09b",
-    "generatedAt": "2026-11-07T00:45:31.342285+00:00",
-    "requestId": "y5QHjhGUURpAQhVNqtCG",
+    "speakers": [
+      {
+        "speaker": "Mary",
+        "voice": "Amy",
+        "text": "Hello, I'm Mary. My teacher is Mister Wilson."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "Hello, I'm Mary. My teacher is Mister Wilson.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 44764,
+    "durationSeconds": 2.77,
+    "sha256": "833bf7b6d1af7d4fa02bd863c53f23d437da8751a9f060a4c1af33b161e3f270",
+    "generatedAt": "2026-11-08T22:31:44.485469+00:00",
+    "requestId": "FD5GQvOvFj37vMNQBcGc",
     "transcriptionRequestId": null,
     "transcript": "Hello, I'm Mary. My teacher is Mr. Wilson",
     "transcriptExactNormalizedMatch": false,
     "audioEvents": [],
     "forbiddenTagPreflight": true,
-    "editorialReview": "Equivalent pronunciation: Mr./Mister, Bryan/Brian, salesclerk/sales clerk; no changed answer or missing content."
+    "generationSha256": "5327db19f3e7e8ee28161c63df58823bfc02b66223e7e011b10a558ae4d24641",
+    "transcriptReview": {
+      "accepted": true,
+      "reason": "Mister / Mr. abbreviation; same spoken title"
+    }
   },
   "listen-short-1": {
     "id": "listen-short-1",
@@ -83,42 +99,68 @@
   "listen-class": {
     "id": "listen-class",
     "term": "listen-class",
-    "file": "listen-class.mp3",
+    "file": "listen-class-voices2.mp3",
     "script": "Hello, I'm Mary. I'm a student. I'm in Class four.",
     "scriptSha256": "7bc739f4d062b3d4ecfd3f54e40223bcb447f4f2f16021d2d298b67b117aee93",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 61065,
-    "durationSeconds": 3.79,
-    "sha256": "a6fa80b69af4cc9c3c167333264258f568131cfcdbb6526fc17ba983de69be15",
-    "generatedAt": "2026-11-07T00:45:37.460269+00:00",
-    "requestId": "v9WWygblEthAaWil6nEE",
+    "speakers": [
+      {
+        "speaker": "Mary",
+        "voice": "Amy",
+        "text": "Hello, I'm Mary. I'm a student. I'm in Class four."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "Hello, I'm Mary. I'm a student. I'm in Class four.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 48526,
+    "durationSeconds": 3.0,
+    "sha256": "60defad028ea2820603ef18cd503b335313555ed44d2d262b95b7939cf2e8de6",
+    "generatedAt": "2026-11-08T22:30:38.305605+00:00",
+    "requestId": "C01f4VJnliGn1VTBapUt",
     "transcriptionRequestId": null,
     "transcript": "Hello, I'm Mary. I'm a student. I'm in class four",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "553c03665fb3009a822ed899d702aa463012ac8e932bfd36af90cb276c25f938"
   },
   "listen-ariana-name": {
     "id": "listen-ariana-name",
     "term": "listen-ariana-name",
-    "file": "listen-ariana-name.mp3",
+    "file": "listen-ariana-name-voices2.mp3",
     "script": "Hello, my name is Ariana. A, R, I, A, N, A.",
     "scriptSha256": "7265683059c6f5b933d1299f2d5f471417620c8bbd1b1c9734962c7c8d61b8d8",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 70260,
-    "durationSeconds": 4.36,
-    "sha256": "737a26238f2242502343616a5085b3df2b0fcc62fd5bdf094585682085c5e47b",
-    "generatedAt": "2026-11-07T00:45:37.818308+00:00",
-    "requestId": "Nw2PvLIHBoQuPI7fgrFj",
+    "speakers": [
+      {
+        "speaker": "Ariana",
+        "voice": "Amy",
+        "text": "Hello, my name is Ariana. A, R, I, A, N, A."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "Hello, my name is Ariana. A, R, I, A, N, A.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 61065,
+    "durationSeconds": 3.79,
+    "sha256": "2daabd7ebb217f158d918522c42a7f985dfc19a4f53bcfd3ba200f55ff9cdc1b",
+    "generatedAt": "2026-11-08T22:30:38.272481+00:00",
+    "requestId": "PRPgh49I40Zm23Pzzu0A",
     "transcriptionRequestId": null,
     "transcript": "Hello, my name is Ariana, A-R-I-A-N-A",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "6f2731e7b8b6d05396c3ed372cc7fc6c0275c1720334952c361901d0279b8138"
   },
   "listen-alphabet-start": {
     "id": "listen-alphabet-start",
@@ -143,22 +185,35 @@
   "listen-ariana-phone": {
     "id": "listen-ariana-phone",
     "term": "listen-ariana-phone",
-    "file": "listen-ariana-phone.mp3",
+    "file": "listen-ariana-phone-voices2.mp3",
     "script": "My phone number is zero, nine, five, two, one, zero, seven, one, six, eight.",
     "scriptSha256": "4c4b13f079d3685b4d217e6d2e90e1c74007e11c23b06abae21b8abd6218baf6",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 111220,
-    "durationSeconds": 6.92,
-    "sha256": "94bd93e90992a9da022aee7471600826563c4e6c46955b221ac3065dfbae4679",
-    "generatedAt": "2026-11-07T00:45:40.856450+00:00",
-    "requestId": "R0PdyITyuISn8SbUahul",
+    "speakers": [
+      {
+        "speaker": "Ariana",
+        "voice": "Amy",
+        "text": "My phone number is zero, nine, five, two, one, zero, seven, one, six, eight."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My phone number is zero, nine, five, two, one, zero, seven, one, six, eight.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 167644,
+    "durationSeconds": 10.45,
+    "sha256": "57e6b64e807fe9ecea041791d5fdd634b7df2c472772a002df353aeae46cb2a3",
+    "generatedAt": "2026-11-08T22:30:43.670634+00:00",
+    "requestId": "HU1xtGITJ7MByF9A1erM",
     "transcriptionRequestId": null,
     "transcript": "My phone number is zero nine five two one zero seven one six eight",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "6404beed703ef0ad14858572017dbe114d497fb4b43e4a135b1dd6e24495d871"
   },
   "listen-short-3": {
     "id": "listen-short-3",
@@ -203,62 +258,101 @@
   "listen-spell-1": {
     "id": "listen-spell-1",
     "term": "listen-spell-1",
-    "file": "listen-spell-1.mp3",
+    "file": "listen-spell-1-voices2.mp3",
     "script": "My name is Allison. A, L, L, I, S, O, N.",
     "scriptSha256": "c6d3393d4f6c2b37cced362e64e4da08c80cc90b5fcf78a079bd424a7816449d",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 69006,
-    "durationSeconds": 4.28,
-    "sha256": "df9ecbe60845907bc29dc9d5b03cd5564fbe2e60020d2ba0aeccc0dc9f595ff6",
-    "generatedAt": "2026-11-07T00:45:44.086572+00:00",
-    "requestId": "apyaajASPdQhGWmlR3sm",
+    "speakers": [
+      {
+        "speaker": "Allison",
+        "voice": "Amy",
+        "text": "My name is Allison. A, L, L, I, S, O, N."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Allison. A, L, L, I, S, O, N.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 51034,
+    "durationSeconds": 3.16,
+    "sha256": "3275ff324ea73196a9373d113a82c912afb9958f4ce263f9e989d73c9fe30f14",
+    "generatedAt": "2026-11-08T22:30:46.977735+00:00",
+    "requestId": "HZO4eI9HMCZayUWVmjyR",
     "transcriptionRequestId": null,
     "transcript": "My name is Allison, A-L-L-I-S-O-N",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "a9c26ee5d1b1c330d4ff0727d402a9d639e4c58c0777c8a92496049c4b613f41"
   },
   "listen-spell-2": {
     "id": "listen-spell-2",
     "term": "listen-spell-2",
-    "file": "listen-spell-2.mp3",
+    "file": "listen-spell-2-voices2.mp3",
     "script": "My name is Bryan. B, R, Y, A, N.",
     "scriptSha256": "1ef0515430ff674bdb0666186b0285e191cc4e16f2a609ec7f919cc61eeb3d25",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 62318,
-    "durationSeconds": 3.87,
-    "sha256": "9f5ff702ae26ab90f5abfac2999fbb5402d45b9b8bdc414a8b622a33279bb367",
-    "generatedAt": "2026-11-07T00:45:45.773409+00:00",
-    "requestId": "n7eKyg84F9gPp4Imcs6K",
+    "speakers": [
+      {
+        "speaker": "Bryan",
+        "voice": "Jarnathan",
+        "text": "My name is Bryan. B, R, Y, A, N."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Bryan. B, R, Y, A, N.",
+        "voice_id": "c6SfcYrb2t09NHXiT80T"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 52287,
+    "durationSeconds": 3.24,
+    "sha256": "3fbbc1ad96d1027e675c3530f4f48673253d234ae2ed693d71308342a60060d3",
+    "generatedAt": "2026-11-08T22:30:49.641096+00:00",
+    "requestId": "oy3KOSVGXlV7MS9FwypV",
     "transcriptionRequestId": null,
     "transcript": "My name is Bryan, B-R-Y-A-N",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "6fa6d246619837fcc4e6b009828678673d18cd3535d0514bd6aba1bdc5f3e4be"
   },
   "listen-spell-3": {
     "id": "listen-spell-3",
     "term": "listen-spell-3",
-    "file": "listen-spell-3.mp3",
+    "file": "listen-spell-3-voices2.mp3",
     "script": "My name is Lindsay. L, I, N, D, S, A, Y.",
     "scriptSha256": "7f9c41b079d150f488bf01730b406b73c248d50fe159ddb4725efa5fadf5cf20",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
+    "speakers": [
+      {
+        "speaker": "Lindsay",
+        "voice": "Adeline",
+        "text": "My name is Lindsay. L, I, N, D, S, A, Y."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Lindsay. L, I, N, D, S, A, Y.",
+        "voice_id": "5l5f8iK3YPeGga21rQIX"
+      }
+    ],
+    "endpoint": "text-to-speech",
     "bytes": 80291,
     "durationSeconds": 4.99,
-    "sha256": "f8010f54f3208de47b0949f0d1d26bdac0d3748345bf19052e92b86a22e9d1e7",
-    "generatedAt": "2026-11-07T00:45:47.305607+00:00",
-    "requestId": "2s4nfod1b2crmuw7u33w",
+    "sha256": "5b75982a07c646355a98ca7d7ef33ad4af4b2c17c6f8ffa0ea30a499438f22f8",
+    "generatedAt": "2026-11-08T22:30:52.849700+00:00",
+    "requestId": "MiAb87Hk2K83oDyX3UtJ",
     "transcriptionRequestId": null,
     "transcript": "My name is Lindsay, L-I-N-D-S-A-Y",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "e18030ad50a6fa75edc744ca3830ccc320bb08b5333981044d591895f194f276"
   },
   "listen-number-start": {
     "id": "listen-number-start",
@@ -303,104 +397,175 @@
   "listen-profile-phone-0": {
     "id": "listen-profile-phone-0",
     "term": "listen-profile-phone-0",
-    "file": "listen-profile-phone-0.mp3",
+    "file": "listen-profile-phone-0-voices2.mp3",
     "script": "My name is Allison. My phone number is zero, nine, eight, four, one, zero, two, three, seven, six.",
     "scriptSha256": "5b3527eb733f87b75f95d45b2b32fff17487e67118cd813dcdc2bafda3ac68d2",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 123758,
-    "durationSeconds": 7.71,
-    "sha256": "05d0dd7e0b065fd3a6d1d735a6b99b2ce37e55507ed5786ee4cd317b72dd82f8",
-    "generatedAt": "2026-11-07T00:45:53.504539+00:00",
-    "requestId": "oVnnKlycAbK5LZLFwwF9",
+    "speakers": [
+      {
+        "speaker": "Allison",
+        "voice": "Amy",
+        "text": "My name is Allison. My phone number is zero, nine, eight, four, one, zero, two, three, seven, six."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Allison. My phone number is zero, nine, eight, four, one, zero, two, three, seven, six.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 111220,
+    "durationSeconds": 6.92,
+    "sha256": "7baf35b7ad487b5f686d765a4ac887eae497199a42caedd9319b7a04c3856920",
+    "generatedAt": "2026-11-08T22:31:47.411702+00:00",
+    "requestId": "tYrDijeHx3YIFhc4RWTI",
     "transcriptionRequestId": null,
     "transcript": "My name is Allison. My phone number is zero nine eight four one zero two three seven six",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "eb62a893f27fda03699eb44a4beeecdfe22b054c94bfb7272f8de6eac2d89511"
   },
   "listen-spell-0": {
     "id": "listen-spell-0",
     "term": "listen-spell-0",
-    "file": "listen-spell-0.mp3",
+    "file": "listen-spell-0-voices2.mp3",
     "script": "My name is Stephen. S, T, E, P, H, E, N.",
     "scriptSha256": "5cd5112ed4dc22190813f1c62a2f246bc2527876718e3cee6dfcc030509b3813",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 80291,
-    "durationSeconds": 4.99,
-    "sha256": "89d80361ec92c1d5e684b407a8553f02c99ba4aaec61d21c89d281e2b12989b1",
-    "generatedAt": "2026-11-07T00:45:54.045893+00:00",
-    "requestId": "kM11cf01T89A0TcLPTS1",
+    "speakers": [
+      {
+        "speaker": "Stephen",
+        "voice": "Mark Casual",
+        "text": "My name is Stephen. S, T, E, P, H, E, N."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Stephen. S, T, E, P, H, E, N.",
+        "voice_id": "1SM7GgM6IMuvQlz2BwM3"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 74021,
+    "durationSeconds": 4.6,
+    "sha256": "dad4b3b65a7db73a764d80dcb134c5d9d5bbb3b44bccf6f05f8d33ae9a5f0edb",
+    "generatedAt": "2026-11-08T22:31:16.821723+00:00",
+    "requestId": "s8CYA8ZFvMGgHMV6a4Rr",
     "transcriptionRequestId": null,
-    "transcript": "My name is Stephen. S-T-E-P-H-E-N",
+    "transcript": "My name is Stephen, S-T-E-P-H-E-N",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "582b9235a826534954d59e543d34dbf03cd580dee05b19912fe98d5d566d9d58"
   },
   "listen-profile-class-1": {
     "id": "listen-profile-class-1",
     "term": "listen-profile-class-1",
-    "file": "listen-profile-class-1.mp3",
+    "file": "listen-profile-class-1-voices2.mp3",
     "script": "My name is Bryan. I'm in Class five.",
     "scriptSha256": "5896899fd3a00dfc0097e4519942924aade89761d2567cf81b10c496e905e483",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
+    "speakers": [
+      {
+        "speaker": "Bryan",
+        "voice": "Jarnathan",
+        "text": "My name is Bryan. I'm in Class five."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Bryan. I'm in Class five.",
+        "voice_id": "c6SfcYrb2t09NHXiT80T"
+      }
+    ],
+    "endpoint": "text-to-speech",
     "bytes": 41838,
     "durationSeconds": 2.59,
-    "sha256": "e5c546c50614fbafbfd5b181a47423f2b4eba7d8b624b81bdbb1a9719b05af9d",
-    "generatedAt": "2026-11-07T00:45:55.594880+00:00",
-    "requestId": "WGHovgt75F0u3bPFXtmI",
+    "sha256": "50a1a3d6a5f258acb0e752411a74b6fd167698ed4117a8bbd6a816d7270eed0f",
+    "generatedAt": "2026-11-08T22:32:52.537150+00:00",
+    "requestId": "qqcQ9EWfwmIEogMtj95Y",
     "transcriptionRequestId": null,
     "transcript": "My name is Brian. I'm in class five",
     "transcriptExactNormalizedMatch": false,
     "audioEvents": [],
     "forbiddenTagPreflight": true,
-    "editorialReview": "Equivalent pronunciation: Mr./Mister, Bryan/Brian, salesclerk/sales clerk; no changed answer or missing content."
+    "generationSha256": "1cf17e9139ad87ca82124eb63cfb945acd4bb389c7ab1d0705717dfddda43fba",
+    "transcriptReview": {
+      "accepted": true,
+      "reason": "Bryan / Brian spoken-name homophone; class five exact"
+    }
   },
   "listen-profile-phone-1": {
     "id": "listen-profile-phone-1",
     "term": "listen-profile-phone-1",
-    "file": "listen-profile-phone-1.mp3",
+    "file": "listen-profile-phone-1-voices2.mp3",
     "script": "My name is Bryan. My phone number is zero, nine, six, three, two, one, five, zero, eight, four.",
     "scriptSha256": "49edd0202000baa1c6719070ee60ebfc26de771920525094c484c52b394da458",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 126684,
-    "durationSeconds": 7.89,
-    "sha256": "c17c0de19d14cd235df2faf321a71885d75da798f1e803f2ebc9d0fef27c3681",
-    "generatedAt": "2026-11-07T00:45:57.599320+00:00",
-    "requestId": "260rU4B2GJ963orKtwG6",
+    "speakers": [
+      {
+        "speaker": "Bryan",
+        "voice": "Jarnathan",
+        "text": "My name is Bryan. My phone number is zero, nine, six, three, two, one, five, zero, eight, four."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Bryan. My phone number is zero, nine, six, three, two, one, five, zero, eight, four.",
+        "voice_id": "c6SfcYrb2t09NHXiT80T"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 141731,
+    "durationSeconds": 8.83,
+    "sha256": "e73163099ab08297e46bfac4a927defe177f9ce80f2e1a16a29280262948143b",
+    "generatedAt": "2026-11-08T22:31:48.777104+00:00",
+    "requestId": "dTU71xe3paZZIRTrcb9c",
     "transcriptionRequestId": null,
-    "transcript": "My name is Brian. My phone number is zero nine six three two one five zero eight four",
+    "transcript": "My name is Brian. My phone number is zero nine six three two one five zero eight four.",
     "transcriptExactNormalizedMatch": false,
     "audioEvents": [],
     "forbiddenTagPreflight": true,
-    "editorialReview": "Equivalent pronunciation: Mr./Mister, Bryan/Brian, salesclerk/sales clerk; no changed answer or missing content."
+    "generationSha256": "2f5d063e0fb7365bca96076e09e548d13f612567f480fbb05fa873c6379b7838",
+    "transcriptReview": {
+      "accepted": true,
+      "reason": "Bryan / Brian spoken-name homophone; all ten digits exact"
+    }
   },
   "listen-profile-phone-2": {
     "id": "listen-profile-phone-2",
     "term": "listen-profile-phone-2",
-    "file": "listen-profile-phone-2.mp3",
+    "file": "listen-profile-phone-2-voices2.mp3",
     "script": "My name is Lindsay. My phone number is zero, nine, nine, seven, six, zero, one, four, two, five.",
     "scriptSha256": "960efce4a596bec8c32a8cb361c3c568a7f7ce2aea0ab8eeb87384168e0262f4",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 119997,
-    "durationSeconds": 7.47,
-    "sha256": "809a659c0217afc84e7a171b4bb321558e4f41d1ad247df637f53454b4bd5bd5",
-    "generatedAt": "2026-11-07T00:46:01.351743+00:00",
-    "requestId": "GmuS5H0y3vf2syIlWaQ9",
+    "speakers": [
+      {
+        "speaker": "Lindsay",
+        "voice": "Adeline",
+        "text": "My name is Lindsay. My phone number is zero, nine, nine, seven, six, zero, one, four, two, five."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Lindsay. My phone number is zero, nine, nine, seven, six, zero, one, four, two, five.",
+        "voice_id": "5l5f8iK3YPeGga21rQIX"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 136715,
+    "durationSeconds": 8.52,
+    "sha256": "92c277fdf23a25791e1cc45028858e44592affe145f31a6f61400384e2578926",
+    "generatedAt": "2026-11-08T22:32:15.673145+00:00",
+    "requestId": "i6ZV7VtmoeQG2rgUzEWb",
     "transcriptionRequestId": null,
     "transcript": "My name is Lindsay. My phone number is zero nine nine seven six zero one four two five",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "7f2deceaa8825aa2a25e4d2c99acffb835933c866ac1c6be5e52b4dd4fefb897"
   },
   "listen-job-list": {
     "id": "listen-job-list",
@@ -425,22 +590,35 @@
   "listen-profile-class-2": {
     "id": "listen-profile-class-2",
     "term": "listen-profile-class-2",
-    "file": "listen-profile-class-2.mp3",
+    "file": "listen-profile-class-2-voices2.mp3",
     "script": "My name is Lindsay. I'm in Class three.",
     "scriptSha256": "443289961fcb10fe135e8f2bfa0a90ad93517e717d544eef129362e2418d30de",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 38077,
-    "durationSeconds": 2.35,
-    "sha256": "1775ba44c30e51312082eb6b5bab5d9e2802129d8c7f64063d15e29e4cb04c56",
-    "generatedAt": "2026-11-07T00:46:03.850507+00:00",
-    "requestId": "eQa8JThd7tTbREiASBEg",
+    "speakers": [
+      {
+        "speaker": "Lindsay",
+        "voice": "Adeline",
+        "text": "My name is Lindsay. I'm in Class three."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Lindsay. I'm in Class three.",
+        "voice_id": "5l5f8iK3YPeGga21rQIX"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 39331,
+    "durationSeconds": 2.43,
+    "sha256": "ab113cf066eefdab6bc4419c96537acc6c6233a817f8101e25ebc283ebebc7f6",
+    "generatedAt": "2026-11-08T22:31:49.522281+00:00",
+    "requestId": "lFW29XZty7It6wEp51wR",
     "transcriptionRequestId": null,
     "transcript": "My name is Lindsay. I'm in class three",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "9f062d76fbb2b78e745920dc5dac0416fd9812955e8b8a31c21b636250287a3c"
   },
   "listen-job-0": {
     "id": "listen-job-0",
@@ -485,22 +663,35 @@
   "listen-job-2": {
     "id": "listen-job-2",
     "term": "listen-job-2",
-    "file": "listen-job-2.mp3",
-    "script": "John is a office worker.",
-    "scriptSha256": "c9a65aeacd58fbdee744ff79a98091874340f58bf4ba56aaf8dde64839f34d3d",
+    "file": "listen-job-2-voices2.mp3",
+    "script": "John is an office worker.",
+    "scriptSha256": "3ce57121f34f685a213d4c08bee4e8ca07e5ecef682291cbff1941f85a98da9d",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 46018,
-    "durationSeconds": 2.85,
-    "sha256": "98f764988d7571c692d0cec72e26bf414054445255cd6861e224bff4b31d9fab",
-    "generatedAt": "2026-11-07T00:46:07.803095+00:00",
-    "requestId": "hIK4MSEwjdQMfOI8fU5V",
+    "speakers": [
+      {
+        "speaker": "Narrator",
+        "voice": "Jessica",
+        "text": "John is an office worker."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "John is an office worker.",
+        "voice_id": "cgSgspJ2msm6clMCkdW9"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 26792,
+    "durationSeconds": 1.65,
+    "sha256": "4598ccd8c299ef05d988383d925e3af9106ad923e62ad18084b8887f6f53e4b2",
+    "generatedAt": "2026-11-08T22:31:51.756304+00:00",
+    "requestId": "6PriLaeNR0UYmcEoSFYL",
     "transcriptionRequestId": null,
-    "transcript": "John is a office worker",
+    "transcript": "John is an office worker",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "36664d48312c941d623c8007684b120c84dd08058296bd0af530baf49b74770b"
   },
   "listen-job-4": {
     "id": "listen-job-4",
@@ -521,7 +712,11 @@
     "transcriptExactNormalizedMatch": false,
     "audioEvents": [],
     "forbiddenTagPreflight": true,
-    "editorialReview": "Equivalent pronunciation: Mr./Mister, Bryan/Brian, salesclerk/sales clerk; no changed answer or missing content."
+    "editorialReview": "Equivalent pronunciation: Mr./Mister, Bryan/Brian, salesclerk/sales clerk; no changed answer or missing content.",
+    "transcriptReview": {
+      "accepted": true,
+      "reason": "Bryan / Brian spoken-name homophone and salesclerk spacing"
+    }
   },
   "listen-job-3": {
     "id": "listen-job-3",
@@ -546,22 +741,53 @@
   "listen-two-jobs": {
     "id": "listen-two-jobs",
     "term": "listen-two-jobs",
-    "file": "listen-two-jobs.mp3",
-    "script": "I'm Sarah. I'm a nurse. I'm Tom. I'm a taxi driver in the morning and a teacher in the evening. I'm Marco. I'm a chef.",
-    "scriptSha256": "444d113b5007fef862404ce0d2fd0504243006ab921a7f864d6cfd74d0e281b6",
+    "file": "listen-two-jobs-voices2.mp3",
+    "script": "I'm Sarah. I'm a doctor. I'm Tom. I'm a taxi driver in the morning and a teacher in the evening. I'm Marco. I'm a chef.",
+    "scriptSha256": "a21b125af8fac7e76b76bfca2a0c97c6486dfcaaf370191a8ec5fd2681b54b11",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 159703,
-    "durationSeconds": 9.95,
-    "sha256": "8cc0f20e4b4439126370f88578fad2613358c852fae022271f82e7d882936e49",
-    "generatedAt": "2026-11-07T00:46:14.599573+00:00",
-    "requestId": "honRLTxuHSQGX9pggSz8",
+    "speakers": [
+      {
+        "speaker": "Sarah",
+        "voice": "Juniper",
+        "text": "I'm Sarah. I'm a doctor."
+      },
+      {
+        "speaker": "Tom",
+        "voice": "Jarnathan",
+        "text": "I'm Tom. I'm a taxi driver in the morning and a teacher in the evening."
+      },
+      {
+        "speaker": "Marco",
+        "voice": "Mark Natural",
+        "text": "I'm Marco. I'm a chef."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "I'm Sarah. I'm a doctor.",
+        "voice_id": "aMSt68OGf4xUZAnLpTU8"
+      },
+      {
+        "text": "I'm Tom. I'm a taxi driver in the morning and a teacher in the evening.",
+        "voice_id": "c6SfcYrb2t09NHXiT80T"
+      },
+      {
+        "text": "I'm Marco. I'm a chef.",
+        "voice_id": "UgBBYS2sOqTuMpoF3BR0"
+      }
+    ],
+    "endpoint": "text-to-dialogue",
+    "bytes": 144238,
+    "durationSeconds": 8.99,
+    "sha256": "a37995d00173abb639ae500f73fb30211f32b68c8ac658422bf1c1d70e1ee914",
+    "generatedAt": "2026-11-08T22:31:57.338950+00:00",
+    "requestId": "ghANZPurKnZqPhBCbUMC",
     "transcriptionRequestId": null,
-    "transcript": "I'm Sarah. I'm a nurse. I'm Tom. I'm a taxi driver in the morning and a teacher in the evening. I'm Marco. I'm a chef",
+    "transcript": "I'm Sarah. I'm a doctor I'm Tom. I'm a taxi driver in the morning and a teacher in the evening I'm Marco. I'm a chef",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "c3b11a77fddd2f27d7cdcf5d103aea4625eab7df7c05e240046dbcff2110d58f"
   },
   "listen-country-1": {
     "id": "listen-country-1",
@@ -606,62 +832,101 @@
   "listen-emma-country": {
     "id": "listen-emma-country",
     "term": "listen-emma-country",
-    "file": "listen-emma-country.mp3",
+    "file": "listen-emma-country-voices2.mp3",
     "script": "Hello, I'm Emma. I'm from Canada.",
     "scriptSha256": "94231ec2c497f918cae40d1cbec8d90d55f94e470de22c8e5423107c69e9a0ed",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 35569,
-    "durationSeconds": 2.19,
-    "sha256": "6b036ccdc5fb4eed9f56289f401ee113e8398d8b86802ae1fb455bd4c55eb5eb",
-    "generatedAt": "2026-11-07T00:46:41.657467+00:00",
-    "requestId": "ztqLBj5ISlOWcUMW8pbp",
+    "speakers": [
+      {
+        "speaker": "Emma",
+        "voice": "Adeline",
+        "text": "Hello, I'm Emma. I'm from Canada."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "Hello, I'm Emma. I'm from Canada.",
+        "voice_id": "5l5f8iK3YPeGga21rQIX"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 44764,
+    "durationSeconds": 2.77,
+    "sha256": "c3b614dbcf7af259a948b40864fdad366d384c2dbc3ffcf4d490b4eedb72a1b0",
+    "generatedAt": "2026-11-08T22:32:43.736216+00:00",
+    "requestId": "6HsjVbQ4ZTB9rgJd2L7n",
     "transcriptionRequestId": null,
     "transcript": "Hello, I'm Emma. I'm from Canada",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "86a4ade07998dff85d07e946eaf568bf449dbc2e3b0a675bef04a00b0bc37f87"
   },
   "listen-emma-last": {
     "id": "listen-emma-last",
     "term": "listen-emma-last",
-    "file": "listen-emma-last.mp3",
+    "file": "listen-emma-last-voices2.mp3",
     "script": "My name is Emma Carter. My last name is Carter. C, A, R, T, E, R.",
     "scriptSha256": "c3aca69391365f78c8f54f3d2e59c0f84a7a3ea01edaf736ca3de10bac6cf263",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 112474,
-    "durationSeconds": 7.0,
-    "sha256": "154e3ef05bafdcc269a911c1e964296f558263858843925cb2ef9765482203e9",
-    "generatedAt": "2026-11-07T00:46:43.894360+00:00",
-    "requestId": "NsH4BMGM25iiVHKuBZ3t",
+    "speakers": [
+      {
+        "speaker": "Emma",
+        "voice": "Adeline",
+        "text": "My name is Emma Carter. My last name is Carter. C, A, R, T, E, R."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Emma Carter. My last name is Carter. C, A, R, T, E, R.",
+        "voice_id": "5l5f8iK3YPeGga21rQIX"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 147164,
+    "durationSeconds": 9.17,
+    "sha256": "0e6536efd25a60d6fb7eaceacbd2e2574164fd3d37aff3d0a11a173d7d3939a0",
+    "generatedAt": "2026-11-08T22:32:46.532809+00:00",
+    "requestId": "MhTgB6qRz4qI4RLYCc3N",
     "transcriptionRequestId": null,
-    "transcript": "My name is Emma Carter. My last name is Carter, C-A-R-T-E-R",
+    "transcript": "My name is Emma Carter. My last name is Carter. C-A-R-T-E-R",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "d98426ef16db403ecf52551e1861a4ddf12aa322a9bab406a6bacc58b08b7354"
   },
   "listen-profile-class-0": {
     "id": "listen-profile-class-0",
     "term": "listen-profile-class-0",
-    "file": "listen-profile-class-0.mp3",
+    "file": "listen-profile-class-0-voices2.mp3",
     "script": "My name is Allison. I'm in Class two.",
     "scriptSha256": "d5d1de60baf6fdc807757fc9359810af6efbde56ac34435470d39de934f7c254",
     "model": "eleven_v3",
-    "voice": "Jessica",
-    "voiceId": "cgSgspJ2msm6clMCkdW9",
-    "bytes": 38077,
-    "durationSeconds": 2.35,
-    "sha256": "8b57aca8b98cc873fe6bea04826821bbbadf9ae2c93263450f2988ce989a4e9b",
-    "generatedAt": "2026-11-07T00:47:09.248690+00:00",
-    "requestId": "IHsA4lCpXsym3oQDS0rO",
+    "speakers": [
+      {
+        "speaker": "Allison",
+        "voice": "Amy",
+        "text": "My name is Allison. I'm in Class two."
+      }
+    ],
+    "inputs": [
+      {
+        "text": "My name is Allison. I'm in Class two.",
+        "voice_id": "OZxMHsGaBmV5pjMIDIn0"
+      }
+    ],
+    "endpoint": "text-to-speech",
+    "bytes": 31807,
+    "durationSeconds": 1.96,
+    "sha256": "fca8d4511ab5dba4eda42a1821acd37796e0bb3879b8c24b23703a2d6c04beb6",
+    "generatedAt": "2026-11-08T22:31:20.713990+00:00",
+    "requestId": "PeOeWJjvuyMI4vOp4dzT",
     "transcriptionRequestId": null,
     "transcript": "My name is Allison. I'm in class two",
     "transcriptExactNormalizedMatch": true,
     "audioEvents": [],
-    "forbiddenTagPreflight": true
+    "forbiddenTagPreflight": true,
+    "generationSha256": "4b72dc1dfc8c76afebf82d50d3a05853192c3685d356181f68b994f77208c236"
   },
   "listen-country-2": {
     "id": "listen-country-2",

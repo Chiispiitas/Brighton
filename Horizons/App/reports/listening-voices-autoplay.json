@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "case": "three speakers",
+      "duration": 8.96,
+      "autoplaySucceeded": true,
+      "selectionSilent": true,
+      "playerPreserved": true,
+      "transcriptAnswerGated": true
+    },
+    {
+      "case": "cannot listen",
+      "stopsAndSilentFallback": true
+    },
+    {
+      "case": "alphabet mobile",
+      "autoplay": true,
+      "silentChoices": true,
+      "replay": true,
+      "nextQuestionAutoplay": true
+    },
+    {
+      "case": "autoplay denied",
+      "noRestartLoop": true,
+      "manualReplayWorks": true
+    }
+  ],
+  "noRealLearnerRecords": true,
+  "realMediaPlayback": true,
+  "deviceSpeechForbidden": true,
+  "errors": []
+}

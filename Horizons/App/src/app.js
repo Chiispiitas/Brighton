@@ -1,3 +1,4 @@
+import {createQuestionAudio} from './question-audio.js';
 import {motionPreference} from './preferences.js';
 import {animationsEnabled,setAnimationsEnabled,themePreference,setTheme} from './preferences.js';
 import {socialProfileMarkup,personCard} from './social-profile.js';
@@ -27,6 +28,13 @@ const toastBox = document.getElementById('toast');
 const state = {session:null,route:'learn',bookId:null,active:null,selected:new Set(),selectedGrammar:new Set(),search:'',busy:false,avatarDraft:null,profileDraft:null,saveError:null,roundLength:8,profileEditing:false,social:null,socialError:null,socialTab:'friends',personTarget:null,personData:null,personError:null,leaderboard:null,boardError:null,boardBusy:false,audioManifest:{},answerAudio:{},pathCursorId:null,bankOpen:new Set()};
 let toastTimer;
 let wordPlayer;
+const questionAudio=createQuestionAudio({beforePlay:()=>{stopFeedbackSound();wordPlayer?.pause();}});
+function syncQuestionAudio(){
+ const round=state.active,q=round?.kind==='quiz'?round.questions[round.index]:null;
+ const model=q?.audioWordId?(state.audioManifest[q.audioWordId]||state.answerAudio[audioKey(getWord(q.audioWordId)?.term)]):null;
+ const src=q?.listening?(q.audio||model?.src):null;
+ questionAudio.sync({round:q?round:null,questionIndex:round?.index,src:src?assetURL(src):null,element:app.querySelector('.question-audio audio'),checked:round?.checked,preview:round?.previewVisible});
+}
 let disposeOverworld;
 let disposePropMotion;
 let streakCelebrationController;
@@ -96,7 +104,7 @@ function route(target) {
   if (state.active && target !== 'activity') state.active = null;
   state.route = target; location.hash = target; render(); window.scrollTo({top:0,behavior:'instant'});
 }
-function stopAudio(){stopFeedbackSound();wordPlayer?.pause();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function stopAudio(){questionAudio.stop();app.querySelectorAll('.question-audio audio').forEach(audio=>audio.pause());stopFeedbackSound();wordPlayer?.pause();if('speechSynthesis'in window)speechSynthesis.cancel();}
 function formatDate(value) {
   const date = new Date(value); return Number.isNaN(date.getTime()) ? '' : date.toLocaleDateString('en',{day:'numeric',month:'short',year:'numeric'});
 }
@@ -204,7 +212,7 @@ function render() {
   streakCelebrationController?.dispose();streakCelebrationController=null;
   disposeArtwork(app);
   app.removeAttribute('aria-busy');
-  if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
+  if (!state.session) {questionAudio.reset();app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
   if (state.active) {
     if(state.active.kind==='result'&&state.active.saving)app.setAttribute('aria-busy','true');
     app.innerHTML=renderActivity();stabilizeSentence();
@@ -218,8 +226,10 @@ function render() {
       streakCelebrationController=mountStreakCelebration(streakPage,{elapsed:result.streakElapsed||0,onTime:time=>{result.streakElapsed=time;},onPresented:()=>markStreakCelebrationSeen(profileId,result.streakEvent),onImpact:()=>{if(!result.streakSoundPlayed){result.streakSoundPlayed=true;playCompletionSound(result.newIslandMastery,true);}}});
       streakPage.focus({preventScroll:true});
     }else{refreshArtwork(app);enhanceMotion(app,motionBefore);app.querySelector('#typed-answer:not(:disabled)')?.focus({preventScroll:true});}
+    syncQuestionAudio();
     return;
   }
+  questionAudio.reset();
   const pages={learn:home,practice,bank:wordBank,profile:profilePage,person:personPage,settings:settingsPage,leaderboard:()=>leaderboardMarkup(state.leaderboard,avatarMarkup,state.boardError)};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route==='person'?'profile':state.route);
@@ -500,7 +510,7 @@ on('change','input[name=practice-topic]',(_,target)=>{const topic=practiceTopics
 app.addEventListener('toggle',event=>{const details=event.target;if(!details.isConnected||!details.matches?.('[data-bank-lesson]')||state.search.trim())return;details.open?state.bankOpen.add(details.dataset.bankLesson):state.bankOpen.delete(details.dataset.bankLesson);},true);
 on('input','#word-search',(_,target)=>{state.search=target.value;const start=target.selectionStart;render();const next=document.getElementById('word-search');next.focus();next.setSelectionRange(start,start);});
 on('click','[data-word]',(_,target)=>wordDialog(target.dataset.word));
-on('click','[data-speak]',(_,target)=>speak(target.dataset.speak));
+on('click','[data-speak]',(_,target)=>{if(target.matches('.question-listen')&&state.active?.questions?.[state.active.index]?.listening)questionAudio.replay();else speak(target.dataset.speak);});
 on('click','[data-grammar]',(_,target)=>{const set=allGrammar.find(g=>g.id===target.dataset.grammar);startQuiz({mode:'grammar',grammarSetIds:[target.dataset.grammar],count:8,activityId:`practice-${target.dataset.grammar}`},set?.title || 'Grammar');});
 on('change','#round-length',(_,target)=>{state.roundLength=target.value==='all'?'all':Number(target.value);});
 on('click','[data-mix]',(_,target)=>{const mode=target.dataset.mix,grammar=mode==='recall'&&state.selectedGrammar.size>0,words=state.selected.size>0;if(!words&&!grammar)return;const options={chunkIds:[...state.selected],...(grammar?{grammarSetIds:[...state.selectedGrammar]}:{}),mode:grammar?(words?'mixed':'grammar'):mode==='listening'?'listening':'recall',count:state.roundLength,activityId:`mix-${mode}`};['memory','matching'].includes(mode)?startGame(mode,options):startQuiz(options,grammar?(words?'Mixed practice':'Grammar practice'):'Vocabulary practice');});
@@ -543,6 +553,8 @@ on('click','[data-signout-confirm]',async()=>{closeDialog();try{await api.signOu
 dialog.addEventListener('click',event=>{if(event.target===dialog){const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)closeDialog();}});
 window.addEventListener('hashchange',()=>{const hash=location.hash.slice(1);if(hash.startsWith('person/')){const id=decodeURIComponent(hash.slice(7));if(state.route!=='person'||state.personTarget!==id)openPerson(id);return;}if(hash==='progress'){route('learn');return;}if(['learn','practice','bank','profile','leaderboard','settings'].includes(hash)&&hash!==state.route){stopAudio();state.route=hash;state.active=null;if(hash==='profile'){state.profileEditing=false;loadSocial();}render();window.scrollTo({top:0,behavior:'instant'});}});
 window.addEventListener('resize',layoutPaths);
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopAudio();});
+window.addEventListener('pagehide',()=>stopAudio());
 window.addEventListener('offline',()=>notify('You are offline.'));
 window.addEventListener('online',()=>notify('Connected.','success'));
 document.addEventListener('keydown',event=>{

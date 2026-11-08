@@ -1,3 +1,4 @@
+import {platformListening} from './listening-scripts.mjs';
 import { spanishFor } from './translations.mjs';
 import { sourceBanks } from './source-banks.mjs';
 
@@ -241,7 +242,7 @@ const listeningQuestions=[
   text(`listen-profile-phone-${i}`,`Listen to the interviews. Type ${name}’s phone number.`,[phone],phone,{lessonId:'1A',audio:'platform-question',audioLabel:'Horizons listening',normalization:'digits'})
  ]),
  choice('listen-job-list','Listen to the job list. Which job comes just after doctor?','office worker',['receptionist','teacher','salesclerk'],'The list says “A doctor. An office worker.”',{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'}),
- ...[['Allison','doctor'],['Mike','farmer'],['John','office worker'],['Lisa','waitress'],['Bryan','salesclerk']].map(([name,job],i)=>choice(`listen-job-${i}`,`Listen. What is ${name}’s job?`,job,['doctor','farmer','office worker','waitress','salesclerk'].filter(x=>x!==job),`${name} is a ${job}.`,{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'})),
+ ...[['Allison','doctor'],['Mike','farmer'],['John','office worker'],['Lisa','waitress'],['Bryan','salesclerk']].map(([name,job],i)=>choice(`listen-job-${i}`,`Listen. What is ${name}’s job?`,job,['doctor','farmer','office worker','waitress','salesclerk'].filter(x=>x!==job),`${name} is ${/^[aeiou]/i.test(job)?'an':'a'} ${job}.`,{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'})),
  choice('listen-two-jobs','Listen to the three people. Who has two jobs?','Tom',['Sarah','Marco','All three people'],'Tom is a taxi driver in the morning and a teacher in the evening.',{lessonId:'1B',audio:'platform-question',audioLabel:'Horizons listening'}),
  ...[['Lionel Messi','Argentina'],['Taylor Swift','the US'],['Keanu Reeves','Canada'],['Millie B. Brown','the UK'],['Lee Jung-jae','South Korea']].map(([name,country],i)=>choice(`listen-country-${i}`,`Listen. Where is ${name} from in the recording?`,country,['Argentina','the US','Canada','the UK','South Korea'].filter(x=>x!==country),`The recording says ${name} is from ${country}.`,{lessonId:'1C',audio:'platform-question',audioLabel:'Horizons listening'})),
  choice('listen-emma-country','Listen at the hotel. Where is Emma from?','Canada',['Argentina','Ecuador','the UK'],'Emma says she is from Canada.',{lessonId:'1D',audio:'platform-question',audioLabel:'Horizons listening'}),
@@ -250,26 +251,10 @@ const listeningQuestions=[
 
 // Original platform listening: one short script and recording per question.
 for (const q of listeningQuestions) {
- const answer = q.correctText || (Array.isArray(q.answer)?q.answer[0]:q.answer);
- const id = q.id;
- let script = q.explanation;
- if(id==='listen-class') script="Hello, I'm Mary. I'm a student. I'm in Class four.";
- if(id==='listen-teacher') script="Hello, I'm Mary. My teacher is Mister Wilson.";
- if(id.startsWith('listen-short-')) script=["I'm a student.","You're a teacher.","He's a doctor.","She's a receptionist."][Number(id.split('-').at(-1))];
- if(id==='listen-ariana-name') script="Hello, my name is Ariana. A, R, I, A, N, A.";
- if(id==='listen-ariana-phone') script="My phone number is zero, nine, five, two, one, zero, seven, one, six, eight.";
- if(id==='listen-alphabet-start') script="A, B, C. D, E, F.";
- if(id==='listen-alphabet-end') script="T, U, V. W, X, Y, Z.";
- if(id.startsWith('listen-spell-')) {const name=['Stephen','Allison','Bryan','Lindsay'][Number(id.split('-').at(-1))];script="My name is "+name+". "+name.toUpperCase().split('').join(', ')+".";}
- if(id==='listen-number-start') script="Zero, one, two, three, four.";
- if(id==='listen-number-end') script="Six, seven, eight, nine, ten.";
- if(id.startsWith('listen-profile-')) {const i=Number(id.split('-').at(-1)),name=['Allison','Bryan','Lindsay'][i];script=id.includes('-phone-')?"My name is "+name+". My phone number is "+['0984102376','0963215084','0997601425'][i].split('').map(n=>['zero','one','two','three','four','five','six','seven','eight','nine'][n]).join(', ')+".":"My name is "+name+". I'm in Class "+['two','five','three'][i]+".";}
- if(id==='listen-job-list') script="A teacher. A doctor. An office worker. A receptionist.";
- if(id==='listen-two-jobs') script="I'm Sarah. I'm a nurse. I'm Tom. I'm a taxi driver in the morning and a teacher in the evening. I'm Marco. I'm a chef.";
- if(id==='listen-emma-country') script="Hello, I'm Emma. I'm from Canada.";
- if(id==='listen-emma-last') script="My name is Emma Carter. My last name is Carter. C, A, R, T, E, R.";
- q.transcript=script;
- q.audio='./assets/audio/platform-listening-v1/'+id+'.mp3';
+ const recording=platformListening[q.id];
+ if(!recording)throw new Error('Missing listening script: '+q.id);
+ q.transcript=recording.script;
+ q.audio='./assets/audio/platform-listening-v1/'+recording.file;
  q.audioLabel='Horizons listening';
  q.prompt=q.prompt.replace('Listen to the interviews.', 'Listen.').replace('Listen to the new student.', 'Listen.').replace('Listen to Tom and Mary.', 'Listen to Mary.').replace(/Listen to (name|pair) \d+\./, 'Listen.');
 }

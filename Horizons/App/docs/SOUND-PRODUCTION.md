@@ -1,5 +1,16 @@
 # Horizons answer sound production
 
+## Listening speaker casting and autoplay — 8 November 2026
+
+Required listening plays once when each question occurrence opens, including alphabet/word listening. A persistent player survives option-selection renders without restarting. Checking, skipping, leaving and hiding the page stop playback. A rejected browser autoplay promise stays silent and retains the ordinary Play audio control. A retry later in the round counts as a new occurrence. Listen-and-choose options remain silent, and transcripts remain hidden until grading. Optional pronunciation in non-listening questions is not automatically played on entry.
+
+The previous platform-listening generator hard-coded Jessica for every script. The corrected authored plan in `content/listening-scripts.mjs` specifies every speaker explicitly. Distinct characters require distinct voice IDs; narrator lists/descriptions may use Jessica. The browser, generation plan and backend content copy share the same scripts. Multi-character generation uses ElevenLabs text-to-dialogue with per-turn voice IDs; single-character clips use the corresponding voice directly. Any future script or cast change invalidates the generation fingerprint. Never infer character voices from a name at runtime, pitch-shift another voice or fall back to device synthesis.
+
+Eighteen replacement native MP3s use new `-voices2` paths, leaving earlier native files intact. Sarah/Juniper, Tom/Jarnathan and Marco/Mark Natural now have separate voices; independent Scribe diarization detects three speakers in the 8.96-second clip. The other named first-person clips now follow their book voices. John's article is corrected to “an office worker”; Sarah remains a doctor as in the book. Questions, answers, spellings, phone digits and stable IDs are preserved. Four ASR text differences are explicitly reviewed as Mister/Mr., Bryan/Brian homophones or salesclerk spacing; raw ASR differences remain recorded.
+
+Evidence: `reports/listening-casting.json`, `reports/listening-speakers-asr.json` and `reports/listening-voices-autoplay.json`. Real desktop/mobile browser media playback passes, including choice silence, player continuity, next-question autoplay, skip and blocked-autoplay recovery; 72 backend tests and eight focused audio tests pass using synthetic records. An audit of all85unique local A1 speech scripts/production assignments found45narration/model recordings and40character recordings with separate voices. The book's Tom/Sarah/Marco file already matches its verified multi-voice master. No book audio was regenerated; the author's first On Air episode is preserved. Full human listening review and physical-device autoplay testing are not claimed.
+
+
 Streak audio resume correction: every completion-stage Continue gesture now calls prepareCompletionSound, including entry to the streak. Previously the results-first transition only resumed audio for overtaking/achievement, leaving fire silent when the context suspended on Results. The synthetic saved-round proof explicitly suspends the real AudioContext on Results, enters streak, verifies a new resume call and exactly one start of the decoded native fire-streak MP3 hash. Asset, impact timing and gain are unchanged. Physical-device verification remains outstanding.
 
 

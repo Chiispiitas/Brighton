@@ -1,0 +1,291 @@
+{
+  "date": "2026-11-08",
+  "pass": true,
+  "scope": "All 36 app-owned listening recordings; existing vocabulary/answer pronunciation remains narration",
+  "replacedRecordings": 18,
+  "originalRecordingsPreserved": true,
+  "speakerAssignments": "content/listening-scripts.mjs",
+  "multiCharacterFinding": "listen-two-jobs used Jessica for Sarah, Tom and Marco; regenerated with Juniper, Jarnathan and Mark Natural respectively",
+  "additionalFindings": "First-person Mary, Ariana, Stephen, Allison, Bryan, Lindsay and Emma clips used Jessica rather than the corresponding book voices",
+  "textCorrections": [
+    "John is an office worker (article corrected)",
+    "Sarah is a doctor (same identity as the book; answer to the exercise is still Tom)"
+  ],
+  "replacements": [
+    {
+      "id": "listen-class",
+      "file": "listen-class-voices2.mp3",
+      "durationSeconds": 3.0,
+      "speakers": [
+        {
+          "speaker": "Mary",
+          "voice": "Amy",
+          "text": "Hello, I'm Mary. I'm a student. I'm in Class four."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-teacher",
+      "file": "listen-teacher-voices2.mp3",
+      "durationSeconds": 2.77,
+      "speakers": [
+        {
+          "speaker": "Mary",
+          "voice": "Amy",
+          "text": "Hello, I'm Mary. My teacher is Mister Wilson."
+        }
+      ],
+      "transcriptExactNormalizedMatch": false,
+      "transcriptReview": {
+        "accepted": true,
+        "reason": "Mister / Mr. abbreviation; same spoken title"
+      }
+    },
+    {
+      "id": "listen-ariana-name",
+      "file": "listen-ariana-name-voices2.mp3",
+      "durationSeconds": 3.79,
+      "speakers": [
+        {
+          "speaker": "Ariana",
+          "voice": "Amy",
+          "text": "Hello, my name is Ariana. A, R, I, A, N, A."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-ariana-phone",
+      "file": "listen-ariana-phone-voices2.mp3",
+      "durationSeconds": 10.45,
+      "speakers": [
+        {
+          "speaker": "Ariana",
+          "voice": "Amy",
+          "text": "My phone number is zero, nine, five, two, one, zero, seven, one, six, eight."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-spell-0",
+      "file": "listen-spell-0-voices2.mp3",
+      "durationSeconds": 4.6,
+      "speakers": [
+        {
+          "speaker": "Stephen",
+          "voice": "Mark Casual",
+          "text": "My name is Stephen. S, T, E, P, H, E, N."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-spell-1",
+      "file": "listen-spell-1-voices2.mp3",
+      "durationSeconds": 3.16,
+      "speakers": [
+        {
+          "speaker": "Allison",
+          "voice": "Amy",
+          "text": "My name is Allison. A, L, L, I, S, O, N."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-spell-2",
+      "file": "listen-spell-2-voices2.mp3",
+      "durationSeconds": 3.24,
+      "speakers": [
+        {
+          "speaker": "Bryan",
+          "voice": "Jarnathan",
+          "text": "My name is Bryan. B, R, Y, A, N."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-spell-3",
+      "file": "listen-spell-3-voices2.mp3",
+      "durationSeconds": 4.99,
+      "speakers": [
+        {
+          "speaker": "Lindsay",
+          "voice": "Adeline",
+          "text": "My name is Lindsay. L, I, N, D, S, A, Y."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-profile-class-0",
+      "file": "listen-profile-class-0-voices2.mp3",
+      "durationSeconds": 1.96,
+      "speakers": [
+        {
+          "speaker": "Allison",
+          "voice": "Amy",
+          "text": "My name is Allison. I'm in Class two."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-profile-phone-0",
+      "file": "listen-profile-phone-0-voices2.mp3",
+      "durationSeconds": 6.92,
+      "speakers": [
+        {
+          "speaker": "Allison",
+          "voice": "Amy",
+          "text": "My name is Allison. My phone number is zero, nine, eight, four, one, zero, two, three, seven, six."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-profile-class-1",
+      "file": "listen-profile-class-1-voices2.mp3",
+      "durationSeconds": 2.59,
+      "speakers": [
+        {
+          "speaker": "Bryan",
+          "voice": "Jarnathan",
+          "text": "My name is Bryan. I'm in Class five."
+        }
+      ],
+      "transcriptExactNormalizedMatch": false,
+      "transcriptReview": {
+        "accepted": true,
+        "reason": "Bryan / Brian spoken-name homophone; class five exact"
+      }
+    },
+    {
+      "id": "listen-profile-phone-1",
+      "file": "listen-profile-phone-1-voices2.mp3",
+      "durationSeconds": 8.83,
+      "speakers": [
+        {
+          "speaker": "Bryan",
+          "voice": "Jarnathan",
+          "text": "My name is Bryan. My phone number is zero, nine, six, three, two, one, five, zero, eight, four."
+        }
+      ],
+      "transcriptExactNormalizedMatch": false,
+      "transcriptReview": {
+        "accepted": true,
+        "reason": "Bryan / Brian spoken-name homophone; all ten digits exact"
+      }
+    },
+    {
+      "id": "listen-profile-class-2",
+      "file": "listen-profile-class-2-voices2.mp3",
+      "durationSeconds": 2.43,
+      "speakers": [
+        {
+          "speaker": "Lindsay",
+          "voice": "Adeline",
+          "text": "My name is Lindsay. I'm in Class three."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-profile-phone-2",
+      "file": "listen-profile-phone-2-voices2.mp3",
+      "durationSeconds": 8.52,
+      "speakers": [
+        {
+          "speaker": "Lindsay",
+          "voice": "Adeline",
+          "text": "My name is Lindsay. My phone number is zero, nine, nine, seven, six, zero, one, four, two, five."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-job-2",
+      "file": "listen-job-2-voices2.mp3",
+      "durationSeconds": 1.65,
+      "speakers": [
+        {
+          "speaker": "Narrator",
+          "voice": "Jessica",
+          "text": "John is an office worker."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-two-jobs",
+      "file": "listen-two-jobs-voices2.mp3",
+      "durationSeconds": 8.99,
+      "speakers": [
+        {
+          "speaker": "Sarah",
+          "voice": "Juniper",
+          "text": "I'm Sarah. I'm a doctor."
+        },
+        {
+          "speaker": "Tom",
+          "voice": "Jarnathan",
+          "text": "I'm Tom. I'm a taxi driver in the morning and a teacher in the evening."
+        },
+        {
+          "speaker": "Marco",
+          "voice": "Mark Natural",
+          "text": "I'm Marco. I'm a chef."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-emma-country",
+      "file": "listen-emma-country-voices2.mp3",
+      "durationSeconds": 2.77,
+      "speakers": [
+        {
+          "speaker": "Emma",
+          "voice": "Adeline",
+          "text": "Hello, I'm Emma. I'm from Canada."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    },
+    {
+      "id": "listen-emma-last",
+      "file": "listen-emma-last-voices2.mp3",
+      "durationSeconds": 9.17,
+      "speakers": [
+        {
+          "speaker": "Emma",
+          "voice": "Adeline",
+          "text": "My name is Emma Carter. My last name is Carter. C, A, R, T, E, R."
+        }
+      ],
+      "transcriptExactNormalizedMatch": true,
+      "transcriptReview": null
+    }
+  ],
+  "asrIndependentDiarization": "reports/listening-speakers-asr.json",
+  "browserProof": "reports/listening-voices-autoplay.json",
+  "bookAudit": "reports/book-listening-casting.json",
+  "limits": "Independent ASR, decoded media and actual browser playback verified; not a physical phone or full human listening pass of all 85 book recordings."
+}

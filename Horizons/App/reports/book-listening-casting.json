@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-08",
+  "scope": "All 85 unique A1 speech production records; scripts and current native published file hashes reviewed. Not a new human listening pass of all recordings.",
+  "totalRecordings": 85,
+  "singleVoice": 45,
+  "multipleVoices": 40,
+  "findings": [],
+  "bookRegenerated": false,
+  "reason": "No multi-character scene found assigned only one voice. Book Tom/Sarah/Marco already use Jarnathan/Juniper/Mark Natural. Single-voice recordings are narrator readings, word lists or sentence drills. Author-created first On Air episode preserved.",
+  "pass": true,
+  "bookExample": {
+    "filename": "Track 1.8 - Exercise 4.1.mp3",
+    "productionSource": "Audio scripts/A1-production.json",
+    "script": "Audio scripts/ElevenCreative Studio/1B - Track 1.8 - Exercise 4.1.txt",
+    "scriptExists": true,
+    "fileExists": true,
+    "sha256": "dccbf1e1f2a78c149994f032b2be95514bcf016e4fdc90a40459f96faee93073",
+    "distinctVoiceCount": 4,
+    "voiceNames": [
+      "Jessica",
+      "Jarnathan",
+      "Juniper",
+      "Mark Natural"
+    ],
+    "voiceIds": [
+      "cgSgspJ2msm6clMCkdW9",
+      "c6SfcYrb2t09NHXiT80T",
+      "aMSt68OGf4xUZAnLpTU8",
+      "UgBBYS2sOqTuMpoF3BR0"
+    ],
+    "classification": "character recording with separate voice assignments",
+    "protectedAuthorEpisode": false
+  }
+}
