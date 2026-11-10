@@ -670,7 +670,7 @@
     if (liveProgress && typeof liveProgress.stop === "function") liveProgress.stop();
     liveProgress = window.BrightonLiveProgress.create({
       examId: "brighton-b2-rue-practice-4",
-      examTitle: "Brighton B2 Reading and Use of English Practice Test 4",
+      examTitle: "B2 Reading and Use of English Practice",
       skill: "Reading and Use of English",
       level: "B2",
       getProgress: buildLiveProgressSnapshot
@@ -722,7 +722,7 @@
     const answerList = buildAnswerList();
     return {
       examId: "brighton-b2-rue-practice-4",
-      examTitle: "Brighton B2 Reading and Use of English Practice Test 4",
+      examTitle: "B2 Reading and Use of English Practice",
       studentName: state.student.name,
       classId: state.student.classId,
       answers: state.answers,

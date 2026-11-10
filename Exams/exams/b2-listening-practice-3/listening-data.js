@@ -2,7 +2,7 @@
 
 window.listeningExam = {
   examId: "brighton-b2-listening-practice-3",
-  title: "Brighton B2 Listening Practice Test 3",
+  title: "B2 Listening Practice",
   storageKey: "brighton-b2-listening-practice-3-state-v1",
   level: "B2",
   skill: "Listening",

@@ -1,7 +1,7 @@
 "use strict";
 window.writingExam = {
   "examId": "brighton-b2-writing-variation-1",
-  "title": "Brighton B2 First Writing Variation 1",
+  "title": "B2 Writing Practice",
   "level": "B2",
   "skill": "Writing",
   "maxScore": 40,
