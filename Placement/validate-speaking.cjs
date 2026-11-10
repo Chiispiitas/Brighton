@@ -43,19 +43,20 @@ async function frontend(prefix) {
   w.setTimeout = (fn,ms,...args)=>originalTimeout(fn,ms>1000000?ms:ms>=2000?20:Math.min(ms,5),...args);
   w.scrollTo = ()=>{}; w.HTMLElement.prototype.scrollIntoView = ()=>{};
   w.BRIGHTON_SITE_CONFIG = {API_BASE_URL:'https://example.test/api'};
-  let mode = 'success'; const calls = [];
+  let mode = 'success'; let heldResume; const calls = [];
   const response = body=>({ok:true,status:200,text:async()=>JSON.stringify(body)});
   w.fetch = async(url,options)=> {
     calls.push({url,body:JSON.parse(options.body)});
     if (mode==='hang') return new Promise(()=>{});
     if (mode==='body-hang') return {ok:true,text:()=>new Promise(()=>{})};
+    if (mode==='retry-race' && url.endsWith('Resume')) {mode='success';return new Promise(resolve=>{heldResume=resolve;});}
     if (url.endsWith('Resume')) return response({success:true,status:'active',phase:'speaking',moduleId:'speaking-a2'});
     if (mode==='incomplete') return response({success:true});
     return response({success:true,finalLevel:'A2',result:{finalLevel:'A2',skills:{speaking:{score:43,displayScore:'4.3/10',level:'A2'}}}});
   };
   w.eval(read(prefix+'item-bank.js'));
   let source = read(prefix+'main.js'); const end = source.lastIndexOf('})();');
-  source = source.slice(0,end) + `window.qa={runMicCheck,renderSpeakingHandoff,startSpeakingRecording,stopSpeakingRecording,renderPlacementResult,cleanupSpeakingMedia,apiPost,renderSpeakingSubmitRetry,setup(){session={sessionId:'qa',clientSessionId:'qa-client',moduleId:'speaking-a2',phase:'speaking',studentName:'QA',status:'active'};currentModuleId='speaking-a2';},getState(){return {session,recorder:speakingRecorder};}};` + source.slice(end);
+  source = source.slice(0,end) + `window.qa={runMicCheck,renderSpeakingHandoff,startSpeakingRecording,stopSpeakingRecording,renderPlacementResult,cleanupSpeakingMedia,apiPost,renderSpeakingSubmitRetry,skipSpeakingAfterError,setup(){session={sessionId:'qa',clientSessionId:'qa-client',moduleId:'speaking-a2',phase:'speaking',studentName:'QA',status:'active'};currentModuleId='speaking-a2';},getState(){return {session,recorder:speakingRecorder};}};` + source.slice(end);
   w.eval(source); w.qa.setup();
   let released = 0; const track = new w.EventTarget(); track.readyState = 'live'; track.stop = ()=>{released++};
   const stream = {getAudioTracks:()=>[track],getTracks:()=>[track]};
@@ -94,9 +95,39 @@ async function frontend(prefix) {
   w.qa.setup(); w.qa.renderSpeakingHandoff(); await w.qa.runMicCheck(); await pause(15);
   let clock = 1000; Object.defineProperty(w.performance,'now',{value:()=>clock,configurable:true});
   await w.qa.startSpeakingRecording(); clock = 45000;
+  // Mobile browsers may deliver final audio and stop several seconds late.
+  // Only the interval before the candidate presses Finish is speaking time.
+  const immediateStop = w.MediaRecorder.prototype.stop;
+  w.MediaRecorder.prototype.stop = function(){clock += 7000;return immediateStop.call(this);};
   await w.qa.stopSpeakingRecording(); await pause(100);
+  w.MediaRecorder.prototype.stop = immediateStop;
   assert.equal(w.qa.getState().session.status,'completed');
-  assert.ok(calls.some(call=>call.url.endsWith('SubmitSpeaking') && call.body.durationSeconds===44 && call.body.recordedBytes===2000));
+  const captured = calls.filter(call=>call.url.endsWith('SubmitSpeaking')).at(-1).body;
+  assert.equal(captured.durationSeconds,44,'delayed recorder stop must not inflate speaking duration');
+  assert.equal(captured.recordedBytes,2000);
+  // An OS/browser stop must ask whether the partial answer was complete.
+  w.qa.setup(); w.qa.renderSpeakingHandoff(); await w.qa.runMicCheck(); await pause(15);
+  clock=1000; await w.qa.startSpeakingRecording(); clock=45000;
+  const beforeSpontaneous=calls.filter(call=>call.url.endsWith('SubmitSpeaking')).length;
+  w.qa.getState().recorder.stop(); await pause(50);
+  assert.ok(w.document.querySelector('#sendInterruptedSpeakingBtn'),'spontaneous recorder stop requires candidate confirmation');
+  assert.equal(w.qa.getState().session.status,'active');
+  assert.equal(calls.filter(call=>call.url.endsWith('SubmitSpeaking')).length,beforeSpontaneous,'partial audio must not be automatically assessed');
+  clock=120000; await pause(250);
+  assert.ok(w.document.querySelector('#sendInterruptedSpeakingBtn'),'old recording timer must not replace interruption controls');
+  // A cancelled retry must not later replace the completed skipped result.
+  w.qa.setup(); mode='retry-race';
+  w.qa.renderSpeakingSubmitRetry({audioBase64:'A'.repeat(2000),audioMimeType:'audio/webm',durationSeconds:40});
+  const beforeRace=calls.filter(call=>call.url.endsWith('SubmitSpeaking')).length;
+  w.document.querySelector('#retrySpeakingSubmitBtn').click();
+  assert.equal(w.document.querySelector('#skipSpeakingBtn').disabled,true,'prevent simultaneous retry and skip clicks');
+  assert.equal(typeof heldResume,'function');
+  await w.qa.skipSpeakingAfterError();
+  heldResume(response({success:true,status:'active',phase:'speaking',moduleId:'speaking-a2'}));
+  await pause(100);
+  assert.equal(w.qa.getState().session.phase,'result');
+  assert.equal(calls.filter(call=>call.url.endsWith('SubmitSpeaking')).length,beforeRace,'stale retry must stop before sending audio');
+  assert.equal(w.document.querySelector('#retrySpeakingSubmitBtn'),null,'stale retry must not replace completed result');
   // An HTTP success without an assessment must not produce a certificate.
   w.qa.setup(); mode='incomplete';
   w.qa.renderSpeakingSubmitRetry({audioBase64:'A'.repeat(2000),audioMimeType:'audio/webm',durationSeconds:40});
@@ -134,4 +165,43 @@ async function reopen(file) {
   required=true;result=await context.resumePlacement({payload:{sessionId:'qa',clientSessionId:'wrong',retrySpeaking:true}});assert.ok(result.error);assert.equal(writes,0);
   console.log(file+': only invalid owned attempts reopen Speaking; objective responses remain unchanged.');
 }
-(async()=>{await backend('wix-backend/gemini-speaking.js');await backend('YoungLearners/wix-backend/young-gemini-speaking.js');await frontend('');await frontend('YoungLearners/');await reopen('wix-backend/placement.js');await reopen('YoungLearners/wix-backend/young-placement.js');})().catch(error=>{console.error(error);process.exitCode=1;});
+function recorderNegotiation(prefix) {
+  const main = read(prefix+'main.js');
+  const helpers = main.slice(main.indexOf('  function createSpeakingMediaRecorder('), main.indexOf('  async function startSpeakingRecording('));
+  let behavior = 'mime', configured = 0, detached = 0, received = 0;
+  const instances = [];
+  class Recorder extends EventTarget {
+    static isTypeSupported(type) { return ['audio/webm','audio/mp4'].includes(type); }
+    constructor(stream, options = {}) { super(); this.options=options; this.state='inactive'; this.mimeType=options.mimeType || 'audio/mp4'; instances.push(this); }
+    start(timeslice) {
+      if (behavior==='all' || behavior==='mime' && this.mimeType==='audio/webm' || behavior==='bitrate' && this.options.audioBitsPerSecond || behavior==='timeslice' && timeslice !== undefined) throw new Error('Encoder cannot start');
+      this.state='recording';
+    }
+    stop() { this.state='inactive'; }
+  }
+  const context = vm.createContext({console:{warn(){}}, MediaRecorder:Recorder, window:{MediaRecorder:Recorder}, SPEAKING_AUDIO_BITS_PER_SECOND:24000});
+  vm.runInContext(helpers, context);
+  const configure = recorder => {
+    configured++;
+    const handler = () => received++;
+    recorder.addEventListener('dataavailable',handler);
+    return () => {detached++;recorder.removeEventListener('dataavailable',handler);};
+  };
+  let recorder = context.createSpeakingMediaRecorder({},configure);
+  assert.equal(recorder.mimeType,'audio/mp4');
+  assert.equal(recorder.state,'recording');
+  assert.equal(configured,2); assert.equal(detached,1);
+  instances[0].dispatchEvent(new Event('dataavailable'));
+  recorder.dispatchEvent(new Event('dataavailable'));
+  assert.equal(received,1,'failed encoder events must not contaminate successful audio');
+  behavior='bitrate'; recorder=context.createSpeakingMediaRecorder({},configure);
+  assert.equal(recorder.options.audioBitsPerSecond,undefined);
+  assert.equal(recorder.state,'recording');
+  behavior='timeslice'; const before=instances.length;
+  recorder=context.createSpeakingMediaRecorder({},configure);
+  assert.equal(instances.length,before+1,'untimed start should reuse a compatible encoder');
+  assert.equal(recorder.state,'recording');
+  behavior='all'; assert.throws(()=>context.createSpeakingMediaRecorder({},configure),/Encoder cannot start/);
+  console.log(prefix+': MIME start rejection, bitrate fallback, untimed start and failed-encoder listener cleanup passed.');
+}
+(async()=>{recorderNegotiation('');recorderNegotiation('YoungLearners/');await backend('wix-backend/gemini-speaking.js');await backend('YoungLearners/wix-backend/young-gemini-speaking.js');await frontend('');await frontend('YoungLearners/');await reopen('wix-backend/placement.js');await reopen('YoungLearners/wix-backend/young-placement.js');})().catch(error=>{console.error(error);process.exitCode=1;});

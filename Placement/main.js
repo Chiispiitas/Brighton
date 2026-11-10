@@ -65,6 +65,9 @@
   let speakingRecordingActive = false;
   let speakingCaptureMode = "recorder+recognition";
   let lastSpeakingAttemptMetrics = null;
+  let retainedSpeakingAudio = null;
+  let speakingTechnicalCode = "";
+  let speakingInterrupted = false;
   let speakingInterimTranscript = "";
   let speakingTranscriptParts = [];
   let speakingConfidenceSamples = [];
@@ -76,6 +79,7 @@
   let speakingAnalysisTimer = null;
   let speakingAnalysisProgress = 0;
   let speakingStartedAt = 0;
+  let speakingStoppedAt = 0;
   let speakingAutoStoppedByTimeLimit = false;
   let speakingSpeechFrames = 0;
   let speakingTotalFrames = 0;
@@ -1141,7 +1145,7 @@
   function speakingPlatformFamily() {
     const ua = String(navigator.userAgent || "");
     const platform = String(navigator.platform || "");
-    if (/iPhone|iPad|iPod/i.test(ua)) return "iOS";
+    if (/iPhone|iPad|iPod/i.test(ua) || platform === "MacIntel" && Number(navigator.maxTouchPoints || 0) > 1) return "iOS";
     if (/Android/i.test(ua)) return "Android";
     if (/Mac/i.test(platform) || /Macintosh/i.test(ua)) return "macOS";
     if (/Win/i.test(platform) || /Windows/i.test(ua)) return "Windows";
@@ -1540,13 +1544,15 @@
         <button id="micCheckBtn" class="primary-btn speaking-primary" type="button">
           <span>Check microphone</span><span aria-hidden="true">→</span>
         </button>
-        <p id="micCheckStatus" class="speaking-status" aria-live="polite"></p>
+        <p id="micCheckStatus" class="speaking-status" aria-live="polite">Keep this page open while recording. If you opened it inside WhatsApp or another app, use your browser or the device recorder below.</p>
+        <button id="nativeSpeakingBtn" class="secondary-action" type="button">Use device recorder</button>
         <button id="skipSpeakingBtn" class="secondary-action" type="button">Finish without Speaking</button>
         <p class="speaking-status">If you cannot record now, your other answers will be kept and Speaking will remain unscored.</p>
       </div>
     `;
 
     els.stageRoot.querySelector("#micCheckBtn")?.addEventListener("click", runMicCheck);
+    els.stageRoot.querySelector("#nativeSpeakingBtn")?.addEventListener("click", renderNativeSpeaking);
     els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
   }
 
@@ -1566,12 +1572,14 @@
             <span class="record-dot" aria-hidden="true"></span>
             <span>Record answer</span>
           </button>
-          <p class="speaking-status">Answer the question. Do not read or repeat it.</p>
+          <p class="speaking-status">Answer the question. Do not read or repeat it. Keep this page open while recording.</p>
+          <button id="nativeSpeakingBtn" class="secondary-action" type="button">Use device recorder</button>
         </div>
       </div>
     `;
 
     els.stageRoot.querySelector("#startSpeakingBtn")?.addEventListener("click", startSpeakingRecording);
+    els.stageRoot.querySelector("#nativeSpeakingBtn")?.addEventListener("click", renderNativeSpeaking);
   }
 
   function commitInterimTranscript() {
@@ -1672,7 +1680,7 @@
     }, 90);
   }
 
-  function createSpeakingMediaRecorder(stream) {
+  function createSpeakingMediaRecorder(stream, configureRecorder) {
     if (!window.MediaRecorder) {
       throw new Error("Audio recording is not supported in this browser.");
     }
@@ -1706,12 +1714,23 @@
     let lastError = null;
 
     for (const options of attempts) {
+      let recorder = null;
+      let discardListeners = null;
       try {
-        return Object.keys(options).length
+        recorder = Object.keys(options).length
           ? new MediaRecorder(stream, options)
           : new MediaRecorder(stream);
+        discardListeners = configureRecorder?.(recorder);
+        // Some mobile browsers accept a MIME type at construction but reject
+        // it only at start(). Negotiate a working encoder, not just an object.
+        startSpeakingMediaRecorder(recorder);
+        return recorder;
       } catch (error) {
         lastError = error;
+        discardListeners?.();
+        if (recorder?.state !== "inactive") {
+          try { recorder?.stop(); } catch {}
+        }
       }
     }
 
@@ -1746,6 +1765,8 @@
     try {
       speakingChunks = [];
       lastSpeakingAttemptMetrics = null;
+      retainedSpeakingAudio = null;
+      speakingInterrupted = false;
       speakingTranscriptParts = [];
       speakingInterimTranscript = "";
       speakingRecognitionDisabled = true;
@@ -1757,14 +1778,18 @@
       speakingSpeechFrames = 0;
       speakingTotalFrames = 0;
       speakingStartedAt = performance.now();
+      speakingStoppedAt = 0;
       speakingAutoStoppedByTimeLimit = false;
       speakingRecordingActive = true;
       speakingCaptureMode = "media-recorder";
 
       const stream = await ensureSpeakingMic();
-      stream.getAudioTracks?.().forEach(track => track.addEventListener?.("ended", () => {
-        if (speakingRecordingActive) renderSpeakingTechnicalError("The microphone disconnected. Please reconnect it and try again.");
-      }, { once: true }));
+      stream.getAudioTracks?.().forEach(track => {
+        track.addEventListener?.("ended", () => {
+          if (speakingRecordingActive) renderSpeakingTechnicalError("The microphone disconnected. Please reconnect it and try again.", "AUDIO_TRACK_ENDED");
+        }, { once: true });
+        track.addEventListener?.("mute", interruptSpeakingRecording);
+      });
 
       // Metering is best-effort; it must not block recording on Android.
       try {
@@ -1774,15 +1799,28 @@
       }
 
       if (epoch !== speakingFlowEpoch) return;
-      speakingRecorder = createSpeakingMediaRecorder(stream);
-      speakingRecorder.addEventListener("error", () => renderSpeakingTechnicalError("The recording was interrupted. Please try again."), { once: true });
-
-      speakingRecorder.addEventListener("dataavailable", (event) => {
-        if (event.data?.size) speakingChunks.push(event.data);
+      speakingRecorder = createSpeakingMediaRecorder(stream, recorder => {
+        speakingRecorder = recorder;
+        speakingChunks = [];
+        const onError = () => {
+          if (speakingRecorder === recorder) renderSpeakingTechnicalError("The recording was interrupted. Please try again.");
+        };
+        const onData = event => {
+          if (speakingRecorder === recorder && event.data?.size) speakingChunks.push(event.data);
+        };
+        const onStop = () => {
+          if (speakingRecorder === recorder) finishSpeakingRecording();
+        };
+        recorder.addEventListener("error", onError, { once: true });
+        recorder.addEventListener("dataavailable", onData);
+        recorder.addEventListener("stop", onStop, { once: true });
+        return () => {
+          recorder.removeEventListener("error", onError);
+          recorder.removeEventListener("dataavailable", onData);
+          recorder.removeEventListener("stop", onStop);
+          if (speakingRecorder === recorder) speakingRecorder = null;
+        };
       });
-
-      speakingRecorder.addEventListener("stop", finishSpeakingRecording, { once: true });
-      startSpeakingMediaRecorder(speakingRecorder);
       speakingStartedAt = performance.now();
       startSpeakingMeter();
       renderSpeakingRecording(data);
@@ -1911,13 +1949,163 @@
       if (speakingRecorder === recorder) renderSpeakingTechnicalError("The browser could not finish the recording. Please try again.");
     }, 8000);
     recorder.addEventListener("stop", () => window.clearTimeout(stopTimeout), { once: true });
+    speakingStoppedAt = performance.now();
     try { recorder.stop(); } catch { window.clearTimeout(stopTimeout); renderSpeakingTechnicalError("The recording could not finish. Please try again."); }
   }
 
+
+  async function nativeAudioDuration(file) {
+    const audio = document.createElement("audio");
+    const url = URL.createObjectURL(file);
+    try {
+      return await withDeadline(new Promise((resolve, reject) => {
+        audio.preload = "metadata";
+        audio.onloadedmetadata = () => {
+          if (Number.isFinite(audio.duration) && audio.duration > 0) resolve(audio.duration);
+          else reject(new Error("Recording duration unavailable."));
+        };
+        audio.onerror = () => reject(new Error("This audio format could not be read."));
+        audio.src = url;
+      }), 10000, "AUDIO_METADATA_TIMEOUT");
+    } catch {
+      const AudioClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioClass) throw new Error("Choose an M4A, MP3 or WAV recording so this browser can read its duration.");
+      const context = new AudioClass();
+      try {
+        const bytes = await file.arrayBuffer();
+        const decoded = await withDeadline(new Promise((resolve, reject) => {
+          const pending = context.decodeAudioData(bytes, resolve, reject);
+          pending?.then?.(resolve, reject);
+        }), 10000, "AUDIO_DECODE_TIMEOUT");
+        return decoded.duration;
+      } finally { context.close()?.catch?.(() => {}); }
+    } finally {
+      audio.removeAttribute("src");
+      audio.load();
+      URL.revokeObjectURL(url);
+    }
+  }
+
+  function renderNativeSpeaking() {
+    cleanupSpeakingMedia();
+    const data = speakingModule();
+    if (!data?.prompt) return;
+    const epoch = speakingFlowEpoch;
+    const maximum = Number(data.maximumSeconds) || 90;
+    const minimum = Number(data.minimumSeconds) || 5;
+    els.stageRoot.innerHTML = `
+      <div class="speaking-prompt-screen">
+        <div class="speaking-prompt-card">
+          ${typeof renderPicture === "function" ? renderPicture(data) : ""}
+          <h3>${escapeHtml(data.prompt)}</h3>
+        </div>
+        <div class="speaking-record-panel">
+          <h3>Use your device recorder</h3>
+          <p>Record your answer in your phone's voice recorder, then choose the audio here. Speak for ${minimum}–${maximum} seconds. Answer the question instead of reading it.</p>
+          <label for="nativeSpeakingFile">Choose your recording</label>
+          <input id="nativeSpeakingFile" type="file" accept="audio/*,.m4a,.mp3,.wav,.aac,.ogg,.webm,.flac" capture="user" />
+          <p id="nativeSpeakingStatus" class="speaking-status" role="status"></p>
+          <audio id="nativeSpeakingPreview" controls class="hidden" aria-label="Listen to your answer"></audio>
+          <button id="submitNativeSpeakingBtn" class="primary-btn hidden" type="button">Send answer</button>
+          <button id="backSpeakingBtn" class="secondary-action" type="button">Back to microphone</button>
+        </div>
+      </div>`;
+    const input = els.stageRoot.querySelector("#nativeSpeakingFile");
+    const submit = els.stageRoot.querySelector("#submitNativeSpeakingBtn");
+    const status = els.stageRoot.querySelector("#nativeSpeakingStatus");
+    const preview = els.stageRoot.querySelector("#nativeSpeakingPreview");
+    let selected = null;
+    let previewUrl = "";
+    let selection = 0;
+    const clearPreview = () => {
+      preview.pause();
+      preview.removeAttribute("src");
+      if (previewUrl) URL.revokeObjectURL(previewUrl);
+      previewUrl = "";
+    };
+    els.stageRoot.querySelector("#backSpeakingBtn").addEventListener("click", () => { clearPreview(); renderSpeakingHandoff(); });
+    input.addEventListener("change", async () => {
+      const token = ++selection;
+      selected = null;
+      submit.classList.add("hidden");
+      preview.classList.add("hidden");
+      clearPreview();
+      const file = input.files?.[0];
+      if (!file) return;
+      status.textContent = "Checking your recording…";
+      try {
+        if (file.size < 1200 || file.size > 8500000) throw new Error("Choose an audio recording smaller than 8.5 MB.");
+        const extension = String(file.name || "").split(".").pop().toLowerCase();
+        const types = {m4a:"audio/mp4",mp4:"audio/mp4",mp3:"audio/mpeg",wav:"audio/wav",aac:"audio/aac",ogg:"audio/ogg",webm:"audio/webm",flac:"audio/flac",aiff:"audio/aiff"};
+        const mime = /^audio\//i.test(file.type) ? file.type : types[extension];
+        if (!mime) throw new Error("Choose an audio recording, such as M4A, MP3 or WAV.");
+        const duration = await nativeAudioDuration(file);
+        if (token !== selection || epoch !== speakingFlowEpoch) return;
+        if (!Number.isFinite(duration) || duration < Math.max(5, minimum) || duration > maximum + 2) throw new Error(`Record an answer between ${Math.max(5, minimum)} and ${maximum} seconds, then choose it here.`);
+        selected = {blob:new Blob([file], {type:mime}), duration};
+        previewUrl = URL.createObjectURL(file);
+        preview.src = previewUrl;
+        preview.classList.remove("hidden");
+        status.textContent = "Your recording is ready. Listen to check it, then send your answer.";
+        submit.classList.remove("hidden");
+      } catch (error) {
+        if (token === selection && epoch === speakingFlowEpoch) status.textContent = error.message || "This recording could not be read. Please choose another.";
+      }
+    });
+    submit.addEventListener("click", async () => {
+      if (!selected || submit.disabled) return;
+      submit.disabled = true;
+      clearPreview();
+      retainedSpeakingAudio = null;
+      speakingAutoStoppedByTimeLimit = false;
+      await processSpeakingAudio(selected.blob, selected.duration, {captureMode:"device-recorder"});
+    });
+  }
+
+  function renderInterruptedSpeaking(blob, duration) {
+    cleanupSpeakingMedia();
+    speakingTechnicalCode = "RECORDING_INTERRUPTED";
+    els.stageRoot.innerHTML = `
+      <div class="speaking-retry">
+        <strong>Recording paused because the microphone or page was interrupted.</strong>
+        <p class="speaking-status">Keep this page open while answering. You can record again, or send the captured answer if you had finished speaking.</p>
+        <button id="retrySpeakingBtn" class="secondary-action" type="button">Record again</button>
+        <button id="sendInterruptedSpeakingBtn" class="secondary-action" type="button">Send captured answer</button>
+        <button id="nativeSpeakingBtn" class="secondary-action" type="button">Use device recorder</button>
+      </div>`;
+    const send = els.stageRoot.querySelector("#sendInterruptedSpeakingBtn");
+    send.disabled = duration < Math.max(5, Number(speakingModule()?.minimumSeconds) || 5) || blob.size < 1200;
+    send.addEventListener("click", () => {
+      if (send.disabled) return;
+      send.disabled = true;
+      speakingAutoStoppedByTimeLimit = false;
+      processSpeakingAudio(blob, duration, {captureMode:"interrupted-recorder"});
+    });
+    els.stageRoot.querySelector("#retrySpeakingBtn").addEventListener("click", renderSpeakingHandoff);
+    els.stageRoot.querySelector("#nativeSpeakingBtn").addEventListener("click", renderNativeSpeaking);
+  }
+
+  function interruptSpeakingRecording() {
+    if (!speakingRecordingActive || speakingRecorder?.state !== "recording") return;
+    speakingInterrupted = true;
+    stopSpeakingRecording();
+  }
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") interruptSpeakingRecording();
+  });
+  window.addEventListener("pagehide", interruptSpeakingRecording);
+
   async function finishSpeakingRecording() {
     if (!speakingRecorder) return;
+    // A browser/OS may stop capture without our Finish button (calls, sleep,
+    // Bluetooth changes). Never auto-assess that partial answer.
+    if (speakingRecordingActive) speakingInterrupted = true;
+    speakingRecordingActive = false;
+    window.clearInterval(speakingTimer);
+    window.clearInterval(speakingMeterTimer);
+    if (!speakingStoppedAt) speakingStoppedAt = performance.now();
     const data = speakingModule();
-    const durationSeconds = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
+    const durationSeconds = Math.max(0, ((speakingStoppedAt || performance.now()) - speakingStartedAt) / 1000);
     const speechRatio = speakingTotalFrames
       ? speakingSpeechFrames / speakingTotalFrames
       : 0;
@@ -1925,9 +2113,23 @@
     const audioActivityAvailable = Boolean(speakingAnalyser && speakingTotalFrames > 0);
     const recorderMimeType = String(speakingRecorder?.mimeType || speakingChunks[0]?.type || "audio/webm");
     const audioBlob = new Blob(speakingChunks, { type: recorderMimeType });
-    const recordedBytes = audioBlob.size;
+    const audioBitsPerSecond = Number(speakingRecorder?.audioBitsPerSecond) || SPEAKING_AUDIO_BITS_PER_SECOND;
     releaseSpeakingCaptureStream();
+    if (speakingInterrupted) {
+      renderInterruptedSpeaking(audioBlob, durationSeconds);
+      return;
+    }
+    await processSpeakingAudio(audioBlob, durationSeconds, {speechRatio, speechSeconds, audioActivityAvailable, audioBitsPerSecond, captureMode: speakingCaptureMode});
+  }
 
+  async function processSpeakingAudio(audioBlob, durationSeconds, capture = {}) {
+    const epoch = speakingFlowEpoch;
+    const data = speakingModule();
+    const recorderMimeType = audioBlob.type || "audio/webm";
+    const recordedBytes = audioBlob.size;
+    const speechRatio = Number(capture.speechRatio) || 0;
+    const speechSeconds = Number(capture.speechSeconds) || 0;
+    const audioActivityAvailable = Boolean(capture.audioActivityAvailable);
     if (durationSeconds < 5 || recordedBytes < 1200) {
       renderSpeakingTechnicalError("We couldn't detect enough audio. Try again.");
       return;
@@ -1956,9 +2158,12 @@
 
     try {
       const audioBase64 = await withDeadline(blobToBase64(audioBlob), 15000, "AUDIO_ENCODING_TIMEOUT");
+      if (epoch !== speakingFlowEpoch) return;
+      retainedSpeakingAudio = {audioBase64, audioMimeType: recorderMimeType};
       // Keep the recording available when a chunk upload fails.
       lastSpeakingAttemptMetrics = {audioBase64, audioMimeType: recorderMimeType, durationSeconds, speechSeconds, speechRatio, recordedBytes, maximumSeconds: Number(data.maximumSeconds) || null, autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit};
       const audioTransport = await prepareSpeakingAudioTransport(audioBase64, recorderMimeType);
+      if (epoch !== speakingFlowEpoch) return;
 
       const speakingMetrics = {
         durationSeconds,
@@ -1976,8 +2181,8 @@
         audioActivityAvailable,
         speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
         recorderMimeType,
-        audioBitsPerSecond: Number(speakingRecorder?.audioBitsPerSecond) || SPEAKING_AUDIO_BITS_PER_SECOND,
-        captureMode: speakingCaptureMode,
+        audioBitsPerSecond: Number(capture.audioBitsPerSecond) || 0,
+        captureMode: capture.captureMode || speakingCaptureMode,
         recognitionError: "",
         recognitionStarts: 0,
         recognitionResults: 0,
@@ -1998,6 +2203,7 @@
         ...speakingMetrics
       });
 
+      if (epoch !== speakingFlowEpoch) return;
       stopSpeakingAnalysisProgress();
 
       if (result.speakingRetryReason === "prompt-repeat") {
@@ -2018,10 +2224,8 @@
           providerDiagnostic.providerCode || providerDiagnostic.speakingErrorCode || "",
           providerDiagnostic.providerTransport || ""
         ].filter(Boolean).join(" · ");
-        renderSpeakingTechnicalError(
-          "We couldn't process your answer. Try again.",
-          technicalReference
-        );
+        speakingTechnicalCode = technicalReference || "ASSESSMENT_UNAVAILABLE";
+        renderSpeakingSubmitRetry(speakingMetrics, "The assessment service could not finish yet. Your recording is kept. Retry to send the same answer.");
         return;
       }
 
@@ -2039,6 +2243,7 @@
       cleanupSpeakingMedia();
       renderPlacementResult(result.result || result);
     } catch (error) {
+      if (epoch !== speakingFlowEpoch) return;
       stopSpeakingAnalysisProgress();
       console.error(error);
 
@@ -2052,6 +2257,7 @@
       // save the speaking result successfully. Recover that completed result
       // before showing a retry error to the student.
       const recoveredResult = await recoverCompletedPlacementResult();
+      if (epoch !== speakingFlowEpoch) return;
       if (recoveredResult) {
         acceptRecoveredPlacementResult(recoveredResult);
         return;
@@ -2068,6 +2274,7 @@
 
   function renderSpeakingTechnicalError(message, technicalCode = "") {
     cleanupSpeakingMedia();
+    speakingTechnicalCode = String(technicalCode || "CAPTURE_INTERRUPTED");
     if (technicalCode === "MIC_PERMISSION_TIMEOUT") message = "The browser is still waiting for microphone permission. Allow access, then try again.";
     if (/blocked|unavailable/i.test(message)) message += " Check microphone permissions and close other apps using the microphone. On a phone, open this page in Chrome or Safari instead of an in-app browser.";
 
@@ -2076,12 +2283,14 @@
         <strong>${escapeHtml(message)}</strong>
         <div class="speaking-error-actions">
           <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
+          <button id="nativeSpeakingBtn" class="secondary-action" type="button">Use device recorder</button>
           <button id="skipSpeakingBtn" class="secondary-action speaking-skip-action" type="button">I cannot speak now</button>
         </div>
       </div>
     `;
 
     els.stageRoot.querySelector("#retrySpeakingBtn")?.addEventListener("click", renderSpeakingHandoff);
+    els.stageRoot.querySelector("#nativeSpeakingBtn")?.addEventListener("click", renderNativeSpeaking);
     els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
   }
 
@@ -2098,6 +2307,7 @@
         moduleId: currentModuleId,
         diagnostics: lastSpeakingAttemptMetrics
           ? {
+              technicalCode: speakingTechnicalCode,
               durationSeconds: lastSpeakingAttemptMetrics.durationSeconds,
               recordedBytes: lastSpeakingAttemptMetrics.recordedBytes,
               audioMimeType: lastSpeakingAttemptMetrics.audioMimeType,
@@ -2107,6 +2317,7 @@
               audioActivityAvailable: lastSpeakingAttemptMetrics.audioActivityAvailable
             }
           : {
+              technicalCode: speakingTechnicalCode,
               browserFamily: speakingBrowserFamily(),
               platformFamily: speakingPlatformFamily(),
               speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
@@ -2134,19 +2345,24 @@
     }
   }
 
-  function renderSpeakingSubmitRetry(metrics) {
+  function renderSpeakingSubmitRetry(metrics, message = "Retry to send the same recording. Your previous answers are saved.") {
+    cleanupSpeakingMedia();
     els.stageRoot.innerHTML = `
       <div class="retry-card">
-        <strong>Your recording is ready, but the connection was interrupted.</strong>
-        <p class="speaking-status">Retry to send the same recording. Your previous answers are saved.</p>
+        <strong>Your recording is ready.</strong>
+        <p class="speaking-status">${escapeHtml(message)}</p>
+        <button id="retrySpeakingSubmitBtn" class="primary-btn" type="button">Retry</button>
         <button id="skipSpeakingBtn" class="secondary-action" type="button">Finish without Speaking</button>
-        <button id="retrySpeakingSubmitBtn" class="secondary-action" type="button">Retry</button>
       </div>
     `;
 
     els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
     els.stageRoot.querySelector("#retrySpeakingSubmitBtn")?.addEventListener("click", async () => {
       const button = els.stageRoot.querySelector("#retrySpeakingSubmitBtn");
+      if (button?.disabled) return;
+      const epoch = speakingFlowEpoch;
+      const skip = els.stageRoot.querySelector("#skipSpeakingBtn");
+      if (skip) skip.disabled = true;
       const data = speakingModule();
 
       if (button) {
@@ -2158,6 +2374,7 @@
       // finished grading. Always recover the existing completed result before
       // sending the same audio again.
       const existingResult = await recoverCompletedPlacementResult({ attempts: 4, delayMs: 600 });
+      if (epoch !== speakingFlowEpoch) return;
       if (existingResult) {
         acceptRecoveredPlacementResult(existingResult);
         return;
@@ -2166,10 +2383,12 @@
       if (button) button.textContent = "Retrying…";
 
       try {
-        if (metrics.audioBase64?.length > SPEAKING_INLINE_BASE64_CHARS) {
-          metrics = {...metrics, ...await prepareSpeakingAudioTransport(metrics.audioBase64, metrics.audioMimeType)};
+        const audio = retainedSpeakingAudio?.audioBase64 || metrics.audioBase64;
+        if (audio) {
+          metrics = {...metrics, ...await prepareSpeakingAudioTransport(audio, metrics.audioMimeType)};
           lastSpeakingAttemptMetrics = metrics;
         }
+        if (epoch !== speakingFlowEpoch) return;
         const result = await apiPost("brightonPlacementSubmitSpeaking", {
           sessionId: session.sessionId,
           clientSessionId: session.clientSessionId,
@@ -2178,6 +2397,7 @@
           promptId: data.promptId,
           ...metrics
         });
+        if (epoch !== speakingFlowEpoch) return;
 
         if (result.speakingRetryReason === "prompt-repeat") {
           renderSpeakingAnswerRetry();
@@ -2185,7 +2405,8 @@
         }
 
         if (result.speakingError) {
-          renderSpeakingTechnicalError("We couldn't process your answer.");
+          speakingTechnicalCode = result.speakingErrorCode || "ASSESSMENT_UNAVAILABLE";
+          renderSpeakingSubmitRetry(metrics, "The assessment service could not finish yet. Your recording is kept. Please retry.");
           return;
         }
 
@@ -2202,9 +2423,11 @@
         cleanupSpeakingMedia();
         renderPlacementResult(result.result || result);
       } catch (error) {
+        if (epoch !== speakingFlowEpoch) return;
         console.error(error);
 
         const recoveredResult = await recoverCompletedPlacementResult();
+        if (epoch !== speakingFlowEpoch) return;
         if (recoveredResult) {
           acceptRecoveredPlacementResult(recoveredResult);
           return;
@@ -2214,6 +2437,7 @@
           button.disabled = false;
           button.textContent = "Retry";
         }
+        if (skip) skip.disabled = false;
       }
     });
   }
@@ -2435,6 +2659,8 @@
   }
 
   function renderPlacementResult(payload) {
+    retainedSpeakingAudio = null;
+    lastSpeakingAttemptMetrics = null;
     const result = payload?.result || payload || {};
     const finalLevel = result.finalLevel || session?.finalLevel || session?.provisionalLevel || "—";
     const finalDescription = result.finalDescription || levelDescription(finalLevel);
@@ -2525,7 +2751,7 @@
           </footer>
         </article>
 
-        ${skills.speaking?.level === "Pending review" ? `<p class="speaking-status">Speaking could not be assessed reliably. This result uses your other skills. You can retry Speaking without repeating the rest of the test.</p><button id="retryOnlySpeakingBtn" class="primary-btn" type="button">Retry Speaking only</button>` : ""}
+        ${skills.speaking?.level === "Pending review" || skills.speaking?.skipped === true ? `<p class="speaking-status">Speaking was not assessed. Your other answers are saved. You can retry Speaking without repeating the rest of the test.</p><button id="retryOnlySpeakingBtn" class="primary-btn" type="button">Retry Speaking only</button>` : ""}
         <div class="result-actions" data-html2canvas-ignore="true">
           <button id="saveResultBtn" class="result-action primary-result-action" type="button">
             <span>Save image</span><span aria-hidden="true">↓</span>

@@ -280,7 +280,7 @@ function expectedAnswerCount(moduleId) {
 }
 
 async function getPlacementSession(sessionId, clientSessionId) {
-  const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true });
+  const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true, consistentRead: true });
 
   if (!session || String(session.clientSessionId || "") !== clientSessionId) {
     return null;
@@ -347,7 +347,8 @@ async function resolveSpeakingAudioBase64(payload, session) {
     .eq("sessionId", session._id)
     .eq("uploadId", uploadId)
     .limit(MAX_SPEAKING_CHUNKS)
-    .find({ suppressAuth: true });
+    // This immediately follows chunk writes; a replica may not have them yet.
+    .find({ suppressAuth: true, consistentRead: true });
 
   if (found.items.length !== expectedChunks) {
     throw new Error("Speaking upload is incomplete.");
@@ -437,7 +438,7 @@ export async function uploadSpeakingChunk(request) {
       .eq("uploadId", uploadId)
       .eq("chunkIndex", chunkIndex)
       .limit(1)
-      .find({ suppressAuth: true });
+      .find({ suppressAuth: true, consistentRead: true });
 
     const row = {
       ...(existing.items[0] || {}),
@@ -549,7 +550,7 @@ async function buildResultSummary(session) {
     .query(PLACEMENT_RESPONSES)
     .eq("sessionId", session._id)
     .limit(100)
-    .find({ suppressAuth: true });
+    .find({ suppressAuth: true, consistentRead: true });
 
   const rows = responses.items;
   const languageRows = rows.filter((row) => /^lang-/.test(String(row.moduleId || "")));
@@ -576,7 +577,7 @@ async function buildResultSummary(session) {
     .query(PLACEMENT_SPEAKING)
     .eq("sessionId", session._id)
     .limit(1)
-    .find({ suppressAuth: true });
+    .find({ suppressAuth: true, consistentRead: true });
 
   const speakingRecord = speakingQuery.items[0] || null;
   const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
@@ -743,12 +744,14 @@ export async function resumePlacement(request) {
       return jsonBadRequest("Placement session not found.");
     }
 
-    // Re-open only a confirmed technical failure, at the candidate's request.
+    // Re-open a skipped or technically invalid attempt only at its owner's request.
     // Keep all objective responses and the original speaking evidence.
     if (payload.retrySpeaking === true && session.status === "completed") {
-      const previous = await wixData.query(PLACEMENT_SPEAKING).eq("sessionId", session._id).limit(1).find({suppressAuth: true});
+      const previous = await wixData.query(PLACEMENT_SPEAKING).eq("sessionId", session._id).limit(1).find({suppressAuth: true, consistentRead: true});
       const metrics = safeJson(previous.items[0]?.metricsJson, {});
-      if (metrics.reviewRequired !== true) return jsonBadRequest("This attempt does not require a speaking retry.");
+      const progress = safeJson(session.progressJson, {});
+      const skippedWithoutEvidence = progress.speakingSkipped === true && previous.items.length === 0;
+      if (metrics.reviewRequired !== true && !skippedWithoutEvidence) return jsonBadRequest("This attempt does not require a speaking retry.");
       Object.assign(session, {status: "active", phase: "speaking", moduleId: speakingModuleFor(session.provisionalLevel), finalLevel: "", completedAt: null, updatedAt: new Date()});
       await wixData.update(PLACEMENT_SESSIONS, session, {suppressAuth: true});
     }
@@ -1080,7 +1083,7 @@ export async function submitSpeaking(request) {
       .query(PLACEMENT_SPEAKING)
       .eq("sessionId", session._id)
       .limit(1)
-      .find({ suppressAuth: true });
+      .find({ suppressAuth: true, consistentRead: true });
 
     const speakingRecord = {
       ...(existing.items[0] || {}),
@@ -1166,6 +1169,20 @@ export async function submitSpeaking(request) {
   }
 }
 
+function safeSpeakingDiagnostics(value) {
+  const source = value && typeof value === "object" ? value : {};
+  const diagnostics = {};
+  for (const key of ["technicalCode", "browserFamily", "platformFamily", "captureMode", "audioMimeType"]) {
+    if (typeof source[key] === "string") diagnostics[key] = source[key].replace(/[^a-z0-9 ._+;=/-]/gi, "").slice(0, 100);
+  }
+  for (const key of ["durationSeconds", "recordedBytes"]) {
+    const number = Number(source[key]);
+    if (Number.isFinite(number) && number >= 0) diagnostics[key] = Math.min(number, key === "durationSeconds" ? 180 : 12000000);
+  }
+  if (typeof source.audioActivityAvailable === "boolean") diagnostics.audioActivityAvailable = source.audioActivityAvailable;
+  return diagnostics;
+}
+
 export async function skipSpeaking(request) {
   try {
     const payload = await readJsonBody(request);
@@ -1210,7 +1227,8 @@ export async function skipSpeaking(request) {
         stage: 4,
         totalStages: 4,
         completed: true,
-        speakingSkipped: true
+        speakingSkipped: true,
+        speakingDiagnostics: safeSpeakingDiagnostics(payload.diagnostics)
       })
     };
 
@@ -1416,7 +1434,7 @@ export async function getPlacementDashboardResult(request) {
     const session = await wixData.get(
       PLACEMENT_SESSIONS,
       sessionId,
-      { suppressAuth: true }
+      { suppressAuth: true, consistentRead: true }
     );
 
     if (!session) {
@@ -1428,12 +1446,12 @@ export async function getPlacementDashboardResult(request) {
         .query(PLACEMENT_RESPONSES)
         .eq("sessionId", sessionId)
         .limit(1000)
-        .find({ suppressAuth: true }),
+        .find({ suppressAuth: true, consistentRead: true }),
       wixData
         .query(PLACEMENT_SPEAKING)
         .eq("sessionId", sessionId)
         .limit(1)
-        .find({ suppressAuth: true })
+        .find({ suppressAuth: true, consistentRead: true })
     ]);
 
     const speakingRecord = speakingQuery.items[0] || null;

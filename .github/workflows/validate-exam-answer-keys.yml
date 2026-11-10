@@ -40,11 +40,19 @@ jobs:
           EXAM_BROWSERS: ${{ matrix.browser }}
           EXAM_QA_OUTPUT: ${{ runner.temp }}/exam-player-screenshots
         run: node Exams/validate-exam-player.cjs
+      - name: Verify placement Speaking capture and recovery
+        env:
+          NODE_PATH: /tmp/brighton-player/node_modules
+          SPEAKING_BROWSERS: ${{ matrix.browser }}
+          SPEAKING_QA_OUTPUT: ${{ runner.temp }}/speaking-screenshots
+        run: node Placement/validate-speaking-browser.cjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: exam-player-${{ matrix.browser }}
-          path: ${{ runner.temp }}/exam-player-screenshots
+          path: |
+            ${{ runner.temp }}/exam-player-screenshots
+            ${{ runner.temp }}/speaking-screenshots
           retention-days: 7
   validate-answer-keys:
     runs-on: ubuntu-latest
@@ -86,6 +94,7 @@ jobs:
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-listening-results.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-results-png.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Placement/validate-speaking.cjs
+          node Placement/validate-speaking-chunks.cjs
       - name: Validate A1 Reading and Writing JavaScript syntax
         run: |
           node --check Exams/exams/a1-rw/main.js

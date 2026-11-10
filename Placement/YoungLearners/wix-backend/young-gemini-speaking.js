@@ -397,23 +397,25 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
   };
 }
 
-async function speakingProviderFetch(url, options) {
+async function speakingProviderFetch(url, options, deadline) {
   let timer;
   const failure = (code, message) => ({ok: false, status: 504, text: async () => JSON.stringify({error: {status: code, message}})});
+  const remaining = Math.min(25000, Math.max(0, deadline - Date.now()));
+  if (!remaining) return failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.");
   try {
     return await Promise.race([
       fetch(url, options).then(async response => {
         const body = await response.text();
         return {ok: response.ok, status: response.status, text: async () => body};
       }),
-      new Promise(resolve => { timer = setTimeout(() => resolve(failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.")), 25000); })
+      new Promise(resolve => { timer = setTimeout(() => resolve(failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.")), remaining); })
     ]);
   } catch {
     return failure("PROVIDER_CONNECTION", "Could not reach the speaking examiner.");
   } finally { clearTimeout(timer); }
 }
 
-async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
+async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema, deadline) {
   const responseFormatItem = {
     type: "text",
     mime_type: "application/json"
@@ -448,7 +450,8 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
           : {}),
         store: false
       })
-    }
+    },
+    deadline
   );
 
   const rawText = await response.text();
@@ -511,7 +514,7 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
   };
 }
 
-async function callGenerateContent(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
+async function callGenerateContent(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema, deadline) {
   const response = await speakingProviderFetch(
     GEMINI_GENERATE_BASE + "/" + encodeURIComponent(model) + ":generateContent",
     {
@@ -529,7 +532,8 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
           model
         )
       )
-    }
+    },
+    deadline
   );
 
   const rawText = await response.text();
@@ -593,6 +597,8 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
 }
 
 async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, audioMimeType) {
+  // Bound the entire provider ladder below the browser request deadline.
+  const deadline = Date.now() + 55000;
   const models = [GEMINI_SPEAKING_MODEL, GEMINI_SPEAKING_FALLBACK_MODEL];
   let lastFailure = null;
 
@@ -604,7 +610,8 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
       candidateContext,
       audioBase64,
       audioMimeType,
-      true
+      true,
+      deadline
     );
 
     if (interactionStructured.ok) return interactionStructured;
@@ -617,7 +624,8 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
         candidateContext,
         audioBase64,
         audioMimeType,
-        false
+        false,
+        deadline
       );
 
       if (interactionJsonOnly.ok) return interactionJsonOnly;
@@ -631,7 +639,8 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
       candidateContext,
       audioBase64,
       audioMimeType,
-      true
+      true,
+      deadline
     );
 
     if (generateStructured.ok) return generateStructured;
@@ -644,7 +653,8 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
         candidateContext,
         audioBase64,
         audioMimeType,
-        false
+        false,
+        deadline
       );
 
       if (generateJsonOnly.ok) return generateJsonOnly;
