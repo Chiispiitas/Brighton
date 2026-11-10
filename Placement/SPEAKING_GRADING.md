@@ -2,7 +2,7 @@
 
 Version: `2026-09-20.1`  
 Rubric: `brighton-speaking-rubric-1.3`  
-Primary model: `gemini-3.5-flash-lite`  
+Primary model: `gemini-3.5-flash-lite`
 Fallback model: `gemini-3.8-flash`
 
 ## Overview

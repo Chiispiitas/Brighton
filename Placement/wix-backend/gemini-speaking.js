@@ -492,7 +492,7 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
     generationConfig.responseSchema = toGenerateContentSchema(RESPONSE_SCHEMA);
   }
 
-  if (model === GEMINI_SPEAKING_MODEL) {
+  if (model === "gemini-3.8-flash") {
     generationConfig.thinkingConfig = {
       thinkingLevel: "medium"
     };
@@ -567,7 +567,7 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
           }
         ],
         response_format: [responseFormatItem],
-        ...(model === GEMINI_SPEAKING_MODEL
+        ...(model === "gemini-3.8-flash"
           ? { generation_config: { thinking_level: "medium" } }
           : {}),
         store: false
