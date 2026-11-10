@@ -689,7 +689,7 @@
       const mixed = isMixedReadingWritingSubmission(row);
       const scoreCell = Writing?.profileFor(row) && !row.writingAiJson
         ? `<span class="score-pill manual-score-pill">Assessment pending</span>`
-        : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>${row.writingAiJson ? `<br><span class="muted tiny-text">${row.writingTeacherJson ? "Teacher saved" : "Suggested AI"}</span>` : ""}`;
+        : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>${row.writingTeacherJson ? `<br><span class="muted tiny-text">Teacher saved</span>` : ""}`;
       const percentCell = Writing?.profileFor(row) && !row.writingAiJson ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
       const partsCell = writing ? formatWritingMini(row) : mixed ? formatMixedMini(row, partScores) : formatParts(partScores);
       return `
@@ -914,7 +914,7 @@
       + (review ? renderReadingReviewSection("Objective answers", objectiveRows, review.error) : "")
       + renderWritingReviewActions(profile)
       + `<section class="detail-section">
-          <p data-writing-status role="status" aria-live="polite">${escapeHtml(row._writingError || (row.writingTeacherJson ? "Teacher scores saved. These scores contribute to the total." : ai ? "Suggested AI scores — already included in the total. Review and save, or adjust the bands first." : "AI assessment pending."))}</p>
+          <p data-writing-status role="status" aria-live="polite">${escapeHtml(row._writingError || (row.writingTeacherJson ? "Teacher scores saved. These scores contribute to the total." : ai ? "Scores are included in the total. Review and save, or adjust the bands first." : "AI assessment pending."))}</p>
           <button class="primary-btn" data-save-writing type="button" ${ai ? "" : "disabled"}>Save writing scores</button>
           <button class="secondary-btn" data-revert-writing type="button" ${ai ? "" : "disabled"}>Revert to original AI scoring</button>
           ${ai ? "" : '<button class="secondary-btn" data-retry-writing type="button">Retry AI assessment</button>'}
@@ -1579,7 +1579,7 @@
     const visibleRows = getFilteredRows();
     if (!visibleRows.length) return showToast("No rows to export");
     const headers = ["studentName", "classId", "examTitle", "submittedAt", "score", "maxScore", "percentage", "partScoresJson", "writingStatus", "writingAiJson", "writingTeacherJson"];
-    const csv = [headers.join(",")].concat(visibleRows.map(row => headers.map(h => csvCell(h === "writingStatus" ? (row.writingTeacherJson ? "Teacher saved" : row.writingAiJson ? "AI suggested" : Writing?.profileFor(row) ? "Assessment pending" : "") : row[h])).join(","))).join("\n");
+    const csv = [headers.join(",")].concat(visibleRows.map(row => headers.map(h => csvCell(h === "writingStatus" ? (row.writingTeacherJson ? "Teacher saved" : row.writingAiJson ? "Assessed" : Writing?.profileFor(row) ? "Assessment pending" : "") : row[h])).join(","))).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
