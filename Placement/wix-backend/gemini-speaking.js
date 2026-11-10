@@ -522,7 +522,7 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
 async function speakingProviderFetch(url, options, deadline) {
   let timer;
   const failure = (code, message) => ({ok: false, status: 504, text: async () => JSON.stringify({error: {status: code, message}})});
-  const remaining = Math.min(4000, Math.max(0, deadline - Date.now()));
+  const remaining = Math.min(9000, Math.max(0, deadline - Date.now()));
   if (!remaining) return failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.");
   try {
     return await Promise.race([

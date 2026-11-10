@@ -107,11 +107,11 @@ async function verifyProviderBudget(relative) {
   const result = await context.requestSpeakingAssessment('test-key', 'test-context', 'AAAA', 'audio/mp4');
   assert.equal(result.ok, false);
   assert.equal(now, 9000);
-  assert.deepEqual(waits, [4000, 4000, 1000]);
-  assert.equal(requests, 3, 'No further provider call starts after the total deadline');
-  assert.deepEqual(bodies.map(body => body.model || 'generateContent'), ['gemini-3.5-flash-lite', 'generateContent', 'gemini-3.8-flash']);
+  assert.deepEqual(waits, [9000]);
+  assert.equal(requests, 1, 'The primary gets the full budget; no fallback starts after the total deadline');
+  assert.deepEqual(bodies.map(body => body.model || 'generateContent'), ['gemini-3.5-flash-lite']);
   assert.equal(bodies[0].generation_config, undefined, 'Lite keeps its proven default thinking configuration');
-  assert.equal(bodies[1].generationConfig.thinkingConfig, undefined);
+  assert.equal(context.makeGenerateContentBody('context', 'AAAA', 'audio/mp4', true, 'gemini-3.5-flash-lite').generationConfig.thinkingConfig, undefined);
   assert.equal(context.normalizeAudioMime('audio/mp4;codecs=mp4a.40.2'), 'audio/m4a');
   console.log(`${relative}: complete provider ladder is bounded to 9 seconds; Safari MIME normalization passed.`);
 }

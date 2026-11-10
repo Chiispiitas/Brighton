@@ -32,7 +32,7 @@ Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` re
 
 Speaking uses Gemini's Interactions API as the primary path with inline audio and a top-level `response_format` array, matching Google's current REST contract. `generateContent` remains an independent fallback and uses the REST fields `systemInstruction`, `inlineData`, `responseMimeType`, and `responseSchema`.
 
-The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. Each provider call has at most 4 seconds and the complete ladder has a shared 9-second budget, leaving time for Wix to save the result and return a controlled response. Structured-output validation failures can retry in JSON mode without an enforced schema.
+The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. A provider call may use the remaining shared 9-second budget, leaving time for Wix to save the result and return a controlled response. The first call gets the full budget; fallback calls run only when an earlier failure returns with time remaining. Structured-output validation failures can retry in JSON mode without an enforced schema.
 
 Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500. The client also exposes a safe technical reference (HTTP status, provider code, transport) on the retry screen without exposing the Gemini API key.
 
