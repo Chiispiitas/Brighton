@@ -18,11 +18,11 @@ with zipfile.ZipFile(destination / 'assessment-build.zip', 'w', zipfile.ZIP_DEFL
 with zipfile.ZipFile(destination / 'assessment-source.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
     source_files = []
     for directory, folders, names in os.walk(root):
-        folders[:] = sorted(name for name in folders if name not in {'node_modules', 'dist', '.wix', '.astro', 'generated', 'canonical'})
+        folders[:] = sorted(name for name in folders if name not in {'node_modules', 'dist', '.wix', '.astro', '.wrangler', 'generated', 'canonical'})
         source_files.extend(pathlib.Path(directory) / name for name in sorted(names))
     for file in source_files:
         rel = file.relative_to(root)
-        if not file.is_file() or any(part in {'node_modules', 'dist', '.wix', '.astro', 'generated', 'canonical'} for part in rel.parts):
+        if not file.is_file() or any(part in {'node_modules', 'dist', '.wix', '.astro', '.wrangler', 'generated', 'canonical'} for part in rel.parts):
             continue
         if (file.name.startswith('.env') and file.name != '.env.example') or file.suffix == '.zip':
             continue
