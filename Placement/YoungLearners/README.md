@@ -12,7 +12,7 @@ For ages approximately 6–12. Five warm-up questions route to a five-question L
 
 The reporting range is Pre-A1, A1 and A2, labelled with the corresponding Starters, Movers and Flyers learning stages. Results are Brighton diagnostic estimates, not Cambridge exam results or CEFR certification. Routing thresholds are school rules and should be checked against teacher placements before relying on them for class allocation.
 
-Speaking uses actual audio and the existing Gemini 3.8 Flash pipeline, with a separate Young Learners examiner and rubric `brighton-young-speaking-rubric-1.0`. The examiner accepts short meaningful answers, picture labels and age-appropriate pauses. Fluency, grammar, vocabulary, pronunciation and communication are assessed separately; Wix computes the weighted composite and limits the final adjustment to one adjacent band. Speaking can be skipped explicitly and remains unscored in that case. The result scores use the existing Brighton CEFR score scale.
+Speaking uses actual audio and the shared Gemini audio examiner (3.5 Flash-Lite first, 3.8 Flash fallback), with a separate Young Learners examiner and rubric `brighton-young-speaking-rubric-1.0`. The examiner accepts short meaningful answers, picture labels and age-appropriate pauses. Fluency, grammar, vocabulary, pronunciation and communication are assessed separately; Wix computes the weighted composite and limits the final adjustment to one adjacent band. Speaking can be skipped explicitly and remains unscored in that case. The result scores use the existing Brighton CEFR score scale.
 
 ## Wix deployment
 

@@ -5,8 +5,8 @@ import wixSecretsBackend from "wix-secrets-backend";
 import { fetch } from "wix-fetch";
 
 export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.3";
-export const GEMINI_SPEAKING_MODEL = "gemini-3.8-flash";
-export const GEMINI_SPEAKING_FALLBACK_MODEL = "gemini-3.5-flash-lite";
+export const GEMINI_SPEAKING_MODEL = "gemini-3.5-flash-lite";
+export const GEMINI_SPEAKING_FALLBACK_MODEL = "gemini-3.8-flash";
 
 const GEMINI_SECRET_NAME = "BRIGHTON_PLACEMENT_GEMINI_API_KEY";
 const GEMINI_GENERATE_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
@@ -522,7 +522,7 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
 async function speakingProviderFetch(url, options, deadline) {
   let timer;
   const failure = (code, message) => ({ok: false, status: 504, text: async () => JSON.stringify({error: {status: code, message}})});
-  const remaining = Math.min(25000, Math.max(0, deadline - Date.now()));
+  const remaining = Math.min(12000, Math.max(0, deadline - Date.now()));
   if (!remaining) return failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.");
   try {
     return await Promise.race([
@@ -720,7 +720,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
 
 async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, audioMimeType) {
   // Bound the entire provider ladder below the browser request deadline.
-  const deadline = Date.now() + 55000;
+  const deadline = Date.now() + 35000;
   const models = [GEMINI_SPEAKING_MODEL, GEMINI_SPEAKING_FALLBACK_MODEL];
   let lastFailure = null;
 

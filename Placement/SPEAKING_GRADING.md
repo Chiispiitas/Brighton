@@ -2,8 +2,8 @@
 
 Version: `2026-09-20.1`  
 Rubric: `brighton-speaking-rubric-1.3`  
-Primary model: `gemini-3.8-flash`  
-Fallback model: `gemini-3.5-flash-lite`
+Primary model: `gemini-3.5-flash-lite`  
+Fallback model: `gemini-3.8-flash`
 
 ## Overview
 
@@ -32,7 +32,7 @@ Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` re
 
 Speaking uses Gemini's Interactions API as the primary path with inline audio and a top-level `response_format` array, matching Google's current REST contract. `generateContent` remains an independent fallback and uses the REST fields `systemInstruction`, `inlineData`, `responseMimeType`, and `responseSchema`.
 
-The backend first tries `gemini-3.8-flash`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.5-flash-lite`. Structured-output validation failures can retry in JSON mode without an enforced schema.
+The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. Each provider call has at most 12 seconds and the complete ladder has a shared 35-second budget, leaving time for Wix to save the result and return a controlled response. Structured-output validation failures can retry in JSON mode without an enforced schema.
 
 Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500. The client also exposes a safe technical reference (HTTP status, provider code, transport) on the retry screen without exposing the Gemini API key.
 
@@ -259,3 +259,13 @@ For technical/insufficient-evidence errors, the existing **Try again** / **I can
 - limited token-usage metadata.
 
 No CMS schema change is required for this release.
+
+## November 10 compatibility update
+
+Both placement players negotiate recording through actual encoder start, not just MIME support or constructor success. Bitrate-free and browser-default options remain fallbacks. Permission waits, meter startup and recorder completion are bounded; Web Speech recognition is optional. Interrupted or spontaneously stopped audio requires the candidate to confirm before assessment. Duration freezes when capture stops.
+
+When direct browser capture is unavailable, the device-recorder route accepts a real audio file, measures its duration, provides playback, validates the prompt duration and size, and sends it through the same examiner. Browser/OS permissions and native picker availability cannot be guaranteed on every device.
+
+Original audio is retained in memory while upload/assessment retries remain pending, independently of chunk transport references. Every chunked retry can regenerate its upload from the original audio. The audio is never placed in localStorage and is released after completion. Consistent reads are used for freshly uploaded chunks and freshly saved evidence. Skips retain only whitelisted technical diagnostics; they remain unscored. Owners can voluntarily reopen an explicitly skipped Speaking section without repeating objective modules; already scored attempts cannot be reopened by that path.
+
+Regression coverage: `validate-speaking.cjs`, `validate-speaking-chunks.cjs`, and `validate-speaking-browser.cjs`. Tests mock or synthesize microphone input and service failures, never real student audio. Browser build limitations and physical-device checks must be distinguished from actual capture coverage.

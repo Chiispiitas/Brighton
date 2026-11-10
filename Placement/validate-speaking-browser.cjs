@@ -78,12 +78,20 @@ async function contextFor(browser, engine, size, missingCapture = false) {
     if (!request.url().startsWith('http://127.0.0.1:')) return route.abort();
     return route.continue();
   });
-  await context.addInitScript(({missingCapture}) => {
+  await context.addInitScript(({missingCapture, engine, stalledMeter}) => {
     // Optional browser speech recognition must not be a prerequisite.
     window.SpeechRecognition = undefined;
     window.webkitSpeechRecognition = undefined;
     const nativeTimeout = window.setTimeout.bind(window);
     window.setTimeout = (fn, ms, ...args) => nativeTimeout(fn, ms === 600 ? 5 : ms, ...args);
+    // Optional reproduction of a runner/device whose audio output cannot start.
+    if (stalledMeter) {
+      const AudioClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioClass) {
+        Object.defineProperty(AudioClass.prototype, 'state', {configurable:true,get:() => 'suspended'});
+        AudioClass.prototype.resume = () => new Promise(() => {});
+      }
+    }
     if (missingCapture === 'denied') {
       Object.defineProperty(navigator, 'mediaDevices', {configurable:true,value:{getUserMedia:async () => {throw new DOMException('Microphone denied for QA', 'NotAllowedError');}}});
       return;
@@ -93,6 +101,10 @@ async function contextFor(browser, engine, size, missingCapture = false) {
       window.MediaRecorder = undefined;
       return;
     }
+    // Firefox's native test microphone avoids making getUserMedia depend on a
+    // Web Audio output device. AudioContext.resume() may remain pending on a
+    // Linux CI runner without an audio sink; a real microphone has no such gate.
+    if (engine === 'firefox') return;
     Object.defineProperty(navigator, 'mediaDevices', {configurable:true,value:{getUserMedia:async () => {
       const AudioContextClass = window.AudioContext || window.webkitAudioContext;
       const context = new AudioContextClass();
@@ -112,7 +124,7 @@ async function contextFor(browser, engine, size, missingCapture = false) {
       window.qaAudioGenerator = {context,oscillator};
       return destination.stream;
     }}});
-  }, {missingCapture});
+  }, {missingCapture, engine, stalledMeter:process.env.SPEAKING_QA_STALLED_METER === '1'});
   return {context,calls};
 }
 
@@ -259,7 +271,12 @@ async function interrupted(browser, engine, prefix, base, short) {
   const sizes = [{width:1440,height:900},{width:390,height:664},{width:844,height:390}].filter(size => !process.env.SPEAKING_QA_WIDTHS || process.env.SPEAKING_QA_WIDTHS.split(',').includes(String(size.width)));
   const wants = name => !process.env.SPEAKING_QA_CASES || process.env.SPEAKING_QA_CASES.split(',').includes(name);
   for (const engine of (process.env.SPEAKING_BROWSERS || 'chromium,firefox,webkit').split(',')) {
-    const browser = await playwright[engine].launch(engine === 'chromium' && process.platform === 'win32' ? {channel:'msedge'} : {});
+    const launchOptions = engine === 'chromium' && process.platform === 'win32'
+      ? {channel:'msedge'}
+      : engine === 'firefox'
+        ? {firefoxUserPrefs:{'media.navigator.streams.fake':true,'media.navigator.permission.disabled':true}}
+        : {};
+    const browser = await playwright[engine].launch(launchOptions);
     try {
       const probe = await browser.newContext();
       await probe.route('**/*', route => route.request().url().startsWith('http://127.0.0.1:') ? route.continue() : route.abort());

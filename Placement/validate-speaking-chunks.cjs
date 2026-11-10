@@ -106,11 +106,11 @@ async function verifyProviderBudget(relative) {
   vm.runInContext(source, context);
   const result = await context.requestSpeakingAssessment('test-key', 'test-context', 'AAAA', 'audio/mp4');
   assert.equal(result.ok, false);
-  assert.equal(now, 55000);
-  assert.deepEqual(waits, [25000, 25000, 5000]);
+  assert.equal(now, 35000);
+  assert.deepEqual(waits, [12000, 12000, 11000]);
   assert.equal(requests, 3, 'No further provider call starts after the total deadline');
   assert.equal(context.normalizeAudioMime('audio/mp4;codecs=mp4a.40.2'), 'audio/m4a');
-  console.log(`${relative}: complete provider ladder is bounded to 55 seconds; Safari MIME normalization passed.`);
+  console.log(`${relative}: complete provider ladder is bounded to 35 seconds; Safari MIME normalization passed.`);
 }
 
 async function verifySkippedRecovery(relative) {
