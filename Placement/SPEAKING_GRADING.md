@@ -32,7 +32,7 @@ Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` re
 
 Speaking uses Gemini's Interactions API as the primary path with inline audio and a top-level `response_format` array, matching Google's current REST contract. `generateContent` remains an independent fallback and uses the REST fields `systemInstruction`, `inlineData`, `responseMimeType`, and `responseSchema`.
 
-The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. Each provider call has at most 12 seconds and the complete ladder has a shared 35-second budget, leaving time for Wix to save the result and return a controlled response. Structured-output validation failures can retry in JSON mode without an enforced schema.
+The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. Each provider call has at most 4 seconds and the complete ladder has a shared 9-second budget, leaving time for Wix to save the result and return a controlled response. Structured-output validation failures can retry in JSON mode without an enforced schema.
 
 Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500. The client also exposes a safe technical reference (HTTP status, provider code, transport) on the retry screen without exposing the Gemini API key.
 
@@ -269,3 +269,5 @@ When direct browser capture is unavailable, the device-recorder route accepts a 
 Original audio is retained in memory while upload/assessment retries remain pending, independently of chunk transport references. Every chunked retry can regenerate its upload from the original audio. The audio is never placed in localStorage and is released after completion. Consistent reads are used for freshly uploaded chunks and freshly saved evidence. Skips retain only whitelisted technical diagnostics; they remain unscored. Owners can voluntarily reopen an explicitly skipped Speaking section without repeating objective modules; already scored attempts cannot be reopened by that path.
 
 Regression coverage: `validate-speaking.cjs`, `validate-speaking-chunks.cjs`, and `validate-speaking-browser.cjs`. Tests mock or synthesize microphone input and service failures, never real student audio. Browser build limitations and physical-device checks must be distinguished from actual capture coverage.
+
+The selected site is on Wix Free, whose documented backend request timeout is 14 seconds. The provider budget leaves time for chunk assembly and persistence. Slow or unavailable examiners return a controlled retry; captured audio remains available in the open page. [Wix Free limits](https://dev.wix.com/docs/develop-websites-sdk/maintain-your-site/scale-your-site/about-code-on-free-sites).

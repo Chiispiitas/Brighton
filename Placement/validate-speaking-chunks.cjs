@@ -96,21 +96,24 @@ async function verifyProviderBudget(relative) {
   const source = fs.readFileSync(path.join(__dirname, relative), 'utf8')
     .replace(/^import[\s\S]*?;\s*$/gm, '').replace(/export /g, '');
   let now = 0, requests = 0;
-  const waits = [];
+  const waits = [], bodies = [];
   class ClockDate extends Date { static now() { return now; } }
   const context = vm.createContext({console:{...console,error(){}}, Date:ClockDate, Buffer,
     setTimeout(fn, ms) { waits.push(ms); return setTimeout(() => { now += ms; fn(); }, 0); },
     clearTimeout,
-    fetch:() => { requests++; return new Promise(() => {}); }
+    fetch:(url, options) => { requests++; bodies.push(JSON.parse(options.body)); return new Promise(() => {}); }
   });
   vm.runInContext(source, context);
   const result = await context.requestSpeakingAssessment('test-key', 'test-context', 'AAAA', 'audio/mp4');
   assert.equal(result.ok, false);
-  assert.equal(now, 35000);
-  assert.deepEqual(waits, [12000, 12000, 11000]);
+  assert.equal(now, 9000);
+  assert.deepEqual(waits, [4000, 4000, 1000]);
   assert.equal(requests, 3, 'No further provider call starts after the total deadline');
+  assert.deepEqual(bodies.map(body => body.model || 'generateContent'), ['gemini-3.5-flash-lite', 'generateContent', 'gemini-3.8-flash']);
+  assert.equal(bodies[0].generation_config, undefined, 'Lite keeps its proven default thinking configuration');
+  assert.equal(bodies[1].generationConfig.thinkingConfig, undefined);
   assert.equal(context.normalizeAudioMime('audio/mp4;codecs=mp4a.40.2'), 'audio/m4a');
-  console.log(`${relative}: complete provider ladder is bounded to 35 seconds; Safari MIME normalization passed.`);
+  console.log(`${relative}: complete provider ladder is bounded to 9 seconds; Safari MIME normalization passed.`);
 }
 
 async function verifySkippedRecovery(relative) {
