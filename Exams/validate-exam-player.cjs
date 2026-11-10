@@ -177,7 +177,7 @@ async function run(browser, engine, size, exam, base) {
 }
 async function storageCompatibility(browser, engine, exam, base) {
  const context=await browser.newContext({viewport:{width:390,height:844}});
- await context.route('**/brightonexams/_functions/**',r=>r.fulfill({status:200,contentType:'application/json',body:'{"success":false}'}));
+ await context.route(/\/(?:brightonexams\/_functions|api\/assessment)\//,r=>r.fulfill({status:200,contentType:'application/json',body:'{"success":false}'}));
  await context.addInitScript(()=>{
   Storage.prototype.setItem=function(){throw new DOMException('Storage unavailable','QuotaExceededError')};
   HTMLMediaElement.prototype.play=function(){return Promise.resolve()};

@@ -1,5 +1,6 @@
 # Publish runtime files only. Production sources remain tracked in Git.
 exclude:
+  - "AssessmentBackend"
   - ".github"
   - "Gemfile"
   - "Gemfile.lock"

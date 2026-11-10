@@ -136,6 +136,13 @@ export function post_brightonYoungPlacementActivity(request) { return young.touc
 export function use_brightonYoungPlacementExpire() { return corsOptions("POST"); }
 export function post_brightonYoungPlacementExpire(request) { return young.expirePlacementSession(request); }
 
+export function use_brightonYoungPlacementResults() { return corsOptions("GET, POST"); }
+export function get_brightonYoungPlacementResults(request) { return young.getPlacementResults(request); }
+export function post_brightonYoungPlacementResults(request) { return young.getPlacementResults(request); }
+export function use_brightonYoungPlacementDashboardResult() { return corsOptions("GET, POST"); }
+export function get_brightonYoungPlacementDashboardResult(request) { return young.getPlacementDashboardResult(request); }
+export function post_brightonYoungPlacementDashboardResult(request) { return young.getPlacementDashboardResult(request); }
+
 // Suggested writing assessments share the existing class-scoped results access.
 import { getWritingAssessment, saveWritingAssessment } from "backend/writing.js";
 export function use_getWritingAssessment() { return corsOptions("POST"); }

@@ -5,7 +5,7 @@
 ============================================== */
 
 window.BRIGHTON_SITE_CONFIG = {
-  API_BASE_URL: "https://chiispiitas.wixsite.com/brightonexams/_functions",
+  API_BASE_URL: "https://headless-yvtolzojmbe-chiispiitas-140b.wix-site-host.com/api/assessment",
   SCHOOL_NAME: "Brighton English School",
   LIVE_PROGRESS_INTERVAL_MS: 30000,
   LIVE_PROGRESS_TOUCH_DELAY_MS: 8000,

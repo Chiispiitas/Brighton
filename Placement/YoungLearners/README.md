@@ -16,7 +16,11 @@ Speaking uses actual audio and the shared Gemini audio examiner (3.5 Flash-Lite 
 
 ## Wix deployment
 
-Installed in the Brighton Exams site `06a80236-67d7-4837-b4c8-2a62b29ee79b`:
+Publish through [AssessmentBackend](../../AssessmentBackend/DEPLOYMENT.md),
+alongside Adult Placement, Exams and Tests. The build includes the canonical
+modules here and the complete shared router; no Editor copy/paste is needed.
+The original CMS stays on Brighton Exams `06a80236-67d7-4837-b4c8-2a62b29ee79b`.
+The retained legacy Editor installation contains:
 
 - `Backend/young-placement.js`
 - `Backend/young-gemini-speaking.js`
@@ -47,6 +51,6 @@ Validation: exhaustive cross-product of all 81 language/reading/listening/speaki
 
 Open https://exams.bebrighton.net/Placement/YoungLearners/results. The page shares the general Placement results styling and includes name, level and status filters, attempt details, skill scores, adaptive route, AI speaking transcript and rubric evidence, and CSV export. General Results links to Young Learners Results.
 
-Both dashboard endpoints are POST-only and accessible without a teacher key, matching the general Placement results page. Anyone with the page URL can view names, phone numbers, scores, transcripts and assessment details. Responses use Cache-Control: no-store. The five CMS collections remain ADMIN-only; dashboard access is provided by the backend.
+Both dashboard endpoints support POST, with GET also available on the direct-deployment server, and are accessible without a teacher key, matching the general Placement results page. Anyone with the page URL can view names, phone numbers, scores, transcripts and assessment details. Responses use Cache-Control: no-store. The five CMS collections remain ADMIN-only; dashboard access is provided by the backend.
 
 Validation: node Placement/YoungLearners/verify-results.mjs verifies no-key list and details access, filters, isolated endpoints, noncached responses and immediate dashboard loading.

@@ -1,9 +1,27 @@
-# Brighton Placement — manual Wix setup
+# Brighton assessments — direct publishing
+
+As of November 10, 2026, Adult Placement, Young Learners Placement, Exams,
+Tests, progress and writing review publish through [AssessmentBackend](../AssessmentBackend/DEPLOYMENT.md).
+Build and release that project with the Wix upload tools. Do not paste modules
+into Wix Editor for normal updates. Canonical business source still lives in
+the `Placement/wix-backend/` directories and is included by the build.
+
+The hosting site is `dbc6b0a6-da6e-4b6d-bf33-bb62fa192f79`; the original CMS and
+Secrets Manager stay on `06a80236-67d7-4837-b4c8-2a62b29ee79b`.
+Public clients use `Exams/config.js` and the shared `/api/assessment` base.
+Existing records and session capabilities are preserved, without a data copy.
+
+## Legacy Editor setup reference
+
+The instructions below describe the retained legacy `/_functions` service for
+rollback and older browser tabs. They are not the current publishing workflow.
 
 Frontend/backend contract: `2026-09-20.1`  
 Answer-key version: `2026-09-19.7`
 
-The Wix-side setup is intentionally manual. The repository contains the files to paste/import, but it does not create, delete, seed, or change permissions on the live Brighton Exams Wix project.
+The original Wix-side setup used manual file installation. Its collection and
+contract reference is retained below; use the direct deployment guide above
+for updates.
 
 ## Backend layout
 

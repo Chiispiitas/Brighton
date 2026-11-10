@@ -61,8 +61,10 @@ if (currentVersion && versionPattern.test(currentVersion)) {
         fail(`Current release ${currentVersion} is missing ${file}.`);
         continue;
       }
-      const current = fs.readFileSync(path.join(answerKeyDir, file), "utf8");
-      const snapshot = fs.readFileSync(path.join(currentReleaseDir, file), "utf8");
+      // Git normalizes text to LF; Windows checkouts can materialize CRLF.
+      // Compare the tracked text while still rejecting all content differences.
+      const current = fs.readFileSync(path.join(answerKeyDir, file), "utf8").replace(/\r\n/g, "\n");
+      const snapshot = fs.readFileSync(path.join(currentReleaseDir, file), "utf8").replace(/\r\n/g, "\n");
       if (current !== snapshot) fail(`Current key ${file} does not match immutable release ${currentVersion}.`);
     }
 

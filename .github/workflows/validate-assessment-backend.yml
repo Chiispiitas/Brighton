@@ -1,0 +1,38 @@
+name: Validate direct assessment backend
+on:
+  push:
+    paths:
+      - 'AssessmentBackend/**'
+      - 'Placement/wix-backend/**'
+      - 'Placement/YoungLearners/wix-backend/**'
+      - 'Exams/answer-keys/**'
+      - '.github/workflows/validate-assessment-backend.yml'
+  pull_request:
+    paths:
+      - 'AssessmentBackend/**'
+      - 'Placement/wix-backend/**'
+      - 'Placement/YoungLearners/wix-backend/**'
+      - 'Exams/answer-keys/**'
+      - '.github/workflows/validate-assessment-backend.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: AssessmentBackend/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: AssessmentBackend
+      - run: npm test
+        working-directory: AssessmentBackend
+      - run: cp .env.example .env.local && npm run build
+        working-directory: AssessmentBackend
+      - run: python AssessmentBackend/scripts/package.py "${{ runner.temp }}/assessment-release"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: assessment-server-release
+          path: ${{ runner.temp }}/assessment-release/*.zip
+          retention-days: 7
