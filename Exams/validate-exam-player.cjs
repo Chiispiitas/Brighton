@@ -129,7 +129,25 @@ async function run(browser, engine, size, exam, base) {
       const count=await page.locator('.part-nav-card.active .q-pill').count();
       for(let q=0;q<count;q++) {
         await page.locator('.part-nav-card.active .q-pill').nth(q).click();
+        if (size.width <= 900 && q === 0 && count > 1) {
+          const expected = await page.locator('.part-nav-card.active .q-pill').nth(1).textContent();
+          await page.locator('#mainContent').evaluate(el => { el.scrollTop = 0; });
+          await page.locator('#nextBtn').click();
+          assert.equal(await page.locator('.q-pill.active').textContent(), expected, label+': Next did not select the next question');
+        }
         await geometry(page,label+' part '+(i+1)+' question '+(q+1));
+        if (size.width <= 900) {
+          await page.waitForTimeout(150);
+          const destination = await page.evaluate(() => {
+            const content = document.querySelector('#mainContent');
+            const q = document.querySelector('.q-pill.active')?.textContent.trim();
+            const target = content.querySelector(`[data-question-card="${q}"], .cloze-gap.active, .inline-input.active, .drop-zone.active, textarea[data-question], .question-card.active, textarea[data-q="${q}"]`);
+            if (!target) return null;
+            const box = content.getBoundingClientRect(), item = target.getBoundingClientRect();
+            return {top:item.top, bottom:item.bottom, viewportTop:box.top, viewportBottom:box.bottom};
+          });
+          if (destination) assert.ok(destination.top < destination.viewportBottom && destination.bottom > destination.viewportTop, label+': selected question scrolled out of view '+JSON.stringify(destination));
+        }
       }
     }
     await page.locator('#flagBtn').click();

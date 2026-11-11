@@ -164,6 +164,33 @@
     if (isPartNavigation(event.target)) showPartIntro();
     else releaseIntro();
   }, true);
+  // Mobile renderers replace whole panels and can restore the old scroll on
+  // the next frame. Position the selected question after that work completes.
+  let questionScrollEpoch = 0;
+  const cancelQuestionScroll = () => { questionScrollEpoch += 1; };
+  document.addEventListener('keydown', cancelQuestionScroll, true);
+  content.addEventListener('input', cancelQuestionScroll);
+  for (const name of ['wheel', 'touchmove', 'pointerdown']) document.addEventListener(name, cancelQuestionScroll, {capture:true, passive:true});
+  document.addEventListener('click', event => {
+    if (!event.target.closest?.('#nextBtn, #prevBtn, .q-pill')) return;
+    if (innerWidth > 900) return;
+    const epoch = ++questionScrollEpoch;
+    const position = () => {
+      if (epoch !== questionScrollEpoch || introPending || shell.classList.contains('hidden')) return;
+      const q = nav.querySelector('.q-pill.active')?.textContent.trim();
+      if (!/^\d+$/.test(q || '')) return;
+      const target = content.querySelector(`[data-question-card="${q}"], .cloze-gap.active, .inline-input.active, .drop-zone.active, textarea[data-question], .question-card.active, textarea[data-q="${q}"]`);
+      if (!target) return;
+      const box = content.getBoundingClientRect();
+      const y = target.getBoundingClientRect().top - box.top + content.scrollTop - 16;
+      content.scrollTo({top:Math.max(0, y), behavior:'instant'});
+    };
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      position();
+      Promise.allSettled([...content.querySelectorAll('img')].map(image => image.decode())).then(position);
+    }));
+    setTimeout(position, 100);
+  }, true);
   const focusable = root => [...root.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])')]
     .filter(el => !el.disabled && el.getClientRects().length && !el.closest('[inert]'));
   let active = null;
