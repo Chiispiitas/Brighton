@@ -43,7 +43,7 @@ function eliminate(s, ids, cause, resume) {
   else if (!checkWin(s)) setPhase(s, resume);
 }
 function startNight(s) {
-  s.day++; s.night = { victim: null, poison: null, heal: false }; s.votes = {};
+  s.day++; s.announcements = []; s.night = { victim: null, poison: null, heal: false, reports: [] }; s.votes = {};
   nextNight(s, -1);
 }
 function nextNight(s, after) {
@@ -51,6 +51,9 @@ function nextNight(s, after) {
     if (alive(s).some(p => p.role === NIGHT[i])) { setPhase(s, NIGHT[i]); return; }
   }
   const deaths = [s.night.heal ? null : s.night.victim, s.night.poison].filter(Boolean);
+  s.announcements = [...(s.night.reports || []), ...deaths.map(id => `${byId(s,id).name} was found dead.`)];
+  if(s.night.heal && s.night.victim && !deaths.includes(s.night.victim)) s.announcements.push(`${byId(s,s.night.victim).name} was saved during the night.`);
+  if(!deaths.length) s.announcements.push('Everyone was found alive.');
   event(s, `Day ${s.day} begins.`);
   if (!deaths.length) event(s, 'Everyone survived the night.');
   eliminate(s, deaths, 'night', 'day');
@@ -157,7 +160,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
   } else if (cmd.type === 'reset') {
     need(host && s.phase === 'finished', 'A new game is available after this game finishes.', 403);
     for (const p of s.players) { p.alive = true; p.role = null; delete p.cause; }
-    s.day = 0; s.winner = null; s.notes = {}; s.log = []; s.potions = { heal: true, poison: true }; s.hunterUsed = false; s.pendingHunter = null;
+    s.day = 0; s.winner = null; s.notes = {}; s.audit = []; s.announcements = []; s.log = []; s.potions = { heal: true, poison: true }; s.hunterUsed = false; s.pendingHunter = null;
     setPhase(s, 'lobby');
   } else {
     need(actor, 'Join this room before taking an action.', 403);
@@ -173,7 +176,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
       need(!gated(s) || s.awake, 'Wait until the moderator wakes your role.', 403);
       need(s.phase === 'werewolf' || !s.actions[actor.id], 'Your action is already locked in.');
       if (s.phase === 'fortune') {
-        if (cmd.target) { const target = choose(s, cmd.target, actor); note(s, actor.id, `${target.name} is ${target.role}.`); }
+        if (cmd.target) { const target = choose(s, cmd.target, actor); note(s, actor.id, `${target.name} is ${target.role}.`); (s.night.reports ||= []).push(target.role === 'werewolf' ? 'A werewolf was revealed to the Fortune Teller.' : 'A role was revealed to the Fortune Teller.'); }
       } else if (s.phase === 'werewolf') {
         need(cmd.target, 'Choose the pack’s target.'); choose(s, cmd.target, actor, true);
       } else if (s.phase === 'girl' && cmd.spy === true) {
@@ -182,11 +185,12 @@ export function command(inputState, hash, cmd, random = Math.random) {
         if (wolf) {
           const heads = random() < 0.5;
           note(s, actor.id, `${heads ? 'Heads — you stayed hidden.' : 'Tails — you were spotted.'} ${wolf.name} is a werewolf.`);
+          (s.night.reports ||= []).push(heads ? 'A werewolf was observed without the spy being discovered.' : 'A werewolf was observed, and the spy was discovered.');
           if (!heads) note(s, wolf.id, `You spotted ${actor.name}, the little girl, spying on you.`);
         }
       } else if (s.phase === 'witch') {
-        if (cmd.heal === true) { need(s.potions.heal && s.night.victim, 'The healing potion is unavailable.'); s.night.heal = true; s.potions.heal = false; }
-        if (cmd.poison) { need(s.potions.poison, 'Your poison has already been used.'); const target = byId(s, cmd.poison); need(target?.alive, 'Choose a living player to poison.'); s.night.poison = target.id; s.potions.poison = false; }
+        if (cmd.heal === true) { need(s.potions.heal && s.night.victim, 'The healing potion is unavailable.'); s.night.heal = true; s.potions.heal = false; (s.night.reports ||= []).push('A healing potion was used.'); }
+        if (cmd.poison) { need(s.potions.poison, 'Your poison has already been used.'); const target = byId(s, cmd.poison); need(target?.alive, 'Choose a living player to poison.'); s.night.poison = target.id; s.potions.poison = false; (s.night.reports ||= []).push('A poison potion was used.'); }
       } else if (s.phase === 'hunter') {
         if (cmd.target) choose(s, cmd.target, actor);
         s.hunterUsed = true; s.pendingHunter = null;
@@ -196,6 +200,21 @@ export function command(inputState, hash, cmd, random = Math.random) {
       else s.actions[actor.id] = { target: cmd.target || null };
     } else throw new GameError('Unknown action.');
   }
+  const before = inputState.phase;
+  const who = actor?.name || (host ? s.hostName : cmd.name || 'Visitor');
+  const target = cmd.target || cmd.poison;
+  let detail = target ? ` → ${byId(s,target)?.name || target}` : '';
+  if(cmd.type === 'action') {
+    if(before === 'fortune' && target) detail += ` (${byId(s,target)?.role})`;
+    if(before === 'girl') detail += cmd.spy ? ` · spied · ${s.notes[actor.id]?.at(-1)?.text || ''}` : ' · stayed asleep';
+    if(before === 'witch') detail += ` · heal: ${cmd.heal ? byId(s,inputState.night?.victim)?.name || 'yes' : 'no'} · poison: ${cmd.poison ? byId(s,cmd.poison)?.name : 'kept'}`;
+    if(!target && ['fortune','hunter'].includes(before)) detail += ' · passed';
+  }
+  if(cmd.type === 'settings') detail += ` · ${JSON.stringify(cmd.settings)}`;
+  if(cmd.force) detail += ' · missing actions passed';
+  if(cmd.type === 'vote' && !cmd.target) detail += ' · abstained';
+  (s.audit ||= []).push({day:inputState.day, phase:before, text:`${who}: ${cmd.type}${detail}`, at:Date.now()});
+  s.audit = s.audit.slice(-500);
   s.receipts.push(`${hash}:${cmd.requestId}`); s.receipts = s.receipts.slice(-120);
   s.version++; return s;
 }
@@ -212,6 +231,9 @@ export function view(s, hash, screen = false) {
     ...(s.phase === 'werewolf' && (host || me?.alive && me.role === 'werewolf') ? { packDecision: { agreed: packDecision(s).agreed } } : {}),
     ...(s.phase === 'werewolf' && me?.alive && me.role === 'werewolf' ? { packChoices: alive(s).filter(p => p.role === 'werewolf').map(p => ({ wolfId: p.id, target: s.actions[p.id]?.target || null })) } : {}),
     progress: host || s.phase === 'vote' || s.phase === 'reveal' ? progress(s) : null,
-    voteCounts: ['dusk', 'finished'].includes(s.phase) ? Object.values(s.votes).reduce((out, id) => { if (id) out[id] = (out[id] || 0) + 1; return out; }, {}) : null,
+    ...(host && s.mode === 'classroom' ? { audit:s.audit || [] } : {}),
+    announcements: ['day','vote','dusk','hunter','finished'].includes(s.phase) ? s.announcements || [] : [],
+    publicVotes: {...s.votes},
+    voteCounts: ['vote','day','hunter','dusk', 'finished'].includes(s.phase) ? Object.values(s.votes).reduce((out, id) => { if (id) out[id] = (out[id] || 0) + 1; return out; }, {}) : null,
     log: s.log, pendingHunter: s.phase === 'hunter' ? s.pendingHunter : null };
 }
