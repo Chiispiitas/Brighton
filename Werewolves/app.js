@@ -1,6 +1,6 @@
 import { API_URL } from './config.js';
 import { spyPresentation, privateNoteText } from './player-copy.mjs?v=spying-3';
-import { classroomHtml } from './classroom.mjs?v=classroom-2';
+import { classroomHtml } from './classroom.mjs?v=announcements-1';
 const $ = s => document.querySelector(s);
 const root = $('#app'), modal = $('#modal');
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -149,7 +149,7 @@ function mapHtml() {
     const choices=!projector?(state.packChoices||[]).filter(c=>c.target===p.id):[];
     const status=attacked?'Attacked tonight':!p.alive?'Eliminated':state.phase==='lobby'?'Joined':'Alive';
     const role=state.phase==='finished'||!p.alive?roleNames[p.role]||'':p.pack&&!projector?'Werewolf':'';
-    return `<button class="house ${p.alive?'':'dead'} ${attacked?'witch-victim':''} ${mine?'self':''} ${targetable(p)?'selectable':''} ${p.id===selected?'selected':''} ${choices.length?'pack-target':''}" style="--x:${x};--y:${y}" data-player="${p.id}" ${targetable(p)||!p.alive&&p.role?'':'aria-disabled="true"'} aria-pressed="${p.id===selected}" aria-label="${escape(p.name)}, ${status}${attacked?', revival target':''}${!p.alive&&p.role?', reveal card':targetable(p)?', choose player':''}">${houseArt(i,!p.alive||attacked)}<span class="nameplate"><b>${escape(p.name)}${mine?' · you':''}</b><small>${status}${role?' · '+role:''}</small>${attacked?'<small class="victim-badge">Revival target</small>':''}${choices.length?`<small class="pack-marker">${choices.map(c=>escape(playerName(c.wolfId))).join(', ')}</small>`:''}${state.voteCounts?.[p.id]?`<small>${state.voteCounts[p.id]} votes</small>`:''}</span></button>`;
+    return `<button class="house ${p.alive?'':'dead'} ${attacked?'witch-victim':''} ${mine?'self':''} ${targetable(p)?'selectable':''} ${p.id===selected?'selected':''} ${choices.length?'pack-target':''}" style="--x:${x};--y:${y}" data-player="${p.id}" ${targetable(p)||!p.alive&&p.role?'':'aria-disabled="true"'} aria-pressed="${p.id===selected}" aria-label="${escape(p.name)}, ${status}${attacked?', revival target':''}${!p.alive&&p.role?', reveal card':targetable(p)?', choose player':''}">${houseArt(i,!p.alive||attacked)}<span class="nameplate"><b>${escape(p.name)}${mine?' · you':''}</b>${Object.hasOwn(state.publicVotes||{},p.id)?`<small class="public-vote">Voted: ${state.publicVotes[p.id]?escape(playerName(state.publicVotes[p.id])):'abstained'}</small>`:''}<small>${status}${role?' · '+role:''}</small>${attacked?'<small class="victim-badge">Revival target</small>':''}${choices.length?`<small class="pack-marker">${choices.map(c=>escape(playerName(c.wolfId))).join(', ')}</small>`:''}${state.voteCounts?.[p.id]?`<small>${state.voteCounts[p.id]} votes</small>`:''}</span></button>`;
   }).join('');
   return `<section class="map-panel"><div class="phase-banner"><div><h2>${title}</h2><p>${copy}</p></div><span class="phase-token">${state.phase==='lobby'?'Lobby':`${day?'Day':'Night'} ${state.day||1}`}</span></div><div class="village-map ${day?'is-day':'is-night'}" ${legacy?`style="min-height:${rows*155}px"`:""}><div class="houses">${houses}</div><span class="square-marker">${state.phase==='lobby'?`${state.players.length}/12`:`${state.players.filter(p=>p.alive).length-(witchVictim()?1:0)}`}<small>${state.phase==='lobby'?'joined':witchVictim()?'unharmed':'alive'}</small></span></div><div class="map-legend"><span>${witchVictim()?`${state.players.filter(p=>p.alive).length-1} unharmed · 1 attacked tonight · ${state.players.filter(p=>!p.alive).length} eliminated`:`${state.players.filter(p=>p.alive).length} alive · ${state.players.filter(p=>!p.alive).length} eliminated`}</span><span>${day?'Day':'Night'} ${state.day||1}</span></div></section>`;
 }
@@ -231,7 +231,7 @@ function renderRoom() {
   document.body.classList.toggle('classroom-page',classroom);
   root.className=projector?'projector':state.phase==='witch'&&state.me?.role==='witch'?'witch-turn':'';
   if(classroom){
-    root.innerHTML=classroomHtml(state,{escape,roleNames,projector,link,mePanel,selected,packWait:PACK_WAIT,houseArt});
+    root.innerHTML=classroomHtml(state,{escape,roleNames,projector,link,mePanel,selected,packWait:PACK_WAIT,houseArt,mapHtml,revealedCards});
     wireRoom();
     if(witchDraft&&$('#use-poison')){$('#heal').checked=witchDraft.heal&&!$('#heal').disabled;$('#use-poison').checked=witchDraft.usePoison&&!$('#use-poison').disabled;$('#poison').value=witchDraft.poison;updateWitchChoices();}
     if(phaseChanged)window.scrollTo({top:0});
@@ -241,7 +241,7 @@ function renderRoom() {
     }
     return;
   }
-  root.innerHTML=`<div class="room-head"><div><div class="eyebrow">${state.phase==='lobby'?'Lobby':state.phase==='finished'?'Game over':`${NIGHT_PHASES.includes(state.phase)?'Night':'Day'} ${state.day||1}`}</div><h1>${state.phase==='lobby'?'Lobby':state.phase==='finished'?(state.winner==='village'?'Villagers win.':'Werewolves win.'):'Werewolves'}</h1></div><div class="room-tools"><button class="room-code" data-copy title="Copy invitation link">${state.code}</button><span class="live-dot">${projector?'Shared screen':state.host?'Host connected':'Connected'}</span><button class="quiet" id="home">Leave this view</button></div></div>${state.phase==='finished'?`<div class="success-banner"><h2>${state.winner==='village'?'Villagers win.':'Werewolves win.'}</h2><p>All roles are revealed below. ${state.host&&!projector?'You can start another game.':''}</p></div>`:''}<div class="room-layout">${mapHtml()}<aside class="sidebar">${mePanel()}${hostPanel()}${rosterPanel()}</aside></div>${revealedCards()}`;
+  root.innerHTML=`${state.announcements?.length?`<section class="day-announcements" aria-label="Night announcements"><h2>During the night</h2>${state.announcements.map(t=>`<p>${escape(t)}</p>`).join('')}</section>`:''}<div class="room-head"><div><div class="eyebrow">${state.phase==='lobby'?'Lobby':state.phase==='finished'?'Game over':`${NIGHT_PHASES.includes(state.phase)?'Night':'Day'} ${state.day||1}`}</div><h1>${state.phase==='lobby'?'Lobby':state.phase==='finished'?(state.winner==='village'?'Villagers win.':'Werewolves win.'):'Werewolves'}</h1></div><div class="room-tools"><button class="room-code" data-copy title="Copy invitation link">${state.code}</button><span class="live-dot">${projector?'Shared screen':state.host?'Host connected':'Connected'}</span><button class="quiet" id="home">Leave this view</button></div></div>${state.phase==='finished'?`<div class="success-banner"><h2>${state.winner==='village'?'Villagers win.':'Werewolves win.'}</h2><p>All roles are revealed below. ${state.host&&!projector?'You can start another game.':''}</p></div>`:''}<div class="room-layout">${mapHtml()}<aside class="sidebar">${mePanel()}${hostPanel()}${rosterPanel()}</aside></div>${revealedCards()}`;
   wireRoom();
   if(witchDraft&&$('#use-poison')){
     $('#heal').checked=witchDraft.heal&&!$('#heal').disabled;
