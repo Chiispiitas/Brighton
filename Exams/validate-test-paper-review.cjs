@@ -35,3 +35,28 @@ for (const folder of fs.readdirSync(path.join(__dirname,'tests'))) {
   count+=questions.length; tests++;
 }
 console.log(`Paper review passed: ${tests} tests, ${count} questions, every option, correct/wrong/unanswered choices and reading passages.`);
+(async () => {
+  const fixture = new JSDOM(fs.readFileSync(path.join(__dirname,'test-results.html'),'utf8'), {runScripts:'outside-only',url:'https://example.test/Exams/test-results.html?classId=QA'});
+  const w = fixture.window;
+  const testId = 'brighton-a2-units-5-8';
+  const key = JSON.parse(fs.readFileSync(path.join(__dirname,'answer-keys',testId+'.json')));
+  const context = {window:{}};
+  vm.runInNewContext(fs.readFileSync(path.join(__dirname,'tests/a2-units-5-8/test-data.js'),'utf8'), context);
+  w.BRIGHTON_SITE_CONFIG = {API_BASE_URL:'https://example.test/api',FALLBACK_TESTS:[{testId,relativeUrl:'tests/a2-units-5-8/index.html'}]};
+  w.Headers = Headers; w.Response = Response; w.Request = Request;
+  w.fetch = async url => new Response(JSON.stringify(String(url).includes('getTestResults') ? {success:true,items:[{testId,answerKeyVersion:'2026-10-30.1',studentName:'Versioned QA',classId:'QA',answersJson:'{"1":"B"}'}]} : key), {headers:{'content-type':'application/json'}});
+  for (const script of ['app-core.js','shared-grading.js','test-paper-review.js']) w.eval(fs.readFileSync(path.join(__dirname,script),'utf8'));
+  let requestedKey;
+  const original = w.BrightonGrading.loadAnswerKey;
+  w.BrightonGrading.loadAnswerKey = id => { requestedKey = id; return original(id); };
+  w.BrightonTestPaperReview.load = async test => { assert.equal(test.testId,testId); return context.window.BRIGHTON_TEST_DATA; };
+  w.eval(fs.readFileSync(path.join(__dirname,'test-results.js'),'utf8'));
+  for(let i=0;i<30 && !w.document.querySelector('[data-row-index]');i++) await new Promise(r=>setTimeout(r,10));
+  w.document.querySelector('[data-row-index]').click();
+  await new Promise(r=>setTimeout(r,20));
+  assert.equal(requestedKey,testId+'@@2026-10-30.1','Keep the historical key identity');
+  assert.equal(w.document.querySelector('[data-paper-state]').dataset.paperState,'ready');
+  assert.equal(w.document.querySelectorAll('.paper-question').length,80,'Versioned real-world rows open the full paper');
+  fixture.window.close();
+  console.log('Versioned result integration passed: real app-core ID decoration, catalog lookup and original answer-key version.');
+})().catch(error=>{console.error(error);process.exitCode=1;});

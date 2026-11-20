@@ -302,7 +302,7 @@
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
     const review = detailsContent.querySelector('.test-detail-answer-grid');
-    const testId = String(row.testId || '').trim();
+    const testId = Grading.splitVersionedAssessmentId(row.testId).assessmentId;
     const test = (window.BRIGHTON_SITE_CONFIG?.FALLBACK_TESTS || tests).find(test => test.testId === testId);
     review.dataset.paperState = !test ? 'missing-test' : !window.BrightonTestPaperReview ? 'missing-renderer' : 'loading';
     if (test && window.BrightonTestPaperReview) {
