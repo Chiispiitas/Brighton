@@ -302,7 +302,9 @@
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
     const review = detailsContent.querySelector('.test-detail-answer-grid');
-    const test = tests.find(test => test.testId === row.testId);
+    const testId = String(row.testId || '').trim();
+    const test = (window.BRIGHTON_SITE_CONFIG?.FALLBACK_TESTS || tests).find(test => test.testId === testId);
+    review.dataset.paperState = !test ? 'missing-test' : !window.BrightonTestPaperReview ? 'missing-renderer' : 'loading';
     if (test && window.BrightonTestPaperReview) {
       review.setAttribute('aria-busy', 'true');
       review.insertAdjacentHTML('beforebegin', '<p class="paper-loading" role="status">Loading test paper…</p>');
@@ -312,11 +314,14 @@
         review.className = 'test-paper-review-host';
         review.innerHTML = window.BrightonTestPaperReview.render(data, answerItems, key);
         review.removeAttribute('aria-busy');
+        review.dataset.paperState = 'ready';
       }).catch(() => {
         if (!review.isConnected) return;
         review.removeAttribute('aria-busy');
         review.previousElementSibling.textContent = 'The test paper could not load. Saved answers are shown below. Close and reopen to retry.';
       });
+    } else {
+      review.insertAdjacentHTML('beforebegin', '<p role="status">The full test paper is unavailable. Reload this page to load the latest review.</p>');
     }
   }
 
