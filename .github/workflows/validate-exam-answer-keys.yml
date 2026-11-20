@@ -93,6 +93,7 @@ jobs:
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-b2-listening-practice.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-listening-results.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-results-png.cjs
+          NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-test-paper-review.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Placement/validate-speaking.cjs
           node Placement/validate-speaking-chunks.cjs
       - name: Validate A1 Reading and Writing JavaScript syntax

@@ -301,6 +301,23 @@
     `;
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
+    const review = detailsContent.querySelector('.test-detail-answer-grid');
+    const test = tests.find(test => test.testId === row.testId);
+    if (test && window.BrightonTestPaperReview) {
+      review.setAttribute('aria-busy', 'true');
+      review.insertAdjacentHTML('beforebegin', '<p class="paper-loading" role="status">Loading test paper…</p>');
+      Promise.all([window.BrightonTestPaperReview.load(test), loadAnswerKey(row.testId)]).then(([data, key]) => {
+        if (!review.isConnected) return;
+        review.previousElementSibling?.remove();
+        review.className = 'test-paper-review-host';
+        review.innerHTML = window.BrightonTestPaperReview.render(data, answerItems, key);
+        review.removeAttribute('aria-busy');
+      }).catch(() => {
+        if (!review.isConnected) return;
+        review.removeAttribute('aria-busy');
+        review.previousElementSibling.textContent = 'The test paper could not load. Saved answers are shown below. Close and reopen to retry.';
+      });
+    }
   }
 
   function closeModal() {

@@ -2,6 +2,40 @@
   grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.3fr) minmax(180px, 1fr) auto auto auto;
 }
 
+.test-paper-review { display:grid; gap:24px; }
+.paper-page { background:#fff; border:1px solid #e4e7ec; border-radius:22px; padding:24px; min-width:0; }
+.paper-page header { border-bottom:1px solid #e4e7ec; padding-bottom:16px; margin-bottom:20px; }
+.paper-page header h3 { margin:6px 0; }
+.paper-legend { color:var(--muted); font-size:13px; }
+.paper-question { border:1px solid #e4e7ec; border-radius:16px; padding:18px; margin-top:16px; break-inside:avoid; }
+.paper-question-head { display:flex; gap:12px; align-items:flex-start; }
+.paper-question-head p { margin:4px 0 16px; flex:1; font-weight:700; }
+.paper-number { background:var(--teal-soft); border-radius:10px; padding:6px 10px; }
+.paper-state { font-size:12px; font-weight:700; }
+.paper-options { display:grid; gap:8px; }
+.paper-option { display:flex; gap:12px; align-items:center; border:2px solid #e4e7ec; border-radius:12px; padding:12px; background:#f8f9fb; overflow-wrap:anywhere; }
+.paper-option > span:nth-child(2) { flex:1; }
+.paper-option.is-correct { background:#e4f5eb; border-color:#43946b; }
+.paper-option.is-wrong { background:#fff0ee; border-color:#c65546; }
+.paper-option.is-selected { box-shadow:inset 4px 0 #283c62; }
+.paper-option-label { font-size:12px; font-weight:800; }
+#detailsModal .modal-head { flex-wrap:wrap; gap:10px; }
+#detailsModal .modal-head h2 { flex:1 1 180px; }
+#detailsModal .modal-head > button { flex-shrink:0; }
+#detailsModal #closeModalBtn { min-width:44px; min-height:44px; }
+.paper-passage { border-radius:16px; background:#fff8ee; padding:20px; line-height:1.7; }
+.test-paper-review .question-visual { max-width:180px; margin:12px 0; }
+.test-paper-review .question-visual svg { width:100%; }
+@media(max-width:620px) {
+  .paper-page { padding:12px; }
+  .paper-question { padding:12px; }
+  .paper-question-head { flex-wrap:wrap; }
+  .paper-question-head p { flex-basis:70%; }
+  .paper-state { margin-left:46px; }
+  .paper-option { flex-wrap:wrap; }
+  .paper-option-label { flex-basis:100%; margin-left:24px; }
+}
+
 .test-score-pages {
   display: flex;
   gap: 6px;
