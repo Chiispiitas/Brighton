@@ -107,9 +107,15 @@
 
 .unit-test-variation {
   display: flex;
+  width: 100%;
   flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
+}
+
+.unit-test-variation > a.secondary-btn {
+  flex: 1;
+  min-width: 0;
 }
 
 .unit-test-variation .secondary-btn {
