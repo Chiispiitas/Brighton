@@ -66,6 +66,12 @@ function collectQuestions(data, testId) {
 }
 
 function validateRuntimeChoiceOrder({ testId, indexHtml, sandbox, data, sourceOptions, key }) {
+  // New variants store the final rendered choices and their own key directly.
+  // validate-unit-variations.cjs separately checks each against its source key.
+  if (data.choiceOrder === 'authored' && data.parentTestId && /-variation-\d+$/.test(testId)) {
+    if (/cumulative-choice-order\.js/.test(indexHtml)) fail(testId, 'authored variation must not apply a legacy choice mixer');
+    return;
+  }
   let mixerName = null;
   let sourceCorrectIndex = null;
   let limit = 0;

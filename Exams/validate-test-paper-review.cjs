@@ -27,7 +27,8 @@ for (const folder of fs.readdirSync(path.join(__dirname,'tests'))) {
     assert.equal(card.querySelectorAll('.paper-option').length,question.options.length);
     question.options.forEach(option => assert.ok(card.textContent.includes(option)));
     const correct = card.querySelector('.is-correct');
-    assert.equal(correct.dataset.optionValue,key.answers[question.q].answers[0]);
+    assert.ok(key.answers[question.q].answers.includes(correct.dataset.optionValue),`${data.testId} Q${question.q}: displayed correct choice must be accepted by the key`);
+    assert.equal(card.querySelectorAll('.is-correct').length,key.answers[question.q].answers.length,'Show every accepted correct option');
     assert.equal(card.querySelectorAll('.is-selected').length,details[index].answer?1:0);
     if (details[index].answer) assert.equal(card.querySelector('.is-selected').dataset.optionValue,details[index].answer);
   });

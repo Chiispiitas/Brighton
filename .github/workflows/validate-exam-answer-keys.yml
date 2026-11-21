@@ -157,5 +157,7 @@ jobs:
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
         run: node Exams/validate-cross-test-answers.mjs
+      - name: Validate unit test variations
+        run: node Exams/validate-unit-variations.cjs
       - name: Validate immutable answer-key releases
         run: node Exams/validate-answer-key-releases.mjs
