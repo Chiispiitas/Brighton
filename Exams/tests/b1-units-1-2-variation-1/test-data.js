@@ -191,7 +191,7 @@ window.BRIGHTON_TEST_DATA = {
           "q": 20,
           "text": "My parents ________ the news online every morning.",
           "options": [
-            "do read",
+            "reads",
             "read",
             "am reading"
           ]
@@ -246,9 +246,9 @@ window.BRIGHTON_TEST_DATA = {
           "q": 25,
           "text": "After a stressful morning, a walk by the river is very ________.",
           "options": [
-            "interesting",
+            "relaxed",
             "relaxing",
-            "tired"
+            "relax"
           ]
         },
         {
