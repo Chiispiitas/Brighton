@@ -90,6 +90,7 @@
           <button class="secondary-btn" type="button" data-copy-student-link="${escapeAttr(studentUrl)}">Copy student link</button>
           <a class="secondary-btn" href="${escapeAttr(resultsUrl)}">Results</a>
         </div>
+        ${renderVariations(test)}
       `;
     });
 
@@ -117,7 +118,24 @@
   }
 
   function findTest(level, units) {
-    return tests.find((test) => test.level === level && test.unitRange === units && test.isActive !== false);
+    return tests.find((test) => test.level === level && test.unitRange === units && test.isActive !== false && !variationParent(test));
+  }
+
+  function variationParent(test) {
+    if (test.parentTestId) return test.parentTestId;
+    const id = String(test.testId || '');
+    return /-variation-\d+$/.test(id) ? id.replace(/-variation-\d+$/, '') : '';
+  }
+
+  function renderVariations(original) {
+    const variations = tests.filter((test) => test.isActive !== false && variationParent(test) === original.testId);
+    if (!variations.length) return '';
+    return `<div class="unit-test-variations" aria-label="Test variations">${variations.map((test) => {
+      const url = escapeAttr(resolveTestUrl(test));
+      const number = String(test.testId).match(/-variation-(\d+)$/)?.[1];
+      const label = test.variationLabel || (number ? `Variation ${number}` : test.title);
+      return `<div class="unit-test-variation"><a class="secondary-btn" href="${url}" target="_blank" rel="noopener">${escapeHtml(label)}</a><button class="secondary-btn" type="button" data-copy-student-link="${url}" aria-label="Copy ${escapeAttr(label)} student link">Copy link</button></div>`;
+    }).join('')}</div>`;
   }
 
   function resolveTestUrl(test) {
