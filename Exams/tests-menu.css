@@ -107,7 +107,8 @@
 
 .unit-test-variation {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
   gap: 8px;
 }
 
@@ -116,6 +117,17 @@
   padding: 8px 12px;
   border-radius: 12px;
   font-size: 11px;
+}
+
+.unit-test-variation button.secondary-btn {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  flex: 0 0 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .unit-test-card.coming-soon {
