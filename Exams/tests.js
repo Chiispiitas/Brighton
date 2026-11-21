@@ -133,7 +133,7 @@
     return `<div class="unit-test-variations" aria-label="Test variations">${variations.map((test) => {
       const url = escapeAttr(resolveTestUrl(test));
       const number = String(test.testId).match(/-variation-(\d+)$/)?.[1];
-      const label = test.variationLabel || (number ? `Variation ${number}` : test.title);
+      const label = test.variationLabel || (number ? String.fromCharCode(65 + Number(number)) : test.title);
       return `<div class="unit-test-variation"><a class="secondary-btn" href="${url}" target="_blank" rel="noopener">${escapeHtml(label)}</a><button class="secondary-btn" type="button" data-copy-student-link="${url}" aria-label="Copy ${escapeAttr(label)} student link" title="Copy student link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7 .1l3-3a5 5 0 0 0-7-7l-1.7 1.7M14 11a5 5 0 0 0-7-.1l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></button></div>`;
     }).join('')}</div>`;
   }
