@@ -13,6 +13,7 @@ window.BRIGHTON_SITE_CONFIG = {
   PROGRESS_STALE_SECONDS: 90,
 
   FALLBACK_TESTS: [
+    {"testId":"brighton-b1-units-1-2-variation-1","title":"B1 Units 1–2 Test · Variation 1","level":"B1","unitRange":"1-2","isActive":true,"totalQuestions":40,"maxScore":40,"relativeUrl":"tests/b1-units-1-2-variation-1/index.html"},
     { testId: "brighton-a1-units-1-2", title: "A1 Units 1–2 Test", level: "A1", unitRange: "1-2", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/a1-units-1-2/index.html" },
     { testId: "brighton-a1-units-1-4", title: "A1 Units 1–4 Test", level: "A1", unitRange: "1-4", isActive: true, totalQuestions: 80, maxScore: 80, relativeUrl: "tests/a1-units-1-4/index.html" },
     { testId: "brighton-a1-units-5-6", title: "A1 Units 5–6 Test", level: "A1", unitRange: "5-6", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/a1-units-5-6/index.html" },
