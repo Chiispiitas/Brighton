@@ -8,7 +8,8 @@ const keys = createRemoteJWKSet(new URL(issuer + "/.well-known/jwks"));
 const workflow = "chiispiitas/brighton/.github/workflows/placement-speaking.yml@refs/heads/main";
 
 export async function POST({ request }) {
-  const token = (request.headers.get("authorization") || "").replace(/^Bearer /i, "");
+  // Wix reserves Authorization for its own site identities.
+  const token = request.headers.get("X-Brighton-Worker") || "";
   try {
     const { payload } = await jwtVerify(token, keys, {
       issuer, audience: "brighton-placement-speaking", algorithms: ["RS256"]
@@ -26,6 +27,5 @@ export async function POST({ request }) {
     return new Response(null, { status: 503 });
   }
   const processed = attempts.filter(attempt => attempt.status === "fulfilled" && attempt.value).length;
-  return Response.json({ processed }, { headers: { "Cache-Control": "no-store" } });
+  return new Response(JSON.stringify({ processed }), { headers: { "Content-Type": "application/json", "Cache-Control": "no-store" } });
 }
-

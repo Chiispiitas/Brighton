@@ -130,4 +130,3 @@ export async function runNextSpeakingAssessment(sessions, chunks, assess) {
     offset += page.items.length;
   }
 }
-
