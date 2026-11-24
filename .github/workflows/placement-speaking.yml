@@ -1,0 +1,31 @@
+name: Retry received placement recordings
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+permissions:
+  id-token: write
+concurrency:
+  group: placement-speaking-assessments
+  cancel-in-progress: false
+jobs:
+  retry:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Process received recordings
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in {1..10}; do
+            token=$(curl --fail --silent --show-error \
+              -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
+              "${ACTIONS_ID_TOKEN_REQUEST_URL}&audience=brighton-placement-speaking" | jq -er .value)
+            echo "::add-mask::$token"
+            processed=$(curl --fail --silent --show-error --max-time 95 -X POST \
+              -H "Authorization: Bearer $token" \
+              'https://headless-yvtolzojmbe-chiispiitas-140b.wix-site-host.com/api/speaking-queue' | jq -er '.processed')
+            echo "Processed $processed placement tracks"
+            if [[ "$processed" == 0 ]]; then break; fi
+          done
+

@@ -18,10 +18,11 @@ const server = http.createServer((req, res) => {
       const source = bytes.toString('utf8');
       const end = source.lastIndexOf('})();');
       const expose = `window.speakingQA={
-        setup(){session={sessionId:'browser-qa',clientSessionId:'browser-client',moduleId:'speaking-a2',phase:'speaking',provisionalLevel:'A2',studentName:'Speaking Browser QA',status:'active'};currentModuleId='speaking-a2';renderSpeakingHandoff();},
+        setup(){session={sessionId:'browser-qa',clientSessionId:'browser-client',placementVersion:PLACEMENT_VERSION,moduleId:'speaking-a2',phase:'speaking',provisionalLevel:'A2',studentName:'Speaking Browser QA',status:'active'};currentModuleId='speaking-a2';saveLocalSession();renderSpeakingHandoff();},
         age(){speakingStartedAt=performance.now()-30000;},
         mute(){speakingStream.getAudioTracks()[0].dispatchEvent(new Event('mute'));},
         hide(){window.dispatchEvent(new Event('pagehide'));},
+        sendDecodedFile(base64){const bytes=Uint8Array.from(atob(base64), c=>c.charCodeAt(0));return processSpeakingAudio(new Blob([bytes],{type:'audio/wav'}),35,{captureMode:'device-recorder'});},
         stop:stopSpeakingRecording,
         state(){return {status:session.status,phase:session.phase,recorderState:speakingRecorder?.state,chunkBytes:speakingChunks.reduce((sum,chunk)=>sum+chunk.size,0),metrics:lastSpeakingAttemptMetrics};},
         cleanup:cleanupSpeakingMedia
@@ -50,7 +51,7 @@ async function failedPicture(page, label) {
   await page.screenshot({path:path.join(output, label + '-failed.png'),fullPage:true}).catch(() => {});
 }
 
-async function contextFor(browser, engine, size, missingCapture = false) {
+async function contextFor(browser, engine, size, missingCapture = false, handleRequest) {
   const phone = size.width < 600 || size.height < 450;
   const userAgent = !phone ? undefined : engine === 'webkit'
     ? 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1'
@@ -65,13 +66,16 @@ async function contextFor(browser, engine, size, missingCapture = false) {
     if (!['GET','HEAD'].includes(request.method())) {
       const body = JSON.parse(request.postData() || '{}');
       calls.push({url:request.url(),body});
+      if (handleRequest && await handleRequest({route, request, body})) return;
       let data = {success:true};
       if (request.url().endsWith('Resume')) data = {success:true,status:'active',phase:'speaking',moduleId:'speaking-a2'};
-      if (request.url().endsWith('SubmitSpeaking')) {
+      if (request.url().endsWith('SubmitSpeaking') && body.gradeReceipt) {
+        data = {success:true,status:'completed',finalLevel:'A2',result:gradedResult()};
+      } else if (request.url().endsWith('SubmitSpeaking')) {
         submitted++;
         data = submitted === 1
           ? {success:true,speakingError:true,speakingErrorCode:'provider-server',providerStatus:503}
-          : {success:true,status:'completed',finalLevel:'A2',result:{finalLevel:'A2',studentName:'Speaking Browser QA',completedAt:new Date().toISOString(),skills:{speaking:{score:43,displayScore:'4.3/10',level:'A2'}}}};
+          : pendingReceipt();
       }
       return route.fulfill({status:200,contentType:'application/json',body:JSON.stringify(data),headers:{'access-control-allow-origin':'*'}});
     }
@@ -164,13 +168,14 @@ async function run(browser, engine, size, prefix, base) {
       await page.screenshot({path:path.join(output, label + '-retry.png')});
     }
     await page.locator('#retrySpeakingSubmitBtn').click();
-    await page.waitForFunction(() => window.speakingQA.state().status === 'completed');
-    const submits = calls.filter(call => call.url.endsWith('SubmitSpeaking'));
-    assert.equal(submits.length, 2, label + ': duplicated submission');
-    assert.equal(submits[1].body.audioBase64, first.body.audioBase64, label + ': retry lost or changed recorded audio');
+    await page.waitForFunction(() => window.speakingQA.state().status === 'completed' && document.body.textContent.includes('4.3/10'));
+    const submits = calls.filter(call => call.url.endsWith('SubmitSpeaking') && call.body.receiveOnly);
+    assert.equal(submits.length, 2, label + ': expected two receipt submissions');
+    assert.equal(submits[1].body.audioUploadId, first.body.audioUploadId, label + ': retry lost recorded upload');
     assert.equal(submits[1].body.audioMimeType, first.body.audioMimeType, label + ': retry changed audio format');
+    assert.equal(calls.filter(call => call.body.gradeReceipt).length, 1, label + ': expected one grading request');
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1), false, label + ': page overflows horizontally');
-    console.log('PASS ' + label + ': real recording, provider retry, identical audio, completed result');
+    console.log('PASS ' + label + ': real recording, retried receipt, same upload and graded result');
   } catch (error) {await failedPicture(page, label); throw error;}
   finally {await context.close();}
 }
@@ -208,13 +213,18 @@ async function missing(browser, engine, prefix, base, mode = true, playbackAvail
       assert.equal(first.body.captureMode, 'device-recorder');
       assert.ok(Math.abs(first.body.durationSeconds - 35) < .1, 'Native duration was not measured');
       await page.locator('#retrySpeakingSubmitBtn').click();
-      await page.waitForFunction(() => window.speakingQA.state().status === 'completed');
-      const submits = calls.filter(call => call.url.endsWith('SubmitSpeaking'));
+      await page.waitForFunction(() => window.speakingQA.state().status === 'completed' && document.body.textContent.includes('4.3/10'));
+      const submits = calls.filter(call => call.url.endsWith('SubmitSpeaking') && call.body.receiveOnly);
       assert.equal(submits.length, 2);
-      assert.notEqual(submits[0].body.audioUploadId, submits[1].body.audioUploadId, 'Retry reused expired chunk reference');
-      const uploaded = id => calls.filter(call => call.url.endsWith('SpeakingChunk') && call.body.uploadId === id).sort((a,b) => a.body.chunkIndex-b.body.chunkIndex).map(call=>call.body.chunkBase64).join('');
-      assert.equal(uploaded(submits[0].body.audioUploadId), wav.toString('base64'), 'Original file upload changed audio');
-      assert.equal(uploaded(submits[1].body.audioUploadId), wav.toString('base64'), 'Chunked retry lost original audio');
+      const uploaded = submit => {
+        const chunks = new Map();
+        for (const call of calls.slice(0, calls.indexOf(submit))) {
+          if (call.url.endsWith('SpeakingChunk') && call.body.uploadId === submit.body.audioUploadId) chunks.set(call.body.chunkIndex,call.body.chunkBase64);
+        }
+        return Array.from({length:submit.body.audioChunkCount}, (_, index) => chunks.get(index)).join('');
+      };
+      assert.equal(uploaded(submits[0]), wav.toString('base64'), 'Original file upload changed audio');
+      assert.equal(uploaded(submits[1]), wav.toString('base64'), 'Chunked retry lost original audio');
     }
     console.log(`PASS ${engine}-${prefix ? 'young' : 'adult'}: native fallback available ${mode === 'denied' ? 'after microphone denial' : 'without browser capture APIs'}`);
   } catch (error) {await failedPicture(page, `${engine}-${prefix ? 'young' : 'adult'}-native-${mode === 'denied' ? 'denied' : 'missing'}`); throw error;}
@@ -231,6 +241,196 @@ function wave(seconds) {
   data.write('data', 36); data.writeUInt32LE(samples * 2, 40);
   for (let i=0; i<samples; i++) data.writeInt16LE(Math.round(Math.sin(i * 2 * Math.PI * 320 / sampleRate) * 6000), 44 + i * 2);
   return data;
+}
+
+function gradedResult() {
+  return {
+    finalLevel:'A2', studentName:'Speaking Browser QA', completedAt:new Date().toISOString(),
+    skills:{speaking:{level:'A2',score:43,displayScore:'4.3/10',skipped:false}}
+  };
+}
+
+function pendingReceipt() {
+  const result = gradedResult();
+  result.skills.speaking = {level:null,score:null,displayScore:'—',pending:true,skipped:false};
+  return {success:true,speakingReceived:true,status:'completed',phase:'result',finalLevel:'A2',result};
+}
+
+// Close a real page during a multipart upload, reopen the saved session, then
+// lose the final acknowledgement. The server mock retains only accepted bytes
+// and the completed result. VM state from the closed page cannot help the retry.
+async function interruptedUpload(browser, engine, prefix, base, playbackAvailable) {
+  const label = `${engine}-${prefix ? 'young' : 'adult'}-upload-resume`;
+  const wav = wave(35);
+  const uploaded = new Map();
+  const result = gradedResult();
+  let interrupt = true, completed = false, receivedSubmissions = 0;
+  let markInterruption;
+  const interrupted = new Promise(resolve => { markInterruption = resolve; });
+  async function handleRequest({route, request, body}) {
+    if (request.method() !== 'POST') return false;
+    const reply = data => route.fulfill({json:data,headers:{'access-control-allow-origin':'*'}});
+    if (request.url().endsWith('SpeakingChunk')) {
+      if (!uploaded.has(body.uploadId)) uploaded.set(body.uploadId, new Map());
+      const chunks = uploaded.get(body.uploadId);
+      if (chunks.has(body.chunkIndex)) {
+        assert.equal(chunks.get(body.chunkIndex), body.chunkBase64, `${label}: duplicate chunk changed the audio`);
+      } else {
+        chunks.set(body.chunkIndex,body.chunkBase64);
+      }
+      if (body.chunkIndex === 1 && interrupt) {
+        // The server accepted this chunk but the page never saw its acknowledgement.
+        await route.abort('connectionreset');
+        markInterruption();
+        return true;
+      }
+      await reply({ success:true });
+      return true;
+    }
+    if (request.url().endsWith('SubmitSpeaking')) {
+      assert.equal(body.receiveOnly,true,`${label}: expected upload confirmation request`);
+      receivedSubmissions++;
+      const chunks = uploaded.get(body.audioUploadId);
+      assert.ok(chunks, `${label}: final request referenced missing upload`);
+      assert.equal(chunks.size,body.audioChunkCount,`${label}: incomplete upload finalized`);
+      assert.equal(Array.from({length:body.audioChunkCount}, (_, i) => chunks.get(i)).join(''),wav.toString('base64'),`${label}: recovery changed recorded bytes`);
+      assert.equal(body.captureMode,'device-recorder',`${label}: recovery lost capture metadata`);
+      completed = true;
+      await route.abort('connectionreset');
+      return true;
+    }
+    if (completed && (request.url().endsWith('Resume') || request.url().endsWith('Result'))) {
+      await reply({success:true,status:'completed',phase:'result',finalLevel:'A2',result});
+      return true;
+    }
+    return false;
+  }
+  const {context,calls} = await contextFor(browser,engine,{width:390,height:664},true,handleRequest);
+  let page = await context.newPage();
+  const url = base + prefix + 'index.html';
+  try {
+    await page.goto(url);
+    await page.evaluate(() => window.speakingQA.setup());
+    if (playbackAvailable) {
+      await page.locator('#nativeSpeakingBtn').click();
+      await page.locator('#nativeSpeakingFile').setInputFiles({name:'upload-resume.wav', mimeType:'audio/wav', buffer:wav});
+      await page.locator('#submitNativeSpeakingBtn').click();
+    } else {
+      // A WebKit build without local codecs can still exercise IndexedDB,
+      // FileReader and browser fetch once a recording and duration exist.
+      await page.evaluate(base64 => {void window.speakingQA.sendDecodedFile(base64);},wav.toString('base64'));
+    }
+    let timeout;
+    try { await Promise.race([interrupted, new Promise((_,reject) => { timeout = setTimeout(() => reject(new Error(`${label}: second chunk never reached the service`)),12000); })]); }
+    finally { clearTimeout(timeout); }
+    await page.close();
+    interrupt = false;
+    page = await context.newPage();
+    await page.goto(url);
+    await page.locator('#retrySpeakingSubmitBtn').click({timeout:10000});
+    await page.waitForFunction(() => window.speakingQA.state().status === 'completed',undefined,{timeout:20000});
+    assert.equal(uploaded.size,1,`${label}: resuming created a second upload`);
+    assert.equal(calls.filter(call => call.url.endsWith('SpeakingChunk') && call.body.chunkIndex === 0).length,1,`${label}: resuming resent an acknowledged chunk`);
+    assert.ok(calls.filter(call => call.url.endsWith('SpeakingChunk') && call.body.chunkIndex === 1).length >= 2,`${label}: lost chunk acknowledgement was never retried`);
+    assert.equal(receivedSubmissions,1,`${label}: sent audio again after server confirmed completion`);
+    assert(!calls.some(call => call.url.endsWith('SkipSpeaking')), `${label}: network failure skipped Speaking`);
+    await page.waitForFunction(() => new Promise((resolve,reject) => {
+      const open = indexedDB.open('brighton-placement-recordings');
+      open.onerror = () => reject(open.error);
+      open.onsuccess = () => {
+        const db = open.result;
+        const count = db.transaction('pending').objectStore('pending').count();
+        count.onerror = () => {db.close();reject(count.error);};
+        count.onsuccess = () => {db.close();resolve(count.result === 0);};
+      };
+    }));
+    console.log(`PASS ${label}: recovered exact audio after interrupted chunk and page close, recovered lost final acknowledgement without duplicate submission`);
+  } catch(error) {await failedPicture(page,label);throw error;}
+  finally {await context.close();}
+}
+
+async function unavailableStorage(browser, engine, prefix, base) {
+  const label = `${engine}-${prefix ? 'young' : 'adult'}-unavailable-storage`;
+  const {context,calls} = await contextFor(browser,engine,{width:390,height:664},true);
+  await context.addInitScript(() => {
+    Object.defineProperty(window,'indexedDB',{configurable:true,get() {throw new DOMException('Local storage unavailable','SecurityError');}});
+  });
+  const page = await context.newPage();
+  try {
+    await page.goto(base + prefix + 'index.html');
+    await page.evaluate(() => window.speakingQA.setup());
+    await page.evaluate(base64 => {void window.speakingQA.sendDecodedFile(base64);},wave(12).toString('base64'));
+    await page.locator('#retrySpeakingSubmitBtn').waitFor();
+    assert.match(await page.locator('#placementStageRoot').innerText(),/keep this page open/i, label);
+    await page.locator('#retrySpeakingSubmitBtn').click();
+    await page.waitForFunction(() => document.body.innerText.includes('4.3/10'));
+    assert.equal(new Set(calls.filter(call => call.body.receiveOnly).map(call => call.body.audioUploadId)).size,1,label);
+    console.log('PASS ' + label + ': storage unavailable, candidate sees in-tab retry guidance and can send the same recording');
+  } catch (error) {await failedPicture(page,label);throw error;}
+  finally {await context.close();}
+}
+
+// The server has received the recording, then the grading connection drops.
+// A returning candidate must see their pending receipt and get their score
+// when it becomes available, without accessing the microphone or uploading again.
+async function pendingGrade(browser, engine, prefix, base) {
+  const label = `${engine}-${prefix ? 'young' : 'adult'}-pending-grade`;
+  let received = false, graded = false, gradingCalls = 0, markGradeDrop;
+  const droppedGrade = new Promise(resolve => {markGradeDrop = resolve;});
+  async function handleRequest({route,request,body}) {
+    const reply = data => route.fulfill({json:data,headers:{'access-control-allow-origin':'*'}});
+    if (request.url().endsWith('SubmitSpeaking')) {
+      if (body.gradeReceipt) {
+        assert(received,`${label}: grading started before the server received audio`);
+        assert(!body.audioBase64,`${label}: grading sent audio again`);
+        gradingCalls++;
+        if (graded) await reply({success:true,finalLevel:'A2',result:gradedResult()});
+        else {
+          await route.abort('connectionreset');
+          markGradeDrop();
+        }
+      } else {
+        assert.equal(body.receiveOnly,true,`${label}: expected explicit receipt request`);
+        received = true;
+        await reply(pendingReceipt());
+      }
+      return true;
+    }
+    if (received && (request.url().endsWith('Result') || request.url().endsWith('Resume'))) {
+      await reply(graded ? {success:true,status:'completed',phase:'result',finalLevel:'A2',result:gradedResult()} : pendingReceipt());
+      return true;
+    }
+    return false;
+  }
+  const {context,calls} = await contextFor(browser,engine,{width:390,height:664},true,handleRequest);
+  let page = await context.newPage();
+  page.setDefaultTimeout(15000);
+  try {
+    const url = base + prefix + 'index.html';
+    await page.goto(url);
+    await page.evaluate(() => window.speakingQA.setup());
+    await page.evaluate(base64 => { void window.speakingQA.sendDecodedFile(base64); },wave(15).toString('base64'));
+    await page.locator('#refreshSpeakingResultBtn').waitFor();
+    await page.waitForFunction(() => /pending/i.test(document.body.innerText));
+    let timer;
+    try {await Promise.race([droppedGrade,new Promise((_,reject) => {timer=setTimeout(()=>reject(new Error(label + ': grading request never reached the server')),10000);})]);}
+    finally {clearTimeout(timer);}
+    await page.close();
+    page = await context.newPage();
+    await page.goto(url);
+    await page.locator('#refreshSpeakingResultBtn').waitFor();
+    const body = await page.locator('body').innerText();
+    assert.match(body,/pending/i,`${label}: saved result omitted pending status`);
+    assert.doesNotMatch(body,/Speaking skipped/i,`${label}: received audio displayed as skipped`);
+    graded = true;
+    await page.locator('#refreshSpeakingResultBtn').click();
+    await page.waitForFunction(() => document.body.textContent.includes('4.3/10'));
+    assert.ok(gradingCalls > 0,`${label}: never attempted grading`);
+    assert.equal(calls.filter(call => call.body.receiveOnly).length,1,`${label}: resubmitted received audio`);
+    assert(!calls.some(call => call.url.endsWith('SkipSpeaking')),`${label}: discarded received audio`);
+    console.log(`PASS ${label}: reload kept a confirmed receipt through a lost grading connection, refresh showed the saved mark`);
+  } catch(error) {await failedPicture(page,label);throw error;}
+  finally {await context.close();}
 }
 
 async function interrupted(browser, engine, prefix, base, short) {
@@ -296,6 +496,9 @@ async function interrupted(browser, engine, prefix, base, short) {
       for (const prefix of ['', 'YoungLearners/']) {
         if (captureAvailable && wants('record')) for (const size of sizes) await run(browser, engine, size, prefix, base);
         if (wants('native')) await missing(browser, engine, prefix, base, true, playbackAvailable);
+        if (wants('upload-resume')) await interruptedUpload(browser,engine,prefix,base,playbackAvailable);
+        if (wants('pending-grade')) await pendingGrade(browser,engine,prefix,base);
+        if (wants('unavailable-storage')) await unavailableStorage(browser,engine,prefix,base);
         if (wants('denied')) await missing(browser, engine, prefix, base, 'denied');
         if (captureAvailable && wants('short-interruption')) await interrupted(browser, engine, prefix, base, true);
         if (captureAvailable && wants('interruption')) await interrupted(browser, engine, prefix, base, false);

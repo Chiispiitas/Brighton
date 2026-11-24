@@ -26,7 +26,8 @@
     "tailwindcss": "^4.1.7",
     "@tailwindcss/vite": "^4.1.7",
     "@wix/data": "^1.0.512",
-    "@wix/secrets": "^1.0.0"
+    "@wix/secrets": "^1.0.0",
+    "jose": "5.10.0"
   },
   "devDependencies": {
     "@astrojs/react": "^6.0.6",

@@ -8,17 +8,20 @@ const vm = require('node:vm');
 async function verify(relative) {
   const source = fs.readFileSync(path.join(__dirname, relative), 'utf8')
     .replace(/^import[\s\S]*?;\s*$/gm, '').replace(/export /g, '');
-  let reads = 0;
+  const reads = [];
   let rows = [
     {chunkIndex:1, totalChunks:2, clientSessionId:'owner', chunkBase64:'BBBB'},
     {chunkIndex:0, totalChunks:2, clientSessionId:'owner', chunkBase64:'AAAA'}
   ];
   const context = vm.createContext({console, Date, Buffer, setTimeout, clearTimeout,
     wixData: {query: () => ({
-      eq() { return this; }, limit() { return this; },
+      offset:0,
+      eq() { return this; }, ascending() { return this; },
+      skip(offset) { this.offset = offset; return this; },
+      limit(size) { this.size = size; return this; },
       async find(options) {
-        reads++;
-        return {items:options.consistentRead ? rows : []};
+        reads.push(this.size);
+        return {items:options.consistentRead ? rows.slice(this.offset, this.offset + this.size) : []};
       }
     })}
   });
@@ -26,13 +29,23 @@ async function verify(relative) {
   const payload = {audioUploadId:'qa-upload-1234', audioChunkCount:2};
   const session = {_id:'qa-session', clientSessionId:'owner'};
   assert.equal(await context.resolveSpeakingAudioBase64(payload, session), 'AAAABBBB');
-  assert.equal(reads, 1);
+  assert.deepEqual(reads, [4]);
   rows = rows.slice(0, 1);
   await assert.rejects(context.resolveSpeakingAudioBase64(payload, session), /incomplete/);
   rows.push({...rows[0], chunkIndex:0, clientSessionId:'different-owner'});
   await assert.rejects(context.resolveSpeakingAudioBase64(payload, session), /invalid/);
-  rows = rows.map(row => ({...row, chunkIndex:0, clientSessionId:'owner'}));
-  await assert.rejects(context.resolveSpeakingAudioBase64(payload, session), /invalid/);
+  rows = [0, 0, 1].map(index => ({chunkIndex:index, totalChunks:2, clientSessionId:'owner',
+    chunkBase64:index === 0 ? 'AAAA' : 'BBBB'}));
+  assert.equal(await context.resolveSpeakingAudioBase64(payload, session), 'AAAABBBB');
+  rows[1].chunkBase64 = 'CCCC';
+  await assert.rejects(context.resolveSpeakingAudioBase64(payload, session), /conflicting/);
+  rows = Array.from({length:60}, (_, index) => ({chunkIndex:index, totalChunks:60,
+    clientSessionId:'owner', chunkBase64:'A'.repeat(200000)}));
+  assert.equal((await context.resolveSpeakingAudioBase64({...payload,audioChunkCount:60}, session)).length, 12000000);
+  assert.equal(Math.max(...reads), 4, 'Never return a multi-megabyte recording in a single CMS read');
+  rows.forEach(row => { row.totalChunks = 61; });
+  rows.push({...rows[0], chunkIndex:60});
+  await assert.rejects(context.resolveSpeakingAudioBase64({...payload,audioChunkCount:61}, session), /too large/);
   assert.equal(await context.resolveSpeakingAudioBase64({audioBase64:'inline'}, session), 'inline');
   await assert.rejects(context.resolveSpeakingAudioBase64({audioBase64:'A'.repeat(12000001)}, session), /too large/);
   console.log(`${relative}: fresh chunk reads, ordering, ownership, missing/duplicate chunks and size limits passed.`);
@@ -45,23 +58,54 @@ async function verifyState(relative) {
   const session = {_id:'qa-session', clientSessionId:'owner', status:'active', phase:'speaking',
     moduleId:'speaking-a2', provisionalLevel:'A2', placementVersion:version, updatedAt:new Date()};
   const speaking = {speakingLevel:'A2', metricsJson:JSON.stringify({composite:4.3})};
-  const chunk = {_id:'chunk', chunkIndex:0, totalChunks:1, clientSessionId:'owner', chunkBase64:'AAAA'};
-  let hasSpeaking = true, inserts = 0, updates = 0, writtenSession;
-  const context = vm.createContext({console, Date, Buffer, setTimeout, clearTimeout,
+  const chunks = new Map(), idOnlyReads = [];
+  let hasSpeaking = true, inserts = 0, writtenSession, removalFailure = true;
+  const activityPatches = [];
+  const context = vm.createContext({console, Date, Buffer, TextEncoder,
+    crypto:require('node:crypto').webcrypto, setTimeout, clearTimeout,
     readJsonBody:async request => request.payload,
     jsonOK:value => value, jsonBadRequest:error => ({error}), jsonServerError:error => {throw error;},
     wixData: {
-      get:async (collection, id, options) => options.consistentRead ? structuredClone(session) : null,
-      insert:async () => { inserts++; },
+      get:async (collection, id, options) => !options.consistentRead ? null :
+        collection.endsWith('Sessions') ? structuredClone(session) : chunks.get(id),
+      insert:async (collection, row) => {
+        assert.ok(collection.endsWith('SpeakingChunks'));
+        if (chunks.has(row._id)) throw new Error('Duplicate');
+        chunks.set(row._id, structuredClone(row));
+        inserts++;
+        if (inserts === 1) throw new Error('Acknowledgement lost after commit');
+      },
       update:async (collection, row) => {
-        updates++;
         if (collection.endsWith('Sessions')) writtenSession = row;
         return row;
       },
+      patch:async (collection,id,fields) => {activityPatches.push({collection,id,fields});},
+      bulkRemove:async (collection, ids) => {
+        assert.ok(collection.endsWith('SpeakingChunks'));
+        const errors = [];
+        for (const [index,id] of ids.entries()) {
+          if (removalFailure) { errors.push({originalIndex:index,item:id}); removalFailure=false; }
+          else chunks.delete(id);
+        }
+        return {removed:ids.length-errors.length,errors};
+      },
       query:collection => ({
-        eq() { return this; }, limit() { return this; },
+        filters:[],
+        eq(key,value) { this.filters.push(row => row[key] === value); return this; },
+        gt(key,value) { this.filters.push(row => row[key] > value); return this; },
+        fields(key) { assert.equal(key,'_id'); this.idOnly=true; return this; },
+        ascending(){return this;}, skip(){return this;}, limit(size) { this.size=size; return this; },
         async find(options) {
-          if (collection.endsWith('SpeakingChunks')) return {items:options.consistentRead ? [chunk] : []};
+          if (collection.endsWith('SpeakingChunks')) {
+            assert.equal(options.consistentRead,true);
+            const rows = [...chunks.values()].filter(row => this.filters.every(check => check(row)))
+              .sort((a,b) => a._id < b._id ? -1 : 1).slice(0,this.size);
+            if (this.idOnly) {
+              idOnlyReads.push(rows.length);
+              return {items:rows.map(({_id}) => ({_id}))};
+            }
+            return {items:rows};
+          }
           if (collection.endsWith('Speaking')) return {items:options.consistentRead && hasSpeaking ? [speaking] : []};
           return {items:[]};
         }
@@ -71,17 +115,34 @@ async function verifyState(relative) {
   vm.runInContext(source, context);
   assert.equal((await context.getPlacementSession(session._id, 'owner'))._id, session._id);
   assert.equal((await context.buildResultSummary(session)).skills.speaking.displayScore, '4.3/10');
-  await context.uploadSpeakingChunk({payload:{sessionId:session._id, clientSessionId:'owner',
-    placementVersion:version, moduleId:'speaking-a2', uploadId:'qa-upload-1234',
-    chunkIndex:0, totalChunks:1, audioMimeType:'audio/mp4', chunkBase64:'AAAA'}});
-  assert.equal(inserts, 0, 'Retry updates the just-written chunk instead of inserting a duplicate');
-  assert.equal(updates, 1);
+  const activity = await context.touchPlacementActivity({payload:{sessionId:session._id, clientSessionId:'owner', placementVersion:version}});
+  assert.ok(activity.success);
+  assert.equal(activityPatches.length,1);
+  assert.equal(activityPatches[0].fields.length,1);
+  assert.equal(activityPatches[0].fields[0].fieldPath,'updatedAt', 'A late heartbeat never restores old speaking state');
+  assert.equal(activityPatches[0].fields[0].action,'SET_FIELD');
+  const upload = {sessionId:session._id, clientSessionId:'owner', placementVersion:version,
+    moduleId:'speaking-a2', uploadId:'qa-upload-1234', chunkIndex:0, totalChunks:24,
+    audioMimeType:'audio/mp4', chunkBase64:'AAAA'};
+  const repeated = await Promise.all(Array.from({length:5}, () => context.uploadSpeakingChunk({payload:upload})));
+  assert.ok(repeated.every(result => result.success), 'Concurrent transmissions and lost write acknowledgements are idempotent');
+  assert.equal(inserts, 1);
+  assert.match((await context.uploadSpeakingChunk({payload:{...upload, chunkBase64:'BBBB'}})).error, /conflicting/);
+  assert.equal(chunks.values().next().value.chunkBase64,'AAAA');
+  await Promise.all(Array.from({length:23}, (_,index) =>
+    context.uploadSpeakingChunk({payload:{...upload,chunkIndex:index+1}})));
+  const other = await context.uploadSpeakingChunk({payload:{...upload,uploadId:'qa-other-upload'}});
+  assert.ok(other.success);
+  assert.equal(await context.removeSpeakingUpload(session._id,upload.uploadId),24);
+  assert.deepEqual(idOnlyReads,[20,4]);
+  assert.equal(chunks.size,1, 'Cleanup leaves other uploads intact');
   hasSpeaking = false;
   const diagnostics = {technicalCode:'MIC_PERMISSION_TIMEOUT', browserFamily:'Safari', platformFamily:'iOS',
     captureMode:'native-audio', durationSeconds:20, recordedBytes:2000, audioMimeType:'audio/mp4',
     audioActivityAvailable:false, audioBase64:'PRIVATE', transcript:'PRIVATE', sessionId:'PRIVATE'};
   const skipped = await context.skipSpeaking({payload:{sessionId:session._id, clientSessionId:'owner',
     placementVersion:version, moduleId:'speaking-a2', diagnostics}});
+  assert.equal(chunks.size,0, 'Skipping cleans up all remaining transport data');
   const stored = JSON.parse(writtenSession.progressJson);
   assert.equal(stored.speakingSkipped, true);
   assert.equal(stored.speakingDiagnostics.technicalCode, 'MIC_PERMISSION_TIMEOUT');
@@ -96,24 +157,25 @@ async function verifyProviderBudget(relative) {
   const source = fs.readFileSync(path.join(__dirname, relative), 'utf8')
     .replace(/^import[\s\S]*?;\s*$/gm, '').replace(/export /g, '');
   let now = 0, requests = 0;
-  const waits = [], bodies = [];
+  const waits = [], bodies = [], signals = [];
   class ClockDate extends Date { static now() { return now; } }
-  const context = vm.createContext({console:{...console,error(){}}, Date:ClockDate, Buffer,
+  const context = vm.createContext({console:{...console,error(){}}, Date:ClockDate, Buffer, AbortController,
     setTimeout(fn, ms) { waits.push(ms); return setTimeout(() => { now += ms; fn(); }, 0); },
     clearTimeout,
-    fetch:(url, options) => { requests++; bodies.push(JSON.parse(options.body)); return new Promise(() => {}); }
+    fetch:(url, options) => { requests++; bodies.push(JSON.parse(options.body)); signals.push(options.signal); return new Promise(() => {}); }
   });
   vm.runInContext(source, context);
   const result = await context.requestSpeakingAssessment('test-key', 'test-context', 'AAAA', 'audio/mp4');
   assert.equal(result.ok, false);
-  assert.equal(now, 9000);
-  assert.deepEqual(waits, [9000]);
-  assert.equal(requests, 1, 'The primary gets the full budget; no fallback starts after the total deadline');
-  assert.deepEqual(bodies.map(body => body.model || 'generateContent'), ['gemini-3.5-flash-lite']);
+  assert.equal(now, 45000);
+  assert.deepEqual(waits, [25000,20000]);
+  assert.equal(requests, 2, 'A stalled primary examiner leaves time for an independent transport');
+  assert.ok(signals.every(signal => signal.aborted), 'Timed-out HTTP requests are cancelled');
+  assert.deepEqual(bodies.map(body => body.model || 'generateContent'), ['gemini-3.5-flash-lite','generateContent']);
   assert.equal(bodies[0].generation_config, undefined, 'Lite keeps its proven default thinking configuration');
   assert.equal(context.makeGenerateContentBody('context', 'AAAA', 'audio/mp4', true, 'gemini-3.5-flash-lite').generationConfig.thinkingConfig, undefined);
   assert.equal(context.normalizeAudioMime('audio/mp4;codecs=mp4a.40.2'), 'audio/m4a');
-  console.log(`${relative}: complete provider ladder is bounded to 9 seconds; Safari MIME normalization passed.`);
+  console.log(`${relative}: both independently bounded provider transports were attempted within 45 seconds; Safari MIME normalization passed.`);
 }
 
 async function verifySkippedRecovery(relative) {

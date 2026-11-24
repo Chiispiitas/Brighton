@@ -28,13 +28,13 @@ The Gemini request contains only:
 
 The request does **not** include the student's name, email, Wix session ID, school name, or other account data.
 
-Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` remains empty. The CMS record stores the transcript, scores, rubric evidence, model/rubric version and limited API usage metadata.
+The browser temporarily keeps an unsent recording on the device so the student can resume an interrupted upload. The server confirms receipt after it has verified all the audio chunks. Those chunks stay in private transport storage while grading is pending. Successful grading or a confirmed need to retake Speaking triggers deletion of the transport data. If the examiner remains unavailable for seven days, the next queue check marks Speaking for retake and cleans up the recording. `BrightonPlacementSpeaking.audioUrl` remains empty. The CMS record stores the transcript, scores, rubric evidence, model/rubric version and limited API usage metadata.
 
 Speaking uses Gemini's Interactions API as the primary path with inline audio and a top-level `response_format` array, matching Google's current REST contract. `generateContent` remains an independent fallback and uses the REST fields `systemInstruction`, `inlineData`, `responseMimeType`, and `responseSchema`.
 
-The backend first tries `gemini-3.5-flash-lite`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.8-flash`. A provider call may use the remaining shared 9-second budget, leaving time for Wix to save the result and return a controlled response. The first call gets the full budget; fallback calls run only when an earlier failure returns with time remaining. Structured-output validation failures can retry in JSON mode without an enforced schema.
+The backend first tries `gemini-3.5-flash-lite` and can fall back to `gemini-3.8-flash` after an error. Each request has up to 25 seconds within a shared 45-second grading attempt. A stalled first request leaves time for the independent transport. Structured-output validation failures can retry in JSON mode without an enforced schema.
 
-Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500. The client also exposes a safe technical reference (HTTP status, provider code, transport) on the retry screen without exposing the Gemini API key.
+After the receipt, the browser requests an immediate assessment. A temporary examiner failure leaves Speaking pending and the objective placement available. A scheduled job runs every 15 minutes to pick up eligible submissions from both tests, including when the student has closed the page. Retries use an increasing delay. A response with insufficient speech or a repeated prompt requires the student to retake Speaking.
 
 ## Capture flow
 
@@ -44,7 +44,7 @@ Provider failures are converted into a controlled Speaking technical error rathe
 4. The student cannot finish before the prompt's minimum duration.
 5. Each speaking level has an explicit hard maximum. Ten seconds before that limit, the UI warns that the answer will be submitted automatically.
 6. If the hard limit is reached, the frontend sends `autoStoppedByTimeLimit=true` so the examiner does not unfairly penalize an abrupt ending caused by the platform.
-7. The recording is encoded in memory and sent to the Wix backend.
+7. The browser saves the recording locally, uploads the numbered chunks and waits for Wix to confirm receipt before clearing the local copy.
 8. Wix retrieves the Gemini key from Secrets Manager.
 9. Gemini listens to the audio and returns rubric JSON.
 10. Wix converts the examiner's CEFR band decisions into deterministic numeric scores, calculates the composite and applies the routing adjustment.
@@ -266,8 +266,8 @@ Both placement players negotiate recording through actual encoder start, not jus
 
 When direct browser capture is unavailable, the device-recorder route accepts a real audio file, measures its duration, provides playback, validates the prompt duration and size, and sends it through the same examiner. Browser/OS permissions and native picker availability cannot be guaranteed on every device.
 
-Original audio is retained in memory while upload/assessment retries remain pending, independently of chunk transport references. Every chunked retry can regenerate its upload from the original audio. The audio is never placed in localStorage and is released after completion. Consistent reads are used for freshly uploaded chunks and freshly saved evidence. Skips retain only whitelisted technical diagnostics; they remain unscored. Owners can voluntarily reopen an explicitly skipped Speaking section without repeating objective modules; already scored attempts cannot be reopened by that path.
+The current players keep unsent audio in a session-scoped IndexedDB draft for up to one hour. If the browser denies storage, the player keeps the recording in the open tab and tells the candidate to keep it open. Uploads resume from the last acknowledged chunk. An explicitly skipped or invalid Speaking attempt can be reopened without repeating objective modules.
 
 Regression coverage: `validate-speaking.cjs`, `validate-speaking-chunks.cjs`, and `validate-speaking-browser.cjs`. Tests mock or synthesize microphone input and service failures, never real student audio. Browser build limitations and physical-device checks must be distinguished from actual capture coverage.
 
-The legacy Editor site is on Wix Free, whose documented Velo backend request timeout is 14 seconds. The shared provider budget remains bounded after the move to the [direct-deployment assessment service](../AssessmentBackend/DEPLOYMENT.md), leaving time for chunk assembly and persistence. Slow or unavailable examiners return a controlled retry; captured audio remains available in the open page. [Wix Free limits](https://dev.wix.com/docs/develop-websites-sdk/maintain-your-site/scale-your-site/about-code-on-free-sites).
+The [direct-deployment assessment service](../AssessmentBackend/DEPLOYMENT.md) handles receipt, immediate grading and background recovery for both players. The scheduled workflow uses its GitHub identity to call the private grading operation after the browser closes.

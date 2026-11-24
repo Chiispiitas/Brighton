@@ -9,12 +9,9 @@
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
   const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
-  // Wix Velo HTTP functions reject request bodies above 512 KB. Small speaking
-  // recordings can still travel inline, but larger mobile/Safari recordings are
-  // split into transport-only chunks and reassembled by the Wix backend.
+  // Send recordings in pieces small enough for either Brighton API host.
   const WIX_HTTP_BODY_SAFE_BYTES = 480 * 1024;
   const SPEAKING_AUDIO_BITS_PER_SECOND = 24000;
-  const SPEAKING_INLINE_BASE64_CHARS = 360000;
   const SPEAKING_CHUNK_BASE64_CHARS = 180000;
   const SPEAKING_MAX_BASE64_CHARS = 12000000;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
@@ -65,7 +62,8 @@
   let speakingRecordingActive = false;
   let speakingCaptureMode = "recorder+recognition";
   let lastSpeakingAttemptMetrics = null;
-  let retainedSpeakingAudio = null;
+  let speakingDraft = null;
+  let checkingSpeakingReceipt = false;
   let speakingTechnicalCode = "";
   let speakingInterrupted = false;
   let speakingInterimTranscript = "";
@@ -76,7 +74,6 @@
   let speakingAnalyser = null;
   let speakingMeterTimer = null;
   let speakingTimer = null;
-  let speakingAnalysisTimer = null;
   let speakingAnalysisProgress = 0;
   let speakingStartedAt = 0;
   let speakingStoppedAt = 0;
@@ -189,7 +186,8 @@
     return Number.isFinite(fallback) ? fallback : 0;
   }
 
-  function clearLocalPlacementProgress() {
+  function clearLocalPlacementProgress(saved = session) {
+    discardSpeakingDraft(saved);
     window.clearTimeout(inactivityTimer);
     inactivityTimer = null;
 
@@ -214,13 +212,17 @@
       const isActive = saved.status !== "completed" && saved.phase !== "result";
       const savedActivityAt = localActivityTimestamp(saved);
 
-      if (isActive && savedActivityAt && Date.now() - savedActivityAt >= INACTIVITY_LIMIT_MS) {
+      // A lost acknowledgement can leave local state at Speaking even though
+      // the service completed the test. Resume verifies this before expiring it.
+      const checkingSpeaking = saved.phase === "speaking" || /^speaking-/.test(saved.moduleId || "");
+      if (isActive && !checkingSpeaking && savedActivityAt && Date.now() - savedActivityAt >= INACTIVITY_LIMIT_MS) {
         const expired = {
           sessionId: saved.sessionId,
           clientSessionId: saved.clientSessionId,
           placementVersion: saved.placementVersion
         };
 
+        discardSpeakingDraft(saved);
         localStorage.removeItem(STORAGE_KEY);
         window.setTimeout(() => {
           expireRemoteSession(expired).catch(() => {});
@@ -301,7 +303,7 @@
     try { payload = responseText ? JSON.parse(responseText) : {}; } catch {}
 
     if (!response.ok || !payload?.success) {
-      throw new Error(payload?.error || `Placement service returned ${response.status}.`);
+      throw Object.assign(new Error(payload?.error || `Placement service returned ${response.status}.`), {status: response.status});
     }
 
     return payload;
@@ -330,11 +332,6 @@
     return `speaking-${Date.now()}-${Math.random().toString(36).slice(2)}`;
   }
 
-  function stopSpeakingAnalysisProgress() {
-    window.clearInterval(speakingAnalysisTimer);
-    speakingAnalysisTimer = null;
-  }
-
   function setSpeakingAnalysisStatus(message, progress = null) {
     const status = els.stageRoot.querySelector("#speakingAnalysisStatus");
     const bar = els.stageRoot.querySelector("#speakingAnalysisProgressBar");
@@ -350,114 +347,47 @@
     if (progressRoot) progressRoot.setAttribute("aria-valuenow", String(Math.round(speakingAnalysisProgress)));
   }
 
-  function startSpeakingAnalysisProgress() {
-    stopSpeakingAnalysisProgress();
-    speakingAnalysisProgress = 0;
-    setSpeakingAnalysisStatus("Preparing your response", 0);
-
-    const startedAt = performance.now();
-
-    // Start from a genuinely empty bar, then let the first painted frame
-    // transition forward instead of rendering halfway across immediately.
-    window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(() => {
-        setSpeakingAnalysisStatus("Preparing your response", 1);
-      });
-    });
-
-    speakingAnalysisTimer = window.setInterval(() => {
-      const elapsedSeconds = Math.max(0, (performance.now() - startedAt) / 1000);
-
-      let message = "Preparing your response";
-      let targetProgress = Math.min(18, elapsedSeconds * 6);
-
-      if (elapsedSeconds >= 3) {
-        message = "Sending your response";
-        targetProgress = Math.min(38, 18 + ((elapsedSeconds - 3) * 5));
-      }
-
-      if (elapsedSeconds >= 7) {
-        message = "Reviewing your answer";
-        targetProgress = Math.min(88, 38 + ((elapsedSeconds - 7) * 2.15));
-      }
-
-      if (elapsedSeconds >= 30) {
-        message = "Finalizing your result";
-        targetProgress = Math.min(96, 88 + ((elapsedSeconds - 30) * .45));
-      }
-
-      const nextProgress = Math.min(96, Math.max(
-        speakingAnalysisProgress + .18,
-        targetProgress
-      ));
-
-      setSpeakingAnalysisStatus(message, nextProgress);
-    }, 120);
+  function draftKey(saved = session) {
+    if (!saved?.sessionId || !saved?.clientSessionId) return "";
+    return [PLACEMENT_VERSION, saved.sessionId, saved.clientSessionId].join("|");
   }
 
-  async function completeSpeakingAnalysisProgress() {
-    stopSpeakingAnalysisProgress();
-    setSpeakingAnalysisStatus("Finalizing your result", 100);
-    await new Promise((resolve) => window.setTimeout(resolve, 420));
+  function discardSpeakingDraft(saved = session) {
+    const key = draftKey(saved);
+    if (!key) return;
+    if (speakingDraft?.key === key) speakingDraft = null;
+    window.BrightonSpeakingDrafts?.remove(key);
   }
 
-  async function prepareSpeakingAudioTransport(audioBase64, audioMimeType) {
-    if (!audioBase64) {
-      throw new Error("Could not prepare the audio recording.");
+  async function prepareSpeakingAudioTransport(draft, epoch) {
+    const audioBase64 = await withDeadline(blobToBase64(draft.blob), 20000, "AUDIO_ENCODING_TIMEOUT");
+    const count = Math.ceil(audioBase64.length / SPEAKING_CHUNK_BASE64_CHARS);
+    if (!count || audioBase64.length > SPEAKING_MAX_BASE64_CHARS) {
+      throw Object.assign(new Error("The recording is too large to send."), {code:"SPEAKING_AUDIO_TOO_LARGE"});
     }
 
-    if (audioBase64.length > SPEAKING_MAX_BASE64_CHARS) {
-      const error = new Error("The recording is too large to process.");
-      error.code = "SPEAKING_AUDIO_TOO_LARGE";
-      throw error;
+    for (let index = draft.nextChunk; index < count; index++) {
+      const offset = index * SPEAKING_CHUNK_BASE64_CHARS;
+      for (let attempt = 0; ; attempt++) {
+        if (epoch !== speakingFlowEpoch) throw new Error("Upload interrupted.");
+        setSpeakingAnalysisStatus(`Sending your response · ${index + 1}/${count}`, 10 + 80 * index / count);
+        try {
+          await apiPost("brightonPlacementSpeakingChunk", {
+            ...draft.session, uploadId: draft.uploadId, chunkIndex: index, totalChunks: count,
+            audioMimeType: draft.metrics.audioMimeType,
+            chunkBase64: audioBase64.slice(offset, offset + SPEAKING_CHUNK_BASE64_CHARS)
+          });
+          break;
+        } catch (error) {
+          if (attempt >= 2 || (error.status >= 400 && error.status < 500 && ![408,429].includes(error.status))) throw error;
+          await new Promise(resolve => window.setTimeout(resolve, 600 * (2 ** attempt)));
+        }
+      }
+      if (epoch !== speakingFlowEpoch) throw new Error("Upload interrupted.");
+      draft.nextChunk = index + 1;
+      if (draft.persisted) await window.BrightonSpeakingDrafts?.checkpoint(draft.key, draft.uploadId, draft.nextChunk);
     }
-
-    if (audioBase64.length <= SPEAKING_INLINE_BASE64_CHARS) {
-      return {
-        audioBase64,
-        audioUploadId: "",
-        audioChunkCount: 0,
-        audioTransport: "inline"
-      };
-    }
-
-    const uploadId = makeSpeakingUploadId();
-    const chunks = [];
-
-    for (let offset = 0; offset < audioBase64.length; offset += SPEAKING_CHUNK_BASE64_CHARS) {
-      chunks.push(audioBase64.slice(offset, offset + SPEAKING_CHUNK_BASE64_CHARS));
-    }
-
-    setSpeakingAnalysisStatus(`Sending your response · 0/${chunks.length}`, 24);
-
-    for (let index = 0; index < chunks.length; index += 1) {
-      await apiPost("brightonPlacementSpeakingChunk", {
-        sessionId: session.sessionId,
-        clientSessionId: session.clientSessionId,
-        placementVersion: PLACEMENT_VERSION,
-        moduleId: currentModuleId,
-        uploadId,
-        chunkIndex: index,
-        totalChunks: chunks.length,
-        audioMimeType,
-        chunkBase64: chunks[index]
-      });
-
-      const uploadProgress = 24 + Math.round(((index + 1) / chunks.length) * 22);
-      setSpeakingAnalysisStatus(
-        `Sending your response · ${index + 1}/${chunks.length}`,
-        uploadProgress
-      );
-    }
-
-    setSpeakingAnalysisStatus("Reviewing your answer", 52);
-
-    return {
-      audioBase64: "",
-      audioUploadId: uploadId,
-      audioChunkCount: chunks.length,
-      audioTransport: "chunked"
-    };
+    return {audioUploadId: draft.uploadId, audioChunkCount: count, audioTransport: "chunked"};
   }
 
   async function startRemoteSession(name, phoneNumber, clientSessionId) {
@@ -717,13 +647,13 @@
       console.warn("Could not verify saved placement session.", error);
 
       if (/placement session not found|completed placement not found/i.test(message)) {
-        clearLocalPlacementProgress();
+        clearLocalPlacementProgress(saved);
         return;
       }
     }
 
     if (remote?.expired) {
-      clearLocalPlacementProgress();
+      clearLocalPlacementProgress(saved);
       return;
     }
 
@@ -768,12 +698,14 @@
     if (session.status === "completed" || session.phase === "result") {
       let result = session.resultSummary;
 
-      if (!result) {
+      if (!result || result.skills?.speaking?.pending) {
         try {
           const response = await fetchPlacementResult();
-          result = response.result;
-          session.resultSummary = result;
-          saveLocalSession();
+          if (response.result?.finalLevel && response.result?.skills?.speaking) {
+            result = response.result;
+            session.resultSummary = result;
+            saveLocalSession();
+          }
         } catch (error) {
           console.warn("Could not reload placement result details.", error);
         }
@@ -789,7 +721,15 @@
     }
 
     if (session.phase === "speaking" || /^speaking-/.test(currentModuleId || "")) {
+      const key = draftKey();
+      const draft = await window.BrightonSpeakingDrafts?.read(key);
+      if (key !== draftKey()) return;
       renderSpeakingHandoff();
+      if (draft?.session?.moduleId === currentModuleId && draft.session.promptId === speakingModule()?.promptId) {
+        speakingDraft = draft;
+        lastSpeakingAttemptMetrics = draft.metrics;
+        renderSpeakingSubmitRetry();
+      }
       return;
     }
 
@@ -1267,6 +1207,7 @@
   }
 
   function renderSpeakingAnswerRetry() {
+    discardSpeakingDraft();
     cleanupSpeakingMedia();
 
     els.stageRoot.innerHTML = `
@@ -1765,7 +1706,6 @@
     try {
       speakingChunks = [];
       lastSpeakingAttemptMetrics = null;
-      retainedSpeakingAudio = null;
       speakingInterrupted = false;
       speakingTranscriptParts = [];
       speakingInterimTranscript = "";
@@ -2056,7 +1996,6 @@
       if (!selected || submit.disabled) return;
       submit.disabled = true;
       clearPreview();
-      retainedSpeakingAudio = null;
       speakingAutoStoppedByTimeLimit = false;
       await processSpeakingAudio(selected.blob, selected.duration, {captureMode:"device-recorder"});
     });
@@ -2135,6 +2074,33 @@
       return;
     }
 
+    if (Math.ceil(recordedBytes / 3) * 4 > SPEAKING_MAX_BASE64_CHARS) {
+      renderSpeakingTechnicalError("The recording is too large to send. Choose a shorter recording.");
+      return;
+    }
+
+    const draft = {
+      key: draftKey(), uploadId: makeSpeakingUploadId(), savedAt: Date.now(), nextChunk: 0,
+      session: {sessionId: session.sessionId, clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION, moduleId: currentModuleId, promptId: data.promptId},
+      blob: audioBlob,
+      metrics: {durationSeconds, speechSeconds, speechRatio, recordedBytes, audioMimeType: recorderMimeType,
+        recorderMimeType, maximumSeconds: Number(data.maximumSeconds) || null, autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit,
+        audioActivityAvailable, speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
+        audioBitsPerSecond: Number(capture.audioBitsPerSecond) || 0, captureMode: capture.captureMode || speakingCaptureMode,
+        transcript: "", transcriptAvailable: false, recognitionConfidence: 0, segmentCount: 0,
+        recognitionError: "", recognitionStarts: 0, recognitionResults: 0, legacyCaptureEstimate: false,
+        browserFamily: speakingBrowserFamily(), platformFamily: speakingPlatformFamily()}
+    };
+    speakingDraft = draft;
+    lastSpeakingAttemptMetrics = draft.metrics;
+    showSpeakingUpload();
+    draft.persisted = Boolean(await window.BrightonSpeakingDrafts?.save(draft));
+    if (epoch === speakingFlowEpoch) await sendSpeakingDraft(draft, epoch);
+  }
+
+  function showSpeakingUpload() {
+    speakingAnalysisProgress = 0;
     els.stageRoot.innerHTML = `
       <div class="module-finish speaking-analysis">
         <div class="module-finish-mark">✓</div>
@@ -2153,124 +2119,39 @@
         <small class="speaking-analysis-estimate">This usually takes less than a minute.</small>
       </div>
     `;
-
-    startSpeakingAnalysisProgress();
-
-    try {
-      const audioBase64 = await withDeadline(blobToBase64(audioBlob), 15000, "AUDIO_ENCODING_TIMEOUT");
-      if (epoch !== speakingFlowEpoch) return;
-      retainedSpeakingAudio = {audioBase64, audioMimeType: recorderMimeType};
-      // Keep the recording available when a chunk upload fails.
-      lastSpeakingAttemptMetrics = {audioBase64, audioMimeType: recorderMimeType, durationSeconds, speechSeconds, speechRatio, recordedBytes, maximumSeconds: Number(data.maximumSeconds) || null, autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit};
-      const audioTransport = await prepareSpeakingAudioTransport(audioBase64, recorderMimeType);
-      if (epoch !== speakingFlowEpoch) return;
-
-      const speakingMetrics = {
-        durationSeconds,
-        speechSeconds,
-        speechRatio,
-        transcript: "",
-        transcriptAvailable: false,
-        recognitionConfidence: 0,
-        segmentCount: 0,
-        recordedBytes,
-        ...audioTransport,
-        audioMimeType: recorderMimeType,
-        autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit,
-        maximumSeconds: Number(data.maximumSeconds) || null,
-        audioActivityAvailable,
-        speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
-        recorderMimeType,
-        audioBitsPerSecond: Number(capture.audioBitsPerSecond) || 0,
-        captureMode: capture.captureMode || speakingCaptureMode,
-        recognitionError: "",
-        recognitionStarts: 0,
-        recognitionResults: 0,
-        legacyCaptureEstimate: false,
-        browserFamily: speakingBrowserFamily(),
-        platformFamily: speakingPlatformFamily()
-      };
-      lastSpeakingAttemptMetrics = speakingMetrics;
-
-      setSpeakingAnalysisStatus("Reviewing your answer", 58);
-
-      const result = await apiPost("brightonPlacementSubmitSpeaking", {
-        sessionId: session.sessionId,
-        clientSessionId: session.clientSessionId,
-        placementVersion: PLACEMENT_VERSION,
-        moduleId: currentModuleId,
-        promptId: data.promptId,
-        ...speakingMetrics
-      });
-
-      if (epoch !== speakingFlowEpoch) return;
-      stopSpeakingAnalysisProgress();
-
-      if (result.speakingRetryReason === "prompt-repeat") {
-        renderSpeakingAnswerRetry();
-        return;
-      }
-
-      if (result.speakingError) {
-        const providerDiagnostic = {
-          speakingErrorCode: result.speakingErrorCode || "technical",
-          providerStatus: Number(result.providerStatus) || 0,
-          providerCode: result.providerCode || "",
-          providerTransport: result.providerTransport || ""
-        };
-        console.error("Brighton Speaking provider error", providerDiagnostic);
-        const technicalReference = [
-          providerDiagnostic.providerStatus || "",
-          providerDiagnostic.providerCode || providerDiagnostic.speakingErrorCode || "",
-          providerDiagnostic.providerTransport || ""
-        ].filter(Boolean).join(" · ");
-        speakingTechnicalCode = technicalReference || "ASSESSMENT_UNAVAILABLE";
-        renderSpeakingSubmitRetry(speakingMetrics, "The assessment service could not finish yet. Your recording is kept. Retry to send the same answer.");
-        return;
-      }
-
-      if (!result.result?.finalLevel && !result.finalLevel) throw new Error("The server has not confirmed a completed assessment.");
-      await completeSpeakingAnalysisProgress();
-
-      session.phase = "result";
-      session.finalLevel = result.finalLevel;
-      session.status = "completed";
-      session.confidence = result.confidence;
-      session.completedAt = result.result?.completedAt || new Date().toISOString();
-      session.resultSummary = result.result || null;
-      saveLocalSession();
-
-      cleanupSpeakingMedia();
-      renderPlacementResult(result.result || result);
-    } catch (error) {
-      if (epoch !== speakingFlowEpoch) return;
-      stopSpeakingAnalysisProgress();
-      console.error(error);
-
-      if (error?.code === "WIX_BODY_TOO_LARGE" || error?.code === "SPEAKING_AUDIO_TOO_LARGE") {
-        renderSpeakingTechnicalError("The recording is too large to process. Try again.");
-        return;
-      }
-
-      // Wix can occasionally close the public HTTP response before a long
-      // Gemini grading request finishes. The backend may still complete and
-      // save the speaking result successfully. Recover that completed result
-      // before showing a retry error to the student.
-      const recoveredResult = await recoverCompletedPlacementResult();
-      if (epoch !== speakingFlowEpoch) return;
-      if (recoveredResult) {
-        acceptRecoveredPlacementResult(recoveredResult);
-        return;
-      }
-
-      if (lastSpeakingAttemptMetrics) {
-        renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics);
-      } else {
-        renderSpeakingTechnicalError("We couldn't prepare your answer. Try again.");
-      }
-    }
   }
 
+  async function sendSpeakingDraft(draft, epoch) {
+    try {
+      const transport = await prepareSpeakingAudioTransport(draft, epoch);
+      if (epoch !== speakingFlowEpoch) return;
+      setSpeakingAnalysisStatus("Confirming your recording", 95);
+      const response = await apiPost("brightonPlacementSubmitSpeaking", {
+        ...draft.session, ...draft.metrics, ...transport, receiveOnly: true
+      });
+      if (epoch !== speakingFlowEpoch) return;
+      if (response.result?.finalLevel) {
+        acceptRecoveredPlacementResult(response.result);
+      } else if (response.speakingRetryReason === "prompt-repeat") {
+        renderSpeakingAnswerRetry();
+      } else {
+        speakingTechnicalCode = response.speakingErrorCode || "RECEIPT_UNCONFIRMED";
+        renderSpeakingSubmitRetry();
+      }
+    } catch (error) {
+      if (epoch !== speakingFlowEpoch) return;
+      speakingTechnicalCode = String(error.code || "UPLOAD_INTERRUPTED");
+      if (/speaking upload is incomplete/i.test(error.message)) {
+        // Reconcile an incomplete server copy using the original immutable pieces.
+        draft.nextChunk = 0;
+        if (draft.persisted) await window.BrightonSpeakingDrafts?.checkpoint(draft.key, draft.uploadId, 0);
+      }
+      const recovered = await recoverCompletedPlacementResult({attempts: 1});
+      if (epoch !== speakingFlowEpoch) return;
+      if (recovered) acceptRecoveredPlacementResult(recovered);
+      else renderSpeakingSubmitRetry();
+    }
+  }
 
   function renderSpeakingTechnicalError(message, technicalCode = "") {
     cleanupSpeakingMedia();
@@ -2297,7 +2178,9 @@
   async function skipSpeakingAfterError() {
     cleanupSpeakingMedia();
     const button = els.stageRoot.querySelector("#skipSpeakingBtn");
+    const retry = els.stageRoot.querySelector("#retrySpeakingSubmitBtn");
     if (button) button.disabled = true;
+    if (retry) retry.disabled = true;
 
     try {
       const result = await apiPost("brightonPlacementSkipSpeaking", {
@@ -2340,110 +2223,36 @@
       const recovered = await recoverCompletedPlacementResult({attempts: 2, delayMs: 500});
       if (recovered) return acceptRecoveredPlacementResult(recovered);
       if (button) button.disabled = false;
+      if (retry) retry.disabled = false;
       const status = els.stageRoot.querySelector(".speaking-status");
       if (status) status.textContent = "Could not save the result yet. Check your connection and try again. Your answers are kept.";
     }
   }
 
-  function renderSpeakingSubmitRetry(metrics, message = "Retry to send the same recording. Your previous answers are saved.") {
+  function renderSpeakingSubmitRetry() {
     cleanupSpeakingMedia();
+    const draft = speakingDraft;
+    if (!draft) return renderSpeakingHandoff();
     els.stageRoot.innerHTML = `
       <div class="retry-card">
-        <strong>Your recording is ready.</strong>
-        <p class="speaking-status">${escapeHtml(message)}</p>
+        <strong>Your recording is ready to send.</strong>
+        <p class="speaking-status">${draft.persisted ? "Your recording is saved on this device. Check your connection and retry." : "Keep this page open. Check your connection and retry to send the same recording."}</p>
         <button id="retrySpeakingSubmitBtn" class="primary-btn" type="button">Retry</button>
         <button id="skipSpeakingBtn" class="secondary-action" type="button">Finish without Speaking</button>
       </div>
     `;
-
-    els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
-    els.stageRoot.querySelector("#retrySpeakingSubmitBtn")?.addEventListener("click", async () => {
-      const button = els.stageRoot.querySelector("#retrySpeakingSubmitBtn");
-      if (button?.disabled) return;
+    els.stageRoot.querySelector("#skipSpeakingBtn").addEventListener("click", skipSpeakingAfterError);
+    els.stageRoot.querySelector("#retrySpeakingSubmitBtn").addEventListener("click", async () => {
       const epoch = speakingFlowEpoch;
-      const skip = els.stageRoot.querySelector("#skipSpeakingBtn");
-      if (skip) skip.disabled = true;
-      const data = speakingModule();
-
-      if (button) {
-        button.disabled = true;
-        button.textContent = "Checking result…";
-      }
-
-      // A dropped Wix response can arrive after the backend has already
-      // finished grading. Always recover the existing completed result before
-      // sending the same audio again.
-      const existingResult = await recoverCompletedPlacementResult({ attempts: 4, delayMs: 600 });
+      showSpeakingUpload();
+      const existing = await recoverCompletedPlacementResult({attempts: 1});
       if (epoch !== speakingFlowEpoch) return;
-      if (existingResult) {
-        acceptRecoveredPlacementResult(existingResult);
-        return;
-      }
-
-      if (button) button.textContent = "Retrying…";
-
-      try {
-        const audio = retainedSpeakingAudio?.audioBase64 || metrics.audioBase64;
-        if (audio) {
-          metrics = {...metrics, ...await prepareSpeakingAudioTransport(audio, metrics.audioMimeType)};
-          lastSpeakingAttemptMetrics = metrics;
-        }
-        if (epoch !== speakingFlowEpoch) return;
-        const result = await apiPost("brightonPlacementSubmitSpeaking", {
-          sessionId: session.sessionId,
-          clientSessionId: session.clientSessionId,
-          placementVersion: PLACEMENT_VERSION,
-          moduleId: currentModuleId,
-          promptId: data.promptId,
-          ...metrics
-        });
-        if (epoch !== speakingFlowEpoch) return;
-
-        if (result.speakingRetryReason === "prompt-repeat") {
-          renderSpeakingAnswerRetry();
-          return;
-        }
-
-        if (result.speakingError) {
-          speakingTechnicalCode = result.speakingErrorCode || "ASSESSMENT_UNAVAILABLE";
-          renderSpeakingSubmitRetry(metrics, "The assessment service could not finish yet. Your recording is kept. Please retry.");
-          return;
-        }
-
-        if (!result.result?.finalLevel && !result.finalLevel) throw new Error("The server has not confirmed a completed assessment.");
-
-        session.phase = "result";
-        session.finalLevel = result.finalLevel;
-        session.status = "completed";
-        session.confidence = result.confidence;
-        session.completedAt = result.result?.completedAt || new Date().toISOString();
-        session.resultSummary = result.result || null;
-        saveLocalSession();
-
-        cleanupSpeakingMedia();
-        renderPlacementResult(result.result || result);
-      } catch (error) {
-        if (epoch !== speakingFlowEpoch) return;
-        console.error(error);
-
-        const recoveredResult = await recoverCompletedPlacementResult();
-        if (epoch !== speakingFlowEpoch) return;
-        if (recoveredResult) {
-          acceptRecoveredPlacementResult(recoveredResult);
-          return;
-        }
-
-        if (button) {
-          button.disabled = false;
-          button.textContent = "Retry";
-        }
-        if (skip) skip.disabled = false;
-      }
+      if (existing) acceptRecoveredPlacementResult(existing);
+      else await sendSpeakingDraft(draft, epoch);
     });
   }
 
   function cleanupSpeakingRecorderOnly() {
-    stopSpeakingAnalysisProgress();
     speakingRecordingActive = false;
     window.clearInterval(speakingTimer);
     window.clearInterval(speakingMeterTimer);
@@ -2494,6 +2303,7 @@
   function resultSkillCard(skill, key) {
     const safeSkill = skill || {};
     const skipped = Boolean(safeSkill.skipped);
+    const pending = Boolean(safeSkill.pending);
     const hasNumericScore =
       safeSkill.score !== null &&
       safeSkill.score !== undefined &&
@@ -2511,8 +2321,8 @@
           <span>${escapeHtml(safeSkill.displayScore || "—")}</span>
         </div>
         <strong>${escapeHtml(safeSkill.label || key)}</strong>
-        <span class="skill-level">${escapeHtml(skipped ? "Not scored" : level)}</span>
-        <small>${escapeHtml(skipped ? "Speaking skipped" : description)}</small>
+        <span class="skill-level">${escapeHtml(pending ? "Assessment pending" : skipped ? "Not scored" : level)}</span>
+        <small>${escapeHtml(pending ? "Recording received" : safeSkill.retakeRequired ? "New recording needed" : skipped ? "Speaking skipped" : description)}</small>
       </div>
     `;
   }
@@ -2659,7 +2469,7 @@
   }
 
   function renderPlacementResult(payload) {
-    retainedSpeakingAudio = null;
+    discardSpeakingDraft();
     lastSpeakingAttemptMetrics = null;
     const result = payload?.result || payload || {};
     const finalLevel = result.finalLevel || session?.finalLevel || session?.provisionalLevel || "—";
@@ -2717,7 +2527,7 @@
             <div class="level-art" aria-hidden="true">
               <i></i><i></i><i></i><i></i>
               <div class="level-art-core">
-                <span>English level</span>
+                <span>${skills.speaking?.pending ? "Provisional level" : "English level"}</span>
                 <strong>${escapeHtml(finalLevel)}</strong>
                 <small>${escapeHtml(finalDescription)}</small>
               </div>
@@ -2751,7 +2561,8 @@
           </footer>
         </article>
 
-        ${skills.speaking?.level === "Pending review" || skills.speaking?.skipped === true ? `<p class="speaking-status">Speaking was not assessed. Your other answers are saved. You can retry Speaking without repeating the rest of the test.</p><button id="retryOnlySpeakingBtn" class="primary-btn" type="button">Retry Speaking only</button>` : ""}
+        ${skills.speaking?.pending ? `<p class="speaking-status" role="status">Brighton has received your recording. Your level is provisional while Speaking is assessed. You can close this page.</p><button id="refreshSpeakingResultBtn" class="secondary-action" type="button">Check Speaking result</button>` : ""}
+        ${!skills.speaking?.pending && (skills.speaking?.retakeRequired || skills.speaking?.level === "Pending review" || skills.speaking?.skipped === true) ? `<p class="speaking-status">Speaking was not assessed. Your other answers are saved. You can retry Speaking without repeating the rest of the test.</p><button id="retryOnlySpeakingBtn" class="primary-btn" type="button">Retry Speaking only</button>` : ""}
         <div class="result-actions" data-html2canvas-ignore="true">
           <button id="saveResultBtn" class="result-action primary-result-action" type="button">
             <span>Save image</span><span aria-hidden="true">↓</span>
@@ -2766,6 +2577,11 @@
       </div>
     `;
 
+    const refresh = els.stageRoot.querySelector("#refreshSpeakingResultBtn");
+    if (refresh) {
+      refresh.addEventListener("click", () => checkReceivedSpeaking(true));
+      checkReceivedSpeaking(false);
+    }
     document.querySelector("#retryOnlySpeakingBtn")?.addEventListener("click", async event => {
       const button = event.currentTarget;
       button.disabled = true;
@@ -2790,6 +2606,34 @@
     document.querySelector("#restartResultBtn")?.addEventListener("click", restartPlacementTest);
 
     window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  async function checkReceivedSpeaking(refreshFirst) {
+    if (checkingSpeakingReceipt || !session?.resultSummary?.skills?.speaking?.pending) return;
+    const key = draftKey();
+    const button = els.stageRoot.querySelector("#refreshSpeakingResultBtn");
+    checkingSpeakingReceipt = true;
+    if (button) button.disabled = true;
+    try {
+      let updated;
+      if (refreshFirst) updated = (await fetchPlacementResult()).result;
+      if (!updated || updated.skills?.speaking?.pending) {
+        updated = (await apiPost("brightonPlacementSubmitSpeaking", {
+          sessionId: session.sessionId, clientSessionId: session.clientSessionId,
+          placementVersion: PLACEMENT_VERSION, moduleId: currentModuleId, promptId: speakingModule()?.promptId,
+          gradeReceipt: true
+        })).result;
+      }
+      if (key === draftKey() && session.resultSummary?.skills?.speaking?.pending && updated?.finalLevel && updated.skills?.speaking && !updated.skills.speaking.pending) {
+        acceptRecoveredPlacementResult(updated);
+      }
+    } catch {
+      // The server has acknowledged the complete recording. A lost grading
+      // response must never turn that acknowledgement into a failed upload.
+    } finally {
+      checkingSpeakingReceipt = false;
+      if (button?.isConnected) button.disabled = false;
+    }
   }
 
   function enterCalibration(name) {

@@ -6,6 +6,7 @@
 // Uses the same shared Backend/core.js as Exams and Tests.
 
 import wixData from "wix-data";
+import { receiveSpeaking, assessReceivedSpeaking, runNextSpeakingAssessment } from "backend/speaking-receipts.js";
 import { response } from "wix-http-functions";
 import {
   jsonOK,
@@ -15,6 +16,7 @@ import {
 } from "backend/core.js";
 import {
   gradeSpeakingWithGemini,
+  normalizeAudioMime,
   GEMINI_SPEAKING_MODEL,
   SPEAKING_RUBRIC_VERSION
 } from "backend/young-gemini-speaking.js";
@@ -119,20 +121,36 @@ function placementSessionIsStale(session, now = Date.now()) {
     now - placementActivityTime(session) >= PLACEMENT_INACTIVITY_MS;
 }
 
-async function removePlacementRows(collectionId, sessionId) {
+async function removePlacementRows(collectionId, sessionId, uploadId) {
+  let removed = 0;
+  let lastId = "";
   try {
-    const found = await wixData
-      .query(collectionId)
-      .eq("sessionId", sessionId)
-      .limit(1000)
-      .find({ suppressAuth: true });
+    while (true) {
+      // Cleanup only needs IDs. Loading full recordings can exceed the Wix response limit.
+      let query = wixData.query(collectionId).eq("sessionId", sessionId);
+      if (uploadId) query = query.eq("uploadId", uploadId);
+      if (lastId) query = query.gt("_id", lastId);
+      const page = await query.fields("_id").ascending("_id").limit(20)
+        .find({ suppressAuth: true, consistentRead: true });
 
-    await Promise.all(found.items.map(async (item) => {
-      try {
-        await wixData.remove(collectionId, item._id, { suppressAuth: true });
-      } catch {}
-    }));
-  } catch {}
+      let ids = page.items.map(item => item._id);
+      for (let attempt = 0; ids.length && attempt < 2; attempt++) {
+        try {
+          const deleted = await wixData.bulkRemove(collectionId, ids, { suppressAuth: true });
+          removed += deleted.removed;
+          ids = deleted.errors.map(error => ids[error.originalIndex]);
+        } catch (error) {
+          if (attempt === 1) throw error;
+        }
+      }
+      if (ids.length) console.warn("Some placement data could not be removed from", collectionId);
+      if (page.items.length < 20) break;
+      lastId = page.items[page.items.length - 1]._id;
+    }
+  } catch (error) {
+    console.warn("Could not finish placement data cleanup in", collectionId, error?.message);
+  }
+  return removed;
 }
 
 async function deletePlacementSessionCascade(session) {
@@ -278,19 +296,7 @@ async function removeSpeakingUpload(sessionId, uploadId) {
 
   if (!cleanSessionId || !cleanUploadId) return 0;
 
-  const found = await wixData
-    .query(PLACEMENT_SPEAKING_CHUNKS)
-    .eq("sessionId", cleanSessionId)
-    .eq("uploadId", cleanUploadId)
-    .limit(MAX_SPEAKING_CHUNKS)
-    .find({ suppressAuth: true });
-
-  await Promise.all(found.items.map((item) =>
-    wixData.remove(PLACEMENT_SPEAKING_CHUNKS, item._id, { suppressAuth: true })
-      .catch(() => null)
-  ));
-
-  return found.items.length;
+  return removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, cleanSessionId, cleanUploadId);
 }
 
 async function resolveSpeakingAudioBase64(payload, session) {
@@ -315,48 +321,47 @@ async function resolveSpeakingAudioBase64(payload, session) {
     return "";
   }
 
-  const found = await wixData
-    .query(PLACEMENT_SPEAKING_CHUNKS)
-    .eq("sessionId", session._id)
-    .eq("uploadId", uploadId)
-    .limit(MAX_SPEAKING_CHUNKS)
-    // This immediately follows chunk writes; a replica may not have them yet.
-    .find({ suppressAuth: true, consistentRead: true });
-
-  if (found.items.length !== expectedChunks) {
-    throw new Error("Speaking upload is incomplete.");
-  }
-
-  const rows = found.items
-    .slice()
-    .sort((a, b) => Number(a.chunkIndex) - Number(b.chunkIndex));
-
+  const parts = new Map();
   let totalChars = 0;
-  const parts = [];
+  let offset = 0;
+  // Keep even the largest audio below the CMS response limit on every read.
+  const pageSize = 4;
+  while (true) {
+    const page = await wixData.query(PLACEMENT_SPEAKING_CHUNKS)
+      .eq("sessionId", session._id)
+      .eq("uploadId", uploadId)
+      .ascending("_id")
+      .skip(offset)
+      .limit(pageSize)
+      .find({ suppressAuth: true, consistentRead: true });
 
-  for (let index = 0; index < rows.length; index += 1) {
-    const row = rows[index];
-    const chunk = String(row.chunkBase64 || "");
-
-    if (
-      Number(row.chunkIndex) !== index ||
-      Number(row.totalChunks) !== expectedChunks ||
-      String(row.clientSessionId || "") !== String(session.clientSessionId || "") ||
-      chunk.length < 1 ||
-      chunk.length > MAX_SPEAKING_CHUNK_BASE64_CHARS
-    ) {
-      throw new Error("Speaking upload is invalid.");
+    for (const row of page.items) {
+      const index = Number(row.chunkIndex);
+      const chunk = String(row.chunkBase64 || "");
+      if (
+        !Number.isInteger(index) || index < 0 || index >= expectedChunks ||
+        Number(row.totalChunks) !== expectedChunks ||
+        String(row.clientSessionId || "") !== String(session.clientSessionId || "") ||
+        (session.moduleId && row.moduleId !== session.moduleId) ||
+        !chunk.length || chunk.length > MAX_SPEAKING_CHUNK_BASE64_CHARS
+      ) {
+        throw new Error("Speaking upload is invalid.");
+      }
+      // Older clients could insert a second copy after losing an acknowledgement.
+      if (parts.has(index)) {
+        if (parts.get(index) !== chunk) throw new Error("Speaking upload has conflicting chunks.");
+        continue;
+      }
+      parts.set(index, chunk);
+      totalChars += chunk.length;
+      if (totalChars > MAX_SPEAKING_AUDIO_BASE64_CHARS) throw new Error("Speaking recording is too large.");
     }
-
-    totalChars += chunk.length;
-    if (totalChars > MAX_SPEAKING_AUDIO_BASE64_CHARS) {
-      throw new Error("Speaking recording is too large.");
-    }
-
-    parts.push(chunk);
+    if (page.items.length < pageSize) break;
+    offset += page.items.length;
   }
 
-  return parts.join("");
+  if (parts.size !== expectedChunks) throw new Error("Speaking upload is incomplete.");
+  return Array.from({ length: expectedChunks }, (_, index) => parts.get(index)).join("");
 }
 
 export async function uploadSpeakingChunk(request) {
@@ -405,16 +410,11 @@ export async function uploadSpeakingChunk(request) {
       return jsonBadRequest("This speaking module is no longer active.");
     }
 
-    const existing = await wixData
-      .query(PLACEMENT_SPEAKING_CHUNKS)
-      .eq("sessionId", session._id)
-      .eq("uploadId", uploadId)
-      .eq("chunkIndex", chunkIndex)
-      .limit(1)
-      .find({ suppressAuth: true, consistentRead: true });
-
+    // A repeated or simultaneous transmission must resolve to the same CMS item.
+    const key = new TextEncoder().encode(JSON.stringify([session._id, uploadId, chunkIndex]));
+    const digest = new Uint8Array(await crypto.subtle.digest("SHA-256", key));
     const row = {
-      ...(existing.items[0] || {}),
+      _id: Array.from(digest.slice(0, 16), byte => byte.toString(16).padStart(2, "0")).join(""),
       uploadId,
       sessionId: session._id,
       clientSessionId: session.clientSessionId,
@@ -425,10 +425,15 @@ export async function uploadSpeakingChunk(request) {
       chunkBase64
     };
 
-    if (existing.items.length) {
-      await wixData.update(PLACEMENT_SPEAKING_CHUNKS, row, { suppressAuth: true });
-    } else {
+    try {
       await wixData.insert(PLACEMENT_SPEAKING_CHUNKS, row, { suppressAuth: true });
+    } catch (error) {
+      // The insert may already have succeeded even when its acknowledgement was lost.
+      const saved = await wixData.get(PLACEMENT_SPEAKING_CHUNKS, row._id, { suppressAuth: true, consistentRead: true });
+      if (!saved) throw error;
+      if (Object.keys(row).some(field => saved[field] !== row[field])) {
+        return jsonBadRequest("This speaking upload contains conflicting audio chunks.");
+      }
     }
 
     return jsonOK({
@@ -556,7 +561,10 @@ async function buildResultSummary(session) {
   const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
   const speakingComposite = Number(speakingMetrics?.composite);
 
-  const speakingSkill = speakingRecord
+  const progress = safeJson(session.progressJson, {});
+  const pending = Boolean(progress.speakingReceipt);
+  const retakeRequired = Boolean(progress.speakingRetakeReason);
+  const speakingSkill = speakingRecord && !pending && !retakeRequired
     ? {
         label: "Speaking",
         level: String(speakingRecord.speakingLevel || session.finalLevel || session.provisionalLevel || "A2"),
@@ -571,7 +579,9 @@ async function buildResultSummary(session) {
         description: "",
         score: null,
         displayScore: "—",
-        skipped: true
+        skipped: !pending,
+        pending,
+        retakeRequired
       };
 
   const finalLevel = String(session.finalLevel || session.provisionalLevel || listeningLevel || "A2");
@@ -646,7 +656,7 @@ export async function startPlacement(request) {
         studentName: session.studentName || studentName,
         phoneNumber: session.phoneNumber || phoneNumber,
         status: session.status || "active",
-        phase: session.phase || "calibration",
+        phase: session.status === "completed" ? "result" : session.phase || "calibration",
         moduleId: session.moduleId || "calibration-01",
         provisionalLevel: session.provisionalLevel || "",
         finalLevel: session.finalLevel || "",
@@ -724,8 +734,8 @@ export async function resumePlacement(request) {
       const metrics = safeJson(previous.items[0]?.metricsJson, {});
       const progress = safeJson(session.progressJson, {});
       const skippedWithoutEvidence = progress.speakingSkipped === true && previous.items.length === 0;
-      if (metrics.reviewRequired !== true && !skippedWithoutEvidence) return jsonBadRequest("This attempt does not require a speaking retry.");
-      Object.assign(session, {status: "active", phase: "speaking", moduleId: speakingModuleFor(session.provisionalLevel), finalLevel: "", completedAt: null, updatedAt: new Date()});
+      if (metrics.reviewRequired !== true && !skippedWithoutEvidence && !progress.speakingRetakeReason) return jsonBadRequest("This attempt does not require a speaking retry.");
+      Object.assign(session, {progressJson: JSON.stringify({stage: 4, totalStages: 4, speakingAttempt: Date.now()}), status: "active", phase: "speaking", moduleId: speakingModuleFor(session.provisionalLevel), finalLevel: "", completedAt: null, updatedAt: new Date()});
       await wixData.update(PLACEMENT_SESSIONS, session, {suppressAuth: true});
     }
 
@@ -740,7 +750,7 @@ export async function resumePlacement(request) {
       studentName: session.studentName || "",
       phoneNumber: session.phoneNumber || "",
       status: session.status || "active",
-      phase: session.phase || "calibration",
+      phase: session.status === "completed" ? "result" : session.phase || "calibration",
       moduleId: session.moduleId || "calibration-01",
       provisionalLevel: session.provisionalLevel || "",
       finalLevel: session.finalLevel || "",
@@ -779,8 +789,10 @@ export async function touchPlacementActivity(request) {
       });
     }
 
-    session.updatedAt = new Date();
-    await wixData.update(PLACEMENT_SESSIONS, session, { suppressAuth: true });
+    // A delayed heartbeat must not overwrite a receipt or completed result.
+    await wixData.patch(PLACEMENT_SESSIONS, sessionId, [
+      { fieldPath: "updatedAt", action: "SET_FIELD", value: new Date() }
+    ], { suppressAuth: true });
 
     return jsonOK({
       success: true,
@@ -802,7 +814,7 @@ export async function expirePlacementSession(request) {
 
     const sessionId = String(payload.sessionId || "").trim();
     const clientSessionId = String(payload.clientSessionId || "").trim();
-    const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true });
+    const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true, consistentRead: true });
 
     if (!session || String(session.clientSessionId || "") !== clientSessionId) {
       return jsonOK({
@@ -955,6 +967,102 @@ export async function placementStep(request) {
   }
 }
 
+async function saveSpeakingGrade(session, grade, level, promptId) {
+  const now = new Date();
+  const existing = await wixData
+    .query(PLACEMENT_SPEAKING)
+    .eq("sessionId", session._id)
+    .limit(1)
+    .find({ suppressAuth: true, consistentRead: true });
+
+  const speakingRecord = {
+    _id: session._id,
+    ...(existing.items[0] || {}),
+    sessionId: session._id,
+    clientSessionId: session.clientSessionId,
+    placementVersion: session.placementVersion,
+    promptId,
+    promptLevel: level,
+    audioUrl: "",
+    transcript: grade.transcript,
+    durationSeconds: grade.durationSeconds,
+    speechSeconds: grade.speechSeconds,
+    wordCount: grade.wordCount,
+    wpm: grade.wpm,
+    recognitionConfidence: grade.recognitionConfidence,
+    segmentCount: grade.segmentCount,
+    fluency: grade.fluency,
+    grammar: grade.grammar,
+    vocabulary: grade.vocabulary,
+    pronunciation: grade.pronunciation,
+    communication: grade.communication,
+    speakingLevel: grade.speakingLevel,
+    graderVersion: grade.modelUsed || GEMINI_SPEAKING_MODEL,
+    metricsJson: JSON.stringify({
+      composite: grade.composite,
+      rubricVersion: SPEAKING_RUBRIC_VERSION,
+      model: grade.modelUsed || GEMINI_SPEAKING_MODEL,
+      evidenceQuality: grade.assessment?.evidenceQuality || "",
+      assessment: grade.assessment || null,
+      usage: grade.usage || null
+    }),
+    createdAt: existing.items[0]?.createdAt || now
+  };
+
+  if (existing.items.length) {
+    await wixData.update(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
+  } else {
+    await wixData.insert(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
+  }
+
+  const updatedSession = {
+    ...session,
+    status: "completed",
+    phase: "result",
+    finalLevel: grade.finalLevel,
+    confidence: grade.confidence,
+    updatedAt: now,
+    completedAt: session.completedAt || now,
+    progressJson: JSON.stringify({
+      stage: 4,
+      totalStages: 4,
+      completed: true,
+      speakingLevel: grade.speakingLevel,
+      speakingComposite: grade.composite
+    })
+  };
+
+  await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+
+  // Raw chunk rows are transport-only. Remove them after the assessment has
+  // been saved; transcript/rubric evidence remain in BrightonYoungPlacementSpeaking.
+  await removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, session._id);
+
+  return updatedSession;
+}
+
+function assessReceipt(session, receipt) {
+  const level = SPEAKING_LEVEL_BY_MODULE[receipt.moduleId];
+  return assessReceivedSpeaking(session, receipt, {
+    sessions: PLACEMENT_SESSIONS,
+    chunks: PLACEMENT_SPEAKING_CHUNKS,
+    resolveAudio: resolveSpeakingAudioBase64,
+    gradeAudio: payload => gradeSpeakingWithGemini(payload, level, receipt.promptId),
+    saveGrade: (current, grade) => saveSpeakingGrade(current, grade, level, receipt.promptId),
+    removeChunks: id => removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, id)
+  });
+}
+
+export function processNextSpeakingReceipt() {
+  return runNextSpeakingAssessment(PLACEMENT_SESSIONS, PLACEMENT_SPEAKING_CHUNKS, assessReceipt);
+}
+
+async function receivedSpeakingResponse(session) {
+  const result = await buildResultSummary(session);
+  return jsonOK({ success: true, speakingReceived: true, finalLevel: result.finalLevel,
+    confidence: Number(session.confidence) || 0, result });
+}
+
 export async function submitSpeaking(request) {
   try {
     const payload = await readJsonBody(request);
@@ -982,6 +1090,12 @@ export async function submitSpeaking(request) {
       return jsonBadRequest("Placement version changed. Refresh the page.");
     }
 
+    const receipt = safeJson(session.progressJson, {}).speakingReceipt;
+    if (session.status === "completed" && receipt) {
+      if (receipt.moduleId !== moduleId || receipt.promptId !== promptId) return jsonBadRequest("Invalid speaking prompt.");
+      const current = payload.gradeReceipt === true ? await assessReceipt(session, receipt) : session;
+      return receivedSpeakingResponse(current);
+    }
     // Make Speaking retries idempotent. Wix can occasionally drop the public
     // HTTP response after Gemini grading has already completed and been saved.
     // Older clients may retry the same recording; return the saved result
@@ -1019,6 +1133,17 @@ export async function submitSpeaking(request) {
       return jsonBadRequest("Speaking audio is missing.");
     }
 
+    if (payload.gradeReceipt === true) return jsonBadRequest("No confirmed speaking recording.");
+    if (payload.receiveOnly === true) {
+      const duration = Number(payload.durationSeconds);
+      if (payload.audioBase64 || !cleanSpeakingUploadId(payload.audioUploadId) ||
+          audioBase64.length < 1600 || !Number.isFinite(duration) || duration < 5 || duration > 180 || !normalizeAudioMime(payload.audioMimeType)) {
+        return jsonBadRequest("A complete speaking upload is required.");
+      }
+      const received = await receiveSpeaking(session, payload, PLACEMENT_SESSIONS, PLACEMENT_SPEAKING_CHUNKS);
+      return receivedSpeakingResponse(received);
+    }
+
     const gradingPayload = {
       ...payload,
       audioBase64
@@ -1051,75 +1176,8 @@ export async function submitSpeaking(request) {
       });
     }
 
-    const now = new Date();
-    const existing = await wixData
-      .query(PLACEMENT_SPEAKING)
-      .eq("sessionId", session._id)
-      .limit(1)
-      .find({ suppressAuth: true, consistentRead: true });
-
-    const speakingRecord = {
-      ...(existing.items[0] || {}),
-      sessionId: session._id,
-      clientSessionId: session.clientSessionId,
-      placementVersion: session.placementVersion,
-      promptId,
-      promptLevel: level,
-      audioUrl: "",
-      transcript: grade.transcript,
-      durationSeconds: grade.durationSeconds,
-      speechSeconds: grade.speechSeconds,
-      wordCount: grade.wordCount,
-      wpm: grade.wpm,
-      recognitionConfidence: grade.recognitionConfidence,
-      segmentCount: grade.segmentCount,
-      fluency: grade.fluency,
-      grammar: grade.grammar,
-      vocabulary: grade.vocabulary,
-      pronunciation: grade.pronunciation,
-      communication: grade.communication,
-      speakingLevel: grade.speakingLevel,
-      graderVersion: grade.modelUsed || GEMINI_SPEAKING_MODEL,
-      metricsJson: JSON.stringify({
-        composite: grade.composite,
-        rubricVersion: SPEAKING_RUBRIC_VERSION,
-        model: grade.modelUsed || GEMINI_SPEAKING_MODEL,
-        evidenceQuality: grade.assessment?.evidenceQuality || "",
-        assessment: grade.assessment || null,
-        usage: grade.usage || null
-      }),
-      createdAt: existing.items[0]?.createdAt || now
-    };
-
-    if (existing.items.length) {
-      await wixData.update(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
-    } else {
-      await wixData.insert(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
-    }
-
-    const updatedSession = {
-      ...session,
-      status: "completed",
-      phase: "result",
-      finalLevel: grade.finalLevel,
-      confidence: grade.confidence,
-      updatedAt: now,
-      completedAt: now,
-      progressJson: JSON.stringify({
-        stage: 4,
-        totalStages: 4,
-        completed: true,
-        speakingLevel: grade.speakingLevel,
-        speakingComposite: grade.composite
-      })
-    };
-
-    await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+    const updatedSession = await saveSpeakingGrade(session, grade, level, promptId);
     const result = await buildResultSummary(updatedSession);
-
-    // Raw chunk rows are transport-only. Remove them after the assessment has
-    // been saved; transcript/rubric evidence remain in BrightonYoungPlacementSpeaking.
-    await removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, session._id);
 
     return jsonOK({
       success: true,
@@ -1285,7 +1343,9 @@ function dashboardSessionRow(session) {
     studentName: String(session?.studentName || ""),
     phoneNumber: String(session?.phoneNumber || ""),
     status: String(session?.status || "active"),
-    phase: String(session?.phase || ""),
+    phase: session?.status === "completed" ? "result" : String(session?.phase || ""),
+    speakingPending: session?.phase === "speaking-assessment",
+    speakingRetakeRequired: Boolean(safeJson(session?.progressJson, {}).speakingRetakeReason),
     moduleId: String(session?.moduleId || ""),
     provisionalLevel: String(session?.provisionalLevel || ""),
     finalLevel: String(session?.finalLevel || ""),
@@ -1437,7 +1497,7 @@ export async function getPlacementDashboardResult(request) {
     const speakingRecord = speakingQuery.items[0] || null;
     const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
 
-    const speaking = speakingRecord
+    const speaking = session.phase !== "speaking-assessment" && speakingRecord
       ? {
           promptId: String(speakingRecord.promptId || ""),
           promptLevel: String(speakingRecord.promptLevel || ""),
@@ -1474,7 +1534,7 @@ export async function getPlacementDashboardResult(request) {
       session: dashboardSessionRow(session),
       result,
       route: safeJson(session.routeJson, []),
-      progress: safeJson(session.progressJson, {}),
+      progress: session.phase === "speaking-assessment" ? {stage: 4, completed: true, speakingPending: true} : safeJson(session.progressJson, {}),
       modules: dashboardModules(responseQuery.items),
       speaking
     });

@@ -361,7 +361,7 @@ function tokenise(text) {
   return String(text || "").toLowerCase().match(/[a-z]+(?:'[a-z]+)?/g) || [];
 }
 
-function normalizeAudioMime(value) {
+export function normalizeAudioMime(value) {
   const mime = String(value || "").toLowerCase().split(";")[0].trim();
   if (mime === "audio/mp4") return "audio/m4a";
 
@@ -520,21 +520,33 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
 }
 
 async function speakingProviderFetch(url, options, deadline) {
+  const failure = (code, message) => ({
+    ok: false, status: 504, text: async () => JSON.stringify({ error: { status: code, message } })
+  });
+  const timeout = () => failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.");
+  const remaining = Math.min(25000, Math.max(0, deadline - Date.now()));
+  if (!remaining) return timeout();
+
+  const controller = typeof AbortController === "function" ? new AbortController() : null;
   let timer;
-  const failure = (code, message) => ({ok: false, status: 504, text: async () => JSON.stringify({error: {status: code, message}})});
-  const remaining = Math.min(9000, Math.max(0, deadline - Date.now()));
-  if (!remaining) return failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.");
   try {
     return await Promise.race([
-      fetch(url, options).then(async response => {
+      fetch(url, controller ? { ...options, signal: controller.signal } : options).then(async response => {
         const body = await response.text();
-        return {ok: response.ok, status: response.status, text: async () => body};
+        return { ok: response.ok, status: response.status, text: async () => body };
       }),
-      new Promise(resolve => { timer = setTimeout(() => resolve(failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.")), remaining); })
+      new Promise(resolve => {
+        timer = setTimeout(() => {
+          resolve(timeout());
+          controller?.abort();
+        }, remaining);
+      })
     ]);
   } catch {
     return failure("PROVIDER_CONNECTION", "Could not reach the speaking examiner.");
-  } finally { clearTimeout(timer); }
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema, deadline) {
@@ -719,8 +731,8 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
 }
 
 async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, audioMimeType) {
-  // Bound the entire provider ladder below the browser request deadline.
-  const deadline = Date.now() + 9000;
+  // Leave time for the second transport if the primary examiner stalls.
+  const deadline = Date.now() + 45000;
   const models = [GEMINI_SPEAKING_MODEL, GEMINI_SPEAKING_FALLBACK_MODEL];
   let lastFailure = null;
 
@@ -736,7 +748,7 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
       deadline
     );
 
-    if (interactionStructured.ok) return interactionStructured;
+    if (interactionStructured.ok || Date.now() >= deadline) return interactionStructured;
     lastFailure = interactionStructured;
 
     if ([400, 422].includes(Number(interactionStructured.error?.status))) {
@@ -750,7 +762,7 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
         deadline
       );
 
-      if (interactionJsonOnly.ok) return interactionJsonOnly;
+      if (interactionJsonOnly.ok || Date.now() >= deadline) return interactionJsonOnly;
       lastFailure = interactionJsonOnly;
     }
 
@@ -765,7 +777,7 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
       deadline
     );
 
-    if (generateStructured.ok) return generateStructured;
+    if (generateStructured.ok || Date.now() >= deadline) return generateStructured;
     lastFailure = generateStructured;
 
     if ([400, 422].includes(Number(generateStructured.error?.status))) {
@@ -779,7 +791,7 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
         deadline
       );
 
-      if (generateJsonOnly.ok) return generateJsonOnly;
+      if (generateJsonOnly.ok || Date.now() >= deadline) return generateJsonOnly;
       lastFailure = generateJsonOnly;
     }
 

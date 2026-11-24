@@ -11,6 +11,8 @@ export default {
   get(collection, id, opts) { return dataClient().items.get(collection, id, options(opts)); },
   insert(collection, item, opts) { return dataClient().items.insert(collection, item, options(opts)); },
   update(collection, item, opts) { return dataClient().items.update(collection, item, options(opts)); },
+  patch(collection, id, fields, opts) { return dataClient().items.patch(collection, id, fields, options(opts)); },
+  bulkRemove(collection, ids, opts) { return dataClient().items.bulkRemove(collection, ids, options(opts)); },
   remove(collection, id, opts) { return dataClient().items.remove(collection, id, options(opts)); }
 };
 

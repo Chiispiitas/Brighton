@@ -107,11 +107,11 @@
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
           <td><a class="placement-phone-link" href="${escapeAttr(phoneHref(row.phoneNumber))}">${escapeHtml(row.phoneNumber || "—")}</a></td>
           <td><span class="placement-status ${status}">${status === "completed" ? "Completed" : "In progress"}</span></td>
-          <td><span class="placement-level-pill">${escapeHtml(level)}</span></td>
+          <td><span class="placement-level-pill">${escapeHtml(level)}${row.speakingPending ? " · provisional" : row.speakingRetakeRequired ? " · objective only" : ""}</span></td>
           <td>${escapeHtml(formatDate(row.startedAt))}</td>
           <td>${escapeHtml(formatDate(row.completedAt))}</td>
           <td>${escapeHtml(formatDuration(row.timeSpentSeconds))}</td>
-          <td>${escapeHtml(hasSpeakingEvidence(row) ? "YES" : "NO")}</td>
+          <td>${escapeHtml(speakingEvidenceLabel(row))}</td>
           <td><button class="secondary-btn" type="button" data-session-id="${escapeAttr(row.sessionId)}">View</button></td>
         </tr>
       `;
@@ -126,7 +126,7 @@
     const counts = new Map();
     completed.forEach((row) => {
       const level = row.finalLevel || "";
-      if (level) counts.set(level, (counts.get(level) || 0) + 1);
+      if (level && !row.speakingPending) counts.set(level, (counts.get(level) || 0) + 1);
     });
     const mostCommon = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] || "—";
     summaryLevel.textContent = mostCommon;
@@ -153,6 +153,11 @@
     const result = payload.result || {};
     const speaking = payload.speaking || null;
     const skills = result.skills || {};
+    const speakingState = {
+      ...session,
+      speakingPending: Boolean(skills.speaking?.pending || session.speakingPending),
+      speakingRetakeRequired: Boolean(skills.speaking?.retakeRequired || session.speakingRetakeRequired)
+    };
     const overallLevel = result.finalLevel || session.finalLevel || session.provisionalLevel || "—";
     const status = session.status === "completed" ? "Completed" : "In progress";
 
@@ -167,7 +172,7 @@
         </div>
         <div class="placement-stamp">
           <strong>${escapeHtml(overallLevel)}</strong>
-          <small>${escapeHtml(result.finalDescription || "")}</small>
+          <small>${escapeHtml(speakingState.speakingPending ? "Provisional level" : speakingState.speakingRetakeRequired ? "Objective sections only" : result.finalDescription || "")}</small>
         </div>
       </section>
 
@@ -176,7 +181,7 @@
         ${detailBox("Started", formatDate(session.startedAt))}
         ${detailBox("Completed", formatDate(session.completedAt))}
         ${detailBox("Time", formatDuration(session.timeSpentSeconds))}
-        ${detailBox("Speaking evidence", speaking || hasSpeakingEvidence(session) ? "YES" : "NO")}
+        ${detailBox("Speaking evidence", speakingEvidenceLabel(speakingState, speaking))}
       </section>
 
       <section class="detail-section">
@@ -185,7 +190,7 @@
           ${skillCard(skills.language, "Language Use")}
           ${skillCard(skills.reading, "Reading")}
           ${skillCard(skills.listening, "Listening")}
-          ${skillCard(skills.speaking, "Speaking")}
+          ${skillCard({...skills.speaking, pending: speakingState.speakingPending, retakeRequired: speakingState.speakingRetakeRequired}, "Speaking")}
         </div>
       </section>
 
@@ -215,7 +220,7 @@
 
       <section class="detail-section">
         <h3>Speaking sample</h3>
-        ${renderSpeakingSample(speaking, session)}
+        ${renderSpeakingSample(speaking, speakingState)}
       </section>
     `;
 
@@ -223,6 +228,12 @@
   }
 
   function renderSpeakingSample(speaking, session) {
+    if (session.speakingPending) {
+      return '<div class="empty-speaking">Brighton has received the recording. The Speaking score and transcript will appear after assessment.</div>';
+    }
+    if (session.speakingRetakeRequired) {
+      return '<div class="empty-speaking">The student can record a new Speaking answer from their result page. Their other sections are complete.</div>';
+    }
     if (speaking?.assessment && ["fluency", "grammar", "vocabulary", "pronunciation", "communication"].some(key => !speaking.assessment[key]?.evidence?.length)) {
       return `<div class="empty-speaking"><strong>Speaking assessment requires review.</strong><p>The examiner returned an incomplete rubric. The displayed numeric grade is invalid and must not be used for placement.</p><p>A new recording or a teacher assessment is required.</p><blockquote class="speaking-transcript">${escapeHtml(speaking.transcript || "")}</blockquote></div>`;
     }
@@ -393,18 +404,19 @@
       return;
     }
 
-    const headers = ["Student", "Phone", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Speaking evidence confidence", "Session ID"];
+    const headers = ["Student", "Phone", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Speaking evidence confidence", "Session ID", "Speaking evidence"];
     const data = rows.map((row) => [
       row.studentName,
       row.phoneNumber,
       row.status,
-      row.finalLevel,
+      row.speakingPending ? "" : row.finalLevel,
       row.provisionalLevel,
       row.startedAt,
       row.completedAt,
       row.timeSpentSeconds,
       row.confidence,
-      row.sessionId
+      row.sessionId,
+      speakingEvidenceLabel(row)
     ]);
     const csv = [headers, ...data].map((line) => line.map(csvCell).join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
@@ -425,7 +437,7 @@
 
   function skillCard(skill, label) {
     const item = skill || {};
-    const level = item.skipped ? "Not scored" : (item.level || "—");
+    const level = item.pending ? "Assessment pending" : item.retakeRequired ? "Retake required" : item.skipped ? "Not scored" : (item.level || "—");
     return `
       <div class="placement-skill-card">
         <span>${escapeHtml(item.label || label)}</span>
@@ -448,8 +460,10 @@
     return Number.isFinite(number) ? number.toFixed(1) : "—";
   }
 
-  function hasSpeakingEvidence(value) {
-    return Number(value?.confidence) > 0;
+  function speakingEvidenceLabel(session, speaking = null) {
+    if (session.speakingPending) return "Received · assessment pending";
+    if (session.speakingRetakeRequired) return "Retake required";
+    return speaking || Number(session.confidence) > 0 ? "YES" : "NO";
   }
 
   function phoneHref(value) {
