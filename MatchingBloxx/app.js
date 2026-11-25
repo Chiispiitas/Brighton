@@ -98,7 +98,7 @@
   $('help').onclick = function () {
     modal('<h2 id="dialog-title">How to play</h2><ol class="steps">' +
       '<li><b>1</b><span>Read the words on the floor. Choose the verb that goes with them, like <strong>make progress</strong>.</span></li>' +
-      '<li><b>2</b><span>When the crane swings over your tower, tap <strong>Drop floor</strong> or press Space.</span></li>' +
+      '<li><b>2</b><span>Tap <strong>Drop floor</strong> or press Space. If the tower leans, aim slightly to the opposite side to balance it. Too much lean topples the floors above the weak point.</span></li>' +
       '<li><b>3</b><span>A match earns 100 points. Land close to the center for up to 100 more. Two perfect drops in a row earn a slower crane.</span></li></ol>' +
       '<p class="sub">In a classroom game, you can spend that same bonus on a gust at another tower. Their next crane swings faster for one drop.</p>');
   };
@@ -350,6 +350,8 @@
     if(busy || !state || !state.me || state.me.stage!=='drop') return;
     var me=state.me, elapsed=Math.max(0,Math.round(now()-motionStart));
     var x=MatchingBloxxRules.position(me.motion,elapsed), landed=Math.abs(x)<.85, animDone=!scene, answer=null;
+    var placement=typeof me.balance==='number' ? MatchingBloxxRules.placeFloor(me.placements,x) : null;
+    var collapse=placement && placement.fallen ? placement : null;
     function settle() {
       if (!animDone || !answer) return;
       setBusy(false);
@@ -357,7 +359,7 @@
       if(last) cue(last.kind==='perfect'?'perfect':last.kind==='miss'?'miss':'land');
       receive(answer); schedule();
     }
-    if(scene) scene.drop(x,landed,function(){animDone=true;settle();});
+    if(scene) scene.drop(x,landed,function(){animDone=true;settle();},collapse);
     perform('drop',{round:me.round,elapsedMs:elapsed},function(error,data){
       if(error){if(scene && scene.cancelDrop) scene.cancelDrop();visualKey='';render();return;}
       answer=data;
@@ -371,7 +373,7 @@
     if(motionKey!==motionId) {motionKey=motionId;motionStart=now();}
     setLayout('stage');
     var prompt=stage==='match'||stage==='drop'?me.prompt:'';
-    setScene(motionId+'-'+me.placements.join(','),{mode:'build',floors:me.placements,showCrane:stage==='match'||stage==='drop',label:prompt,
+    setScene(motionId+'-'+me.placements.join(','),{mode:'build',floors:me.placements,balance:me.balance,showCrane:stage==='match'||stage==='drop',label:prompt,
       getOffset:stage==='drop' && me.motion ? function(){return MatchingBloxxRules.position(me.motion,Math.max(0,now()-motionStart));} : null});
     footer(practice?'Solo practice':'Room '+state.code,'Round '+me.round+' / 12');
     var html=(practice?'':'<p class="eyebrow">'+esc(me.name)+'</p>')+statistics(me);
@@ -386,7 +388,9 @@
           (targets.length?'<button id="gust" class="small-action">Send a gust</button>':''))+'</div>';
       }
     } else if(stage==='drop') {
-      html+='<h2>Time your drop</h2><p class="sub">'+(me.motion && me.motion.gust?'A gust is speeding up your crane. ':'')+'Release the floor when it’s centered over your tower.</p><button class="button yellow" id="drop">Drop floor</button>';
+      html+='<h2>Time your drop</h2><p class="sub">'+(me.motion && me.motion.gust?'A gust is speeding up your crane. ':'')+
+        (Math.abs(me.balance)>=.5?'Aim a little to the '+(me.balance>0?'left':'right')+' to counter the lean.':'Release the floor over your tower.')+
+        '</p>'+balanceMeter(me.balance)+'<button class="button yellow" id="drop">Drop floor</button>';
     } else if(stage==='result' && me.last) {
       html+=result(me.last)+'<button class="button yellow" id="next">'+(me.round===12?'See standings':'Next floor')+'</button>';
     }
@@ -417,7 +421,18 @@
   }
   function result(last) {
     var title={wrong:'Not quite',miss:'Missed the tower',landed:'Floor landed',perfect:'Perfect drop!'};
-    return '<h2>'+title[last.kind]+'</h2><p class="result-line">'+(last.kind==='wrong'?'The match is ':'')+'<strong>'+esc(last.phrase)+'</strong>.</p><p class="sub"><span class="pill">+'+last.points+' points</span></p>';
+    var heading=last.fallen>1?'Tower collapse':last.fallen?'Floor tipped off':title[last.kind];
+    return '<h2>'+heading+'</h2><p class="result-line">'+(last.kind==='wrong'?'The match is ':'')+'<strong>'+esc(last.phrase)+'</strong>.</p>'+
+      (last.fallen>1?'<p class="sub">'+last.fallen+' floors fell, including the new one.</p>':'')+
+      '<p class="sub"><span class="pill">+'+last.points+' points</span></p>';
+  }
+  function balanceMeter(value) {
+    if(typeof value!=='number') return '';
+    var amount=Math.abs(value);
+    var label=amount>=.5?(amount>=.8?'Tipping ':'Leaning ')+(value<0?'left':'right'):'Steady';
+    var position=50+44*Math.max(-1,Math.min(1,value));
+    return '<div class="balance"><div class="row"><strong>Balance</strong><span>'+label+'</span></div>'+
+      '<div class="balance-track" aria-hidden="true"><i style="left:'+position+'%"></i></div></div>';
   }
   function finalScreen() {
     setLayout('stage');var me=state.me;
@@ -426,7 +441,7 @@
     var html='<p class="eyebrow">Matching Bloxx</p><h2>'+(practice?'Practice complete':'Final standings')+'</h2>';
     if(me) {
       html+=statistics(me);
-      if(me.last)html+='<p class="sub">'+(me.last.kind==='wrong'?'Last round correction':'Last match')+' · <strong>'+esc(me.last.phrase)+'</strong> (+'+me.last.points+')</p>';
+      if(me.last)html+=result(me.last);
     }
     if(!practice)html+=standings(state.players);
     html+='<button id="again" class="button primary">'+(practice?'Play again':'Back to menu')+'</button>';

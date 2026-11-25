@@ -244,7 +244,7 @@
 
   function mount(container) {
     if (!container) throw new Error('Tower scene needs a container.');
-    var state={mode:'attract',floors:[],getOffset:null,showCrane:true};
+    var state={mode:'attract',floors:[],balance:0,getOffset:null,showCrane:true};
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
     var cancel=global.cancelAnimationFrame || clearTimeout, frameId=0, then=0;
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', backdrop=document.createElement('canvas');
@@ -426,7 +426,10 @@
       var rise=Math.max(0,(length*floorY*unit)-height*(attract?.46:.36));
       var targetCamera=attract?0:top;
       var swinging=attract ? !reduced : state.showCrane!==false && !!state.getOffset && frozen===null;
-      if(!dirty && !dropState && !swinging && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
+      var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
+      var wobble=Math.max(0,Math.abs(lean)-.28);
+      var rocking=!reduced && wobble>0 && state.showCrane!==false;
+      if(!dirty && !dropState && !swinging && !rocking && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
@@ -444,10 +447,38 @@
         camera.left=-sx/unit;camera.right=(width-sx)/unit;camera.top=syy/unit;camera.bottom=(syy-height)/unit;camera.updateProjectionMatrix();
       }
       floor(0,0,0,true,0);
+      var progress=dropState ? clamp((now-dropState.started)/dropState.duration,0,1) : 0;
+      var collapse=dropState && dropState.collapse;
+      var firstFalling=collapse ? length+1-collapse.fallen : length+1;
+      var tumble=collapse ? clamp((progress-.25)/.75,0,1) : 0;
+      var flex=wobble*(lean<0?-1:1)*(.075+(rocking?.045*Math.sin(now/122)*(1-tumble):0));
+      var pivotX=0,pivotY=0,tip=0,freeFall=0;
+      if(collapse) {
+        var lower=floors[firstFalling-1] || 0;
+        var upper=firstFalling<length ? floors[firstFalling] : top+dropState.offset;
+        // Rotate around the outer edge of the shared support before the floors separate.
+        var edge=collapse.direction>0 ? Math.min(lower,upper)+.5 : Math.max(lower,upper)-.5;
+        pivotY=firstFalling*floorY;
+        pivotX=edge+flex*pivotY;
+        tip=collapse.direction*.98*Math.pow(Math.min(tumble/.55,1),2);
+        freeFall=Math.pow(clamp((tumble-.55)/.45,0,1),2);
+      }
+      function buildingFloor(index,x,y,angle) {
+        if(index>=firstFalling && tumble>0) {
+          var level=index-firstFalling;
+          var dx=x-pivotX,dy=y-pivotY;
+          var rotation=tip+collapse.direction*.62*freeFall;
+          var spin=collapse.direction*(.55+(level%3)*.38);
+          x=pivotX+dx*Math.cos(rotation)+dy*Math.sin(rotation)+collapse.direction*freeFall*(.65+level*.27);
+          y=pivotY-dx*Math.sin(rotation)+dy*Math.cos(rotation)-freeFall*(height/unit+1+level*.24);
+          angle-=rotation+spin*freeFall;
+        }
+        floor(x,y,index%palettes.length,false,angle);
+      }
       for(var i=0;i<length;i++){
         var y=i*floorY;
         if(syy-y*unit>height+unit) continue;
-        floor(Number(floors[i])||0,y,i%palettes.length,false,0);
+        buildingFloor(i,(Number(floors[i])||0)+flex*y,y,-flex);
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
       var carryY=tableY+hangGap,offset=attract?(reduced?.36:Math.sin((now-start)/1270)*.54):0;
@@ -455,16 +486,15 @@
         var value=state.getOffset();if(isFinite(value))offset=value;
       }
       if(dropState)offset=dropState.offset;else if(frozen!==null)offset=frozen;
-      var hx=top+offset,hy=carryY,angle=attract?-.025*offset:0,progress=0;
+      var hx=top+offset+flex*tableY,hy=carryY,angle=attract?-.025*offset:0;
       var show=attract || state.showCrane!==false,slings=true,callback=null;
       if(dropState){
-        progress=clamp((now-dropState.started)/dropState.duration,0,1);
-        var t=Math.min(1,progress/.79);
+        var t=Math.min(1,progress/(collapse?.25:.79));
         hy=carryY-hangGap*(t*t);
         if(!dropState.landed){
           hy-=Math.pow(progress,2.2)*(height/unit+.8);
           angle=-(offset<0?-1:1)*progress*.66;
-        }else if(progress>.79){
+        }else if(!collapse && progress>.79){
           hy+=Math.sin((progress-.79)/.21*Math.PI)*.024*(1-progress);
         }
         slings=false;
@@ -477,10 +507,10 @@
         // Keep the unloaded hook over the tower between turns.
         crane(actorX,hookY,roofY,armX,slings,angle);
         if(frozen===null || progress>0){
-          floor(hx,hy,length%palettes.length,false,angle);
-          floorLabel(state.label,actorX,syy-(hy+floorY*.42)*unit,angle);
+          buildingFloor(length,hx,hy,angle);
+          if(!tumble) floorLabel(state.label,actorX,syy-(hy+floorY*.42)*unit,angle);
         }
-        burst(hx,tableY,progress,Math.abs(offset)<.85);
+        burst(hx,tableY,progress,!collapse && Math.abs(offset)<.85);
       }
       if(renderer){
         for(var m=count;m<groups.length;m++)groups[m].visible=false;
@@ -506,10 +536,11 @@
       if(!dropState)frozen=null;
       if(!frameId)frameId=raf(tick);
     }
-    function drop(offset,landed,callback) {
+    function drop(offset,landed,callback,collapse) {
       if(!running) return;
       cancelDrop();
-      dropState={offset:Number(offset)||0,landed:!!landed,callback:callback,started:Date.now(),duration:reduced?210:480};
+      dropState={offset:Number(offset)||0,landed:!!landed,callback:callback,collapse:collapse,
+        started:Date.now(),duration:collapse?(reduced?360:1260):(reduced?210:480)};
       // A student may scroll the crane offscreen or switch tabs after tapping.
       // Network state and controls still settle when animation frames pause.
       dropTimer=setTimeout(finishDrop,dropState.duration);

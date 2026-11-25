@@ -91,6 +91,34 @@ test('36 players fit, including reconnections to a full room', () => {
   assert.throws(() => command(room, 'extra', 'join', {name: 'Extra'}, 0), {status: 409});
 });
 
+test('three same-side landings can destabilize an entire tower, while a counterweight keeps it up', () => {
+  const room = setup();
+  const first = dropAtAfterMatch(room, 0);
+  assert.deepEqual(first.placements, [0]);
+  dropAtAfterMatch(room, .3);
+  const leaning = dropAtAfterMatch(room, .3);
+  assert.deepEqual(leaning.placements, [0, .3, .6]);
+  assert.ok(leaning.balance > .8);
+  const counterweight = dropAtAfterMatch(structuredClone(room), -.3);
+  assert.deepEqual(counterweight.placements, [0, .3, .6, .3]);
+  assert.ok(counterweight.balance < leaning.balance);
+  const collapse = dropAtAfterMatch(room, .3);
+  assert.equal(collapse.last.fallen, 3);
+  assert.deepEqual(collapse.placements, [0]);
+  assert.equal(collapse.last.points, 100);
+  assert.equal(view(room, screen, 7000).players[0].floors, 1);
+  const miss = rules.placeFloor([0,.3], .9);
+  assert.equal(miss.fallen, 0);
+  assert.deepEqual(miss.floors, [0,.3]);
+
+  function dropAtAfterMatch(game, offset) {
+    const player = view(game, key, 6000).me;
+    if (player.stage === 'result') command(game, key, 'next', {round: player.round}, 6000);
+    choose(game, true, 6000);
+    return dropAt(game, offset, 6000);
+  }
+});
+
 test('each of the 12 supplied matches appears exactly once before the results close', () => {
   const room = setup();
   const prompts = new Set();
