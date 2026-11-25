@@ -427,9 +427,9 @@
       var targetCamera=attract?0:top;
       var swinging=attract ? !reduced : state.showCrane!==false && !!state.getOffset && frozen===null;
       var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
-      var wobble=Math.max(0,Math.abs(lean)-.48);
-      var rocking=!reduced && wobble>0 && swinging;
-      if(!dirty && !dropState && !swinging && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
+      var wobble=Math.max(0,Math.abs(lean)-.28);
+      var rocking=!reduced && wobble>0 && state.showCrane!==false;
+      if(!dirty && !dropState && !swinging && !rocking && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
@@ -450,14 +450,28 @@
       var progress=dropState ? clamp((now-dropState.started)/dropState.duration,0,1) : 0;
       var collapse=dropState && dropState.collapse;
       var firstFalling=collapse ? length+1-collapse.fallen : length+1;
-      var tumble=collapse ? clamp((progress-.38)/.62,0,1) : 0;
-      var fallTurn=tumble*tumble;
-      var flex=rocking ? wobble*(lean<0?-1:1)*(.05+.04*Math.sin(now/135)) : 0;
+      var tumble=collapse ? clamp((progress-.25)/.75,0,1) : 0;
+      var flex=wobble*(lean<0?-1:1)*(.075+(rocking?.045*Math.sin(now/122)*(1-tumble):0));
+      var pivotX=0,pivotY=0,tip=0,freeFall=0;
+      if(collapse) {
+        var lower=floors[firstFalling-1] || 0;
+        var upper=firstFalling<length ? floors[firstFalling] : top+dropState.offset;
+        // Rotate around the outer edge of the shared support before the floors separate.
+        var edge=collapse.direction>0 ? Math.min(lower,upper)+.5 : Math.max(lower,upper)-.5;
+        pivotY=firstFalling*floorY;
+        pivotX=edge+flex*pivotY;
+        tip=collapse.direction*.98*Math.pow(Math.min(tumble/.55,1),2);
+        freeFall=Math.pow(clamp((tumble-.55)/.45,0,1),2);
+      }
       function buildingFloor(index,x,y,angle) {
         if(index>=firstFalling && tumble>0) {
-          x+=collapse.direction*fallTurn*(.9+(index-firstFalling)*.32);
-          y-=fallTurn*(height/unit+1+(index-firstFalling)*.09);
-          angle-=collapse.direction*tumble*(.85+(index-firstFalling)*.09);
+          var level=index-firstFalling;
+          var dx=x-pivotX,dy=y-pivotY;
+          var rotation=tip+collapse.direction*.62*freeFall;
+          var spin=collapse.direction*(.55+(level%3)*.38);
+          x=pivotX+dx*Math.cos(rotation)+dy*Math.sin(rotation)+collapse.direction*freeFall*(.65+level*.27);
+          y=pivotY-dx*Math.sin(rotation)+dy*Math.cos(rotation)-freeFall*(height/unit+1+level*.24);
+          angle-=rotation+spin*freeFall;
         }
         floor(x,y,index%palettes.length,false,angle);
       }
@@ -475,12 +489,12 @@
       var hx=top+offset+flex*tableY,hy=carryY,angle=attract?-.025*offset:0;
       var show=attract || state.showCrane!==false,slings=true,callback=null;
       if(dropState){
-        var t=Math.min(1,progress/(collapse?.38:.79));
+        var t=Math.min(1,progress/(collapse?.25:.79));
         hy=carryY-hangGap*(t*t);
         if(!dropState.landed){
           hy-=Math.pow(progress,2.2)*(height/unit+.8);
           angle=-(offset<0?-1:1)*progress*.66;
-        }else if(progress>.79){
+        }else if(!collapse && progress>.79){
           hy+=Math.sin((progress-.79)/.21*Math.PI)*.024*(1-progress);
         }
         slings=false;
@@ -526,7 +540,7 @@
       if(!running) return;
       cancelDrop();
       dropState={offset:Number(offset)||0,landed:!!landed,callback:callback,collapse:collapse,
-        started:Date.now(),duration:collapse?(reduced?310:920):(reduced?210:480)};
+        started:Date.now(),duration:collapse?(reduced?360:1260):(reduced?210:480)};
       // A student may scroll the crane offscreen or switch tabs after tapping.
       // Network state and controls still settle when animation frames pause.
       dropTimer=setTimeout(finishDrop,dropState.duration);
