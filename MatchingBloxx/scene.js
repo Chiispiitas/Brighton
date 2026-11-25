@@ -74,34 +74,22 @@
     box(0,.036,0,.983,.013,.509,p[1],p[2]);
     box(0,.418,0,.99,.025,.514,p[3],p[1]);
     box(0,.442,0,1,.038,.523,p[2],tone(p[2],1.12),tone(p[2],.79));
-    function panels(side,index) {
-      var span=side?.155:.205;
-      var midpoint=side?(index-.5)*.229:(index-1)*.308;
-      function face(parts,z,color) {
-        var vertices=[];
-        for(var j=0;j<parts.length;j++) {
-          var u=midpoint + parts[j][0]*span;
-          vertices.push(side ? [.48+z,parts[j][1],-u] : [u,parts[j][1],halfDepth+z]);
-        }
-        polygon(vertices,color);
+    function windowGlass(side, index) {
+      var width = side ? .155 : .186;
+      var center = side ? (index - .5) * .229 : (index - 1) * .308;
+      function pane(profile, color) {
+        var vertices = profile.map(function (point) {
+          var across = center + point[0] * width;
+          return side ? [.485, point[1], -across] : [across, point[1], halfDepth + .005];
+        });
+        polygon(vertices, side ? tone(color, .78) : color);
       }
-      function band(x1,y1,x2,y2,z,color) { face([[x1,y1],[x2,y1],[x2,y2],[x1,y2]],z,color); }
-      var shade=side?.76:1;
-      function ink(col) {return side?tone(col,shade):col;}
-      band(-.48,.084,.50,.114,.001,ink(p[3]));
-      face([[-.51,.117],[.51,.117],[.51,.297],[.40,.340],[.19,.373],[-.19,.373],[-.40,.34],[-.51,.297]],.002,ink(p[2]));
-      face([[-.39,.120],[.39,.120],[.39,.289],[.28,.32],[.12,.338],[-.12,.338],[-.28,.32],[-.39,.289]],.004,ink('#30495c'));
-      band(-.296,.15,-.048,.277,.006,ink(index%2?'#95cdd0':'#76b0c1'));
-      band(.058,.15,.296,.277,.006,ink(index%2?'#50899d':'#a7d9d7'));
-      face([[-.294,.287],[.29,.287],[.192,.306],[.09,.317],[-.09,.317],[-.192,.306]],.007,ink('#e7c680'));
-      band(-.55,.093,.55,.118,.007,ink(p[2]));
-      if(!side && (style+index)%3===1) {
-        band(-.32,.110,.32,.133,.008,'#9b5242');
-        for(var v=-1;v<=1;v++) band(v*.18-.048,.133,v*.18+.060,.149+(v===0?.014:0),.009, v===0?'#b3c263':'#518867');
-      }
+      // Two tones meet edge to edge, with no trim or sill against the wall.
+      pane([[-.5,.108],[0,.108],[0,.35],[-.2,.35],[-.38,.317],[-.5,.275]], '#8ec1cd');
+      pane([[0,.108],[.5,.108],[.5,.275],[.38,.317],[.2,.35],[0,.35]], '#3f758e');
     }
-    for(var wi=0;wi<3;wi++) panels(false,wi);
-    for(wi=0;wi<2;wi++) panels(true,wi);
+    for(var wi=0;wi<3;wi++) windowGlass(false,wi);
+    for(wi=0;wi<2;wi++) windowGlass(true,wi);
     for(var edge=-1;edge<=1;edge+=2) {
       box(edge*.447,.067,halfDepth+.003,.031,.331,.004,tone(p[1],1.05));
       for(var k=0;k<3;k++) box(edge*.44,.099+k*.104,halfDepth+.006,.058,.022,.004,p[2]);
@@ -400,7 +388,7 @@
       var max=Math.max(64,Math.min(width*.60,unit*1.22));
       var fontSize=clamp(unit*.108,11,17);
       rig.save();rig.translate(clamp(cx,max/2+3,width-max/2-3),cy);rig.rotate(-angle);
-      rig.font='bold '+Math.round(fontSize)+'px Trebuchet MS, Arial, sans-serif';
+      rig.font='700 '+Math.round(fontSize)+'px "Chakra Petch", "Trebuchet MS", Arial, sans-serif';
       var words=String(text).slice(0,64).split(/\s+/),lines=[''];
       for(var i=0;i<words.length;i++){
         var j=lines.length-1, line=lines[j] ? lines[j]+' '+words[i] : words[i];
@@ -534,6 +522,9 @@
       [scenic,graphics,foreground].forEach(function(el){if(el.parentNode===container)container.removeChild(el);});
     }
     if(!global.BloxxFloorMesh)script('assets/floor.js',function(){dirty=true;});
+    if(document.fonts && document.fonts.load) {
+      document.fonts.load('700 14px "Chakra Petch"').then(function(){dirty=true;},function(){});
+    }
     var canvasOnly=/(?:[?&])renderer=canvas(?:[&#]|$)/.test(global.location.search) ||
       global.navigator.connection && global.navigator.connection.saveData;
     if(!canvasOnly && global.WebGLRenderingContext) {
