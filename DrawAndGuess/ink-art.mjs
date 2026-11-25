@@ -1,26 +1,31 @@
-import { paletteRaster, pixelFrame } from './pixel-ink.mjs';
+import { paletteRaster } from './pixel-ink.mjs?v=2';
 
-export function inkFrames(width, height, draw, colors, resolution = .5, paper = 0) {
+export function inkFrames(width, height, draw, colors, resolution = .5) {
   const sheet = document.createElement('canvas');
   const frameWidth = Math.ceil(width * resolution);
   const frameHeight = Math.ceil(height * resolution);
   sheet.width = frameWidth * 3;
   sheet.height = frameHeight;
   const ctx = sheet.getContext('2d', { willReadFrequently:true });
-  ctx.save();
-  ctx.scale(frameWidth / width, frameHeight / height);
-  ctx.lineCap = ctx.lineJoin = 'round';
-  draw(ctx);
-  ctx.restore();
-  const input = new Uint32Array(ctx.getImageData(0, 0, frameWidth, frameHeight).data.buffer);
-  const base = new Uint32Array(input.length);
-  paletteRaster(colors, frameWidth)(input, base);
+  const raster = paletteRaster(colors, frameWidth);
   const frameImage = ctx.createImageData(frameWidth, frameHeight);
   const pixels = new Uint32Array(frameImage.data.buffer);
-  for (let frame = 0; frame < 3; frame++) {
-    pixelFrame(base, pixels, frameWidth, frameHeight, frame, paper);
-    ctx.putImageData(frameImage, frame * frameWidth, 0);
-  }
+  // Keep the paths anchored. Only the outline weight varies between frames.
+  [0, .5, -.35].forEach((weight, frame) => {
+    const x = frame * frameWidth;
+    ctx.save();
+    ctx.translate(x, 0);
+    ctx.beginPath();
+    ctx.rect(0, 0, frameWidth, frameHeight);
+    ctx.clip();
+    ctx.scale(frameWidth / width, frameHeight / height);
+    ctx.lineCap = ctx.lineJoin = 'round';
+    draw(ctx, weight);
+    ctx.restore();
+    const input = new Uint32Array(ctx.getImageData(x, 0, frameWidth, frameHeight).data.buffer);
+    raster(input, pixels);
+    ctx.putImageData(frameImage, x, 0);
+  });
   return sheet.toDataURL();
 }
 
@@ -51,17 +56,17 @@ const doodles = [
 
 export function drawGameArt() {
   const ink = '#261b46';
-  const logo = inkFrames(44, 44, ctx => {
-    inkPath(ctx, 'M 11 31 L 13 24 L 29 9 Q 31 7 33 9 L 36 12 Q 38 14 36 16 L 20 32 L 11 34 Z', '#fff5c2', 3.4);
+  const logo = inkFrames(44, 44, (ctx, weight) => {
+    inkPath(ctx, 'M 11 31 L 13 24 L 29 9 Q 31 7 33 9 L 36 12 Q 38 14 36 16 L 20 32 L 11 34 Z', '#fff5c2', 3.4 + weight);
     inkPath(ctx, 'M 14 24 L 20 31 M 25 13 L 32 20 M 11 34 L 16 32', null, 3);
     inkPath(ctx, 'M 23 35 Q 29 38 36 33', null, 3);
   }, [ink, '#fff5c2'], .65);
   document.querySelector('.mark').innerHTML = inkSprite(logo,'pencil-ink');
   const titleColors = ['#fff1b2', '#d7b9ff', '#92e3db', '#ffd595'];
-  const title = inkFrames(440, 209, ctx => {
+  const title = inkFrames(440, 209, (ctx, weight) => {
     ctx.font = '900 99px system-ui, sans-serif';
     ctx.textBaseline = 'alphabetic';
-    ctx.lineWidth = 8.5;
+    ctx.lineWidth = 8.5 + weight;
     ctx.strokeStyle = '#1b1334';
     ['Draw &', 'Guess'].forEach((line, row) => {
       let x = 15;
@@ -81,8 +86,8 @@ export function drawGameArt() {
   }, [...titleColors, '#1b1334'], .48);
   document.querySelector('.welcome h1').innerHTML = '<span class="sr-only">Draw &amp; Guess</span>' + inkSprite(title,'title-ink');
   document.querySelector('.doodles').innerHTML = doodles.map((shape, index) => {
-    const tile = inkFrames(52, 52, ctx => {
-      inkPath(ctx, shape, index < 2 ? '#fff7d8' : null, 3.5);
+    const tile = inkFrames(52, 52, (ctx, weight) => {
+      inkPath(ctx, shape, index < 2 ? '#fff7d8' : null, 3.5 + weight);
     }, [ink, '#fff7d8'], .55);
     return '<span>' + inkSprite(tile,'doodle-ink',-index * 105) + '</span>';
   }).join('');

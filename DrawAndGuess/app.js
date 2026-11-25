@@ -1,8 +1,8 @@
 import { API_URL } from './config.js';
-import { createBoard } from './board.mjs?v=3';
-import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=3';
-import { drawGameArt } from './ink-art.mjs?v=2';
-import { createInkView } from './pixel-ink.mjs';
+import { createBoard } from './board.mjs?v=4';
+import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=4';
+import { drawGameArt } from './ink-art.mjs?v=3';
+import { createInkView } from './pixel-ink.mjs?v=2';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
