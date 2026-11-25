@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Draw &amp; Guess | Brighton</title>
+<meta name="description" content="Draw a word, guess the picture and play with up to 36 people in a Brighton game room.">
+<link rel="canonical" href="https://exams.bebrighton.net/DrawAndGuess/">
+<meta property="og:title" content="Draw &amp; Guess | Brighton">
+<meta property="og:description" content="A live drawing game for up to 36 players.">
+<meta property="og:url" content="https://exams.bebrighton.net/DrawAndGuess/">
+<meta name="theme-color" content="#f4f4ed">
+<link rel="stylesheet" href="style.css?v=1">
+</head>
+<body>
+<header class="masthead">
+  <a href="./" class="brand"><span class="mark" aria-hidden="true">✎</span><span>Draw &amp; Guess <small>Brighton</small></span></a>
+  <button id="help" class="quiet" type="button">How to play</button>
+</header>
+<main>
+<section id="entry" class="entry">
+  <div class="welcome">
+    <h1>Draw &amp; Guess</h1>
+    <p>Take turns drawing a word. Guess the picture before time runs out.</p>
+    <div class="doodles" aria-hidden="true"><span>☁</span><span>✦</span><span>♧</span><span>☼</span></div>
+  </div>
+  <div class="setup">
+    <form id="entry-form">
+      <label for="nickname">Your nickname</label>
+      <input id="nickname" name="nickname" maxlength="24" autocomplete="nickname" required placeholder="Enter a name">
+      <fieldset><legend>Pick an avatar</legend><div id="avatars" class="avatars"></div></fieldset>
+      <label for="code">Room code</label>
+      <div class="inline"><input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6 digits"><button class="primary">Join room</button></div>
+      <div class="entry-actions">
+        <button type="button" id="private">Create private room</button>
+        <button type="button" id="quick">Quick play</button>
+        <button type="button" id="public">Public rooms</button>
+      </div>
+    </form>
+    <div id="directory" hidden></div>
+    <button id="resume" type="button" class="quiet" hidden>Resume your last room</button>
+    <p class="status" id="entry-status" role="status"></p>
+  </div>
+</section>
+<section id="game" hidden>
+  <div class="game-head">
+    <div><span id="room-label"></span><h1 id="phase">Waiting for players</h1></div>
+    <div class="head-actions">
+      <button id="invite" class="quiet">Copy invite</button>
+      <a id="present" class="quiet" target="_blank" rel="noopener">Presenter</a>
+      <button id="leave" class="quiet">Leave</button>
+    </div>
+  </div>
+  <div class="layout">
+    <aside id="players" class="sidebar" aria-label="Players"></aside>
+    <section class="studio" aria-label="Drawing board">
+      <div class="canvas-head"><span id="round"></span><strong id="clue"></strong><output id="timer"></output></div>
+      <div class="canvas-wrap"><canvas id="canvas" width="900" height="600" aria-label="Live drawing canvas"></canvas><div id="overlay" hidden></div></div>
+      <div id="tools" hidden>
+        <div id="palette" class="palette" aria-label="Drawing colors"></div>
+        <div id="actions" class="tool-actions">
+          <button type="button" data-tool="brush" aria-pressed="true">Brush</button>
+          <button type="button" data-tool="fill" aria-pressed="false">Fill</button>
+          <button type="button" data-tool="eraser" aria-pressed="false">Eraser</button>
+          <label>Size <input id="size" type="range" min="2" max="42" value="7"></label>
+          <button id="undo" type="button">Undo</button><button id="clear" type="button">Clear</button>
+        </div>
+      </div>
+      <div id="settings" hidden></div>
+    </section>
+    <section class="chat" aria-label="Guesses and room chat">
+      <h2>Guesses &amp; chat</h2>
+      <div id="messages" role="log" aria-label="Room messages"></div>
+      <form id="message-form" class="inline">
+        <input id="message" maxlength="140" aria-label="Guess or message" autocomplete="off" placeholder="Type a message">
+        <button class="primary">Send</button>
+      </form>
+    </section>
+  </div>
+</section>
+</main>
+<div id="toast" role="status"></div>
+<dialog id="dialog"></dialog>
+<script type="module" src="app.js?v=1"></script>
+</body></html>

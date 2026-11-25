@@ -1,0 +1,24 @@
+name: Draw & Guess game
+on:
+  pull_request:
+    paths: ['DrawAndGuess/**', '.github/workflows/draw-and-guess.yml']
+  push:
+    branches: [main]
+    paths: ['DrawAndGuess/**', '.github/workflows/draw-and-guess.yml']
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: DrawAndGuess
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --check DrawAndGuess/app.js && node --check DrawAndGuess/board.mjs
+      - run: node --test DrawAndGuess/tests/*.test.mjs
+      - run: cmp DrawAndGuess/server/engine.mjs DrawAndGuess/wix-backend/src/game/engine.mjs
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: DrawAndGuess/wix-backend
+      - run: cp .env.example .env.local && npx tsc --noEmit -p . && npx astro build
+        working-directory: DrawAndGuess/wix-backend
