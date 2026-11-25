@@ -1,4 +1,4 @@
-import { inkFrames, inkPath, inkSprite } from './ink-art.mjs?v=2';
+import { inkFrames, inkPath, inkSprite } from './ink-art.mjs?v=3';
 
 const CUSTOM_BASE = 1000;
 const legacy = ['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
@@ -70,7 +70,7 @@ function drawPortrait(id) {
   const [, skin, shadow, background] = colors[color];
   const [, eyePaths, eyeWidth] = eyes[eye];
   const [, mouthPath, mouthFill] = mouths[mouth];
-  return inkFrames(120, 120, ctx => {
+  return inkFrames(120, 120, (ctx, weight) => {
     ctx.fillStyle = background;
     ctx.fillRect(0, 0, 120, 120);
     const path = (shape, fill, width, stroke) => inkPath(ctx, shape, fill, width, stroke);
@@ -78,8 +78,7 @@ function drawPortrait(id) {
       null, 3.4, shadow);
     path('M 31 113 Q 32 93 45 88 H 77 Q 91 93 92 113 Z', shadow, 4.6);
     path('M 22 60 C 23 34 41 27 55 27 Q 59 16 73 14 Q 70 21 73 26 Q 82 22 90 23 Q 84 28 84 32 C 99 41 102 51 101 65 C 100 86 84 99 61 99 C 38 99 21 85 22 60 Z',
-      skin, 4.6);
-    path('M 31 72 q 4 6 11 5 M 79 77 q 7 1 12 -5', null, 3.4, shadow);
+      skin, 4.6 + weight);
     path('M 35 48 q 5 -8 13 -10', null, 3.2, '#fff9e8');
     eyePaths.forEach((shape, index) => {
       const width = eye === 2 && index === 0 ? 7 : eyeWidth;

@@ -90,7 +90,6 @@ export function createBoard(canvas, onChange, canDraw, inkView) {
       }
       lastBoard=[];
     }else lastBoard=board;
-    inkView?.setActive(board.length>0 || local.some(op=>op.kind==='stroke'||op.kind==='fill'));
   }
   function point(event) {
     const rect=canvas.getBoundingClientRect();
@@ -102,7 +101,6 @@ export function createBoard(canvas, onChange, canDraw, inkView) {
     return {kind,id:strokeId,points,width:Math.max(2,size),color:settings.tool==='eraser'?'#ffffff':settings.color};
   }
   function emit(op){
-    inkView?.setActive(true);
     paint(op);onChange(op);
   }
   canvas.addEventListener('pointerdown',event=>{
@@ -128,6 +126,6 @@ export function createBoard(canvas, onChange, canDraw, inkView) {
   canvas.addEventListener('lostpointercapture',release);
   reset();
   return {settings,show,finishPlayback,clearPreview(){
-    finishPlayback(false);lastBoard=[];reset();inkView?.setActive(false);
+    finishPlayback(false);lastBoard=[];reset();
   }};
 }
