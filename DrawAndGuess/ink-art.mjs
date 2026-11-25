@@ -10,7 +10,6 @@ export function inkFrames(width, height, draw, colors, resolution = .5) {
   const raster = paletteRaster(colors, frameWidth);
   const frameImage = ctx.createImageData(frameWidth, frameHeight);
   const pixels = new Uint32Array(frameImage.data.buffer);
-  // Keep the paths anchored. Only the outline weight varies between frames.
   [0, .5, -.35].forEach((weight, frame) => {
     const x = frame * frameWidth;
     ctx.save();
@@ -20,7 +19,7 @@ export function inkFrames(width, height, draw, colors, resolution = .5) {
     ctx.clip();
     ctx.scale(frameWidth / width, frameHeight / height);
     ctx.lineCap = ctx.lineJoin = 'round';
-    draw(ctx, weight);
+    draw(ctx, weight, frame);
     ctx.restore();
     const input = new Uint32Array(ctx.getImageData(x, 0, frameWidth, frameHeight).data.buffer);
     raster(input, pixels);
@@ -63,7 +62,8 @@ export function drawGameArt() {
   }, [ink, '#fff5c2'], .65);
   document.querySelector('.mark').innerHTML = inkSprite(logo,'pencil-ink');
   const titleColors = ['#fff1b2', '#d7b9ff', '#92e3db', '#ffd595'];
-  const title = inkFrames(440, 209, (ctx, weight) => {
+  const offsets = [0, 1, -1];
+  const title = inkFrames(440, 209, (ctx, weight, frame) => {
     ctx.font = '900 99px system-ui, sans-serif';
     ctx.textBaseline = 'alphabetic';
     ctx.lineWidth = 8.5 + weight;
@@ -72,9 +72,10 @@ export function drawGameArt() {
       let x = 15;
       [...line].forEach((letter, index) => {
         const tilt = (index % 3) - 1;
+        const wobble = offsets[(frame + index + row) % 3];
         ctx.save();
-        ctx.translate(x, 83 + row * 90 + tilt * 2.5);
-        ctx.rotate(tilt * .036);
+        ctx.translate(x + wobble * 1.3, 83 + row * 90 + tilt * 2.5 + wobble * 1.7);
+        ctx.rotate(tilt * .036 + wobble * .018);
         ctx.fillStyle = titleColors[(index + row * 2) % titleColors.length];
         ctx.strokeText(letter, 0, 0);
         ctx.fillText(letter, 0, 0);
@@ -93,13 +94,27 @@ export function drawGameArt() {
   }).join('');
 
   const paper = document.createElement('canvas');
-  paper.width = 144;
-  paper.height = 112;
+  paper.width = 256;
+  paper.height = 194;
   const sketch = paper.getContext('2d');
   sketch.lineCap = sketch.lineJoin = 'round';
-  const lines = '#e2d9f3';
-  inkPath(sketch,'M 13 18 l 13 -8 5 16 -10 5 Z M 25 28 q 12 3 8 13 M 97 17 q 6 -9 13 1 q 9 -8 13 2 q 0 6 -13 14 q -12 -9 -13 -17',null,2,lines);
-  inkPath(sketch,'M 53 73 q -6 -31 13 -32 q 19 4 5 15 q -4 5 -18 4 M 62 63 q 16 4 12 17 M 108 81 l 14 -11 10 9 -7 13 -12 -1 Z M 116 76 l 11 12',null,2,lines);
-  inkPath(sketch,'M 18 76 v 14 M 11 83 h 14 M 85 98 v 7 M 81 101 h 8 M 136 43 h .1 M 82 25 h .1 M 34 58 h .1',null,2,lines);
+  const sketches = [
+    [18, 17, -.18, 'M 3 18 l 43 -15 -13 36 -8 -15 Z M 25 24 l 21 -21 M 25 24 l -5 12 -2 -14'],
+    [126, 23, .16, 'M 5 13 q 18 2 36 -1 l -2 19 q -14 12 -31 0 Z M 40 17 q 14 -3 12 7 q -1 8 -12 6 M 1 39 q 24 5 46 0 M 17 8 q -6 -5 0 -10 M 30 8 q 5 -4 0 -10'],
+    [202, 69, -.12, 'M 4 5 l 35 4 3 30 -37 -4 Z M 9 30 l 10 -11 7 8 5 -5 8 10 M 29 13 h 3'],
+    [36, 108, .15, 'M 15 37 q -12 -4 -12 -17 q 0 -16 17 -16 q 19 0 19 15 q 0 12 -12 17 l -12 7 Z M 12 21 h 1 M 20 21 h 1 M 28 21 h 1'],
+    [145, 121, -.23, 'M 1 20 q 11 -16 24 0 q -13 14 -24 0 Z M 24 20 l 12 -9 -1 17 Z M 8 19 h 1 M 16 14 q 5 5 0 11'],
+    [85, 71, .04, 'M 11 0 q 1 10 11 11 q -10 2 -11 12 q -1 -10 -11 -12 q 10 -1 11 -11 Z'],
+    [205, 152, .13, 'M 9 0 v 18 M 0 9 h 18 M 28 24 h 1'],
+    [87, 163, -.12, 'M 0 5 q 12 -7 23 -2 M 5 13 q 8 -5 14 -4'],
+    [219, 27, .05, 'M 0 0 h 1 M 10 8 h 1 M 1 15 h 1']
+  ];
+  for (const [x,y,angle,path] of sketches) {
+    sketch.save();
+    sketch.translate(x,y);
+    sketch.rotate(angle);
+    inkPath(sketch,path,null,2.25,'#ddd1ef');
+    sketch.restore();
+  }
   document.documentElement.style.setProperty('--paper-sketch', 'url(' + paper.toDataURL() + ')');
 }

@@ -1,7 +1,7 @@
 import { API_URL } from './config.js';
 import { createBoard } from './board.mjs?v=4';
-import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=4';
-import { drawGameArt } from './ink-art.mjs?v=3';
+import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=5';
+import { drawGameArt } from './ink-art.mjs?v=4';
 import { createInkView } from './pixel-ink.mjs?v=2';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
