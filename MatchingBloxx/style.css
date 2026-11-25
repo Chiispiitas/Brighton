@@ -106,5 +106,5 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 
 .board-invite{display:flex;align-items:center;gap:14px;color:#3c5d66}.board-invite small{overflow-wrap:anywhere}.join-qr{width:104px;height:104px;image-rendering:pixelated;background:white;border:1px solid #c7c5ad}.board-invite .room-code{margin:0}
 @media(max-width:660px){.board-top{display:block}.board-invite{margin:14px 0}.join-qr{width:94px;height:94px}}
-@media(max-width:350px){.top-button{font-size:.8rem;white-space:nowrap}.brand{font-size:.82rem;white-space:nowrap}.book-icon,.speaker{margin-right:3px}.brand img{width:23px;height:23px;margin-right:4px}.top-button{padding:5px 3px}}
+@media(max-width:400px){.top-button{font-size:.8rem;white-space:nowrap}.brand{font-size:.82rem;white-space:nowrap}.book-icon,.speaker{margin-right:3px}.brand img{width:23px;height:23px;margin-right:4px}.top-button{padding:5px 3px}}
 .wind-note{font-weight:700;margin:10px 0;color:#93451f}.dialog select{width:100%;padding:10px;font:inherit;color:#173745;background:#fffdf2;border:2px solid #85928b;border-radius:5px;min-height:44px}.dialog #send-gust{margin-bottom:12px}
