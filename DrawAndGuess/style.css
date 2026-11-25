@@ -65,6 +65,8 @@ legend{padding:0;margin-bottom:8px}
 .canvas-wrap{position:relative;overflow:hidden;background:#fff;border-block:1px solid var(--line)}
 canvas{display:block;width:100%;aspect-ratio:3/2;height:auto;touch-action:pan-y}
 canvas.drawing{touch-action:none;cursor:crosshair}
+.pixel-source{opacity:0}
+#canvas-ink{position:absolute;inset:0;pointer-events:none;image-rendering:pixelated}
 #overlay{inset:0;position:absolute;display:grid;place-content:center;justify-items:center;gap:12px;padding:15px;background:#fffef7ee;text-align:center;overflow:auto}
 #overlay h2{font-size:clamp(18px,3vw,28px);margin:0}
 #overlay p{margin:0;color:var(--quiet)}
@@ -112,21 +114,22 @@ dialog .entry-actions{margin-top:16px}
 }
 /* Brighton's illustrated game room */
 :root {
-  --paper:#eef0ff; --white:#fff; --ink:#251c45; --quiet:#5a5274;
-  --line:#d6d3ee; --accent:#5138b1; --accent-dark:#392381; --gold:#ffe084;
+  --paper:#f1ebfa; --white:#fffdf9; --ink:#251c45; --quiet:#5a5274;
+  --line:#c6b8e0; --accent:#5138b1; --accent-dark:#392381; --gold:#ffe084;
   background-color:var(--paper);
-  background-image:radial-gradient(#ae9ddd70 1px,transparent 1px);
-  background-size:19px 19px;
+  background-image:var(--paper-sketch,none);
+  background-size:256px auto;
+  image-rendering:pixelated;
 }
 .masthead {
   max-width:none;
   background:#28204d;
-  border-bottom:4px solid #6c50cc;
+  border-bottom:4px solid #8c70d6;
   color:white;
 }
 .brand { color:white; }
 .brand small { color:#d4c8f7; }
-.mark { color:#28204d; transform:rotate(-6deg); }
+.mark { color:#28204d; border-radius:7px; box-shadow:2px 3px #160e2e; }
 .header-controls { display:flex; gap:8px; }
 .header-controls button { color:white; border-color:#8778b5; }
 .header-controls button:hover,.header-controls [aria-pressed="true"] {
@@ -135,9 +138,11 @@ dialog .entry-actions{margin-top:16px}
 }
 .entry { max-width:1030px; }
 .welcome {
-  background:#30245f;
+  background:#382466;
   color:#fff7d8;
-  box-shadow:0 5px 0 #c5bae9;
+  border:2px solid #271744;
+  border-radius:11px;
+  box-shadow:4px 5px 0 #c5bae9;
 }
 .welcome p { color:#e6ddff; }
 .doodles { margin-top:22px; }
@@ -147,7 +152,8 @@ dialog .entry-actions{margin-top:16px}
   background-image:var(--ink-frames);
   background-size:300% 100%;
   background-repeat:no-repeat;
-  animation:ink-frames 630ms steps(1,end) var(--ink-delay,0ms) infinite;
+  image-rendering:pixelated;
+  animation:ink-frames 600ms steps(1,end) var(--ink-delay,0ms) infinite;
 }
 @keyframes ink-frames {
   0% { background-position:0 0; }
@@ -157,12 +163,6 @@ dialog .entry-actions{margin-top:16px}
 .pencil-ink { width:100%;height:100%; }
 .title-ink { width:100%;aspect-ratio:440/209; }
 .doodle-ink { width:84%;height:84%; }
-.ink-active:not(.drawing) { animation:canvas-ink 630ms steps(1,end) infinite; }
-@keyframes canvas-ink {
-  0% { transform:none; }
-  33.333% { transform:translate(.5px,-.5px) rotate(.08deg); }
-  66.667% { transform:translate(-.5px,.5px) rotate(-.08deg); }
-}
 .welcome-avatars {
   display:flex;
   justify-content:center;
@@ -176,7 +176,7 @@ dialog .entry-actions{margin-top:16px}
   height:auto;
   aspect-ratio:1;
   border:4px solid white;
-  border-radius:22px;
+  border-radius:12px;
   box-shadow:0 7px 0 #1d153b8a;
   transform:rotate(-12deg) translateX(5px);
 }
@@ -189,9 +189,9 @@ dialog .entry-actions{margin-top:16px}
   align-items:center;
   gap:clamp(8px,2vw,20px);
   padding:clamp(8px,1.6vw,16px);
-  border:1px solid #dfd5f2;
-  border-radius:12px;
-  background:#f7f2ff;
+  border:2px solid #dfd1f1;
+  border-radius:9px;
+  background:#f2eaf9;
 }
 .avatar-display { display:grid; justify-items:center; gap:6px; }
 .avatar-preview { width:min(100%,126px); aspect-ratio:1; }
@@ -199,8 +199,8 @@ dialog .entry-actions{margin-top:16px}
   width:100%;
   height:100%;
   border:3px solid white;
-  border-radius:16px;
-  box-shadow:0 3px 0 #d8c9f0;
+  border-radius:9px;
+  box-shadow:2px 3px 0 #c9b4e7;
 }
 #avatar-random { min-height:36px; padding:3px 5px; font-size:.76rem; white-space:nowrap; }
 #avatar-random span { font-size:1.05rem; vertical-align:middle; }
@@ -219,11 +219,13 @@ dialog .entry-actions{margin-top:16px}
   font-size:1.65rem;
   line-height:1;
   color:var(--accent-dark);
+  border-radius:5px;
+  box-shadow:1px 2px #ddcff0;
 }
 .avatar-feature button:hover,#avatar-random:hover { background:#ede4ff; }
 .avatar-value { display:block; color:var(--quiet); }
 .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
-.setup,.sidebar,.studio,.chat { box-shadow:0 4px 0 #d2c8eb; }
+.setup,.sidebar,.studio,.chat { border:2px solid var(--line); border-radius:10px; box-shadow:3px 4px 0 #d2c8eb; }
 .game-head {
   background:white;
   border:1px solid var(--line);
@@ -231,11 +233,11 @@ dialog .entry-actions{margin-top:16px}
   border-radius:13px;
   padding:11px 15px;
 }
-.canvas-head { background:#eee6ff; min-height:52px; }
+.canvas-head { background:#e2d2f7; min-height:52px; }
 #timer { background:var(--gold); color:#34245f; }
 .canvas-wrap { border-color:#bcb0df; }
 #tools { background:#f7f2ff; }
-.palette button { border-radius:50%; width:26px; height:26px; }
+.palette button { border-radius:4px; width:26px; height:26px; }
 .player { grid-template-columns:36px minmax(0,1fr) auto; background:#f9f6ff; }
 .player .avatar-art { width:36px;height:36px; }
 .player:disabled { opacity:1; }
@@ -278,5 +280,5 @@ dialog .entry-actions{margin-top:16px}
   .game-head { padding:9px; }
 }
 @media(prefers-reduced-motion:reduce) {
-  .ink-sprite,.ink-active:not(.drawing) { animation:none; }
+  .ink-sprite { animation:none; }
 }

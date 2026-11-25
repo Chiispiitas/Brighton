@@ -1,7 +1,8 @@
 import { API_URL } from './config.js';
-import { createBoard } from './board.mjs?v=2';
-import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=2';
-import { drawGameArt } from './ink-art.mjs';
+import { createBoard } from './board.mjs?v=3';
+import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=3';
+import { drawGameArt } from './ink-art.mjs?v=2';
+import { createInkView } from './pixel-ink.mjs';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
@@ -16,7 +17,7 @@ const avatarKey=key+'-avatar';
 const tokens=new Map();
 const canvas=$('#canvas'), dialog=$('#dialog');
 const canDraw=()=>!screen&&state?.phase==='draw'&&state.me===state.drawer&&!!state.me;
-const board=createBoard(canvas,queueInk,canDraw);
+const board=createBoard(canvas,queueInk,canDraw,createInkView(canvas,$('#canvas-ink'),colors));
 const roomLink=present=>new URL('?room='+room.code+(present?'&screen=1':''),location.href).href;
 function stored(){try{return JSON.parse(localStorage.getItem(key));}catch{return null;}}
 function notice(message){$('#toast').textContent=message;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').textContent='',3600);}
@@ -178,6 +179,7 @@ $('#invite').onclick=async()=>{
 };
 function exitRoom(){
   clearTimeout(pollTimer);pollGeneration++;room=null;state=null;ready=false;screen=false;
+  board.clearPreview();
   document.body.classList.remove('presenter');
   $('#game').hidden=true;$('#entry').hidden=false;$('#resume').hidden=!stored()?.token;
   history.replaceState(null,'',location.pathname);
