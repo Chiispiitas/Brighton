@@ -1,6 +1,7 @@
 import { API_URL } from './config.js';
-import { createBoard } from './board.mjs';
-import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs';
+import { createBoard } from './board.mjs?v=2';
+import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs?v=2';
+import { drawGameArt } from './ink-art.mjs';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
@@ -9,7 +10,7 @@ const query=new URLSearchParams(location.search);
 let screen=query.get('screen')==='1';
 const initialCode=query.get('room')||'';
 let room=null,state=null,avatar=defaultAvatar,clockOffset=0,pollTimer,toastTimer,pollGeneration=0;
-let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0;
+let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0,playersKey='';
 const muted=new Set(), key='brighton-draw-guess';
 const avatarKey=key+'-avatar';
 const tokens=new Map();
@@ -90,6 +91,7 @@ $('#avatar-editor').onclick=event=>{
   renderAvatar();
 };
 $('.welcome-avatars').innerHTML=sampleAvatars.map(avatarImage).join('');
+drawGameArt();
 renderAvatar();
 $('#code').value=/^\d{6}$/.test(initialCode)?initialCode:'';
 $('#resume').hidden=!stored()?.token;
@@ -102,7 +104,7 @@ async function api(type,fields={},target=room,id=crypto.randomUUID()){
   return data;
 }
 function configure(next,data){
-  room=next;state=null;ink=[];ready=false;settingsKey='';lastMessageId=0;inkTurn=0;
+  room=next;state=null;ink=[];ready=false;settingsKey='';lastMessageId=0;inkTurn=0;playersKey='';
   muted.clear();board.clearPreview();
   document.body.classList.toggle('presenter',next.screen===true);
   history.replaceState(null,'',roomLink(next.screen===true));
@@ -196,13 +198,16 @@ function adopt(data){
     ink=[];inkTurn=data.turnId;board.clearPreview();
     if(prior)playSound('turn');
   }
-  if(data.phase!=='draw')ink=[];
+  if(data.phase!=='draw'){ink=[];board.finishPlayback();}
   if(data.phase==='reveal'&&prior?.phase==='draw')playSound('reveal');
   state=data;clockOffset=data.serverTime-Date.now();
   if(!screen&&!data.me&&ready){exitRoom();notice('Your seat in this room has ended.');return;}
   if(!prior||prior.version!==data.version||prior.phase!==data.phase)render();
   else renderClock();
-  if(!prior||prior.boardVersion!==data.boardVersion||prior.turnId!==data.turnId)board.show(data.board,ink);
+  if(!prior||prior.boardVersion!==data.boardVersion||prior.turnId!==data.turnId){
+    const watchStroke=data.phase==='draw'&&prior?.turnId===data.turnId&&!canDraw();
+    board.show(data.board,ink,watchStroke);
+  }
 }
 async function schedulePoll(generation){
   if(generation!==pollGeneration||!room)return;
@@ -287,6 +292,9 @@ function renderClock(){
 }
 function renderPlayers(){
   const sorted=[...state.players].sort((a,b)=>b.score-a.score);
+  const nextKey=JSON.stringify([state.drawer,state.me,state.settings.capacity,sorted]);
+  if(playersKey===nextKey)return;
+  playersKey=nextKey;
   $('#players').innerHTML=`<h2>Players · ${sorted.length}/${state.settings.capacity}</h2>`+sorted.map((p,i)=>{
     const caption=p.id===state.drawer?'Drawing':p.solved?'Guessed':p.id===state.me?'You':'';
     return `<button class="player ${p.solved?'solved':''} ${p.id===state.drawer?'artist':''}" ${screen||p.id===state.me?'disabled':''} data-player="${esc(p.id)}">${avatarImage(p.avatar)}<span><b>${i+1}. ${esc(p.name)}</b>${caption?`<small>${caption}</small>`:''}</span><span class="points">${p.score}</span></button>`;

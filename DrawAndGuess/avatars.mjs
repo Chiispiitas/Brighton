@@ -1,3 +1,5 @@
+import { inkFrames, inkPath, inkSprite, wiggleInk } from './ink-art.mjs';
+
 const CUSTOM_BASE = 1000;
 const legacy = ['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
 const colors = [
@@ -68,48 +70,37 @@ function drawPortrait(id) {
   const [, skin, shadow, background] = colors[color];
   const [, eyePaths, eyeWidth] = eyes[eye];
   const [, mouthPath, mouthFill] = mouths[mouth];
-  const canvas = document.createElement('canvas');
-  canvas.width = canvas.height = 180;
-  const ctx = canvas.getContext('2d');
-  ctx.scale(1.5, 1.5);
-  ctx.lineCap = ctx.lineJoin = 'round';
-  const ink = '#261b46';
-  const path = (shape, fill, width = 0, stroke = ink) => {
-    const drawing = new Path2D(shape);
-    if (fill) {
-      ctx.fillStyle = fill;
-      ctx.fill(drawing);
-    }
-    if (width) {
-      ctx.lineWidth = width;
-      ctx.strokeStyle = stroke;
-      ctx.stroke(drawing);
-    }
-  };
-  path('M 0 0 H 120 V 120 H 0 Z', background);
-  path('M 17 77 V 89 M 11 83 H 23 M 101 28 V 42 M 94 35 H 108 M 25 30 h .1 M 96 85 h .1',
-    null, 2.6, shadow);
-  path('M 31 113 Q 32 93 45 88 H 77 Q 91 93 92 113 Z', shadow, 3.8);
-  path('M 22 60 C 23 34 41 27 55 27 Q 59 16 73 14 Q 70 21 73 26 Q 82 22 90 23 Q 84 28 84 32 C 99 41 102 51 101 65 C 100 86 84 99 61 99 C 38 99 21 85 22 60 Z',
-    skin, 3.8);
-  path('M 31 72 q 4 6 11 5 M 79 77 q 7 1 12 -5', null, 3, shadow);
-  path('M 35 48 q 5 -8 13 -10', null, 3, '#ffffffa0');
-  eyePaths.forEach((shape, index) => {
-    const width = eye === 2 && index === 0 ? 7 : eyeWidth;
-    path(shape, eye === 3 && index === 0 ? '#fff' : eye === 7 ? '#fff3a7' : null, width);
+  return inkFrames(120, 120, (ctx, frame) => {
+    ctx.fillStyle = background;
+    ctx.fillRect(0, 0, 120, 120);
+    const path = (shape, fill, width, stroke) => inkPath(ctx, shape, fill, width, stroke);
+    ctx.save();
+    wiggleInk(ctx, frame, 1);
+    path('M 17 77 V 89 M 11 83 H 23 M 101 28 V 42 M 94 35 H 108 M 25 30 h .1 M 96 85 h .1',
+      null, 2.6, shadow);
+    ctx.restore();
+    wiggleInk(ctx, frame);
+    path('M 31 113 Q 32 93 45 88 H 77 Q 91 93 92 113 Z', shadow, 3.8);
+    path('M 22 60 C 23 34 41 27 55 27 Q 59 16 73 14 Q 70 21 73 26 Q 82 22 90 23 Q 84 28 84 32 C 99 41 102 51 101 65 C 100 86 84 99 61 99 C 38 99 21 85 22 60 Z',
+      skin, 3.8);
+    path('M 31 72 q 4 6 11 5 M 79 77 q 7 1 12 -5', null, 3, shadow);
+    path('M 35 48 q 5 -8 13 -10', null, 3, '#ffffffa0');
+    wiggleInk(ctx, frame, 2, .55);
+    eyePaths.forEach((shape, index) => {
+      const width = eye === 2 && index === 0 ? 7 : eyeWidth;
+      path(shape, eye === 3 && index === 0 ? '#fff' : eye === 7 ? '#fff3a7' : null, width);
+    });
+    path(mouthPath, mouthFill, 2.8);
   });
-  path(mouthPath, mouthFill, 2.8);
-  return canvas.toDataURL();
 }
 
 export function avatarImage(id) {
-  let src;
   if (customAvatar(id)) {
+    if (portraits.size >= 96 && !portraits.has(id)) portraits.delete(portraits.keys().next().value);
     if (!portraits.has(id)) portraits.set(id, drawPortrait(id));
-    src = portraits.get(id);
-  } else {
-    const name = Number.isInteger(id) ? legacy[id] : undefined;
-    src = 'assets/avatars/' + (name || legacy[0]) + '.webp';
+    return inkSprite(portraits.get(id), 'avatar-art', -(id % 7) * 80);
   }
+  const name = Number.isInteger(id) ? legacy[id] : undefined;
+  const src = 'assets/avatars/' + (name || legacy[0]) + '.webp';
   return '<img class="avatar-art" src="' + src + '" alt="" width="36" height="36" draggable="false">';
 }

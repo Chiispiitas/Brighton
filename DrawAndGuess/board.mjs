@@ -2,6 +2,8 @@ export function createBoard(canvas, onChange, canDraw) {
   const ctx=canvas.getContext('2d',{willReadFrequently:true});
   const W=canvas.width,H=canvas.height;
   let pointer=null, previous=null, strokeId=null, lastBoard=[];
+  let pending=[], remaining=0, frame=0, deadline=0, lastFrame=0;
+  const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
   const settings={tool:'brush',color:'#182630',size:7,pressure:false};
   const scale=(x,y)=>[Math.round(x*W/1000),Math.round(y*H/1000)];
   function fill(x,y,color) {
@@ -37,10 +39,47 @@ export function createBoard(canvas, onChange, canDraw) {
   function reset(){
     ctx.fillStyle='#ffffff';ctx.fillRect(0,0,W,H);
   }
-  function show(board,local=[]){
+  function paintPending(budget) {
+    while (budget && pending.length) {
+      const next=pending[0], end=next.op.points.length/2;
+      const steps=Math.min(budget,end-next.drawn);
+      const start=Math.max(0,next.drawn-1);
+      next.drawn+=steps;
+      if(start===0&&next.drawn===end)paint(next.op);
+      else paint({...next.op,points:next.op.points.slice(start*2,next.drawn*2)});
+      remaining-=steps;
+      budget-=steps;
+      if(next.drawn===end)pending.shift();
+    }
+  }
+  function finishPlayback(flush=true) {
+    if(frame)cancelAnimationFrame(frame);
+    if(flush)paintPending(remaining);
+    pending=[];remaining=0;frame=0;deadline=0;lastFrame=0;
+  }
+  function play(now) {
+    if(reducedMotion.matches){finishPlayback();return;}
+    if(!deadline){deadline=now+240;lastFrame=now-16;}
+    const share=Math.min(1,(now-lastFrame)/Math.max(1,deadline-lastFrame));
+    paintPending(Math.ceil(remaining*share));
+    lastFrame=now;
+    if(remaining)frame=requestAnimationFrame(play);
+    else finishPlayback();
+  }
+  function show(board,local=[],animate=false){
     const isAppend=local.length===0 && board.length>=lastBoard.length && lastBoard.every((op,i)=>op.id===board[i]?.id&&op.points.length===board[i]?.points.length);
-    if(!isAppend)reset();
-    board.slice(isAppend?lastBoard.length:0).forEach(paint);
+    const added=board.slice(isAppend?lastBoard.length:0);
+    if(isAppend&&animate&&!reducedMotion.matches){
+      for(const op of added){
+        pending.push({op,drawn:0});
+        remaining+=op.points.length/2;
+      }
+      if(remaining&&!frame)frame=requestAnimationFrame(play);
+    }else{
+      finishPlayback(isAppend);
+      if(!isAppend)reset();
+      added.forEach(paint);
+    }
     if(local.length){
       for(const op of local){
         if(op.kind==='clear'){reset();continue;}
@@ -49,6 +88,7 @@ export function createBoard(canvas, onChange, canDraw) {
       }
       lastBoard=[];
     }else lastBoard=board;
+    canvas.classList.toggle('ink-active',board.length>0);
   }
   function point(event) {
     const rect=canvas.getBoundingClientRect();
@@ -84,5 +124,7 @@ export function createBoard(canvas, onChange, canDraw) {
   canvas.addEventListener('pointercancel',release);
   canvas.addEventListener('lostpointercapture',release);
   reset();
-  return {settings,show,clearPreview(){lastBoard=[];reset();}};
+  return {settings,show,finishPlayback,clearPreview(){
+    finishPlayback(false);lastBoard=[];reset();canvas.classList.remove('ink-active');
+  }};
 }
