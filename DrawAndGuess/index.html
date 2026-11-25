@@ -10,7 +10,7 @@
 <meta property="og:description" content="A live drawing game for up to 36 players.">
 <meta property="og:url" content="https://exams.bebrighton.net/DrawAndGuess/">
 <meta name="theme-color" content="#f4f4ed">
-<link rel="stylesheet" href="style.css?v=5">
+<link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 <header class="masthead">
@@ -60,11 +60,8 @@
       <div class="inline"><input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6 digits"><button class="primary">Join room</button></div>
       <div class="entry-actions">
         <button type="button" id="private">Create private room</button>
-        <button type="button" id="quick">Quick play</button>
-        <button type="button" id="public">Public rooms</button>
       </div>
     </form>
-    <div id="directory" hidden></div>
     <button id="resume" type="button" class="quiet" hidden>Resume your last room</button>
     <p class="status" id="entry-status" role="status"></p>
   </div>
@@ -112,5 +109,5 @@
 </main>
 <div id="toast" role="status"></div>
 <dialog id="dialog"></dialog>
-<script type="module" src="app.js?v=7"></script>
+<script type="module" src="app.js?v=8"></script>
 </body></html>
