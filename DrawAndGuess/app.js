@@ -140,39 +140,15 @@ function join(code){
   const next={code,token,screen:false};
   connect(previous?.code===code?'state':'join',next,{name,avatar});
 }
-function create(listed){
+function create(){
   const name=nickname();if(!name)return;
   const code=String(100000+crypto.getRandomValues(new Uint32Array(1))[0]%900000);
   const token=newToken();
-  connect('create',{code,token,screen:false},{name,avatar,listed});
+  connect('create',{code,token,screen:false},{name,avatar});
 }
 $('#entry-form').onsubmit=event=>{event.preventDefault();join($('#code').value.trim());};
-$('#private').onclick=()=>create(false);
+$('#private').onclick=create;
 $('#resume').onclick=()=>{const previous=stored();if(previous)connect('state',previous);};
-async function directory(){
-  $('#directory').hidden=false;$('#directory').innerHTML='<p>Looking for open rooms…</p>';
-  try{
-    const {rooms}=await api('list',{},null);
-    $('#directory').innerHTML=(rooms.length?
-      rooms.map(r=>`<button type="button" data-room="${esc(r.code)}">${esc(r.name)} · ${r.players}/${r.capacity} · ${r.language==='es'?'Spanish':'English'}${r.inProgress?' · In progress':''}</button>`).join('')
-      :'<p>No public rooms are open right now.</p>')+'<button type="button" id="new-public">Create public room</button>';
-  }catch(error){$('#directory').textContent=error.message;}
-}
-$('#public').onclick=directory;
-$('#quick').onclick=async()=>{
-  if(!nickname()||ready)return;
-  try{
-    const {rooms}=await api('list',{},null);
-    if(ready)return;
-    if(rooms.length)join(rooms[0].code);
-    else await directory();
-  }catch(error){$('#entry-status').textContent=error.message;}
-};
-$('#directory').onclick=event=>{
-  const button=event.target.closest('button');if(!button)return;
-  if(button.id==='new-public')create(true);
-  else if(button.dataset.room)join(button.dataset.room);
-};
 $('#invite').onclick=async()=>{
   try{await navigator.clipboard.writeText(roomLink(false));notice('Invite link copied.');}
   catch{showDialog(`<h2>Invite link</h2><input aria-label="Invite link" readonly value="${esc(roomLink(false))}">`);}

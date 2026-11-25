@@ -40,9 +40,6 @@ legend{padding:0;margin-bottom:8px}
 .inline input{flex:1}
 .entry-actions{margin-top:6px}
 .status{min-height:1.25em;color:#8c392b}
-#directory{margin-top:18px;display:grid;gap:8px}
-#directory p{margin:0}
-#directory button{text-align:left}
 #resume{margin-top:14px}
 .game-head{display:flex;gap:15px;justify-content:space-between;align-items:center;margin-bottom:15px}
 .game-head h1{font-size:clamp(23px,3vw,38px);line-height:1.05;margin:3px 0}
