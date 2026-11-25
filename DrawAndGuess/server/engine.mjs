@@ -251,8 +251,8 @@ export function publicLobby(state) {
   if(!state.listed||!state.host||state.phase==='finished'||playing(state).length>=state.settings.capacity) return null;
   return {code:state.code,name:state.name,players:playing(state).length,capacity:state.settings.capacity,language:state.settings.language,inProgress:state.phase!=='lobby'};
 }
-export function view(state,key,{screen=false,boardVersion=-1,now=Date.now()}={}) {
-  const actor=screen?null:playing(state).find(p=>p.key===key);
+export function view(state,key,{boardVersion=-1,now=Date.now()}={}) {
+  const actor=playing(state).find(p=>p.key===key);
   const host=!!actor&&key===state.host;
   const artist=!!actor&&actor.id===state.drawer;
   const {custom,...publicSettings}=state.settings;
