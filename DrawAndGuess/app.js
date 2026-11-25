@@ -2,14 +2,18 @@ import { API_URL } from './config.js';
 import { createBoard } from './board.mjs';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const avatars=['🐸','🦊','🐱','🐼','🦉','🐙','🐢','🐝','🦖','🐳','🦋','🦝'];
+const avatars=['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
+function avatarImage(index){
+  const name=avatars[index] || avatars[0];
+  return '<img class="avatar-art" src="assets/avatars/'+name+'.webp" alt="" width="36" height="36" draggable="false">';
+}
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
 const colorNames=['Ink','White','Coral','Orange','Gold','Green','Teal','Blue','Purple','Pink','Brown','Gray'];
 const query=new URLSearchParams(location.search);
 let screen=query.get('screen')==='1';
 const initialCode=query.get('room')||'';
 let room=null,state=null,avatar=0,clockOffset=0,pollTimer,toastTimer,pollGeneration=0;
-let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0,sound=false;
+let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0;
 const muted=new Set(), key='brighton-draw-guess';
 const tokens=new Map();
 const canvas=$('#canvas'), dialog=$('#dialog');
@@ -23,22 +27,52 @@ function showDialog(html){
   dialog.innerHTML=html+'<form method="dialog" class="entry-actions"><button>Close</button></form>';
   if(!dialog.open)dialog.showModal();
 }
-function tone(){
-  if(!sound)return;
+const soundButton=$('#sound');
+let audioContext=null;
+let soundOn=false;
+const cueNames=['turn','correct','reveal'];
+const soundBuffers=new Map();
+async function switchSound(){
+  soundOn=!soundOn;
+  soundButton.setAttribute('aria-pressed',String(soundOn));
+  soundButton.textContent=soundOn?'Sound on':'Sound off';
+  if(!soundOn)return;
   try{
-    const context=new AudioContext(),osc=context.createOscillator(),gain=context.createGain();
-    osc.frequency.value=660;gain.gain.value=.04;osc.connect(gain).connect(context.destination);
-    osc.start();osc.stop(context.currentTime+.1);osc.onended=()=>context.close();
-  }catch {}
+    audioContext ||= new AudioContext();
+    await audioContext.resume();
+    await Promise.all(cueNames.filter(name=>!soundBuffers.has(name)).map(async name=>{
+      const response=await fetch('assets/audio/'+name+'.mp3');
+      if(!response.ok)throw new Error('Audio unavailable');
+      soundBuffers.set(name,await audioContext.decodeAudioData(await response.arrayBuffer()));
+    }));
+    if(soundOn)playSound('turn');
+  }catch{
+    soundOn=false;
+    soundButton.setAttribute('aria-pressed','false');
+    soundButton.textContent='Sound off';
+    notice('Game sound could not load.');
+  }
 }
-$('#help').onclick=()=>showDialog('<h2>How to play</h2><ol><li>Join a room or invite your group.</li><li>When it’s your turn, choose a word and draw it.</li><li>Everyone else types guesses. Faster correct guesses earn more points. Artists gain 50 points per correct guess.</li><li>After everyone has drawn in each round, the highest score wins.</li></ol><p>While drawing, press B for brush, E for eraser, F for fill, or Ctrl+Z to undo.</p><label><input id="sound-toggle" type="checkbox"> Play turn and guess sounds</label><br><label><input id="pressure-toggle" type="checkbox"> Use pen pressure for brush size</label>');
+function playSound(name){
+  const buffer=soundBuffers.get(name);
+  if(!soundOn||!buffer||audioContext?.state!=='running')return;
+  const source=audioContext.createBufferSource();
+  const volume=audioContext.createGain();
+  source.buffer=buffer;
+  volume.gain.value=.38;
+  source.connect(volume).connect(audioContext.destination);
+  source.start();
+}
+soundButton.onclick=switchSound;
+$('#help').onclick=()=>{
+  showDialog('<h2>How to play</h2><ol><li>Join a room or invite your group. You can join a game in progress.</li><li>When it’s your turn, choose a word and draw it.</li><li>Everyone else types guesses. Faster correct guesses earn more points. Artists gain 50 points per correct guess.</li><li>After everyone has drawn in each round, the highest score wins.</li></ol><p>While drawing, press B for brush, E for eraser, F for fill, or Ctrl+Z to undo.</p><label><input id="pressure-toggle" type="checkbox"> Use pen pressure for brush size</label>');
+  $('#pressure-toggle').checked=board.settings.pressure;
+};
 dialog.addEventListener('change',event=>{
-  if(event.target.id==='sound-toggle')sound=event.target.checked;
   if(event.target.id==='pressure-toggle')board.settings.pressure=event.target.checked;
 });
-$('#help').addEventListener('click',()=>{$('#sound-toggle').checked=sound;$('#pressure-toggle').checked=board.settings.pressure;});
 function renderAvatars(){
-  $('#avatars').innerHTML=avatars.map((icon,i)=>`<button type="button" data-avatar="${i}" aria-label="${['Frog','Fox','Cat','Panda','Owl','Octopus','Turtle','Bee','Dinosaur','Whale','Butterfly','Raccoon'][i]}" aria-pressed="${i===avatar}">${icon}</button>`).join('');
+  $('#avatars').innerHTML=avatars.map((icon,i)=>`<button type="button" data-avatar="${i}" aria-label="Choose ${icon} avatar" aria-pressed="${i===avatar}">${avatarImage(i)}</button>`).join('');
 }
 $('#avatars').onclick=event=>{
   const button=event.target.closest('[data-avatar]');if(!button)return;
@@ -105,7 +139,7 @@ async function directory(){
   try{
     const {rooms}=await api('list',{},null);
     $('#directory').innerHTML=(rooms.length?
-      rooms.map(r=>`<button type="button" data-room="${esc(r.code)}">${esc(r.name)} · ${r.players}/${r.capacity} · ${r.language==='es'?'Spanish':'English'}</button>`).join('')
+      rooms.map(r=>`<button type="button" data-room="${esc(r.code)}">${esc(r.name)} · ${r.players}/${r.capacity} · ${r.language==='es'?'Spanish':'English'}${r.inProgress?' · In progress':''}</button>`).join('')
       :'<p>No public rooms are open right now.</p>')+'<button type="button" id="new-public">Create public room</button>';
   }catch(error){$('#directory').textContent=error.message;}
 }
@@ -147,9 +181,11 @@ function adopt(data){
   if(data.boardVersion===state?.boardVersion && !data.board)data.board=state.board;
   data.board ||= [];
   if(state?.turnId!==data.turnId){
-    ink=[];inkTurn=data.turnId;board.clearPreview();tone();
+    ink=[];inkTurn=data.turnId;board.clearPreview();
+    if(prior)playSound('turn');
   }
   if(data.phase!=='draw')ink=[];
+  if(data.phase==='reveal'&&prior?.phase==='draw')playSound('reveal');
   state=data;clockOffset=data.serverTime-Date.now();
   if(!screen&&!data.me&&ready){exitRoom();notice('Your seat in this room has ended.');return;}
   if(!prior||prior.version!==data.version||prior.phase!==data.phase)render();
@@ -241,7 +277,7 @@ function renderPlayers(){
   const sorted=[...state.players].sort((a,b)=>b.score-a.score);
   $('#players').innerHTML=`<h2>Players · ${sorted.length}/${state.settings.capacity}</h2>`+sorted.map((p,i)=>{
     const caption=p.id===state.drawer?'Drawing':p.solved?'Guessed':p.id===state.me?'You':'';
-    return `<button class="player ${p.solved?'solved':''} ${p.id===state.drawer?'artist':''}" ${screen||p.id===state.me?'disabled':''} data-player="${esc(p.id)}"><span aria-hidden="true">${avatars[p.avatar]}</span><span><b>${i+1}. ${esc(p.name)}</b>${caption?`<small>${caption}</small>`:''}</span><span class="points">${p.score}</span></button>`;
+    return `<button class="player ${p.solved?'solved':''} ${p.id===state.drawer?'artist':''}" ${screen||p.id===state.me?'disabled':''} data-player="${esc(p.id)}">${avatarImage(p.avatar)}<span><b>${i+1}. ${esc(p.name)}</b>${caption?`<small>${caption}</small>`:''}</span><span class="points">${p.score}</span></button>`;
   }).join('');
 }
 $('#players').onclick=event=>{
@@ -268,7 +304,7 @@ function renderMessages(){
   area.innerHTML=messages.map(m=>`<div class="message ${esc(m.kind)}">${m.name?`<b>${esc(m.name)}:</b> `:''}${esc(m.text)}</div>`).join('');
   if(nearEnd||!lastMessageId)area.scrollTop=area.scrollHeight;
   const last=state.messages.at(-1);
-  if(last?.id>lastMessageId&&last.kind==='solved')tone();
+  if(last?.id>lastMessageId&&last.kind==='solved'&&last.player===state.me)playSound('correct');
   lastMessageId=last?.id||0;
 }
 $('#message-form').onsubmit=async event=>{
@@ -302,6 +338,7 @@ function renderOverlay(){
   const overlay=$('#overlay');
   $('#phase').textContent=text[phase];
   overlay.hidden=phase==='draw';
+  overlay.classList.toggle('turn-reveal',phase==='reveal');
   if(phase==='lobby')overlay.innerHTML=`<h2>Room ${esc(state.code)}</h2><p>${state.players.length} of ${state.settings.capacity} seats filled</p>`;
   else if(phase==='choose')overlay.innerHTML=state.options?
     '<h2>Choose a word</h2><div class="choices">'+state.options.map((word,i)=>`<button data-word="${i}">${esc(word)}</button>`).join('')+'</div>'

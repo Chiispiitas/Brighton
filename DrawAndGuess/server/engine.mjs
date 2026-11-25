@@ -157,13 +157,15 @@ export function command(current, key, input, now=Date.now(), random=Math.random)
   } else if(type==='join') {
     if(actor) return current;
     requireThat(!state.bans.includes(key),'You were banned from this room.',403);
-    requireThat(state.phase==='lobby','This game has already started.',409);
+    requireThat(state.host && playing(state).length, 'This room is closed.', 410);
     requireThat(playing(state).length<state.settings.capacity,'This room is full.',409);
     requireThat(state.players.length<160,'This lobby has reached its join limit.',409);
     const name=plain(input.name,24);
     requireThat(name,'Enter a nickname.');
     requireThat(!playing(state).some(p=>normalized(p.name)===normalized(name)),'That nickname is already in use.');
-    state.players.push({id:'p'+state.nextPlayer++,key,name,avatar:between(input.avatar,0,0,11),score:0});
+    const player = { id:'p'+state.nextPlayer++, key, name, avatar:between(input.avatar,0,0,11), score:0 };
+    state.players.push(player);
+    if (['choose','draw','reveal'].includes(state.phase)) state.queue.push(player.id);
     addMessage(state,{kind:'system',text:name+' joined.'});
   } else {
     requireThat(actor,'Join this room first.',403);
@@ -244,8 +246,8 @@ export function command(current, key, input, now=Date.now(), random=Math.random)
   return state;
 }
 export function publicLobby(state) {
-  if(!state.listed||state.phase!=='lobby'||playing(state).length>=state.settings.capacity) return null;
-  return {code:state.code,name:state.name,players:playing(state).length,capacity:state.settings.capacity,language:state.settings.language};
+  if(!state.listed||!state.host||state.phase==='finished'||playing(state).length>=state.settings.capacity) return null;
+  return {code:state.code,name:state.name,players:playing(state).length,capacity:state.settings.capacity,language:state.settings.language,inProgress:state.phase!=='lobby'};
 }
 export function view(state,key,{screen=false,boardVersion=-1,now=Date.now()}={}) {
   const actor=screen?null:playing(state).find(p=>p.key===key);
