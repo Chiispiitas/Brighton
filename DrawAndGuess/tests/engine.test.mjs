@@ -33,11 +33,10 @@ test('only the drawer receives choices or the answer and public projections omit
   const initial=choosing();
   assert.deepEqual(view(initial,'host').options,['Sun','Moon']);
   for(const key of ['k2','unknown'])assert.equal(view(initial,key).options,undefined);
-  assert.equal(view(initial,'host',{screen:true}).options,undefined);
   assert.throws(()=>step(initial,'k2','choose',{index:0}),/artist/);
   const active=step(initial,'host','choose',{index:0});
   assert.equal(view(active,'host').answer,'Sun');
-  const snapshot=view(active,'host',{screen:true,now:startAt});
+  const snapshot=view(active,'unknown',{now:startAt});
   assert.equal(snapshot.answer,undefined);
   assert.equal(snapshot.settings.custom,undefined);
   assert.equal(snapshot.mask,'_ _ _');
@@ -142,5 +141,4 @@ test('avatar options cycle independently, and custom and legacy portraits reach 
   state=step(state,'invalid','join',{name:'Invalid',avatar:'1000'});
   const expected=[hostAvatar,guestAvatar,3,0];
   assert.deepEqual(view(state,'legacy').players.map(player=>player.avatar),expected);
-  assert.deepEqual(view(state,'presenter',{screen:true}).players.map(player=>player.avatar),expected);
 });

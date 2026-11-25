@@ -8,7 +8,6 @@ const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
 const colorNames=['Ink','White','Coral','Orange','Gold','Green','Teal','Blue','Purple','Pink','Brown','Gray'];
 const query=new URLSearchParams(location.search);
-let screen=query.get('screen')==='1';
 const initialCode=query.get('room')||'';
 let room=null,state=null,avatar=defaultAvatar,clockOffset=0,pollTimer,toastTimer,pollGeneration=0;
 let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0,playersKey='';
@@ -16,9 +15,9 @@ const muted=new Set(), key='brighton-draw-guess';
 const avatarKey=key+'-avatar';
 const tokens=new Map();
 const canvas=$('#canvas'), dialog=$('#dialog');
-const canDraw=()=>!screen&&state?.phase==='draw'&&state.me===state.drawer&&!!state.me;
+const canDraw=()=>state?.phase==='draw'&&state.me===state.drawer&&!!state.me;
 const board=createBoard(canvas,queueInk,canDraw,createInkView(canvas,$('#canvas-ink'),colors));
-const roomLink=present=>new URL('?room='+room.code+(present?'&screen=1':''),location.href).href;
+const roomLink=()=>new URL('?room='+room.code,location.href).href;
 function stored(){try{return JSON.parse(localStorage.getItem(key));}catch{return null;}}
 function notice(message){$('#toast').textContent=message;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').textContent='',3600);}
 function newToken(){return [...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');}
@@ -112,7 +111,7 @@ $('#code').value=/^\d{6}$/.test(initialCode)?initialCode:'';
 $('#resume').hidden=!stored()?.token;
 async function api(type,fields={},target=room,id=crypto.randomUUID()){
   const response=await fetch(API_URL,{method:'POST',headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({type,code:target?.code,token:target?.token,screen:target?.screen===true,requestId:id,...fields}),
+    body:JSON.stringify({type,code:target?.code,token:target?.token,requestId:id,...fields}),
     signal:AbortSignal.timeout(18000),cache:'no-store'});
   const data=await response.json();
   if(!response.ok){const error=new Error(data.error||'Room connection failed.');error.status=response.status;throw error;}
@@ -121,12 +120,9 @@ async function api(type,fields={},target=room,id=crypto.randomUUID()){
 function configure(next,data){
   room=next;state=null;ink=[];ready=false;settingsKey='';lastMessageId=0;inkTurn=0;playersKey='';
   muted.clear();board.clearPreview();
-  document.body.classList.toggle('presenter',next.screen===true);
-  history.replaceState(null,'',roomLink(next.screen===true));
-  if(!next.screen)try{localStorage.setItem(key,JSON.stringify(next));}catch{}
+  history.replaceState(null,'',roomLink());
+  try{localStorage.setItem(key,JSON.stringify(next));}catch{}
   $('#entry').hidden=true;$('#game').hidden=false;
-  $('#invite').hidden=next.screen===true;
-  $('#present').href=roomLink(true);
   pollGeneration++;
   adopt(data);
   ready=true;
@@ -138,7 +134,7 @@ async function connect(type,next,fields={}){
   $('#entry').inert=true;
   try{
     const data=await api(type,fields,next);
-    if(!next.screen&&!data.me)throw new Error('This device is no longer in the room.');
+    if(!data.me)throw new Error('This device is no longer in the room.');
     $('#entry-status').textContent='';
     configure(next,data);
   }catch(error){$('#entry-status').textContent=error.message;}
@@ -151,31 +147,29 @@ function join(code){
   const previous=stored();
   const token=previous?.code===code?previous.token:(tokens.get(code)||newToken());
   tokens.set(code,token);
-  const next={code,token,screen:false};
+  const next={code,token};
   connect(previous?.code===code?'state':'join',next,{name,avatar});
 }
 function create(){
   const name=nickname();if(!name)return;
   const code=String(100000+crypto.getRandomValues(new Uint32Array(1))[0]%900000);
   const token=newToken();
-  connect('create',{code,token,screen:false},{name,avatar});
+  connect('create',{code,token},{name,avatar});
 }
 $('#entry-form').onsubmit=event=>{event.preventDefault();join($('#code').value.trim());};
 $('#private').onclick=create;
 $('#resume').onclick=()=>{const previous=stored();if(previous)connect('state',previous);};
 $('#invite').onclick=async()=>{
-  try{await navigator.clipboard.writeText(roomLink(false));notice('Invite link copied.');}
-  catch{showDialog(`<h2>Invite link</h2><input aria-label="Invite link" readonly value="${esc(roomLink(false))}">`);}
+  try{await navigator.clipboard.writeText(roomLink());notice('Invite link copied.');}
+  catch{showDialog(`<h2>Invite link</h2><input aria-label="Invite link" readonly value="${esc(roomLink())}">`);}
 };
 function exitRoom(){
-  clearTimeout(pollTimer);pollGeneration++;room=null;state=null;ready=false;screen=false;
+  clearTimeout(pollTimer);pollGeneration++;room=null;state=null;ready=false;
   board.clearPreview();
-  document.body.classList.remove('presenter');
   $('#game').hidden=true;$('#entry').hidden=false;$('#resume').hidden=!stored()?.token;
   history.replaceState(null,'',location.pathname);
 }
 $('#leave').onclick=async()=>{
-  if(screen){exitRoom();return;}
   showDialog('<h2>Leave this room?</h2><p>Your seat will be released.</p><button id="confirm-leave">Leave room</button>');
   $('#confirm-leave').onclick=async()=>{
     if(await send('leave')){try{localStorage.removeItem(key);}catch{}dialog.close();exitRoom();}
@@ -193,7 +187,7 @@ function adopt(data){
   if(data.phase!=='draw'){ink=[];board.finishPlayback();}
   if(data.phase==='reveal'&&prior?.phase==='draw')playSound('reveal');
   state=data;clockOffset=data.serverTime-Date.now();
-  if(!screen&&!data.me&&ready){exitRoom();notice('Your seat in this room has ended.');return;}
+  if(!data.me&&ready){exitRoom();notice('Your seat in this room has ended.');return;}
   if(!prior||prior.version!==data.version||prior.phase!==data.phase)render();
   else renderClock();
   if(!prior||prior.boardVersion!==data.boardVersion||prior.turnId!==data.turnId){
@@ -208,7 +202,7 @@ async function schedulePoll(generation){
     if(generation===pollGeneration)adopt(data);
   }catch(error){
     if(generation===pollGeneration){
-      if(error.status===404||error.status===410){exitRoom();$('#entry-status').textContent=error.message;return;}
+      if([401,403,404,410].includes(error.status)){exitRoom();$('#entry-status').textContent=error.message;return;}
       notice('Reconnecting to room…');
     }
   }
@@ -289,12 +283,12 @@ function renderPlayers(){
   playersKey=nextKey;
   $('#players').innerHTML=`<h2>Players · ${sorted.length}/${state.settings.capacity}</h2>`+sorted.map((p,i)=>{
     const caption=p.id===state.drawer?'Drawing':p.solved?'Guessed':p.id===state.me?'You':'';
-    return `<button class="player ${p.solved?'solved':''} ${p.id===state.drawer?'artist':''}" ${screen||p.id===state.me?'disabled':''} data-player="${esc(p.id)}">${avatarImage(p.avatar)}<span><b>${i+1}. ${esc(p.name)}</b>${caption?`<small>${caption}</small>`:''}</span><span class="points">${p.score}</span></button>`;
+    return `<button class="player ${p.solved?'solved':''} ${p.id===state.drawer?'artist':''}" ${p.id===state.me?'disabled':''} data-player="${esc(p.id)}">${avatarImage(p.avatar)}<span><b>${i+1}. ${esc(p.name)}</b>${caption?`<small>${caption}</small>`:''}</span><span class="points">${p.score}</span></button>`;
   }).join('');
 }
 $('#players').onclick=event=>{
   const p=state?.players.find(x=>x.id===event.target.closest('[data-player]')?.dataset.player);
-  if(!p||screen||p.id===state.me)return;
+  if(!p||p.id===state.me)return;
   showDialog(`<h2>${esc(p.name)}</h2><div class="entry-actions"><button data-moderation="mute">${muted.has(p.id)?'Unmute':'Mute'}</button><button data-moderation="voteKick">Vote to remove</button><button data-moderation="report">Report to host</button>${state.host?'<button data-moderation="kick">Remove</button><button data-moderation="ban">Ban from room</button>':''}</div>`);
   for(const button of dialog.querySelectorAll('[data-moderation]'))button.onclick=async()=>{
     const action=button.dataset.moderation;
@@ -309,7 +303,6 @@ $('#players').onclick=event=>{
   };
 };
 function renderMessages(){
-  if(screen)return;
   const area=$('#messages');
   const nearEnd=area.scrollHeight-area.scrollTop-area.clientHeight<40;
   const messages=state.messages.filter(m=>!muted.has(m.player));
@@ -368,18 +361,18 @@ $('#overlay').onclick=event=>{
   if(button.id==='rematch')send('reset');
 };
 function render(){
-  $('#room-label').textContent=(screen?'Presenter · ':state.listed?'Public room · ':'Private room · ')+state.code;
+  $('#room-label').textContent=(state.listed?'Public room · ':'Private room · ')+state.code;
   $('#round').textContent=state.round?'Round '+state.round+' / '+state.settings.rounds:'Lobby';
   if(state.phase!=='draw')$('#clue').textContent='';
   $('#tools').hidden=!canDraw();
   canvas.classList.toggle('drawing',canDraw());
   const input=$('#message');
   const own=state.players.find(p=>p.id===state.me);
-  input.disabled=screen||state.phase==='draw'&&(canDraw()||own?.solved);
+  input.disabled=state.phase==='draw'&&(canDraw()||own?.solved);
   input.placeholder=input.disabled?'Chat paused':state.phase==='draw'?'Type a guess':'Type a message';
   $('#message-form button').disabled=input.disabled;
   $('#message-form button').textContent=state.phase==='draw'?'Guess':'Send';
-  const showSettings=state.host&&state.phase==='lobby'&&!screen;
+  const showSettings=state.host&&state.phase==='lobby';
   $('#settings').hidden=!showSettings;
   if(showSettings&&settingsKey!==state.code){
     settingsKey=state.code;
@@ -407,6 +400,4 @@ function render(){
 }
 setInterval(flushInk,600);
 setInterval(renderClock,220);
-if(screen&&/^\d{6}$/.test(initialCode))connect('state',{code:initialCode,screen:true});
-else if(stored()?.code===initialCode&&stored()?.token)connect('state',stored());
-else screen=false;
+if(!query.has('screen')&&stored()?.code===initialCode&&stored()?.token)connect('state',stored());

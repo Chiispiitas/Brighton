@@ -96,12 +96,10 @@ dialog h2{margin-top:0}
 dialog .entry-actions{margin-top:16px}
 #toast{position:fixed;inset:auto 12px 14px;z-index:2;width:max-content;max-width:calc(100% - 24px);margin:auto;background:#233632;color:white;border-radius:9px;padding:10px 14px}
 #toast:empty{display:none}
-.presenter .layout{grid-template-columns:minmax(140px,220px) minmax(0,1fr)}
-.presenter .chat,.presenter #invite,.presenter #present{display:none}
 @media(max-width:900px){.layout{grid-template-columns:140px minmax(0,1fr)}.chat{grid-column:2;height:270px}}
 @media(max-width:610px){
   .entry{grid-template-columns:1fr;gap:12px}.doodles{margin-top:16px}
-  .layout,.presenter .layout{grid-template-columns:1fr;gap:9px}
+  .layout{grid-template-columns:1fr;gap:9px}
   .studio{grid-row:1}.chat{grid-column:1;height:215px;grid-row:2}
   .sidebar{max-height:190px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
   .sidebar h2{grid-column:1/-1}.player{margin:0}

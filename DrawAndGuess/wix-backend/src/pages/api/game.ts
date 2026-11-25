@@ -112,11 +112,9 @@ export const POST: APIRoute = async ({ request }) => {
     if(input.type==='list') return json({rooms:await listRooms()});
     const code=String(input.code||'');
     if(!/^\d{6}$/.test(code)) throw new GameError('Enter a six-digit room code.');
-    const screen=input.screen===true;
-    if(screen&&input.type!=='state') throw new GameError('The presenter is read-only.',403);
-    if(!screen&&(typeof input.token!=='string'||!/^[a-f0-9]{64}$/.test(input.token))) throw new GameError('Your room key is missing.',401);
-    const key=screen?'presenter':await digest(input.token);
-    const projection=(state:any)=>view(state,key,{screen,boardVersion:input.boardVersion});
+    if(typeof input.token!=='string'||!/^[a-f0-9]{64}$/.test(input.token)) throw new GameError('Your room key is missing.',401);
+    const key=await digest(input.token);
+    const projection=(state:any)=>view(state,key,{boardVersion:input.boardVersion});
     if(input.type==='create'){
       const state=createRoom(code,key,input.name,input);
       try{await persist(state);} catch(error){
@@ -134,6 +132,7 @@ export const POST: APIRoute = async ({ request }) => {
     }
     if(input.type==='state'){
       let state=await latest(code);
+      if(!state.players.some((player: { key: string; removed?: boolean })=>player.key===key&&!player.removed)) throw new GameError('Join this room first.',403);
       if(needsTick(state)) state=await mutate(code,'clock',{type:'tick',requestId:'clock-'+state.version});
       return json(projection(state));
     }
