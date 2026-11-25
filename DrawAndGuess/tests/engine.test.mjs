@@ -106,5 +106,22 @@ test('listing, moderation and reconnection use the intended visibility',()=>{
   assert.throws(()=>step(state,'k3','ban',{target:'p2'}),/host/);
   state=step(state,'host','ban',{target:'p3'});
   assert.throws(()=>step(state,'k3','join',{name:'Return'}),/banned/);
-  assert.equal(publicLobby(step(state,'host','start')),null);
+  assert.equal(publicLobby(step(state,'host','start')).inProgress,true);
+});
+
+
+test('players join during a drawing, guess immediately, and draw later in the same round',()=>{
+  let state=drawing();
+  state=step(state,'late','join',{name:'Late player'},startAt+1000);
+  assert.equal(state.queue.at(-1),view(state,'late').me);
+  assert.equal(view(state,'late').answer,undefined);
+  state=step(state,'late','guess',{text:'Sun'},startAt+2000);
+  assert.ok(view(state,'late').players.at(-1).score>0);
+  assert.equal(step(state,'late','join',{name:'Late player'}),state);
+});
+
+test('a room emptied by its host cannot be reopened by a join link',()=>{
+  const state=step(lobby(1,{listed:true}),'host','leave');
+  assert.equal(publicLobby(state),null);
+  assert.throws(()=>step(state,'late','join',{name:'Late player'}),/closed/);
 });

@@ -112,3 +112,111 @@ dialog .entry-actions{margin-top:16px}
   .head-actions a,.head-actions button{padding:6px 8px;font-size:.8rem}
   .canvas-head{gap:5px;padding:8px}
 }
+/* Brighton's illustrated game room */
+:root {
+  --paper:#eef0ff; --white:#fff; --ink:#251c45; --quiet:#5a5274;
+  --line:#d6d3ee; --accent:#5138b1; --accent-dark:#392381; --gold:#ffe084;
+  background-color:var(--paper);
+  background-image:radial-gradient(#ae9ddd70 1px,transparent 1px);
+  background-size:19px 19px;
+}
+.masthead {
+  max-width:none;
+  background:#28204d;
+  border-bottom:4px solid #6c50cc;
+  color:white;
+}
+.brand { color:white; }
+.brand small { color:#d4c8f7; }
+.mark { color:#28204d; transform:rotate(-6deg); }
+.header-controls { display:flex; gap:8px; }
+.header-controls button { color:white; border-color:#8778b5; }
+.header-controls button:hover,.header-controls [aria-pressed="true"] {
+  background:#48376f;
+  border-color:#cfbaff;
+}
+.entry { max-width:1030px; }
+.welcome {
+  background:#30245f;
+  color:#fff7d8;
+  box-shadow:0 5px 0 #c5bae9;
+}
+.welcome p { color:#e6ddff; }
+.doodles { margin-top:22px; }
+.doodles span { color:#382366; }
+.welcome-avatars {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:31px 0 5px;
+  width:100%;
+}
+.welcome-avatars img {
+  width:30%;
+  max-width:116px;
+  aspect-ratio:1;
+  border:4px solid white;
+  border-radius:22px;
+  box-shadow:0 7px 0 #1d153b8a;
+  transform:rotate(-12deg) translateX(5px);
+}
+.welcome-avatars img:nth-child(2) { transform:rotate(6deg); z-index:1; }
+.welcome-avatars img:nth-child(3) { transform:rotate(14deg) translateX(-5px); }
+.avatar-art { object-fit:cover; display:block; aspect-ratio:1; border-radius:7px; }
+.avatars { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); }
+.avatars button { display:grid; place-items:center; padding:3px; }
+.avatars button[aria-pressed="true"] { background:#eee6ff; border-color:var(--accent); box-shadow:0 0 0 2px var(--accent); }
+.avatars img { width:min(100%,46px);height:auto; }
+.setup,.sidebar,.studio,.chat { box-shadow:0 4px 0 #d2c8eb; }
+.game-head {
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 3px 0 #d2c8eb;
+  border-radius:13px;
+  padding:11px 15px;
+}
+.canvas-head { background:#eee6ff; min-height:52px; }
+#timer { background:var(--gold); color:#34245f; }
+.canvas-wrap { border-color:#bcb0df; }
+#tools { background:#f7f2ff; }
+.palette button { border-radius:50%; width:26px; height:26px; }
+.player { grid-template-columns:36px minmax(0,1fr) auto; background:#f9f6ff; }
+.player:disabled { opacity:1; }
+.player.artist { background:#fff5cb; }
+.player.solved { background:#e5f6df; }
+#overlay.turn-reveal {
+  inset:auto 12px 12px;
+  border:1px solid #d3c1f2;
+  border-radius:11px;
+  padding:10px 14px;
+  background:#2d2059;
+  color:#fff;
+}
+#overlay.turn-reveal h2 { font-size:clamp(16px,2vw,22px); }
+/* Only the message list scrolls. Each message keeps its own text height. */
+.chat { display:grid; grid-template-rows:auto minmax(0,1fr) auto; overflow:hidden; }
+#messages { min-height:0; overflow-y:auto; overscroll-behavior:contain; }
+.chat .message {
+  display:block;
+  min-height:0;
+  height:auto;
+  padding:3px 6px;
+  font-size:.875rem;
+  line-height:1.28;
+  border:0;
+  white-space:normal;
+  overflow-wrap:anywhere;
+}
+.chat .message:nth-child(even) { background:#f5f2ff; }
+.chat .message.solved { color:#226141; }
+.chat .message.system { color:#5a5274; }
+@media(max-width:610px) {
+  .masthead { padding:10px 13px; }
+  .header-controls { gap:5px; }
+  .header-controls button { padding:6px 8px; font-size:.8rem; }
+  .welcome-avatars { display:none; }
+  .doodles { margin:10px 0 0; }
+  .doodles span { width:38px;height:38px;font-size:23px; }
+  .chat { height:220px; }
+  .game-head { padding:9px; }
+}

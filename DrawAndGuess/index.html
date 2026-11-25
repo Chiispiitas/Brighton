@@ -10,19 +10,19 @@
 <meta property="og:description" content="A live drawing game for up to 36 players.">
 <meta property="og:url" content="https://exams.bebrighton.net/DrawAndGuess/">
 <meta name="theme-color" content="#f4f4ed">
-<link rel="stylesheet" href="style.css?v=1">
+<link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
 <header class="masthead">
   <a href="./" class="brand"><span class="mark" aria-hidden="true">✎</span><span>Draw &amp; Guess <small>Brighton</small></span></a>
-  <button id="help" class="quiet" type="button">How to play</button>
+  <div class="header-controls"><button id="sound" class="quiet" type="button" aria-pressed="false" aria-label="Game sound">Sound off</button><button id="help" class="quiet" type="button">How to play</button></div>
 </header>
 <main>
 <section id="entry" class="entry">
   <div class="welcome">
     <h1>Draw &amp; Guess</h1>
     <p>Take turns drawing a word. Guess the picture before time runs out.</p>
-    <div class="doodles" aria-hidden="true"><span>☁</span><span>✦</span><span>♧</span><span>☼</span></div>
+    <div class="doodles" aria-hidden="true"><span>☁</span><span>✦</span><span>♧</span><span>☼</span></div><div class="welcome-avatars" aria-hidden="true"><img src="assets/avatars/fox.webp" alt=""><img src="assets/avatars/octopus.webp" alt=""><img src="assets/avatars/owl.webp" alt=""></div>
   </div>
   <div class="setup">
     <form id="entry-form">
@@ -81,5 +81,5 @@
 </main>
 <div id="toast" role="status"></div>
 <dialog id="dialog"></dialog>
-<script type="module" src="app.js?v=1"></script>
+<script type="module" src="app.js?v=2"></script>
 </body></html>
