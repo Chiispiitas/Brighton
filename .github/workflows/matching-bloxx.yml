@@ -1,0 +1,24 @@
+name: Matching Bloxx game
+on:
+  pull_request:
+    paths: ['MatchingBloxx/**', '.github/workflows/matching-bloxx.yml']
+  push:
+    branches: [main]
+    paths: ['MatchingBloxx/**', '.github/workflows/matching-bloxx.yml']
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: MatchingBloxx
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --check MatchingBloxx/app.js && node --check MatchingBloxx/scene.js
+      - run: node --test MatchingBloxx/tests/*.test.mjs
+      - run: cmp MatchingBloxx/rules.js MatchingBloxx/wix-backend/src/game/rules.cjs
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+        working-directory: MatchingBloxx/wix-backend
+      - run: cp .env.example .env.local && npx tsc --noEmit -p . && npx astro build
+        working-directory: MatchingBloxx/wix-backend

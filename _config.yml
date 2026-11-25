@@ -9,6 +9,8 @@ exclude:
   - "DrawAndGuess/wix-backend"
   - "DrawAndGuess/server"
   - "DrawAndGuess/tests"
+  - "MatchingBloxx/wix-backend"
+  - "MatchingBloxx/tests"
   - "Saboteur/wix-backend"
   - "Saboteur/tests"
   - "Saboteur/tools"
