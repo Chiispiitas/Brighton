@@ -29,16 +29,14 @@ main{max-width:1480px;margin:auto;padding:clamp(15px,3vw,40px)}
 .welcome h1{margin:0;font-size:clamp(46px,7vw,93px);line-height:.94;letter-spacing:-.08em}
 .welcome p{max-width:30ch;line-height:1.55;color:#e0e9d9;margin:22px 0}
 .doodles{display:flex;gap:14px;flex-wrap:wrap;margin-top:36px}
-.doodles span{display:grid;place-items:center;width:55px;height:55px;background:var(--gold);color:#183c35;border-radius:18px;transform:rotate(-10deg);font-size:34px}
-.doodles span:nth-child(2n){transform:rotate(10deg);background:#efbca4}
+.doodles > span{display:grid;place-items:center;width:55px;height:55px;background:var(--gold);color:#183c35;border-radius:18px;transform:rotate(-10deg);font-size:34px}
+.doodles > span:nth-child(2n){transform:rotate(10deg);background:#efbca4}
 .setup{padding:clamp(20px,4vw,39px)}
 .setup form{display:grid;gap:10px}
 label,legend{font-weight:700;font-size:.9rem}
 fieldset{border:0;padding:0;margin:7px 0}
 legend{padding:0;margin-bottom:8px}
-.avatars,.entry-actions,.inline{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.avatars button{font-size:21px;padding:5px 8px;line-height:1.3}
-.avatars button[aria-pressed="true"]{background:#deeee2;border-color:var(--accent)}
+.entry-actions,.inline{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .inline input{flex:1}
 .entry-actions{margin-top:6px}
 .status{min-height:1.25em;color:#8c392b}
@@ -64,7 +62,7 @@ legend{padding:0;margin-bottom:8px}
 .canvas-head{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:12px;padding:10px 14px;min-height:49px}
 #clue{text-align:center;overflow-wrap:anywhere}
 #timer{background:#f8e8b8;min-width:47px;padding:4px 7px;text-align:center;border-radius:7px;font-weight:800;font-variant-numeric:tabular-nums}
-.canvas-wrap{position:relative;background:#fff;border-block:1px solid var(--line)}
+.canvas-wrap{position:relative;overflow:hidden;background:#fff;border-block:1px solid var(--line)}
 canvas{display:block;width:100%;aspect-ratio:3/2;height:auto;touch-action:pan-y}
 canvas.drawing{touch-action:none;cursor:crosshair}
 #overlay{inset:0;position:absolute;display:grid;place-content:center;justify-items:center;gap:12px;padding:15px;background:#fffef7ee;text-align:center;overflow:auto}
@@ -143,7 +141,28 @@ dialog .entry-actions{margin-top:16px}
 }
 .welcome p { color:#e6ddff; }
 .doodles { margin-top:22px; }
-.doodles span { color:#382366; }
+.doodles > span { color:#382366; }
+.ink-sprite {
+  display:block;
+  background-image:var(--ink-frames);
+  background-size:300% 100%;
+  background-repeat:no-repeat;
+  animation:ink-frames 630ms steps(1,end) var(--ink-delay,0ms) infinite;
+}
+@keyframes ink-frames {
+  0% { background-position:0 0; }
+  33.333% { background-position:50% 0; }
+  66.667% { background-position:100% 0; }
+}
+.pencil-ink { width:100%;height:100%; }
+.title-ink { width:100%;aspect-ratio:440/209; }
+.doodle-ink { width:84%;height:84%; }
+.ink-active:not(.drawing) { animation:canvas-ink 630ms steps(1,end) infinite; }
+@keyframes canvas-ink {
+  0% { transform:none; }
+  33.333% { transform:translate(.5px,-.5px) rotate(.08deg); }
+  66.667% { transform:translate(-.5px,.5px) rotate(-.08deg); }
+}
 .welcome-avatars {
   display:flex;
   justify-content:center;
@@ -151,22 +170,59 @@ dialog .entry-actions{margin-top:16px}
   margin:31px 0 5px;
   width:100%;
 }
-.welcome-avatars img {
+.welcome-avatars .avatar-art {
   width:30%;
   max-width:116px;
+  height:auto;
   aspect-ratio:1;
   border:4px solid white;
   border-radius:22px;
   box-shadow:0 7px 0 #1d153b8a;
   transform:rotate(-12deg) translateX(5px);
 }
-.welcome-avatars img:nth-child(2) { transform:rotate(6deg); z-index:1; }
-.welcome-avatars img:nth-child(3) { transform:rotate(14deg) translateX(-5px); }
+.welcome-avatars .avatar-art:nth-child(2) { transform:rotate(6deg); z-index:1; }
+.welcome-avatars .avatar-art:nth-child(3) { transform:rotate(14deg) translateX(-5px); }
 .avatar-art { object-fit:cover; display:block; aspect-ratio:1; border-radius:7px; }
-.avatars { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); }
-.avatars button { display:grid; place-items:center; padding:3px; }
-.avatars button[aria-pressed="true"] { background:#eee6ff; border-color:var(--accent); box-shadow:0 0 0 2px var(--accent); }
-.avatars img { width:min(100%,46px);height:auto; }
+.avatar-editor {
+  display:grid;
+  grid-template-columns:minmax(88px, .85fr) minmax(0, 1.3fr);
+  align-items:center;
+  gap:clamp(8px,2vw,20px);
+  padding:clamp(8px,1.6vw,16px);
+  border:1px solid #dfd5f2;
+  border-radius:12px;
+  background:#f7f2ff;
+}
+.avatar-display { display:grid; justify-items:center; gap:6px; }
+.avatar-preview { width:min(100%,126px); aspect-ratio:1; }
+.avatar-preview .avatar-art {
+  width:100%;
+  height:100%;
+  border:3px solid white;
+  border-radius:16px;
+  box-shadow:0 3px 0 #d8c9f0;
+}
+#avatar-random { min-height:36px; padding:3px 5px; font-size:.76rem; white-space:nowrap; }
+#avatar-random span { font-size:1.05rem; vertical-align:middle; }
+.avatar-features { display:grid; gap:5px; }
+.avatar-feature {
+  display:grid;
+  grid-template-columns:clamp(30px,4vw,44px) minmax(0,1fr) clamp(30px,4vw,44px);
+  align-items:center;
+  text-align:center;
+  font-size:.8rem;
+  line-height:1.2;
+}
+.avatar-feature button {
+  min-height:44px;
+  padding:0;
+  font-size:1.65rem;
+  line-height:1;
+  color:var(--accent-dark);
+}
+.avatar-feature button:hover,#avatar-random:hover { background:#ede4ff; }
+.avatar-value { display:block; color:var(--quiet); }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
 .setup,.sidebar,.studio,.chat { box-shadow:0 4px 0 #d2c8eb; }
 .game-head {
   background:white;
@@ -181,6 +237,7 @@ dialog .entry-actions{margin-top:16px}
 #tools { background:#f7f2ff; }
 .palette button { border-radius:50%; width:26px; height:26px; }
 .player { grid-template-columns:36px minmax(0,1fr) auto; background:#f9f6ff; }
+.player .avatar-art { width:36px;height:36px; }
 .player:disabled { opacity:1; }
 .player.artist { background:#fff5cb; }
 .player.solved { background:#e5f6df; }
@@ -216,7 +273,10 @@ dialog .entry-actions{margin-top:16px}
   .header-controls button { padding:6px 8px; font-size:.8rem; }
   .welcome-avatars { display:none; }
   .doodles { margin:10px 0 0; }
-  .doodles span { width:38px;height:38px;font-size:23px; }
+  .doodles > span { width:38px;height:38px;font-size:23px; }
   .chat { height:220px; }
   .game-head { padding:9px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .ink-sprite,.ink-active:not(.drawing) { animation:none; }
 }

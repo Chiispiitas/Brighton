@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import {createRoom,command,view,publicLobby,needsTick,COLORS,MAX_PLAYERS} from '../server/engine.mjs';
+import {avatarLabels,customAvatar,cycleAvatar,defaultAvatar,randomAvatar} from '../avatars.mjs';
 
 const startAt=1_000_000;
 let counter=0;
@@ -124,4 +125,22 @@ test('a room emptied by its host cannot be reopened by a join link',()=>{
   const state=step(lobby(1,{listed:true}),'host','leave');
   assert.equal(publicLobby(state),null);
   assert.throws(()=>step(state,'late','join',{name:'Late player'}),/closed/);
+});
+
+test('avatar options cycle independently, and custom and legacy portraits reach every player',()=>{
+  const hostAvatar=cycleAvatar(defaultAvatar,0,-1);
+  const guestAvatar=cycleAvatar(defaultAvatar,2,1);
+  assert.deepEqual(avatarLabels(hostAvatar),['Fern','Dots','Smile']);
+  assert.deepEqual(avatarLabels(guestAvatar),['Lilac','Dots','Grin']);
+  assert.equal(cycleAvatar(hostAvatar,0,1),defaultAvatar);
+  const random=randomAvatar(hostAvatar);
+  assert.ok(customAvatar(random));
+  assert.notEqual(random,hostAvatar);
+  let state=createRoom('123456','host','Artist',{avatar:hostAvatar},startAt);
+  state=step(state,'custom','join',{name:'Custom',avatar:guestAvatar});
+  state=step(state,'legacy','join',{name:'Legacy',avatar:3});
+  state=step(state,'invalid','join',{name:'Invalid',avatar:'1000'});
+  const expected=[hostAvatar,guestAvatar,3,0];
+  assert.deepEqual(view(state,'legacy').players.map(player=>player.avatar),expected);
+  assert.deepEqual(view(state,'presenter',{screen:true}).players.map(player=>player.avatar),expected);
 });
