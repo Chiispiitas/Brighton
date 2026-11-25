@@ -1,5 +1,5 @@
 // Opt-in only: creates synthetic rooms against the configured live service.
-// Run manually after the 4–12 player backend has been released. Not part of CI.
+// Run manually after the 4–36 player backend has been released. Not part of CI.
 import assert from 'node:assert/strict';
 import { randomBytes, randomInt, randomUUID } from 'node:crypto';
 import { API_URL } from '../config.js';
@@ -30,13 +30,13 @@ async function readCommittedState(room, player, minimumVersion, matches = () => 
   }
 }
 
-async function createRoom(size) {
+async function createRoom(size, mode = 'online') {
   const room = {
     code: String(randomInt(100000, 1000000)),
     host: makePlayer('Limits QA host'),
     players: Array.from({ length: size }, (_, index) => makePlayer(`Limits QA ${index + 1}`))
   };
-  let joined = await request(room, room.host, { type: 'create', name: room.host.name });
+  let joined = await request(room, room.host, { type: 'create', name: room.host.name, mode });
   for (const player of room.players) joined = await request(room, player, { type: 'join', name: player.name });
   const state = await readCommittedState(room, room.host, joined.version, state => state.players.length === size);
   assert.equal(state.players.length, size);
@@ -93,18 +93,22 @@ assert.ok(state.players.every(p => p.alive), 'The healing potion must preserve t
 assert.equal(state.winner, null, 'Four players must not start or end a healed first night at parity.');
 console.log('Four-player default deck and healed first night passed.', { code: small.code, phases: order });
 
-const full = await createRoom(12);
-const extra = makePlayer('Limits QA 13');
+const full = await createRoom(36, 'classroom');
+const extra = makePlayer('Limits QA 37');
 const rejected = await request(full, extra, { type: 'join', name: extra.name }, 400);
-assert.match(rejected.error, /full \(12 players\)/);
+assert.match(rejected.error, /full \(36 players\)/);
+const presenter = await request(full, makePlayer('Presenter'), { type: 'state', screen: true });
+assert.equal(presenter.players.length, 36);
+assert.equal(presenter.me, null);
 state = await deal(full);
-assert.equal(state.players.length, 12);
+assert.deepEqual((await readCommittedState(full, full.host, state.version)).progress, { done: 36, total: 36 });
+assert.equal(state.players.length, 36);
 assert.equal(state.phase, 'reveal');
-assert.equal(full.players.filter(p => p.role === 'werewolf').length, 3);
-assert.equal(full.players.filter(p => p.role === 'villager').length, 5);
+assert.equal(full.players.filter(p => p.role === 'werewolf').length, 9);
+assert.equal(full.players.filter(p => p.role === 'villager').length, 23);
 for (const role of ['fortune', 'witch', 'girl', 'hunter']) {
   assert.equal(full.players.filter(p => p.role === role).length, 1);
 }
 assert.equal(state.winner, null);
-console.log('Twelve-player join/start and thirteenth-player rejection passed.', { code: full.code });
+console.log('36-player join/start and 37th-player rejection passed.', { code: full.code });
 console.log('LIMITS_LIVE_OK');

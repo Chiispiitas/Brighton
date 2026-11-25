@@ -7,7 +7,7 @@ The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a 
 ## Online mode
 
 1. The teacher chooses **Host a game**, enters a name and shares the six-digit code or invitation link.
-2. Each player joins on their own device. Four to twelve players are supported. The host is a narrator by default and can choose **I'm playing too** in the lobby.
+2. Each player joins on their own device. Four to 36 players are supported. The host is a narrator by default and can choose **I'm playing too** in the lobby.
 3. The host chooses the werewolf count (Auto: floor(players / 4), minimum one), enables the desired special roles, and deals the cards. Every deck reserves at least one ordinary villager. Enabled special roles are included as room allows, in this order: Fortune Teller, Witch, Little Girl, Hunter. With the default settings, four players get one wolf, Fortune Teller, Witch and one villager; five players add the Little Girl; six players include all four special roles.
 4. Every player opens their private card and acknowledges it. The host puts the village to sleep.
 5. The host reads each phase aloud and advances after the required actions are received. An explicit confirmation allows missing actions to be treated as passes, except for the werewolves: every living wolf must agree on the same victim. Neither the host nor a wolf can override this. Once the pack agrees, the host or a living wolf can continue. The hunter must choose or pass personally.
@@ -24,7 +24,7 @@ Tutorials use a calm, high-contrast layout and readable type. Each step hides un
 
 ## Rules implemented
 
-- A room supports 4–12 players. A thirteenth player cannot join, and an older oversized lobby cannot start. Wolf counts that would begin at parity are rejected.
+- A room supports 4–36 players. A 37th player cannot join, and an older oversized lobby cannot start. Wolf counts that would begin at parity are rejected.
 - Night order: Fortune Teller → Werewolves → Little Girl → Witch → Dawn. Absent or eliminated roles are skipped.
 - Villager: no night action.
 - Werewolves: every living wolf must highlight the same living non-wolf. House selections are shared only with the living pack and can be revised until the phase ends. Missing selections, split choices and a majority without unanimity all block continuation with “Impossible to continue because the decision has not been made.” The host cannot force a pass. After agreement, the host or a living wolf may continue in online mode; only the moderator can continue in classroom mode. No more than one werewolf victim per night.
@@ -72,7 +72,7 @@ The backend's reproducible source is in `wix-backend/`. Build with the pinned lo
 
 ## Link previews
 
-The public sharing URL is `https://exams.bebrighton.net/Werewolves/`. `index.html` includes the title, description, canonical URL, Open Graph and Twitter metadata directly in its initial HTML. The sharing image is `assets/werewolves-share-v1.jpg` (1200×630 JPEG). Keep image URLs absolute in the metadata, and use a new filename when replacing the sharing image. Room invitation query parameters still open the chosen room; the preview stays generic to the game.
+The public sharing URL is `https://exams.bebrighton.net/Werewolves/`. `index.html` includes the title, description, canonical URL, Open Graph and Twitter metadata directly in its initial HTML. The sharing image is `assets/village-day.webp`. Keep image URLs absolute in the metadata, and use a new filename when replacing the sharing image. Room invitation query parameters still open the chosen room; the preview stays generic to the game.
 
 ## Artwork
 
