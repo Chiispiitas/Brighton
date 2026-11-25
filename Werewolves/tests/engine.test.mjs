@@ -34,7 +34,7 @@ test('only werewolves see their pack; finished game reveals all roles',()=>{
 test('joining is capped, case-insensitive names are unique, unsafe names rejected',()=>{
   const s=lobby(); assert.throws(()=>doIt(s,'other',{type:'join',name:'PLAYER 0'}),/taken/);
   assert.throws(()=>doIt(s,'other',{type:'join',name:'<script>'}),/angle/);
-  assert.throws(()=>doIt(lobby(12),'other',{type:'join',name:'Extra'}),/full \(12 players\)/);
+  assert.throws(()=>doIt(lobby(36),'other',{type:'join',name:'Extra'}),/full \(36 players\)/);
 });
 test('only host starts or advances; a valid deck fills every player slot',()=>{
   assert.throws(()=>doIt(lobby(),'key-1',{type:'start'}),/host/);
@@ -43,10 +43,10 @@ test('only host starts or advances; a valid deck fills every player slot',()=>{
   for(const role of ['fortune','girl','witch','hunter'])assert.equal(s.players.filter(p=>p.role===role).length,1);
 });
 
-test('four to twelve players start with a valid automatic deck and an ordinary villager',()=>{
-  assert.equal(MIN_PLAYERS,4);assert.equal(MAX_PLAYERS,12);
-  const expectedSpecials={4:['fortune','witch'],5:['fortune','witch','girl'],6:['fortune','witch','girl','hunter'],12:['fortune','witch','girl','hunter']};
-  for(const n of [4,5,6,12]){
+test('four to 36 players start with a valid automatic deck and an ordinary villager',()=>{
+  assert.equal(MIN_PLAYERS,4);assert.equal(MAX_PLAYERS,36);
+  const expectedSpecials={4:['fortune','witch'],5:['fortune','witch','girl'],6:['fortune','witch','girl','hunter'],12:['fortune','witch','girl','hunter'],36:['fortune','witch','girl','hunter']};
+  for(const n of [4,5,6,12,36]){
     const s=doIt(lobby(n),'host-key',{type:'start'}),wolves=s.players.filter(p=>p.role==='werewolf').length;
     assert.equal(s.phase,'reveal');assert.equal(s.players.length,n);
     assert.equal(wolves,Math.max(1,Math.floor(n/4)));
@@ -63,11 +63,11 @@ test('disabled special roles free room for the next enabled role in a small game
   assert.deepEqual(s.players.map(p=>p.role).sort(),['werewolf','witch','girl','villager'].sort());
 });
 
-test('the thirteenth player is rejected and an oversized legacy lobby cannot start',()=>{
-  const full=lobby(12);
-  assert.throws(()=>doIt(full,'extra-key',{type:'join',name:'Thirteenth'}),/full \(12 players\)/);
+test('the 37th player is rejected and an oversized legacy lobby cannot start',()=>{
+  const full=lobby(36);
+  assert.throws(()=>doIt(full,'extra-key',{type:'join',name:'Thirteenth'}),/full \(36 players\)/);
   const legacy=structuredClone(full);legacy.players.push({id:'legacy-extra',key:'extra-key',name:'Thirteenth',alive:true,role:null});
-  assert.throws(()=>doIt(legacy,'host-key',{type:'start'}),/no more than 12 players/);
+  assert.throws(()=>doIt(legacy,'host-key',{type:'start'}),/no more than 36 players/);
 });
 
 test('custom wolf counts that would begin at parity are rejected',()=>{

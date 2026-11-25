@@ -15,3 +15,50 @@
 @media(max-width:780px){.topbar{padding:10px 4%}.brand b{font-size:22px}.brandmark{width:36px;height:36px}.topbar nav{gap:15px}.quiet{font-size:14px}main{padding:17px 3%}.landing{display:flex;flex-direction:column;gap:20px;min-height:0}.entry{width:100%;max-width:470px;padding:20px 24px}.entry h1{font-size:38px}.board-preview{width:100%;aspect-ratio:1.5}.roles-preview{display:block;margin-top:18px;padding:14px}.roles-preview h2{font-size:24px;margin-bottom:12px}.mini-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 8px}.mini-role{font-size:13px;gap:5px}.mini-role img{width:28px;height:28px}.room-head{padding:11px 13px;gap:10px;align-items:flex-start}.room-head h1{font-size:27px}.room-tools{gap:5px 9px;max-width:170px}.room-code{font-size:20px;letter-spacing:2px;padding:6px 8px}.live-dot{font-size:11px}.room-tools .quiet{font-size:12px}.room-layout{display:flex;flex-direction:column;gap:17px}.map-panel{width:100%;order:2}.sidebar{width:100%;order:1;gap:12px}.panel{padding:16px}.history{display:none}.village-map{aspect-ratio:1.1}.house{width:19%;margin-left:-9.5%;margin-top:-9.5%}.house .nameplate{font-size:10px;min-width:40px;padding:2px}.house small{font-size:8px}.phase-banner{padding:10px 12px}.phase-banner h2{font-size:24px}.phase-token{font-size:16px;padding:4px 8px}.phase-banner p{font-size:13px}.map-legend{font-size:12px;padding:7px 10px}.square-marker{font-size:23px;padding:5px 9px}.square-marker small{font-size:11px}.private-card .role-card{width:150px}.card-back{max-width:130px}.rule-grid{grid-template-columns:1fr}dialog{padding:28px 21px}.public-card-grid .role-card{max-height:270px}.projector .sidebar{order:3}.projector .house .nameplate{font-size:12px}.projector .house small{font-size:9px}.projector .room-layout{display:flex}.projector .village-map{aspect-ratio:1.1}.revealed-card img{height:80px;width:80px}.revealed-card b{font-size:14px}.revealed-card span{font-size:16px}.action-buttons:has(#confirm-target),#pack-continue{position:fixed;bottom:12px;left:3%;width:94%;z-index:15;background:var(--paper);border:2px solid #695333;padding:10px;box-shadow:3px 4px 0 #34261e88;margin:0}#pack-continue{background:#647344;color:#fff1ce}#pack-continue:disabled{background:#c6b590;color:#5e4b34;opacity:1}.room-layout:has(#confirm-target),.room-layout:has(#pack-continue){padding-bottom:80px}.action-buttons:has(#confirm-target) .primary{background:#647344}.witch-victim-card .house-art{height:90px;width:90px}footer{padding:10px 4%}}
 @media(max-width:450px){.entry{padding:18px}.board-preview{aspect-ratio:1.2}.preview-title{font-size:18px;padding:4px 18px}.house .nameplate{font-size:9px}.house small{font-size:8px;line-height:1.05}.room-head h1{font-size:24px}.topbar .quiet{font-size:13px}.mini-roles{grid-template-columns:repeat(2,1fr)}.village-map{aspect-ratio:1}.phase-banner p{max-width:230px}.projector .village-map{aspect-ratio:1}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Large villages use rows so every player has a readable, selectable house. */
+.map-panel .expanded-village {
+  aspect-ratio: auto;
+  background-size: cover;
+  background-position: center;
+}
+
+.expanded-village .houses {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 115px), 1fr));
+  gap: 8px;
+  padding: 12px;
+}
+
+.expanded-village .house {
+  position: relative;
+  inset: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 0;
+  padding: 5px;
+  background: #e4d2a6ef;
+  border: 1px solid #635038;
+  border-radius: 6px;
+}
+
+.expanded-village .house .house-art { width: 52px; }
+.expanded-village .house .nameplate {
+  position: static;
+  transform: none;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-shadow: none;
+}
+
+.expanded-village .house .nameplate b { max-height: none; }
+.expanded-village .square-marker {
+  position: static;
+  transform: none;
+  display: block;
+  width: max-content;
+  margin: 0 auto 12px;
+}

@@ -1,7 +1,7 @@
 export const ROLES = ['villager', 'werewolf', 'fortune', 'girl', 'witch', 'hunter'];
 export const NIGHT = ['fortune', 'werewolf', 'girl', 'witch'];
 export const MIN_PLAYERS = 4;
-export const MAX_PLAYERS = 12;
+export const MAX_PLAYERS = 36;
 const SPECIAL_PRIORITY = ['fortune', 'witch', 'girl', 'hunter'];
 export class GameError extends Error { constructor(message, status = 400) { super(message); this.status = status; } }
 const need = (ok, message, status) => { if (!ok) throw new GameError(message, status); };
