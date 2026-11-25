@@ -1,4 +1,4 @@
-export function createBoard(canvas, onChange, canDraw) {
+export function createBoard(canvas, onChange, canDraw, inkView) {
   const ctx=canvas.getContext('2d',{willReadFrequently:true});
   const W=canvas.width,H=canvas.height;
   let pointer=null, previous=null, strokeId=null, lastBoard=[];
@@ -27,6 +27,7 @@ export function createBoard(canvas, onChange, canDraw) {
     ctx.putImageData(frame,0,0);
   }
   function paint(op){
+    inkView?.update();
     const [x,y]=scale(op.points[0],op.points[1]);
     if(op.kind==='fill'){fill(x,y,op.color);return;}
     ctx.strokeStyle=ctx.fillStyle=op.color;
@@ -38,6 +39,7 @@ export function createBoard(canvas, onChange, canDraw) {
   }
   function reset(){
     ctx.fillStyle='#ffffff';ctx.fillRect(0,0,W,H);
+    inkView?.update();
   }
   function paintPending(budget) {
     while (budget && pending.length) {
@@ -88,7 +90,7 @@ export function createBoard(canvas, onChange, canDraw) {
       }
       lastBoard=[];
     }else lastBoard=board;
-    canvas.classList.toggle('ink-active',board.length>0);
+    inkView?.setActive(board.length>0 || local.some(op=>op.kind==='stroke'||op.kind==='fill'));
   }
   function point(event) {
     const rect=canvas.getBoundingClientRect();
@@ -100,6 +102,7 @@ export function createBoard(canvas, onChange, canDraw) {
     return {kind,id:strokeId,points,width:Math.max(2,size),color:settings.tool==='eraser'?'#ffffff':settings.color};
   }
   function emit(op){
+    inkView?.setActive(true);
     paint(op);onChange(op);
   }
   canvas.addEventListener('pointerdown',event=>{
@@ -125,6 +128,6 @@ export function createBoard(canvas, onChange, canDraw) {
   canvas.addEventListener('lostpointercapture',release);
   reset();
   return {settings,show,finishPlayback,clearPreview(){
-    finishPlayback(false);lastBoard=[];reset();canvas.classList.remove('ink-active');
+    finishPlayback(false);lastBoard=[];reset();inkView?.setActive(false);
   }};
 }

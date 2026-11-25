@@ -1,4 +1,4 @@
-import { inkFrames, inkPath, inkSprite, wiggleInk } from './ink-art.mjs';
+import { inkFrames, inkPath, inkSprite } from './ink-art.mjs?v=2';
 
 const CUSTOM_BASE = 1000;
 const legacy = ['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
@@ -70,28 +70,23 @@ function drawPortrait(id) {
   const [, skin, shadow, background] = colors[color];
   const [, eyePaths, eyeWidth] = eyes[eye];
   const [, mouthPath, mouthFill] = mouths[mouth];
-  return inkFrames(120, 120, (ctx, frame) => {
+  return inkFrames(120, 120, ctx => {
     ctx.fillStyle = background;
     ctx.fillRect(0, 0, 120, 120);
     const path = (shape, fill, width, stroke) => inkPath(ctx, shape, fill, width, stroke);
-    ctx.save();
-    wiggleInk(ctx, frame, 1);
     path('M 17 77 V 89 M 11 83 H 23 M 101 28 V 42 M 94 35 H 108 M 25 30 h .1 M 96 85 h .1',
-      null, 2.6, shadow);
-    ctx.restore();
-    wiggleInk(ctx, frame);
-    path('M 31 113 Q 32 93 45 88 H 77 Q 91 93 92 113 Z', shadow, 3.8);
+      null, 3.4, shadow);
+    path('M 31 113 Q 32 93 45 88 H 77 Q 91 93 92 113 Z', shadow, 4.6);
     path('M 22 60 C 23 34 41 27 55 27 Q 59 16 73 14 Q 70 21 73 26 Q 82 22 90 23 Q 84 28 84 32 C 99 41 102 51 101 65 C 100 86 84 99 61 99 C 38 99 21 85 22 60 Z',
-      skin, 3.8);
-    path('M 31 72 q 4 6 11 5 M 79 77 q 7 1 12 -5', null, 3, shadow);
-    path('M 35 48 q 5 -8 13 -10', null, 3, '#ffffffa0');
-    wiggleInk(ctx, frame, 2, .55);
+      skin, 4.6);
+    path('M 31 72 q 4 6 11 5 M 79 77 q 7 1 12 -5', null, 3.4, shadow);
+    path('M 35 48 q 5 -8 13 -10', null, 3.2, '#fff9e8');
     eyePaths.forEach((shape, index) => {
       const width = eye === 2 && index === 0 ? 7 : eyeWidth;
-      path(shape, eye === 3 && index === 0 ? '#fff' : eye === 7 ? '#fff3a7' : null, width);
+      path(shape, eye === 3 && index === 0 ? '#fff' : eye === 7 ? '#fff3a7' : null, width + .45);
     });
-    path(mouthPath, mouthFill, 2.8);
-  });
+    path(mouthPath, mouthFill, 3.5);
+  }, [skin,shadow,background,'#261b46','#fff','#fff9e8','#fff3a7','#fc9ab0'], .48);
 }
 
 export function avatarImage(id) {
