@@ -59,6 +59,50 @@
     return motion.amplitude * Math.sin(motion.phase + elapsedMs * 2 * Math.PI / motion.period);
   }
 
+  function towerBalance(floors) {
+    var totalWeight = 0;
+    var lean = 0;
+    var collapseAt = floors.length;
+    var direction = 0;
+    // Check each joint from the top down. The entire section above it must
+    // keep its center of mass inside the two floors' overlapping footprint.
+    for (var i = floors.length - 1; i >= 0; i--) {
+      var upper = floors[i];
+      totalWeight += upper;
+      var center = totalWeight / (floors.length - i);
+      var lower = i > 0 ? floors[i - 1] : 0;
+      var contactCenter = i > 0 ? (upper + lower) / 2 : 0;
+      var halfContact = i > 0 ? Math.max(.02, .5 - Math.abs(upper - lower) / 2) : .5;
+      var pressure = (center - contactCenter) / halfContact;
+      if (Math.abs(pressure) > Math.abs(lean)) lean = pressure;
+      if (Math.abs(pressure) >= 1) {
+        collapseAt = i;
+        direction = pressure < 0 ? -1 : 1;
+      }
+    }
+    return {lean: lean, collapseAt: collapseAt, direction: direction};
+  }
+
+  function placeFloor(floors, offset) {
+    var length = floors.length;
+    var distance = Math.abs(offset);
+    if (distance >= .85) return {kind: 'miss', floors: floors, bonus: 0, fallen: 0};
+    var perfect = distance <= .12;
+    var top = floors[length - 1] || 0;
+    var next = floors.concat(Math.round((top + (perfect ? 0 : offset)) * 1000) / 1000);
+    var support = towerBalance(next);
+    if (support.collapseAt < next.length) {
+      return {
+        kind: 'miss', floors: next.slice(0, support.collapseAt), bonus: 0,
+        fallen: next.length - support.collapseAt, direction: support.direction
+      };
+    }
+    return {
+      kind: perfect ? 'perfect' : 'landed', floors: next, fallen: 0,
+      bonus: perfect ? 100 : Math.max(1, Math.round(100 * (.85 - distance) / .73))
+    };
+  }
+
   function finishAttempt(player, kind, phrase, points, offset) {
     player.completed++;
     player.stage = 'result';
@@ -121,21 +165,15 @@
       elapsed <= Math.max(0, now - player.motion.startedAt) + 500,
       'The crane timing has changed. Try the drop again.', 409);
     var offset = position(player.motion, elapsed);
-    var distance = Math.abs(offset);
-    if (distance >= 0.85) {
-      finishAttempt(player, 'miss', phrase, 100, offset);
-      return;
-    }
-    var perfect = distance <= 0.12;
-    var bonus = perfect ? 100 : Math.max(1, Math.round(100 * (0.85 - distance) / 0.73));
-    var top = player.placements[player.placements.length - 1] || 0;
-    player.placements.push(Math.round((top + (perfect ? 0 : offset)) * 1000) / 1000);
-    player.score += bonus;
-    if (perfect && ++player.perfectStreak === 2) {
+    var placement = placeFloor(player.placements, offset);
+    player.placements = placement.floors;
+    player.score += placement.bonus;
+    if (placement.kind === 'perfect' && ++player.perfectStreak === 2) {
       player.steady = 1;
       player.perfectStreak = 0;
     }
-    finishAttempt(player, perfect ? 'perfect' : 'landed', phrase, 100 + bonus, offset);
+    finishAttempt(player, placement.kind, phrase, 100 + placement.bonus, offset);
+    if (placement.fallen) player.last.fallen = placement.fallen;
   }
 
   function canReceiveGust(player) {
@@ -170,6 +208,7 @@
     row.prompt = phase === 'playing' ? phrases[player.deck[player.round - 1]] : '';
     row.choices = verbs.slice();
     row.placements = player.placements.slice();
+    row.balance = towerBalance(player.placements).lean;
     row.steady = player.steady;
     row.steadyArmed = player.steadyArmed;
     row.motion = player.motion && {
@@ -177,7 +216,7 @@
       gust: !!player.motion.gust
     };
     var last = player.last;
-    row.last = last && {kind: last.kind, phrase: last.phrase, points: last.points, offset: last.offset};
+    row.last = last && {kind: last.kind, phrase: last.phrase, points: last.points, offset: last.offset, fallen: last.fallen || 0};
     return row;
   }
 
@@ -198,6 +237,6 @@
   }
 
   return {total: total, GameError: GameError, newPlayer: newPlayer, play: play,
-    position: position, standings: standings, playerView: playerView,
+    position: position, placeFloor: placeFloor, standings: standings, playerView: playerView,
     canReceiveGust: canReceiveGust, practice: practice};
 }));

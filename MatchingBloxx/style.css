@@ -108,3 +108,6 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 @media(max-width:660px){.board-top{display:block}.board-invite{margin:14px 0}.join-qr{width:94px;height:94px}}
 @media(max-width:400px){.top-button{font-size:.8rem;white-space:nowrap}.brand{font-size:.82rem;white-space:nowrap}.book-icon,.speaker{margin-right:3px}.brand img{width:23px;height:23px;margin-right:4px}.top-button{padding:5px 3px}}
 .wind-note{font-weight:700;margin:10px 0;color:#93451f}.dialog select{width:100%;padding:10px;font:inherit;color:#173745;background:#fffdf2;border:2px solid #85928b;border-radius:5px;min-height:44px}.dialog #send-gust{margin-bottom:12px}
+.balance{margin:0 0 13px;color:#405a61;font-size:.92rem}
+.balance-track{position:relative;height:9px;margin-top:5px;border-radius:3px;background:#e9ab71;background:linear-gradient(90deg,#d8906b,#ffd688 25%,#a6c6a2 40%,#a6c6a2 60%,#ffd688 75%,#d8906b)}
+.balance-track i{position:absolute;width:4px;height:15px;top:-3px;background:#173745;border-radius:1px;transform:translateX(-50%)}

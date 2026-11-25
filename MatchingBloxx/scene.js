@@ -244,7 +244,7 @@
 
   function mount(container) {
     if (!container) throw new Error('Tower scene needs a container.');
-    var state={mode:'attract',floors:[],getOffset:null,showCrane:true};
+    var state={mode:'attract',floors:[],balance:0,getOffset:null,showCrane:true};
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
     var cancel=global.cancelAnimationFrame || clearTimeout, frameId=0, then=0;
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', backdrop=document.createElement('canvas');
@@ -426,6 +426,9 @@
       var rise=Math.max(0,(length*floorY*unit)-height*(attract?.46:.36));
       var targetCamera=attract?0:top;
       var swinging=attract ? !reduced : state.showCrane!==false && !!state.getOffset && frozen===null;
+      var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
+      var wobble=Math.max(0,Math.abs(lean)-.48);
+      var rocking=!reduced && wobble>0 && swinging;
       if(!dirty && !dropState && !swinging && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
@@ -444,10 +447,24 @@
         camera.left=-sx/unit;camera.right=(width-sx)/unit;camera.top=syy/unit;camera.bottom=(syy-height)/unit;camera.updateProjectionMatrix();
       }
       floor(0,0,0,true,0);
+      var progress=dropState ? clamp((now-dropState.started)/dropState.duration,0,1) : 0;
+      var collapse=dropState && dropState.collapse;
+      var firstFalling=collapse ? length+1-collapse.fallen : length+1;
+      var tumble=collapse ? clamp((progress-.38)/.62,0,1) : 0;
+      var fallTurn=tumble*tumble;
+      var flex=rocking ? wobble*(lean<0?-1:1)*(.05+.04*Math.sin(now/135)) : 0;
+      function buildingFloor(index,x,y,angle) {
+        if(index>=firstFalling && tumble>0) {
+          x+=collapse.direction*fallTurn*(.9+(index-firstFalling)*.32);
+          y-=fallTurn*(height/unit+1+(index-firstFalling)*.09);
+          angle-=collapse.direction*tumble*(.85+(index-firstFalling)*.09);
+        }
+        floor(x,y,index%palettes.length,false,angle);
+      }
       for(var i=0;i<length;i++){
         var y=i*floorY;
         if(syy-y*unit>height+unit) continue;
-        floor(Number(floors[i])||0,y,i%palettes.length,false,0);
+        buildingFloor(i,(Number(floors[i])||0)+flex*y,y,-flex);
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
       var carryY=tableY+hangGap,offset=attract?(reduced?.36:Math.sin((now-start)/1270)*.54):0;
@@ -455,11 +472,10 @@
         var value=state.getOffset();if(isFinite(value))offset=value;
       }
       if(dropState)offset=dropState.offset;else if(frozen!==null)offset=frozen;
-      var hx=top+offset,hy=carryY,angle=attract?-.025*offset:0,progress=0;
+      var hx=top+offset+flex*tableY,hy=carryY,angle=attract?-.025*offset:0;
       var show=attract || state.showCrane!==false,slings=true,callback=null;
       if(dropState){
-        progress=clamp((now-dropState.started)/dropState.duration,0,1);
-        var t=Math.min(1,progress/.79);
+        var t=Math.min(1,progress/(collapse?.38:.79));
         hy=carryY-hangGap*(t*t);
         if(!dropState.landed){
           hy-=Math.pow(progress,2.2)*(height/unit+.8);
@@ -477,10 +493,10 @@
         // Keep the unloaded hook over the tower between turns.
         crane(actorX,hookY,roofY,armX,slings,angle);
         if(frozen===null || progress>0){
-          floor(hx,hy,length%palettes.length,false,angle);
-          floorLabel(state.label,actorX,syy-(hy+floorY*.42)*unit,angle);
+          buildingFloor(length,hx,hy,angle);
+          if(!tumble) floorLabel(state.label,actorX,syy-(hy+floorY*.42)*unit,angle);
         }
-        burst(hx,tableY,progress,Math.abs(offset)<.85);
+        burst(hx,tableY,progress,!collapse && Math.abs(offset)<.85);
       }
       if(renderer){
         for(var m=count;m<groups.length;m++)groups[m].visible=false;
@@ -506,10 +522,11 @@
       if(!dropState)frozen=null;
       if(!frameId)frameId=raf(tick);
     }
-    function drop(offset,landed,callback) {
+    function drop(offset,landed,callback,collapse) {
       if(!running) return;
       cancelDrop();
-      dropState={offset:Number(offset)||0,landed:!!landed,callback:callback,started:Date.now(),duration:reduced?210:480};
+      dropState={offset:Number(offset)||0,landed:!!landed,callback:callback,collapse:collapse,
+        started:Date.now(),duration:collapse?(reduced?310:920):(reduced?210:480)};
       // A student may scroll the crane offscreen or switch tabs after tapping.
       // Network state and controls still settle when animation frames pause.
       dropTimer=setTimeout(finishDrop,dropState.duration);
