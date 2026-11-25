@@ -28,30 +28,44 @@ function showDialog(html){
 }
 const soundButton=$('#sound');
 let audioContext=null;
-let soundOn=false;
+let soundOn=true;
+let soundLoading=null;
 const cueNames=['turn','correct','reveal'];
 const soundBuffers=new Map();
-async function switchSound(){
+function unlockSound(event){
+  if(soundButton.contains(event.target))return;
+  enableSound();
+}
+async function enableSound(){
+  if(!soundOn||soundLoading)return;
+  try{
+    audioContext ||= new AudioContext();
+    soundLoading=(async()=>{
+      await audioContext.resume();
+      await Promise.all(cueNames.filter(name=>!soundBuffers.has(name)).map(async name=>{
+        const response=await fetch('assets/audio/'+name+'.mp3');
+        if(!response.ok)throw new Error('Audio unavailable');
+        soundBuffers.set(name,await audioContext.decodeAudioData(await response.arrayBuffer()));
+      }));
+    })();
+    await soundLoading;
+    playSound('turn');
+    document.removeEventListener('click',unlockSound);
+    document.removeEventListener('keydown',unlockSound);
+  }catch{
+    notice('Game sound could not load.');
+  }finally{
+    soundLoading=null;
+  }
+}
+function switchSound(){
   soundOn=!soundOn;
   soundButton.setAttribute('aria-pressed',String(soundOn));
   soundButton.textContent=soundOn?'Sound on':'Sound off';
-  if(!soundOn)return;
-  try{
-    audioContext ||= new AudioContext();
-    await audioContext.resume();
-    await Promise.all(cueNames.filter(name=>!soundBuffers.has(name)).map(async name=>{
-      const response=await fetch('assets/audio/'+name+'.mp3');
-      if(!response.ok)throw new Error('Audio unavailable');
-      soundBuffers.set(name,await audioContext.decodeAudioData(await response.arrayBuffer()));
-    }));
-    if(soundOn)playSound('turn');
-  }catch{
-    soundOn=false;
-    soundButton.setAttribute('aria-pressed','false');
-    soundButton.textContent='Sound off';
-    notice('Game sound could not load.');
-  }
+  if(soundOn)enableSound();
 }
+document.addEventListener('click',unlockSound);
+document.addEventListener('keydown',unlockSound);
 function playSound(name){
   const buffer=soundBuffers.get(name);
   if(!soundOn||!buffer||audioContext?.state!=='running')return;
