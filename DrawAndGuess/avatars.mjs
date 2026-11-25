@@ -1,4 +1,4 @@
-import { inkFrames, inkPath, inkSprite } from './ink-art.mjs?v=3';
+import { inkFrames, inkPath, inkSprite } from './ink-art.mjs?v=4';
 
 const CUSTOM_BASE = 1000;
 const legacy = ['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
