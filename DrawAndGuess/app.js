@@ -1,20 +1,17 @@
 import { API_URL } from './config.js';
 import { createBoard } from './board.mjs';
+import { avatarImage, avatarLabels, customAvatar, cycleAvatar, defaultAvatar, randomAvatar, sampleAvatars } from './avatars.mjs';
 const $=selector=>document.querySelector(selector);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const avatars=['frog','fox','cat','panda','owl','octopus','turtle','bee','dinosaur','whale','butterfly','raccoon'];
-function avatarImage(index){
-  const name=avatars[index] || avatars[0];
-  return '<img class="avatar-art" src="assets/avatars/'+name+'.webp" alt="" width="36" height="36" draggable="false">';
-}
 const colors=['#182630','#ffffff','#e95042','#f0942e','#f4cb4c','#3cac72','#21aebb','#5084ef','#7958ce','#ed75aa','#875538','#a9a7a0'];
 const colorNames=['Ink','White','Coral','Orange','Gold','Green','Teal','Blue','Purple','Pink','Brown','Gray'];
 const query=new URLSearchParams(location.search);
 let screen=query.get('screen')==='1';
 const initialCode=query.get('room')||'';
-let room=null,state=null,avatar=0,clockOffset=0,pollTimer,toastTimer,pollGeneration=0;
+let room=null,state=null,avatar=defaultAvatar,clockOffset=0,pollTimer,toastTimer,pollGeneration=0;
 let ink=[],sendingInk=false,inkTurn=0,ready=false,settingsKey='',lastMessageId=0;
 const muted=new Set(), key='brighton-draw-guess';
+const avatarKey=key+'-avatar';
 const tokens=new Map();
 const canvas=$('#canvas'), dialog=$('#dialog');
 const canDraw=()=>!screen&&state?.phase==='draw'&&state.me===state.drawer&&!!state.me;
@@ -71,14 +68,29 @@ $('#help').onclick=()=>{
 dialog.addEventListener('change',event=>{
   if(event.target.id==='pressure-toggle')board.settings.pressure=event.target.checked;
 });
-function renderAvatars(){
-  $('#avatars').innerHTML=avatars.map((icon,i)=>`<button type="button" data-avatar="${i}" aria-label="Choose ${icon} avatar" aria-pressed="${i===avatar}">${avatarImage(i)}</button>`).join('');
+const avatarPreview=$('#avatar-preview');
+const avatarValues=[...document.querySelectorAll('.avatar-value')];
+function renderAvatar(){
+  const labels=avatarLabels(avatar);
+  avatarPreview.innerHTML=avatarImage(avatar);
+  avatarValues.forEach((value,index)=>value.textContent=labels[index]);
+  $('#avatar-status').textContent=labels.join(', ');
 }
-$('#avatars').onclick=event=>{
-  const button=event.target.closest('[data-avatar]');if(!button)return;
-  avatar=Number(button.dataset.avatar);renderAvatars();$('#avatars').querySelector('[data-avatar="'+avatar+'"]').focus();
+try{
+  const saved=Number(localStorage.getItem(avatarKey));
+  if(customAvatar(saved))avatar=saved;
+}catch{}
+$('#avatar-editor').onclick=event=>{
+  const button=event.target.closest('button');
+  if(!button)return;
+  avatar=button.id==='avatar-random'
+    ?randomAvatar(avatar)
+    :cycleAvatar(avatar,Number(button.closest('[data-feature]').dataset.feature),Number(button.dataset.direction));
+  try{localStorage.setItem(avatarKey,String(avatar));}catch{}
+  renderAvatar();
 };
-renderAvatars();
+$('.welcome-avatars').innerHTML=sampleAvatars.map(avatarImage).join('');
+renderAvatar();
 $('#code').value=/^\d{6}$/.test(initialCode)?initialCode:'';
 $('#resume').hidden=!stored()?.token;
 async function api(type,fields={},target=room,id=crypto.randomUUID()){

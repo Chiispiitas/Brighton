@@ -13,6 +13,8 @@ function requireThat(condition, message, status) {
 const plain = (value, max) => typeof value === 'string' ? value.trim().replace(/\s+/g, ' ').slice(0, max) : '';
 const normalized = value => plain(value, 200).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
 const between = (value, fallback, min, max) => Number.isInteger(value) ? Math.max(min, Math.min(max, value)) : fallback;
+// Custom portraits encode three choices of eight, starting at 1000. Keep legacy artwork IDs.
+const avatarId = value => Number.isInteger(value) && value >= 1000 && value < 1512 ? value : between(value, 0, 0, 11);
 const playerById = (state, id) => state.players.find(player => player.id === id);
 const playing = state => state.players.filter(player => !player.removed);
 const addMessage = (state, message) => {
@@ -24,7 +26,7 @@ export function createRoom(code, host, name, input = {}, now = Date.now()) {
   requireThat(nickname, 'Enter a nickname.');
   return {
     code, host, name: nickname + '’s room', version:0, phase:'lobby', turnId:0, round:0, drawer:null,
-    players:[{ id:'p1', key:host, name:nickname, avatar:between(input.avatar,0,0,11), score:0 }],
+    players:[{ id:'p1', key:host, name:nickname, avatar:avatarId(input.avatar), score:0 }],
     nextPlayer:2, messages:[], messageId:0, receipts:[], bans:[], reports:[], kickVotes:{},
     listed:input.listed === true, settings:settings(input), expiresAt:now+86400000,
     board:[], boardVersion:0, pointCount:0, used:[], options:[], answer:'', deadline:0
@@ -163,7 +165,7 @@ export function command(current, key, input, now=Date.now(), random=Math.random)
     const name=plain(input.name,24);
     requireThat(name,'Enter a nickname.');
     requireThat(!playing(state).some(p=>normalized(p.name)===normalized(name)),'That nickname is already in use.');
-    const player = { id:'p'+state.nextPlayer++, key, name, avatar:between(input.avatar,0,0,11), score:0 };
+    const player = { id:'p'+state.nextPlayer++, key, name, avatar:avatarId(input.avatar), score:0 };
     state.players.push(player);
     if (['choose','draw','reveal'].includes(state.phase)) state.queue.push(player.id);
     addMessage(state,{kind:'system',text:name+' joined.'});

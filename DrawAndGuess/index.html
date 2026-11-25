@@ -10,7 +10,7 @@
 <meta property="og:description" content="A live drawing game for up to 36 players.">
 <meta property="og:url" content="https://exams.bebrighton.net/DrawAndGuess/">
 <meta name="theme-color" content="#f4f4ed">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 <header class="masthead">
@@ -22,13 +22,40 @@
   <div class="welcome">
     <h1>Draw &amp; Guess</h1>
     <p>Take turns drawing a word. Guess the picture before time runs out.</p>
-    <div class="doodles" aria-hidden="true"><span>☁</span><span>✦</span><span>♧</span><span>☼</span></div><div class="welcome-avatars" aria-hidden="true"><img src="assets/avatars/fox.webp" alt=""><img src="assets/avatars/octopus.webp" alt=""><img src="assets/avatars/owl.webp" alt=""></div>
+    <div class="doodles" aria-hidden="true"><span>☁</span><span>✦</span><span>♧</span><span>☼</span></div>
+    <div class="welcome-avatars" aria-hidden="true"></div>
   </div>
   <div class="setup">
     <form id="entry-form">
       <label for="nickname">Your nickname</label>
       <input id="nickname" name="nickname" maxlength="24" autocomplete="nickname" required placeholder="Enter a name">
-      <fieldset><legend>Pick an avatar</legend><div id="avatars" class="avatars"></div></fieldset>
+      <fieldset>
+        <legend>Customize your avatar</legend>
+        <div id="avatar-editor" class="avatar-editor">
+          <div class="avatar-display">
+            <div id="avatar-preview" class="avatar-preview" aria-hidden="true"></div>
+            <button type="button" id="avatar-random"><span aria-hidden="true">⚄</span> Randomize</button>
+          </div>
+          <div class="avatar-features">
+            <div class="avatar-feature" data-feature="0">
+              <button type="button" data-direction="-1" aria-label="Previous color">‹</button>
+              <span><b>Color</b><span class="avatar-value"></span></span>
+              <button type="button" data-direction="1" aria-label="Next color">›</button>
+            </div>
+            <div class="avatar-feature" data-feature="1">
+              <button type="button" data-direction="-1" aria-label="Previous eyes">‹</button>
+              <span><b>Eyes</b><span class="avatar-value"></span></span>
+              <button type="button" data-direction="1" aria-label="Next eyes">›</button>
+            </div>
+            <div class="avatar-feature" data-feature="2">
+              <button type="button" data-direction="-1" aria-label="Previous mouth">‹</button>
+              <span><b>Mouth</b><span class="avatar-value"></span></span>
+              <button type="button" data-direction="1" aria-label="Next mouth">›</button>
+            </div>
+          </div>
+        </div>
+        <div id="avatar-status" class="sr-only" role="status"></div>
+      </fieldset>
       <label for="code">Room code</label>
       <div class="inline"><input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="6 digits"><button class="primary">Join room</button></div>
       <div class="entry-actions">
@@ -81,5 +108,5 @@
 </main>
 <div id="toast" role="status"></div>
 <dialog id="dialog"></dialog>
-<script type="module" src="app.js?v=2"></script>
+<script type="module" src="app.js?v=3"></script>
 </body></html>
