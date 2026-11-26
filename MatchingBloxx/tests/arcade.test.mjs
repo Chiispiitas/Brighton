@@ -260,3 +260,25 @@ test('Java edge impacts peel loose floors from the top and leave a centered join
   assert.equal(arcade.land([0,0],track([0,0]),true).fallen,1);
   assert.equal(arcade.land([],track([]),true).kind,'landed');
 });
+
+test('Right / Wrong opens wider discard windows on both sides of a leaning tower', () => {
+  const config=arcade.config('rightwrong');
+  const room=createRoom('823503','host','screen',10,20,config);
+  command(room,'player','join',{name:'Jo'},20);
+  const player=room.players[0];
+  player.placements=[.02,.2,.21,.4,.42,.59];
+  command(room,'host','start',{},30);
+  const wide=view(room,'player',30).me.motion;
+  assert.equal(wide.physics,6);
+  const narrow=physics.quickSwing(player.placements.length);
+  assert.equal(wide.amplitude,narrow.amplitude*1.4);
+  assert.ok(wide.period>narrow.period);
+  const throwsTo=(swing,side)=>Array.from({length:180},(_,i)=>{
+    const elapsed=i*swing.period/180;
+    return arcade.trajectory(swing,elapsed,player.placements,ahead=>
+      arcade.towerPose(swing,player.placements,player.rock,elapsed+ahead),false);
+  }).filter(result=>!result.hit && Math.sign(result.path.impact.x)===side).length;
+  const old={...wide,...narrow,physics:5};
+  for(const side of [-1,1])assert.ok(throwsTo(wide,side)>throwsTo(old,side));
+  assert.equal(arcade.config('match').physics,5);
+});

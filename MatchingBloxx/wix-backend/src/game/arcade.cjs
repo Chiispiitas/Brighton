@@ -269,7 +269,8 @@
     var height=player.placements.length;
     var base=(modern?Math.max(2500,3780-height*33):Math.max(1900,3270-57*(player.round-1)))+Math.round(random()*380);
     var classic=version>=3?physics.quickSwing(height):null;
-    if(classic)base=classic.period;
+    var wideSwing=version===6;
+    if(classic)base=classic.period*(wideSwing?1.08:1);
     var phase=random()*2*Math.PI;
     if(modern && previous && typeof elapsed==='number') {
       phase=(previous.phase+elapsed*2*Math.PI/previous.period)%(2*Math.PI);
@@ -281,7 +282,7 @@
       if(version>=4)player.motion.classicLanding=true;
       if(version>=5 && !player.rock)player.rock=advanceTower(null,0,false);
       player.motion.lowering=!!previous;
-      player.motion.amplitude=classic?classic.amplitude:Math.min(1.35,player.motion.amplitude+.009*height);
+      player.motion.amplitude=classic?classic.amplitude*(wideSwing?1.4:1):Math.min(1.35,player.motion.amplitude+.009*height);
       if(classic)player.motion.verticalAmplitude=classic.verticalAmplitude;
     }
     if(assistance) player.steady=0;
@@ -421,7 +422,7 @@
       player.motion=null;
     } else {player.round++;arm(player,now,player.motion.physics||1,next.restart);}
   }
-  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:5}; }
+  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:mode==='rightwrong'?6:5}; }
   function snapshot(game) {
     var set=game.set;
     return {mode:game.mode,name:set.name,instruction:set.instruction||'',physics:game.physics||1};

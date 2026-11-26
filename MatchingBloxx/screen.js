@@ -1,6 +1,8 @@
 (function (window) {
   'use strict';
 
+  var tossHint='<span class="toss-hint">Toss wrong blocks aside</span>';
+
   function clock() {
     return window.performance && performance.now ? performance.now() : Date.now();
   }
@@ -118,8 +120,9 @@
       card.className = 'screen-tile'+(matching?'':' screen-sorting');
       card.setAttribute('aria-label', player.name);
       card.innerHTML = '<header class="screen-tile-head"><strong></strong><span></span></header>' +
-        '<div class="screen-tower"></div><p class="screen-prompt"></p><div class="screen-controls">' +
-        '<div class="screen-choices" aria-label="Matching blocks"></div>' +
+        '<div class="screen-tower"></div><p class="screen-prompt"></p><div class="screen-controls'+
+        (matching?'':' sorting-controls')+'">' +
+        '<div class="screen-choices" aria-label="Matching blocks"></div>' +(matching?'':tossHint)+
         '<button type="button" class="screen-drop"></button></div>';
       grid.appendChild(card);
       card.querySelector('strong').textContent = player.name;
@@ -127,6 +130,7 @@
       var prompt = card.querySelector('.screen-prompt');
       var choices = card.querySelector('.screen-choices');
       var drop = card.querySelector('.screen-drop');
+      var controls = card.querySelector('.screen-controls');
       var scene = window.BloxxScene.mount(card.querySelector('.screen-tower'));
       var tile = {player:player, scene:scene, finished:false};
       var selected = -1, busy = false, view;
@@ -160,6 +164,7 @@
         }
         choices.textContent = '';
         choices.hidden = tile.finished || !matching;
+        controls.hidden=tile.finished;
         drop.hidden = tile.finished;
         drop.disabled = tile.finished || matching;
         drop.classList.remove('pressed');
@@ -237,5 +242,5 @@
     };
   }
 
-  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop,popup:popup};
+  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop,popup:popup,tossHint:tossHint};
 }(window));
