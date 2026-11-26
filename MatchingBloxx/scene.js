@@ -707,7 +707,7 @@
         hy=tableY+airborne.height;
         angle=airborne.angle;
         slings=false;
-        if(hit && (!collapse || shattering) && (hit.kind==='wrong'||hit.kind==='miss')){
+        if(hit && (!collapse || shattering) && (hit.kind==='wrong'||hit.kind==='miss'||hit.kind.indexOf('passed')===0)){
           var travel=progress*dropState.duration/1000;
           if(flight.rejected && now>=dropState.contactAt){
             var falling=flight.rejected(travel,!!hit.bump);
