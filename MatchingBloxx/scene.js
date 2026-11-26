@@ -280,7 +280,7 @@
     }
   }
 
-  function mount(container) {
+  function mount(container, settings) {
     if (!container) throw new Error('Tower scene needs a container.');
     var state={mode:'attract',floors:[],balance:0,getOffset:null,showCrane:true};
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
@@ -679,7 +679,7 @@
     if(document.fonts && document.fonts.load) {
       document.fonts.load('700 14px "Chakra Petch"').then(function(){dirty=true;},function(){});
     }
-    var canvasOnly=/(?:[?&])renderer=canvas(?:[&#]|$)/.test(global.location.search) ||
+    var canvasOnly=(settings && settings.canvasOnly) || /(?:[?&])renderer=canvas(?:[&#]|$)/.test(global.location.search) ||
       global.navigator.connection && global.navigator.connection.saveData;
     if(!canvasOnly && global.WebGLRenderingContext) {
       if(global.THREE)setupThree();else script('lib/three.r136.min.js',setupThree);
