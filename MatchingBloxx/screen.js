@@ -5,6 +5,32 @@
     return window.performance && performance.now ? performance.now() : Date.now();
   }
 
+  function blockButton(word, index, selected) {
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'screen-choice';
+    button.setAttribute('aria-pressed', String(!!selected));
+    var picture = document.createElement('canvas');
+    picture.width = 116;
+    picture.height = 90;
+    picture.setAttribute('aria-hidden','true');
+    var label = document.createElement('span');
+    label.textContent = word;
+    button.appendChild(picture);
+    button.appendChild(label);
+    window.BloxxScene.segment(picture,index);
+    return button;
+  }
+
+  function bindDrop(button, release) {
+    button.onpointerdown = function (event) {
+      if(event.button!==0 || button.disabled)return;
+      event.preventDefault();
+      release();
+    };
+    button.onclick = release;
+  }
+
   function mount(board, config, names, turns, cue, leave) {
     var rules = window.MatchingBloxxRules;
     var arcade = window.BloxxArcade;
@@ -105,19 +131,7 @@
         drop.classList.remove('pressed');
         if (!tile.finished) {
           view.choices.forEach(function (word, index) {
-            var button = document.createElement('button');
-            button.type = 'button';
-            button.className = 'screen-choice';
-            var picture = document.createElement('canvas');
-            picture.width = 116;
-            picture.height = 90;
-            picture.setAttribute('aria-hidden','true');
-            var label = document.createElement('span');
-            label.textContent = word;
-            button.appendChild(picture);
-            button.appendChild(label);
-            window.BloxxScene.segment(picture,index);
-            button.setAttribute('aria-pressed', 'false');
+            var button = blockButton(word,index,false);
             button.onclick = function () { select(index); };
             choices.appendChild(button);
           });
@@ -175,12 +189,7 @@
           }
         });
       }
-      drop.onpointerdown = function (event) {
-        if(event.button!==0)return;
-        event.preventDefault();
-        release();
-      };
-      drop.onclick = release;
+      bindDrop(drop,release);
       next();
       return tile;
     }
@@ -196,5 +205,5 @@
     };
   }
 
-  window.BloxxScreen = {mount:mount};
+  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop};
 }(window));

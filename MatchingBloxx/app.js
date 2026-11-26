@@ -140,6 +140,11 @@
   }
   function setLayout(name) {
     game.className = ('shell ' + name).trim();
+    var lane=game.classList.contains('lane'), art=$('art'), desk=$('desk');
+    document.body.classList.toggle('lane-active',lane);
+    art.classList.toggle('screen-tile',lane);
+    if(lane && desk.parentNode!==art)art.appendChild(desk);
+    else if(!lane && desk.parentNode!==game)game.appendChild(desk);
     if (name === 'board' && scene) { scene.destroy(); scene = null; visualKey = ''; }
     $('crane-label').hidden = true;
     $('arcade-hud').hidden = name!=='stage arcade';
@@ -591,38 +596,38 @@
     var me=state.me, stage=me.stage, done=stage==='done';
     var motionId=state.code+'-'+me.round+'-'+stage;
     if(motionKey!==motionId) {motionKey=motionId;motionStart=now();}
-    setLayout('stage');
+    setLayout('stage lane');
     var prompt=stage==='match'||stage==='drop'?me.prompt:'';
-    setScene(motionId+'-'+me.placements.join(','),{mode:'build',floors:me.placements,balance:me.balance,showCrane:stage==='match'||stage==='drop',label:prompt,
+    setScene(motionId+'-'+me.placements.join(','),{mode:'build',arcade:false,screen:false,physical:false,
+      floors:me.placements,balance:me.balance,showCrane:stage==='match'||stage==='drop',label:prompt,
       getOffset:stage==='drop' && me.motion ? function(){return MatchingBloxxRules.position(me.motion,Math.max(0,now()-motionStart));} : null});
-    footer(practice?'Solo practice':'Room '+state.code,'Round '+me.round+' / 12');
-    var html=(practice?'':'<p class="eyebrow">'+esc(me.name)+'</p>')+statistics(me);
-    if(done) html+='<h2>Tower complete</h2><p class="sub">Waiting for the other builders to finish.</p>'+standings(state.players);
-    else if(stage==='match') {
-      html+='<h3>Choose the verb</h3><p class="question"><span class="blank" aria-hidden="true">___</span> '+esc(me.prompt)+'</p><div class="choices">'+me.choices.map(function(v){return '<button class="choice" data-verb="'+esc(v)+'">'+esc(v.toLowerCase())+'</button>';}).join('')+'</div>';
+    var html=laneHeader(me,done?'Finished':me.round+'/12');
+    var controls='';
+    if(done) html+='<div class="lane-result"><h2>Tower complete</h2>'+standings(state.players)+'</div>';
+    else if(stage==='match' || stage==='drop') {
+      html+='<div class="lane-info"><h2 class="screen-prompt">___ '+esc(me.prompt)+'</h2>';
+      controls=laneControls(stage==='match',stage==='match');
       if(me.gustPending) html+='<p class="wind-note">Incoming gust · Your next crane will swing faster.</p>';
-      if(me.steady) {
+      if(stage==='match' && me.steady) {
         var targets=state.players.filter(function(p){return p.id!==me.id && p.canReceiveGust;});
         html+='<div class="row-buttons">'+(me.steadyArmed?'<span class="pill">Steady Crane ready</span>':
           '<button id="steady" class="small-action">Use Steady Crane</button>'+
           (targets.length?'<button id="gust" class="small-action">Send a gust</button>':''))+'</div>';
       }
-    } else if(stage==='drop') {
-      html+='<h2>Time your drop</h2><p class="sub">'+(me.motion && me.motion.gust?'A gust is speeding up your crane. ':'')+
-        (Math.abs(me.balance)>=.5?'Aim a little to the '+(me.balance>0?'left':'right')+' to counter the lean.':'Release the floor over your tower.')+
-        '</p>'+balanceMeter(me.balance)+'<button class="button yellow" id="drop">Drop floor</button>';
+      html+='<div class="lane-tools"><button class="small-action" id="leave">Back to menu</button></div></div>';
     } else if(stage==='result' && me.last) {
-      html+=result(me.last)+'<button class="button yellow" id="next">'+(me.round===12?'See standings':'Next floor')+'</button>';
+      html+='<div class="lane-result">'+result(me.last)+'<button class="button yellow" id="next">'+(me.round===12?'See standings':'Next floor')+
+        '</button><button class="text-btn" id="leave">Back to menu</button></div>';
     }
-    html+='<div class="row-buttons"><button class="text-btn" id="leave">'+(practice?'Leave game':'Back to menu')+'</button></div>';
+    if(done)html+='<div class="lane-info"><button class="small-action" id="leave">Back to menu</button></div>';
+    html+=controls;
     paintPanel(html,html);
-    var choices=panel.querySelectorAll('[data-verb]');
-    for(var i=0;i<choices.length;i++) choices[i].onclick=function(){
-      perform('answer',{round:me.round,verb:this.getAttribute('data-verb')},function(error,data){
+    if(stage==='match')laneBlocks(me.choices.map(function(word){return word.toLowerCase();}),-1,'data-verb',function(index){
+      perform('answer',{round:me.round,verb:me.choices[index]},function(error,data){
         if(!error){cue(data.me.stage==='drop'?'match':'miss');receive(data);}
       });
-    };
-    if($('drop')) $('drop').onclick=drop;
+    });
+    if($('drop'))BloxxScreen.bindDrop($('drop'),drop);
     if($('next')) $('next').onclick=function(){perform('next',{round:me.round});};
     if($('steady')) $('steady').onclick=function(){perform('steady',{round:me.round});};
     if($('gust')) $('gust').onclick=function(){
@@ -667,6 +672,25 @@
     var extra=last.lost?' · '+last.lost+(last.lost===1?' floor fell':' floors fell'):
       last.correction?' · '+last.correction:last.points?' · +'+last.points:'';
     return '<span class="drop-note '+(last.kind==='perfect'?'perfect':'')+'">'+esc(words[last.kind]+extra)+'</span>';
+  }
+  function laneHeader(me, turn) {
+    return '<header class="screen-tile-head"><strong>'+esc(me.name)+'</strong><span>'+me.score+' pts · '+turn+'</span></header>';
+  }
+  function laneBlocks(words, selection, attribute, callback) {
+    var choices=panel.querySelector('.screen-choices');
+    if(!choices || choices.children.length)return;
+    words.forEach(function(word,index){
+      var button=BloxxScreen.blockButton(word,index,index===selection);
+      button.setAttribute(attribute,attribute==='data-block'?index:word.toUpperCase());
+      button.onclick=function(){callback(index);};
+      choices.appendChild(button);
+    });
+  }
+  function laneControls(matching, disabled, skip) {
+    return '<div class="screen-controls">'+(matching?'<div class="screen-choices" aria-label="Matching blocks"></div>':
+      (skip?'<button type="button" class="small-action lane-skip" id="skip">Skip block</button>':''))+
+      '<button type="button" class="screen-drop" aria-label="Drop floor" id="drop"'+
+      (disabled?' data-disabled="true" disabled':'')+'></button></div>';
   }
   function chooseArcade(index) {
     if(busy || !state.me.choices[index])return;
@@ -716,47 +740,39 @@
     }
     var activeLabel=arcadeChoice>=0?me.choices[arcadeChoice]:'?';
     var target=matching?me.prompt:'';
-    setLayout('stage arcade');
+    setLayout('stage lane');
     $('art').classList.remove('wrong-flash');
     var physical=state.arcade.physics===2;
-    setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,physical:physical,floors:me.placements,balance:me.balance,
+    setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
       getRock:physical&&me.rock?function(){return BloxxPhysics.rockAt(me.rock,now()-motionStart).angle;}:null,
       rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
-    $('arcade-hud').innerHTML='<span><b>'+me.score+'</b> points</span><span><b>'+me.floors+'</b> '+(me.floors===1?'floor':'floors')+'</span>';
-    footer(modeLabel(state.arcade.mode),done?'Game over':state.total?'Turn '+me.round+' / '+state.total:'Turn '+me.round);
-    var html='<div class="arcade-controls">';
+    var html=laneHeader(me,done?'Finished':state.total?me.round+'/'+state.total:'Turn '+me.round);
     if(done) {
-      html+='<div class="row"><h2>'+(practice?'Tower complete':state.phase==='finished'?'Final standings':'Tower complete')+'</h2></div>';
+      html+='<div class="lane-result"><h2>'+(practice?'Tower complete':state.phase==='finished'?'Final standings':'Tower complete')+'</h2>';
+      html+='<p>'+me.floors+(me.floors===1?' floor':' floors')+'</p>';
       if(!practice)html+=standings(state.players);
       html+=arcadeOutcome(me.last)+'<div class="row-buttons"><button id="again" class="small-action">'+(practice?'Build again':'Back to menu')+'</button>';
       if(practice)html+='<button id="leave" class="text-btn">Back to menu</button>';
-      html+='</div>';
+      html+='</div></div>';
     } else {
-      html+='<div class="arcade-title"><h2>'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'<span class="blank">___</span> '+esc(me.prompt)):
-        esc(state.arcade.instruction))+'</h2>'+arcadeOutcome(me.last)+'</div>';
-      if(matching)html+='<div class="arcade-choices" aria-label="Choose a block">'+me.choices.map(function(word,i){
-        return '<button type="button" class="choice" data-block="'+i+'" aria-pressed="'+(arcadeChoice===i)+'"><span class="key-cap" aria-hidden="true">'+(i+1)+'</span>'+esc(word)+'</button>';
-      }).join('')+'</div>';
-      else html+='<p class="word-on-crane">'+esc(me.prompt)+'</p>';
-      var off=arcadeChoice<0?' data-disabled="true" disabled':'';
-      html+='<div class="arcade-dropbar"><div>'+balanceMeter(me.balance)+'</div>'+
-        '<button class="button yellow" id="drop"'+off+'>Drop floor</button>'+
-        (matching?'':'<button class="button skip" id="skip">Skip block</button>')+'</div>';
+      html+='<div class="lane-info"><h2 class="screen-prompt">'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'___ '+esc(me.prompt)):
+        esc(me.prompt))+'</h2>';
+      if(!matching)html+='<p class="lane-instruction">'+esc(state.arcade.instruction)+'</p>';
+      if(me.last && (me.last.kind==='wrong'||me.last.kind==='passed-right'))html+=arcadeOutcome(me.last);
       if(me.motion && me.motion.gust)html+='<p class="wind-note">Gust · faster swing</p>';
       if(me.motion && me.motion.assisted)html+='<p class="wind-note">Steady Crane · slower swing</p>';
       var targets=state.players.filter(function(p){return p.id!==me.id && p.canReceiveGust;});
-      html+='<div class="row-buttons">'+(me.steady?(me.steadyArmed?'<span class="pill">Steady Crane ready for the next block</span>':
+      html+='<div class="row-buttons lane-tools">'+(me.steady?(me.steadyArmed?'<span class="pill">Steady Crane ready</span>':
         '<button id="arcade-steady" class="small-action">Slow next swing</button>'+
         (targets.length?'<button id="arcade-gust" class="small-action">Send a gust</button>':'')):'')+
-        '<button id="leave" class="text-btn">'+(practice?'Finish run':'Back to menu')+'</button></div>';
+        '<button id="leave" class="small-action">'+(practice?'Finish run':'Back to menu')+'</button></div></div>'+
+        laneControls(matching,arcadeChoice<0,!matching);
     }
-    html+='</div>';
-    paintPanel(html,html);
-    var buttons=panel.querySelectorAll('[data-block]');
-    for(var i=0;i<buttons.length;i++)buttons[i].onclick=function(){chooseArcade(Number(this.getAttribute('data-block')));};
-    if($('drop'))$('drop').onclick=arcadeDrop;
+    paintPanel(JSON.stringify([html,round,arcadeChoice,me.choices]),html);
+    if(!done && matching)laneBlocks(me.choices,arcadeChoice,'data-block',chooseArcade);
+    if($('drop'))BloxxScreen.bindDrop($('drop'),arcadeDrop);
     if($('skip'))$('skip').onclick=function(){perform('arcadePass',{round:me.round,elapsedMs:Math.max(0,Math.round(now()-motionStart))});};
     if($('arcade-steady'))$('arcade-steady').onclick=function(){perform('steady',{round:me.round});};
     if($('arcade-gust'))$('arcade-gust').onclick=function(){

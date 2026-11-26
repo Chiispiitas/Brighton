@@ -410,3 +410,44 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
 @media(prefers-reduced-motion:reduce){
   .home .marquee img,.start-modes,.join-console,.arcade .art-frame.wrong-flash::after{animation:none}
 }
+
+.lane-active .bar-inner{max-width:none;padding:5px 12px}
+.shell.lane{display:block;max-width:1060px;margin:6px auto;padding:0 6px}
+.lane .art-frame{
+  height:calc(100vh - 63px);height:calc(100dvh - 63px);min-height:365px;
+  border:1px solid #594468;border-radius:7px;box-shadow:none;
+}
+.lane .scene{position:absolute;inset:0;width:100%;height:100%;min-height:0}
+.lane .art-foot{display:none}
+.lane .desk{
+  position:absolute;inset:0;height:100%;z-index:3;padding:0;background:none;border:0;border-radius:0;
+  box-shadow:none;pointer-events:none;overflow:visible;
+}
+.lane :is(button,.lane-result){pointer-events:auto}
+.lane .screen-tile-head{top:8px;left:9px;right:9px}
+.lane .screen-tile-head span{font-variant-numeric:tabular-nums}
+.lane-info{position:absolute;top:39px;left:9px;right:9px}
+.lane .screen-prompt{position:static;max-width:min(100%,460px);font-size:clamp(1rem,2.2vw,1.35rem);margin:0}
+.lane-instruction,.lane .wind-note,.lane .drop-note{
+  display:block;width:max-content;max-width:100%;margin:5px 0 0;padding:3px 6px;border-radius:4px;
+  background:#fff0da;color:#312444;font-size:.82rem;overflow-wrap:anywhere;
+}
+.lane .lane-tools{margin-top:7px;gap:5px}
+.lane-tools .small-action,.lane-skip{background:#302342;color:#fff0da;border-color:#765e84}
+.lane .screen-controls{left:10px;right:10px;bottom:10px;min-height:46px}
+.lane .screen-drop{margin-left:auto}
+.lane .screen-choices{width:clamp(140px,36%,240px);gap:4px}
+.lane .screen-choice{min-height:49px;font-size:.85rem}
+.lane .screen-choice canvas{max-height:65px}
+.lane .screen-choice span{padding:3px 2px}
+.lane .feedback{position:absolute;bottom:151px;left:9px;right:9px;margin:0}
+.lane-result{
+  position:absolute;left:9px;right:9px;bottom:10px;background:#fff0da;color:#312444;
+  max-width:460px;max-height:48%;overflow:auto;border-radius:7px;padding:12px;
+}
+.lane-result h2{font-size:1.35rem}
+@media(max-width:520px){
+  .lane .screen-choice{min-height:46px;font-size:.76rem}
+  .lane .screen-choice canvas{max-height:53px}
+  .lane .screen-controls{bottom:8px}
+}
