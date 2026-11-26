@@ -103,7 +103,7 @@
       var prompt = card.querySelector('.screen-prompt');
       var choices = card.querySelector('.screen-choices');
       var drop = card.querySelector('.screen-drop');
-      var scene = window.BloxxScene.mount(card.querySelector('.screen-tower'), {canvasOnly:true});
+      var scene = window.BloxxScene.mount(card.querySelector('.screen-tower'));
       var tile = {player:player, scene:scene, finished:false};
       var selected = -1, busy = false, view;
 

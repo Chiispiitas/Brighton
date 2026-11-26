@@ -1,4 +1,4 @@
-/* One native sprite grid serves Canvas and Three.js. Physics coordinates stay in CSS pixels. */
+/* Three.js meshes and their Canvas sprite fallback share an integer pixel grid. */
 (function (global) {
   'use strict';
   var floorHeight = .48, cp = Math.cos(.15);
@@ -153,7 +153,7 @@
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
     var cancel=global.cancelAnimationFrame || clearTimeout, frameId=0, then=0;
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='';
-    var T=null, renderer=null, world=null, camera=null, groups=[], geometry={};
+    var T=null, renderer=null, world=null, camera=null, modelMaterial=null, groups=[], geometry={};
     var resizeObserver=null, near=true, visibility=null, count=0, start=Date.now(), cameraX=0, cameraRise=0;
     var tour=null, tourPlayed=false, contactTimer=0, preview=null;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -217,6 +217,7 @@
         world=new T.Scene();
         camera=new T.OrthographicCamera(-1,1,1,-1,.1,100);
         camera.position.z=20;
+        modelMaterial=new T.MeshBasicMaterial({vertexColors:true,side:T.DoubleSide,toneMapped:false});
         container.insertBefore(c,foreground);graphics.style.visibility='hidden';
         container.setAttribute('data-renderer','three');dirty=true;
         c.addEventListener('webglcontextlost',function(e){e.preventDefault();releaseThree();},false);
@@ -226,46 +227,56 @@
       var old=renderer;renderer=null;
       if(old){
         var c=old.domElement;if(c.parentNode)c.parentNode.removeChild(c);
-        Object.keys(geometry).forEach(function(key){
-          var item=geometry[key];
-          item.plane.dispose();item.texture.dispose();item.material.dispose();
-        });
+        Object.keys(geometry).forEach(function(key){geometry[key].dispose();});
+        if(modelMaterial)modelMaterial.dispose();
         old.dispose();
         if(old.forceContextLoss) old.forceContextLoss();
       }
       geometry={};groups=[];
       graphics.style.visibility='visible';container.setAttribute('data-renderer','canvas');
     }
-    function materialFor(art) {
-      if(geometry[art.key])return geometry[art.key];
-      var w=art.image.width/art.unit,h=art.image.height/art.unit;
-      var plane=new T.PlaneGeometry(w,h);
-      plane.translate(w/2-art.x/art.unit,art.y/art.unit-h/2,0);
-      var texture=new T.CanvasTexture(art.image);
-      texture.magFilter=T.NearestFilter;
-      texture.minFilter=T.NearestFilter;
-      texture.generateMipmaps=false;
-      texture.encoding=T.sRGBEncoding;
-      var material=new T.MeshBasicMaterial({map:texture,transparent:true,alphaTest:.5,depthTest:false,depthWrite:false,toneMapped:false});
-      var visual={plane:plane,material:material,texture:texture};
-      geometry[art.key]=visual;
-      return visual;
+    function meshFor(kind,style) {
+      var key=kind+'-'+style;
+      if(geometry[key])return geometry[key];
+      var vertices=[], colors=[];
+      global.BloxxModels.build(kind,style).forEach(function(face){
+        var color=new T.Color(face.color).convertSRGBToLinear();
+        [0,1,2,0,2,3].forEach(function(i){
+          var point=face.points[i];
+          vertices.push(point[0],point[1],point[2]);
+          colors.push(color.r,color.g,color.b);
+        });
+      });
+      var mesh=new T.BufferGeometry();
+      mesh.setAttribute('position',new T.Float32BufferAttribute(vertices,3));
+      mesh.setAttribute('color',new T.Float32BufferAttribute(colors,3));
+      geometry[key]=mesh;
+      return mesh;
     }
-    function floor(x,y,style,kind,angle) {
-      var a=sprite(style,kind,compactBlocks);
-      if(!a)return;
+    function drawModel(kind,style,px,py,size,roll,yaw) {
+      var mesh=meshFor(kind,style);
+      var group=groups[count++];
+      if(!group){
+        group=new T.Group();
+        group.add(new T.Mesh(mesh,modelMaterial));
+        world.add(group);
+        groups.push(group);
+      } else group.children[0].geometry=mesh;
+      group.position.set((px-sx)/unit,(syy-py)/unit,0);
+      group.scale.setScalar(size/unit);
+      group.rotation.z=roll;
+      group.children[0].rotation.set(.15,yaw,0);
+      group.visible=true;
+    }
+    function floor(x,y,style,kind,angle,twist) {
       var px=Math.round((sx+unit*x)/pixel)*pixel;
       var py=Math.round((syy-unit*y)/pixel)*pixel;
       if(renderer){
-        var visual=materialFor(a);
-        var node=groups[count];
-        if(!node){node=new T.Mesh(visual.plane,visual.material);groups[count]=node;world.add(node);}
-        else {node.geometry=visual.plane;node.material=visual.material;}
-        node.position.set((px-sx)/unit,(syy-py)/unit,0);
-        node.rotation.z=angle||0;
-        node.renderOrder=count++;
-        node.visible=true;
+        drawModel(kind===true?'base':kind||'floor',kind==='entry'||kind==='roof'||kind===true?0:style,
+          px,py,unit,angle||0,-.30+(twist||0));
       }else{
+        var a=sprite(style,kind,compactBlocks);
+        if(!a)return;
         var size=pixel*blockScale;
         fallback.save();fallback.translate(px,py);fallback.rotate(-(angle||0));
         fallback.drawImage(a.image,-a.x*size,-a.y*size,a.image.width*size,a.image.height*size);
@@ -299,7 +310,14 @@
       var trolleyX=Math.round(clamp(xArm,width*.25,width*.77)/pixel)*pixel;
       var baseY=Math.round((pivotY===undefined?height*.13:pivotY)/pixel)*pixel;
       var end=Math.min(width*.93,trolleyX+width*.12);
-      if(atlas.naturalWidth){
+      if(renderer){
+        var section=28*pixel;
+        for(var part=0;part+section/2<=end;part+=section){
+          drawModel('boom',0,part+section/2,baseY,section,0,-.08);
+        }
+        drawModel('trolley',0,trolleyX,baseY,section,0,-.22);
+        drawModel('hook',0,hookX,hookY,section,0,-.22);
+      }else if(atlas.naturalWidth){
         var boomWidth=42*pixel;
         for(var x=0;x<end;x+=boomWidth){
           var visible=Math.min(42,Math.ceil((end-x)/pixel));
@@ -309,9 +327,11 @@
       }
       cable(trolleyX,baseY+5*pixel,hookX,hookY,'#314a49');
       rig.fillStyle='#253b40';
-      var hx=Math.round(hookX/pixel)*pixel, hy=Math.round(hookY/pixel)*pixel;
-      rig.fillRect(hx-pixel,hy-pixel,2*pixel,2*pixel);
-      rig.fillRect(hx,hy+pixel,2*pixel,pixel);
+      if(!renderer){
+        var hx=Math.round(hookX/pixel)*pixel, hy=Math.round(hookY/pixel)*pixel;
+        rig.fillRect(hx-pixel,hy-pixel,2*pixel,2*pixel);
+        rig.fillRect(hx,hy+pixel,2*pixel,pixel);
+      }
       if(slings){
         var wid=unit*.42, centerX=roofX===undefined?hookX:roofX;
         var riseL=wid*Math.sin(angle||0);
@@ -540,9 +560,11 @@
         freeFall=Math.pow(clamp((tumble-.55)/.45,0,1),2);
       }
       function buildingFloor(index,x,y,angle) {
+        var twist=index===length?Math.sin(angle)*.25:0;
         if(shattering && index>=firstFalling && index<length && tumble>0) {
           var piece=global.BloxxPhysics.debris((now-dropState.contactAt)/1000,index-firstFalling,collapse.direction);
           x+=piece.x;y+=piece.y;angle+=piece.angle;
+          twist=piece.angle*.77;
         } else if(!shattering && index>=firstFalling && tumble>0) {
           var level=index-firstFalling;
           var dx=x-pivotX,dy=y-pivotY;
@@ -555,7 +577,7 @@
         var kind=arcade ? (index===0?'entry':'cube') : false;
         var color=arcade && index===length && state.choice>=0 ? state.choice : index;
         if(screen && index>0 && index<length && state.floorColors)color=state.floorColors[index-1];
-        floor(x,y,color%4,kind,angle);
+        floor(x,y,color%4,kind,angle,twist);
       }
       for(var i=0;i<length;i++){
         var y=i*floorY;
@@ -736,7 +758,7 @@
     }
     var canvasOnly=(settings && settings.canvasOnly) || /(?:[?&])renderer=canvas(?:[&#]|$)/.test(global.location.search) ||
       global.navigator.connection && global.navigator.connection.saveData;
-    if(!canvasOnly && global.WebGLRenderingContext) {
+    if(!canvasOnly && global.WebGLRenderingContext && global.BloxxModels) {
       if(global.THREE)setupThree();else loadThree(setupThree);
     }
     resize();frameId=raf(tick);
