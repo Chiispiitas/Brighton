@@ -281,6 +281,7 @@
   }
 
   function mount(container, settings) {
+    var labelFont = global.getComputedStyle ? global.getComputedStyle(container).fontFamily : 'Arial, sans-serif';
     if (!container) throw new Error('Tower scene needs a container.');
     var state={mode:'attract',floors:[],balance:0,getOffset:null,showCrane:true};
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
@@ -427,7 +428,7 @@
       var max=Math.max(64,Math.min(width*.60,unit*1.22));
       var fontSize=clamp(unit*.108,11,17);
       rig.save();rig.translate(clamp(cx,max/2+3,width-max/2-3),cy);rig.rotate(-angle);
-      rig.font='700 '+Math.round(fontSize)+'px "Chakra Petch", "Trebuchet MS", Arial, sans-serif';
+      rig.font='700 '+Math.round(fontSize)+'px '+labelFont;
       var words=String(text).slice(0,64).split(/\s+/),lines=[''];
       for(var i=0;i<words.length;i++){
         var j=lines.length-1, line=lines[j] ? lines[j]+' '+words[i] : words[i];
@@ -677,7 +678,7 @@
     }
     if(!global.BloxxFloorMesh)script('assets/floor.js',function(){dirty=true;});
     if(document.fonts && document.fonts.load) {
-      document.fonts.load('700 14px "Chakra Petch"').then(function(){dirty=true;},function(){});
+      document.fonts.load('700 14px '+labelFont).then(function(){dirty=true;},function(){});
     }
     var canvasOnly=(settings && settings.canvasOnly) || /(?:[?&])renderer=canvas(?:[&#]|$)/.test(global.location.search) ||
       global.navigator.connection && global.navigator.connection.saveData;
