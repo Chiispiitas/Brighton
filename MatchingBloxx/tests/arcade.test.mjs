@@ -30,16 +30,17 @@ test('released blocks keep their angular and sideways velocity and accelerate do
   assert.ok(Math.abs(late.height-.49*Math.abs(Math.sin(late.angle)))<.0001);
 });
 
-test('matching starts at a lecture, offers four blocks, and advances in a single release', () => {
+test('matching offers four blocks and advances in a single release', () => {
   const room=createRoom('823500','host','screen',10,20,{mode:'match'});
   command(room,'player','join',{name:'Jo'},20);
   command(room,'host','start',{},30);
   let me=view(room,'player',30).me;
   assert.equal(me.stage,'drop');
-  assert.equal(me.prompt,'a lecture');
+  const first = arcade.card(room.arcade,1,room.players[0].seed);
+  assert.equal(me.prompt,first.label);
   assert.equal(new Set(me.choices).size,4);
   const elapsedMs=center(me.motion);
-  command(room,'player','arcadeDrop',{round:1,choice:me.choices.indexOf('attend'),elapsedMs},30+elapsedMs);
+  command(room,'player','arcadeDrop',{round:1,choice:first.correct,elapsedMs},30+elapsedMs);
   me=view(room,'player',30+elapsedMs).me;
   assert.equal(me.round,2);
   assert.equal(me.last.kind,'perfect');
