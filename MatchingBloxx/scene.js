@@ -173,8 +173,12 @@
     if(!global.BloxxFloorMesh)script('assets/floor.js',paint);
   }
 
-  // Orthographic painted city layers. Pixel art stays at its own resolution.
-  function paintTown(ctx,w,h,rise,attract,ascent,foundation) {
+  var cityArt={day:new Image(),sunset:new Image(),props:new Image()};
+  cityArt.day.src='assets/city/day.png';
+  cityArt.sunset.src='assets/city/sunset.png';
+  cityArt.props.src='assets/city/site-props.png';
+
+  function paintTown(ctx,w,h,rise,attract,ascent,foundation,horizontal) {
     function rect(x,y,width,height,col) {
       ctx.fillStyle=col;ctx.fillRect(Math.round(x),Math.round(y),Math.round(width),Math.round(height));
     }
@@ -235,55 +239,22 @@
       var bx=w*.78+bi*9,by=h*.22+Math.sin(bi*2)*4;
       rect(bx,by,2,1,'#769b9f');rect(bx+2,by+1,1,1,'#769b9f');rect(bx+3,by,2,1,'#769b9f');
     }
-    function skyline(far) {
-      var x=-12, i=0, baseY=h*(far?.83:.92)+rise*(far?.07:.17),unit=clamp(h/235,.72,1.8);
-      while(x<w+3){
-        var seed=i+ (far?3:61),bw=(far?11+random(seed+7)*13:15+random(seed+7)*22)*unit;
-        var high=(far?19+random(seed+88)*50:14+random(seed+88)*56)*unit;
-        var y=baseY-high, col=attract?(far?'#a77e9b':['#74658b','#88758a','#7d6383','#8b7084'][i%4]):
-          (far?'#91b8ba':['#799ca7','#89a3a4','#7eabb0','#84a3ac'][i%4]);
-        rect(x,y,bw,high+2,col);
-        if(i%3===0) {
-          rect(x+bw*.17,y-5*unit,bw*.62,6*unit,col);
-          if(i%2===0) rect(x+bw*.37,y-11*unit,bw*.2,8*unit,col);
-        }
-        if(!far){
-          rect(x+bw*.74,y,bw*.25,high+2,attract?'#655877':'#74959d');
-          if(i%3!==0){
-            for(var wy=y+4*unit;wy<baseY-2;wy+=7*unit){
-              for(var wx=x+3*unit;wx<x+bw*.71;wx+=6*unit) rect(wx,wy,2*unit,3*unit,attract?'#be94a6':i%2?'#a9c2bc':'#a0bfc2');
-            }
-          }else{
-            for(var strip=2;strip<bw*.75;strip+=5*unit) rect(x+strip,y+3,1.5*unit,high-4,attract?'#9e809b':'#a1b9b4');
-          }
-        }
-        x+=bw+unit*(far?-1:2);i++;
-      }
-    }
-    skyline(true);skyline(false);
     var street=foundation===undefined?h*.875+rise*.85:foundation-18;
-    function tenement(x,bw,stories,i) {
-      var ih=clamp(h/24,6,13),wall=['#b5a488','#9aa6a0','#bc927b','#a6a591'][i%4];
-      var top=street-stories*ih, q=ih/10;
-      rect(x,top,bw,street-top,wall);rect(x+bw*.84,top,bw*.16,street-top,'#8f9185');
-      rect(x-1,top,bw+2,2*q,'#777e79');rect(x,top-2*q,bw,2*q,'#c3b996');
-      rect(x+2*q,top-5*q,4*q,4*q,'#98978b');
-      if(i%3===0){
-        rect(x+bw*.6,top-10*q,6*q,7*q,'#887e72');rect(x+bw*.6-q,top-11*q,8*q,2*q,'#786f66');
-        rect(x+bw*.6,top-3*q,q,3*q,'#766f67');rect(x+bw*.6+5*q,top-3*q,q,3*q,'#766f67');
+    var atlas=cityArt[attract?'sunset':'day'];
+    function tile(y,width,height,baseline,offset,scale) {
+      var drawHeight=Math.max(1,Math.round(height*scale));
+      var drawWidth=Math.max(1,Math.round(width*scale));
+      var x=(Math.round(offset)%drawWidth+drawWidth)%drawWidth-drawWidth;
+      for(;x<w;x+=drawWidth){
+        ctx.drawImage(atlas,0,y,width,height,x,Math.round(baseline)-drawHeight,drawWidth,drawHeight);
       }
-      for(var j=0;j<stories;j++) for(var k=0;k<3;k++){
-        var xx=x+(k+.6)*bw*.25, yy=top+ih*(j+.25);
-        rect(xx,yy,3.4*q,4.3*q,'#697e80');rect(xx,yy,1.2*q,2*q,'#c3c4a3');
-        rect(xx-q,yy+4.3*q,5.3*q,q,'#d0b996');
-      }
-      rect(x,street-ih*.78,bw*.78,ih*.78,'#877f6e');
-      rect(x,street-ih,bw*.79,ih*.24,i%2?'#b3a175':'#ba8f72');
     }
-    // Street runs behind the construction lot.
-    for(var si=-1,x=-30; x<w+45;si++) {
-      var ww=clamp(h*.115,20,38)+random(si+51)*8;
-      tenement(x,ww,2+(Math.floor(random(si+70)*3)),si+4);x+=ww+3;
+    ctx.imageSmoothingEnabled=false;
+    if(atlas.naturalWidth){
+      tile(0,250,103,street-16-rise*.62,37-horizontal*.16,clamp(h/300,.55,1.28));
+      tile(105,250,70,street-6-rise*.39,112-horizontal*.32,clamp(h/270,.57,1.35));
+      tile(177,361,75,street-2,21-horizontal*.5,clamp(h/354,.52,1));
+      tile(254,361,108,street,-84-horizontal*.72,clamp(h/490,.40,.76));
     }
     function tree(x,y,size){
       rect(x-1,y-size*.52,3,size*.54,'#807259');
@@ -304,6 +275,17 @@
       for(var t=7;t<w;t+=18){rect(t,lot,1,7,'#756f68');rect(t+1,lot,1,7,'#dfc591');}
       rect(0,lot+1,w,1,'#a9987b');rect(0,lot+5,w,1,'#a9987b');
       for(t=8;t<w;t+=31){rect(t,lot+11,8,1,'#957f69');rect(t+8,lot+10,2,1,'#957f69');}
+      if(cityArt.props.naturalWidth){
+        var propWidth=Math.round(clamp(Math.min(h*.09,w*.115),15,34));
+        var propHeight=Math.round(propWidth*30/48);
+        var spots=w<205?[.14,.86]:[.13,.77,.92];
+        spots.forEach(function(point,index){
+          var x=Math.round(w*point-propWidth/2);
+          var y=Math.round(lot+6+(index%2)*2-propHeight);
+          var sprite=spots.length===2 && index===1?2:index;
+          ctx.drawImage(cityArt.props,sprite*48,0,48,30,x,y,propWidth,propHeight);
+        });
+      }
     }
   }
 
@@ -318,7 +300,7 @@
     var resizeObserver=null, near=true, visibility=null, count=0, start=Date.now(), cameraX=0, cameraRise=0;
     var tour=null, tourPlayed=false, contactTimer=0, preview=null;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var ratio=1, sx=0, syy=0, unit=1;
+    var ratio=1, sx=0, syy=0, unit=1, cityReady='';
     function layer(label) {
       var c=document.createElement('canvas');
       c.style.cssText='display:block;position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;image-rendering:pixelated';
@@ -617,6 +599,8 @@
       var wobble=Math.max(0,Math.abs(lean)-.28);
       var rocking=physical ? (!demo || !reduced) && !!state.getRock && (state.showCrane!==false || now<state.rockUntil) :
         !reduced && wobble>0 && state.showCrane!==false;
+      var loaded=cityArt[sunset?'sunset':'day'].naturalWidth+'/'+cityArt.props.naturalWidth;
+      if(loaded!==cityReady){cityReady=loaded;dirty=true;townKey='';}
       if(!dirty && !dropState && !swinging && !rocking && !touring && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
@@ -627,9 +611,10 @@
       var townW=Math.max(1,Math.round(width*townScale)),townH=Math.max(1,Math.round(height*townScale));
       var ascent=arcade?cameraRise/(unit*floorY):0;
       var foundation=physical?Math.round((syy+unit*.079)*townH/height):undefined;
-      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+sunset;
+      var horizontal=Math.round(cameraX*unit*townScale);
+      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+sunset+'/'+horizontal;
       if(key!==townKey){
-        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,sunset,ascent,foundation);
+        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,sunset,ascent,foundation,horizontal);
         city.imageSmoothingEnabled=false;city.drawImage(backdrop,0,0,width,height);townKey=key;
       }
       fallback.clearRect(0,0,width,height);rig.clearRect(0,0,width,height);count=0;
