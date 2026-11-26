@@ -45,7 +45,14 @@
     var note=document.createElement('div');
     note.className='impact-popup impact-'+kind;
     note.setAttribute('role','status');
-    note.textContent=words[kind];
+    var sprite=document.createElement('img');
+    sprite.src='assets/popup-'+kind+'.png';
+    sprite.alt='';
+    var label=document.createElement('span');
+    label.className='impact-popup-label';
+    label.textContent=words[kind];
+    note.appendChild(sprite);
+    note.appendChild(label);
     tile.appendChild(note);
     setTimeout(function(){note.remove();},1750);
   }

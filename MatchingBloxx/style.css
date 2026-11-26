@@ -166,32 +166,23 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 .screen-choice span{position:absolute;left:2px;right:2px;bottom:3%;padding:2px 1px;border-radius:2px;background:#213948;pointer-events:none}
 .screen-choice[aria-pressed="true"]{border-color:#ffefaf;background:#fff0a64f;box-shadow:0 0 0 1px #583e24}
 .screen-drop{
-  --button-shape:polygon(29% 0,71% 0,71% 7%,84% 7%,84% 15%,93% 15%,93% 28%,100% 28%,100% 72%,93% 72%,93% 85%,84% 85%,84% 93%,71% 93%,71% 100%,29% 100%,29% 93%,16% 93%,16% 85%,7% 85%,7% 72%,0 72%,0 28%,7% 28%,7% 15%,16% 15%,16% 7%,29% 7%);
-  position:relative;flex-shrink:0;width:clamp(46px,27%,82px);aspect-ratio:1;min-height:46px;
-  padding:0;border:0;border-radius:0;background:#30212f;clip-path:var(--button-shape);
+  flex-shrink:0;width:clamp(46px,27%,82px);aspect-ratio:1;min-height:46px;padding:0;
+  border:0;border-radius:44%;background:transparent url('assets/drop-button.png') left center / 200% 100% no-repeat;
+  image-rendering:pixelated;transition:transform .1s steps(2,end);
 }
-.screen-drop::before{
-  content:'';position:absolute;inset:3px 3px 9px;clip-path:var(--button-shape);
-  background:#e54c3d;box-shadow:inset 0 5px #ffab82,inset 0 -8px #a8313b;
-  transition:transform .12s steps(3,end),box-shadow .12s steps(3,end);
-}
-.screen-drop:active:not(:disabled)::before,.screen-drop.pressed::before{
-  transform:translateY(4px);box-shadow:inset 0 3px #ff986e,inset 0 -4px #a8313b;
-}
-.screen-drop:focus-visible{background:#fff1af}
+.screen-drop:active:not(:disabled),.screen-drop.pressed{background-position:right center;transform:translateY(1px)}
 .screen-drop:disabled{opacity:1;filter:saturate(.62) brightness(.78);cursor:default}
 .impact-popup{
   --drift:1.65em;--spin:13deg;
   position:absolute;z-index:4;top:37%;left:50%;pointer-events:none;
-  transform:translateX(-50%);color:#ffdb54;
-  paint-order:stroke fill;-webkit-text-stroke:.12em #352536;
-  text-shadow:0 .09em #352536;
-  font-size:clamp(.78rem,2.55vw,1.95rem);font-weight:900;line-height:1.08;white-space:nowrap;
+  transform:translateX(-50%);line-height:0;
+  font-size:clamp(.9rem,2.55vw,1.95rem);white-space:nowrap;
   animation:block-popup 1.75s both;
 }
 .lane .impact-popup{font-size:clamp(1.55rem,6vw,3rem)}
-.impact-wrong{--drift:-1.5em;--spin:-14deg;color:#ff7772}
-.impact-passed{color:#aef58f}
+.impact-popup img{display:block;height:1em;width:auto;image-rendering:pixelated}
+.impact-popup-label{position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden}
+.impact-wrong{--drift:-1.5em;--spin:-14deg}
 .art-frame:not(.screen-tile)>.impact-popup{display:none}
 @keyframes block-popup {
   0%{transform:translate(-50%,.36em) scale(.52) rotate(-8deg);opacity:0;animation-timing-function:cubic-bezier(.15,.78,.3,1.25)}
@@ -201,7 +192,7 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
   100%{transform:translate(calc(-50% + var(--drift)),1.9em) scale(.92) rotate(var(--spin));opacity:0}
 }
 @media(max-width:540px){.screen-game .impact-popup{--drift:.52em}.screen-game .impact-wrong{--drift:-.52em}}
-@media(prefers-reduced-motion:reduce){.impact-popup{animation:none}.screen-drop::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.impact-popup{animation:none}.screen-drop{transition:none}}
 @keyframes screen-wrong{0%,100%{opacity:0}18%,48%{opacity:1}}
 .screen-tile.wrong-flash::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
   background:rgba(214,30,34,.44);box-shadow:inset 0 0 45px #d11c24;animation:screen-wrong .42s ease-out both}
