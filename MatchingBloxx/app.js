@@ -5,7 +5,7 @@
   var state, session, practice, scene, timer, pollGeneration = 0, busy = false;
   var visualKey = '', panelKey = '', motionKey = '', motionStart = 0, lastFocus;
   var previousPhase, muted = read('mb-audio') === 'off', audioContext, buffers = {}, clips = {};
-  var sounds = ['match', 'land', 'perfect', 'miss', 'finish'];
+  var sounds = ['match', 'land', 'perfect', 'miss', 'finish', 'buzzer'];
   var storageKey = 'matching-bloxx-room-v1';
   var codeFromLink = ((location.search.match(/[?&]room=(\d{6})(?:&|$)/) || [])[1]) || '';
   var screenKey = ((location.hash.match(/^#screen=([0-9a-f]{64})$/) || [])[1]) || '';

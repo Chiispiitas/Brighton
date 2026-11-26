@@ -167,9 +167,10 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
   box-shadow:0 4px 0 #301f26,0 5px 7px #17293995,inset 0 1px 0 #ffb496}
 .screen-drop:active:not(:disabled),.screen-drop.pressed{transform:translateY(3px);box-shadow:0 1px 0 #301f26,inset 0 2px 6px #7c201f}
 .screen-drop:disabled{opacity:1;filter:saturate(.62) brightness(.84);cursor:default}
-.screen-feedback{position:absolute;z-index:1;bottom:123px;left:7px;right:7px;margin:0;max-width:max-content;
-  color:#fff4d6;background:#233c4b;padding:4px 6px;border-radius:3px;font-size:.77rem;line-height:1.2;overflow-wrap:anywhere}
-.screen-feedback:empty{display:none}
+@keyframes screen-wrong{0%,100%{opacity:0}18%,48%{opacity:1}}
+.screen-tile.wrong-flash::after{content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:rgba(214,30,34,.44);box-shadow:inset 0 0 45px #d11c24;animation:screen-wrong .42s ease-out both}
+@media(prefers-reduced-motion:reduce){.screen-tile.wrong-flash::after{animation:none;opacity:1}}
 .screen-tile :focus-visible{outline:2px solid #fff3b0;outline-offset:2px}
 @media(max-width:680px){
   .screen-game{padding:4px 3px}
@@ -188,7 +189,6 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
   .screen-game[data-players="3"] .screen-controls,.screen-game[data-players="4"] .screen-controls{display:block;padding-bottom:53px}
   .screen-game[data-players="3"] .screen-choices,.screen-game[data-players="4"] .screen-choices{width:100%}
   .screen-game[data-players="3"] .screen-drop,.screen-game[data-players="4"] .screen-drop{position:absolute;right:0;bottom:0}
-  .screen-game[data-players="3"] .screen-feedback,.screen-game[data-players="4"] .screen-feedback{bottom:165px}
 }
 
 .shell.arcade{display:block;max-width:1040px;margin-top:19px}
