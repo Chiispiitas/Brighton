@@ -187,24 +187,37 @@
     return BloxxArcade.config(mode,saved?saved.set:null);
   }
   function openScreenSetup() {
+    var savedNames=savedRoom('mb-screen-names');
+    if(!Array.isArray(savedNames))savedNames=[];
     modal('<h2 id="dialog-title">Screen mode</h2><label for="screen-count">Players</label>'+
       '<select id="screen-count"><option value="2">2 players</option><option value="3">3 players</option>'+
-      '<option value="4">4 players</option></select><label for="screen-pool">Matching word set</label>'+
+      '<option value="4">4 players</option></select><div class="screen-names">'+
+      [1,2,3,4].map(function(i){
+        return '<label'+(i>2?' hidden':'')+'>Player '+i+' name<input type="text" maxlength="24" placeholder="Player '+i+
+          '" value="'+esc(savedNames[i-1] || '')+'"></label>';
+      }).join('')+'</div><label for="screen-pool">Matching word set</label>'+
       '<select id="screen-pool">'+optionsFor('match')+'</select>'+
       '<label for="screen-turns">Questions per player</label>'+
       '<input id="screen-turns" type="number" min="1" max="48" step="1" required value="'+MatchingBloxxRules.total+'">'+
       '<p class="sub">Play on this device.</p>'+
       '<button type="button" class="button yellow" id="start-screen">Start game</button>','Cancel');
+    var fields=document.querySelectorAll('.screen-names label');
+    $('screen-count').onchange=function(){
+      for(var i=0;i<fields.length;i++)fields[i].hidden=i>=Number(this.value);
+    };
     $('start-screen').onclick = function() {
       var questionCount=$('screen-turns');
       if(!questionCount.reportValidity())return;
       var count=Number($('screen-count').value);
+      var entered=Array.prototype.map.call(fields,function(field){return field.firstElementChild.value.trim();});
+      save('mb-screen-names',JSON.stringify(entered));
+      var names=entered.slice(0,count).map(function(name,i){return name || 'Player '+(i+1);});
       var config=loadPool('match',$('screen-pool').value);
       closeModal();
       if(scene) {scene.destroy();scene=null;visualKey='';}
       game.hidden=true;
       document.body.classList.add('screen-active');
-      var close=window.BloxxScreen.mount($('screen-game'),config,count,questionCount.valueAsNumber,cue,function(){
+      var close=window.BloxxScreen.mount($('screen-game'),config,names,questionCount.valueAsNumber,cue,function(){
         close();
         document.body.classList.remove('screen-active');
         game.hidden=false;
@@ -705,7 +718,7 @@
       if(practice)html+='<button id="leave" class="text-btn">Back to menu</button>';
       html+='</div>';
     } else {
-      html+='<div class="arcade-title"><h2>'+(matching?(/_{2,}/.test(me.prompt)?esc(me.prompt):'<span class="blank">___</span> '+esc(me.prompt)):
+      html+='<div class="arcade-title"><h2>'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'<span class="blank">___</span> '+esc(me.prompt)):
         esc(state.arcade.instruction))+'</h2>'+arcadeOutcome(me.last)+'</div>';
       if(matching)html+='<div class="arcade-choices" aria-label="Choose a block">'+me.choices.map(function(word,i){
         return '<button type="button" class="choice" data-block="'+i+'" aria-pressed="'+(arcadeChoice===i)+'">'+esc(word)+'</button>';

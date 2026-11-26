@@ -118,6 +118,8 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 }
 .dialog textarea{min-height:100px;resize:vertical;line-height:1.4}
 .dialog input[type=number]{width:100%;min-height:44px;padding:8px 10px;border:2px solid #85928b;border-radius:5px;color:#173744;background:#fffdf2}
+.screen-names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:10px}
+.screen-names input{margin-top:4px}
 .dialog .pool-hint{margin:4px 0 8px;font-size:.9rem}
 .dialog #save-pool{margin-top:14px}
 .dialog #close-dialog{margin-top:9px}
@@ -150,6 +152,8 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 .screen-tile-head{position:absolute;z-index:1;top:5px;left:7px;right:7px;display:flex;justify-content:space-between;gap:3px;
   font-size:.84rem;color:#fff6dc;text-shadow:0 1px #183345}
 .screen-tile-head strong,.screen-tile-head span{background:#1d3b50;padding:4px 7px;border-radius:3px}
+.screen-tile-head strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;max-width:100%}
+.screen-tile-head span{white-space:nowrap}
 .screen-tile:nth-child(2) .screen-tile-head strong{background:#784729}
 .screen-tile:nth-child(3) .screen-tile-head strong{background:#345943}
 .screen-tile:nth-child(4) .screen-tile-head strong{background:#604875}

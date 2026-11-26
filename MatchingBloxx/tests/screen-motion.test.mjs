@@ -34,3 +34,29 @@ test('a miss continues its free fall and a wrong block that touches recoils', ()
   assert.ok(Math.abs(drop.impact.centerX)<.82);
   assert.notEqual(recoil.angle,drop.at(drop.duration+.2).angle);
 });
+
+test('larger off-center landings make the tower swing farther and reverse sooner', () => {
+  const slight = physics.tower();
+  const wide = physics.tower();
+  slight.land(.15,1000);
+  wide.land(.42,1000);
+  assert.ok(wide.angle(1500) > 2 * slight.angle(1500));
+  assert.ok(wide.angle(2400) < 0);
+  assert.ok(slight.angle(2400) > 0);
+  close(physics.shift(0,wide.angle(1500)),0);
+  assert.ok(physics.shift(3,wide.angle(1500)) > physics.shift(1,wide.angle(1500)));
+});
+
+test('centered and counterbalancing landings settle gradually without a jump', () => {
+  const towers = Array.from({length:4}, () => physics.tower());
+  for (const tower of towers) tower.land(.35,1000);
+  const atLanding = towers[0].angle(1200);
+  towers[1].land(0,1200);
+  towers[2].land(-.25,1200);
+  towers[3].land(.25,1200);
+  for (const tower of towers) close(tower.angle(1200),atLanding);
+  assert.ok(towers[1].angle(1400) < towers[0].angle(1400));
+  assert.ok(towers[2].angle(1400) < towers[1].angle(1400));
+  assert.ok(towers[3].angle(1400) > towers[0].angle(1400));
+  for (const tower of towers.slice(1,3)) close(tower.angle(9000),0,.001);
+});
