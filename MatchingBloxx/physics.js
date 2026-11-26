@@ -59,19 +59,21 @@
   }
 
   // Fixed-point sway and five active floor joints from OpenCityBloxx House.layoutTower.
-  function towerLayout(floors, rock) {
+  function towerLayout(floors, rock, continuous) {
     var count = floors.length, start = Math.max(0,count-5);
     var offsets = floors.map(function(x,i){
       return Math.round(x*256) - (i ? Math.round(floors[i-1]*256) : 0);
     });
-    var angle = Math.floor(rock.phase/10) * Math.PI / 180;
-    var wave = Math.round(-Math.cos(angle)*65536);
+    var angle = (continuous?rock.phase/10:Math.floor(rock.phase/10))*Math.PI/180;
+    var wave = -Math.cos(angle)*65536;
+    if(!continuous)wave=Math.round(wave);
     var sum = count ? Math.abs(Math.round(floors[count-1]*256)) : 0;
     var amplitude = Math.floor(count/2)+Math.floor(sum/20);
     amplitude = Math.min(amplitude,Math.floor(count*amplitude/6));
     var load = offsets.slice(start).reduce(function(n,x){return n+Math.abs(x);},0);
     var instability = Math.min(100,Math.floor(count*Math.floor(load/5)/20));
-    var x = Math.trunc(-wave*amplitude/10000), bend = 0, lift = 0;
+    var x = -wave*amplitude/10000, bend = 0, lift = 0;
+    if(!continuous)x=Math.trunc(x);
     return floors.map(function(base,i){
       if(i<start)return {x:base,angle:0,lift:0};
       var offset = offsets[i];
@@ -79,12 +81,14 @@
         var t = rock.landAge;
         var bounce = t<100 ? t*offset/600 : t<500 ? (500-t)*offset/2400 : 0;
         var weight = t<500 ? 1 : (800-t)/300;
-        bend = Math.trunc(bend*(1-weight)+weight*(Math.trunc(bend/8)+Math.trunc(offset/6)+Math.trunc(bounce)));
+        bend = continuous ? bend*(1-weight)+weight*(bend/8+offset/6+bounce) :
+          Math.trunc(bend*(1-weight)+weight*(Math.trunc(bend/8)+Math.trunc(offset/6)+Math.trunc(bounce)));
       }
       var leverage = wave*offset;
-      bend -= Math.trunc(instability*Math.abs(leverage)/(leverage<0?29491200:58982400));
+      var strain = instability*Math.abs(leverage)/(leverage<0?29491200:58982400);
+      bend -= continuous?strain:Math.trunc(strain);
       x += bend*2;
-      lift += (wave>0?1:-1)*(bend>>1);
+      lift += continuous ? Math.max(-1,Math.min(1,wave/6000))*bend/2 : (wave>0?1:-1)*(bend>>1);
       return {x:base+x/256,angle:i ? -bend*Math.PI/180 : 0,lift:lift*floorHeight/256};
     });
   }

@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import physics from '../physics.js';
+import arcade from '../wix-backend/src/game/arcade.cjs';
 
 const motion = {period:3300,amplitude:1.13,phase:.42};
 const close = (a,b,tolerance=1e-5) => assert.ok(Math.abs(a-b)<tolerance, `${a} vs ${b}`);
@@ -113,4 +114,57 @@ test('loose floors separate and spin in sequence before gravity carries them dow
   assert.ok(far.x>near.x);
   assert.ok(far.y<2*near.y);
   assert.ok(far.angle<near.angle);
+});
+
+test('drawing interpolates Java sway without changing the collision sample', () => {
+  const floors=[.12,.4,.73,1.06,1.42,1.82,2.12];
+  const swing={physics:5};
+  const rock={java:true,phase:0,landAge:800};
+  const top=(time,smooth)=>arcade.towerPose(swing,floors,rock,time,smooth).at(-1).angle;
+  function peakStep(smooth) {
+    let peak=0;
+    for(let time=16;time<=3600;time+=16)peak=Math.max(peak,Math.abs(top(time,smooth)-top(time-16,smooth)));
+    return peak*180/Math.PI;
+  }
+  close(peakStep(false),3);
+  assert.ok(peakStep(true)<1);
+  close(top(3600,true),top(0,true));
+});
+
+test('a cascade detaches continuously and its survivors join the next tower pose', () => {
+  const floors=[.10,.22,.47,.76,1.04,1.23];
+  const kept=floors.slice(0,4);
+  const rock={java:true,phase:600,landAge:800};
+  const swing={physics:5};
+  const path=physics.drop({centerX:.7,centerY:1.2,angle:0,vx:0,vy:0,spin:0});
+  const elapsed=290, lag=95, duration=1260;
+  const hit={kind:'miss',direction:1,bump:true,parts:[
+    {delay:350,vx:400,vy:50,turn:-1},
+    {delay:150,vx:400,vy:50,turn:-1}
+  ]};
+  const impact=elapsed+path.duration*1000;
+  const frame=arcade.towerAnimation(swing,floors,rock,elapsed,path,hit,kept)(lag,duration);
+  assert.deepEqual(frame(0).joints,arcade.towerPose(swing,floors,rock,impact+lag,true));
+  const liftOff=frame(150).joints[5];
+  close(liftOff.x,frame(149.999).joints[5].x);
+  close(frame(220).joints[5].x-liftOff.x,physics.javaFall(.22,hit.parts[1]).x);
+  close(frame(220).joints[5].angle-liftOff.angle,physics.javaFall(.22,hit.parts[1]).angle);
+  assert.deepEqual(frame(duration).joints.slice(0,kept.length),
+    arcade.towerPose(swing,kept,arcade.advanceTower(rock,impact,false),duration,true));
+  close(frame(duration).height,-2);
+});
+
+test('the landed floor and crane finish at the next round position', () => {
+  const swing={physics:5};
+  const rock={java:true,phase:640,landAge:800};
+  const path=physics.drop({centerX:.27,centerY:1.2,angle:.1,vx:0,vy:0,spin:0});
+  const before=[.1,.22,.41], after=[...before,.68], elapsed=350, duration=220;
+  const frame=arcade.towerAnimation(swing,before,rock,elapsed,path,{kind:'landed'},after)(0,duration);
+  close(frame(0).incoming.x,before.at(-1)+path.impact.x);
+  const next=arcade.towerPose(swing,after,arcade.advanceTower(rock,elapsed+path.duration*1000,true),duration,true).at(-1);
+  close(frame(duration).incoming.x,next.x);
+  close(frame(duration).incoming.y,after.length*physics.floorHeight+next.lift);
+  close(frame(duration).incoming.angle,next.angle);
+  close(frame(duration).height,1);
+  close(frame(duration).center,after.at(-1));
 });

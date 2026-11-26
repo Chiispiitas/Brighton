@@ -687,7 +687,11 @@
           cue('buzzer');
         } else cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':'miss');
       }
-      if(scene){setBusy(true);scene.impact(data.me.last,complete,contact);}
+      if(scene){
+        setBusy(true);
+        var animation=BloxxArcade.towerAnimation(me.motion,me.placements,me.rock,elapsed,path,data.me.last,data.me.placements);
+        scene.impact(data.me.last,complete,contact,animation);
+      }
       else {contact();complete();}
     });
   }
@@ -708,7 +712,7 @@
     var physical=state.arcade.physics>=2;
     setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
-      getRock:physical&&me.rock?function(){return BloxxArcade.towerPose({physics:state.arcade.physics},me.placements,me.rock,now()-motionStart);}:null,
+      getRock:physical&&me.rock?function(){return BloxxArcade.towerPose({physics:state.arcade.physics},me.placements,me.rock,now()-motionStart,true);}:null,
       rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
     var html=laneHeader(me,done?'Finished':state.total?me.round+'/'+state.total:'Turn '+me.round);
