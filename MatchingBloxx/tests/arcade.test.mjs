@@ -83,3 +83,28 @@ test('wrong blocks knock down two to five floors and can be skipped instead',()=
   assert.equal(6-player.placements.length,player.last.lost);
   assert.throws(()=>arcade.config('rightwrong',{name:'Overlap',right:['went'],wrong:['Went']}),/only be in one list/);
 });
+
+test('shared options are constant across prompts and may include unused distractors',()=>{
+  const game=arcade.config('match',{name:'Grammar', sameOptions:true,
+    rows:[['I enjoy ___.','reading'],['I want ___.','to read']], options:['to read','reading','read']});
+  for(let round=1;round<=2;round++)assert.deepEqual(arcade.card(game,round,20).choices,game.set.options);
+  assert.throws(()=>arcade.config('match',{...game.set,options:['read','reading']}),/must appear/);
+});
+
+test('imports accept two forms per sentence, retain commas in CSV, and read Right / Wrong TSV',()=>{
+  const match=arcade.importPool('match','prompt,answer,other\n"I enjoy ___, especially at night.",reading,to read','Grammar.csv');
+  assert.equal(match.sameOptions,false);
+  assert.equal(match.rows[0][0],'I enjoy ___, especially at night.');
+  const game=arcade.config('match',match);
+  const player=rules.newPlayer('p1','Jo',10);
+  arcade.arm(player,20);
+  const choice=arcade.card(game,1,10).correct;
+  assert.throws(()=>arcade.move(player,game,'arcadeDrop',{round:1,choice:2,elapsedMs:0},20,true),/Choose a block/);
+  arcade.move(player,game,'arcadeDrop',{round:1,choice:1-choice,elapsedMs:0},20,true);
+  assert.equal(player.last.correction,'I enjoy reading, especially at night.');
+  const sorting=arcade.importPool('rightwrong','word\tstatus\r\npear\tright\r\ncarrot\twrong','Fruit.tsv');
+  assert.deepEqual(sorting.right,['pear']);
+  assert.deepEqual(sorting.wrong,['carrot']);
+  const json=arcade.importPool('rightwrong',JSON.stringify({mode:'rightwrong',set:sorting}));
+  assert.deepEqual(json,sorting);
+});

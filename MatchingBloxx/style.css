@@ -122,6 +122,12 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 .dialog #close-dialog{margin-top:9px}
 .dialog .text-btn{margin:3px 12px 0 0}
 .pool-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pool-checkbox{display:flex;align-items:center;gap:8px;min-height:33px}
+.pool-checkbox input{width:17px;height:17px;accent-color:#28656d}
+.pool-import{margin-top:14px;border:1px solid #cdc2a7;border-radius:4px;padding:8px}
+.pool-import summary{font-weight:700;cursor:pointer}
+.pool-import input[type=file]{max-width:100%;font:inherit;font-size:.85rem}
+.pool-import #read-pool{margin-top:7px}
 
 .shell.arcade{display:block;max-width:1040px;margin-top:19px}
 .arcade .art-frame{min-height:0}
