@@ -23,12 +23,31 @@
   }
 
   function bindDrop(button, release) {
+    function press() {
+      if(button.disabled)return;
+      button.classList.add('pressed');
+      setTimeout(function(){button.classList.remove('pressed');},160);
+      release();
+    }
     button.onpointerdown = function (event) {
       if(event.button!==0 || button.disabled)return;
       event.preventDefault();
-      release();
+      press();
     };
-    button.onclick = release;
+    button.onclick = press;
+  }
+
+  function popup(tile,kind) {
+    var words={passed:'Nice call!',wrong:'Wrong',perfect:'Perfect!'};
+    if(!words[kind])return;
+    var old=tile.querySelector('.impact-popup');
+    if(old)old.remove();
+    var note=document.createElement('div');
+    note.className='impact-popup impact-'+kind;
+    note.setAttribute('role','status');
+    note.textContent=words[kind];
+    tile.appendChild(note);
+    setTimeout(function(){note.remove();},1350);
   }
 
   function mount(board, config, names, turns, cue, leave) {
@@ -180,6 +199,7 @@
         },function () {
           if(last.kind==='landed') tower.land(last.offset,clock(),player.placements.length);
           else if(last.kind==='perfect' || last.fallen) tower.land(0,clock(),player.placements.length);
+          popup(card,last.kind);
           if(last.kind==='wrong') {
             card.classList.add('wrong-flash');
             cue('buzzer');
@@ -204,5 +224,5 @@
     };
   }
 
-  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop};
+  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop,popup:popup};
 }(window));

@@ -103,17 +103,18 @@ test('presenters receive bounded replays without exposing player prompts or cred
 });
 
 test('new online rooms apply the Java swing on the server, player and presenter', () => {
-  const room=createRoom('823502','host','screen',10,20,arcade.config('match'));
+  const room=createRoom('823502','host','screen',10,20,{...arcade.config('match'),physics:4});
   command(room,'player','join',{name:'Jo'},20);
   command(room,'host','start',{},30);
   const player=room.players[0], start=view(room,'player',30).me.motion;
-  assert.equal(start.physics,3);
+  assert.equal(start.physics,4);
+  assert.equal(start.classicLanding,true);
   assert.equal(start.verticalAmplitude,physics.quickSwing(0).verticalAmplitude);
   const choice=arcade.card(room.arcade,1,player.seed).correct;
   command(room,'player','arcadeDrop',{round:1,choice,elapsedMs:650},680);
   const replay=view(room,'screen',680).city.lots[0].drops[0];
   assert.deepEqual(arcade.pose(start,650),arcade.pose(replay.motion,650));
-  assert.equal(view(room,'player',680).me.motion.physics,3);
+  assert.equal(view(room,'player',680).me.motion.physics,4);
 });
 
 test('matching custom pools serve explicit distractors, reject a wrong placement and repeat in endless runs',()=>{
@@ -176,7 +177,7 @@ test('Screen sorting skips only when a dropped block clears the tower',()=>{
   assert.equal(right.kind,'perfect');
   assert.equal(right.points,200);
   assert.equal(right.floors.length,7);
-  assert.equal(arcade.screenDrop(player,true,false,wide).kind,'wrong');
+  assert.equal(arcade.screenDrop(player,true,false,wide).kind,'passed');
 });
 
 test('shared options are constant across prompts and may include unused distractors',()=>{
@@ -202,4 +203,36 @@ test('imports accept two forms per sentence, retain commas in CSV, and read Righ
   assert.deepEqual(sorting.wrong,['carrot']);
   const json=arcade.importPool('rightwrong',JSON.stringify({mode:'rightwrong',set:sorting}));
   assert.deepEqual(json,sorting);
+});
+
+test('Java landing tolerances apply only to solo and device rounds', () => {
+  const track = (x, classicLanding) => physics.track(
+    physics.drop({centerX:x,centerY:1.2,angle:0,vx:0,vy:0,spin:0}), [], () => 0, false, classicLanding);
+  assert.equal(track(127 / 256, true).tipped, false);
+  assert.equal(track(128 / 256, true).tipped, true);
+  assert.equal(track(128 / 256, false).tipped, false);
+  assert.equal(arcade.land([], track(24 / 256, true), true).kind, 'perfect');
+  assert.equal(arcade.land([], track(25 / 256, true), true).kind, 'landed');
+});
+
+test('solo ends on the chosen turn and a clean wrong drop earns no penalty', () => {
+  const config = {...arcade.config('match'),physics:4};
+  const solo = arcade.practice(config, 'Jo', 1);
+  const {me,total} = solo.view();
+  assert.equal(total, 1);
+  const result = solo.command('arcadeDrop', {round:me.round,choice:0,elapsedMs:0});
+  assert.equal(result.phase, 'finished');
+  assert.equal(result.me.motion, null);
+
+  const player = rules.newPlayer('p1', 'Jo', 41);
+  arcade.arm(player, 10, config.physics);
+  const wrong = (arcade.card(config,player.round,player.seed).correct + 1) % 4;
+  const release = Array.from({length:player.motion.period}, (_, ms) => ms).find(ms =>
+    !arcade.trajectory(player.motion,ms,[],() => 0,false).hit);
+  assert.ok(Number.isFinite(release));
+  assert.throws(() => arcade.move(player,config,'arcadePass',{round:1},10,true), /beside the tower/);
+  arcade.move(player,config,'arcadeDrop',{round:1,choice:wrong,elapsedMs:release},10+release,true);
+  assert.equal(player.last.kind, 'passed');
+  assert.equal(player.last.points, 0);
+  assert.equal(player.last.fallen, 0);
 });

@@ -84,7 +84,7 @@
     var payout = Math.max(0,Math.min(1,elapsedMs / 330));
     var reel = motion.lowering ? .42 * (1 - payout) * (1 - payout) : 0;
     var reelSpeed = motion.lowering ? .84 * (1 - payout) / .33 : 0;
-    if (motion.physics === 3) {
+    if (motion.physics >= 3) {
       // The Java hook follows independent quarter-shifted axes. Sample the curve
       // continuously so animation and release velocity agree at any frame rate.
       var x = -motion.amplitude * Math.cos(phase);
@@ -157,10 +157,10 @@
     return path;
   }
 
-  function track(path, floors, angleAt, assisted) {
+  function track(path, floors, angleAt, assisted, classicLanding) {
     var top = floors[floors.length-1] || 0;
-    var catchWidth = assisted ? .83 : .67;
-    var reach = assisted ? 1.04 : .98;
+    var catchWidth = classicLanding ? 127/256 : assisted ? .83 : .67;
+    var reach = classicLanding ? 1 : assisted ? 1.04 : .98;
     // Scan the ledges the rotating lower corner passes, starting at the roofline.
     for (var level = 0; level <= Math.min(floors.length,4); level++) {
       var time = level ? path.crossing(-level*floorHeight) : path.duration;
@@ -170,7 +170,7 @@
       var gap = pose.centerX + Math.sin(pose.angle)*.13 - support;
       var direction = gap < 0 ? -1 : 1;
       if (Math.abs(gap) >= reach) continue;
-      return {path:path.segment(time,direction), offset:gap*(assisted?.55:.8), direction:direction,
+      return {path:path.segment(time,direction), offset:gap*(classicLanding?1:assisted?.55:.8), direction:direction,
         hit:true, level:level, tipped:level>0 || Math.abs(gap)>catchWidth};
     }
     return {path:path, hit:false, tipped:false, level:0, offset:0, direction:0};
