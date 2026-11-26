@@ -117,11 +117,15 @@
   }
 
   function asset(style, kind) {
-    var key=(kind||'floor')+'-'+style+(global.BloxxFloorMesh?'m':'p');
+    var crane=kind==='boom' || kind==='trolley' || kind==='hook';
+    var key=(kind||'floor')+'-'+style+(crane?'':global.BloxxFloorMesh?'m':'p');
     if (art[key]) return art[key];
-    var faces=meshData(style,kind);
-    var sprite=document.createElement('canvas'), scale=190, centerY=190;
-    sprite.width=352; sprite.height=220;
+    var faces=crane?global.BloxxCraneModel.build(kind,style):meshData(style,kind);
+    var projection=crane?global.BloxxCraneModel.project:project;
+    var sprite=document.createElement('canvas'), scale=crane?32:190;
+    var centerX=crane?(kind==='boom'?10:22):176, centerY=crane?37:190;
+    sprite.width=crane?(kind==='boom'?style*32+20:44):352;
+    sprite.height=crane?55:220;
     var ctx=sprite.getContext('2d');
     if(ctx) {
       // Bake the actual mesh to a tiny reusable sprite with a depth buffer.
@@ -130,9 +134,9 @@
       var depth=new Float32Array(sprite.width*sprite.height);
       for(var k=0;k<depth.length;k++) depth[k]=-100;
       function raster(a,b,c,col){
-        var ax=176+a[0]*scale,ay=centerY-a[1]*scale;
-        var bx=176+b[0]*scale,by=centerY-b[1]*scale;
-        var cx=176+c[0]*scale,cy=centerY-c[1]*scale;
+        var ax=centerX+a[0]*scale,ay=centerY-a[1]*scale;
+        var bx=centerX+b[0]*scale,by=centerY-b[1]*scale;
+        var cx=centerX+c[0]*scale,cy=centerY-c[1]*scale;
         var area=(by-cy)*(ax-cx)+(cx-bx)*(ay-cy);
         if(area>=-0.00001)return;
         var minX=Math.max(0,Math.floor(Math.min(ax,bx,cx)));
@@ -153,12 +157,12 @@
         }
       }
       for(var i=0;i<faces.length;i++){
-        var pts=faces[i].pts.map(project),color=parseInt(faces[i].c.slice(1),16);
+        var pts=faces[i].pts.map(projection),color=parseInt(faces[i].c.slice(1),16);
         for(var j=1;j<pts.length-1;j++)raster(pts[0],pts[j],pts[j+1],color);
       }
       ctx.putImageData(pixels,0,0);
     }
-    art[key]={key:key,faces:faces,sprite:sprite,scale:scale,centerY:centerY};
+    art[key]={key:key,faces:faces,project:projection,sprite:sprite,scale:scale,centerX:centerX,centerY:centerY};
     return art[key];
   }
 
@@ -276,7 +280,7 @@
         for(var j=1;j<pts.length-1;j++){
           var tri=[pts[0],pts[j],pts[j+1]];
           for(var k=0;k<3;k++){
-            var pt=project(tri[k]);vertices.push(pt[0],pt[1],pt[2]);colors.push(col.r,col.g,col.b);
+          var pt=assetData.project(tri[k]);vertices.push(pt[0],pt[1],pt[2]);colors.push(col.r,col.g,col.b);
           }
         }
       }
@@ -286,19 +290,25 @@
       geometry[assetData.key]=g; return g;
     }
     function floor(x,y,style,kind,angle) {
-      var a=asset(style,kind);
+      drawModel(asset(style,kind),x,y,1,1,angle);
+    }
+    function drawModel(a,x,y,scaleX,scaleY,angle) {
       if(renderer){
         var node=groups[count];
         if(!node){node=new T.Mesh(mesh(a),material);groups[count]=node;world.add(node);}
         else node.geometry=mesh(a);
-        node.position.set(x,y,0);node.rotation.z=angle||0;node.visible=true;count++;
+        node.position.set(x,y,0);node.scale.set(scaleX,scaleY,scaleY);
+        node.rotation.z=angle||0;node.visible=true;count++;
       }else{
-        var px=sx+unit*x,py=syy-unit*y,size=unit/a.scale;
+        var px=sx+unit*x,py=syy-unit*y,sizeX=unit*scaleX/a.scale,sizeY=unit*scaleY/a.scale;
         fallback.save();fallback.translate(px,py);fallback.rotate(-(angle||0));
         fallback.imageSmoothingEnabled=true;
-        fallback.drawImage(a.sprite,-176*size,-a.centerY*size,a.sprite.width*size,a.sprite.height*size);
+        fallback.drawImage(a.sprite,-a.centerX*sizeX,-a.centerY*sizeY,a.sprite.width*sizeX,a.sprite.height*sizeY);
         fallback.restore();
       }
+    }
+    function cranePart(kind,style,x,y,scaleX,scaleY,angle) {
+      drawModel(asset(style,kind),(x-sx)/unit,(syy-y)/unit,scaleX/unit,scaleY/unit,angle);
     }
     function line(ctx,pts,color,weight){
       ctx.beginPath();ctx.moveTo(pts[0],pts[1]);for(var j=2;j<pts.length;j+=2)ctx.lineTo(pts[j],pts[j+1]);
@@ -316,21 +326,13 @@
       var tilt=-.051;
       if(pivotY!==undefined)y=pivotY-beamH-4-(trolleyX-l)*tilt;
       function by(x){return y+(x-l)*tilt;}
-      poly(rig,[l,by(l),end,by(end),end,by(end)+beamH,l,by(l)+beamH],'#c18744');
-      poly(rig,[l,by(l)+3,end,by(end)+3,end,by(end)+beamH-3,l,by(l)+beamH-3],'#86bec6');
-      for(var i=l;i<end-2;i+=beamH*1.1){
-        var right=Math.min(end,i+beamH*1.1),mid=(i+right)/2;
-        line(rig,[i,by(i)+beamH-2,mid,by(mid)+2,right,by(right)+beamH-2],'#a9743e',Math.max(2,beamH*.19));
-        line(rig,[i,by(i)+beamH-3,mid,by(mid)+2],'#efb353',Math.max(1,beamH*.10));
-      }
-      line(rig,[l,by(l),end,by(end)],'#6e654c',2);line(rig,[l,by(l)+1,end,by(end)+1],'#ffcf70',2.3);
-      line(rig,[l,by(l)+beamH,end,by(end)+beamH],'#815d42',2.5);
       var baseY=by(trolleyX)+beamH;
-      rig.fillStyle='#515650';rig.fillRect(trolleyX-8,baseY-3,16,7);
-      rig.fillStyle='#f0b44f';rig.fillRect(trolleyX-6,baseY-2,12,4);
+      var panels=Math.max(1,Math.round((end-l)/(beamH*1.38)));
+      var boomAngle=Math.atan(-tilt), panelWidth=(end-l)/panels/Math.cos(boomAngle);
+      cranePart('boom',panels,l,y+beamH,panelWidth,beamH,boomAngle);
+      cranePart('trolley',0,trolleyX,baseY+4,beamH,beamH,0);
+      cranePart('hook',0,hookX,hookY-2,beamH,beamH,0);
       line(rig,[trolleyX,baseY+4,hookX,hookY-2],'#434d4a',Math.max(1.6,unit*.013));
-      rig.fillStyle='#354b51';rig.fillRect(hookX-3,hookY-5,6,5);
-      line(rig,[hookX,hookY-1,hookX+2,hookY+3,hookX+5,hookY+1],'#55534d',2);
       if(slings){
         var wid=unit*.42;
         var centerX=roofX===undefined?hookX:roofX;
