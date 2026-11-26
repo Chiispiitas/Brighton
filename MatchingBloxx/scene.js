@@ -316,7 +316,7 @@
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', backdrop=document.createElement('canvas');
     var paint=backdrop.getContext('2d'), T=null, renderer=null, world=null, camera=null, material=null, groups=[], geometry={};
     var resizeObserver=null, near=true, visibility=null, count=0, start=Date.now(), cameraX=0, cameraRise=0;
-    var tour=null, tourPlayed=false, contactTimer=0;
+    var tour=null, tourPlayed=false, contactTimer=0, preview=null;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ratio=1, sx=0, syy=0, unit=1;
     function layer(label) {
@@ -529,12 +529,65 @@
         rig.fillRect(x+2*cells,y+2*cells,15*cells,cells);
       }
     }
+    function loadPreviewBlock() {
+      var arcade=global.BloxxArcade, tower=preview.tower;
+      var crane=preview.crane, age=preview.time-preview.loadedAt;
+      crane.placements=state.floors;
+      arcade.arm(crane,preview.time,2,age);
+      preview.loadedAt=preview.time;
+      var loadedAt=preview.loadedAt;
+      var words=['attend','get','make','submit'];
+      state.choice=(crane.round-1)%words.length;
+      state.label=words[state.choice];
+      if(reduced)return;
+
+      var count=state.floors.length;
+      if(!count)preview.demolishing=false;
+      if(count>=3)preview.demolishing=true;
+      var target=[0,.22,-.16][Math.min(count,2)];
+      var best=Infinity;
+      var motion=crane.motion;
+      // Find the next release that shows the intended landing using the live trajectory.
+      for(var elapsed=1150;elapsed<1150+motion.period;elapsed+=34){
+        var contact=arcade.trajectory(motion,elapsed,state.floors,function(ahead){
+          return tower.angle(loadedAt+elapsed+ahead);
+        },false);
+        if(!contact.hit)continue;
+        var score=preview.demolishing?(contact.tipped?elapsed:1e6+elapsed):
+          (contact.tipped?1e6:0)+Math.abs(contact.offset-target)*10000+elapsed*.12;
+        if(score>=best)continue;
+        best=score;
+        preview.releaseAt=loadedAt+elapsed;
+        preview.contact=contact;
+      }
+    }
+    function advancePreview(dt) {
+      if(reduced)return;
+      preview.time+=dt*1000;
+      if(dropState || preview.time<preview.releaseAt || !preview.contact)return;
+      var current=preview, contact=current.contact;
+      current.contact=null;
+      var result=global.BloxxArcade.land(state.floors,contact);
+      result.bump=contact.hit;
+      release(contact.path);
+      impact(result,function(){
+        state.floors=result.floors;
+        current.crane.round++;
+        frozen=null;
+        loadPreviewBlock();
+      },function(){
+        if(result.kind==='landed')current.tower.land(result.offset,current.time,result.floors.length);
+        else if(result.kind==='perfect' || result.fallen)current.tower.land(0,current.time,result.floors.length);
+      });
+    }
     function tick(stamp){
       if(!running) return;frameId=raf(tick);
       if(document.hidden||!near||stamp-then<(dropState||state.mode==='build'?15:32))return;
       var dt=clamp((stamp-then)/1000,0,.08);then=stamp; resize();
       if(!width||!height)return;
-      var now=Date.now(),attract=state.mode==='attract';
+      if(preview)advancePreview(dt);
+      var now=Date.now(),attract=state.mode==='attract', demo=!!preview;
+      var sunset=attract || demo;
       var arcade=!!state.arcade && !attract;
       var screen=arcade && !!state.screen;
       var physical=arcade && !!state.physical;
@@ -559,28 +612,28 @@
       } else if(arcade && state.showRoof && tourPlayed){
         rise=0;targetCamera=0;
       }
-      var swinging=attract ? !reduced : state.showCrane!==false && !!(state.getOffset||state.getSwing) && frozen===null;
+      var swinging=attract ? !reduced : (!demo || !reduced) && state.showCrane!==false && !!(state.getOffset||state.getSwing) && frozen===null;
       var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
       var wobble=Math.max(0,Math.abs(lean)-.28);
-      var rocking=physical ? !!state.getRock && (state.showCrane!==false || now<state.rockUntil) :
+      var rocking=physical ? (!demo || !reduced) && !!state.getRock && (state.showCrane!==false || now<state.rockUntil) :
         !reduced && wobble>0 && state.showCrane!==false;
       if(!dirty && !dropState && !swinging && !rocking && !touring && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
-      var center=attract ? .64+.09*clamp((width-420)/190,0,1) : .5;
+      var center=sunset ? .64+.09*clamp((width-420)/190,0,1) : .5;
       sx=width*center-cameraX*unit;syy=ground+cameraRise;
       var townScale=Math.min(1,Math.min(430/width,330/height));
       var townW=Math.max(1,Math.round(width*townScale)),townH=Math.max(1,Math.round(height*townScale));
       var ascent=arcade?cameraRise/(unit*floorY):0;
       var foundation=physical?Math.round((syy+unit*.079)*townH/height):undefined;
-      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+attract;
+      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+sunset;
       if(key!==townKey){
-        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,attract,ascent,foundation);
+        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,sunset,ascent,foundation);
         city.imageSmoothingEnabled=false;city.drawImage(backdrop,0,0,width,height);townKey=key;
       }
       fallback.clearRect(0,0,width,height);rig.clearRect(0,0,width,height);count=0;
-      if(attract)skyTraffic(reduced?0:now-start);
+      if(sunset)skyTraffic(reduced?0:now-start);
       if(renderer){
         camera.left=-sx/unit;camera.right=(width-sx)/unit;camera.top=syy/unit;camera.bottom=(syy-height)/unit;camera.updateProjectionMatrix();
       }
@@ -729,12 +782,35 @@
     function set(options) {
       dirty=true;
       options=options||{};
+      if(preview && options.mode && options.mode!=='demo'){
+        cancelDrop();
+        preview=null;
+        state.arcade=false;
+        state.physical=false;
+        state.getSwing=null;
+        state.getRock=null;
+        state.floors=[];
+      }
       if(!options.showRoof) {tour=null;tourPlayed=false;}
       else if(!tourPlayed){
         tour={rise:cameraRise,x:cameraX,started:Date.now()+480,duration:Math.min(4800,1500+(options.floors||[]).length*140)};
         tourPlayed=true;
       }
       for(var k in options)if(Object.prototype.hasOwnProperty.call(options,k))state[k]=options[k];
+      if(options.mode==='demo' && !preview){
+        var physics=global.BloxxPhysics;
+        preview={time:0,loadedAt:0,crane:{seed:31,round:1,placements:[]},tower:physics.tower()};
+        state.arcade=true;
+        state.physical=true;
+        state.screen=false;
+        state.showCrane=true;
+        state.target='';
+        state.floors=reduced?[0]:[];
+        state.getOffset=null;
+        state.getRock=function(){return preview.tower.angle(preview.time);};
+        state.getSwing=function(){return physics.swing(preview.crane.motion,preview.time-preview.loadedAt);};
+        loadPreviewBlock();
+      }
       if(!dropState)frozen=null;
       if(!frameId)frameId=raf(tick);
     }

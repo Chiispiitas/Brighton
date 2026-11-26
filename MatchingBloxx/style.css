@@ -291,13 +291,7 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
   animation:marquee-bob 6s ease-in-out infinite;
 }
 @keyframes marquee-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-.home .art-foot{
-  position:relative;min-height:42px;padding-right:98px;
-}
-.home .art-foot::after{
-  content:'';position:absolute;right:16px;top:50%;width:60px;height:10px;transform:translateY(-50%);
-  border-radius:2px;background:repeating-linear-gradient(120deg,#e99d74 0 7px,#523756 7px 13px);
-}
+.home .art-foot{display:none}
 .home .desk{background:var(--cabinet);padding:23px;color:#fff0d7}
 .start-modes .menu-tiles{gap:12px}
 .start-modes .menu-tile{
@@ -395,7 +389,6 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
   .home .scene{min-height:0}
   .home .marquee{top:13px;left:13px}
   .home .marquee img{width:56%;max-width:235px}
-  .home .art-foot{min-height:30px}
   .home .desk{padding:13px}
   .start-modes .menu-tile{min-height:53px}
   .start-modes #screen{min-height:51px;margin-top:9px}
@@ -406,8 +399,6 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
   .bar-inner{padding-inline:8px}
   .brand{font-size:.78rem}
   .top-button{font-size:.75rem}
-  .home .art-foot{padding-right:54px;letter-spacing:.07em}
-  .home .art-foot::after{width:31px;right:9px}
   .start-modes .menu-tiles{gap:7px}
   .start-modes .menu-tile{padding:7px;gap:5px}
   .start-modes .mode-icon{width:29px;height:29px}
