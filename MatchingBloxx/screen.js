@@ -8,16 +8,10 @@
   function mount(board, config, names, turns, cue, leave) {
     var rules = window.MatchingBloxxRules;
     var arcade = window.BloxxArcade;
-    var physics = window.BloxxScreenMotion;
-    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var physics = window.BloxxPhysics;
     var tiles = [];
     var seed = Math.floor(Math.random() * 1e9);
     var closed = false;
-    var craneStart = clock();
-    var crane = {seed:seed,round:1};
-    arcade.arm(crane, Date.now());
-    crane.motion.period *= 1.26;
-    crane.motion.amplitude *= 1.1;
 
     board.innerHTML = '<header class="screen-bar"><div><h1>Screen mode</h1><p class="screen-set"></p></div>' +
       '<button type="button" class="small-action screen-exit">Back to menu</button></header>' +
@@ -42,8 +36,19 @@
       var card = document.createElement('section');
       var player = rules.newPlayer('p' + index, names[index - 1], Math.floor(Math.random() * 1e9));
       player.stage = 'drop';
-      var motion = crane.motion;
       var tower = physics.tower();
+      var crane = {seed:seed,round:1,placements:[]};
+      var craneStart;
+      function rehang() {
+        var now=clock();
+        crane.round=player.round;
+        crane.placements=player.placements;
+        arcade.arm(crane,now,2,now-craneStart);
+        crane.motion.period*=1.12;
+        crane.motion.amplitude*=1.1;
+        craneStart=now;
+      }
+      rehang();
       // Reserve a different first prompt where possible, then use each player's own shuffle.
       var rows = config.set.rows.slice();
       var opening = arcade.card(config, (index - 1) % rows.length + 1, seed).label;
@@ -72,7 +77,7 @@
       var selected = -1, busy = false, view;
 
       function currentSwing() {
-        return physics.swing(motion, Math.max(0,clock()-craneStart));
+        return physics.swing(crane.motion, Math.max(0,clock()-craneStart));
       }
 
       function select(index) {
@@ -117,7 +122,7 @@
             choices.appendChild(button);
           });
         }
-        scene.set({mode:'build', arcade:true, screen:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
+        scene.set({mode:'build', arcade:true, screen:true, physical:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
           label:'', choice:-1, target:'', showCrane:!tile.finished,showRoof:tile.finished,
           getSwing:tile.finished?null:currentSwing,rockUntil:tile.finished?Date.now()+10000:0,
           getRock:function(){return tower.angle(clock());}});
@@ -129,22 +134,22 @@
       function release() {
         if (busy || tile.finished || selected < 0) return;
         var started = clock();
-        var path = physics.drop(physics.swing(motion, Math.max(0,started-craneStart)));
+        var impact = arcade.trajectory(crane.motion,started-craneStart,player.placements,function(ahead){
+          return tower.angle(started+ahead);
+        },true);
         var question = arcade.card(playerConfig,player.round,player.seed);
         var correctWord = selected === question.correct;
         var last;
         if (correctWord) {
-          var height = (player.placements.length + 1) * physics.floorHeight;
-          var sway = reduced ? 0 : physics.shift(height,tower.angle(started + path.duration * 1000));
-          var contact = (path.impact.centerX - sway + .12 * Math.sin(path.impact.angle)) * .30;
-          var placed = rules.placeFloor(player.placements,contact);
-          last = {kind:placed.kind,points:100+placed.bonus,fallen:placed.fallen,direction:placed.direction,offset:contact};
+          var placed = arcade.land(player.placements,impact);
+          last = {kind:placed.kind,points:100+placed.bonus,fallen:placed.fallen,direction:placed.direction,offset:placed.offset};
           if (placed.floors.length > colors.length) colors.push(selected);
           else colors.length = placed.floors.length;
           player.placements = placed.floors;
         } else {
           last = {kind:'wrong',points:0,fallen:0};
         }
+        last.bump=impact.hit;
         player.last = last;
         player.score += last.points;
         if (++player.completed === turns) player.stage = 'done';
@@ -153,9 +158,10 @@
         drop.classList.add('pressed');
         drop.disabled = true;
         for (var i=0; i<choices.children.length; i++) choices.children[i].disabled = true;
-        scene.release(path);
+        scene.release(impact.path);
         scene.impact(player.last,function () {
           if (closed) return;
+          if (player.stage !== 'done') rehang();
           next();
           finishIfReady();
         },function () {
@@ -163,8 +169,8 @@
             card.classList.add('wrong-flash');
             cue('buzzer');
           } else {
-            if (last.kind === 'landed') tower.land(last.offset,clock());
-            else if (last.kind === 'perfect' || last.fallen) tower.land(0,clock());
+            if (last.kind === 'landed') tower.land(last.offset,clock(),player.placements.length);
+            else if (last.kind === 'perfect' || last.fallen) tower.land(0,clock(),player.placements.length);
             cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':'miss');
           }
         });

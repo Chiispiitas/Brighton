@@ -1,7 +1,7 @@
 (function (root, make) {
-  if (typeof module === 'object' && module.exports) module.exports = make(require('./rules.cjs'));
-  else root.BloxxArcade = make(root.MatchingBloxxRules);
-}(typeof self !== 'undefined' ? self : this, function (rules) {
+  if (typeof module === 'object' && module.exports) module.exports = make(require('./rules.cjs'),require('./physics.cjs'));
+  else root.BloxxArcade = make(root.MatchingBloxxRules,root.BloxxPhysics);
+}(typeof self !== 'undefined' ? self : this, function (rules, physics) {
   'use strict';
   var matchRows = [
     ['a lecture','attend'], ['classes','attend'], ['a seminar','attend'],
@@ -159,6 +159,7 @@
     return validate(mode,set);
   }
   function pose(motion, elapsed) {
+    if(motion.physics===2) return physics.swing(motion,elapsed);
     var rate=2*Math.PI/motion.period;
     var phase=motion.phase+elapsed*rate;
     var wave=Math.sin(phase);
@@ -170,7 +171,13 @@
       rotation:.29*Math.cos(phase)*rate*1000
     };
   }
-  function flight(motion, elapsed) {
+  function trajectory(motion, elapsed, floors, angleAt, assisted) {
+    return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted);
+  }
+  function flight(motion, elapsed, floors, rock) {
+    if(motion.physics===2) return trajectory(motion,elapsed,floors||[],function(ahead){
+      return physics.rockAt(rock,elapsed+ahead).angle;
+    },false).path;
     var start=pose(motion,elapsed);
     function frame(time) {
       return {x:start.x+start.velocity*time, height:start.height-gravity*time*time/2,
@@ -187,14 +194,25 @@
     var duration=after;
     return {duration:duration, at:frame, impact:frame(duration)};
   }
-  function arm(player, now) {
+  function arm(player, now, version, elapsed) {
     var random=rng(player.seed+player.round*13499);
     var penalty=player.gustPending;
     var assistance=player.steadyArmed;
-    // Vary each crane cycle while keeping later floors faster.
-    var base=Math.max(1900,3270-57*(player.round-1))+Math.round(random()*380);
-    player.motion={period:Math.round(base*(assistance?1.5:1)/(penalty?1.18:1)),phase:random()*2*Math.PI,
+    var modern=version!==1;
+    var previous=player.motion;
+    var height=player.placements.length;
+    var base=(modern?Math.max(2500,3780-height*33):Math.max(1900,3270-57*(player.round-1)))+Math.round(random()*380);
+    var phase=random()*2*Math.PI;
+    if(modern && previous && typeof elapsed==='number') {
+      phase=(previous.phase+elapsed*2*Math.PI/previous.period)%(2*Math.PI);
+    }
+    player.motion={period:Math.round(base*(assistance?1.5:1)/(penalty?1.18:1)),phase:phase,
       amplitude:.92+random()*.26,gust:!!penalty,assisted:!!assistance,startedAt:now};
+    if(modern) {
+      player.motion.physics=2;
+      player.motion.lowering=!!previous;
+      player.motion.amplitude=Math.min(1.35,player.motion.amplitude+.009*height);
+    }
     if(assistance) player.steady=0;
     player.steadyArmed=false;
     player.gustPending=false;
@@ -204,30 +222,54 @@
     return {floors:floors.slice(0,Math.max(0,floors.length-count)),direction:direction,
       fallen:Math.min(floors.length,count)+1,bonus:0,kind:'wrong'};
   }
+  function land(floors, impact) {
+    if (!impact.hit) return {floors:floors,kind:'miss',fallen:0,bonus:0,offset:0};
+    if (impact.tipped) {
+      var count=Math.min(floors.length,Math.max(1,impact.level));
+      return {floors:floors.slice(0,floors.length-count),kind:'miss',fallen:count+1,
+        direction:impact.direction,bonus:0,offset:impact.offset};
+    }
+    var placed=rules.placeFloor(floors,impact.offset);
+    placed.offset=impact.offset;
+    return placed;
+  }
   function resolve(player, config, choice, elapsed) {
     var current=card(config,player.round,player.seed);
-    var path=flight(player.motion,elapsed);
+    var modern=player.motion.physics===2;
+    var impact=modern?trajectory(player.motion,elapsed,player.placements,function(ahead){
+      return physics.rockAt(player.rock,elapsed+ahead).angle;
+    },false):null;
+    var path=impact?impact.path:flight(player.motion,elapsed);
     var x=path.impact.x;
     var direction=x<0?-1:1;
     var landing=x;
     // A tilted floor hits with its lower corner first and carries that torque into the landing.
     if(Math.abs(path.impact.angle)>.24) landing+=Math.sin(path.impact.angle)*.18;
     var label=config.mode==='match'?current.choices[choice]:current.label;
+    var next;
     if(choice!==current.correct) {
       if(config.mode==='rightwrong') {
         var random=rng(player.seed+player.round*19763);
-        var bad=loss(player.placements,2+Math.floor(random()*4),direction);
-        bad.label=label;
-        bad.offset=x;
-        return bad;
-      }
-      return {floors:player.placements,kind:'wrong',fallen:0,bonus:0,offset:x,label:label,
+        next=loss(player.placements,2+Math.floor(random()*4),direction);
+        next.offset=x;
+      } else next={floors:player.placements,kind:'wrong',fallen:0,bonus:0,offset:x,
         correction:/_{2,}/.test(current.label)?current.label.replace(/_{2,}/,function(){return current.choices[current.correct];}):
           current.choices[current.correct]+' '+current.label};
+    } else {
+      next=impact?land(player.placements,impact):rules.placeFloor(player.placements,landing);
+      if(!impact) next.offset=x;
     }
-    var next=rules.placeFloor(player.placements,landing);
-    next.offset=x;
     next.label=label;
+    if(impact) {
+      var contact=elapsed+path.duration*1000;
+      var rock=next.floors.length?(next.kind==='perfect'||next.kind==='landed'||next.fallen?
+        physics.kick(player.rock,next.kind==='landed'?next.offset:0,contact,next.floors.length):
+        physics.rockAt(player.rock,contact)):null;
+      next.rock=rock;
+      next.bump=impact.hit;
+      next.restart=contact+(next.fallen?860:next.kind==='perfect'?470:next.kind==='landed'?220:440);
+      player.rock=rock && physics.rockAt(rock,next.restart-contact);
+    }
     return next;
   }
   function move(player, config, action, data, now, endless) {
@@ -242,6 +284,11 @@
       check(config.mode==='rightwrong','Choose a matching block.');
       var current=card(config,player.round,player.seed);
       next={kind:current.correct<0?'passed':'passed-right',bonus:0,fallen:0,floors:player.placements,label:current.label};
+      if(player.motion.physics===2){
+        next.restart=typeof data.elapsedMs==='number' && isFinite(data.elapsedMs)?
+          Math.max(0,Math.min(data.elapsedMs,now-player.motion.startedAt+550)):Math.max(0,now-player.motion.startedAt);
+        player.rock=physics.rockAt(player.rock,next.restart);
+      }
     } else {
       check(action==='arcadeDrop','Unknown arcade action.');
       var choice=data.choice;
@@ -261,16 +308,18 @@
     player.score+=points;
     player.last={kind:next.kind,phrase:next.label,points:points,offset:next.offset||0,fallen:next.fallen,direction:next.direction||0,
       lost:next.fallen?next.fallen-1:0,correction:next.correction||''};
+    if(next.rock) player.last.rock=next.rock;
+    if(next.bump) player.last.bump=true;
     player.completed++;
     if(!endless && player.completed>=rules.total) {
       player.stage='done';
       player.motion=null;
-    } else {player.round++;arm(player,now);}
+    } else {player.round++;arm(player,now,player.motion.physics===2?2:1,next.restart);}
   }
-  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true}; }
+  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:2}; }
   function snapshot(game) {
     var set=game.set;
-    return {mode:game.mode,name:set.name,instruction:set.instruction||''};
+    return {mode:game.mode,name:set.name,instruction:set.instruction||'',physics:game.physics||1};
   }
   function playerView(player, game, phase) {
     var view=rules.playerView(player, phase);
@@ -278,7 +327,12 @@
     view.prompt=question.label;
     view.choices=question.choices || [question.label];
     view.last=player.last;
-    if(view.motion) view.motion.assisted=!!player.motion.assisted;
+    if(view.motion) {
+      view.motion.assisted=!!player.motion.assisted;
+      view.motion.physics=player.motion.physics || 1;
+      view.motion.lowering=!!player.motion.lowering;
+    }
+    if(player.rock) view.rock=player.rock;
     return view;
   }
   function practice(game, name) {
@@ -301,5 +355,5 @@
     };
   }
   return {config:config, importPool:importPool, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
-    playerView:playerView, practice:practice};
+    playerView:playerView, practice:practice, trajectory:trajectory, land:land};
 }));
