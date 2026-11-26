@@ -191,15 +191,46 @@
     var sets=savedRoom(poolKey);
     return Array.isArray(sets)?sets:[];
   }
+  var grammarPools = [
+    {id:'builtin-gerunds', mode:'match', set:{name:'Gerunds vs Infinitives',sameOptions:false,rows:[
+      ['She enjoys ___ books after school.','reading','to read'],
+      ['We decided ___ the bus.','to take','taking'],
+      ['He finished ___ the kitchen.','cleaning','to clean'],
+      ['They agreed ___ us at six.','to meet','meeting'],
+      ['I don’t mind ___ a few minutes.','waiting','to wait'],
+      ['She promised ___ me tonight.','to call','calling'],
+      ['He suggested ___ at home.','eating','to eat'],
+      ['We hope ___ you soon.','to see','seeing'],
+      ['She keeps ___ her keys.','losing','to lose'],
+      ['I’m interested in ___ French.','learning','to learn'],
+      ['Wash your hands before ___ lunch.','eating','to eat'],
+      ['He left without ___ goodbye.','saying','to say'],
+      ['Thank you for ___ me.','helping','to help'],
+      ['I look forward to ___ you again.','seeing','to see'],
+      ['___ in the pool helps me relax.','Swimming','Swim'],
+      ['___ every day is good for you.','Walking','Walk']
+    ]}},
+    {id:'builtin-have',mode:'match',set:{name:'Uses of Have',sameOptions:true,
+      options:['Possession','Present Perfect','Obligation'],rows:[
+        ['I have a blue bag.','Possession'],['She has two cats.','Possession'],
+        ['We have a small garden.','Possession'],['Tom has a new bike.','Possession'],
+        ['I have finished my homework.','Present Perfect'],['She has lost her keys.','Present Perfect'],
+        ['We have seen that film.','Present Perfect'],['They have cleaned the room.','Present Perfect'],
+        ['I have to go now.','Obligation'],['She has to wear a uniform.','Obligation'],
+        ['We have to be quiet here.','Obligation'],['Tom has to get up early.','Obligation']
+      ]}}
+  ];
+  function isBuiltIn(id) {
+    return id==='default' || grammarPools.some(function(entry){return entry.id===id;});
+  }
   function optionsFor(mode, selected) {
-    var game=BloxxArcade.config(mode);
-    return '<option value="default">'+esc(game.set.name)+' (built in)</option>'+
-      library().filter(function(entry){return entry.mode===mode;}).map(function(entry){
-        return '<option value="'+esc(entry.id)+'"'+(entry.id===selected?' selected':'')+'>'+esc(entry.set.name)+'</option>';
+    return [{id:'default',mode:mode,set:BloxxArcade.config(mode).set}].concat(grammarPools,library())
+      .filter(function(entry){return entry.mode===mode;}).map(function(entry){
+        return '<option value="'+esc(entry.id)+'"'+(entry.id===selected?' selected':'')+'>'+esc(entry.set.name)+(isBuiltIn(entry.id)?' (built in)':'')+'</option>';
       }).join('');
   }
   function loadPool(mode, id) {
-    var saved=library().filter(function(entry){return entry.id===id && entry.mode===mode;})[0];
+    var saved=grammarPools.concat(library()).filter(function(entry){return entry.id===id && entry.mode===mode;})[0];
     return BloxxArcade.config(mode,saved?saved.set:null);
   }
   function openScreenSetup() {
@@ -287,7 +318,7 @@
       load:function(selectedMode,selectedId){return loadPool(selectedMode,selectedId).set;},
       persist:function(selectedMode,selectedId,set,copy){
         var sets=library();
-        if(copy || selectedId==='default'){
+        if(copy || isBuiltIn(selectedId)){
           if(sets.length>=30)throw Error('This browser can store up to 30 sets.');
           selectedId=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
           sets.push({id:selectedId,mode:selectedMode,set:set});
