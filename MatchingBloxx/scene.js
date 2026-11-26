@@ -116,12 +116,13 @@
     return faces;
   }
 
-  function asset(style, kind) {
-    var key=(kind||'floor')+'-'+style+(global.BloxxFloorMesh?'m':'p');
+  function asset(style, kind, tile) {
+    var key=(kind||'floor')+'-'+style+(global.BloxxFloorMesh?'m':'p')+(tile?'-tile':'');
     if (art[key]) return art[key];
     var faces=meshData(style,kind);
-    var sprite=document.createElement('canvas'), scale=190, centerY=190;
-    sprite.width=352; sprite.height=220;
+    var sprite=document.createElement('canvas'), scale=tile?25:190, centerY=tile?24:190;
+    sprite.width=tile?32:352; sprite.height=tile?28:220;
+    var centerX=sprite.width/2;
     var ctx=sprite.getContext('2d');
     if(ctx) {
       // Bake the actual mesh to a tiny reusable sprite with a depth buffer.
@@ -130,9 +131,9 @@
       var depth=new Float32Array(sprite.width*sprite.height);
       for(var k=0;k<depth.length;k++) depth[k]=-100;
       function raster(a,b,c,col){
-        var ax=176+a[0]*scale,ay=centerY-a[1]*scale;
-        var bx=176+b[0]*scale,by=centerY-b[1]*scale;
-        var cx=176+c[0]*scale,cy=centerY-c[1]*scale;
+        var ax=centerX+a[0]*scale,ay=centerY-a[1]*scale;
+        var bx=centerX+b[0]*scale,by=centerY-b[1]*scale;
+        var cx=centerX+c[0]*scale,cy=centerY-c[1]*scale;
         var area=(by-cy)*(ax-cx)+(cx-bx)*(ay-cy);
         if(area>=-0.00001)return;
         var minX=Math.max(0,Math.floor(Math.min(ax,bx,cx)));
@@ -164,10 +165,11 @@
 
   function segment(canvas, style) {
     function paint() {
+      var cube=asset(style===3?4:style,'cube',true).sprite;
+      canvas.width=cube.width;
+      canvas.height=cube.height;
       var ctx=canvas.getContext('2d');
-      var cube=asset(style===3?4:style,'cube').sprite;
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      ctx.drawImage(cube,57,14,238,183,0,0,canvas.width,canvas.height);
+      ctx.drawImage(cube,0,0);
     }
     paint();
     if(!global.BloxxFloorMesh)script('assets/floor.js?v=20',paint);
@@ -205,30 +207,24 @@
       return;
     }
     var sky=ctx.createLinearGradient(0,0,0,h);
-    sky.addColorStop(0,attract?'#47447e':'#70b9d3');
-    sky.addColorStop(.46,attract?'#9d71aa':'#b1dedb');
-    sky.addColorStop(.74,attract?'#ffc093':'#f5d599');
-    sky.addColorStop(1,attract?'#d48481':'#ebaa71');
+    sky.addColorStop(0,attract?'#648a8c':'#78aec0');
+    sky.addColorStop(.54,attract?'#afae99':'#b9d6cf');
+    sky.addColorStop(1,attract?'#d7a47d':'#ded9ab');
     ctx.fillStyle=sky;ctx.fillRect(0,0,w,h);
     if(attract){
-      var sunX=w*.82,sunY=h*.48,sunSize=Math.min(w*.16,h*.30);
-      var glow=ctx.createRadialGradient(sunX,sunY,sunSize*.4,sunX,sunY,sunSize*1.75);
-      glow.addColorStop(0,'rgba(255,209,135,.52)');glow.addColorStop(1,'rgba(255,167,132,0)');
-      ctx.fillStyle=glow;ctx.fillRect(sunX-sunSize*2,sunY-sunSize*2,sunSize*4,sunSize*4);
+      var sunX=w*.83,sunY=h*.51,sunSize=Math.min(w*.092,h*.18);
       for(var line=-sunSize;line<sunSize;line+=2){
-        if(line>sunSize*.28 && Math.floor(line/5)%2!==0)continue;
         var span=Math.sqrt(sunSize*sunSize-line*line);
-        rect(sunX-span,sunY+line,span*2,2,line<0?'#ffe4a2':'#ffce87');
+        rect(sunX-span,sunY+line,span*2,2,'#fae1a4');
       }
     }
     function cloud(x,y,z) {
       ctx.save();ctx.translate(Math.round(x),Math.round(y));ctx.scale(z,z);
-      poly([0,1,5,1,5,-1,10,-1,10,-4,16,-4,16,-7,23,-7,23,-5,28,-5,28,-3,34,-3,34,0,41,0,41,2,47,2,47,4,0,4],attract?'#d69dad':'#daf0e3');
-      rect(7,4,32,2,attract?'#b786a4':'#b8deda');rect(13,-3,7,1,attract?'#edb5bc':'#eff4dd');ctx.restore();
+      poly([0,1,5,1,5,-1,10,-1,10,-4,16,-4,16,-7,23,-7,23,-5,28,-5,28,-3,34,-3,34,0,41,0,41,2,47,2,47,4,0,4],attract?'#ddd4b4':'#e2ece1');
+      ctx.restore();
     }
-    for(var ci=-1;ci<Math.ceil(w/120)+1;ci++){
-      cloud(ci*129+11,h*.17+Math.sin(ci*4)*h*.045+rise*.011,1.0);
-      cloud(ci*113+67,h*.31+Math.cos(ci*3.4)*h*.054+rise*.014,.65);
+    for(var ci=0;ci<Math.ceil(w/134);ci++){
+      cloud(ci*134+26,h*(ci%2?.27:.20)+rise*.011,ci%2?.7:1);
     }
     // Small distant birds use single stepped wings.
     for(var bi=0;bi<3;bi++){
@@ -240,7 +236,7 @@
       while(x<w+3){
         var seed=i+ (far?3:61),bw=(far?11+random(seed+7)*13:15+random(seed+7)*22)*unit;
         var high=(far?19+random(seed+88)*50:14+random(seed+88)*56)*unit;
-        var y=baseY-high, col=attract?(far?'#a77e9b':['#74658b','#88758a','#7d6383','#8b7084'][i%4]):
+        var y=baseY-high, col=attract?(far?'#a1a48e':['#818c7e','#8e9081','#848d7a','#909582'][i%4]):
           (far?'#91b8ba':['#799ca7','#89a3a4','#7eabb0','#84a3ac'][i%4]);
         rect(x,y,bw,high+2,col);
         if(i%3===0) {
@@ -248,13 +244,13 @@
           if(i%2===0) rect(x+bw*.37,y-11*unit,bw*.2,8*unit,col);
         }
         if(!far){
-          rect(x+bw*.74,y,bw*.25,high+2,attract?'#655877':'#74959d');
+          rect(x+bw*.74,y,bw*.25,high+2,attract?'#7b8777':'#79989a');
           if(i%3!==0){
             for(var wy=y+4*unit;wy<baseY-2;wy+=7*unit){
-              for(var wx=x+3*unit;wx<x+bw*.71;wx+=6*unit) rect(wx,wy,2*unit,3*unit,attract?'#be94a6':i%2?'#a9c2bc':'#a0bfc2');
+              for(var wx=x+3*unit;wx<x+bw*.71;wx+=6*unit) rect(wx,wy,2*unit,3*unit,attract?'#a8aa8d':i%2?'#a9c2bc':'#a0bfc2');
             }
           }else{
-            for(var strip=2;strip<bw*.75;strip+=5*unit) rect(x+strip,y+3,1.5*unit,high-4,attract?'#9e809b':'#a1b9b4');
+            for(var strip=2;strip<bw*.75;strip+=5*unit) rect(x+strip,y+3,1.5*unit,high-4,attract?'#9da18a':'#a1b9b4');
           }
         }
         x+=bw+unit*(far?-1:2);i++;
@@ -313,8 +309,8 @@
     var state={mode:'attract',floors:[],balance:0,getOffset:null,showCrane:true};
     var running=true, raf=global.requestAnimationFrame || function(fn){return setTimeout(function(){fn(Date.now());},16);};
     var cancel=global.cancelAnimationFrame || clearTimeout, frameId=0, then=0;
-    var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', backdrop=document.createElement('canvas');
-    var paint=backdrop.getContext('2d'), T=null, renderer=null, world=null, camera=null, material=null, groups=[], geometry={};
+    var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', townPixel=1;
+    var T=null, renderer=null, world=null, camera=null, material=null, groups=[], geometry={};
     var resizeObserver=null, near=true, visibility=null, count=0, start=Date.now(), cameraX=0, cameraRise=0;
     var tour=null, tourPlayed=false, contactTimer=0, preview=null;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -333,8 +329,12 @@
       var w=container.clientWidth,h=container.clientHeight;
       if(!w||!h || (w===width&&h===height)) return;
       width=w;height=h;ratio=clamp(global.devicePixelRatio||1,1,1.4);
-      [scenic,graphics,foreground].forEach(function(c){c.width=Math.round(w*ratio);c.height=Math.round(h*ratio);});
-      city.setTransform(ratio,0,0,ratio,0,0);fallback.setTransform(ratio,0,0,ratio,0,0);
+      // The container clips at most one partial cell. Both axes keep the same pixel size.
+      townPixel=w>430 || h>360?2:1;
+      scenic.width=Math.ceil(w/townPixel);scenic.height=Math.ceil(h/townPixel);
+      scenic.style.width=(scenic.width*townPixel)+'px';scenic.style.height=(scenic.height*townPixel)+'px';
+      [graphics,foreground].forEach(function(c){c.width=Math.round(w*ratio);c.height=Math.round(h*ratio);});
+      fallback.setTransform(ratio,0,0,ratio,0,0);
       rig.setTransform(ratio,0,0,ratio,0,0);
       if(renderer) renderer.setSize(w,h,false);
       townKey='';dirty=true;
@@ -466,8 +466,7 @@
       var span=0;
       for(i=0;i<lines.length;i++)span=Math.max(span,rig.measureText(lines[i]).width);
       var labelWidth=Math.min(max,span+14),lineH=Math.ceil(fontSize)+1,labelH=lineH*lines.length+6;
-      rig.fillStyle='#324957';rig.fillRect(-labelWidth/2,-labelH/2,labelWidth,labelH);
-      rig.fillStyle='#ffdf98';rig.fillRect(-labelWidth/2+1,-labelH/2+1,labelWidth-2,1);
+      rig.fillStyle='#22383c';rig.fillRect(-labelWidth/2,-labelH/2,labelWidth,labelH);
       rig.textAlign='center';rig.textBaseline='middle';rig.fillStyle='#fff6d5';
       for(i=0;i<lines.length;i++)rig.fillText(lines[i],0,(i-(lines.length-1)/2)*lineH+1,labelWidth-8);
       rig.restore();
@@ -515,19 +514,6 @@
         rig.fillRect(Math.round(cx+dir*dist),Math.round(cy-lift),pixel,pixel);
       }
       rig.restore();
-    }
-    function skyTraffic(elapsed) {
-      for(var i=0;i<4;i++){
-        var x=Math.round(width-((elapsed*(.005+i*.0015)+width*(.13+i*.31))%(width+140)));
-        var y=Math.round(height*(.22+i*.092));
-        var cells=Math.max(2,Math.round(width/250));
-        rig.fillStyle=i%2?'rgba(255,211,191,.52)':'rgba(255,222,201,.44)';
-        rig.fillRect(x,y,18*cells,2*cells);
-        rig.fillRect(x+3*cells,y-2*cells,9*cells,2*cells);
-        rig.fillRect(x+6*cells,y-4*cells,4*cells,2*cells);
-        rig.fillStyle='rgba(151,109,155,.32)';
-        rig.fillRect(x+2*cells,y+2*cells,15*cells,cells);
-      }
     }
     function loadPreviewBlock() {
       var arcade=global.BloxxArcade, tower=preview.tower;
@@ -621,19 +607,17 @@
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
-      var center=sunset ? .64+.09*clamp((width-420)/190,0,1) : .5;
+      var center=sunset ? .55 : .5;
       sx=width*center-cameraX*unit;syy=ground+cameraRise;
-      var townScale=Math.min(1,Math.min(430/width,330/height));
-      var townW=Math.max(1,Math.round(width*townScale)),townH=Math.max(1,Math.round(height*townScale));
+      var townW=scenic.width,townH=scenic.height,risePixels=Math.round(cameraRise/townPixel);
       var ascent=arcade?cameraRise/(unit*floorY):0;
-      var foundation=physical?Math.round((syy+unit*.079)*townH/height):undefined;
-      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+sunset;
+      var foundation=physical?Math.round((syy+unit*.079)/townPixel):undefined;
+      var key=risePixels+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+sunset;
       if(key!==townKey){
-        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,sunset,ascent,foundation);
-        city.imageSmoothingEnabled=false;city.drawImage(backdrop,0,0,width,height);townKey=key;
+        paintTown(city,townW,townH,risePixels,sunset,ascent,foundation);
+        townKey=key;
       }
       fallback.clearRect(0,0,width,height);rig.clearRect(0,0,width,height);count=0;
-      if(sunset)skyTraffic(reduced?0:now-start);
       if(renderer){
         camera.left=-sx/unit;camera.right=(width-sx)/unit;camera.top=syy/unit;camera.bottom=(syy-height)/unit;camera.updateProjectionMatrix();
       }

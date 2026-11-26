@@ -159,11 +159,11 @@
     var paused = savedRoom('mb-paused');
     var resume = paused && paused.expires > Date.now() && (!codeFromLink || codeFromLink === paused.room.code) ?
       '<button class="text-btn" id="resume">Resume room '+esc(paused.room.code)+'</button>' : '';
-    paintPanel('home-' + resume, '<div class="start-modes"><div class="menu-tiles">' +
+    paintPanel('home-' + resume, '<div class="start-modes">' +
       '<button id="solo" class="menu-tile"><span class="mode-icon solo-icon" aria-hidden="true"></span>Play solo</button>'+
-      '<button id="host" class="menu-tile"><span class="mode-icon host-icon" aria-hidden="true"></span>Host a class</button></div>'+
+      '<div class="menu-tiles"><button id="host" class="menu-tile"><span class="mode-icon host-icon" aria-hidden="true"></span>Host a class</button>'+
       '<button type="button" id="screen" class="menu-tile screen-menu"><span class="mode-icon screen-icon" aria-hidden="true"></span>'+
-      '<span>Screen mode<small>2–4 players</small></span></button></div>'+
+      '<span>Screen mode<small>2–4 players</small></span></button></div></div>'+
       '<section class="join-console" aria-labelledby="join-title"><h2 id="join-title">Join a room</h2>'+
       '<form id="join-form"><div class="join-fields"><div><label for="name">Your name</label>'+
       '<input id="name" type="text" maxlength="24" autocomplete="nickname" placeholder="First name" required value="'+esc(read('mb-name') || '')+'"></div>'+
