@@ -14,6 +14,8 @@
     var closed = false;
     var turns = rules.total;
     var craneStart = clock();
+    var crane = {seed:seed,round:1};
+    arcade.arm(crane, Date.now());
 
     board.innerHTML = '<header class="screen-bar"><div><h1>Screen mode</h1><p class="screen-set"></p></div>' +
       '<button type="button" class="small-action screen-exit">Back to menu</button></header>' +
@@ -36,10 +38,19 @@
 
     function makeTile(index) {
       var card = document.createElement('section');
-      var player = rules.newPlayer('p' + index, 'Player ' + index, seed);
-      // The same crane keeps swinging through drops and turn changes for every player.
-      arcade.arm(player, Date.now());
-      var motion = player.motion;
+      var player = rules.newPlayer('p' + index, 'Player ' + index, Math.floor(Math.random() * 1e9));
+      player.stage = 'drop';
+      var motion = crane.motion;
+      // Reserve a different first prompt where possible, then use each player's own shuffle.
+      var rows = config.set.rows.slice();
+      var opening = arcade.card(config, (index - 1) % rows.length + 1, seed).label;
+      var first = arcade.card(config, 1, player.seed).label;
+      var openingSlot = rows.findIndex(function (row) { return row[0] === opening; });
+      var firstSlot = rows.findIndex(function (row) { return row[0] === first; });
+      var firstRow = rows[firstSlot];
+      rows[firstSlot] = rows[openingSlot];
+      rows[openingSlot] = firstRow;
+      var playerConfig = {mode:config.mode,shuffleAll:true,set:Object.assign({},config.set,{rows:rows})};
       var colors = [];
       card.className = 'screen-tile';
       card.setAttribute('aria-label', player.name);
@@ -73,7 +84,7 @@
 
       function next() {
         tile.finished = player.stage === 'done';
-        view = arcade.playerView(player, config, tile.finished ? 'finished' : 'playing');
+        view = arcade.playerView(player, playerConfig, tile.finished ? 'finished' : 'playing');
         selected = -1;
         headline.textContent = view.score + ' pts · ' + (tile.finished ? 'Finished' : view.round + '/' + turns);
         prompt.textContent = tile.finished ? view.floors + (view.floors===1?' floor':' floors') :
@@ -113,7 +124,7 @@
       function release() {
         if (busy || tile.finished || selected < 0) return;
         var path = physics.drop(currentSwing());
-        var question = arcade.card(config,player.round,player.seed);
+        var question = arcade.card(playerConfig,player.round,player.seed);
         var correctWord = selected === question.correct;
         var last;
         if (correctWord) {
