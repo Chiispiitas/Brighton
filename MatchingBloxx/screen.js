@@ -71,9 +71,7 @@
         var now=clock();
         crane.round=player.round;
         crane.placements=player.placements;
-        arcade.arm(crane,now,2,now-craneStart);
-        crane.motion.period*=1.12;
-        crane.motion.amplitude*=1.1;
+        arcade.arm(crane,now,config.physics,now-craneStart);
         craneStart=now;
       }
       rehang();

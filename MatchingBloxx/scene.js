@@ -415,7 +415,7 @@
       var arcade=global.BloxxArcade, tower=preview.tower;
       var crane=preview.crane, age=preview.time-preview.loadedAt;
       crane.placements=state.floors;
-      arcade.arm(crane,preview.time,2,age);
+      arcade.arm(crane,preview.time,3,age);
       preview.loadedAt=preview.time;
       var loadedAt=preview.loadedAt;
       var words=['attend','get','make','submit'];
