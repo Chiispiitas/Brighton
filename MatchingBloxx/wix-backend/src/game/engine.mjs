@@ -15,7 +15,7 @@ export function createRoom(code, host, presenter, now = Date.now(), seed = Math.
   const room = {code, host, presenter, seed, phase: 'lobby', players: [], expiresAt: now + 86400000};
   if (setup) {
     room.arcade = arcade.config(setup.mode, setup.set);
-    room.arcade.physics = [2,3,4,5].includes(setup.physics) ? setup.physics : 1;
+    room.arcade.physics = ([2,3,4,5].includes(setup.physics) || (setup.physics === 6 && setup.mode === 'rightwrong')) ? setup.physics : 1;
   }
   return room;
 }

@@ -166,6 +166,7 @@
     document.body.classList.toggle('city-active',name==='board');
     if(name!=='board' && presenterCity){presenterCity.destroy();presenterCity=null;}
     art.classList.toggle('screen-tile',lane);
+    desk.classList.remove('result-open');
     if(lane && desk.parentNode!==art)art.appendChild(desk);
     else if(!lane && desk.parentNode!==game)game.appendChild(desk);
     if (name === 'board' && scene) { scene.destroy(); scene = null; visualKey = ''; }
@@ -650,7 +651,8 @@
     });
   }
   function laneControls(matching, disabled) {
-    return '<div class="screen-controls">'+(matching?'<div class="screen-choices" aria-label="Matching blocks"></div>':'')+
+    return '<div class="screen-controls'+(matching?'':' sorting-controls')+'">'+(matching?
+      '<div class="screen-choices" aria-label="Matching blocks"></div>':BloxxScreen.tossHint)+
       '<button type="button" class="screen-drop" aria-label="Drop floor" id="drop"'+
       (disabled?' data-disabled="true" disabled':'')+'></button></div>';
   }
@@ -700,7 +702,8 @@
     var matching=state.arcade.mode==='match';
     var done=state.phase==='finished' || me.stage==='done';
     var round=state.code+'-'+me.round+'-'+done;
-    if(arcadeRound!==round) {
+    var changedRound=arcadeRound!==round;
+    if(changedRound) {
       arcadeRound=round;
       arcadeChoice=matching?-1:0;
       motionStart=now();
@@ -711,18 +714,22 @@
     $('art').classList.remove('wrong-flash');
     var physical=state.arcade.physics>=2;
     setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
-      showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
+      showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:matching?arcadeChoice:(me.round-1)%4,getOffset:null,
       getRock:physical&&me.rock?function(){return BloxxArcade.towerPose({physics:state.arcade.physics},me.placements,me.rock,now()-motionStart,true);}:null,
       rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
     var html=laneHeader(me,done?'Finished':state.total?me.round+'/'+state.total:'Turn '+me.round);
     if(done) {
-      html+='<div class="lane-result"><h2>'+(practice?'Tower complete':state.phase==='finished'?'Final standings':'Tower complete')+'</h2>';
-      html+='<p>'+me.floors+(me.floors===1?' floor':' floors')+'</p>';
+      var title=practice || state.phase!=='finished'?'Tower complete':'Final standings';
+      html+='<div class="arcade-result-overlay"><section class="arcade-result" aria-labelledby="arcade-result-title">'+
+        '<h2 id="arcade-result-title" tabindex="-1">'+title+'</h2>'+
+        '<dl class="arcade-result-stats"><div><dt>Floors</dt><dd>'+me.floors+'</dd></div>'+
+        '<div><dt>Score</dt><dd>'+me.score+'</dd></div></dl>';
       if(!practice)html+=standings(state.players);
-      html+='<div class="row-buttons"><button id="again" class="small-action">'+(practice?'Build again':'Back to menu')+'</button>';
-      if(practice)html+='<button id="leave" class="text-btn">Back to menu</button>';
-      html+='</div></div>';
+      html+='<div class="arcade-result-actions"><button type="button" id="again" class="cabinet-button">'+
+        (practice?'Build again':'Back to menu')+'</button>';
+      if(practice)html+='<button type="button" id="leave" class="cabinet-button cabinet-secondary">Back to menu</button>';
+      html+='</div></section></div>';
     } else {
       html+='<div class="lane-info"><h2 class="screen-prompt">'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'___ '+esc(me.prompt)):
         esc(me.prompt))+'</h2>';
@@ -735,6 +742,8 @@
         laneControls(matching,arcadeChoice<0);
     }
     paintPanel(JSON.stringify([html,round,arcadeChoice,me.choices]),html);
+    $('desk').classList.toggle('result-open',done);
+    if(done && changedRound)$('arcade-result-title').focus();
     if(!done && matching)laneBlocks(me.choices,arcadeChoice,'data-block',chooseArcade);
     if($('drop'))BloxxScreen.bindDrop($('drop'),arcadeDrop);
     if($('arcade-steady'))$('arcade-steady').onclick=function(){perform('steady',{round:me.round});};
