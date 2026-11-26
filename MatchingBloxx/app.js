@@ -145,7 +145,7 @@
     $('arcade-hud').hidden = name!=='stage arcade';
   }
   function home() {
-    setLayout('home'); setScene('attract',{mode:'attract',label:'',showRoof:false}); footer('Matching · Right / Wrong','');
+    setLayout('home'); setScene('home-preview',{mode:'demo',showRoof:false});
     var paused = savedRoom('mb-paused');
     var resume = paused && paused.expires > Date.now() && (!codeFromLink || codeFromLink === paused.room.code) ?
       '<button class="text-btn" id="resume">Resume room '+esc(paused.room.code)+'</button>' : '';
