@@ -413,10 +413,11 @@
       rig.restore();
     }
     function loadPreviewBlock() {
-      var arcade=global.BloxxArcade, tower=preview.tower;
+      var arcade=global.BloxxArcade;
       var crane=preview.crane, age=preview.time-preview.loadedAt;
       crane.placements=state.floors;
-      arcade.arm(crane,preview.time,3,age);
+      arcade.arm(crane,preview.time,5,age);
+      preview.rock=arcade.advanceTower(preview.rock,age,preview.landed);
       preview.loadedAt=preview.time;
       var loadedAt=preview.loadedAt;
       var words=['attend','get','make','submit'];
@@ -433,7 +434,7 @@
       // Find the next release that shows the intended landing using the live trajectory.
       for(var elapsed=1150;elapsed<1150+motion.period;elapsed+=34){
         var contact=arcade.trajectory(motion,elapsed,state.floors,function(ahead){
-          return tower.angle(loadedAt+elapsed+ahead);
+          return arcade.towerPose(motion,state.floors,preview.rock,elapsed+ahead);
         },false);
         if(!contact.hit)continue;
         var score=preview.demolishing?(contact.tipped?elapsed:1e6+elapsed):
@@ -459,8 +460,7 @@
         frozen=null;
         loadPreviewBlock();
       },function(){
-        if(result.kind==='landed')current.tower.land(result.offset,current.time,result.floors.length);
-        else if(result.kind==='perfect' || result.fallen)current.tower.land(0,current.time,result.floors.length);
+        current.landed=result.kind==='landed'||result.kind==='perfect';
       });
     }
     function tick(stamp){
@@ -527,7 +527,9 @@
       var firstFalling=collapse ? length+1-collapse.fallen : length+1;
       var tumble=collapse ? (flight?progress:clamp((progress-.25)/.75,0,1)) : 0;
       var flex=wobble*(lean<0?-1:1)*(.075+(rocking?.045*Math.sin(now/122)*(1-tumble):0));
-      if(physical)flex=rocking?state.getRock():0;
+      var towerPose=physical && rocking ? state.getRock() : 0;
+      var joints=Array.isArray(towerPose)?towerPose:null;
+      if(physical)flex=joints?0:towerPose;
       function displacement(y) {
         return physical ? global.BloxxPhysics.shift(y,flex) : flex*y;
       }
@@ -545,7 +547,10 @@
       }
       function buildingFloor(index,x,y,angle) {
         if(shattering && index>=firstFalling && index<length && tumble>0) {
-          var piece=global.BloxxPhysics.debris((now-dropState.contactAt)/1000,index-firstFalling,collapse.direction);
+          var part=collapse.parts && collapse.parts[index-firstFalling];
+          var seconds=(now-dropState.contactAt)/1000;
+          var piece=part ? global.BloxxPhysics.javaFall(seconds,part) :
+            global.BloxxPhysics.debris(seconds,index-firstFalling,collapse.direction);
           x+=piece.x;y+=piece.y;angle+=piece.angle;
         } else if(!shattering && index>=firstFalling && tumble>0) {
           var level=index-firstFalling;
@@ -564,13 +569,15 @@
       for(var i=0;i<length;i++){
         var y=i*floorY;
         if(syy-y*unit>height+unit || syy-y*unit<-unit) continue;
-        buildingFloor(i,(Number(floors[i])||0)+displacement(y),y,-flex);
+        var joint=joints && i>0 && joints[i-1];
+        buildingFloor(i,joint?joint.x:(Number(floors[i])||0)+displacement(y),y+(joint?joint.lift:0),joint?joint.angle:-flex);
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
-      var sway=displacement(tableY);
-      if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top+(physical?sway:0),tableY,0,'roof',physical?-flex:0);
+      var topJoint=joints && joints[joints.length-1];
+      var sway=topJoint?topJoint.x-top:displacement(tableY);
+      if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top+(physical?sway:0),tableY,0,'roof',topJoint?topJoint.angle:physical?-flex:0);
       if(arcade && state.target && !tumble && !state.showRoof)
-        floorLabel(state.target,sx+(top+sway)*unit,syy-(tableY-floorY*.47)*unit,-flex);
+        floorLabel(state.target,sx+(top+sway)*unit,syy-(tableY-floorY*.47)*unit,topJoint?topJoint.angle:-flex);
       var carryY=tableY+hangGap,offset=attract?(reduced?.36:Math.sin((now-start)/1270)*.54):0;
       var swing=arcade && state.getSwing ? state.getSwing() : null;
       if(swing){
@@ -681,7 +688,7 @@
       for(var k in options)if(Object.prototype.hasOwnProperty.call(options,k))state[k]=options[k];
       if(options.mode==='demo' && !preview){
         var physics=global.BloxxPhysics;
-        preview={time:0,loadedAt:0,crane:{seed:31,round:1,placements:[]},tower:physics.tower()};
+        preview={time:0,loadedAt:0,crane:{seed:31,round:1,placements:[]},rock:null,landed:false};
         state.arcade=true;
         state.physical=true;
         state.screen=false;
@@ -689,7 +696,7 @@
         state.target='';
         state.floors=reduced?[0]:[];
         state.getOffset=null;
-        state.getRock=function(){return preview.tower.angle(preview.time);};
+        state.getRock=function(){return global.BloxxArcade.towerPose(preview.crane.motion,state.floors,preview.rock,preview.time-preview.loadedAt);};
         state.getSwing=function(){return physics.swing(preview.crane.motion,preview.time-preview.loadedAt);};
         loadPreviewBlock();
       }
@@ -714,7 +721,7 @@
       dropState.hit=hit;
       dropState.callback=callback;
       dropState.contactAt=Math.max(Date.now(),dropState.started+dropState.path.duration*1000);
-      dropState.duration=hit.fallen?(reduced?280:860):hit.kind==='perfect'?470:hit.kind==='landed'?220:440;
+      dropState.duration=hit.fallen?(reduced?280:hit.parts?1260:860):hit.kind==='perfect'?470:hit.kind==='landed'?220:440;
       if(!state.physical && dropState.path.rejected && !hit.fallen && (hit.kind==='miss'||hit.kind==='wrong')){
         var topY=((state.floors||[]).length+1)*floorHeight*cp*1.72;
         var bottom=Math.max(0,(syy-height)/unit)-.22;

@@ -172,11 +172,11 @@
     };
   }
   function trajectory(motion, elapsed, floors, angleAt, assisted) {
-    return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted,motion.classicLanding);
+    return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted,motion.classicLanding,motion.physics>=5);
   }
   function flight(motion, elapsed, floors, rock) {
     if(motion.physics>=2) return trajectory(motion,elapsed,floors||[],function(ahead){
-      return physics.rockAt(rock,elapsed+ahead).angle;
+      return towerPose(motion,floors||[],rock,elapsed+ahead);
     },false).path;
     var start=pose(motion,elapsed);
     function frame(time) {
@@ -193,6 +193,16 @@
     }
     var duration=after;
     return {duration:duration, at:frame, impact:frame(duration)};
+  }
+  function towerPose(motion, floors, rock, elapsed) {
+    var sway=physics.rockAt(rock,elapsed);
+    return motion && motion.physics>=5 ?
+      physics.towerLayout(floors,sway.java?sway:{phase:elapsed%3600,landAge:800}) : sway.angle;
+  }
+  function advanceTower(rock, elapsed, landed) {
+    var sway=physics.rockAt(rock||{java:true,phase:0,landAge:800},elapsed);
+    if(landed)sway.landAge=0;
+    return sway;
   }
   function arm(player, now, version, elapsed) {
     var random=rng(player.seed+player.round*13499);
@@ -212,7 +222,8 @@
       amplitude:.92+random()*.26,gust:!!penalty,assisted:!!assistance,startedAt:now};
     if(modern) {
       player.motion.physics=classic?version:2;
-      if(version===4)player.motion.classicLanding=true;
+      if(version>=4)player.motion.classicLanding=true;
+      if(version>=5 && !player.rock)player.rock=advanceTower(null,0,false);
       player.motion.lowering=!!previous;
       player.motion.amplitude=classic?classic.amplitude:Math.min(1.35,player.motion.amplitude+.009*height);
       if(classic)player.motion.verticalAmplitude=classic.verticalAmplitude;
@@ -231,6 +242,16 @@
   }
   function land(floors, impact, classicLanding) {
     if (!impact.hit) return {floors:floors,kind:'miss',fallen:0,bonus:0,offset:0};
+    if(impact.javaTower) {
+      if(impact.tipped) {
+        return {kind:'miss',floors:floors.slice(0,floors.length-impact.parts.length),fallen:impact.parts.length+1,
+          direction:impact.direction,bonus:0,offset:impact.offset,parts:impact.parts};
+      }
+      var perfect=floors.length>0 && Math.abs(impact.offset)<=24/256;
+      var top=floors[floors.length-1] || 0;
+      return {kind:perfect?'perfect':'landed',floors:floors.concat(top+(perfect?0:impact.offset)),fallen:0,
+        bonus:perfect?100:Math.max(1,Math.round(100*(.85-Math.abs(impact.offset))/.73)),offset:impact.offset};
+    }
     if (impact.tipped) {
       var count=Math.min(floors.length,Math.max(1,impact.level));
       return {floors:floors.slice(0,floors.length-count),kind:'miss',fallen:count+1,
@@ -260,7 +281,7 @@
     var current=card(config,player.round,player.seed);
     var modern=player.motion.physics>=2;
     var impact=modern?trajectory(player.motion,elapsed,player.placements,function(ahead){
-      return physics.rockAt(player.rock,elapsed+ahead).angle;
+      return towerPose(player.motion,player.placements,player.rock,elapsed+ahead);
     },false):null;
     var path=impact?impact.path:flight(player.motion,elapsed);
     var x=path.impact.x;
@@ -286,12 +307,13 @@
     next.label=label;
     if(impact) {
       var contact=elapsed+path.duration*1000;
-      var rock=next.floors.length?(next.kind==='perfect'||next.kind==='landed'||next.fallen?
-        physics.kick(player.rock,next.kind==='landed'?next.offset:0,contact,next.floors.length):
-        physics.rockAt(player.rock,contact)):null;
+      var rock=player.motion.physics>=5 ? advanceTower(player.rock,contact,next.kind==='perfect'||next.kind==='landed') :
+        next.floors.length?(next.kind==='perfect'||next.kind==='landed'||next.fallen?
+          physics.kick(player.rock,next.kind==='landed'?next.offset:0,contact,next.floors.length):
+          physics.rockAt(player.rock,contact)):null;
       next.rock=rock;
       next.bump=impact.hit;
-      next.restart=contact+(next.fallen?860:next.kind==='perfect'?470:next.kind==='landed'?220:440);
+      next.restart=contact+(next.fallen?(next.parts?1260:860):next.kind==='perfect'?470:next.kind==='landed'?220:440);
       player.rock=rock && physics.rockAt(rock,next.restart-contact);
     }
     return next;
@@ -335,6 +357,7 @@
       lost:next.fallen?next.fallen-1:0,correction:next.correction||''};
     if(next.rock) player.last.rock=next.rock;
     if(next.bump) player.last.bump=true;
+    if(next.parts) player.last.parts=next.parts;
     player.completed++;
     var limit=endless===true?Infinity:typeof endless==='number'?endless:rules.total;
     if(player.completed>=limit) {
@@ -342,7 +365,7 @@
       player.motion=null;
     } else {player.round++;arm(player,now,player.motion.physics||1,next.restart);}
   }
-  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:3}; }
+  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:5}; }
   function snapshot(game) {
     var set=game.set;
     return {mode:game.mode,name:set.name,instruction:set.instruction||'',physics:game.physics||1};
@@ -383,5 +406,5 @@
     };
   }
   return {config:config, importPool:importPool, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
-    playerView:playerView, practice:practice, trajectory:trajectory, land:land, screenDrop:screenDrop};
+    playerView:playerView, practice:practice, trajectory:trajectory, land:land, screenDrop:screenDrop, towerPose:towerPose, advanceTower:advanceTower};
 }));

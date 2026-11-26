@@ -83,7 +83,7 @@
       var card = document.createElement('section');
       var player = rules.newPlayer('p' + index, names[index - 1], Math.floor(Math.random() * 1e9));
       player.stage = 'drop';
-      var tower = physics.tower();
+      var rock = arcade.advanceTower(null,0,false);
       var crane = {seed:seed,round:1,placements:[]};
       var craneStart;
       function rehang() {
@@ -166,7 +166,7 @@
         scene.set({mode:'build', arcade:true, screen:true, physical:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
           label:matching?'':view.prompt, choice:matching?-1:(player.round-1)%4, target:'', showCrane:!tile.finished,showRoof:tile.finished,
           getSwing:tile.finished?null:currentSwing,rockUntil:tile.finished?Date.now()+10000:0,
-          getRock:function(){return tower.angle(clock());}});
+          getRock:function(){return arcade.towerPose(crane.motion,view.placements,rock,clock()-craneStart);}});
         card.classList.remove('wrong-flash');
         busy = false;
       }
@@ -175,9 +175,11 @@
       function release() {
         if (busy || tile.finished || selected < 0) return;
         var started = clock();
-        var impact = arcade.trajectory(crane.motion,started-craneStart,player.placements,function(ahead){
-          return tower.angle(started+ahead);
-        },true);
+        var elapsed=started-craneStart;
+        var before=player.placements;
+        var impact = arcade.trajectory(crane.motion,elapsed,before,function(ahead){
+          return arcade.towerPose(crane.motion,before,rock,elapsed+ahead);
+        },false);
         var question = arcade.card(playerConfig,player.round,player.seed);
         var last = arcade.screenDrop(player,matching,selected===question.correct,impact);
         if (last.floors.length > colors.length) colors.push(matching?selected:(player.round-1)%4);
@@ -193,12 +195,15 @@
         scene.release(impact.path);
         scene.impact(last,function () {
           if (closed) return;
+          var time=clock();
+          var landed=last.kind==='perfect'||last.kind==='landed';
+          var contact=elapsed+impact.path.duration*1000;
+          rock=arcade.advanceTower(arcade.advanceTower(rock,contact,landed),time-craneStart-contact,false);
           if (player.stage !== 'done') rehang();
+          else craneStart=time;
           next();
           finishIfReady();
         },function () {
-          if(last.kind==='landed') tower.land(last.offset,clock(),player.placements.length);
-          else if(last.kind==='perfect' || last.fallen) tower.land(0,clock(),player.placements.length);
           popup(card,last.kind);
           if(last.kind==='wrong') {
             card.classList.add('wrong-flash');

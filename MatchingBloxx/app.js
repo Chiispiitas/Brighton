@@ -297,7 +297,6 @@
         var turns=$('solo-turns');
         if(turns && !turns.reportValidity())return;
         if(turns)practiceTurns=Number(turns.value);
-        selected.physics=4;
         save('mb-preferred-mode',mode);
         closeModal();
         invite=null;
@@ -663,9 +662,9 @@
       function contact() {
         var last=data.me.last;
         BloxxScreen.popup($('art'),last.kind);
-        if(scene && last.rock){
+        if(scene && last.rock && !last.rock.java){
           var impactAt=now();
-          scene.set({getRock:function(){return BloxxPhysics.rockAt(last.rock,now()-impactAt).angle;}});
+          scene.set({getRock:function(){return BloxxArcade.towerPose(me.motion,me.placements,last.rock,now()-impactAt);}});
         }
         if(last.kind==='wrong') {
           $('art').classList.add('wrong-flash');
@@ -686,14 +685,14 @@
       arcadeChoice=matching?-1:0;
       motionStart=now();
     }
-    var activeLabel=arcadeChoice>=0?me.choices[arcadeChoice]:'?';
+    var activeLabel=arcadeChoice>=0?me.choices[arcadeChoice]:'';
     var target=matching?me.prompt:'';
     setLayout('stage lane');
     $('art').classList.remove('wrong-flash');
     var physical=state.arcade.physics>=2;
     setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
-      getRock:physical&&me.rock?function(){return BloxxPhysics.rockAt(me.rock,now()-motionStart).angle;}:null,
+      getRock:physical&&me.rock?function(){return BloxxArcade.towerPose({physics:state.arcade.physics},me.placements,me.rock,now()-motionStart);}:null,
       rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
     var html=laneHeader(me,done?'Finished':state.total?me.round+'/'+state.total:'Turn '+me.round);
