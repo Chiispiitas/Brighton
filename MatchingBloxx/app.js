@@ -10,7 +10,7 @@
   var codeFromLink = ((location.search.match(/[?&]room=(\d{6})(?:&|$)/) || [])[1]) || '';
   var screenKey = ((location.hash.match(/^#screen=([0-9a-f]{64})$/) || [])[1]) || '';
   var invite = null, retryPayload = null, retrySession = null;
-  var arcadeChoice=-1, arcadeRound='', activePractice=null, roomSetup=null;
+  var arcadeChoice=-1, arcadeRound='', activePractice=null, practiceTurns=12, roomSetup=null;
   var poolKey='mb-word-sets-v1';
   function read(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
   function save(key, value) { try { if (value === null) localStorage.removeItem(key); else localStorage.setItem(key, value); } catch (_) {} }
@@ -127,7 +127,7 @@
     if ((e.code === 'Space' || e.keyCode === 32) && state && state.phase === 'playing' && state.me && state.me.stage === 'drop' &&
         !/^(INPUT|TEXTAREA|SELECT|A)$/.test(e.target.tagName) &&
         (e.target.tagName !== 'BUTTON' || e.target.id === 'drop' || e.target.hasAttribute('data-block'))) {
-      e.preventDefault(); if (!e.repeat) {if(state.arcade) arcadeDrop(); else drop();}
+      e.preventDefault(); if (!e.repeat) {if(state.arcade) {var control=$('drop'); if(control)control.click();} else drop();}
     }
   });
 
@@ -286,7 +286,7 @@
     modal('<h2 id="dialog-title">'+(hosting?'Host a class':'Play solo')+'</h2>'+
       '<label for="setup-mode">Game mode</label><select id="setup-mode">'+modeOptions(mode)+'</select>'+
       '<label for="setup-set">Word set</label><select id="setup-set">'+optionsFor(mode,initialSet)+'</select>'+
-      '<p class="sub">'+(hosting?'12 turns per builder.':'Build as high as you can. Finish the run when you’re ready.')+'</p>'+
+      (hosting?'':'<label for="solo-turns">Questions</label><input id="solo-turns" type="number" min="1" max="48" step="1" required value="'+practiceTurns+'">')+
       '<button id="launch-arcade" class="button yellow">'+(hosting?'Create room':'Start building')+'</button>'+
       '<button id="edit-pool" class="text-btn">Edit word sets</button>','Cancel');
     $('setup-mode').onchange=function(){mode=this.value;$('setup-set').innerHTML=optionsFor(mode);};
@@ -294,6 +294,10 @@
     $('launch-arcade').onclick=function(){
       try {
         var selected=loadPool(mode,$('setup-set').value);
+        var turns=$('solo-turns');
+        if(turns && !turns.reportValidity())return;
+        if(turns)practiceTurns=Number(turns.value);
+        selected.physics=4;
         save('mb-preferred-mode',mode);
         closeModal();
         invite=null;
@@ -302,7 +306,7 @@
           retryPayload=null;retrySession=null;session=null;
           activePractice=selected;
           arcadeRound='';
-          practice=BloxxArcade.practice(selected,$('name').value.trim() || 'You');
+          practice=BloxxArcade.practice(selected,$('name').value.trim() || 'You',practiceTurns);
           status('');cue('match');receive(practice.view());
         }
       } catch(error){status(error.message);}
@@ -617,20 +621,6 @@
     return '<div class="balance"><div class="row"><strong>Balance</strong><span>'+label+'</span></div>'+
       '<div class="balance-track" aria-hidden="true"><i style="left:'+position+'%"></i></div></div>';
   }
-  function arcadeOutcome(last) {
-    if(!last)return '';
-    var words={
-      perfect:'★ Perfect drop',
-      landed:'Floor landed',
-      miss:last.fallen>1?'Tower tumbled':last.fallen?'Floor tipped off':'Missed the tower',
-      wrong:'Wrong block',
-      passed:'Wrong block skipped',
-      'passed-right':'A right block was skipped'
-    };
-    var extra=last.lost?' · '+last.lost+(last.lost===1?' floor fell':' floors fell'):
-      last.correction?' · '+last.correction:last.points?' · +'+last.points:'';
-    return '<span class="drop-note '+(last.kind==='perfect'?'perfect':'')+'">'+esc(words[last.kind]+extra)+'</span>';
-  }
   function laneHeader(me, turn) {
     return '<header class="screen-tile-head"><strong>'+esc(me.name)+'</strong><span>'+me.score+' pts · '+turn+'</span></header>';
   }
@@ -644,9 +634,8 @@
       choices.appendChild(button);
     });
   }
-  function laneControls(matching, disabled, skip) {
-    return '<div class="screen-controls">'+(matching?'<div class="screen-choices" aria-label="Matching blocks"></div>':
-      (skip?'<button type="button" class="small-action lane-skip" id="skip">Skip block</button>':''))+
+  function laneControls(matching, disabled) {
+    return '<div class="screen-controls">'+(matching?'<div class="screen-choices" aria-label="Matching blocks"></div>':'')+
       '<button type="button" class="screen-drop" aria-label="Drop floor" id="drop"'+
       (disabled?' data-disabled="true" disabled':'')+'></button></div>';
   }
@@ -673,6 +662,7 @@
       }
       function contact() {
         var last=data.me.last;
+        BloxxScreen.popup($('art'),last.kind);
         if(scene && last.rock){
           var impactAt=now();
           scene.set({getRock:function(){return BloxxPhysics.rockAt(last.rock,now()-impactAt).angle;}});
@@ -711,27 +701,23 @@
       html+='<div class="lane-result"><h2>'+(practice?'Tower complete':state.phase==='finished'?'Final standings':'Tower complete')+'</h2>';
       html+='<p>'+me.floors+(me.floors===1?' floor':' floors')+'</p>';
       if(!practice)html+=standings(state.players);
-      html+=arcadeOutcome(me.last)+'<div class="row-buttons"><button id="again" class="small-action">'+(practice?'Build again':'Back to menu')+'</button>';
+      html+='<div class="row-buttons"><button id="again" class="small-action">'+(practice?'Build again':'Back to menu')+'</button>';
       if(practice)html+='<button id="leave" class="text-btn">Back to menu</button>';
       html+='</div></div>';
     } else {
       html+='<div class="lane-info"><h2 class="screen-prompt">'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'___ '+esc(me.prompt)):
         esc(me.prompt))+'</h2>';
       if(!matching)html+='<p class="lane-instruction">'+esc(state.arcade.instruction)+'</p>';
-      if(me.last && (me.last.kind==='wrong'||me.last.kind==='passed-right'))html+=arcadeOutcome(me.last);
-      if(me.motion && me.motion.gust)html+='<p class="wind-note">Gust · faster swing</p>';
-      if(me.motion && me.motion.assisted)html+='<p class="wind-note">Steady Crane · slower swing</p>';
       var targets=state.players.filter(function(p){return p.id!==me.id && p.canReceiveGust;});
       html+='<div class="row-buttons lane-tools">'+(me.steady?(me.steadyArmed?'<span class="pill">Steady Crane ready</span>':
         '<button id="arcade-steady" class="small-action">Slow next swing</button>'+
         (targets.length?'<button id="arcade-gust" class="small-action">Send a gust</button>':'')):'')+
-        '<button id="leave" class="small-action">'+(practice?'Finish run':'Back to menu')+'</button></div></div>'+
-        laneControls(matching,arcadeChoice<0,!matching);
+        (practice?'':'<button id="leave" class="small-action">Back to menu</button>')+'</div></div>'+
+        laneControls(matching,arcadeChoice<0);
     }
     paintPanel(JSON.stringify([html,round,arcadeChoice,me.choices]),html);
     if(!done && matching)laneBlocks(me.choices,arcadeChoice,'data-block',chooseArcade);
     if($('drop'))BloxxScreen.bindDrop($('drop'),arcadeDrop);
-    if($('skip'))$('skip').onclick=function(){perform('arcadePass',{round:me.round,elapsedMs:Math.max(0,Math.round(now()-motionStart))});};
     if($('arcade-steady'))$('arcade-steady').onclick=function(){perform('steady',{round:me.round});};
     if($('arcade-gust'))$('arcade-gust').onclick=function(){
       modal('<h2 id="dialog-title">Send a gust</h2><label for="arcade-rival">Builder</label><select id="arcade-rival">'+targets.map(function(p){
@@ -745,11 +731,11 @@
     if($('again'))$('again').onclick=function(){
       if(!practice){reset();return;}
       arcadeRound='';
-      practice=BloxxArcade.practice(activePractice,me.name);
+      practice=BloxxArcade.practice(activePractice,me.name,practiceTurns);
       previousPhase=null;
       receive(practice.view());
     };
-    if($('leave'))$('leave').onclick=done?reset:practice?function(){perform('finish',{});}:leave;
+    if($('leave'))$('leave').onclick=done?reset:leave;
   }
   function finalScreen() {
     setLayout('stage');var me=state.me;

@@ -171,6 +171,7 @@
       var ctx=canvas.getContext('2d');
       var cube=asset(style===3?4:style,'cube').sprite;
       ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.imageSmoothingEnabled=false;
       ctx.drawImage(cube,57,14,238,183,0,0,canvas.width,canvas.height);
     }
     paint();
@@ -306,7 +307,7 @@
         node.position.set(x,y,0);node.scale.set(scaleX,scaleY,scaleY);
         node.rotation.z=angle||0;node.visible=true;count++;
       }else{
-        fallback.imageSmoothingEnabled=true;
+        fallback.imageSmoothingEnabled=false;
         paintModel(fallback,sx+unit*x,syy-unit*y,unit*scaleX,unit*scaleY,a,angle);
       }
     }

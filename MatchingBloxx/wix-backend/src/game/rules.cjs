@@ -83,11 +83,11 @@
     return {lean: lean, collapseAt: collapseAt, direction: direction};
   }
 
-  function placeFloor(floors, offset) {
+  function placeFloor(floors, offset, perfectLimit) {
     var length = floors.length;
     var distance = Math.abs(offset);
     if (distance >= .85) return {kind: 'miss', floors: floors, bonus: 0, fallen: 0};
-    var perfect = distance <= .12;
+    var perfect = distance <= (perfectLimit===undefined?.12:perfectLimit);
     var top = floors[length - 1] || 0;
     var next = floors.concat(Math.round((top + (perfect ? 0 : offset)) * 1000) / 1000);
     var support = towerBalance(next);

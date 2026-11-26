@@ -172,7 +172,7 @@
     };
   }
   function trajectory(motion, elapsed, floors, angleAt, assisted) {
-    return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted);
+    return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted,motion.classicLanding);
   }
   function flight(motion, elapsed, floors, rock) {
     if(motion.physics>=2) return trajectory(motion,elapsed,floors||[],function(ahead){
@@ -202,7 +202,7 @@
     var previous=player.motion;
     var height=player.placements.length;
     var base=(modern?Math.max(2500,3780-height*33):Math.max(1900,3270-57*(player.round-1)))+Math.round(random()*380);
-    var classic=version===3?physics.quickSwing(height):null;
+    var classic=version>=3?physics.quickSwing(height):null;
     if(classic)base=classic.period;
     var phase=random()*2*Math.PI;
     if(modern && previous && typeof elapsed==='number') {
@@ -211,7 +211,8 @@
     player.motion={period:Math.round(base*(assistance?1.5:1)/(penalty?1.18:1)),phase:phase,
       amplitude:.92+random()*.26,gust:!!penalty,assisted:!!assistance,startedAt:now};
     if(modern) {
-      player.motion.physics=classic?3:2;
+      player.motion.physics=classic?version:2;
+      if(version===4)player.motion.classicLanding=true;
       player.motion.lowering=!!previous;
       player.motion.amplitude=classic?classic.amplitude:Math.min(1.35,player.motion.amplitude+.009*height);
       if(classic)player.motion.verticalAmplitude=classic.verticalAmplitude;
@@ -228,20 +229,20 @@
   function wrongBlock(floors, seed, direction) {
     return loss(floors,2+Math.floor(rng(seed)()*4),direction);
   }
-  function land(floors, impact) {
+  function land(floors, impact, classicLanding) {
     if (!impact.hit) return {floors:floors,kind:'miss',fallen:0,bonus:0,offset:0};
     if (impact.tipped) {
       var count=Math.min(floors.length,Math.max(1,impact.level));
       return {floors:floors.slice(0,floors.length-count),kind:'miss',fallen:count+1,
         direction:impact.direction,bonus:0,offset:impact.offset};
     }
-    var placed=rules.placeFloor(floors,impact.offset);
+    var placed=rules.placeFloor(floors,impact.offset,classicLanding?24/256:undefined);
     placed.offset=impact.offset;
     return placed;
   }
   function screenDrop(player, matching, correct, impact) {
     var floors=player.placements, result;
-    if(!matching && !impact.hit) {
+    if(!impact.hit && (!matching || !correct)) {
       result={kind:correct?'passed-right':'passed',floors:floors,fallen:0,points:0};
     } else if(correct) {
       result=land(floors,impact);
@@ -269,7 +270,9 @@
     if(Math.abs(path.impact.angle)>.24) landing+=Math.sin(path.impact.angle)*.18;
     var label=config.mode==='match'?current.choices[choice]:current.label;
     var next;
-    if(choice!==current.correct) {
+    if(player.motion.classicLanding && !impact.hit && (config.mode==='rightwrong' || choice!==current.correct)) {
+      next={floors:player.placements,kind:choice===current.correct?'passed-right':'passed',fallen:0,bonus:0,offset:x};
+    } else if(choice!==current.correct) {
       if(config.mode==='rightwrong') {
         next=wrongBlock(player.placements,player.seed+player.round*19763,direction);
         next.offset=x;
@@ -277,7 +280,7 @@
         correction:/_{2,}/.test(current.label)?current.label.replace(/_{2,}/,function(){return current.choices[current.correct];}):
           current.choices[current.correct]+' '+current.label};
     } else {
-      next=impact?land(player.placements,impact):rules.placeFloor(player.placements,landing);
+      next=impact?land(player.placements,impact,player.motion.classicLanding):rules.placeFloor(player.placements,landing);
       if(!impact) next.offset=x;
     }
     next.label=label;
@@ -302,6 +305,7 @@
     }
     var next;
     if(action==='arcadePass') {
+      check(!player.motion.classicLanding,'Drop the block beside the tower to discard it.');
       check(config.mode==='rightwrong','Choose a matching block.');
       var current=card(config,player.round,player.seed);
       next={kind:current.correct<0?'passed':'passed-right',bonus:0,fallen:0,floors:player.placements,label:current.label};
@@ -332,7 +336,8 @@
     if(next.rock) player.last.rock=next.rock;
     if(next.bump) player.last.bump=true;
     player.completed++;
-    if(!endless && player.completed>=rules.total) {
+    var limit=endless===true?Infinity:typeof endless==='number'?endless:rules.total;
+    if(player.completed>=limit) {
       player.stage='done';
       player.motion=null;
     } else {player.round++;arm(player,now,player.motion.physics||1,next.restart);}
@@ -352,26 +357,27 @@
       view.motion.assisted=!!player.motion.assisted;
       view.motion.physics=player.motion.physics || 1;
       view.motion.lowering=!!player.motion.lowering;
-      if(player.motion.physics===3)view.motion.verticalAmplitude=player.motion.verticalAmplitude;
+      if(player.motion.physics>=3)view.motion.verticalAmplitude=player.motion.verticalAmplitude;
+      if(player.motion.classicLanding)view.motion.classicLanding=true;
     }
     if(player.rock) view.rock=player.rock;
     return view;
   }
-  function practice(game, name) {
+  function practice(game, name, turns) {
     var player=rules.newPlayer('p1',name||'You',Math.floor(Math.random()*1e9));
     var done=false;
     arm(player, Date.now(), game.physics);
     function view() {
-      var phase=done?'finished':'playing';
-      return {code:'',role:'player',phase:phase,total:0,capacity:1,arcade:snapshot(game),
+      var phase=done || player.stage==='done'?'finished':'playing';
+      return {code:'',role:'player',phase:phase,total:turns||0,capacity:1,arcade:snapshot(game),
         players:rules.standings([player]),me:playerView(player,game,phase)};
     }
     return {
       view:view,
       command:function (action, data) {
-        check(!done,'This tower is finished.',409);
+        check(!done && player.stage!=='done','This tower is finished.',409);
         if (action==='finish') done=true;
-        else move(player,game,action,data,Date.now(),true);
+        else move(player,game,action,data,Date.now(),turns||true);
         return view();
       }
     };
