@@ -97,8 +97,8 @@
     var count=pool.length;
     var cycle=Math.floor((round-1)/count);
     var order=shuffle(pool,rng(seed+cycle*14081));
-    // The first default starter reads “a lecture” in every new game.
-    if(config.mode==='match' && cycle===0 && round<=count) {
+    // Existing rooms retain the question order they started with.
+    if(!config.shuffleAll && config.mode==='match' && cycle===0) {
       var first=order.indexOf(pool[0]);
       order.splice(first,1); order.unshift(pool[0]);
     }
@@ -267,7 +267,7 @@
       player.motion=null;
     } else {player.round++;arm(player,now);}
   }
-  function config(mode, set) { return {mode:mode,set:validate(mode,set)}; }
+  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true}; }
   function snapshot(game) {
     var set=game.set;
     return {mode:game.mode,name:set.name,instruction:set.instruction||''};
