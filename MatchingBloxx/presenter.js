@@ -6,7 +6,7 @@
     var backdrop=document.createElement('canvas'), canvas=document.createElement('canvas');
     var labels=document.createElement('div'), bg=backdrop.getContext('2d'), ctx=canvas.getContext('2d');
     var lots=[], seats=Object.create(null), phase='lobby', matching=false, serverTime=0, received=0;
-    var width=0,height=0,columns=0,rows=0,sky=0,rowHeight=0,lotWidth=0,raf=0,then=-Infinity,dirty=true;
+    var width=0,height=0,columns=0,rows=0,sky=0,rowHeight=0,lotWidth=0,raf=0,then=0,lastFrame=0,displayUnit=0,dirty=true;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var floorHeight=physics.floorHeight;
     backdrop.className='city-landscape';canvas.className='city-animation';labels.className='city-places';
@@ -100,7 +100,10 @@
     function startDrop(seat,time) {
       if(seat.drop || !seat.queue.length)return;
       var event=seat.queue.shift();
-      seat.drop={event:event,start:time,path:arcade.flight(event.motion,event.elapsed,event.before,event.rock)};
+      var path=arcade.flight(event.motion,event.elapsed,event.before,event.rock);
+      var duration=event.fallen?(event.parts?1260:860):event.kind==='perfect'?470:event.kind==='landed'?220:440;
+      var build=arcade.towerAnimation(event.motion,event.before,event.rock,event.elapsed,path,event,event.after);
+      seat.drop={event:event,start:time,path:path,duration:duration,render:build?build(0,duration):null};
     }
 
     function rope(x,y,toX,toY) {
@@ -123,19 +126,28 @@
     function drawLot(seat,index,time,unit) {
       startDrop(seat,time);
       var replay=seat.drop, elapsed=replay?(time-replay.start)/1000:0;
-      if(replay && elapsed>replay.path.duration+(replay.event.fallen?(replay.event.parts?1.26:.78):.32)){
+      if(replay && (elapsed-replay.path.duration)*1000>=replay.duration){
         seat.drop=null;
+        seat.swing=null;
         startDrop(seat,time);
+        if(!seat.drop && seat.state.motion)seat.swing={start:seat.state.motion.startedAt,seenAt:time,age:0};
         replay=seat.drop;elapsed=0;
       }
       var event=replay && replay.event, data=seat.state;
       var afterContact=replay && elapsed>=replay.path.duration;
+      var animated=afterContact && replay.render ? replay.render((elapsed-replay.path.duration)*1000) : null;
       var floors=event?event.before:data.floors;
       var row=Math.floor(index/columns), col=index%columns, left=col*lotWidth;
       var center=left+lotWidth/2, base=ground(row), top=(floors[floors.length-1]||0);
       var motion=event?event.motion:data.motion;
-      var age=motion?Math.max(0,serverTime-(motion.startedAt||serverTime)+time-received):0;
-      var layout=arcade.towerPose(motion,floors,event?event.rock:data.rock,event?event.elapsed+elapsed*1000:age);
+      var age=0;
+      if(motion && !event){
+        if(!seat.swing || seat.swing.start!==motion.startedAt){
+          seat.swing={start:motion.startedAt,seenAt:time,age:Math.max(0,serverTime-(motion.startedAt||serverTime)+time-received)};
+        }
+        age=seat.swing.age+time-seat.swing.seenAt;
+      }
+      var layout=animated ? animated.joints : arcade.towerPose(motion,floors,event?event.rock:data.rock,event?event.elapsed+elapsed*1000:age,true);
       var joints=Array.isArray(layout)?layout:null;
       var angle=joints?0:layout;
       ctx.save();ctx.beginPath();ctx.rect(Math.floor(left)+2,Math.round(sky+row*rowHeight),Math.floor(lotWidth)-4,base-Math.round(sky+row*rowHeight)+4);ctx.clip();
@@ -144,18 +156,18 @@
         art.paintModel(ctx,center,base,unit,unit,0,'entry',0);
         floors.forEach(function(offset,i) {
           var y=(i+1)*floorHeight+(joints?joints[i].lift:0), x=joints?joints[i].x:offset+physics.shift(y,angle), tilt=joints?joints[i].angle:-angle;
-          if(afterContact && event.fallen && i>=event.after.length){
+          if(!animated && afterContact && event.fallen && i>=event.after.length){
             var fallenIndex=i-event.after.length;
             var part=event.parts && event.parts[fallenIndex];
             var debris=part ? physics.javaFall(elapsed-replay.path.duration,part) :
               physics.debris(elapsed-replay.path.duration,fallenIndex,event.direction||1);
             x+=debris.x;y+=debris.y;tilt+=debris.angle;
           }
-          art.paintModel(ctx,center+x*unit,base-y*unit,unit,unit,(i+1)%4,'cube',tilt);
+          if(!animated || y>-.85)art.paintModel(ctx,center+x*unit,base-y*unit,unit,unit,(i+1)%4,'cube',tilt);
         });
       }
       if(motion){
-        var sway=arcade.pose(motion,event?event.elapsed:reduced?0:age);
+        var sway=arcade.pose(motion,event?event.elapsed+elapsed*1000:reduced?0:age);
         var table=(floors.length+1)*floorHeight;
         var part=sway;
         if(replay){
@@ -165,13 +177,17 @@
             else if(replay.path.rejected)part=replay.path.rejected(elapsed-replay.path.duration,event.bump);
           }
         }
-        var blockX=center+(top+part.x)*unit, blockY=base-(table+part.height)*unit;
-        var pivotY=base-(table+(sway.pivotHeight||3.35))*unit;
-        var hookX=center+(top+(sway.hookX===undefined?sway.x:sway.hookX))*unit;
-        var hookY=base-(table+(sway.hookHeight||sway.height+floorHeight+.2))*unit;
-        crane(center+top*unit,pivotY,hookX,hookY,blockX,blockY-floorHeight*unit,!event && !matching,unit,left+3);
+        var x=animated?animated.incoming.x:top+part.x, y=animated?animated.incoming.y:table+part.height;
+        var blockX=center+x*unit, blockY=base-y*unit;
+        var craneX=animated?animated.center:top, craneY=table+(animated?animated.height*floorHeight:0);
+        var pivotY=base-(craneY+(sway.pivotHeight||3.35))*unit;
+        var hookX=center+(craneX+(sway.hookX===undefined?sway.x:sway.hookX))*unit;
+        var hookY=base-(craneY+(sway.hookHeight||sway.height+floorHeight+.2))*unit;
+        crane(center+craneX*unit,pivotY,hookX,hookY,blockX,blockY-floorHeight*unit,!event && !matching,unit,left+3);
         var color=event?event.color%4:(floors.length+1)%4;
-        if(event || !matching)art.paintModel(ctx,blockX,blockY,unit,unit,color,'cube',part.angle);
+        if((event || !matching) && (!animated || y>-.85)){
+          art.paintModel(ctx,blockX,blockY,unit,unit,color,'cube',animated?animated.incoming.angle:part.angle);
+        }
       }else if(phase==='finished' && floors.length) {
         art.paintModel(ctx,center+top*unit,base-(floors.length+1)*floorHeight*unit,unit,unit,0,'roof',0);
       }
@@ -180,16 +196,22 @@
 
     function frame(time) {
       raf=global.requestAnimationFrame(frame);
-      if(document.hidden || !width || time-then<50)return;
+      if(document.hidden || !width)return;
+      var step=1000/(lots.length>12 ? 30 : 60);
+      if(time-then<step-.5)return;
       if(!dirty && (phase==='lobby' || reduced || (phase==='finished' && !lots.some(function(seat){return seat.drop || seat.queue.length;}))))return;
-      dirty=false;then=time;
+      dirty=false;
+      var delta=Math.min(50,time-lastFrame);
+      lastFrame=time;
+      then=time-Math.max(0,time-then-step)%step;
       ctx.clearRect(0,0,width,height);
       var highest=lots.reduce(function(max,seat){
         if(seat.drop)max=Math.max(max,seat.drop.event.before.length);
         return seat.queue.reduce(function(peak,event){return Math.max(peak,event.before.length);},Math.max(max,seat.state.floors.length));
       },1);
       var unit=Math.min(lotWidth*.25,(rowHeight-38)/(highest*floorHeight+5));
-      for(var i=0;i<lots.length;i++)drawLot(lots[i],i,time,unit);
+      displayUnit=displayUnit ? displayUnit+(unit-displayUnit)*(1-Math.exp(-delta/125)) : unit;
+      for(var i=0;i<lots.length;i++)drawLot(lots[i],i,time,displayUnit);
     }
     raf=global.requestAnimationFrame(frame);
     return {update:update,destroy:function(){

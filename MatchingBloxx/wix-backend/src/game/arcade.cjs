@@ -194,15 +194,71 @@
     var duration=after;
     return {duration:duration, at:frame, impact:frame(duration)};
   }
-  function towerPose(motion, floors, rock, elapsed) {
+  function towerPose(motion, floors, rock, elapsed, continuous) {
     var sway=physics.rockAt(rock,elapsed);
     return motion && motion.physics>=5 ?
-      physics.towerLayout(floors,sway.java?sway:{phase:elapsed%3600,landAge:800}) : sway.angle;
+      physics.towerLayout(floors,sway.java?sway:{phase:elapsed%3600,landAge:800},continuous) : sway.angle;
   }
   function advanceTower(rock, elapsed, landed) {
     var sway=physics.rockAt(rock||{java:true,phase:0,landAge:800},elapsed);
     if(landed)sway.landAge=0;
     return sway;
+  }
+  // Render the same placement across the live scene and presenter replay. Once a
+  // floor separates, its trajectory starts from that pose and no longer sways.
+  function towerAnimation(motion, before, rock, elapsed, path, hit, after) {
+    if(motion.physics<5)return null;
+    var contact=elapsed+path.duration*1000;
+    var landed=after.length>before.length;
+    var remaining=Math.min(before.length,after.length);
+    var pieces=hit.parts || [];
+    var detached=remaining<before.length;
+    var top=before[before.length-1] || 0;
+    var table=(before.length+1)*physics.floorHeight;
+    var latest=pieces.reduce(function(delay,part){return Math.max(delay,part.delay);},0);
+    function detachAt(index){return pieces[index]?pieces[index].delay:index*52;}
+    var atContact=advanceTower(rock,contact,landed);
+    function poseAt(time){return towerPose(motion,before,rock,time,true);}
+    function ease(progress){
+      var t=Math.max(0,Math.min(1,progress));
+      return t*t*(3-2*t);
+    }
+    function mix(a,b,t){return a+(b-a)*t;}
+    return function(delay,duration) {
+      var launch=before.slice(remaining).map(function(_,index){
+        return poseAt(contact+delay+detachAt(index))[remaining+index];
+      });
+      return function(time) {
+        var seconds=time/1000;
+        var next=towerPose(motion,after,atContact,time,true);
+        var current=poseAt(contact+delay+time);
+        var settled=ease(time/Math.min(duration,detached ? latest+260 : 190));
+        var joints=current.map(function(joint,i){
+          if(i<remaining){
+            var target=next[i];
+            return {x:mix(joint.x,target.x,settled),angle:mix(joint.angle,target.angle,settled),lift:mix(joint.lift,target.lift,settled)};
+          }
+          var index=i-remaining, part=pieces[index];
+          if(time<detachAt(index))return joint;
+          var base=launch[index];
+          var fall=part?physics.javaFall(seconds,part):physics.debris(seconds,index,hit.direction||1);
+          return {x:base.x+fall.x,angle:base.angle+fall.angle,lift:base.lift+fall.y};
+        });
+        var incoming, land=landed ? ease(time/Math.min(duration,180)) : 0;
+        if(landed) {
+          var joint=next[next.length-1];
+          incoming={x:mix(top+path.impact.x,joint.x,land),y:table+mix(path.impact.height,joint.lift,land),
+            angle:mix(path.impact.angle,joint.angle,land)};
+        } else {
+          var falling=path.rejected(seconds,!!hit.bump);
+          incoming={x:top+falling.x,y:table+falling.height,angle:falling.angle};
+        }
+        return {joints:joints,incoming:incoming,
+          height:landed?land:detached?(remaining-before.length)*ease((time-latest)/Math.max(1,duration-latest)):0,
+          center:landed?mix(top,after[after.length-1],land):
+            detached?mix(top,after[remaining-1]||0,settled):top};
+      };
+    };
   }
   function arm(player, now, version, elapsed) {
     var random=rng(player.seed+player.round*13499);
@@ -406,5 +462,5 @@
     };
   }
   return {config:config, importPool:importPool, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
-    playerView:playerView, practice:practice, trajectory:trajectory, land:land, screenDrop:screenDrop, towerPose:towerPose, advanceTower:advanceTower};
+    playerView:playerView, practice:practice, trajectory:trajectory, land:land, screenDrop:screenDrop, towerPose:towerPose, advanceTower:advanceTower, towerAnimation:towerAnimation};
 }));

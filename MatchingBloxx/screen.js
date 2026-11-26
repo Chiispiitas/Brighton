@@ -173,7 +173,7 @@
         scene.set({mode:'build', arcade:true, screen:true, physical:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
           label:matching?'':view.prompt, choice:matching?-1:(player.round-1)%4, target:'', showCrane:!tile.finished,showRoof:tile.finished,
           getSwing:tile.finished?null:currentSwing,rockUntil:tile.finished?Date.now()+10000:0,
-          getRock:function(){return arcade.towerPose(crane.motion,view.placements,rock,clock()-craneStart);}});
+          getRock:function(){return arcade.towerPose(crane.motion,view.placements,rock,clock()-craneStart,true);}});
         card.classList.remove('wrong-flash');
         busy = false;
       }
@@ -199,6 +199,7 @@
         drop.classList.add('pressed');
         drop.disabled = true;
         for (var i=0; i<choices.children.length; i++) choices.children[i].disabled = true;
+        var animation=arcade.towerAnimation(crane.motion,before,rock,elapsed,impact.path,last,last.floors);
         scene.release(impact.path);
         scene.impact(last,function () {
           if (closed) return;
@@ -218,7 +219,7 @@
           } else {
             cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':last.kind==='passed'?'match':'miss');
           }
-        });
+        },animation);
       }
       bindDrop(drop,release);
       next();
