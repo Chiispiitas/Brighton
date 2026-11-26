@@ -10,7 +10,7 @@
     ['an application','submit'], ['an assignment','submit'], ['a final project','submit']
   ];
   var presets = {
-    match: {name:'School and study', rows:matchRows},
+    match: {name:'School and study', rows:matchRows, sameOptions:true, options:['attend','get','make','submit']},
     rightwrong: {name:'Past simple', instruction:'Build with past-simple verbs.',
       right:['went','wrote','found','took','bought','taught','made','saw','chose','had','ran','left'],
       wrong:['go','written','find','taken','buy','teach','makes','see','choose','have','running','leaving']}
@@ -49,14 +49,28 @@
     check(Array.isArray(data.rows) && data.rows.length > 0 && data.rows.length <= 48,
       'Enter between 1 and 48 matches.');
     var rows = data.rows.map(function (row) {
-      check(Array.isArray(row) && (row.length===2 || row.length===5), 'Enter a prompt and answer, with three optional choices.');
-      var fields = row.map(function(word){return clean(word,48);});
+      check(Array.isArray(row) && row.length>=2 && row.length<=5, 'Enter a prompt, the correct answer, and up to three other options.');
+      var fields = row.map(function(word,index){return clean(word,index===0?120:48);});
       check(fields.every(Boolean), 'Complete each field in a match.');
-      if (fields.length === 5) check(distinct(fields.slice(1)).length===4, 'Each match needs four different options.');
+      check(distinct(fields.slice(1)).length===fields.length-1, 'Use different options within each match.');
       return fields;
     });
     check(distinct(rows.map(function(row){return row[0];})).length===rows.length, 'Use each prompt once.');
     var answers=distinct(rows.map(function(row){return row[1];}));
+    if(data.sameOptions===true) {
+      check(rows.every(function(row){return row.length===2;}), 'Shared options use one prompt and one correct answer per line.');
+      var options=Array.isArray(data.options)?data.options.map(function(word){return clean(word,48);}):answers;
+      check(options.length>=2 && options.length<=4 && distinct(options).length===options.length,
+        'Enter two to four different shared options.');
+      var keys=options.map(function(word){return word.toLowerCase();});
+      check(answers.every(function(answer){return keys.indexOf(answer.toLowerCase())>=0;}),
+        'Every correct answer must appear in the shared options.');
+      return {name:name,rows:rows,sameOptions:true,options:options};
+    }
+    if(data.sameOptions===false){
+      check(rows.every(function(row){return row.length>=3;}), 'Give every prompt at least one other option.');
+      return {name:name,rows:rows,sameOptions:false};
+    }
     check(answers.length>=4 || rows.every(function(row){return row.length===5;}),
       'Supply four different answers across the set or add three distractors to every row.');
     return {name:name, rows:rows};
@@ -91,10 +105,58 @@
     var row=order[(round-1)%count];
     if(config.mode==='rightwrong') return {label:row[0], correct:row[1]?0:-1};
     var random=rng(seed+round*18127);
-    var alternatives=row.length===5 ? row.slice(2) : shuffle(distinct(pool.map(function(entry){return entry[1];}))
+    if(set.sameOptions) return {label:row[0],choices:set.options.slice(),correct:set.options.findIndex(function(word){
+      return word.toLowerCase()===row[1].toLowerCase();
+    })};
+    var alternatives=row.length>2 ? row.slice(2) : shuffle(distinct(pool.map(function(entry){return entry[1];}))
       .filter(function(answer){return answer.toLowerCase()!==row[1].toLowerCase();}),random).slice(0,3);
     var choices=shuffle([row[1]].concat(alternatives),random);
     return {label:row[0], choices:choices, correct:choices.indexOf(row[1])};
+  }
+  function importPool(mode, text, filename) {
+    var raw=text.replace(/^\uFEFF/,'').trim();
+    check(raw && raw.length<=65536, 'Import a nonempty pool smaller than 64 KB.');
+    var name=(filename||'Imported set').replace(/\.[^.]+$/,'');
+    if(raw.charAt(0)==='{' || /\.json$/i.test(filename||'')) {
+      var file;
+      try {file=JSON.parse(raw);} catch (_) {check(false,'This JSON file could not be read.');}
+      check(file && (!file.mode || file.mode===mode),'Choose the game mode that matches this file.');
+      return validate(mode,Object.assign({name:name},file.set||file));
+    }
+    var first=raw.split(/\r?\n/,1)[0];
+    var separator=/\.tsv$/i.test(filename||'') || first.indexOf('\t')>=0?'\t':
+      /\.csv$/i.test(filename||'')?',':first.indexOf('|')>=0?'|':',';
+    var rows=[], row=[], value='', quoted=false;
+    function pushRow() {
+      row.push(value.trim());
+      while(row.length && !row[row.length-1])row.pop();
+      if(row.length)rows.push(row);
+      row=[];value='';
+    }
+    for(var i=0;i<raw.length;i++){
+      var ch=raw[i];
+      if(ch==='"' && (quoted || !value.trim())){
+        if(quoted && raw[i+1]==='"'){value+='"';i++;}
+        else quoted=!quoted;
+      } else if(!quoted && ch===separator){row.push(value.trim());value='';}
+      else if(!quoted && (ch==='\n' || ch==='\r'))pushRow();
+      else value+=ch;
+    }
+    check(!quoted,'Close the quotation marks in the import.');
+    pushRow();
+    if(mode==='match'){
+      if(rows[0] && /^prompt$/i.test(rows[0][0]) && /^answer$/i.test(rows[0][1]))rows.shift();
+      var shared=rows.every(function(fields){return fields.length===2;});
+      return validate(mode,{name:name,rows:rows,sameOptions:shared});
+    }
+    if(rows[0] && /^word$/i.test(rows[0][0]) && /^status$/i.test(rows[0][1]))rows.shift();
+    var set={name:name,right:[],wrong:[]};
+    rows.forEach(function(fields){
+      var status=fields[1] && fields[1].toLowerCase();
+      check(fields.length===2 && (status==='right'||status==='wrong'),'Use one word and its status (right or wrong) per line.');
+      set[status].push(fields[0]);
+    });
+    return validate(mode,set);
   }
   function pose(motion, elapsed) {
     var rate=2*Math.PI/motion.period;
@@ -160,7 +222,8 @@
         return bad;
       }
       return {floors:player.placements,kind:'wrong',fallen:0,bonus:0,offset:x,label:label,
-        correction:current.choices[current.correct]+' '+current.label};
+        correction:/_{2,}/.test(current.label)?current.label.replace(/_{2,}/,function(){return current.choices[current.correct];}):
+          current.choices[current.correct]+' '+current.label};
     }
     var next=rules.placeFloor(player.placements,landing);
     next.offset=x;
@@ -182,7 +245,8 @@
     } else {
       check(action==='arcadeDrop','Unknown arcade action.');
       var choice=data.choice;
-      check(choice===Math.floor(choice) && choice>=0 && choice<(config.mode==='match'?4:1),'Choose a block.');
+      var count=config.mode==='match'?card(config,player.round,player.seed).choices.length:1;
+      check(choice===Math.floor(choice) && choice>=0 && choice<count,'Choose a block.');
       var elapsed=data.elapsedMs;
       check(typeof elapsed==='number' && isFinite(elapsed) && elapsed>=0 &&
         elapsed<=Math.max(0,now-player.motion.startedAt)+550,'This crane has moved on. Try again.',409);
@@ -236,6 +300,6 @@
       }
     };
   }
-  return {config:config, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
+  return {config:config, importPool:importPool, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
     playerView:playerView, practice:practice};
 }));
