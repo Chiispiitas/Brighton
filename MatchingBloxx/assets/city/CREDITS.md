@@ -1,9 +1,0 @@
-# Matching Bloxx city art
-
-- Far and middle skyline sprites from [FREE Pixel Art – City Parallax Background](https://karsiori.itch.io/free-pixel-art-city-background-pack) by Karsiori Studio. CC0 1.0. Buildings 1 and 3 were cropped and recolored.
-- Apartment sprites from [City Parallax | Post Soviet World “Yopta”](https://drxwat.itch.io/city-parallax) by Frontend Pashtet. CC0 1.0. The background and foreground building layers were cropped, resized with nearest-neighbor sampling, and recolored.
-- The construction barricade, brick pallet, and cones in `site-props.png` were created with the built-in ImageGen tool. They were isolated, reduced to a native pixel grid, and checked at integer scale.
-
-## Construction props prompt
-
-> Create ONE game sprite sheet on a truly transparent alpha background for an original 16-bit mobile construction arcade game. In a single strict horizontal row, exactly THREE separate sprite islands far apart with clean empty transparent gutters: left small yellow-and-cream striped timber sawhorse construction barricade with muted orange legs; center a short stacked pair of honey brown wooden pallets holding two terracotta bricks; right two adjacent small amber orange road cones with one pale band each on muted charcoal square feet. Confident crisp deliberate hand-pixeled low-res visual, fixed chunky square-pixel grid, unfiltered nearest-neighbor look, subdued ochre, burnt orange, sand, dusty brown, charcoal, one consistent sun from upper left. Approximate original pixel footprint for each object 32 pixels wide x 21 pixels high at native scale, enlarge each to be legible here. Side-on facade view showing a little top and right face, common baseline. Suitable for a sunset or day sandy sidewalk in a classic city-building game. No background, no landscape, no shadows outside objects, no letters, no borders, no outlines outside silhouette, no extra objects.
