@@ -127,7 +127,7 @@
         var correctWord = selected === question.correct;
         var last;
         if (correctWord) {
-          var contact = (path.impact.centerX + .12 * Math.sin(path.impact.angle)) / 5;
+          var contact = (path.impact.centerX + .12 * Math.sin(path.impact.angle)) * .30;
           var placed = rules.placeFloor(player.placements,contact);
           last = {kind:placed.kind,points:100+placed.bonus,fallen:placed.fallen,direction:placed.direction,offset:contact};
           if (placed.floors.length > colors.length) colors.push(selected);
