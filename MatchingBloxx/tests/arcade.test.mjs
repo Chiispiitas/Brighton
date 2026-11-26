@@ -114,6 +114,34 @@ test('wrong blocks knock down two to five floors and can be skipped instead',()=
   assert.throws(()=>arcade.config('rightwrong',{name:'Overlap',right:['went'],wrong:['Went']}),/only be in one list/);
 });
 
+test('Screen sorting skips only when a dropped block clears the tower',()=>{
+  const player=rules.newPlayer('p1','Jo',500);
+  player.placements=[0,0,0,0,0,0];
+  const track=x=>physics.track(physics.drop({centerX:x,centerY:1.2,angle:0,vx:0,vy:0,spin:0}),
+    player.placements,()=>0,true);
+  const wide=track(1.2), graze=track(.94), center=track(0);
+  const skip=arcade.screenDrop(player,false,false,wide);
+  assert.equal(skip.kind,'passed');
+  assert.equal(skip.points,0);
+  assert.equal(skip.bump,false);
+  assert.deepEqual(skip.floors,player.placements);
+  const missedRight=arcade.screenDrop(player,false,true,wide);
+  assert.equal(missedRight.kind,'passed-right');
+  assert.equal(missedRight.points,0);
+  for(const impact of [center,graze]){
+    const wrong=arcade.screenDrop(player,false,false,impact);
+    assert.equal(wrong.kind,'wrong');
+    assert.equal(wrong.bump,true);
+    assert.ok(wrong.fallen-1>=2 && wrong.fallen-1<=5);
+    assert.equal(wrong.floors.length+wrong.fallen-1,player.placements.length);
+  }
+  const right=arcade.screenDrop(player,false,true,center);
+  assert.equal(right.kind,'perfect');
+  assert.equal(right.points,200);
+  assert.equal(right.floors.length,7);
+  assert.equal(arcade.screenDrop(player,true,false,wide).kind,'wrong');
+});
+
 test('shared options are constant across prompts and may include unused distractors',()=>{
   const game=arcade.config('match',{name:'Grammar', sameOptions:true,
     rows:[['I enjoy ___.','reading'],['I want ___.','to read']], options:['to read','reading','read']});

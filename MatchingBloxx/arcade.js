@@ -222,6 +222,9 @@
     return {floors:floors.slice(0,Math.max(0,floors.length-count)),direction:direction,
       fallen:Math.min(floors.length,count)+1,bonus:0,kind:'wrong'};
   }
+  function wrongBlock(floors, seed, direction) {
+    return loss(floors,2+Math.floor(rng(seed)()*4),direction);
+  }
   function land(floors, impact) {
     if (!impact.hit) return {floors:floors,kind:'miss',fallen:0,bonus:0,offset:0};
     if (impact.tipped) {
@@ -232,6 +235,22 @@
     var placed=rules.placeFloor(floors,impact.offset);
     placed.offset=impact.offset;
     return placed;
+  }
+  function screenDrop(player, matching, correct, impact) {
+    var floors=player.placements, result;
+    if(!matching && !impact.hit) {
+      result={kind:correct?'passed-right':'passed',floors:floors,fallen:0,points:0};
+    } else if(correct) {
+      result=land(floors,impact);
+      result.points=100+result.bonus;
+    } else if(matching) {
+      result={kind:'wrong',floors:floors,fallen:0,points:0};
+    } else {
+      result=wrongBlock(floors,player.seed+player.round*19763,impact.direction);
+      result.points=0;
+    }
+    result.bump=impact.hit;
+    return result;
   }
   function resolve(player, config, choice, elapsed) {
     var current=card(config,player.round,player.seed);
@@ -249,8 +268,7 @@
     var next;
     if(choice!==current.correct) {
       if(config.mode==='rightwrong') {
-        var random=rng(player.seed+player.round*19763);
-        next=loss(player.placements,2+Math.floor(random()*4),direction);
+        next=wrongBlock(player.placements,player.seed+player.round*19763,direction);
         next.offset=x;
       } else next={floors:player.placements,kind:'wrong',fallen:0,bonus:0,offset:x,
         correction:/_{2,}/.test(current.label)?current.label.replace(/_{2,}/,function(){return current.choices[current.correct];}):
@@ -355,5 +373,5 @@
     };
   }
   return {config:config, importPool:importPool, snapshot:snapshot, card:card, arm:arm, move:move, pose:pose, flight:flight,
-    playerView:playerView, practice:practice, trajectory:trajectory, land:land};
+    playerView:playerView, practice:practice, trajectory:trajectory, land:land, screenDrop:screenDrop};
 }));

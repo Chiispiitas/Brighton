@@ -446,6 +446,8 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
   max-width:460px;max-height:48%;overflow:auto;border-radius:7px;padding:12px;
 }
 .lane-result h2{font-size:1.35rem}
+.screen-sorting .screen-drop{margin-left:auto}
+.screen-sorting .screen-prompt small{display:block;margin-top:3px;font-size:.8em}
 @media(max-width:520px){
   .lane .screen-choice{min-height:46px;font-size:.76rem}
   .lane .screen-choice canvas{max-height:53px}

@@ -204,15 +204,20 @@
       [1,2,3,4].map(function(i){
         return '<label'+(i>2?' hidden':'')+'>Player '+i+' name<input type="text" maxlength="24" placeholder="Player '+i+
           '" value="'+esc(savedNames[i-1] || '')+'"></label>';
-      }).join('')+'</div><label for="screen-pool">Matching word set</label>'+
+      }).join('')+'</div><label for="screen-mode">Game mode</label><select id="screen-mode">'+modeOptions('match')+'</select>'+
+      '<label for="screen-pool">Word set</label>'+
       '<select id="screen-pool">'+optionsFor('match')+'</select>'+
       '<label for="screen-turns">Questions per player</label>'+
       '<input id="screen-turns" type="number" min="1" max="48" step="1" required value="'+MatchingBloxxRules.total+'">'+
-      '<p class="sub">Play on this device.</p>'+
+      '<p class="sub" id="screen-help" hidden>Drop wrong blocks beside the tower.</p>'+
       '<button type="button" class="button yellow" id="start-screen">Start game</button>','Cancel');
     var fields=document.querySelectorAll('.screen-names label');
     $('screen-count').onchange=function(){
       for(var i=0;i<fields.length;i++)fields[i].hidden=i>=Number(this.value);
+    };
+    $('screen-mode').onchange=function(){
+      $('screen-pool').innerHTML=optionsFor(this.value);
+      $('screen-help').hidden=this.value!=='rightwrong';
     };
     $('start-screen').onclick = function() {
       var questionCount=$('screen-turns');
@@ -221,7 +226,7 @@
       var entered=Array.prototype.map.call(fields,function(field){return field.firstElementChild.value.trim();});
       save('mb-screen-names',JSON.stringify(entered));
       var names=entered.slice(0,count).map(function(name,i){return name || 'Player '+(i+1);});
-      var config=loadPool('match',$('screen-pool').value);
+      var config=loadPool($('screen-mode').value,$('screen-pool').value);
       closeModal();
       if(scene) {scene.destroy();scene=null;visualKey='';}
       game.hidden=true;
