@@ -5,16 +5,18 @@
   'use strict';
 
   var walls = [
-    ['#c27559','#a75542','#e39a75'],
-    ['#d5a256','#a87742','#f3ce72'],
-    ['#608e85','#426866','#a1ae86'],
-    ['#9582a2','#654f73','#ae9bb9']
+    ['#c67862','#a76052','#e09c7b'],
+    ['#d1a45e','#aa804c','#e9c480'],
+    ['#6e9a8d','#4f796f','#9cba9f'],
+    ['#9b87ae','#79638e','#bda7c1']
   ];
   var cache = {};
   var floorHeight = .48 * Math.cos(.15) * 1.72;
-  var plinth = ['#455e60','#253b40','#82918a'];
-  var stone = ['#debd83','#ae7851','#fff0c3'];
-  var glass = ['#344c50','#253b40','#617976'];
+  var plinth = ['#4b676b','#3b515b','#899e96'];
+  var stone = ['#dbbc85','#aa804c','#efd6a0'];
+  var glass = ['#36515a','#36515a','#68858a'];
+  var gold = ['#d1a45e','#956e49','#efd6a0'];
+  var flag = ['#c67862','#a76052','#e09c7b'];
 
   function build(kind, style) {
     var key = kind+'-'+style;
@@ -36,26 +38,22 @@
       var dx=(y2-y1)*r/length,dy=(x1-x2)*r/length;
       var a=[x1+dx,y1+dy,z],b=[x2+dx,y2+dy,z],c=[x2-dx,y2-dy,z],d=[x1-dx,y1-dy,z];
       var e=[a[0],a[1],z-.033],f=[b[0],b[1],z-.033],g=[c[0],c[1],z-.033],j=[d[0],d[1],z-.033];
-      face(a,b,c,d,'#cf9a62');face(e,f,g,j,'#835b43');
-      face(a,b,f,e,'#eed59b');face(c,d,j,g,'#ae7851');
-      face(a,d,j,e,'#ae7851');face(b,c,g,f,'#ae7851');
+      face(a,b,c,d,'#d1a45e');face(e,f,g,j,'#956e49');
+      face(a,b,f,e,'#efd6a0');face(c,d,j,g,'#aa804c');
+      face(a,d,j,e,'#aa804c');face(b,c,g,f,'#aa804c');
     }
 
     if (kind==='base') {
-      box(0,-.096,0,1.20,.061,.73,plinth);
-      box(0,-.035,0,1.11,.035,.66,stone);
+      box(0,-.096,0,1.20,.096,.73,plinth);
     } else if (kind==='roof') {
-      box(0,0,0,1.04,.065,.67,stone);
-      box(0,.065,0,.91,.18,.54,plinth);
-      box(0,.245,0,.64,.085,.40,stone);
+      box(0,0,0,1.04,.25,.67,plinth);
+      box(0,.25,0,.59,.13,.48,stone);
       box(.20,.33,-.06,.035,.17,.035,plinth);
-      box(.20,.472,-.06,.15,.022,.025,plinth);
-      for(var wi=-1;wi<=1;wi++)box(wi*.23,.105,.272,.115,.095,.022,glass);
+      box(.25,.472,-.06,.15,.032,.025,flag);
     } else if (kind==='boom') {
-      var gold=['#cf9a62','#835b43','#f3ce72'];
       for(var end=-1;end<=1;end+=2) {
         var z=end*.105;
-        var rails=end>0?gold:['#835b43','#593f38','#ae7851'];
+        var rails=end>0?gold:['#aa804c','#805d42','#d1a45e'];
         box(0,0,z,1,.046,.070,rails);
         box(0,.25,z,1,.047,.070,rails);
         box(-.48,.035,z,.035,.23,.070,gold);
@@ -63,13 +61,12 @@
       }
       for(var i=0;i<3;i++){
         var x=-.48+i*.32;
-        brace(x,.05,x+.32,.25,.016,.123);
-        brace(x,.25,x+.32,.05,.016,.123);
+        brace(x,i%2?.25:.05,x+.32,i%2?.05:.25,.019,.123);
       }
       box(-.48,.237,0,.06,.058,.27,gold);
       box(.48,.237,0,.06,.058,.27,gold);
     } else if (kind==='trolley') {
-      box(0,-.125,0,.27,.16,.24,['#e4b457','#a4724c','#fff0c3']);
+      box(0,-.125,0,.27,.16,.24,gold);
       box(-.080,.010,0,.067,.052,.26,plinth);
       box(.080,.010,0,.067,.052,.26,plinth);
       box(0,-.173,0,.08,.065,.12,plinth);
@@ -78,24 +75,18 @@
       box(.036,-.086,0,.115,.055,.060,plinth);
       box(.085,-.060,0,.041,.075,.060,plinth);
     } else {
-      var wall=walls[kind==='entry'?0:style%4];
-      box(0,.048,0,.91,floorHeight-.126,.55,wall);
-      box(0,0,0,1.02,.057,.65,stone);
-      box(0,floorHeight-.087,0,1.02,.087,.65,stone);
+      var wall=kind==='entry'?stone:walls[style%4];
+      box(0,0,0,.96,floorHeight-.077,.57,wall);
+      box(0,floorHeight-.078,0,1.02,.078,.63,[wall[2],wall[1],wall[2]]);
       for(var slot=-1;slot<=1;slot++){
         var cx=slot*.265;
         var door=kind==='entry' && slot===0;
-        var bottom=door?.048:.272, height=door?.54:.28;
-        box(cx,bottom,.286,door?.29:.20,height,.036,stone);
-        box(cx,bottom+.031,.308,door?.237:.151,height-.066,.027,glass);
-        box(cx,bottom+.038,.326,.019,height-.081,.012,door?stone:plinth);
-        if(!door)box(cx-.043,bottom+height-.089,.326,.041,.043,.011,stone);
-        if(door)box(cx,.014,.336,.37,.045,.13,plinth);
+        box(cx,door?.024:.30,.288,door?.23:.15,door?.46:.235,.012,glass);
+        if(door)box(cx,0,.309,.31,.025,.060,plinth);
       }
       for(var side=-1;side<=1;side+=2){
         for(var two=-1;two<=1;two+=2){
-          box(side*.459,.27,two*.128,.027,.27,.149,stone);
-          box(side*.475,.303,two*.128,.022,.208,.109,glass);
+          box(side*.482,.30,two*.128,.012,.235,.109,glass);
         }
       }
     }
