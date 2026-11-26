@@ -537,13 +537,16 @@
       var now=Date.now(),attract=state.mode==='attract';
       var arcade=!!state.arcade && !attract;
       var screen=arcade && !!state.screen;
+      var physical=arcade && !!state.physical;
       var floors=attract?[0,.035]:state.floors||[];
       if(arcade) floors=[0].concat(floors);
       var length=floors.length,top=length?Number(floors[length-1])||0:0;
-      unit=screen ? Math.min(width*.26,height*.14) : Math.min(width*(attract?.36:.25),height*(arcade?.275:.39));
+      if(screen)unit=Math.min(width*.26,height*.14);
+      else if(physical)unit=Math.min(width*.25,height*.142);
+      else unit=Math.min(width*(attract?.36:.25),height*(arcade?.275:.39));
       var floorY=floorHeight*cp*(arcade?1.72:1);
       var ground=screen ? Math.min(height*.88,height-(width<124?157:117)) : height*.859;
-      var headroom=screen ? Math.max(unit,ground-height*.12-unit*4.2) : height*(arcade?.32:attract?.46:.36);
+      var headroom=physical ? Math.max(unit,ground-height*.12-unit*4.2) : height*(arcade?.32:attract?.46:.36);
       var rise=Math.max(0,length*floorY*unit-headroom);
       var targetCamera=attract?0:top;
       var touring=arcade && !!tour;
@@ -559,8 +562,8 @@
       var swinging=attract ? !reduced : state.showCrane!==false && !!(state.getOffset||state.getSwing) && frozen===null;
       var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
       var wobble=Math.max(0,Math.abs(lean)-.28);
-      var rocking=!reduced && (screen ? !!state.getRock && (state.showCrane!==false || now<state.rockUntil) :
-        wobble>0 && state.showCrane!==false);
+      var rocking=physical ? !!state.getRock && (state.showCrane!==false || now<state.rockUntil) :
+        !reduced && wobble>0 && state.showCrane!==false;
       if(!dirty && !dropState && !swinging && !rocking && !touring && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
@@ -570,7 +573,7 @@
       var townScale=Math.min(1,Math.min(430/width,330/height));
       var townW=Math.max(1,Math.round(width*townScale)),townH=Math.max(1,Math.round(height*townScale));
       var ascent=arcade?cameraRise/(unit*floorY):0;
-      var foundation=screen?Math.round((syy+unit*.079)*townH/height):undefined;
+      var foundation=physical?Math.round((syy+unit*.079)*townH/height):undefined;
       var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0)+'/'+foundation+'/'+attract;
       if(key!==townKey){
         backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,attract,ascent,foundation);
@@ -589,12 +592,13 @@
       var firstFalling=collapse ? length+1-collapse.fallen : length+1;
       var tumble=collapse ? (flight?progress:clamp((progress-.25)/.75,0,1)) : 0;
       var flex=wobble*(lean<0?-1:1)*(.075+(rocking?.045*Math.sin(now/122)*(1-tumble):0));
-      if(screen)flex=rocking?state.getRock():0;
+      if(physical)flex=rocking?state.getRock():0;
       function displacement(y) {
-        return screen ? global.BloxxScreenMotion.shift(y,flex) : flex*y;
+        return physical ? global.BloxxPhysics.shift(y,flex) : flex*y;
       }
+      var shattering=collapse && physical && !!flight;
       var pivotX=0,pivotY=0,tip=0,freeFall=0;
-      if(collapse) {
+      if(collapse && !shattering) {
         var lower=floors[firstFalling-1] || 0;
         var upper=firstFalling<length ? floors[firstFalling] : top+(flight?flight.impact.x:dropState.offset);
         // Rotate around the outer edge of the shared support before the floors separate.
@@ -605,7 +609,10 @@
         freeFall=Math.pow(clamp((tumble-.55)/.45,0,1),2);
       }
       function buildingFloor(index,x,y,angle) {
-        if(index>=firstFalling && tumble>0) {
+        if(shattering && index>=firstFalling && index<length && tumble>0) {
+          var piece=global.BloxxPhysics.debris((now-dropState.contactAt)/1000,index-firstFalling,collapse.direction);
+          x+=piece.x;y+=piece.y;angle+=piece.angle;
+        } else if(!shattering && index>=firstFalling && tumble>0) {
           var level=index-firstFalling;
           var dx=x-pivotX,dy=y-pivotY;
           var rotation=tip+collapse.direction*.62*freeFall;
@@ -626,9 +633,9 @@
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
       var sway=displacement(tableY);
-      if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top+(screen?sway:0),tableY,0,'roof',screen?-flex:0);
+      if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top+(physical?sway:0),tableY,0,'roof',physical?-flex:0);
       if(arcade && state.target && !tumble && !state.showRoof)
-        floorLabel(state.target,sx+(top+flex*tableY)*unit,syy-(tableY-floorY*.47)*unit,-flex);
+        floorLabel(state.target,sx+(top+sway)*unit,syy-(tableY-floorY*.47)*unit,-flex);
       var carryY=tableY+hangGap,offset=attract?(reduced?.36:Math.sin((now-start)/1270)*.54):0;
       var swing=arcade && state.getSwing ? state.getSwing() : null;
       if(swing){
@@ -639,18 +646,18 @@
         var value=state.getOffset();if(isFinite(value))offset=value;
       }
       if(dropState && !flight)offset=dropState.offset;else if(frozen!==null)offset=frozen;
-      var hx=top+offset+(screen?0:sway),hy=carryY,angle=swing?swing.angle:attract?-.025*offset:0;
+      var hx=top+offset+(physical?0:sway),hy=carryY,angle=swing?swing.angle:attract?-.025*offset:0;
       var show=attract || state.showCrane!==false,slings=true,callback=null;
       if(flight){
         var airborne=flight.at(clamp((now-dropState.started)/1000,0,flight.duration));
-        hx=top+airborne.x+(screen?0:sway);
+        hx=top+airborne.x+(physical?0:sway);
         hy=tableY+airborne.height;
         angle=airborne.angle;
         slings=false;
-        if(hit && !collapse && (hit.kind==='wrong'||hit.kind==='miss')){
+        if(hit && (!collapse || shattering) && (hit.kind==='wrong'||hit.kind==='miss')){
           var travel=progress*dropState.duration/1000;
           if(flight.rejected && now>=dropState.contactAt){
-            var falling=flight.rejected(travel,hit.kind==='wrong');
+            var falling=flight.rejected(travel,!!hit.bump);
             hx=top+falling.x;hy=tableY+falling.height;angle=falling.angle;
           }else{
             var direction=airborne.x<0?-1:1;
@@ -660,8 +667,8 @@
           }
         } else if(hit && !collapse){
           var snap=hit.kind==='perfect'?0:hit.offset;
-          hx=top+airborne.x+(snap+sway-airborne.x)*progress+(screen?0:sway*(1-progress));
-          angle=angle*(1-progress)-(screen?flex*progress:0);
+          hx=top+airborne.x+(snap+sway-airborne.x)*progress+(physical?0:sway*(1-progress));
+          angle=angle*(1-progress)-(physical?flex*progress:0);
           hy=tableY+(airborne.height+Math.sin(progress*Math.PI*2)*.075)*(1-progress);
         }
         if(hit && progress===1)callback=finishDrop;
@@ -681,7 +688,7 @@
         var roofY=syy-(hy+floorY)*unit,actorX=sx+hx*unit;
         var hookY=syy-(carryY+floorY)*unit - Math.min(unit*.23,height*.079);
         var armX=width*center;
-        if(screen && swing){
+        if(physical && swing){
           crane(sx+(top+swing.hookX)*unit,syy-(tableY+swing.hookHeight)*unit,
             syy-(hy+floorY*Math.cos(angle))*unit,sx+top*unit,
             slings&&!!state.label,angle,syy-(tableY+swing.pivotHeight)*unit,actorX-floorY*Math.sin(angle)*unit);
@@ -692,8 +699,8 @@
           buildingFloor(length,hx,hy,angle);
           if(!tumble) {
             var labelLift=floorY*.42;
-            floorLabel(state.label,actorX-(screen?labelLift*Math.sin(angle)*unit:0),
-              syy-(hy+labelLift*(screen?Math.cos(angle):1))*unit,angle);
+            floorLabel(state.label,actorX-(physical?labelLift*Math.sin(angle)*unit:0),
+              syy-(hy+labelLift*(physical?Math.cos(angle):1))*unit,angle);
           }
         }
         if(hit && now>=dropState.contactAt && (hit.kind==='perfect' || hit.kind==='landed')){
@@ -750,7 +757,7 @@
       dropState.callback=callback;
       dropState.contactAt=Math.max(Date.now(),dropState.started+dropState.path.duration*1000);
       dropState.duration=hit.fallen?(reduced?280:860):hit.kind==='perfect'?470:hit.kind==='landed'?220:440;
-      if(dropState.path.rejected && !hit.fallen && (hit.kind==='miss'||hit.kind==='wrong')){
+      if(!state.physical && dropState.path.rejected && !hit.fallen && (hit.kind==='miss'||hit.kind==='wrong')){
         var topY=((state.floors||[]).length+1)*floorHeight*cp*1.72;
         var bottom=Math.max(0,(syy-height)/unit)-.22;
         for(var time=.26; time<1.24; time+=.03){

@@ -11,7 +11,10 @@ function requireThat(condition, message, status) {
 export function createRoom(code, host, presenter, now = Date.now(), seed = Math.floor(Math.random() * 1e9), setup) {
   requireThat(host && presenter && host !== presenter, 'Create separate host and screen keys.');
   const room = {code, host, presenter, seed, phase: 'lobby', players: [], expiresAt: now + 86400000};
-  if (setup) room.arcade = arcade.config(setup.mode, setup.set);
+  if (setup) {
+    room.arcade = arcade.config(setup.mode, setup.set);
+    room.arcade.physics = setup.physics === 2 ? 2 : 1;
+  }
   return room;
 }
 
@@ -43,7 +46,7 @@ export function command(room, token, action, data = {}, now = Date.now()) {
     const number = room.players.length + 1;
     const joined = rules.newPlayer('p' + number, name, room.seed + number * 32749);
     joined.key = token;
-    if (room.arcade && phase === 'playing') arcade.arm(joined, now);
+    if (room.arcade && phase === 'playing') arcade.arm(joined, now, room.arcade.physics || 1);
     room.players.push(joined);
     return room;
   }
@@ -52,7 +55,7 @@ export function command(room, token, action, data = {}, now = Date.now()) {
     if (action === 'start') {
       requireThat(room.players.length && phase === 'lobby', 'At least one student must join before starting.', 409);
       room.phase = 'playing';
-      if (room.arcade) room.players.forEach(person => arcade.arm(person, now));
+      if (room.arcade) room.players.forEach(person => arcade.arm(person, now, room.arcade.physics || 1));
     } else {
       requireThat(phase !== 'lobby', 'Start the room first.', 409);
       room.phase = 'finished';

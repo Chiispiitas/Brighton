@@ -680,7 +680,7 @@
     if(busy || !state || !state.me.motion || arcadeChoice<0)return;
     var me=state.me;
     var elapsed=Math.max(0,Math.round(now()-motionStart));
-    var path=BloxxArcade.flight(me.motion,elapsed);
+    var path=BloxxArcade.flight(me.motion,elapsed,me.placements,me.rock);
     if(scene)scene.release(path);
     perform('arcadeDrop',{round:me.round,choice:arcadeChoice,elapsedMs:elapsed},function(error,data){
       if(error){if(scene)scene.cancelDrop();return;}
@@ -691,6 +691,10 @@
       }
       function contact() {
         var last=data.me.last;
+        if(scene && last.rock){
+          var impactAt=now();
+          scene.set({getRock:function(){return BloxxPhysics.rockAt(last.rock,now()-impactAt).angle;}});
+        }
         if(last.kind==='wrong') {
           $('art').classList.add('wrong-flash');
           cue('buzzer');
@@ -704,7 +708,7 @@
     var me=state.me;
     var matching=state.arcade.mode==='match';
     var done=state.phase==='finished' || me.stage==='done';
-    var round=state.code+'-'+me.round;
+    var round=state.code+'-'+me.round+'-'+done;
     if(arcadeRound!==round) {
       arcadeRound=round;
       arcadeChoice=matching?-1:0;
@@ -714,8 +718,11 @@
     var target=matching?me.prompt:'';
     setLayout('stage arcade');
     $('art').classList.remove('wrong-flash');
-    setScene('arcade-'+round+'-'+arcadeChoice+'-'+done,{mode:'build',arcade:true,floors:me.placements,balance:me.balance,
+    var physical=state.arcade.physics===2;
+    setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,physical:physical,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
+      getRock:physical&&me.rock?function(){return BloxxPhysics.rockAt(me.rock,now()-motionStart).angle;}:null,
+      rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
     $('arcade-hud').innerHTML='<span><b>'+me.score+'</b> points</span><span><b>'+me.floors+'</b> '+(me.floors===1?'floor':'floors')+'</span>';
     footer(modeLabel(state.arcade.mode),done?'Game over':state.total?'Turn '+me.round+' / '+state.total:'Turn '+me.round);
@@ -750,7 +757,7 @@
     var buttons=panel.querySelectorAll('[data-block]');
     for(var i=0;i<buttons.length;i++)buttons[i].onclick=function(){chooseArcade(Number(this.getAttribute('data-block')));};
     if($('drop'))$('drop').onclick=arcadeDrop;
-    if($('skip'))$('skip').onclick=function(){perform('arcadePass',{round:me.round});};
+    if($('skip'))$('skip').onclick=function(){perform('arcadePass',{round:me.round,elapsedMs:Math.max(0,Math.round(now()-motionStart))});};
     if($('arcade-steady'))$('arcade-steady').onclick=function(){perform('steady',{round:me.round});};
     if($('arcade-gust'))$('arcade-gust').onclick=function(){
       modal('<h2 id="dialog-title">Send a gust</h2><label for="arcade-rival">Builder</label><select id="arcade-rival">'+targets.map(function(p){

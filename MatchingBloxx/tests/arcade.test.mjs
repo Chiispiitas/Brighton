@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import rules from '../wix-backend/src/game/rules.cjs';
 import arcade from '../wix-backend/src/game/arcade.cjs';
+import physics from '../physics.js';
 import {createRoom, command, view} from '../wix-backend/src/game/engine.mjs';
 
 function center(motion) {
@@ -15,6 +16,34 @@ function center(motion) {
 test('the classroom and browser use identical arcade rules', () => {
   const read=path=>readFileSync(new URL(path,import.meta.url),'utf8').replace(/\r\n/g,'\n');
   assert.equal(read('../arcade.js'),read('../wix-backend/src/game/arcade.cjs'));
+  assert.equal(read('../physics.js'),read('../wix-backend/src/game/physics.cjs'));
+});
+
+test('classroom drops use the same moving roofline as the client and rehang the rope', () => {
+  const setup={mode:'match',physics:2};
+  const room=createRoom('451122','host','screen',10,20,setup);
+  command(room,'player','join',{name:'Jo'},20);
+  command(room,'host','start',{},30);
+  const player=room.players[0];
+  player.placements=[.12,.22,.42];
+  player.rock=physics.kick(null,.32,0,3);
+  const me=view(room,'player',30).me;
+  let elapsedMs=450, contact;
+  for(;elapsedMs<450+me.motion.period;elapsedMs+=5) {
+    contact=arcade.trajectory(me.motion,elapsedMs,me.placements,t=>physics.rockAt(me.rock,elapsedMs+t).angle,false);
+    if(contact.hit && !contact.tipped && Math.abs(contact.offset)>.14 && Math.abs(contact.offset)<.20) break;
+  }
+  assert.ok(elapsedMs<450+me.motion.period);
+  const placed=arcade.land(me.placements,contact);
+  assert.equal(placed.kind,'landed');
+  const card=arcade.card(room.arcade,1,player.seed);
+  command(room,'player','arcadeDrop',{round:1,choice:card.correct,elapsedMs},30+elapsedMs);
+  const next=view(room,'player',30+elapsedMs).me;
+  assert.deepEqual(next.placements,placed.floors);
+  assert.equal(next.last.kind,'landed');
+  assert.equal(next.motion.physics,2);
+  assert.equal(next.motion.lowering,true);
+  assert.deepEqual(next.rock,physics.rockAt(next.last.rock,220));
 });
 
 test('released blocks keep their angular and sideways velocity and accelerate down under gravity', () => {
