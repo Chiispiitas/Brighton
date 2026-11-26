@@ -234,3 +234,188 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
   .arcade-dropbar button{min-width:0;padding:8px;font-size:.88rem}
   .arcade-dropbar .balance{font-size:.76rem}
 }
+
+/* The cabinet frame and controls carry the sunset colors into each game mode. */
+:root{
+  --cabinet:#27213f;
+  --cabinet-edge:#120e22;
+  --cabinet-line:#57486b;
+  --ink:#312444;
+  --paper:#fff0da;
+  --gold:#ffcd70;
+  --peach:#f5997d;
+}
+body{
+  background-color:#1a1830;
+  background-image:radial-gradient(ellipse at 28% 0%,#413054 0%,transparent 55%),
+    radial-gradient(circle,#514264 1px,transparent 1.5px);
+  background-size:auto,24px 24px;
+  color:var(--ink);
+}
+h2{color:var(--ink)}
+.topbar{background:#211b32;border-color:#4a3e61}
+.brand{color:#fff0d5}
+.brand img{background:#3c2d50;box-shadow:0 2px #110d22;border-radius:8px}
+.top-button{background:#2c2340;border-color:#49395d;border-radius:8px}
+.top-button:hover{border-color:#ad7c9d;background:#493557}
+.topbar nav{gap:7px}
+.art-frame,.desk,.dialog{
+  border-color:var(--cabinet-edge);
+  border-radius:14px;
+  box-shadow:0 0 0 1px var(--cabinet-line),0 7px 0 #140e24,0 17px 28px #10091955;
+}
+.desk,.dialog{background:var(--paper)}
+.art-foot{background:#2d2346;color:#ffead4;border-top:1px solid #655474}
+.lamp{background:var(--gold);box-shadow:0 0 0 2px #20172f,0 0 8px #ffb56088}
+.button,.choice,.menu-tile,.small-action{
+  transition:transform .13s ease,box-shadow .13s ease,background-color .15s ease,border-color .15s ease;
+}
+.button,.choice{
+  color:var(--ink);border-color:#73526e;box-shadow:0 3px #5a3e5c;border-radius:8px;
+}
+.button:active,.choice:active{box-shadow:0 1px #5a3e5c}
+.primary,.yellow{background:var(--gold)}
+.overlay{background:#100d22c9}
+.dialog{padding:24px}
+input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
+  background:#fff9ed;border-color:#b6929b;color:var(--ink);border-radius:7px;
+}
+:is(button,a,input,select,textarea,summary):focus-visible{outline:3px solid #8b4caa;outline-offset:3px}
+
+.home{grid-template-columns:minmax(0,1.72fr) minmax(337px,1fr);align-items:stretch}
+.home .art-frame{background:#6a5286}
+.home .scene{background:#6a5286;min-height:410px}
+.home .marquee{top:40px;left:28px;right:10px}
+.home .marquee img{
+  width:58%;max-width:430px;filter:drop-shadow(0 7px 0 #3c1d4290);
+  animation:marquee-bob 6s ease-in-out infinite;
+}
+@keyframes marquee-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.home .art-foot{
+  position:relative;min-height:42px;padding-right:98px;
+}
+.home .art-foot::after{
+  content:'';position:absolute;right:16px;top:50%;width:60px;height:10px;transform:translateY(-50%);
+  border-radius:2px;background:repeating-linear-gradient(120deg,#e99d74 0 7px,#523756 7px 13px);
+}
+.home .desk{background:var(--cabinet);padding:23px;color:#fff0d7}
+.start-modes .menu-tiles{gap:12px}
+.start-modes .menu-tile{
+  justify-content:flex-start;gap:9px;color:var(--ink);background:#ffda89;border:1px solid #1a112c;
+  border-radius:10px;min-height:65px;box-shadow:0 4px #151024,inset 0 1px #fff7cb7a;padding:10px;
+}
+.start-modes #host{background:#e5caf7}
+.start-modes #screen{background:#f5a38e;margin-top:12px;min-height:64px}
+.start-modes .menu-tile small{display:block;font-size:.72rem;color:#542a3c;margin-top:3px}
+.start-modes .menu-tile:active{transform:translateY(3px);box-shadow:0 1px #151024}
+.start-modes .menu-tile:focus-visible,.home-tools button:focus-visible,.top-button:focus-visible{
+  outline-color:var(--gold);
+}
+.mode-icon{
+  position:relative;display:inline-grid;place-items:center;flex:0 0 auto;width:34px;height:34px;
+  border-radius:7px;background:#3c2948;color:#fff0d7;image-rendering:pixelated;
+}
+.solo-icon::after{
+  content:'';width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;
+  border-left:11px solid #ffda89;margin-left:3px;
+}
+.host-icon::after{
+  content:'';width:20px;height:20px;background: url('assets/classroom.png') center/contain no-repeat;
+}
+.screen-icon::before,.screen-icon::after{
+  content:'';position:absolute;top:9px;border:2px solid #ffc5a8;border-radius:1px;width:8px;height:12px;
+}
+.screen-icon::before{left:6px}
+.screen-icon::after{right:6px}
+.sets-icon::before{
+  content:'';width:12px;height:8px;border:2px solid #e5caf7;border-radius:1px;
+  box-shadow:2px -2px #3c2948,3px -3px #e5caf7;transform:translate(-1px,1px);
+}
+.join-console{margin-top:21px;background:#f9e9d9;color:var(--ink);padding:16px;border-radius:10px}
+.join-console h2{font-size:1.23rem}
+.join-fields{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:9px}
+.join-fields>div{min-width:0}
+.join-fields label{margin-top:10px;font-size:.83rem}
+.join-fields .code{letter-spacing:.10em;font-family:inherit}
+.join-console .button{margin-top:11px;min-height:43px}
+.home-tools{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 14px;margin-top:12px}
+.home-tools .text-btn{display:flex;align-items:center;gap:7px;color:#f5dcff;padding:4px 1px;text-decoration:none;font-size:.86rem}
+.home-tools .text-btn:hover{text-decoration:underline}
+.home-tools .mode-icon{width:27px;height:27px;background:#4b3560}
+.start-modes,.join-console{animation:console-in .32s ease-out both}
+.join-console{animation-delay:.07s}
+@keyframes console-in{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover){
+  .start-modes .menu-tile:hover:not(:active){transform:translateY(-2px);box-shadow:0 6px #151024}
+  .screen-choice:hover:not(:disabled) canvas{transform:translateY(-3px)}
+}
+
+.arcade .art-frame.wrong-flash::after{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:#d525394b;box-shadow:inset 0 0 45px #d11c24;animation:screen-wrong .42s ease-out both;
+}
+.arcade-hud span,.screen-tile-head strong,.screen-tile-head span{
+  color:#ffebd9;background:#312645;border-color:#715474;box-shadow:0 2px #1b132b;
+}
+.arcade-hud b{color:var(--gold)}
+.arcade-choices .choice{position:relative;padding-left:33px;text-align:left}
+.arcade-choices .choice:nth-child(1){background:#c7e4ef}
+.arcade-choices .choice:nth-child(2){background:#ffd69b}
+.arcade-choices .choice:nth-child(3){background:#d9e7b5}
+.arcade-choices .choice:nth-child(4){background:#edcff5}
+.arcade-choices .choice[aria-pressed=true]{
+  border-color:#512c69;outline:2px solid #703e8b;outline-offset:1px;
+  transform:translateY(-2px);box-shadow:0 5px #5a3e5c;
+}
+.key-cap{
+  position:absolute;top:50%;left:8px;transform:translateY(-50%);width:17px;height:19px;
+  display:grid;place-items:center;border:1px solid #30204158;background:#fff7ed91;border-radius:4px;font-size:.68rem;
+}
+.arcade-dropbar #drop{background:#fa9a82;border-color:#8d3b42;box-shadow:0 3px #773848}
+.arcade-dropbar #drop:active{box-shadow:0 1px #773848}
+.screen-game{background:#1e182e}
+.screen-exit{background:#3a2c51;border-color:#705884;color:#fff0dc}
+.screen-set{color:#d6c3dc}
+.screen-tile{border-color:#594468}
+.screen-tile-head strong,.screen-tile-head span{border-radius:5px}
+.screen-prompt{background:#fff0da;color:var(--ink);border-radius:5px;box-shadow:0 2px #2b204344}
+.screen-choice canvas{transition:transform .15s ease}
+.screen-choice span{background:#302342}
+.screen-choice[aria-pressed="true"] canvas{transform:translateY(-4px)}
+.screen-winners{background:var(--gold);color:var(--ink);box-shadow:0 4px #1b142f}
+
+@media(max-width:850px){
+  .home{grid-template-columns:minmax(0,1.22fr) minmax(310px,1fr)}
+  .home .marquee{left:18px}
+  .home .marquee img{width:65%}
+  .home .desk{padding:16px}
+}
+@media(max-width:660px){
+  .topbar nav{gap:3px}
+  .home .scene{min-height:0}
+  .home .marquee{top:13px;left:13px}
+  .home .marquee img{width:56%;max-width:235px}
+  .home .art-foot{min-height:30px}
+  .home .desk{padding:13px}
+  .start-modes .menu-tile{min-height:53px}
+  .start-modes #screen{min-height:51px;margin-top:9px}
+  .join-console{margin-top:15px;padding:12px}
+  .home-tools{margin-top:8px}
+}
+@media(max-width:355px){
+  .bar-inner{padding-inline:8px}
+  .brand{font-size:.78rem}
+  .top-button{font-size:.75rem}
+  .home .art-foot{padding-right:54px;letter-spacing:.07em}
+  .home .art-foot::after{width:31px;right:9px}
+  .start-modes .menu-tiles{gap:7px}
+  .start-modes .menu-tile{padding:7px;gap:5px}
+  .start-modes .mode-icon{width:29px;height:29px}
+}
+@media(pointer:coarse){
+  .key-cap{display:none}
+  .arcade-choices .choice{padding-left:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .home .marquee img,.start-modes,.join-console,.arcade .art-frame.wrong-flash::after{animation:none}
+}

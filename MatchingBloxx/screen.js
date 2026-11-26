@@ -77,6 +77,7 @@
 
       function select(index) {
         if (busy || tile.finished) return;
+        if (selected !== index) cue('match');
         selected = index;
         for (var i=0; i<choices.children.length; i++) {
           choices.children[i].setAttribute('aria-pressed', String(i === selected));

@@ -145,17 +145,21 @@
     $('arcade-hud').hidden = name!=='stage arcade';
   }
   function home() {
-    setLayout(''); setScene('attract',{mode:'attract',label:'',showRoof:false}); footer('Matching · Right / Wrong','Solo or class');
+    setLayout('home'); setScene('attract',{mode:'attract',label:'',showRoof:false}); footer('Matching · Right / Wrong','');
     var paused = savedRoom('mb-paused');
     var resume = paused && paused.expires > Date.now() && (!codeFromLink || codeFromLink === paused.room.code) ?
       '<button class="text-btn" id="resume">Resume room '+esc(paused.room.code)+'</button>' : '';
-    paintPanel('home-' + resume, '<h2>Join a room</h2><p class="sub">Enter the code on your classroom screen.</p>' +
-      '<form id="join-form"><label for="name">Your name</label><input id="name" type="text" maxlength="24" autocomplete="nickname" placeholder="First name" required value="'+esc(read('mb-name') || '')+'">' +
-      '<label for="code">Room code</label><input id="code" class="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" title="Six digits" required value="'+esc(codeFromLink)+'">' +
-      '<button class="button primary" type="submit">Join room</button></form><div class="divider"></div><div class="menu-tiles">' +
-      '<button id="solo" class="menu-tile"><img src="assets/solo.png" alt="">Play solo</button><button id="host" class="menu-tile"><img src="assets/classroom.png" alt="">Host a class</button></div>'+
-      '<button type="button" id="screen" class="menu-tile screen-menu"><img src="assets/classroom.png" alt="">Screen mode · 2–4 players</button>'+
-      '<button type="button" id="word-sets" class="text-btn">Word sets</button>'+resume);
+    paintPanel('home-' + resume, '<div class="start-modes"><div class="menu-tiles">' +
+      '<button id="solo" class="menu-tile"><span class="mode-icon solo-icon" aria-hidden="true"></span>Play solo</button>'+
+      '<button id="host" class="menu-tile"><span class="mode-icon host-icon" aria-hidden="true"></span>Host a class</button></div>'+
+      '<button type="button" id="screen" class="menu-tile screen-menu"><span class="mode-icon screen-icon" aria-hidden="true"></span>'+
+      '<span>Screen mode<small>2–4 players</small></span></button></div>'+
+      '<section class="join-console" aria-labelledby="join-title"><h2 id="join-title">Join a room</h2>'+
+      '<form id="join-form"><div class="join-fields"><div><label for="name">Your name</label>'+
+      '<input id="name" type="text" maxlength="24" autocomplete="nickname" placeholder="First name" required value="'+esc(read('mb-name') || '')+'"></div>'+
+      '<div><label for="code">Room code</label><input id="code" class="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" title="Six digits" required value="'+esc(codeFromLink)+'"></div></div>'+
+      '<button class="button primary" type="submit">Join room</button></form></section>'+
+      '<div class="home-tools"><button type="button" id="word-sets" class="text-btn"><span class="mode-icon sets-icon" aria-hidden="true"></span>Word sets</button>'+resume+'</div>');
     if ($('resume')) $('resume').onclick = function () { restore(paused.room); };
     $('join-form').onsubmit = function (e) {e.preventDefault(); enter('join');};
     $('solo').onclick = function () {
@@ -666,6 +670,7 @@
   }
   function chooseArcade(index) {
     if(busy || !state.me.choices[index])return;
+    if (arcadeChoice !== index) cue('match');
     arcadeChoice=index;
     arcadePlayer();
     var choice=panel.querySelector('[data-block="'+index+'"]');
@@ -686,7 +691,10 @@
       }
       function contact() {
         var last=data.me.last;
-        cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':'miss');
+        if(last.kind==='wrong') {
+          $('art').classList.add('wrong-flash');
+          cue('buzzer');
+        } else cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':'miss');
       }
       if(scene){setBusy(true);scene.impact(data.me.last,complete,contact);}
       else {contact();complete();}
@@ -705,6 +713,7 @@
     var activeLabel=arcadeChoice>=0?me.choices[arcadeChoice]:'?';
     var target=matching?me.prompt:'';
     setLayout('stage arcade');
+    $('art').classList.remove('wrong-flash');
     setScene('arcade-'+round+'-'+arcadeChoice+'-'+done,{mode:'build',arcade:true,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
@@ -721,7 +730,7 @@
       html+='<div class="arcade-title"><h2>'+(matching?(/_{2,}|[.!?]$/.test(me.prompt)?esc(me.prompt):'<span class="blank">___</span> '+esc(me.prompt)):
         esc(state.arcade.instruction))+'</h2>'+arcadeOutcome(me.last)+'</div>';
       if(matching)html+='<div class="arcade-choices" aria-label="Choose a block">'+me.choices.map(function(word,i){
-        return '<button type="button" class="choice" data-block="'+i+'" aria-pressed="'+(arcadeChoice===i)+'">'+esc(word)+'</button>';
+        return '<button type="button" class="choice" data-block="'+i+'" aria-pressed="'+(arcadeChoice===i)+'"><span class="key-cap" aria-hidden="true">'+(i+1)+'</span>'+esc(word)+'</button>';
       }).join('')+'</div>';
       else html+='<p class="word-on-crane">'+esc(me.prompt)+'</p>';
       var off=arcadeChoice<0?' data-disabled="true" disabled':'';
