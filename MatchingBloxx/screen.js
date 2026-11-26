@@ -114,9 +114,10 @@
         if (busy || tile.finished || selected < 0) return;
         var path = physics.drop(currentSwing());
         var question = arcade.card(config,player.round,player.seed);
+        var correctWord = selected === question.correct;
         var last;
-        if (selected === question.correct) {
-          var contact = (path.impact.centerX + .12 * Math.sin(path.impact.angle)) / 2.5;
+        if (correctWord) {
+          var contact = (path.impact.centerX + .12 * Math.sin(path.impact.angle)) / 5;
           var placed = rules.placeFloor(player.placements,contact);
           last = {kind:placed.kind,points:100+placed.bonus,fallen:placed.fallen,direction:placed.direction,offset:contact};
           if (placed.floors.length > colors.length) colors.push(selected);
@@ -139,7 +140,7 @@
           next();
           finishIfReady();
         },function () {
-          if(player.last.kind==='wrong') {
+          if(!correctWord) {
             card.classList.add('wrong-flash');
             cue('buzzer');
           } else cue(player.last.kind==='perfect'?'perfect':player.last.kind==='landed'?'land':'miss');
