@@ -47,7 +47,7 @@
     note.setAttribute('role','status');
     note.textContent=words[kind];
     tile.appendChild(note);
-    setTimeout(function(){note.remove();},1350);
+    setTimeout(function(){note.remove();},1750);
   }
 
   function mount(board, config, names, turns, cue, leave) {
