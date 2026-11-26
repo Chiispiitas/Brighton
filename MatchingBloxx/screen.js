@@ -46,14 +46,13 @@
       card.innerHTML = '<header class="screen-tile-head"><strong></strong><span></span></header>' +
         '<div class="screen-tower"></div><p class="screen-prompt"></p><div class="screen-controls">' +
         '<div class="screen-choices" aria-label="Matching blocks"></div>' +
-        '<button type="button" class="screen-drop"></button></div><p class="screen-feedback" aria-live="polite"></p>';
+        '<button type="button" class="screen-drop"></button></div>';
       grid.appendChild(card);
       card.querySelector('strong').textContent = player.name;
       var headline = card.querySelector('.screen-tile-head span');
       var prompt = card.querySelector('.screen-prompt');
       var choices = card.querySelector('.screen-choices');
       var drop = card.querySelector('.screen-drop');
-      var feedback = card.querySelector('.screen-feedback');
       var scene = window.BloxxScene.mount(card.querySelector('.screen-tower'), {canvasOnly:true});
       var tile = {player:player, scene:scene, finished:false};
       var selected = -1, busy = false, view;
@@ -106,11 +105,7 @@
         scene.set({mode:'build', arcade:true, screen:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
           label:'', choice:-1, target:'', showCrane:!tile.finished,showRoof:tile.finished,
           getSwing:tile.finished?null:currentSwing});
-        if(view.last) {
-          var notes={perfect:'★ +200',landed:'+'+view.last.points,wrong:view.last.correction,
-            miss:view.last.fallen>1?'Tower tumbled':view.last.fallen?'Tipped off':'Missed'};
-          feedback.textContent=notes[view.last.kind];
-        }
+        card.classList.remove('wrong-flash');
         busy = false;
       }
 
@@ -121,16 +116,14 @@
         var question = arcade.card(config,player.round,player.seed);
         var last;
         if (selected === question.correct) {
-          var contact = path.impact.centerX + .12 * Math.sin(path.impact.angle);
+          var contact = (path.impact.centerX + .12 * Math.sin(path.impact.angle)) / 2.5;
           var placed = rules.placeFloor(player.placements,contact);
           last = {kind:placed.kind,points:100+placed.bonus,fallen:placed.fallen,direction:placed.direction,offset:contact};
           if (placed.floors.length > colors.length) colors.push(selected);
           else colors.length = placed.floors.length;
           player.placements = placed.floors;
         } else {
-          var answer = question.choices[question.correct];
-          last = {kind:'wrong',points:0,fallen:0,correction:/_{2,}/.test(question.label)?
-            question.label.replace(/_{2,}/,function(){return answer;}):answer+' '+question.label};
+          last = {kind:'wrong',points:0,fallen:0};
         }
         player.last = last;
         player.score += last.points;
@@ -138,7 +131,6 @@
         else player.round++;
         busy = true;
         drop.classList.add('pressed');
-        feedback.textContent = '';
         drop.disabled = true;
         for (var i=0; i<choices.children.length; i++) choices.children[i].disabled = true;
         scene.release(path);
@@ -147,7 +139,10 @@
           next();
           finishIfReady();
         },function () {
-          cue(player.last.kind==='perfect'?'perfect':player.last.kind==='landed'?'land':'miss');
+          if(player.last.kind==='wrong') {
+            card.classList.add('wrong-flash');
+            cue('buzzer');
+          } else cue(player.last.kind==='perfect'?'perfect':player.last.kind==='landed'?'land':'miss');
         });
       }
       drop.onpointerdown = function (event) {
