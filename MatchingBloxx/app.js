@@ -154,6 +154,7 @@
       '<label for="code">Room code</label><input id="code" class="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" title="Six digits" required value="'+esc(codeFromLink)+'">' +
       '<button class="button primary" type="submit">Join room</button></form><div class="divider"></div><div class="menu-tiles">' +
       '<button id="solo" class="menu-tile"><img src="assets/solo.png" alt="">Play solo</button><button id="host" class="menu-tile"><img src="assets/classroom.png" alt="">Host a class</button></div>'+
+      '<button type="button" id="screen" class="menu-tile screen-menu"><img src="assets/classroom.png" alt="">Screen mode · 2–4 players</button>'+
       '<button type="button" id="word-sets" class="text-btn">Word sets</button>'+resume);
     if ($('resume')) $('resume').onclick = function () { restore(paused.room); };
     $('join-form').onsubmit = function (e) {e.preventDefault(); enter('join');};
@@ -162,6 +163,7 @@
       openSetup(false);
     };
     $('host').onclick = function () { if(!busy)openSetup(true); };
+    $('screen').onclick = function () { if(!busy)openScreenSetup(); };
     $('word-sets').onclick = function () { if(!busy)openLibrary(); };
   }
   function modeLabel(mode) { return mode==='match'?'Matching':'Right / Wrong'; }
@@ -183,6 +185,31 @@
   function loadPool(mode, id) {
     var saved=library().filter(function(entry){return entry.id===id && entry.mode===mode;})[0];
     return BloxxArcade.config(mode,saved?saved.set:null);
+  }
+  function openScreenSetup() {
+    modal('<h2 id="dialog-title">Screen mode</h2><label for="screen-count">Players</label>'+
+      '<select id="screen-count"><option value="2">2 players</option><option value="3">3 players</option>'+
+      '<option value="4">4 players</option></select><label for="screen-pool">Matching word set</label>'+
+      '<select id="screen-pool">'+optionsFor('match')+'</select>'+
+      '<p class="sub">Play on this device. Each player gets 12 turns.</p>'+
+      '<button type="button" class="button yellow" id="start-screen">Start game</button>','Cancel');
+    $('start-screen').onclick = function() {
+      var count=Number($('screen-count').value);
+      var config=loadPool('match',$('screen-pool').value);
+      closeModal();
+      if(scene) {scene.destroy();scene=null;visualKey='';}
+      game.hidden=true;
+      document.body.classList.add('screen-active');
+      var close=window.BloxxScreen.mount($('screen-game'),config,count,cue,function(){
+        close();
+        document.body.classList.remove('screen-active');
+        game.hidden=false;
+        home();
+        $('screen').focus();
+      });
+      $('screen-game').querySelector('h1').setAttribute('tabindex','-1');
+      $('screen-game').querySelector('h1').focus();
+    };
   }
   function openSetup(hosting, preferredMode, initialSet) {
     var mode=preferredMode || read('mb-preferred-mode') || 'match';

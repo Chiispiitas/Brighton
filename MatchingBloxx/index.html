@@ -15,13 +15,14 @@
   <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/icon.png">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <script defer src="config.js"></script>
   <script defer src="rules.js?v=2"></script>
   <script defer src="arcade.js?v=2"></script>
   <script defer src="lib/qrcode.min.js"></script>
-  <script defer src="scene.js?v=5"></script>
-  <script defer src="app.js?v=4"></script>
+  <script defer src="scene.js?v=6"></script>
+  <script defer src="screen.js?v=1"></script>
+  <script defer src="app.js?v=5"></script>
 </head>
 <body>
   <header class="topbar"><div class="bar-inner">
@@ -38,6 +39,7 @@
     </section>
     <section id="desk" class="desk" aria-label="Game controls"><div id="panel"></div><p id="feedback" class="feedback" role="status" hidden></p></section>
   </main>
+  <main id="screen-game" class="screen-game" hidden></main>
   <div id="overlay" class="overlay" hidden><section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div id="dialog-body"></div><button id="close-dialog" type="button" class="button yellow">Back to game</button></section></div>
   <noscript><p class="noscript">Turn on JavaScript to play Matching Bloxx.</p></noscript>
 </body>
