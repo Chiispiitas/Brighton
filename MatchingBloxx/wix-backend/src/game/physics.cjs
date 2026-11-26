@@ -64,17 +64,46 @@
     };
   }
 
+  // OpenCityBloxx's Quick Play ramps are measured in 256ths of a block.
+  // Matching Bloxx starts with a foundation already placed.
+  function quickSwing(placed) {
+    var count = placed + 1;
+    var speed = count < 100 ? 1670 - Math.floor(count * 220 / 100) :
+      Math.max(500, 1500 - Math.floor((count - 100) * 2 / 3));
+    return {
+      period: Math.round(speed * 1.8),
+      amplitude: (213 + Math.floor(Math.min(count, 60) * 171 / 60)) / 256,
+      verticalAmplitude: (85 + Math.floor(Math.min(count, 60) * 85 / 60)) / 256
+    };
+  }
+
   function swing(motion, elapsedMs) {
     var time = elapsedMs / 1000;
     var speed = 2 * Math.PI * 1000 / motion.period;
     var phase = motion.phase + speed * time;
+    var payout = Math.max(0,Math.min(1,elapsedMs / 330));
+    var reel = motion.lowering ? .42 * (1 - payout) * (1 - payout) : 0;
+    var reelSpeed = motion.lowering ? .84 * (1 - payout) / .33 : 0;
+    if (motion.physics === 3) {
+      // The Java hook follows independent quarter-shifted axes. Sample the curve
+      // continuously so animation and release velocity agree at any frame rate.
+      var x = -motion.amplitude * Math.cos(phase);
+      var y = .70 + halfHeight + reel - motion.verticalAmplitude * Math.sin(phase);
+      var vx = motion.amplitude * speed * Math.sin(phase);
+      var roll = 16 * Math.PI / 180, tilt = roll * x;
+      var ellipse = block(x, y, tilt);
+      ellipse.pivotHeight = pivotHeight;
+      ellipse.hookX = x - (halfHeight + .21) * Math.sin(tilt);
+      ellipse.hookHeight = y + (halfHeight + .21) * Math.cos(tilt);
+      ellipse.vx = vx;
+      ellipse.vy = -motion.verticalAmplitude * speed * Math.cos(phase) - reelSpeed;
+      ellipse.spin = roll * vx;
+      return ellipse;
+    }
     var extent = Math.asin(Math.min(.49, motion.amplitude / length));
     var angle = extent * Math.sin(phase);
     var spin = extent * speed * Math.cos(phase);
     var sin = Math.sin(angle), cos = Math.cos(angle);
-    var payout = Math.max(0,Math.min(1,elapsedMs / 330));
-    var reel = motion.lowering ? .42 * (1 - payout) * (1 - payout) : 0;
-    var reelSpeed = motion.lowering ? .84 * (1 - payout) / .33 : 0;
     var radius = length - reel;
     var hook = radius - halfHeight - .21;
     var sample = block(radius * sin, pivotHeight - radius * cos, angle);
@@ -154,6 +183,6 @@
       angle:-direction*(1.9+level*.36)*time};
   }
 
-  return {swing:swing, drop:drop, tower:tower, shift:shift, floorHeight:floorHeight,
+  return {swing:swing, quickSwing:quickSwing, drop:drop, tower:tower, shift:shift, floorHeight:floorHeight,
     rockAt:rockAt, kick:kick, track:track, debris:debris};
 }));

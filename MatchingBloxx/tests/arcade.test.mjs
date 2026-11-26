@@ -102,6 +102,20 @@ test('presenters receive bounded replays without exposing player prompts or cred
   assert.deepEqual(view(room,'screen',13500+24001).city.lots[0].drops,[]);
 });
 
+test('new online rooms apply the Java swing on the server, player and presenter', () => {
+  const room=createRoom('823502','host','screen',10,20,arcade.config('match'));
+  command(room,'player','join',{name:'Jo'},20);
+  command(room,'host','start',{},30);
+  const player=room.players[0], start=view(room,'player',30).me.motion;
+  assert.equal(start.physics,3);
+  assert.equal(start.verticalAmplitude,physics.quickSwing(0).verticalAmplitude);
+  const choice=arcade.card(room.arcade,1,player.seed).correct;
+  command(room,'player','arcadeDrop',{round:1,choice,elapsedMs:650},680);
+  const replay=view(room,'screen',680).city.lots[0].drops[0];
+  assert.deepEqual(arcade.pose(start,650),arcade.pose(replay.motion,650));
+  assert.equal(view(room,'player',680).me.motion.physics,3);
+});
+
 test('matching custom pools serve explicit distractors, reject a wrong placement and repeat in endless runs',()=>{
   const game=arcade.config('match',{name:'Office',rows:[['a report','write','call','book','read']]});
   const player=rules.newPlayer('p1','Alex',100);

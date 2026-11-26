@@ -159,7 +159,7 @@
     return validate(mode,set);
   }
   function pose(motion, elapsed) {
-    if(motion.physics===2) return physics.swing(motion,elapsed);
+    if(motion.physics>=2) return physics.swing(motion,elapsed);
     var rate=2*Math.PI/motion.period;
     var phase=motion.phase+elapsed*rate;
     var wave=Math.sin(phase);
@@ -175,7 +175,7 @@
     return physics.track(physics.drop(physics.swing(motion,elapsed)),floors,angleAt,assisted);
   }
   function flight(motion, elapsed, floors, rock) {
-    if(motion.physics===2) return trajectory(motion,elapsed,floors||[],function(ahead){
+    if(motion.physics>=2) return trajectory(motion,elapsed,floors||[],function(ahead){
       return physics.rockAt(rock,elapsed+ahead).angle;
     },false).path;
     var start=pose(motion,elapsed);
@@ -202,6 +202,8 @@
     var previous=player.motion;
     var height=player.placements.length;
     var base=(modern?Math.max(2500,3780-height*33):Math.max(1900,3270-57*(player.round-1)))+Math.round(random()*380);
+    var classic=version===3?physics.quickSwing(height):null;
+    if(classic)base=classic.period;
     var phase=random()*2*Math.PI;
     if(modern && previous && typeof elapsed==='number') {
       phase=(previous.phase+elapsed*2*Math.PI/previous.period)%(2*Math.PI);
@@ -209,9 +211,10 @@
     player.motion={period:Math.round(base*(assistance?1.5:1)/(penalty?1.18:1)),phase:phase,
       amplitude:.92+random()*.26,gust:!!penalty,assisted:!!assistance,startedAt:now};
     if(modern) {
-      player.motion.physics=2;
+      player.motion.physics=classic?3:2;
       player.motion.lowering=!!previous;
-      player.motion.amplitude=Math.min(1.35,player.motion.amplitude+.009*height);
+      player.motion.amplitude=classic?classic.amplitude:Math.min(1.35,player.motion.amplitude+.009*height);
+      if(classic)player.motion.verticalAmplitude=classic.verticalAmplitude;
     }
     if(assistance) player.steady=0;
     player.steadyArmed=false;
@@ -254,7 +257,7 @@
   }
   function resolve(player, config, choice, elapsed) {
     var current=card(config,player.round,player.seed);
-    var modern=player.motion.physics===2;
+    var modern=player.motion.physics>=2;
     var impact=modern?trajectory(player.motion,elapsed,player.placements,function(ahead){
       return physics.rockAt(player.rock,elapsed+ahead).angle;
     },false):null;
@@ -302,7 +305,7 @@
       check(config.mode==='rightwrong','Choose a matching block.');
       var current=card(config,player.round,player.seed);
       next={kind:current.correct<0?'passed':'passed-right',bonus:0,fallen:0,floors:player.placements,label:current.label};
-      if(player.motion.physics===2){
+      if(player.motion.physics>=2){
         next.restart=typeof data.elapsedMs==='number' && isFinite(data.elapsedMs)?
           Math.max(0,Math.min(data.elapsedMs,now-player.motion.startedAt+550)):Math.max(0,now-player.motion.startedAt);
         player.rock=physics.rockAt(player.rock,next.restart);
@@ -332,9 +335,9 @@
     if(!endless && player.completed>=rules.total) {
       player.stage='done';
       player.motion=null;
-    } else {player.round++;arm(player,now,player.motion.physics===2?2:1,next.restart);}
+    } else {player.round++;arm(player,now,player.motion.physics||1,next.restart);}
   }
-  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:2}; }
+  function config(mode, set) { return {mode:mode,set:validate(mode,set),shuffleAll:true,physics:3}; }
   function snapshot(game) {
     var set=game.set;
     return {mode:game.mode,name:set.name,instruction:set.instruction||'',physics:game.physics||1};
@@ -349,6 +352,7 @@
       view.motion.assisted=!!player.motion.assisted;
       view.motion.physics=player.motion.physics || 1;
       view.motion.lowering=!!player.motion.lowering;
+      if(player.motion.physics===3)view.motion.verticalAmplitude=player.motion.verticalAmplitude;
     }
     if(player.rock) view.rock=player.rock;
     return view;
@@ -356,7 +360,7 @@
   function practice(game, name) {
     var player=rules.newPlayer('p1',name||'You',Math.floor(Math.random()*1e9));
     var done=false;
-    arm(player, Date.now());
+    arm(player, Date.now(), game.physics);
     function view() {
       var phase=done?'finished':'playing';
       return {code:'',role:'player',phase:phase,total:0,capacity:1,arcade:snapshot(game),

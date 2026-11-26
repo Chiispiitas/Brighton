@@ -5,6 +5,30 @@ import physics from '../physics.js';
 const motion = {period:3300,amplitude:1.13,phase:.42};
 const close = (a,b,tolerance=1e-5) => assert.ok(Math.abs(a-b)<tolerance, `${a} vs ${b}`);
 
+test('the Quick Play crane follows the Java ellipse and roll at the four quarter turns', () => {
+  const swing = {phase:0, physics:3, ...physics.quickSwing(0)};
+  const samples = [0,1,2,3].map(part => physics.swing(swing,swing.period*part/4));
+  close(samples[0].centerX,-215/256);
+  close(samples[2].centerX,215/256);
+  close(samples[1].centerX,0);
+  close(samples[3].centerX,0);
+  close(samples[3].centerY-samples[1].centerY,2*86/256);
+  close(samples[0].angle,-215/16*Math.PI/180);
+  assert.equal(swing.period,3002);
+  assert.ok(physics.quickSwing(11).period<swing.period);
+});
+
+test('the new crane transfers both components of the elliptical motion into the drop', () => {
+  const swing={phase:.8,physics:3,lowering:true,...physics.quickSwing(5)};
+  const pose=physics.swing(swing,140), next=physics.swing(swing,140.001);
+  close((next.centerX-pose.centerX)*1e6,pose.vx,2e-5);
+  close((next.centerY-pose.centerY)*1e6,pose.vy,2e-5);
+  const drop=physics.drop(pose).at(0);
+  close(drop.centerX,pose.centerX);
+  close(drop.centerY,pose.centerY);
+  close(drop.angle,pose.angle);
+});
+
 test('the hook and suspended block swing around one fixed pivot', () => {
   const start = physics.swing(motion,0);
   for (const elapsed of [100,430,810,1200,2200]) {

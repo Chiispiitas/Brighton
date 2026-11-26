@@ -669,7 +669,7 @@
     var target=matching?me.prompt:'';
     setLayout('stage lane');
     $('art').classList.remove('wrong-flash');
-    var physical=state.arcade.physics===2;
+    var physical=state.arcade.physics>=2;
     setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
       showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
       getRock:physical&&me.rock?function(){return BloxxPhysics.rockAt(me.rock,now()-motionStart).angle;}:null,
