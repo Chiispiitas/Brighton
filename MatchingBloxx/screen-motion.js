@@ -10,6 +10,44 @@
   var clearance = .70;
   var gravity = 11.5;
   var pivotHeight = length + clearance + halfHeight;
+  var floorHeight = .48 * Math.cos(.15) * 1.72;
+
+  function tower() {
+    var started = 0, angle = 0, velocity = 0, rate = 1.18, damping = .42;
+
+    function pose(now) {
+      var time = Math.max(0, (now - started) / 1000);
+      var sin = Math.sin(rate * time), cos = Math.cos(rate * time);
+      var decay = Math.exp(-damping * time);
+      var coefficient = (velocity + damping * angle) / rate;
+      var current = (angle * cos + coefficient * sin) * decay;
+      return {angle:current, velocity:(coefficient * cos - angle * sin) * rate * decay - damping * current};
+    }
+
+    function land(offset, now) {
+      var current = pose(now);
+      var strength = Math.min(1, Math.abs(offset) / .48);
+      var direction = Math.abs(current.velocity) > .05 ? current.velocity : current.angle;
+      var counter = offset * direction < 0;
+      started = now;
+      angle = current.angle;
+      if (counter || strength < .09) {
+        velocity = current.velocity * .63 + (counter ? offset * .13 : 0);
+        rate = Math.max(1.18, rate * .8);
+        damping = .78;
+      } else {
+        velocity = Math.max(-.59, Math.min(.59, current.velocity + offset * 1.24));
+        rate = 1.18 + strength * 1.45;
+        damping = .39;
+      }
+    }
+
+    return {angle:function(now){return pose(now).angle;}, land:land};
+  }
+
+  function shift(height, angle) {
+    return 4.6 * (1 - Math.exp(-height / 4.6)) * Math.sin(angle);
+  }
 
   function block(centerX, centerY, angle) {
     return {
@@ -74,5 +112,5 @@
     return {at:at, duration:to, impact:impact, rejected:rejected};
   }
 
-  return {swing:swing, drop:drop};
+  return {swing:swing, drop:drop, tower:tower, shift:shift, floorHeight:floorHeight};
 }));
