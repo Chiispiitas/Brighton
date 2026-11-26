@@ -1,9 +1,24 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import physics from '../physics.js';
+import models from '../models.js';
 
 const motion = {period:3300,amplitude:1.13,phase:.42};
 const close = (a,b,tolerance=1e-5) => assert.ok(Math.abs(a-b)<tolerance, `${a} vs ${b}`);
+
+test('stackable models match the collision floor height and have solid depth', () => {
+  for (const kind of ['cube','entry','roof','base','boom','trolley','hook']) {
+    const vertices = models.build(kind,0).flatMap(face=>face.points);
+    for (const axis of [0,1,2]) {
+      const coordinates = vertices.map(point=>point[axis]);
+      assert.ok(Math.max(...coordinates)-Math.min(...coordinates)>.05,kind);
+    }
+    if (kind==='cube' || kind==='entry') {
+      close(Math.min(...vertices.map(point=>point[1])),0);
+      close(Math.max(...vertices.map(point=>point[1])),physics.floorHeight);
+    }
+  }
+});
 
 test('the hook and suspended block swing around one fixed pivot', () => {
   const start = physics.swing(motion,0);
