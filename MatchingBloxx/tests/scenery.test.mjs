@@ -30,7 +30,8 @@ for (const [width, height] of [[719, 451], [311, 657], [337, 211]]) {
   test('background layers use one pixel grid at '+width+' × '+height, () => {
     const day = recordPainter();
     scenery.paint(day, width, height, 0, false, 0, Math.floor(height*.83));
-    checkCurves(day.fills, ['#e4f1df', '#b6d6d3', '#689272', '#96b387', '#ffe4a0']);
+    checkCurves(day.fills, ['#e4f1df', '#b6d6d3', '#689272', '#96b387', '#ffe4a0', '#c6baa0', '#818d88']);
+    assert.ok(day.fills.some(fill => fill.color === '#79898a' && fill.height === 1));
     assert.ok(day.fills.some(fill => fill.color === '#91b8ba'));
     assert.ok(day.fills.some(fill => fill.color === '#b5a488'));
     assert.ok(day.fills.some(fill => fill.color === '#707f80'));
