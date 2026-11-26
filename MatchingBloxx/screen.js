@@ -11,8 +11,6 @@
     button.className = 'screen-choice';
     button.setAttribute('aria-pressed', String(!!selected));
     var picture = document.createElement('canvas');
-    picture.width = 116;
-    picture.height = 90;
     picture.setAttribute('aria-hidden','true');
     var label = document.createElement('span');
     label.textContent = word;
