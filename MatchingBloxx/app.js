@@ -90,6 +90,9 @@
     if (!muted) { prepareAudio(); cue('match'); }
   };
   function modal(html, closer) {
+    var close=$('close-dialog'), dialog=close.closest('.dialog');
+    if(close.parentNode!==dialog)dialog.appendChild(close);
+    dialog.classList.remove('word-dialog');
     lastFocus = document.activeElement; $('dialog-body').innerHTML = html;
     $('close-dialog').textContent = closer || 'Back to game'; $('overlay').hidden = false;
     $('close-dialog').onclick=closeModal;
@@ -109,7 +112,9 @@
     if (!$('overlay').hidden) {
       if (e.key === 'Escape' || e.keyCode === 27) closeModal();
       if (e.key === 'Tab' || e.keyCode === 9) {
-        var items = $('overlay').querySelectorAll('button,input,textarea,select,a[href]');
+        var items = Array.prototype.filter.call($('overlay').querySelectorAll('button,input,textarea,select,a[href],summary'),function(item){
+          return !item.disabled && item.getClientRects().length;
+        });
         if (e.shiftKey && document.activeElement === items[0]) { e.preventDefault();items[items.length-1].focus(); }
         else if (!e.shiftKey && document.activeElement === items[items.length-1]) { e.preventDefault();items[0].focus(); }
       }
@@ -272,116 +277,30 @@
   }
   function openLibrary(mode, id, hosting) {
     mode=mode==='rightwrong'?'rightwrong':'match';
-    id=id || 'default';
-    modal('<h2 id="dialog-title">Word sets</h2><label for="pool-mode">Game mode</label>'+
-      '<select id="pool-mode">'+modeOptions(mode)+'</select><label for="pool-set">Saved sets</label>'+
-      '<select id="pool-set">'+optionsFor(mode,id)+'</select><div id="pool-fields"></div>'+
-      '<details class="pool-import"><summary>Import pool</summary><p id="import-hint" class="sub pool-hint"></p>'+
-      '<label for="pool-file">Choose a file</label><input id="pool-file" type="file" accept=".csv,.tsv,.txt,.json">'+
-      '<label for="pool-paste">Or paste your pool</label><textarea id="pool-paste" rows="4"></textarea>'+
-      '<button type="button" id="read-pool" class="small-action">Load into editor</button></details>'+
-      '<p id="pool-error" class="feedback" role="status" hidden></p>'+
-      '<button id="save-pool" class="button yellow">Save word set</button>'+
-      '<button id="new-pool" class="text-btn">New set</button>'+
-      '<button id="copy-pool" class="text-btn">Save a copy</button>',typeof hosting==='boolean'?'Back to setup':'Back to menu');
-    function fields(blank, imported) {
-      var data=imported || loadPool(mode,id).set;
-      var type=mode==='match';
-      var body='<label for="pool-name">Set name</label><input type="text" id="pool-name" maxlength="40" value="'+esc(blank?'':data.name)+'">';
-      if(type) {
-        var baseAnswers=data.rows.map(function(row){return row[1];}).filter(function(answer,index,all){return all.indexOf(answer)===index;});
-        var same=typeof data.sameOptions==='boolean'?data.sameOptions:
-          data.rows.every(function(row){return row.length===2;}) && baseAnswers.length<=4;
-        var displayRows=data.rows.map(function(row){
-          if(!same && row.length===2) return row.concat(baseAnswers.filter(function(answer){
-            return answer.toLowerCase()!==row[1].toLowerCase();
-          }).slice(0,3));
-          return row;
-        });
-        body+='<label class="pool-checkbox"><input id="pool-same" type="checkbox"'+(same?' checked':'')+'> Same options for every prompt</label>'+
-          '<div id="shared-options"><label for="pool-bank">Shared options</label>'+
-          '<textarea id="pool-bank" rows="3" placeholder="attend&#10;get&#10;make&#10;submit">'+esc(blank?'':(data.options||baseAnswers).join('\n'))+'</textarea></div>'+
-          '<label for="pool-rows">Matches</label><p class="sub pool-hint" id="match-format"></p>'+
-          '<textarea id="pool-rows" rows="7">'+esc(blank?'':displayRows.map(function(row){return row.join(' | ');}).join('\n'))+'</textarea>';
-      } else {
-        body+='<label for="pool-instruction">Rule shown to players</label><input type="text" id="pool-instruction" maxlength="80" value="'+esc(blank?'':data.instruction)+'">'+
-          '<div class="pool-columns"><div><label for="pool-right">Right blocks</label><textarea id="pool-right" rows="6" placeholder="One entry per line">'+
-          esc(blank?'':data.right.join('\n'))+'</textarea></div><div><label for="pool-wrong">Wrong blocks</label><textarea id="pool-wrong" rows="6" placeholder="One entry per line">'+
-          esc(blank?'':data.wrong.join('\n'))+'</textarea></div></div>';
-      }
-      $('pool-fields').innerHTML=body;
-      $('pool-error').hidden=true;
-      $('import-hint').textContent=type?'CSV, TSV, TXT or JSON. Use prompt | correct answer | other options. Two-column lists use the same options across prompts.':
-        'CSV, TSV, TXT or JSON. Use word | right or word | wrong, one entry per line.';
-      $('pool-paste').placeholder=type?'I enjoy ___ after school. | reading | to read':'pear | right\ncarrot | wrong';
-      if(type) {
-        $('pool-same').onchange=function(){
-          var shared=$('pool-same').checked;
-          $('shared-options').hidden=!shared;
-          $('match-format').textContent=shared?'Enter 2–4 shared options, one per line. Each match uses prompt | correct answer.':
-            'Use prompt | correct answer | other option. Add up to three other options per sentence. Use ___ for the blank.';
-          $('pool-rows').placeholder=shared?'a lecture | attend':'I enjoy ___ after school. | reading | to read';
-        };
-        $('pool-same').onchange();
-      }
-    }
-    function lines(value) {return value.split(/\r?\n/).map(function(line){return line.trim();}).filter(Boolean);}
-    function savePool(copy) {
-      try {
-        var values={name:$('pool-name').value};
-        if(mode==='match') {
-          values.rows=lines($('pool-rows').value).map(function(row){return row.split('|');});
-          values.sameOptions=$('pool-same').checked;
-          if(values.sameOptions)values.options=lines($('pool-bank').value);
-        }
-        else {values.instruction=$('pool-instruction').value;values.right=lines($('pool-right').value);values.wrong=lines($('pool-wrong').value);}
-        var config=BloxxArcade.config(mode,values);
+    modal('',typeof hosting==='boolean'?'Back to setup':'Back to menu');
+    var close=$('close-dialog'), body=$('dialog-body');
+    close.closest('.dialog').classList.add('word-dialog');
+    var editor=BloxxWordEditor.mount(body,{
+      mode:mode,id:id,close:close,modeOptions:modeOptions,setOptions:optionsFor,
+      load:function(selectedMode,selectedId){return loadPool(selectedMode,selectedId).set;},
+      persist:function(selectedMode,selectedId,set,copy){
         var sets=library();
-        if(copy || id==='default'){
+        if(copy || selectedId==='default'){
           if(sets.length>=30)throw Error('This browser can store up to 30 sets.');
-          id=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
-          sets.push({id:id,mode:mode,set:config.set});
-        } else sets=sets.map(function(entry){return entry.id===id?{id:id,mode:mode,set:config.set}:entry;});
+          selectedId=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+          sets.push({id:selectedId,mode:selectedMode,set:set});
+        } else sets=sets.map(function(entry){
+          return entry.id===selectedId?{id:selectedId,mode:selectedMode,set:set}:entry;
+        });
         localStorage.setItem(poolKey,JSON.stringify(sets));
-        $('pool-set').innerHTML=optionsFor(mode,id);
-        $('pool-error').textContent='Saved in this browser.';
-        $('pool-error').hidden=false;
-      } catch(error) {
-        $('pool-error').textContent=error.message||'This browser could not save the set.';
-        $('pool-error').hidden=false;
+        return selectedId;
       }
-    }
-    $('pool-mode').onchange=function(){mode=this.value;id='default';$('pool-set').innerHTML=optionsFor(mode);fields(false);};
-    $('pool-set').onchange=function(){id=this.value;fields(false);};
-    $('new-pool').onclick=function(){id='default';$('pool-set').value='default';fields(true);$('pool-name').focus();};
-    $('save-pool').onclick=function(){savePool(false);};
-    $('copy-pool').onclick=function(){savePool(true);};
-    function loadImport(value, filename, currentMode) {
-      if(!$('pool-error') || mode!==currentMode)return;
-      try {
-        var set=BloxxArcade.importPool(mode,value,filename);
-        id='default';$('pool-set').value='default';
-        fields(false,set);
-        $('pool-paste').value='';$('pool-file').value='';
-        $('pool-error').textContent='Pool loaded. Review it and save as a new set.';
-      } catch(error) {$('pool-error').textContent=error.message;}
-      $('pool-error').hidden=false;
-    }
-    $('pool-file').onchange=function(){if(this.files.length)$('pool-paste').value='';};
-    $('read-pool').onclick=function(){
-      var file=$('pool-file').files[0], pasted=$('pool-paste').value;
-      if(pasted.trim() || !file){loadImport(pasted,'',mode);return;}
-      if(file.size>65536){$('pool-error').textContent='Import a pool smaller than 64 KB.';$('pool-error').hidden=false;return;}
-      var reader=new FileReader(), currentMode=mode, field=$('pool-file');
-      reader.onload=function(){if($('pool-file')===field && field.files[0]===file)loadImport(reader.result,file.name,currentMode);};
-      reader.onerror=function(){if($('pool-file')===field){$('pool-error').textContent='The file could not be read.';$('pool-error').hidden=false;}};
-      reader.readAsText(file);
+    });
+    if(typeof hosting==='boolean')close.onclick=function(){
+      var selected=editor.selection();
+      closeModal();
+      openSetup(hosting,selected.mode,selected.id);
     };
-    if(typeof hosting==='boolean') {
-      $('close-dialog').onclick=function(){closeModal();openSetup(hosting,mode,id);};
-    }
-    fields(false);
-    $('pool-mode').focus();
   }
   function request(data, cb) {
     var xhr = new XMLHttpRequest(), finished = false;
