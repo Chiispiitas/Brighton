@@ -3,6 +3,8 @@ import arcade from './arcade.cjs';
 
 export const GameError = rules.GameError;
 export const MAX_PLAYERS = 36;
+const CITY_HISTORY = 6;
+const CITY_REPLAY_MS = 24000;
 
 function requireThat(condition, message, status) {
   if (!condition) throw new GameError(message, status);
@@ -73,7 +75,18 @@ export function command(room, token, action, data = {}, now = Date.now()) {
     player.steady = 0;
     target.gustPending = true;
   } else if (room.arcade) {
+    const release = action === 'arcadeDrop' && {
+      time: now, motion: player.motion, rock: player.rock || null, elapsed: data.elapsedMs,
+      before: player.placements.slice(), color: room.arcade.mode === 'match' ? data.choice : player.round - 1
+    };
     arcade.move(player, room.arcade, action, data, now, false);
+    if (release) {
+      const {kind, offset, fallen, direction, bump} = player.last;
+      const recent = (player.cityDrops || []).filter(drop => now - drop.time <= CITY_REPLAY_MS);
+      recent.push({...release, turn: player.completed, after: player.placements,
+        kind, offset, fallen, direction, bump: !!bump});
+      player.cityDrops = recent.slice(-CITY_HISTORY);
+    }
   } else {
     rules.play(player, action, data, now);
   }
@@ -90,5 +103,16 @@ export function view(room, token, now = Date.now()) {
   const result = {code: room.code, role, phase, total: rules.total, capacity: MAX_PLAYERS,
     players: rules.standings(room.players), me};
   if (room.arcade) result.arcade = arcade.snapshot(room.arcade);
+  if (role === 'presenter') {
+    result.city = {
+      time: now,
+      lots: room.players.map(player => ({
+        id: player.id, floors: player.placements,
+        motion: phase === 'playing' ? player.motion : null,
+        rock: player.rock || null,
+        drops: (player.cityDrops || []).filter(drop => now - drop.time <= CITY_REPLAY_MS)
+      }))
+    };
+  }
   return result;
 }

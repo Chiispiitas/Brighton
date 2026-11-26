@@ -79,6 +79,29 @@ test('matching offers four blocks and advances in a single release', () => {
   assert.throws(()=>command(room,'player','arcadeDrop',{round:1,choice:0,elapsedMs:0},40+elapsedMs),{status:409});
 });
 
+test('presenters receive bounded replays without exposing player prompts or credentials', () => {
+  const room=createRoom('823501','host','screen',10,20,{mode:'match',physics:2});
+  command(room,'player','join',{name:'Jo'},20);
+  command(room,'host','start',{},30);
+  const player=room.players[0];
+  for(let turn=1;turn<=9;turn++){
+    const at=turn*1500, choice=arcade.card(room.arcade,turn,player.seed).correct;
+    command(room,'player','arcadeDrop',{round:turn,choice,elapsedMs:500},at);
+  }
+  const {time,lots}=view(room,'screen',13500).city;
+  assert.equal(time,13500);
+  assert.equal(lots.length,1);
+  assert.deepEqual(lots[0].floors,player.placements);
+  assert.deepEqual(lots[0].drops.map(drop=>drop.turn),[4,5,6,7,8,9]);
+  for(const event of lots[0].drops){
+    assert.ok(arcade.flight(event.motion,event.elapsed,event.before,event.rock).duration>0);
+    for(const name of ['phrase','prompt','choices','correction','key'])assert.equal(event[name],undefined);
+  }
+  assert.equal(view(room,'player',13500).city,undefined);
+  assert.equal(view(room,'host',13500).city,undefined);
+  assert.deepEqual(view(room,'screen',13500+24001).city.lots[0].drops,[]);
+});
+
 test('matching custom pools serve explicit distractors, reject a wrong placement and repeat in endless runs',()=>{
   const game=arcade.config('match',{name:'Office',rows:[['a report','write','call','book','read']]});
   const player=rules.newPlayer('p1','Alex',100);

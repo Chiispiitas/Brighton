@@ -19,6 +19,7 @@ jobs:
       - run: node --check MatchingBloxx/screen.js && node --check MatchingBloxx/physics.js
       - run: node --check MatchingBloxx/word-editor.js
       - run: node --check MatchingBloxx/scenery.js && node --check MatchingBloxx/crane-model.js
+      - run: node --check MatchingBloxx/presenter.js
       - run: node --test MatchingBloxx/tests/*.test.mjs
       - run: cmp MatchingBloxx/rules.js MatchingBloxx/wix-backend/src/game/rules.cjs
       - run: cmp MatchingBloxx/arcade.js MatchingBloxx/wix-backend/src/game/arcade.cjs

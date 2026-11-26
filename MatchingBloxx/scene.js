@@ -176,6 +176,12 @@
     paint();
     if(!global.BloxxFloorMesh)script('assets/floor.js?v=20',paint);
   }
+  function paintModel(ctx,x,y,scaleX,scaleY,a,angle) {
+    var sizeX=scaleX/a.scale,sizeY=scaleY/a.scale;
+    ctx.save();ctx.translate(x,y);ctx.rotate(-(angle||0));
+    ctx.drawImage(a.sprite,-a.centerX*sizeX,-a.centerY*sizeY,a.sprite.width*sizeX,a.sprite.height*sizeY);
+    ctx.restore();
+  }
 
   function mount(container, settings) {
     var labelFont = global.getComputedStyle ? global.getComputedStyle(container).fontFamily : 'Arial, sans-serif';
@@ -300,11 +306,8 @@
         node.position.set(x,y,0);node.scale.set(scaleX,scaleY,scaleY);
         node.rotation.z=angle||0;node.visible=true;count++;
       }else{
-        var px=sx+unit*x,py=syy-unit*y,sizeX=unit*scaleX/a.scale,sizeY=unit*scaleY/a.scale;
-        fallback.save();fallback.translate(px,py);fallback.rotate(-(angle||0));
         fallback.imageSmoothingEnabled=true;
-        fallback.drawImage(a.sprite,-a.centerX*sizeX,-a.centerY*sizeY,a.sprite.width*sizeX,a.sprite.height*sizeY);
-        fallback.restore();
+        paintModel(fallback,sx+unit*x,syy-unit*y,unit*scaleX,unit*scaleY,a,angle);
       }
     }
     function cranePart(kind,style,x,y,scaleX,scaleY,angle) {
@@ -743,5 +746,9 @@
     resize();frameId=raf(tick);
     return {set:set,drop:drop,release:release,impact:impact,cancelDrop:cancelDrop,destroy:destroy};
   }
-  global.BloxxScene={mount:mount,segment:segment};
+  global.BloxxScene={mount:mount,segment:segment,
+    loadModels:function(ready){if(global.BloxxFloorMesh)ready();else script('assets/floor.js?v=20',ready);},
+    paintModel:function(ctx,x,y,scaleX,scaleY,style,kind,angle){
+      paintModel(ctx,x,y,scaleX,scaleY,asset(style,kind),angle);
+    }};
 }(window));

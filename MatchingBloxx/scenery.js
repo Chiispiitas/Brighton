@@ -76,10 +76,10 @@
     }
   }
 
-  function paintTown(ctx,width,height,rise,attract,ascent,foundation) {
+  function paintTown(ctx,width,height,rise,attract,ascent,foundation,scale) {
     // Keep the original composition in design units. Draw directly to the
     // display grid so a single scale serves both axes, even at odd sizes.
-    var scale=Math.max(1,width/430,height/330);
+    scale=scale || Math.max(1,width/430,height/330);
     var w=width/scale, h=height/scale;
     rise/=scale;
     if(foundation!==undefined)foundation/=scale;

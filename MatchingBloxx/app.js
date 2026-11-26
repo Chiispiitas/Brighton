@@ -2,7 +2,7 @@
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var game = $('game'), panel = $('panel'), feedback = $('feedback');
-  var state, session, practice, scene, timer, pollGeneration = 0, busy = false;
+  var state, session, practice, scene, presenterCity, timer, pollGeneration = 0, busy = false;
   var visualKey = '', panelKey = '', motionKey = '', motionStart = 0, lastFocus;
   var previousPhase, muted = read('mb-audio') === 'off', audioContext, buffers = {}, clips = {};
   var sounds = ['match', 'land', 'perfect', 'miss', 'finish', 'buzzer'];
@@ -147,6 +147,8 @@
     game.className = ('shell ' + name).trim();
     var lane=game.classList.contains('lane'), art=$('art'), desk=$('desk');
     document.body.classList.toggle('lane-active',lane);
+    document.body.classList.toggle('city-active',name==='board');
+    if(name!=='board' && presenterCity){presenterCity.destroy();presenterCity=null;}
     art.classList.toggle('screen-tile',lane);
     if(lane && desk.parentNode!==art)art.appendChild(desk);
     else if(!lane && desk.parentNode!==game)game.appendChild(desk);
@@ -441,11 +443,10 @@
     return '<div class="score-head"><span>Builder</span><span>Score</span></div><ol class="player-list">'+rows.map(line).join('')+'</ol>';
   }
   function hostScreenControls() {
-    return '<div class="row-buttons"><button id="copy-join" class="small-action" data-free>Copy join link</button><a class="small-action" id="presenter" href="'+esc(urlForScreen())+'" target="_blank" rel="noopener noreferrer">Open presenter screen</a><button id="copy-screen" class="text-btn" data-free>Copy presenter link</button></div>';
+    return '<div class="row-buttons room-actions"><button id="copy-join" class="small-action" data-free>Copy join link</button><a class="small-action" id="presenter" href="'+esc(urlForScreen())+'" target="_blank" rel="noopener noreferrer">Open presenter screen</a></div>';
   }
   function bindHost() {
     if ($('copy-join')) $('copy-join').onclick=function(){copyLink(joinLink(),'Join link');};
-    if ($('copy-screen')) $('copy-screen').onclick=function(){copyLink(urlForScreen(),'Presenter link');};
     if ($('start')) $('start').onclick=function(){perform('start',{});};
     if ($('finish')) $('finish').onclick=function(){
       modal('<h2 id="dialog-title">Finish the game?</h2><p class="sub">This closes every crane and records the current scores.</p><button id="confirm-finish" class="button">Finish game</button>','Keep playing');
@@ -453,17 +454,17 @@
     };
   }
   function room() {
-    setLayout('room'); setScene('room-attract',{mode:'attract',label:''}); footer('Classroom','Room '+state.code);
     var teacher=state.role==='host', lobby=state.phase==='lobby', players=state.players;
-    var html='<p class="eyebrow">'+(teacher?'Teacher controls':'Classroom')+'</p><h2>'+(lobby?'Room lobby':'Live scores')+'</h2>';
-    if(state.arcade)html+='<p class="sub">'+esc(modeLabel(state.arcade.mode))+' · '+esc(state.arcade.name)+'</p>';
+    setLayout(lobby?'room lobby':'room'); setScene('room-attract',{mode:'demo',showRoof:false}); footer('Classroom','Room '+state.code);
+    var html='<h2>'+(lobby?'Room lobby':'Live scores')+'</h2>';
+    if(state.arcade)html+='<p class="sub room-set">'+esc(modeLabel(state.arcade.mode))+' · '+esc(state.arcade.name)+'</p>';
     if (teacher) {
-      html+='<p class="sub">Students can join with this code.</p><div class="room-code">'+esc(state.code)+'</div>'+hostScreenControls();
+      html+='<div class="room-invite">'+qr(state.code)+'<div><span class="eyebrow">Room code</span><div class="room-code">'+esc(state.code)+'</div></div></div>'+hostScreenControls();
       if (lobby) html+='<button id="start" class="button primary"'+(!players.length?' data-disabled="true" disabled':'')+'>Start game</button>';
       else html+='<button id="finish" class="small-action">Finish game</button>';
     } else html+='<p class="sub">You’re in, '+esc(state.me.name)+'. Your teacher will start the game.</p>';
     html+='<div class="divider"></div><div class="row"><h3>Builders</h3><span class="tag">'+players.length+' / '+state.capacity+'</span></div>';
-    if(players.length) html+=lobby?'<ul class="player-list">'+players.map(function(p){return '<li class="person">'+esc(p.name)+'</li>';}).join('')+'</ul>':standings(players);
+    if(players.length) html+=lobby?'<ul class="room-roster">'+players.map(function(p){return '<li>'+esc(p.name)+'</li>';}).join('')+'</ul>':standings(players);
     else html+='<p class="sub">Waiting for the first builder…</p>';
     html+='<button id="leave" class="text-btn">Back to menu</button>';
     paintPanel(html,html);bindHost();$('leave').onclick=leave;
@@ -480,15 +481,17 @@
   function board() {
     setLayout('board');
     var finished=state.phase==='finished',lobby=state.phase==='lobby';
-    var html='<div class="board-top"><div><p class="eyebrow">Matching Bloxx</p><h2>'+(finished?'Final standings':lobby?'Classroom lobby':'Live scoreboard')+'</h2><p class="sub">'+state.players.length+' / 36 builders'+(lobby?' · Waiting for the teacher':' · 12 rounds')+'</p></div>';
-    if(!finished) html+='<div class="board-invite">'+qr(state.code)+'<div><span class="eyebrow">Room code</span><div class="room-code">'+state.code+'</div><small>'+esc(location.host+location.pathname)+'</small></div></div>';
-    html+='</div>';
-    if(!state.players.length) html+='<p class="sub">Scan the code to join.</p>';
-    html+='<div class="board-grid">'+state.players.map(function(p){
-      return '<div class="board-card'+(p.rank===1&&!lobby?' first':'')+'"><span class="rank">'+(lobby?'':p.rank)+'</span><span class="mini-tower" aria-hidden="true"><i style="height:'+Math.min(32,2+p.floors*2.5)+'px"></i></span><span class="person">'+esc(p.name)+'<small>'+p.floors+' floors · '+p.completed+'/12</small></span><strong class="points">'+p.score+'</strong></div>';
-    }).join('')+'</div>';
+    var html='<div class="city-header"><div class="city-title"><img src="assets/wordmark.png?v=20" alt="Matching Bloxx"><div><h1 id="city-title"></h1><p id="city-count"></p></div></div>';
+    html+='<div id="city-invite" class="board-invite">'+qr(state.code)+'<div><span class="eyebrow">Room code</span><div class="room-code">'+esc(state.code)+'</div></div></div>';
     if(document.documentElement.requestFullscreen || document.documentElement.webkitRequestFullscreen) html+='<button id="full" class="small-action" data-free>Full screen</button>';
-    paintPanel(html,html);
+    html+='</div><section id="present-city" class="present-city" aria-label="Classroom city"></section>';
+    if(presenterCity && panelKey!=='presenter-'+state.code){presenterCity.destroy();presenterCity=null;}
+    paintPanel('presenter-'+state.code,html);
+    if(!presenterCity)presenterCity=BloxxPresenter.mount($('present-city'));
+    $('city-title').textContent=finished?'Final standings':lobby?'Classroom lobby':'Live city';
+    $('city-count').textContent=state.players.length+' / '+state.capacity+' builders'+(lobby?' · Waiting to start':'');
+    $('city-invite').hidden=!lobby;
+    presenterCity.update(state);
     if($('full')) $('full').onclick=function(){
       var doc=document.documentElement;
       if(document.fullscreenElement || document.webkitFullscreenElement) (document.exitFullscreen || document.webkitExitFullscreen).call(document);
