@@ -111,3 +111,53 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 .balance{margin:0 0 13px;color:#405a61;font-size:.92rem}
 .balance-track{position:relative;height:9px;margin-top:5px;border-radius:3px;background:#e9ab71;background:linear-gradient(90deg,#d8906b,#ffd688 25%,#a6c6a2 40%,#a6c6a2 60%,#ffd688 75%,#d8906b)}
 .balance-track i{position:absolute;width:4px;height:15px;top:-3px;background:#173745;border-radius:1px;transform:translateX(-50%)}
+
+.dialog select,.dialog textarea{
+  display:block;width:100%;padding:9px 10px;border:2px solid #85928b;border-radius:5px;
+  color:#173745;background:#fffdf2;font:inherit
+}
+.dialog textarea{min-height:100px;resize:vertical;line-height:1.4}
+.dialog .pool-hint{margin:4px 0 8px;font-size:.9rem}
+.dialog #save-pool{margin-top:14px}
+.dialog #close-dialog{margin-top:9px}
+.dialog .text-btn{margin:3px 12px 0 0}
+.pool-columns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.shell.arcade{display:block;max-width:1040px;margin-top:19px}
+.arcade .art-frame{min-height:0}
+.arcade .scene{height:450px;height:clamp(325px,55vh,490px)}
+.arcade .desk{margin-top:11px;padding:13px 18px 8px}
+.arcade-hud{
+  position:absolute;right:10px;top:9px;z-index:2;display:flex;gap:8px;pointer-events:none;
+  color:#fff2c3;font-size:.8rem
+}
+.arcade-hud span{background:#263d55;box-shadow:0 2px #152737;border:1px solid #65788a;border-radius:3px;padding:4px 8px}
+.arcade-hud b{font-size:1.07rem;font-variant-numeric:tabular-nums;color:#ffdc83}
+.arcade-title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.arcade-title h2{font-size:1.35rem}
+.drop-note{color:#344e59;background:#efe3c2;border-left:3px solid #b19355;padding:4px 7px;font-size:.9rem}
+.drop-note.perfect{color:#72500d;background:#ffe89d;border-color:#cb992d}
+.arcade-choices{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.arcade-choices .choice{text-transform:none;min-height:46px;overflow-wrap:anywhere;word-break:break-word}
+.arcade-choices .choice[aria-pressed=true]{background:#f9c45a;outline:2px solid #0e647f;outline-offset:2px}
+.arcade-dropbar{display:flex;align-items:flex-end;gap:8px;margin-top:7px}
+.arcade-dropbar>div{flex:1;min-width:86px}
+.arcade-dropbar button{width:auto;min-width:112px}
+.arcade-dropbar button.skip{background:#e5e4d4}
+.arcade-dropbar .balance{margin:0 4px 3px 0}
+.word-on-crane{font-size:1.05rem;font-weight:700;color:#27495a;margin:4px 0 9px}
+.arcade-controls .row-buttons{margin:5px 0 0}
+.arcade-controls .text-btn{font-size:.87rem}
+
+@media(max-width:660px){
+  .shell.arcade{max-width:520px;margin-top:8px}
+  .arcade .scene{height:265px;height:clamp(240px,40vh,350px)}
+  .arcade .desk{padding:9px 10px 5px;margin-top:8px}
+  .arcade-title{margin-bottom:6px;gap:4px}
+  .arcade-title h2{font-size:1.12rem}
+  .drop-note{font-size:.78rem}
+  .arcade-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .arcade .arcade-choices .choice{min-height:42px;font-size:.93rem}
+  .arcade-dropbar button{min-width:0;padding:8px;font-size:.88rem}
+  .arcade-dropbar .balance{font-size:.76rem}
+}

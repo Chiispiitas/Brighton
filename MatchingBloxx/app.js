@@ -10,6 +10,8 @@
   var codeFromLink = ((location.search.match(/[?&]room=(\d{6})(?:&|$)/) || [])[1]) || '';
   var screenKey = ((location.hash.match(/^#screen=([0-9a-f]{64})$/) || [])[1]) || '';
   var invite = null, retryPayload = null, retrySession = null;
+  var arcadeChoice=-1, arcadeRound='', activePractice=null, roomSetup=null;
+  var poolKey='mb-word-sets-v1';
   function read(key) { try { return localStorage.getItem(key); } catch (_) { return null; } }
   function save(key, value) { try { if (value === null) localStorage.removeItem(key); else localStorage.setItem(key, value); } catch (_) {} }
   function savedRoom(key) {
@@ -90,6 +92,7 @@
   function modal(html, closer) {
     lastFocus = document.activeElement; $('dialog-body').innerHTML = html;
     $('close-dialog').textContent = closer || 'Back to game'; $('overlay').hidden = false;
+    $('close-dialog').onclick=closeModal;
     $('close-dialog').focus();
   }
   function closeModal() { $('overlay').hidden = true; if (lastFocus && lastFocus.focus && document.body.contains(lastFocus)) lastFocus.focus(); }
@@ -97,24 +100,29 @@
   $('overlay').onclick = function (e) { if (e.target === $('overlay')) closeModal(); };
   $('help').onclick = function () {
     modal('<h2 id="dialog-title">How to play</h2><ol class="steps">' +
-      '<li><b>1</b><span>Read the words on the floor. Choose the verb that goes with them, like <strong>make progress</strong>.</span></li>' +
-      '<li><b>2</b><span>Tap <strong>Drop floor</strong> or press Space. If the tower leans, aim slightly to the opposite side to balance it. Too much lean topples the floors above the weak point.</span></li>' +
-      '<li><b>3</b><span>A match earns 100 points. Land close to the center for up to 100 more. Two perfect drops in a row earn a slower crane.</span></li></ol>' +
-      '<p class="sub">In a classroom game, you can spend that same bonus on a gust at another tower. Their next crane swings faster for one drop.</p>');
+      '<li><b>1</b><span><strong>Matching</strong> starts you with a free floor. Load one of four answers onto the crane. Use the block labels or keys 1–4.</span></li>' +
+      '<li><b>2</b><span><strong>Right / Wrong</strong> sends words to the crane one at a time. Skip the wrong ones. Dropping a wrong block takes down up to five floors.</span></li>' +
+      '<li><b>3</b><span>Tap <strong>Drop floor</strong> or press Space. The block keeps moving sideways after release. Aim against the lean to steady your tower.</span></li></ol>' +
+      '<p class="sub">Solo play is endless. A classroom game gives each builder 12 turns.</p>');
   };
   document.addEventListener('keydown', function (e) {
     if (!$('overlay').hidden) {
       if (e.key === 'Escape' || e.keyCode === 27) closeModal();
       if (e.key === 'Tab' || e.keyCode === 9) {
-        var items = $('overlay').querySelectorAll('button,input,a[href]');
+        var items = $('overlay').querySelectorAll('button,input,textarea,select,a[href]');
         if (e.shiftKey && document.activeElement === items[0]) { e.preventDefault();items[items.length-1].focus(); }
         else if (!e.shiftKey && document.activeElement === items[items.length-1]) { e.preventDefault();items[0].focus(); }
       }
       return;
     }
+    if(state && state.arcade && state.phase==='playing' && state.me && state.me.stage==='drop' && /^[1-4]$/.test(e.key) &&
+        state.arcade.mode==='match' && !/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) {
+      e.preventDefault(); if(!busy) chooseArcade(Number(e.key)-1); return;
+    }
     if ((e.code === 'Space' || e.keyCode === 32) && state && state.phase === 'playing' && state.me && state.me.stage === 'drop' &&
-        !/^(INPUT|TEXTAREA|SELECT|A)$/.test(e.target.tagName) && (e.target.tagName !== 'BUTTON' || e.target.id === 'drop')) {
-      e.preventDefault(); if (!e.repeat) drop();
+        !/^(INPUT|TEXTAREA|SELECT|A)$/.test(e.target.tagName) &&
+        (e.target.tagName !== 'BUTTON' || e.target.id === 'drop' || e.target.hasAttribute('data-block'))) {
+      e.preventDefault(); if (!e.repeat) {if(state.arcade) arcadeDrop(); else drop();}
     }
   });
 
@@ -134,9 +142,10 @@
     game.className = ('shell ' + name).trim();
     if (name === 'board' && scene) { scene.destroy(); scene = null; visualKey = ''; }
     $('crane-label').hidden = true;
+    $('arcade-hud').hidden = name!=='stage arcade';
   }
   function home() {
-    setLayout(''); setScene('attract',{mode:'attract',label:''}); footer('English collocations','12 rounds');
+    setLayout(''); setScene('attract',{mode:'attract',label:'',showRoof:false}); footer('Matching · Right / Wrong','Solo or class');
     var paused = savedRoom('mb-paused');
     var resume = paused && paused.expires > Date.now() && (!codeFromLink || codeFromLink === paused.room.code) ?
       '<button class="text-btn" id="resume">Resume room '+esc(paused.room.code)+'</button>' : '';
@@ -144,16 +153,124 @@
       '<form id="join-form"><label for="name">Your name</label><input id="name" type="text" maxlength="24" autocomplete="nickname" placeholder="First name" required value="'+esc(read('mb-name') || '')+'">' +
       '<label for="code">Room code</label><input id="code" class="code" type="text" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" title="Six digits" required value="'+esc(codeFromLink)+'">' +
       '<button class="button primary" type="submit">Join room</button></form><div class="divider"></div><div class="menu-tiles">' +
-      '<button id="solo" class="menu-tile"><img src="assets/solo.png" alt="">Play solo</button><button id="host" class="menu-tile"><img src="assets/classroom.png" alt="">Host a class</button></div>'+resume);
+      '<button id="solo" class="menu-tile"><img src="assets/solo.png" alt="">Play solo</button><button id="host" class="menu-tile"><img src="assets/classroom.png" alt="">Host a class</button></div>'+
+      '<button type="button" id="word-sets" class="text-btn">Word sets</button>'+resume);
     if ($('resume')) $('resume').onclick = function () { restore(paused.room); };
     $('join-form').onsubmit = function (e) {e.preventDefault(); enter('join');};
     $('solo').onclick = function () {
       if (busy) return;
-      invite = null; retryPayload = null; retrySession = null;
-      practice = MatchingBloxxRules.practice($('name').value.trim() || 'You');
-      session = null; status(''); cue('match'); receive(practice.view());
+      openSetup(false);
     };
-    $('host').onclick = function () { enter('create'); };
+    $('host').onclick = function () { if(!busy)openSetup(true); };
+    $('word-sets').onclick = function () { if(!busy)openLibrary(); };
+  }
+  function modeLabel(mode) { return mode==='match'?'Matching':'Right / Wrong'; }
+  function modeOptions(mode) {
+    return '<option value="match"'+(mode==='match'?' selected':'')+'>Matching</option>'+
+      '<option value="rightwrong"'+(mode==='rightwrong'?' selected':'')+'>Right / Wrong</option>';
+  }
+  function library() {
+    var sets=savedRoom(poolKey);
+    return Array.isArray(sets)?sets:[];
+  }
+  function optionsFor(mode, selected) {
+    var game=BloxxArcade.config(mode);
+    return '<option value="default">'+esc(game.set.name)+' (built in)</option>'+
+      library().filter(function(entry){return entry.mode===mode;}).map(function(entry){
+        return '<option value="'+esc(entry.id)+'"'+(entry.id===selected?' selected':'')+'>'+esc(entry.set.name)+'</option>';
+      }).join('');
+  }
+  function loadPool(mode, id) {
+    var saved=library().filter(function(entry){return entry.id===id && entry.mode===mode;})[0];
+    return BloxxArcade.config(mode,saved?saved.set:null);
+  }
+  function openSetup(hosting, preferredMode, initialSet) {
+    var mode=preferredMode || read('mb-preferred-mode') || 'match';
+    if(mode!=='rightwrong')mode='match';
+    modal('<h2 id="dialog-title">'+(hosting?'Host a class':'Play solo')+'</h2>'+
+      '<label for="setup-mode">Game mode</label><select id="setup-mode">'+modeOptions(mode)+'</select>'+
+      '<label for="setup-set">Word set</label><select id="setup-set">'+optionsFor(mode,initialSet)+'</select>'+
+      '<p class="sub">'+(hosting?'12 turns per builder.':'Build as high as you can. Finish the run when you’re ready.')+'</p>'+
+      '<button id="launch-arcade" class="button yellow">'+(hosting?'Create room':'Start building')+'</button>'+
+      '<button id="edit-pool" class="text-btn">Edit word sets</button>','Cancel');
+    $('setup-mode').onchange=function(){mode=this.value;$('setup-set').innerHTML=optionsFor(mode);};
+    $('edit-pool').onclick=function(){openLibrary(mode,$('setup-set').value,hosting);};
+    $('launch-arcade').onclick=function(){
+      try {
+        var selected=loadPool(mode,$('setup-set').value);
+        save('mb-preferred-mode',mode);
+        closeModal();
+        invite=null;
+        if(hosting) {roomSetup=selected;enter('create');}
+        else {
+          retryPayload=null;retrySession=null;session=null;
+          activePractice=selected;
+          arcadeRound='';
+          practice=BloxxArcade.practice(selected,$('name').value.trim() || 'You');
+          status('');cue('match');receive(practice.view());
+        }
+      } catch(error){status(error.message);}
+    };
+  }
+  function openLibrary(mode, id, hosting) {
+    mode=mode==='rightwrong'?'rightwrong':'match';
+    id=id || 'default';
+    modal('<h2 id="dialog-title">Word sets</h2><label for="pool-mode">Game mode</label>'+
+      '<select id="pool-mode">'+modeOptions(mode)+'</select><label for="pool-set">Saved sets</label>'+
+      '<select id="pool-set">'+optionsFor(mode,id)+'</select><div id="pool-fields"></div>'+
+      '<p id="pool-error" class="feedback" role="status" hidden></p>'+
+      '<button id="save-pool" class="button yellow">Save word set</button>'+
+      '<button id="new-pool" class="text-btn">New set</button>'+
+      '<button id="copy-pool" class="text-btn">Save a copy</button>',typeof hosting==='boolean'?'Back to setup':'Back to menu');
+    function fields(blank) {
+      var data=loadPool(mode,id).set;
+      var type=mode==='match';
+      var body='<label for="pool-name">Set name</label><input type="text" id="pool-name" maxlength="40" value="'+esc(blank?'':data.name)+'">';
+      if(type) {
+        body+='<label for="pool-rows">Matches</label><p class="sub pool-hint">One match per line. Use <strong>prompt | answer</strong>. You can also add three choices after the answer.</p>'+
+          '<textarea id="pool-rows" rows="7" placeholder="a lecture | attend | get | make | give">'+
+          esc(blank?'':data.rows.map(function(row){return row.join(' | ');}).join('\n'))+'</textarea>';
+      } else {
+        body+='<label for="pool-instruction">Rule shown to players</label><input type="text" id="pool-instruction" maxlength="80" value="'+esc(blank?'':data.instruction)+'">'+
+          '<div class="pool-columns"><div><label for="pool-right">Right blocks</label><textarea id="pool-right" rows="6" placeholder="One entry per line">'+
+          esc(blank?'':data.right.join('\n'))+'</textarea></div><div><label for="pool-wrong">Wrong blocks</label><textarea id="pool-wrong" rows="6" placeholder="One entry per line">'+
+          esc(blank?'':data.wrong.join('\n'))+'</textarea></div></div>';
+      }
+      $('pool-fields').innerHTML=body;
+      $('pool-error').hidden=true;
+    }
+    function lines(value) {return value.split(/\r?\n/).map(function(line){return line.trim();}).filter(Boolean);}
+    function savePool(copy) {
+      try {
+        var values={name:$('pool-name').value};
+        if(mode==='match') values.rows=lines($('pool-rows').value).map(function(row){return row.split('|');});
+        else {values.instruction=$('pool-instruction').value;values.right=lines($('pool-right').value);values.wrong=lines($('pool-wrong').value);}
+        var config=BloxxArcade.config(mode,values);
+        var sets=library();
+        if(copy || id==='default'){
+          if(sets.length>=30)throw Error('This browser can store up to 30 sets.');
+          id=Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+          sets.push({id:id,mode:mode,set:config.set});
+        } else sets=sets.map(function(entry){return entry.id===id?{id:id,mode:mode,set:config.set}:entry;});
+        localStorage.setItem(poolKey,JSON.stringify(sets));
+        $('pool-set').innerHTML=optionsFor(mode,id);
+        $('pool-error').textContent='Saved in this browser.';
+        $('pool-error').hidden=false;
+      } catch(error) {
+        $('pool-error').textContent=error.message||'This browser could not save the set.';
+        $('pool-error').hidden=false;
+      }
+    }
+    $('pool-mode').onchange=function(){mode=this.value;id='default';$('pool-set').innerHTML=optionsFor(mode);fields(false);};
+    $('pool-set').onchange=function(){id=this.value;fields(false);};
+    $('new-pool').onclick=function(){id='default';$('pool-set').value='default';fields(true);$('pool-name').focus();};
+    $('save-pool').onclick=function(){savePool(false);};
+    $('copy-pool').onclick=function(){savePool(true);};
+    if(typeof hosting==='boolean') {
+      $('close-dialog').onclick=function(){closeModal();openSetup(hosting,mode,id);};
+    }
+    fields(false);
+    $('pool-mode').focus();
   }
   function request(data, cb) {
     var xhr = new XMLHttpRequest(), finished = false;
@@ -185,7 +302,7 @@
       if (name) save('mb-name',name);
       if (!invite || invite.type !== type || (type === 'join' && (invite.code !== code || invite.name !== name))) {
         invite = {type:type,code:type === 'create' ? newCode() : code,token:token(),name:name,requestId:token()};
-        if (type === 'create') invite.presenterToken = token();
+        if (type === 'create') {invite.presenterToken = token();invite.setup=roomSetup;}
         else {
           var seat = savedRoom('mb-seat-' + code);
           if (seat && seat.expires > Date.now()) invite.token = seat.token;
@@ -273,6 +390,7 @@
     }
     try { history.replaceState(null,'',location.pathname); } catch (_) {}
     state=null;session=null;practice=null;invite=null;retryPayload=null;retrySession=null;
+    arcadeRound='';activePractice=null;roomSetup=null;
     screenKey='';codeFromLink='';motionKey='';previousPhase=null;visualKey='';panelKey='';
     setBusy(false);status('');home();
   }
@@ -308,6 +426,7 @@
     setLayout('room'); setScene('room-attract',{mode:'attract',label:''}); footer('Classroom','Room '+state.code);
     var teacher=state.role==='host', lobby=state.phase==='lobby', players=state.players;
     var html='<p class="eyebrow">'+(teacher?'Teacher controls':'Classroom')+'</p><h2>'+(lobby?'Room lobby':'Live scores')+'</h2>';
+    if(state.arcade)html+='<p class="sub">'+esc(modeLabel(state.arcade.mode))+' · '+esc(state.arcade.name)+'</p>';
     if (teacher) {
       html+='<p class="sub">Students can join with this code.</p><div class="room-code">'+esc(state.code)+'</div>'+hostScreenControls();
       if (lobby) html+='<button id="start" class="button primary"'+(!players.length?' data-disabled="true" disabled':'')+'>Start game</button>';
@@ -434,6 +553,117 @@
     return '<div class="balance"><div class="row"><strong>Balance</strong><span>'+label+'</span></div>'+
       '<div class="balance-track" aria-hidden="true"><i style="left:'+position+'%"></i></div></div>';
   }
+  function arcadeOutcome(last) {
+    if(!last)return '';
+    var words={
+      perfect:'★ Perfect drop',
+      landed:'Floor landed',
+      miss:last.fallen>1?'Tower tumbled':last.fallen?'Floor tipped off':'Missed the tower',
+      wrong:'Wrong block',
+      passed:'Wrong block skipped',
+      'passed-right':'A right block was skipped'
+    };
+    var extra=last.lost?' · '+last.lost+(last.lost===1?' floor fell':' floors fell'):
+      last.correction?' · '+last.correction:last.points?' · +'+last.points:'';
+    return '<span class="drop-note '+(last.kind==='perfect'?'perfect':'')+'">'+esc(words[last.kind]+extra)+'</span>';
+  }
+  function chooseArcade(index) {
+    if(busy || !state.me.choices[index])return;
+    arcadeChoice=index;
+    arcadePlayer();
+    var choice=panel.querySelector('[data-block="'+index+'"]');
+    if(choice)choice.focus();
+  }
+  function arcadeDrop() {
+    if(busy || !state || !state.me.motion || arcadeChoice<0)return;
+    var me=state.me;
+    var elapsed=Math.max(0,Math.round(now()-motionStart));
+    var path=BloxxArcade.flight(me.motion,elapsed);
+    if(scene)scene.release(path);
+    perform('arcadeDrop',{round:me.round,choice:arcadeChoice,elapsedMs:elapsed},function(error,data){
+      if(error){if(scene)scene.cancelDrop();return;}
+      function complete() {
+        setBusy(false);
+        receive(data);
+        schedule();
+      }
+      function contact() {
+        var last=data.me.last;
+        cue(last.kind==='perfect'?'perfect':last.kind==='landed'?'land':'miss');
+      }
+      if(scene){setBusy(true);scene.impact(data.me.last,complete,contact);}
+      else {contact();complete();}
+    });
+  }
+  function arcadePlayer() {
+    var me=state.me;
+    var matching=state.arcade.mode==='match';
+    var done=state.phase==='finished' || me.stage==='done';
+    var round=state.code+'-'+me.round;
+    if(arcadeRound!==round) {
+      arcadeRound=round;
+      arcadeChoice=matching?-1:0;
+      motionStart=now();
+    }
+    var activeLabel=arcadeChoice>=0?me.choices[arcadeChoice]:'?';
+    var target=matching?me.prompt:'';
+    setLayout('stage arcade');
+    setScene('arcade-'+round+'-'+arcadeChoice+'-'+done,{mode:'build',arcade:true,floors:me.placements,balance:me.balance,
+      showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:arcadeChoice,getOffset:null,
+      getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
+    $('arcade-hud').innerHTML='<span><b>'+me.score+'</b> points</span><span><b>'+me.floors+'</b> '+(me.floors===1?'floor':'floors')+'</span>';
+    footer(modeLabel(state.arcade.mode),done?'Game over':state.total?'Turn '+me.round+' / '+state.total:'Turn '+me.round);
+    var html='<div class="arcade-controls">';
+    if(done) {
+      html+='<div class="row"><h2>'+(practice?'Tower complete':state.phase==='finished'?'Final standings':'Tower complete')+'</h2></div>';
+      if(!practice)html+=standings(state.players);
+      html+=arcadeOutcome(me.last)+'<div class="row-buttons"><button id="again" class="small-action">'+(practice?'Build again':'Back to menu')+'</button>';
+      if(practice)html+='<button id="leave" class="text-btn">Back to menu</button>';
+      html+='</div>';
+    } else {
+      html+='<div class="arcade-title"><h2>'+(matching?'<span class="blank">___</span> '+esc(me.prompt):
+        esc(state.arcade.instruction))+'</h2>'+arcadeOutcome(me.last)+'</div>';
+      if(matching)html+='<div class="arcade-choices" aria-label="Choose a block">'+me.choices.map(function(word,i){
+        return '<button type="button" class="choice" data-block="'+i+'" aria-pressed="'+(arcadeChoice===i)+'">'+esc(word)+'</button>';
+      }).join('')+'</div>';
+      else html+='<p class="word-on-crane">'+esc(me.prompt)+'</p>';
+      var off=arcadeChoice<0?' data-disabled="true" disabled':'';
+      html+='<div class="arcade-dropbar"><div>'+balanceMeter(me.balance)+'</div>'+
+        '<button class="button yellow" id="drop"'+off+'>Drop floor</button>'+
+        (matching?'':'<button class="button skip" id="skip">Skip block</button>')+'</div>';
+      if(me.motion && me.motion.gust)html+='<p class="wind-note">Gust · faster swing</p>';
+      if(me.motion && me.motion.assisted)html+='<p class="wind-note">Steady Crane · slower swing</p>';
+      var targets=state.players.filter(function(p){return p.id!==me.id && p.canReceiveGust;});
+      html+='<div class="row-buttons">'+(me.steady?(me.steadyArmed?'<span class="pill">Steady Crane ready for the next block</span>':
+        '<button id="arcade-steady" class="small-action">Slow next swing</button>'+
+        (targets.length?'<button id="arcade-gust" class="small-action">Send a gust</button>':'')):'')+
+        '<button id="leave" class="text-btn">'+(practice?'Finish run':'Back to menu')+'</button></div>';
+    }
+    html+='</div>';
+    paintPanel(html,html);
+    var buttons=panel.querySelectorAll('[data-block]');
+    for(var i=0;i<buttons.length;i++)buttons[i].onclick=function(){chooseArcade(Number(this.getAttribute('data-block')));};
+    if($('drop'))$('drop').onclick=arcadeDrop;
+    if($('skip'))$('skip').onclick=function(){perform('arcadePass',{round:me.round});};
+    if($('arcade-steady'))$('arcade-steady').onclick=function(){perform('steady',{round:me.round});};
+    if($('arcade-gust'))$('arcade-gust').onclick=function(){
+      modal('<h2 id="dialog-title">Send a gust</h2><label for="arcade-rival">Builder</label><select id="arcade-rival">'+targets.map(function(p){
+        return '<option value="'+esc(p.id)+'">'+esc(p.name)+'</option>';
+      }).join('')+'</select><button class="button primary" id="arcade-send">Send gust</button>','Cancel');
+      $('arcade-send').onclick=function(){
+        var target=$('arcade-rival').value;
+        closeModal();perform('gust',{round:me.round,targetId:target});
+      };
+    };
+    if($('again'))$('again').onclick=function(){
+      if(!practice){reset();return;}
+      arcadeRound='';
+      practice=BloxxArcade.practice(activePractice,me.name);
+      previousPhase=null;
+      receive(practice.view());
+    };
+    if($('leave'))$('leave').onclick=done?reset:practice?function(){perform('finish',{});}:leave;
+  }
   function finalScreen() {
     setLayout('stage');var me=state.me;
     setScene('end-'+(me?me.placements.join(','):''),me?{mode:'build',floors:me.placements,showCrane:false,label:''}:{mode:'attract',label:''});
@@ -453,6 +683,7 @@
   function render() {
     if(!state){home();return;}
     if(state.role==='presenter')board();
+    else if(state.arcade && state.me && state.phase!=='lobby')arcadePlayer();
     else if(state.phase==='finished')finalScreen();
     else if(state.phase==='lobby'||state.role==='host')room();
     else player();

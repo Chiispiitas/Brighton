@@ -9,7 +9,8 @@ const COLLECTION = 'MatchingBloxxStates';
 const ROOM = 'room';
 const origins = new Set(['https://exams.bebrighton.net', 'http://localhost:4177', 'http://127.0.0.1:4177']);
 const sharedActions = new Set(['join', 'start', 'finish']);
-const playerActions = new Set(['answer', 'drop', 'steady', 'gust', 'next']);
+const playerActions = new Set(['answer', 'drop', 'steady', 'gust', 'next', 'arcadeDrop', 'arcadePass']);
+const MAX_REQUEST_LENGTH = 24576;
 const insert = auth.elevate(items.insert);
 const query = auth.elevate(items.query);
 const remove = auth.elevate(items.bulkRemove);
@@ -106,9 +107,9 @@ async function pruneExpired() {
     await cleanup(expired.items.map(row => row._id!));
   } catch { /* A failed sweep is retried when another room opens. */ }
 }
-async function create(code: string, actor: string, presenter: string) {
+async function create(code: string, actor: string, presenter: string, setup: unknown) {
   if (actor === presenter) throw new GameError('The presenter needs a separate key.', 400);
-  const room = createRoom(code, actor, presenter, Date.now(), crypto.getRandomValues(new Uint32Array(1))[0]);
+  const room = createRoom(code, actor, presenter, Date.now(), crypto.getRandomValues(new Uint32Array(1))[0], setup);
   const generation = crypto.getRandomValues(new Uint32Array(1))[0].toString(16);
   const row = makeRow(code, ROOM, 0, { generation, value: room, together: true }, room.expiresAt);
   try { await insert(COLLECTION, row); }
@@ -228,16 +229,16 @@ export const POST: APIRoute = async ({ request }) => {
   try {
     const origin = request.headers.get('Origin');
     if (origin && !origins.has(origin) && origin !== new URL(request.url).origin) throw new GameError('Origin not allowed.', 403);
-    if (Number(request.headers.get('Content-Length') || 0) > 8192) throw new GameError('Request too large.', 413);
+    if (Number(request.headers.get('Content-Length') || 0) > MAX_REQUEST_LENGTH) throw new GameError('Request too large.', 413);
     const text = await request.text();
-    if (text.length > 8192) throw new GameError('Request too large.', 413);
+    if (text.length > MAX_REQUEST_LENGTH) throw new GameError('Request too large.', 413);
     let input: any;
     try { input = JSON.parse(text); } catch { throw new GameError('Invalid request.', 400); }
     if (!input || typeof input.type !== 'string') throw new GameError('Invalid request.', 400);
     const code = String(input.code || '');
     if (!/^\d{6}$/.test(code)) throw new GameError('Enter a six-digit room code.', 400);
     const actor = await digest(input.token);
-    if (input.type === 'create') return send(await create(code, actor, await digest(input.presenterToken)));
+    if (input.type === 'create') return send(await create(code, actor, await digest(input.presenterToken), input.setup));
     if (input.type === 'state') return send(view(unpack(await rowsFor(code, false), code).room, actor));
     return send(await mutate(code, actor, input));
   } catch (error) {

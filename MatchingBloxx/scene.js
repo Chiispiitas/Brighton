@@ -38,7 +38,7 @@
     var b=clamp(Math.round((val&255)*n),0,255);
     return '#' + (16777216 + r*65536 + g*256 + b).toString(16).slice(1);
   }
-  function meshData(style, isBase) {
+  function meshData(style, kind) {
     var faces = [], p = palettes[style];
     function polygon(pts, color) { faces.push({pts:pts,c:color}); }
     function box(x,y,z,w,h,d,front,top,right) {
@@ -49,10 +49,19 @@
       polygon([[a,y,e],[a,y,f],[a,c,f],[a,c,e]],tone(front,0.78));
       polygon([[a,y,e],[b,y,e],[b,y,f],[a,y,f]],tone(front,0.6));
     }
-    if (isBase) {
+    if (kind===true) {
       box(0,-0.079,0,1.26,0.052,0.72,'#52606a','#9a9786','#384c5c');
       box(0,-0.029,0,1.14,0.029,0.62,'#879393','#e4dcb7','#667782');
       for(var stripe=-2;stripe<=2;stripe++) box(stripe*.21,-.058,.361,.07,.018,.001,'#efbf60');
+      return faces;
+    }
+    if (kind==='roof') {
+      box(0,.008,0,1.035,.055,.77,'#e7a750','#ffe29a','#aa663e');
+      box(0,.063,0,.91,.10,.66,'#354e6c','#7794ad','#27394f');
+      box(-.13,.163,0,.50,.145,.40,'#668199','#a2b8bd','#3b536d');
+      box(-.13,.308,0,.55,.034,.44,'#f4bc66','#ffe7aa','#b78052');
+      box(.28,.163,-.07,.045,.34,.045,'#485e74','#eff0d3','#2c4054');
+      box(.28,.465,-.07,.10,.045,.09,'#ed875a','#ffd38d','#ad4b3d');
       return faces;
     }
     var generated=global.BloxxFloorMesh;
@@ -94,15 +103,24 @@
       box(edge*.447,.067,halfDepth+.003,.031,.331,.004,tone(p[1],1.05));
       for(var k=0;k<3;k++) box(edge*.44,.099+k*.104,halfDepth+.006,.058,.022,.004,p[2]);
     }
+    if(kind==='entry') {
+      box(0,.020,.263,.35,.296,.012,'#233e56','#fff0a9','#172635');
+      box(0,.037,.273,.26,.236,.007,'#526e85','#a8d9d6','#273a4a');
+      box(0,.039,.279,.016,.233,.003,'#d8ad6c','#e7c998','#5f503a');
+      box(0,.005,.269,.39,.042,.071,'#d8a76a','#f6cc85','#9f6f4c');
+    }
+    if(kind==='cube'||kind==='entry') {
+      faces.forEach(function(face){face.pts=face.pts.map(function(pt){return [pt[0],pt[1]*1.72,pt[2]*1.42];});});
+    }
     return faces;
   }
 
-  function asset(style, isBase) {
-    var key=(isBase?'b':'f')+style+(global.BloxxFloorMesh?'m':'p');
+  function asset(style, kind) {
+    var key=(kind||'floor')+'-'+style+(global.BloxxFloorMesh?'m':'p');
     if (art[key]) return art[key];
-    var faces=meshData(style,isBase);
-    var sprite=document.createElement('canvas'), scale=235;
-    sprite.width=352; sprite.height=165;
+    var faces=meshData(style,kind);
+    var sprite=document.createElement('canvas'), scale=190, centerY=190;
+    sprite.width=352; sprite.height=220;
     var ctx=sprite.getContext('2d');
     if(ctx) {
       // Bake the actual mesh to a tiny reusable sprite with a depth buffer.
@@ -111,9 +129,9 @@
       var depth=new Float32Array(sprite.width*sprite.height);
       for(var k=0;k<depth.length;k++) depth[k]=-100;
       function raster(a,b,c,col){
-        var ax=176+a[0]*scale,ay=136-a[1]*scale;
-        var bx=176+b[0]*scale,by=136-b[1]*scale;
-        var cx=176+c[0]*scale,cy=136-c[1]*scale;
+        var ax=176+a[0]*scale,ay=centerY-a[1]*scale;
+        var bx=176+b[0]*scale,by=centerY-b[1]*scale;
+        var cx=176+c[0]*scale,cy=centerY-c[1]*scale;
         var area=(by-cy)*(ax-cx)+(cx-bx)*(ay-cy);
         if(area>=-0.00001)return;
         var minX=Math.max(0,Math.floor(Math.min(ax,bx,cx)));
@@ -139,12 +157,12 @@
       }
       ctx.putImageData(pixels,0,0);
     }
-    art[key]={key:key,faces:faces,sprite:sprite,scale:scale};
+    art[key]={key:key,faces:faces,sprite:sprite,scale:scale,centerY:centerY};
     return art[key];
   }
 
   // Orthographic painted city layers. Pixel art stays at its own resolution.
-  function paintTown(ctx,w,h,rise,attract) {
+  function paintTown(ctx,w,h,rise,attract,ascent) {
     function rect(x,y,width,height,col) {
       ctx.fillStyle=col;ctx.fillRect(Math.round(x),Math.round(y),Math.round(width),Math.round(height));
     }
@@ -154,6 +172,26 @@
       ctx.closePath();ctx.fillStyle=color;ctx.fill();
     }
     function random(i) { var n=Math.sin(i*127.1+311.7)*43758.5453; return n-Math.floor(n); }
+    if(ascent>=8){
+      var space=ctx.createLinearGradient(0,0,0,h);
+      var twilight=ascent<15;
+      space.addColorStop(0,twilight?'#162953':'#101631');
+      space.addColorStop(1,twilight?'#667aaf':'#263354');
+      ctx.fillStyle=space;ctx.fillRect(0,0,w,h);
+      for(var s=0;s<58;s++){
+        var size=s%8===0?2:1;
+        rect(random(s+470)*w,random(s+721)*h,size,size,s%3===0?'#ffdc99':'#a8c5e6');
+      }
+      if(ascent>=19){
+        var mx=Math.round(w*.78),my=Math.round(h*.27),radius=Math.max(8,Math.round(h*.115));
+        ctx.beginPath();ctx.arc(mx,my,radius,0,Math.PI*2);ctx.fillStyle='#ead7aa';ctx.fill();
+        for(s=0;s<7;s++){
+          ctx.beginPath();ctx.arc(mx+(random(s+4)-.5)*radius,my+(random(s+139)-.5)*radius,1+s%4,0,Math.PI*2);
+          ctx.fillStyle='#c9bb9f';ctx.fill();
+        }
+      }
+      return;
+    }
     var sky=ctx.createLinearGradient(0,0,0,h);
     sky.addColorStop(0,'#70b9d3');sky.addColorStop(.46,'#b1dedb');sky.addColorStop(.74,'#f5d599');sky.addColorStop(1,'#ebaa71');
     ctx.fillStyle=sky;ctx.fillRect(0,0,w,h);
@@ -250,6 +288,7 @@
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='', backdrop=document.createElement('canvas');
     var paint=backdrop.getContext('2d'), T=null, renderer=null, world=null, camera=null, material=null, groups=[], geometry={};
     var resizeObserver=null, near=true, visibility=null, count=0, start=Date.now(), cameraX=0, cameraRise=0;
+    var tour=null, tourPlayed=false, contactTimer=0;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ratio=1, sx=0, syy=0, unit=1;
     function layer(label) {
@@ -328,8 +367,8 @@
       g.setAttribute('color',new T.Float32BufferAttribute(colors,3));
       geometry[assetData.key]=g; return g;
     }
-    function floor(x,y,style,isBase,angle) {
-      var a=asset(style,isBase);
+    function floor(x,y,style,kind,angle) {
+      var a=asset(style,kind);
       if(renderer){
         var node=groups[count];
         if(!node){node=new T.Mesh(mesh(a),material);groups[count]=node;world.add(node);}
@@ -339,7 +378,7 @@
         var px=sx+unit*x,py=syy-unit*y,size=unit/a.scale;
         fallback.save();fallback.translate(px,py);fallback.rotate(-(angle||0));
         fallback.imageSmoothingEnabled=true;
-        fallback.drawImage(a.sprite,-176*size,-136*size,a.sprite.width*size,a.sprite.height*size);
+        fallback.drawImage(a.sprite,-176*size,-a.centerY*size,a.sprite.width*size,a.sprite.height*size);
         fallback.restore();
       }
     }
@@ -413,23 +452,54 @@
         rig.fillRect(cx+dir*dist,yy-(.01+Math.sin(t*Math.PI)*.06)*unit,ss,ss);
       }
     }
+    function perfectStars(x,y,progress) {
+      var cx=sx+x*unit, cy=syy-y*unit;
+      rig.save();
+      rig.globalAlpha=Math.max(.06,1-progress*.9);
+      for(var star=0;star<7;star++){
+        var spread=(star-3)*(.10+progress*.24)*unit;
+        var hover=(.08+Math.sin((star+1)*.43)*.34+progress*.45)*unit;
+        var size=clamp(unit*.12,6,15)*(star===3?1:.68);
+        var points=[];
+        for(var vertex=0;vertex<10;vertex++){
+          var theta=vertex*Math.PI/5-Math.PI/2+progress*(star-3)*.12;
+          var radius=vertex%2 ? size*.46 : size;
+          points.push(cx+spread+radius*Math.cos(theta),cy-hover+radius*Math.sin(theta));
+        }
+        poly(rig,points,star%2?'#fff4ad':'#ffd34e');
+        line(rig,points.concat(points.slice(0,2)),'#a56431',1.2);
+      }
+      rig.restore();
+    }
     function tick(stamp){
       if(!running) return;frameId=raf(tick);
       if(document.hidden||!near||stamp-then<(dropState||state.mode==='build'?15:32))return;
       var dt=clamp((stamp-then)/1000,0,.08);then=stamp; resize();
       if(!width||!height)return;
       var now=Date.now(),attract=state.mode==='attract';
+      var arcade=!!state.arcade && !attract;
       var floors=attract?[0,.035]:state.floors||[];
+      if(arcade) floors=[0].concat(floors);
       var length=floors.length,top=length?Number(floors[length-1])||0:0;
-      unit=Math.min(width*(attract?.36:.267),height*(attract?.39:.39));
-      var floorY=floorHeight*cp;
-      var rise=Math.max(0,(length*floorY*unit)-height*(attract?.46:.36));
+      unit=Math.min(width*(attract?.36:.25),height*(arcade?.275:.39));
+      var floorY=floorHeight*cp*(arcade?1.72:1);
+      var rise=Math.max(0,(length*floorY*unit)-height*(arcade?.32:attract?.46:.36));
       var targetCamera=attract?0:top;
-      var swinging=attract ? !reduced : state.showCrane!==false && !!state.getOffset && frozen===null;
+      var touring=arcade && !!tour;
+      if(touring){
+        var review=clamp((now-tour.started)/(reduced?450:tour.duration),0,1);
+        var glide=review*review*(3-2*review);
+        rise=tour.rise*(1-glide);
+        targetCamera=tour.x*(1-glide);
+        if(review===1) tour=null;
+      } else if(arcade && state.showRoof && tourPlayed){
+        rise=0;targetCamera=0;
+      }
+      var swinging=attract ? !reduced : state.showCrane!==false && !!(state.getOffset||state.getSwing) && frozen===null;
       var lean=attract ? 0 : clamp(state.balance || 0,-1,1);
       var wobble=Math.max(0,Math.abs(lean)-.28);
       var rocking=!reduced && wobble>0 && state.showCrane!==false;
-      if(!dirty && !dropState && !swinging && !rocking && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
+      if(!dirty && !dropState && !swinging && !rocking && !touring && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
@@ -437,9 +507,10 @@
       sx=width*center-cameraX*unit;syy=height*.859+cameraRise;
       var townScale=Math.min(1,Math.min(430/width,330/height));
       var townW=Math.max(1,Math.round(width*townScale)),townH=Math.max(1,Math.round(height*townScale));
-      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2);
+      var ascent=arcade?cameraRise/(unit*floorY):0;
+      var key=townW+'/'+townH+'/'+Math.round(cameraRise*townScale/2)+'/'+(ascent>=19?3:ascent>=15?2:ascent>=8?1:0);
       if(key!==townKey){
-        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,attract);
+        backdrop.width=townW;backdrop.height=townH;paintTown(paint,townW,townH,cameraRise*townScale,attract,ascent);
         city.imageSmoothingEnabled=false;city.drawImage(backdrop,0,0,width,height);townKey=key;
       }
       fallback.clearRect(0,0,width,height);rig.clearRect(0,0,width,height);count=0;
@@ -447,15 +518,17 @@
         camera.left=-sx/unit;camera.right=(width-sx)/unit;camera.top=syy/unit;camera.bottom=(syy-height)/unit;camera.updateProjectionMatrix();
       }
       floor(0,0,0,true,0);
-      var progress=dropState ? clamp((now-dropState.started)/dropState.duration,0,1) : 0;
-      var collapse=dropState && dropState.collapse;
+      var flight=dropState && dropState.path;
+      var hit=flight && dropState.hit;
+      var progress=dropState && dropState.duration ? clamp((now-(flight?dropState.contactAt:dropState.started))/dropState.duration,0,1) : 0;
+      var collapse=dropState && (flight?(hit&&hit.fallen?hit:null):dropState.collapse);
       var firstFalling=collapse ? length+1-collapse.fallen : length+1;
-      var tumble=collapse ? clamp((progress-.25)/.75,0,1) : 0;
+      var tumble=collapse ? (flight?progress:clamp((progress-.25)/.75,0,1)) : 0;
       var flex=wobble*(lean<0?-1:1)*(.075+(rocking?.045*Math.sin(now/122)*(1-tumble):0));
       var pivotX=0,pivotY=0,tip=0,freeFall=0;
       if(collapse) {
         var lower=floors[firstFalling-1] || 0;
-        var upper=firstFalling<length ? floors[firstFalling] : top+dropState.offset;
+        var upper=firstFalling<length ? floors[firstFalling] : top+(flight?flight.impact.x:dropState.offset);
         // Rotate around the outer edge of the shared support before the floors separate.
         var edge=collapse.direction>0 ? Math.min(lower,upper)+.5 : Math.max(lower,upper)-.5;
         pivotY=firstFalling*floorY;
@@ -473,22 +546,51 @@
           y=pivotY-dx*Math.sin(rotation)+dy*Math.cos(rotation)-freeFall*(height/unit+1+level*.24);
           angle-=rotation+spin*freeFall;
         }
-        floor(x,y,index%palettes.length,false,angle);
+        var kind=arcade ? (index===0?'entry':'cube') : false;
+        var color=arcade && index===length && state.choice>=0 ? state.choice : index;
+        floor(x,y,color%palettes.length,kind,angle);
       }
       for(var i=0;i<length;i++){
         var y=i*floorY;
-        if(syy-y*unit>height+unit) continue;
+        if(syy-y*unit>height+unit || syy-y*unit<-unit) continue;
         buildingFloor(i,(Number(floors[i])||0)+flex*y,y,-flex);
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
+      if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top,tableY,0,'roof',0);
+      if(arcade && state.target && !tumble && !state.showRoof)
+        floorLabel(state.target,sx+(top+flex*tableY)*unit,syy-(tableY-floorY*.47)*unit,-flex);
       var carryY=tableY+hangGap,offset=attract?(reduced?.36:Math.sin((now-start)/1270)*.54):0;
+      var swing=arcade && state.getSwing ? state.getSwing() : null;
+      if(swing){
+        offset=swing.x;
+        carryY=tableY+swing.height;
+      }
       if(!attract && typeof state.getOffset==='function'){
         var value=state.getOffset();if(isFinite(value))offset=value;
       }
-      if(dropState)offset=dropState.offset;else if(frozen!==null)offset=frozen;
-      var hx=top+offset+flex*tableY,hy=carryY,angle=attract?-.025*offset:0;
+      if(dropState && !flight)offset=dropState.offset;else if(frozen!==null)offset=frozen;
+      var hx=top+offset+flex*tableY,hy=carryY,angle=swing?swing.angle:attract?-.025*offset:0;
       var show=attract || state.showCrane!==false,slings=true,callback=null;
-      if(dropState){
+      if(flight){
+        var airborne=flight.at(clamp((now-dropState.started)/1000,0,flight.duration));
+        hx=top+airborne.x+flex*tableY;
+        hy=tableY+airborne.height;
+        angle=airborne.angle;
+        slings=false;
+        if(hit && !collapse && (hit.kind==='wrong'||hit.kind==='miss')){
+          var travel=progress*dropState.duration/1000;
+          var direction=airborne.x<0?-1:1;
+          hy-=7*travel*travel;
+          hx+=direction*.88*travel;
+          angle-=direction*2.9*travel;
+        } else if(hit && !collapse){
+          var snap=hit.kind==='perfect'?0:hit.offset;
+          hx=top+flex*tableY+airborne.x+(snap-airborne.x)*progress;
+          angle*=1-progress;
+          hy=tableY+(airborne.height+Math.sin(progress*Math.PI*2)*.075)*(1-progress);
+        }
+        if(hit && progress===1)callback=finishDrop;
+      }else if(dropState){
         var t=Math.min(1,progress/(collapse?.25:.79));
         hy=carryY-hangGap*(t*t);
         if(!dropState.landed){
@@ -500,17 +602,18 @@
         slings=false;
         if(progress===1)callback=finishDrop;
       }
-      if(show || progress>0) {
+      if(show || dropState) {
         var roofY=syy-(hy+floorY)*unit,actorX=sx+hx*unit;
         var hookY=syy-(carryY+floorY)*unit - Math.min(unit*.23,height*.079);
         var armX=width*center;
         // Keep the unloaded hook over the tower between turns.
-        crane(actorX,hookY,roofY,armX,slings,angle);
-        if(frozen===null || progress>0){
+        crane(flight?sx+(top+offset)*unit:actorX,hookY,roofY,armX,slings,angle);
+        if((frozen===null || dropState) && (!arcade || state.label || flight)){
           buildingFloor(length,hx,hy,angle);
           if(!tumble) floorLabel(state.label,actorX,syy-(hy+floorY*.42)*unit,angle);
         }
-        burst(hx,tableY,progress,!collapse && Math.abs(offset)<.85);
+        if(hit && hit.kind==='perfect' && now>=dropState.contactAt)perfectStars(hx,tableY+floorY*.68,progress);
+        else if(!arcade)burst(hx,tableY,progress,!collapse && Math.abs(offset)<.85);
       }
       if(renderer){
         for(var m=count;m<groups.length;m++)groups[m].visible=false;
@@ -522,16 +625,22 @@
       if(!dropState) return;
       var active=dropState;
       clearTimeout(dropTimer);dropTimer=0;
-      dropState=null;frozen=active.offset;dirty=true;
+      dropState=null;frozen=active.path?0:active.offset;dirty=true;
       if(active.callback)active.callback();
     }
     function cancelDrop() {
       clearTimeout(dropTimer);dropTimer=0;
+      clearTimeout(contactTimer);contactTimer=0;
       dropState=null;frozen=null;dirty=true;
     }
     function set(options) {
       dirty=true;
       options=options||{};
+      if(!options.showRoof) {tour=null;tourPlayed=false;}
+      else if(!tourPlayed){
+        tour={rise:cameraRise,x:cameraX,started:Date.now()+480,duration:Math.min(4800,1500+(options.floors||[]).length*140)};
+        tourPlayed=true;
+      }
       for(var k in options)if(Object.prototype.hasOwnProperty.call(options,k))state[k]=options[k];
       if(!dropState)frozen=null;
       if(!frameId)frameId=raf(tick);
@@ -544,6 +653,20 @@
       // A student may scroll the crane offscreen or switch tabs after tapping.
       // Network state and controls still settle when animation frames pause.
       dropTimer=setTimeout(finishDrop,dropState.duration);
+    }
+    function release(path) {
+      cancelDrop();
+      dropState={path:path,started:Date.now()};
+    }
+    function impact(hit,callback,onContact) {
+      if(!dropState || !dropState.path) {callback();return;}
+      dropState.hit=hit;
+      dropState.callback=callback;
+      dropState.contactAt=Math.max(Date.now(),dropState.started+dropState.path.duration*1000);
+      dropState.duration=hit.fallen?(reduced?280:860):hit.kind==='perfect'?470:hit.kind==='landed'?220:440;
+      var untilContact=Math.max(0,dropState.contactAt-Date.now());
+      contactTimer=setTimeout(onContact,untilContact);
+      dropTimer=setTimeout(finishDrop,untilContact+dropState.duration);
     }
     function destroy(){
       if(!running)return;running=false;cancelDrop();cancel(frameId);frameId=0;
@@ -562,7 +685,7 @@
       if(global.THREE)setupThree();else script('lib/three.r136.min.js',setupThree);
     }
     resize();frameId=raf(tick);
-    return {set:set,drop:drop,cancelDrop:cancelDrop,destroy:destroy};
+    return {set:set,drop:drop,release:release,impact:impact,cancelDrop:cancelDrop,destroy:destroy};
   }
   global.BloxxScene={mount:mount};
 }(window));
