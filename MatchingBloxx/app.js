@@ -43,12 +43,24 @@
   function joinLink() { return location.protocol + '//' + location.host + location.pathname + '?room=' + state.code; }
   function urlForScreen() { return joinLink() + '#screen=' + session.presenterToken; }
 
+  var theme = new Audio('assets/sounds/theme.mp3');
+  theme.loop = true;
+  theme.preload = 'none';
+  theme.volume = .18;
+  function playTheme() {
+    if (muted || !theme.paused || document.hidden) return;
+    var playback = theme.play();
+    if (playback && playback.catch) playback.catch(function () {});
+  }
   function syncSound() {
     $('audio-label').textContent = muted ? 'Sound off' : 'Sound on';
     $('audio').setAttribute('aria-pressed', muted ? 'false' : 'true');
+    if (muted) theme.pause();
+    else playTheme();
   }
   function prepareAudio() {
     if (muted) return;
+    playTheme();
     var Ctx = window.AudioContext || window.webkitAudioContext;
     if (Ctx && !audioContext) {
       try {
@@ -83,6 +95,10 @@
       }
     } catch (_) {}
   }
+  document.addEventListener('visibilitychange',function(){
+    if(document.hidden)theme.pause();
+    else playTheme();
+  });
   document.addEventListener('click',prepareAudio,true);
   document.addEventListener('keydown',prepareAudio,true);
   $('audio').onclick = function () {
@@ -163,7 +179,7 @@
       '<button class="text-btn" id="resume">Resume room '+esc(paused.room.code)+'</button>' : '';
     paintPanel('home-' + resume, '<div class="start-modes"><div class="menu-tiles">' +
       '<button id="solo" class="menu-tile"><span class="mode-icon solo-icon" aria-hidden="true"></span>Play solo</button>'+
-      '<button id="host" class="menu-tile"><span class="mode-icon host-icon" aria-hidden="true"></span>Host a class</button></div>'+
+      '<button id="host" class="menu-tile"><span class="mode-icon host-icon" aria-hidden="true"></span>Host a room</button></div>'+
       '<button type="button" id="screen" class="menu-tile screen-menu"><span class="mode-icon screen-icon" aria-hidden="true"></span>'+
       '<span>Screen mode<small>2–4 players</small></span></button></div>'+
       '<section class="join-console" aria-labelledby="join-title"><h2 id="join-title">Join a room</h2>'+
@@ -283,7 +299,7 @@
   function openSetup(hosting, preferredMode, initialSet) {
     var mode=preferredMode || read('mb-preferred-mode') || 'match';
     if(mode!=='rightwrong')mode='match';
-    modal('<h2 id="dialog-title">'+(hosting?'Host a class':'Play solo')+'</h2>'+
+    modal('<h2 id="dialog-title">'+(hosting?'Host a room':'Play solo')+'</h2>'+
       '<label for="setup-mode">Game mode</label><select id="setup-mode">'+modeOptions(mode)+'</select>'+
       '<label for="setup-set">Word set</label><select id="setup-set">'+optionsFor(mode,initialSet)+'</select>'+
       (hosting?'':'<label for="solo-turns">Questions</label><input id="solo-turns" type="number" min="1" max="48" step="1" required value="'+practiceTurns+'">')+
