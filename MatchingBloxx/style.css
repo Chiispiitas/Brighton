@@ -165,11 +165,11 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
 .screen-controls{position:absolute;z-index:1;bottom:9px;left:9px;right:9px;display:flex;align-items:flex-end;justify-content:space-between;gap:4px;pointer-events:none}
 .screen-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px;width:clamp(91px,54%,164px)}
 .screen-choice,.screen-drop{touch-action:manipulation;pointer-events:auto;user-select:none}
-.screen-choice{min-width:0;min-height:44px;padding:2px 1px 0;position:relative;display:grid;place-items:center;
+.screen-choice{min-width:0;min-height:44px;padding:2px 1px 0;position:relative;display:grid;place-content:center stretch;justify-items:center;
   border:1px solid transparent;background:none;color:#fff7dd;font-size:.78rem;font-weight:700;line-height:1;overflow-wrap:anywhere;border-radius:5px}
 .screen-choice{overflow:hidden}
-.screen-choice canvas{width:38px;height:32px;justify-self:center;display:block;image-rendering:pixelated;pointer-events:none}
-.screen-choice span{position:absolute;left:2px;right:2px;bottom:3%;padding:2px 1px;border-radius:2px;background:#213948;pointer-events:none}
+.screen-choice canvas{width:38px;height:24px;justify-self:center;display:block;image-rendering:pixelated;pointer-events:none}
+.screen-choice span{display:block;width:100%;min-width:0;padding:2px 1px;border-radius:2px;background:#213948;pointer-events:none}
 .screen-choice[aria-pressed="true"]{border-color:#ffefaf;background:#fff0a64f;box-shadow:0 0 0 1px #583e24}
 .screen-drop{flex-shrink:0;width:clamp(46px,27%,82px);aspect-ratio:1;min-height:46px;padding:0;border-radius:50%;
   border:3px solid #5d2222;background:radial-gradient(circle at 38% 24%,#ff9980 0%,#ee4e42 34%,#cc2d2b 63%,#8e201f 88%);
@@ -317,7 +317,7 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
   border-left:11px solid #ffda89;margin-left:3px;
 }
 .host-icon::after{
-  content:'';width:22px;height:20px;background: url('assets/pixel/classroom.png') center/contain no-repeat;
+  content:'';width:22px;height:20px;background: url('assets/pixel/classroom.png?v=2') center/contain no-repeat;
 }
 .screen-icon::before,.screen-icon::after{
   content:'';position:absolute;top:9px;border:2px solid #ffc5a8;border-radius:1px;width:8px;height:12px;
@@ -440,7 +440,7 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
 .lane .screen-drop{margin-left:auto}
 .lane .screen-choices{width:clamp(140px,36%,240px);gap:4px}
 .lane .screen-choice{min-height:49px;font-size:.85rem}
-.lane .screen-choice canvas{width:76px;height:64px}
+.lane .screen-choice canvas{width:76px;height:48px}
 .lane .screen-choice span{padding:3px 2px}
 .lane .feedback{position:absolute;bottom:151px;left:9px;right:9px;margin:0}
 .lane-result{
@@ -452,14 +452,14 @@ input[type=text],.dialog select,.dialog textarea,.dialog input[type=number]{
 .screen-sorting .screen-prompt small{display:block;margin-top:3px;font-size:.8em}
 @media(max-width:520px){
   .lane .screen-choice{min-height:46px;font-size:.76rem}
-  .lane .screen-choice canvas{width:38px;height:32px}
+  .lane .screen-choice canvas{width:38px;height:24px}
   .lane .screen-controls{bottom:8px}
 }
 @media(min-width:1150px){
-  .screen-game .screen-choice canvas{width:76px;height:64px}
+  .screen-game .screen-choice canvas{width:76px;height:48px}
 }
 @media(max-width:420px){
-  .screen-game[data-players="4"] .screen-choice span{left:0;right:0;padding-inline:0;font-size:.59rem}
+  .screen-game[data-players="4"] .screen-choice span{padding-inline:0;font-size:.59rem}
 }
 
 /* Word-set library and question editor */
