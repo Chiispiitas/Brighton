@@ -103,18 +103,18 @@ test('presenters receive bounded replays without exposing player prompts or cred
 });
 
 test('new online rooms apply the Java swing on the server, player and presenter', () => {
-  const room=createRoom('823502','host','screen',10,20,{...arcade.config('match'),physics:4});
+  const room=createRoom('823502','host','screen',10,20,arcade.config('match'));
   command(room,'player','join',{name:'Jo'},20);
   command(room,'host','start',{},30);
   const player=room.players[0], start=view(room,'player',30).me.motion;
-  assert.equal(start.physics,4);
+  assert.equal(start.physics,5);
   assert.equal(start.classicLanding,true);
   assert.equal(start.verticalAmplitude,physics.quickSwing(0).verticalAmplitude);
   const choice=arcade.card(room.arcade,1,player.seed).correct;
   command(room,'player','arcadeDrop',{round:1,choice,elapsedMs:650},680);
   const replay=view(room,'screen',680).city.lots[0].drops[0];
   assert.deepEqual(arcade.pose(start,650),arcade.pose(replay.motion,650));
-  assert.equal(view(room,'player',680).me.motion.physics,4);
+  assert.equal(view(room,'player',680).me.motion.physics,5);
 });
 
 test('matching custom pools serve explicit distractors, reject a wrong placement and repeat in endless runs',()=>{
@@ -205,7 +205,7 @@ test('imports accept two forms per sentence, retain commas in CSV, and read Righ
   assert.deepEqual(json,sorting);
 });
 
-test('Java landing tolerances apply only to solo and device rounds', () => {
+test('legacy and Java landing thresholds differ', () => {
   const track = (x, classicLanding) => physics.track(
     physics.drop({centerX:x,centerY:1.2,angle:0,vx:0,vy:0,spin:0}), [], () => 0, false, classicLanding);
   assert.equal(track(127 / 256, true).tipped, false);
@@ -235,4 +235,28 @@ test('solo ends on the chosen turn and a clean wrong drop earns no penalty', () 
   assert.equal(player.last.kind, 'passed');
   assert.equal(player.last.points, 0);
   assert.equal(player.last.fallen, 0);
+});
+
+test('Java sway reacts to floor offsets on a 3.6-second cycle',()=>{
+  const motion={physics:5};
+  const floors=[0,.21,.41,.64,.84,1.07,1.3];
+  const at=age=>arcade.towerPose(motion,floors,{java:true,phase:0,landAge:800},age);
+  assert.deepEqual(at(0),at(3600));
+  assert.deepEqual(at(0).slice(0,2),[{x:0,angle:0,lift:0},{x:.21,angle:0,lift:0}]);
+  assert.notEqual(at(0)[6].x,at(1800)[6].x);
+});
+
+test('Java edge impacts peel loose floors from the top and leave a centered joint intact',()=>{
+  const floors=[0,0,.11,.24,.4];
+  const drop=physics.drop({centerX:.7,centerY:1.2,angle:0,vx:0,vy:0,spin:0});
+  const track=floors=>physics.track(drop,floors,()=>floors.map(x=>({x,angle:0})),false,true,true);
+  const impact=track(floors);
+  const land=arcade.land(floors,impact,true);
+  assert.deepEqual(land.floors,[0,0,.11,.24]);
+  assert.equal(land.fallen,2);
+  assert.equal(land.parts[0].delay,150);
+  assert.deepEqual(physics.javaFall(.14,land.parts[0]),{x:0,y:0,angle:-0});
+  assert.ok(physics.javaFall(.3,land.parts[0]).y<0);
+  assert.equal(arcade.land([0,0],track([0,0]),true).fallen,1);
+  assert.equal(arcade.land([],track([]),true).kind,'landed');
 });

@@ -13,6 +13,10 @@
 
   function rockAt(rock, elapsed) {
     if (!rock) return {angle:0, velocity:0, rate:1.18, damping:.42};
+    if (rock.java) {
+      var age = Math.max(0,elapsed);
+      return {java:true,phase:(rock.phase+age)%3600,landAge:rock.landAge+age};
+    }
     var time = Math.max(0,elapsed) / 1000;
     var sin = Math.sin(rock.rate * time), cos = Math.cos(rock.rate * time);
     var decay = Math.exp(-rock.damping * time);
@@ -52,6 +56,66 @@
 
   function shift(height, angle) {
     return 4.6 * (1 - Math.exp(-height / 4.6)) * Math.sin(angle);
+  }
+
+  // Fixed-point sway and five active floor joints from OpenCityBloxx House.layoutTower.
+  function towerLayout(floors, rock) {
+    var count = floors.length, start = Math.max(0,count-5);
+    var offsets = floors.map(function(x,i){
+      return Math.round(x*256) - (i ? Math.round(floors[i-1]*256) : 0);
+    });
+    var angle = Math.floor(rock.phase/10) * Math.PI / 180;
+    var wave = Math.round(-Math.cos(angle)*65536);
+    var sum = count ? Math.abs(Math.round(floors[count-1]*256)) : 0;
+    var amplitude = Math.floor(count/2)+Math.floor(sum/20);
+    amplitude = Math.min(amplitude,Math.floor(count*amplitude/6));
+    var load = offsets.slice(start).reduce(function(n,x){return n+Math.abs(x);},0);
+    var instability = Math.min(100,Math.floor(count*Math.floor(load/5)/20));
+    var x = Math.trunc(-wave*amplitude/10000), bend = 0, lift = 0;
+    return floors.map(function(base,i){
+      if(i<start)return {x:base,angle:0,lift:0};
+      var offset = offsets[i];
+      if(i===count-1 && i>0 && rock.landAge<800) {
+        var t = rock.landAge;
+        var bounce = t<100 ? t*offset/600 : t<500 ? (500-t)*offset/2400 : 0;
+        var weight = t<500 ? 1 : (800-t)/300;
+        bend = Math.trunc(bend*(1-weight)+weight*(Math.trunc(bend/8)+Math.trunc(offset/6)+Math.trunc(bounce)));
+      }
+      var leverage = wave*offset;
+      bend -= Math.trunc(instability*Math.abs(leverage)/(leverage<0?29491200:58982400));
+      x += bend*2;
+      lift += (wave>0?1:-1)*(bend>>1);
+      return {x:base+x/256,angle:i ? -bend*Math.PI/180 : 0,lift:lift*floorHeight/256};
+    });
+  }
+
+  function fallingFloors(layout, level, direction) {
+    var parts = [];
+    if(level>0) {
+      var count = Math.min(4,level+1,layout.length-1);
+      for(var i=0;i<count;i++)parts.unshift({delay:0,vx:-direction*400-(4-i)*30,vy:50+(4-i)*30,turn:direction});
+    } else {
+      var tolerance = 20;
+      for(var j=layout.length-1;j>0 && parts.length<4;j--) {
+        var gap = Math.round((layout[j].x-layout[j-1].x)*256);
+        if(Math.abs(gap)<=tolerance)break;
+        var side = gap<0?-1:1;
+        parts.unshift({delay:[150,350,550,750][parts.length],vx:side*400,vy:50,turn:-side});
+        tolerance*=2;
+      }
+    }
+    return parts;
+  }
+
+  function javaFall(seconds, part) {
+    var t = Math.max(0,seconds-part.delay/1000);
+    var gravityScale = 1e6/(200*256);
+    var up = part.vy*1000/(256*256);
+    var limit = (40+up)/(2*gravityScale);
+    var ballistic = Math.min(t,limit);
+    return {x:part.vx*t*1000/(512*256),
+      y:up*ballistic-gravityScale*ballistic*ballistic-40*(t-ballistic),
+      angle:part.turn*Math.PI/4*(1-Math.exp(-2*t))};
   }
 
   function block(centerX, centerY, angle) {
@@ -157,21 +221,33 @@
     return path;
   }
 
-  function track(path, floors, angleAt, assisted, classicLanding) {
+  function track(path, floors, angleAt, assisted, classicLanding, javaTower) {
     var top = floors[floors.length-1] || 0;
     var catchWidth = classicLanding ? 127/256 : assisted ? .83 : .67;
     var reach = classicLanding ? 1 : assisted ? 1.04 : .98;
     // Scan the ledges the rotating lower corner passes, starting at the roofline.
-    for (var level = 0; level <= Math.min(floors.length,4); level++) {
+    for (var level = 0; level <= Math.min(javaTower?Math.max(0,floors.length-1):floors.length,4); level++) {
       var time = level ? path.crossing(-level*floorHeight) : path.duration;
       var pose = path.at(time);
       var height = (floors.length+1-level)*floorHeight;
-      var support = (floors[floors.length-1-level] || 0) - top + shift(height,angleAt(time*1000));
-      var gap = pose.centerX + Math.sin(pose.angle)*.13 - support;
+      var sway = angleAt(time*1000);
+      var joint = javaTower && sway[floors.length-1-level];
+      var support = javaTower ? (joint ? joint.x-top : 0) :
+        (floors[floors.length-1-level] || 0) - top + shift(height,sway);
+      var gap = pose.centerX + (javaTower?0:Math.sin(pose.angle)*.13) - support;
       var direction = gap < 0 ? -1 : 1;
-      if (Math.abs(gap) >= reach) continue;
-      return {path:path.segment(time,direction), offset:gap*(classicLanding?1:assisted?.55:.8), direction:direction,
-        hit:true, level:level, tipped:level>0 || Math.abs(gap)>catchWidth};
+      if (Math.abs(javaTower?Math.round(gap*256)/256:gap) >= reach) continue;
+      var offset = javaTower ? Math.round(gap*256)/256 : gap*(classicLanding?1:assisted?.55:.8);
+      var tipped = level>0 || (javaTower && !floors.length ? false : Math.abs(javaTower?offset:gap)>catchWidth);
+      var flight=path.segment(time,direction);
+      if(javaTower && tipped) {
+        flight.rejected=function(seconds) {
+          var fall=javaFall(seconds,{delay:0,vx:direction*500,vy:50,turn:-direction});
+          return block(pose.centerX+fall.x,pose.centerY+fall.y,pose.angle+fall.angle);
+        };
+      }
+      return {path:flight, offset:offset, direction:direction, hit:true, level:level, tipped:tipped,
+        javaTower:javaTower, parts:javaTower && tipped ? fallingFloors(sway,level,direction) : undefined};
     }
     return {path:path, hit:false, tipped:false, level:0, offset:0, direction:0};
   }
@@ -184,5 +260,5 @@
   }
 
   return {swing:swing, quickSwing:quickSwing, drop:drop, tower:tower, shift:shift, floorHeight:floorHeight,
-    rockAt:rockAt, kick:kick, track:track, debris:debris};
+    rockAt:rockAt, kick:kick, track:track, debris:debris,towerLayout:towerLayout,javaFall:javaFall};
 }));

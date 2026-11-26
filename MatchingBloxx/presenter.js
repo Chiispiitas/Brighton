@@ -5,7 +5,7 @@
     var arcade=global.BloxxArcade, physics=global.BloxxPhysics, art=global.BloxxScene;
     var backdrop=document.createElement('canvas'), canvas=document.createElement('canvas');
     var labels=document.createElement('div'), bg=backdrop.getContext('2d'), ctx=canvas.getContext('2d');
-    var lots=[], seats=Object.create(null), phase='lobby', serverTime=0, received=0;
+    var lots=[], seats=Object.create(null), phase='lobby', matching=false, serverTime=0, received=0;
     var width=0,height=0,columns=0,rows=0,sky=0,rowHeight=0,lotWidth=0,raf=0,then=-Infinity,dirty=true;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var floorHeight=physics.floorHeight;
@@ -69,6 +69,7 @@
 
     function update(snapshot) {
       phase=snapshot.phase;
+      matching=snapshot.arcade && snapshot.arcade.mode==='match';
       received=global.performance.now();
       serverTime=snapshot.city?snapshot.city.time:Date.now();
       var byId=Object.create(null), active=Object.create(null);
@@ -122,7 +123,7 @@
     function drawLot(seat,index,time,unit) {
       startDrop(seat,time);
       var replay=seat.drop, elapsed=replay?(time-replay.start)/1000:0;
-      if(replay && elapsed>replay.path.duration+(replay.event.fallen?.78:.32)){
+      if(replay && elapsed>replay.path.duration+(replay.event.fallen?(replay.event.parts?1.26:.78):.32)){
         seat.drop=null;
         startDrop(seat,time);
         replay=seat.drop;elapsed=0;
@@ -134,15 +135,20 @@
       var center=left+lotWidth/2, base=ground(row), top=(floors[floors.length-1]||0);
       var motion=event?event.motion:data.motion;
       var age=motion?Math.max(0,serverTime-(motion.startedAt||serverTime)+time-received):0;
-      var angle=physics.rockAt(event?event.rock:data.rock,event?event.elapsed+elapsed*1000:age).angle;
+      var layout=arcade.towerPose(motion,floors,event?event.rock:data.rock,event?event.elapsed+elapsed*1000:age);
+      var joints=Array.isArray(layout)?layout:null;
+      var angle=joints?0:layout;
       ctx.save();ctx.beginPath();ctx.rect(Math.floor(left)+2,Math.round(sky+row*rowHeight),Math.floor(lotWidth)-4,base-Math.round(sky+row*rowHeight)+4);ctx.clip();
       art.paintModel(ctx,center,base,unit,unit,0,true,0);
       if(phase!=='lobby'){
         art.paintModel(ctx,center,base,unit,unit,0,'entry',0);
         floors.forEach(function(offset,i) {
-          var y=(i+1)*floorHeight, x=offset+physics.shift(y,angle), tilt=-angle;
+          var y=(i+1)*floorHeight+(joints?joints[i].lift:0), x=joints?joints[i].x:offset+physics.shift(y,angle), tilt=joints?joints[i].angle:-angle;
           if(afterContact && event.fallen && i>=event.after.length){
-            var debris=physics.debris(elapsed-replay.path.duration,i-event.after.length,event.direction||1);
+            var fallenIndex=i-event.after.length;
+            var part=event.parts && event.parts[fallenIndex];
+            var debris=part ? physics.javaFall(elapsed-replay.path.duration,part) :
+              physics.debris(elapsed-replay.path.duration,fallenIndex,event.direction||1);
             x+=debris.x;y+=debris.y;tilt+=debris.angle;
           }
           art.paintModel(ctx,center+x*unit,base-y*unit,unit,unit,(i+1)%4,'cube',tilt);
@@ -163,9 +169,9 @@
         var pivotY=base-(table+(sway.pivotHeight||3.35))*unit;
         var hookX=center+(top+(sway.hookX===undefined?sway.x:sway.hookX))*unit;
         var hookY=base-(table+(sway.hookHeight||sway.height+floorHeight+.2))*unit;
-        crane(center+top*unit,pivotY,hookX,hookY,blockX,blockY-floorHeight*unit,!event,unit,left+3);
+        crane(center+top*unit,pivotY,hookX,hookY,blockX,blockY-floorHeight*unit,!event && !matching,unit,left+3);
         var color=event?event.color%4:(floors.length+1)%4;
-        art.paintModel(ctx,blockX,blockY,unit,unit,color,'cube',part.angle);
+        if(event || !matching)art.paintModel(ctx,blockX,blockY,unit,unit,color,'cube',part.angle);
       }else if(phase==='finished' && floors.length) {
         art.paintModel(ctx,center+top*unit,base-(floors.length+1)*floorHeight*unit,unit,unit,0,'roof',0);
       }
