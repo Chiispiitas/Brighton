@@ -191,16 +191,20 @@
       '<select id="screen-count"><option value="2">2 players</option><option value="3">3 players</option>'+
       '<option value="4">4 players</option></select><label for="screen-pool">Matching word set</label>'+
       '<select id="screen-pool">'+optionsFor('match')+'</select>'+
-      '<p class="sub">Play on this device. Each player gets 12 turns.</p>'+
+      '<label for="screen-turns">Questions per player</label>'+
+      '<input id="screen-turns" type="number" min="1" max="48" step="1" required value="'+MatchingBloxxRules.total+'">'+
+      '<p class="sub">Play on this device.</p>'+
       '<button type="button" class="button yellow" id="start-screen">Start game</button>','Cancel');
     $('start-screen').onclick = function() {
+      var questionCount=$('screen-turns');
+      if(!questionCount.reportValidity())return;
       var count=Number($('screen-count').value);
       var config=loadPool('match',$('screen-pool').value);
       closeModal();
       if(scene) {scene.destroy();scene=null;visualKey='';}
       game.hidden=true;
       document.body.classList.add('screen-active');
-      var close=window.BloxxScreen.mount($('screen-game'),config,count,cue,function(){
+      var close=window.BloxxScreen.mount($('screen-game'),config,count,questionCount.valueAsNumber,cue,function(){
         close();
         document.body.classList.remove('screen-active');
         game.hidden=false;

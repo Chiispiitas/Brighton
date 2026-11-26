@@ -5,14 +5,13 @@
     return window.performance && performance.now ? performance.now() : Date.now();
   }
 
-  function mount(board, config, count, cue, leave) {
+  function mount(board, config, count, turns, cue, leave) {
     var rules = window.MatchingBloxxRules;
     var arcade = window.BloxxArcade;
     var physics = window.BloxxScreenMotion;
     var tiles = [];
     var seed = Math.floor(Math.random() * 1e9);
     var closed = false;
-    var turns = rules.total;
     var craneStart = clock();
     var crane = {seed:seed,round:1};
     arcade.arm(crane, Date.now());
@@ -20,7 +19,7 @@
     board.innerHTML = '<header class="screen-bar"><div><h1>Screen mode</h1><p class="screen-set"></p></div>' +
       '<button type="button" class="small-action screen-exit">Back to menu</button></header>' +
       '<p class="screen-winners" role="status" hidden></p><div class="screen-grid"></div>';
-    board.querySelector('.screen-set').textContent = config.set.name + ' · ' + turns + ' turns each';
+    board.querySelector('.screen-set').textContent = config.set.name + ' · ' + turns + (turns===1?' question each':' questions each');
     board.querySelector('.screen-exit').onclick = leave;
     var grid = board.querySelector('.screen-grid');
     var winners = board.querySelector('.screen-winners');

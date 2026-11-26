@@ -117,6 +117,7 @@ input.code{letter-spacing:.24em;font-variant-numeric:tabular-nums}
   color:#173745;background:#fffdf2;font:inherit
 }
 .dialog textarea{min-height:100px;resize:vertical;line-height:1.4}
+.dialog input[type=number]{width:100%;min-height:44px;padding:8px 10px;border:2px solid #85928b;border-radius:5px;color:#173744;background:#fffdf2}
 .dialog .pool-hint{margin:4px 0 8px;font-size:.9rem}
 .dialog #save-pool{margin-top:14px}
 .dialog #close-dialog{margin-top:9px}
