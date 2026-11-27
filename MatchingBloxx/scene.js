@@ -377,9 +377,12 @@
         var x=joints && joints[i] ? joints[i].x : floors[i];
         left=Math.min(left,x);right=Math.max(right,x);
       }
-      var zoneWidth=clamp(unit*.85,21,100), zoneHeight=clamp(unit*.72,56,76);
-      var bottom=syy-tableY*unit+zoneHeight*.48;
-      var y=Math.round(clamp(bottom-zoneHeight,54,height-zoneHeight-30));
+      var zoneWidth=clamp(unit*.85,21,100);
+      var towerHeight=tableY*unit;
+      var bottom=Math.min(height-30,syy-towerHeight*.06);
+      var y=Math.round(Math.max(54,Math.min(bottom-52,syy-towerHeight*.94)));
+      var zoneHeight=Math.round(bottom-y);
+      if(zoneHeight<20)return;
       var edges=[sx+(left-1.04)*unit,sx+(right+1.04)*unit];
       rig.save();
       rig.globalAlpha=discardOpacity;
@@ -388,18 +391,16 @@
         var end=Math.round(Math.min(width-3,index ? edge+zoneWidth : edge));
         var span=end-start;
         if(span<10)return;
-        rig.fillStyle='rgba(180,37,47,.35)';
+        rig.fillStyle='rgba(180,37,47,.18)';
         rig.fillRect(start,y,span,zoneHeight);
-        rig.strokeStyle='rgba(255,129,120,.92)';
-        rig.lineWidth=1.5;
-        rig.strokeRect(start+.5,y+.5,span-1,zoneHeight-1);
         rig.save();
         rig.translate(start+span/2,y+zoneHeight/2);
         var compact=span<52;
         if(compact)rig.rotate(-Math.PI/2);
         rig.font='800 '+(compact?11:clamp(Math.round(unit*.145),12,17))+'px '+labelFont;
         rig.textAlign='center';rig.textBaseline='middle';rig.lineJoin='round';
-        rig.strokeStyle='#502632';rig.lineWidth=3;rig.fillStyle='#fff1d8';
+        rig.globalAlpha=discardOpacity*.8;
+        rig.strokeStyle='#502632';rig.lineWidth=2;rig.fillStyle='#fff1d8';
         var max=compact?zoneHeight-7:span-6;
         rig.strokeText('Discard',0,0,max);
         rig.fillText('Discard',0,0,max);
