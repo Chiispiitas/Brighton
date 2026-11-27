@@ -7,15 +7,14 @@
   <meta name="description" content="A timed arithmetic practice page.">
   <meta name="theme-color" content="#efefe7">
   <title>Arithmetic practice</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
   <script defer src="questions.js?v=2"></script>
-  <script defer src="app.js"></script>
+  <script defer src="app.js?v=2"></script>
 </head>
 <body>
   <main class="shell">
     <header class="top">
       <button id="exit" class="quiet" type="button" hidden>← Setup</button>
-      <button id="sound" class="quiet sound" type="button" aria-pressed="true">Sound on</button>
     </header>
     <form id="setup" class="screen setup">
       <fieldset>
@@ -31,9 +30,8 @@
         <legend>Number range</legend>
         <div class="range">
           <label>From<input id="from" type="number" min="0" max="999" value="1" required></label>
-          <label>To<input id="to" type="number" min="0" max="999" value="20" required></label>
+          <label>To<input id="to" type="number" min="0" max="999" value="100" required></label>
         </div>
-        <p id="range-note" class="help">For multiplication, one factor is in your range (up to 99). The other is a single digit.</p>
       </fieldset>
       <fieldset>
         <legend>Questions</legend>
