@@ -4,6 +4,13 @@
   const $ = id => document.getElementById(id);
   const setup = $('setup'), game = $('game'), results = $('results'), answer = $('answer');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  const sounds = Object.fromEntries(['start', 'correct', 'wrong', 'finish'].map(name => {
+    const cue = new Audio('assets/' + name + '.mp3');
+    cue.preload = 'auto';
+    cue.volume = name === 'correct' ? .38 : .52;
+    return [name, cue];
+  }));
+
   function read(key) {
     try { return JSON.parse(localStorage.getItem('arithmetic.' + key)); }
     catch { return null; }
@@ -15,6 +22,12 @@
   }
 
   let round = null, frame = 0, effect;
+
+  function sound(name) {
+    const cue = sounds[name];
+    cue.currentTime = 0;
+    cue.play().catch(() => {});
+  }
 
   function formatTime(ms) {
     const tenths = Math.floor(ms / 100);
@@ -57,6 +70,7 @@
     paintQuestion(false);
     paintTimer();
     answer.focus({ preventScroll: true });
+    sound('start');
   }
 
   function finish() {
@@ -78,6 +92,7 @@
     if (best) $('best').textContent = 'Best clean time · ' + formatTime(best);
     show(results);
     $('result-heading').focus({ preventScroll: true });
+    sound('finish');
   }
 
   function attempt(committed) {
@@ -88,12 +103,14 @@
         finish();
       } else {
         paintQuestion(true);
+        sound('correct');
       }
     } else if (committed && answer.value) {
       round.misses++;
       answer.value = '';
       answer.setAttribute('aria-invalid', 'true');
       $('feedback').textContent = 'Try again';
+      sound('wrong');
       if (!motion.matches && answer.animate) {
         answer.animate([{ transform: 'translateX(-5px)' }, { transform: 'translateX(4px)' }, { transform: 'none' }], 125);
       }
