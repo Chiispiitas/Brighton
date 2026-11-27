@@ -1,8 +1,6 @@
 (function (window) {
   'use strict';
 
-  var tossHint='<span class="toss-hint">Toss wrong blocks aside</span>';
-
   function clock() {
     return window.performance && performance.now ? performance.now() : Date.now();
   }
@@ -122,7 +120,7 @@
       card.innerHTML = '<header class="screen-tile-head"><strong></strong><span></span></header>' +
         '<div class="screen-tower"></div><p class="screen-prompt"></p><div class="screen-controls'+
         (matching?'':' sorting-controls')+'">' +
-        '<div class="screen-choices" aria-label="Matching blocks"></div>' +(matching?'':tossHint)+
+        '<div class="screen-choices" aria-label="Matching blocks"></div>' +
         '<button type="button" class="screen-drop"></button></div>';
       grid.appendChild(card);
       card.querySelector('strong').textContent = player.name;
@@ -177,6 +175,7 @@
         }
         scene.set({mode:'build', arcade:true, screen:true, physical:true, floors:view.placements, floorColors:colors.slice(),balance:view.balance,
           label:matching?'':view.prompt, choice:matching?-1:(player.round-1)%4, target:'', showCrane:!tile.finished,showRoof:tile.finished,
+          discardTurn:!matching&&!tile.finished?view.round:0,
           getSwing:tile.finished?null:currentSwing,rockUntil:tile.finished?Date.now()+10000:0,
           getRock:function(){return arcade.towerPose(crane.motion,view.placements,rock,clock()-craneStart,true);}});
         card.classList.remove('wrong-flash');
@@ -242,5 +241,5 @@
     };
   }
 
-  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop,popup:popup,tossHint:tossHint};
+  window.BloxxScreen = {mount:mount,blockButton:blockButton,bindDrop:bindDrop,popup:popup};
 }(window));
