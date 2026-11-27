@@ -4,13 +4,16 @@
   const operators = { add: '+', subtract: '−', multiply: '×' };
 
   function validate(settings) {
-    const { from, to, operation, count } = settings;
+    const { from, to, operations, count } = settings;
     if (![from, to].every(number => Number.isInteger(number) && number >= 0 && number <= 999)) {
       return 'Enter whole numbers from 0 to 999.';
     }
     if (from > to) return 'The starting number must be smaller than or equal to the ending number.';
-    if (!Object.prototype.hasOwnProperty.call(operators, operation) && operation !== 'all') return 'Choose an operation.';
-    if (!['add', 'subtract'].includes(operation) && from > 99) {
+    if (!Array.isArray(operations) || !operations.length ||
+        operations.some(kind => !Object.prototype.hasOwnProperty.call(operators, kind))) {
+      return 'Choose at least one operation.';
+    }
+    if (operations.includes('multiply') && from > 99) {
       return 'Start at 99 or below to include multiplication.';
     }
     if (![10, 20, 30].includes(count)) return 'Choose 10, 20, or 30 questions.';
@@ -20,7 +23,7 @@
   function generate(settings, random = Math.random) {
     const error = validate(settings);
     if (error) throw new RangeError(error);
-    const { from, to, operation, count } = settings;
+    const { from, to, operations, count } = settings;
     const choose = (low, high) => low + Math.floor(random() * (high - low + 1));
 
     function make(kind) {
@@ -38,7 +41,7 @@
     let kinds = [];
     while (deck.length < count) {
       if (!kinds.length) {
-        kinds = operation === 'all' ? Object.keys(operators) : [operation];
+        kinds = [...new Set(operations)];
         for (let i = kinds.length - 1; i > 0; i--) {
           const j = choose(0, i);
           [kinds[i], kinds[j]] = [kinds[j], kinds[i]];

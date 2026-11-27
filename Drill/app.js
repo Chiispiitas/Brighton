@@ -4,13 +4,6 @@
   const $ = id => document.getElementById(id);
   const setup = $('setup'), game = $('game'), results = $('results'), answer = $('answer');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const sounds = Object.fromEntries(['start', 'correct', 'wrong', 'finish'].map(name => {
-    const cue = new Audio('assets/' + name + '.mp3');
-    cue.preload = 'auto';
-    cue.volume = name === 'correct' ? .38 : .52;
-    return [name, cue];
-  }));
-
   function read(key) {
     try { return JSON.parse(localStorage.getItem('arithmetic.' + key)); }
     catch { return null; }
@@ -22,12 +15,6 @@
   }
 
   let round = null, frame = 0, effect;
-
-  function sound(name) {
-    const cue = sounds[name];
-    cue.currentTime = 0;
-    cue.play().catch(() => {});
-  }
 
   function formatTime(ms) {
     const tenths = Math.floor(ms / 100);
@@ -70,7 +57,6 @@
     paintQuestion(false);
     paintTimer();
     answer.focus({ preventScroll: true });
-    sound('start');
   }
 
   function finish() {
@@ -81,7 +67,8 @@
     $('solved').textContent = index + '/' + settings.count;
     $('misses').textContent = misses;
     $('pace').textContent = (duration / index / 1000).toFixed(1) + ' s';
-    const key = 'best.' + [settings.operation, settings.from, settings.to, settings.count].join('.');
+    const mode = settings.operations.length === 3 ? 'all' : settings.operations.join('+');
+    const key = 'best.' + [mode, settings.from, settings.to, settings.count].join('.');
     let best = read(key);
     if (!misses && (!best || duration < best)) {
       best = duration;
@@ -91,7 +78,6 @@
     if (best) $('best').textContent = 'Best clean time · ' + formatTime(best);
     show(results);
     $('result-heading').focus({ preventScroll: true });
-    sound('finish');
   }
 
   function attempt(committed) {
@@ -101,7 +87,6 @@
       if (round.index === round.questions.length) {
         finish();
       } else {
-        sound('correct');
         paintQuestion(true);
       }
     } else if (committed && answer.value) {
@@ -109,35 +94,41 @@
       answer.value = '';
       answer.setAttribute('aria-invalid', 'true');
       $('feedback').textContent = 'Try again';
-      sound('wrong');
       if (!motion.matches && answer.animate) {
         answer.animate([{ transform: 'translateX(-5px)' }, { transform: 'translateX(4px)' }, { transform: 'none' }], 125);
       }
     }
   }
 
+  const operationInputs = [...setup.querySelectorAll('[name="operation"]')];
   const stored = read('settings.v2');
-  const settings = stored || read('settings');
-  if (settings && !ArithmeticQuestions.validate(settings)) {
-    if (stored) {
-      $('from').value = stored.from;
-      $('to').value = stored.to;
+  const settings = read('settings.v3') || stored || read('settings');
+  if (settings) {
+    const operations = settings.operations || (settings.operation === 'all' ?
+      operationInputs.map(input => input.value) : [settings.operation]);
+    const restored = { ...settings, operations };
+    if (!ArithmeticQuestions.validate(restored)) {
+      if (settings.operations || stored) {
+        $('from').value = settings.from;
+        $('to').value = settings.to;
+      }
+      for (const input of operationInputs) input.checked = operations.includes(input.value);
+      setup.elements.count.value = String(settings.count);
     }
-    setup.elements.operation.value = settings.operation;
-    setup.elements.count.value = String(settings.count);
   }
   setup.addEventListener('change', () => { $('setup-error').hidden = true; });
   setup.addEventListener('submit', event => {
     event.preventDefault();
     const settings = {
       from: $('from').valueAsNumber, to: $('to').valueAsNumber,
-      operation: setup.elements.operation.value, count: Number(setup.elements.count.value)
+      operations: operationInputs.filter(input => input.checked).map(input => input.value),
+      count: Number(setup.elements.count.value)
     };
     const error = ArithmeticQuestions.validate(settings);
     $('setup-error').textContent = error;
     $('setup-error').hidden = !error;
     if (error) return;
-    save('settings.v2', settings);
+    save('settings.v3', settings);
     begin(settings);
   });
   answer.addEventListener('input', () => {
