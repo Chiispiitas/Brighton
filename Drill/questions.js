@@ -10,8 +10,8 @@
     }
     if (from > to) return 'The starting number must be smaller than or equal to the ending number.';
     if (!Object.prototype.hasOwnProperty.call(operators, operation) && operation !== 'all') return 'Choose an operation.';
-    if (!['add', 'subtract'].includes(operation) && from > 9) {
-      return 'Start at 9 or below to include multiplication.';
+    if (!['add', 'subtract'].includes(operation) && from > 99) {
+      return 'Start at 99 or below to include multiplication.';
     }
     if (![10, 20, 30].includes(count)) return 'Choose 10, 20, or 30 questions.';
     return '';
@@ -24,7 +24,7 @@
     const choose = (low, high) => low + Math.floor(random() * (high - low + 1));
 
     function make(kind) {
-      let left = choose(from, kind === 'multiply' ? Math.min(to, 9) : to);
+      let left = kind === 'multiply' ? choose(from === 0 ? 0 : 1, Math.min(to, 9)) : choose(from, to);
       let right = choose(from, kind === 'multiply' ? Math.min(to, 99) : to);
       if (kind === 'subtract' ? left < right : kind === 'multiply' && random() < .5) {
         [left, right] = [right, left];
