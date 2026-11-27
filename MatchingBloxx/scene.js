@@ -195,7 +195,7 @@
     var dropState=null, dropTimer=0, dirty=true, frozen=null, width=0,height=0, townKey='';
     var T=null, renderer=null, world=null, camera=null, material=null, groups=[], geometry={};
     var resizeObserver=null, near=true, visibility=null, count=0, start=clock(), cameraX=0, cameraRise=0;
-    var tour=null, tourPlayed=false, contactTimer=0, preview=null;
+    var tour=null, tourPlayed=false, contactTimer=0, preview=null, discardOpacity=0;
     var reduced=global.matchMedia && global.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var ratio=1, sx=0, syy=0, unit=1;
     function layer(label) {
@@ -370,6 +370,43 @@
       for(i=0;i<lines.length;i++)rig.fillText(lines[i],0,(i-(lines.length-1)/2)*lineH+1,labelWidth-8);
       rig.restore();
     }
+    function discardZones(floors,joints,tableY) {
+      var left=floors[floors.length-1]||0,right=left;
+      // Leave clearance from the roof and exposed lower floors a block could clip.
+      for(var i=Math.max(0,floors.length-5);i<floors.length;i++){
+        var x=joints && joints[i] ? joints[i].x : floors[i];
+        left=Math.min(left,x);right=Math.max(right,x);
+      }
+      var zoneWidth=clamp(unit*.85,21,100), zoneHeight=clamp(unit*.72,56,76);
+      var bottom=syy-tableY*unit+zoneHeight*.48;
+      var y=Math.round(clamp(bottom-zoneHeight,54,height-zoneHeight-30));
+      var edges=[sx+(left-1.04)*unit,sx+(right+1.04)*unit];
+      rig.save();
+      rig.globalAlpha=discardOpacity;
+      edges.forEach(function(edge,index){
+        var start=Math.round(Math.max(3,index ? edge : edge-zoneWidth));
+        var end=Math.round(Math.min(width-3,index ? edge+zoneWidth : edge));
+        var span=end-start;
+        if(span<10)return;
+        rig.fillStyle='rgba(180,37,47,.35)';
+        rig.fillRect(start,y,span,zoneHeight);
+        rig.strokeStyle='rgba(255,129,120,.92)';
+        rig.lineWidth=1.5;
+        rig.strokeRect(start+.5,y+.5,span-1,zoneHeight-1);
+        rig.save();
+        rig.translate(start+span/2,y+zoneHeight/2);
+        var compact=span<52;
+        if(compact)rig.rotate(-Math.PI/2);
+        rig.font='800 '+(compact?11:clamp(Math.round(unit*.145),12,17))+'px '+labelFont;
+        rig.textAlign='center';rig.textBaseline='middle';rig.lineJoin='round';
+        rig.strokeStyle='#502632';rig.lineWidth=3;rig.fillStyle='#fff1d8';
+        var max=compact?zoneHeight-7:span-6;
+        rig.strokeText('Discard',0,0,max);
+        rig.fillText('Discard',0,0,max);
+        rig.restore();
+      });
+      rig.restore();
+    }
     function burst(x,y,progress,landed) {
       if(!landed||progress<.78||reduced)return;
       var t=(progress-.78)/.22,cx=sx+unit*x,yy=syy-unit*y;
@@ -510,7 +547,10 @@
       var wobble=Math.max(0,Math.abs(lean)-.28);
       var rocking=physical ? (!demo || !reduced) && !!state.getRock && (state.showCrane!==false || Date.now()<state.rockUntil) :
         !reduced && wobble>0 && state.showCrane!==false;
-      if(!dirty && !dropState && !swinging && !rocking && !touring && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
+      var guide=state.mode==='build' && state.discardTurn ? Math.max(0,4-state.discardTurn)/3 : 0;
+      var fadingGuide=Math.abs(discardOpacity-guide)>.008;
+      discardOpacity=fadingGuide && !reduced ? discardOpacity+(guide-discardOpacity)*Math.min(1,dt*2.75) : guide;
+      if(!dirty && !dropState && !swinging && !rocking && !touring && !fadingGuide && Math.abs(targetCamera-cameraX)*unit<.2 && Math.abs(rise-cameraRise)<.2) return;
       dirty=false;
       cameraX+= (targetCamera-cameraX)*clamp(dt*9,0,1);
       cameraRise+=(rise-cameraRise)*clamp(dt*9,0,1);
@@ -585,6 +625,7 @@
         buildingFloor(i,base+(joint?(joint.x-base)*rest:displacement(y)),y,joint?joint.angle*rest:-flex);
       }
       var tableY=length*floorY,hangGap=Math.min(height*(attract?.125:.16),unit*.70)/unit;
+      if(discardOpacity>.008 && state.discardTurn)discardZones(state.floors||[],animated?null:joints,tableY);
       var topJoint=joints && joints[joints.length-1];
       var sway=topJoint?(topJoint.x-top)*rest:displacement(tableY);
       if(arcade && state.showRoof && syy-tableY*unit>-unit) floor(top+(physical?sway:0),tableY,0,'roof',topJoint?topJoint.angle*rest:physical?-flex:0);
@@ -698,6 +739,8 @@
         state.getRock=null;
         state.floors=[];
       }
+      if(options.mode && options.mode!=='build')state.discardTurn=0;
+      if(options.discardTurn===1 && state.discardTurn!==1)discardOpacity=1;
       if(!options.showRoof) {tour=null;tourPlayed=false;}
       else if(!tourPlayed){
         tour={rise:cameraRise,x:cameraX,started:clock()+480,duration:Math.min(4800,1500+(options.floors||[]).length*140)};

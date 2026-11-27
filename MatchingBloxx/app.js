@@ -652,7 +652,7 @@
   }
   function laneControls(matching, disabled) {
     return '<div class="screen-controls'+(matching?'':' sorting-controls')+'">'+(matching?
-      '<div class="screen-choices" aria-label="Matching blocks"></div>':BloxxScreen.tossHint)+
+      '<div class="screen-choices" aria-label="Matching blocks"></div>':'')+
       '<button type="button" class="screen-drop" aria-label="Drop floor" id="drop"'+
       (disabled?' data-disabled="true" disabled':'')+'></button></div>';
   }
@@ -714,7 +714,7 @@
     $('art').classList.remove('wrong-flash');
     var physical=state.arcade.physics>=2;
     setScene('arcade-'+round+'-'+arcadeChoice,{mode:'build',arcade:true,screen:true,physical:physical,floors:me.placements,balance:me.balance,
-      showCrane:!done,showRoof:done,target:target,label:activeLabel,choice:matching?arcadeChoice:(me.round-1)%4,getOffset:null,
+      showCrane:!done,showRoof:done,discardTurn:!matching&&!done?me.round:0,target:target,label:activeLabel,choice:matching?arcadeChoice:(me.round-1)%4,getOffset:null,
       getRock:physical&&me.rock?function(){return BloxxArcade.towerPose({physics:state.arcade.physics},me.placements,me.rock,now()-motionStart,true);}:null,
       rockUntil:done?Date.now()+6000:0,
       getSwing:!done && me.motion?function(){return BloxxArcade.pose(me.motion,Math.max(0,now()-motionStart));}:null});
