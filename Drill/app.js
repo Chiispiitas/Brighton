@@ -21,18 +21,12 @@
     catch { /* Practice remains available in private or restricted browsers. */ }
   }
 
-  let muted = read('muted') === true, round = null, frame = 0, effect;
+  let round = null, frame = 0, effect;
 
   function sound(name) {
-    if (muted) return;
     const cue = sounds[name];
     cue.currentTime = 0;
     cue.play().catch(() => {});
-  }
-
-  function paintSound() {
-    $('sound').textContent = muted ? 'Sound off' : 'Sound on';
-    $('sound').setAttribute('aria-pressed', String(!muted));
   }
 
   function formatTime(ms) {
@@ -122,23 +116,17 @@
     }
   }
 
-  function operationChanged() {
-    const operation = setup.elements.operation.value;
-    $('range-note').hidden = operation === 'add' || operation === 'subtract';
-    $('setup-error').hidden = true;
-  }
-
-  const settings = read('settings');
+  const stored = read('settings.v2');
+  const settings = stored || read('settings');
   if (settings && !ArithmeticQuestions.validate(settings)) {
-    $('from').value = settings.from;
-    $('to').value = settings.to;
+    if (stored) {
+      $('from').value = stored.from;
+      $('to').value = stored.to;
+    }
     setup.elements.operation.value = settings.operation;
     setup.elements.count.value = String(settings.count);
   }
-  operationChanged();
-  paintSound();
-
-  setup.addEventListener('change', operationChanged);
+  setup.addEventListener('change', () => { $('setup-error').hidden = true; });
   setup.addEventListener('submit', event => {
     event.preventDefault();
     const settings = {
@@ -149,7 +137,7 @@
     $('setup-error').textContent = error;
     $('setup-error').hidden = !error;
     if (error) return;
-    save('settings', settings);
+    save('settings.v2', settings);
     begin(settings);
   });
   answer.addEventListener('input', () => {
@@ -179,14 +167,6 @@
       answer.removeAttribute('aria-invalid');
       attempt(false);
     }
-  });
-  $('sound').addEventListener('click', () => {
-    muted = !muted;
-    save('muted', muted);
-    paintSound();
-    if (muted) Object.values(sounds).forEach(cue => cue.pause());
-    else sound('correct');
-    if (!game.hidden) answer.focus({ preventScroll: true });
   });
   $('again').addEventListener('click', () => begin(round.settings));
   $('exit').addEventListener('click', () => {
