@@ -41,6 +41,9 @@ function canonicalExamId(value) {
 
 // Snapshot of the live published getExams response captured while this package was built.
 const FALLBACK_EXAMS = [
+  {"examId":"brighton-b2-first-rue","title":"B2 First — Reading and Use of English","level":"B2","skill":"Reading and Use of English","description":"Paper 1. Seven parts, 52 questions. Allow 75 minutes.","isActive":true,"totalQuestions":52,"maxScore":70,"relativeUrl":"exams/b2-first-rue/index.html","shareUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-rue/","iframeUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-rue/"},
+  {"examId":"brighton-b2-first-writing","title":"B2 First — Writing","level":"B2","skill":"Writing","description":"Paper 2. One compulsory essay and one optional task. Allow 80 minutes.","isActive":true,"totalQuestions":4,"maxScore":40,"relativeUrl":"exams/b2-first-writing/index.html","shareUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-writing/","iframeUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-writing/"},
+  {"examId":"brighton-b2-first-listening","title":"B2 First — Listening","level":"B2","skill":"Listening","description":"Paper 3. Four parts, 30 questions, with each recording played twice.","isActive":true,"totalQuestions":30,"maxScore":30,"relativeUrl":"exams/b2-first-listening/index.html","shareUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-listening/","iframeUrl":"https://exams.bebrighton.net/Exams/exams/b2-first-listening/"},
 {
   "examId": "brighton-b2-listening-practice-3",
   "title": "B2 Listening Practice Test 3",

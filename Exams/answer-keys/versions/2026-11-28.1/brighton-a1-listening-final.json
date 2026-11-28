@@ -1,0 +1,40 @@
+{
+  "examId": "brighton-a1-listening-final",
+  "title": "Brighton A1 Listening Final Exam",
+  "totalQuestions": 25,
+  "maxScore": 25,
+  "parts": {
+    "1": { "label": "Part 1", "maxScore": 5, "questions": [1, 2, 3, 4, 5] },
+    "2": { "label": "Part 2", "maxScore": 5, "questions": [6, 7, 8, 9, 10] },
+    "3": { "label": "Part 3", "maxScore": 5, "questions": [11, 12, 13, 14, 15] },
+    "4": { "label": "Part 4", "maxScore": 5, "questions": [16, 17, 18, 19, 20] },
+    "5": { "label": "Part 5", "maxScore": 5, "questions": [21, 22, 23, 24, 25] }
+  },
+  "answers": {
+    "1": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "2": { "part": 1, "points": 1, "mode": "exact", "answers": ["D"] },
+    "3": { "part": 1, "points": 1, "mode": "exact", "answers": ["E"] },
+    "4": { "part": 1, "points": 1, "mode": "exact", "answers": ["F"] },
+    "5": { "part": 1, "points": 1, "mode": "exact", "answers": ["G"] },
+    "6": { "part": 2, "points": 1, "mode": "exact", "answers": ["Blue", "blue"] },
+    "7": { "part": 2, "points": 1, "mode": "exact", "answers": ["24", "twenty-four", "twenty four"] },
+    "8": { "part": 2, "points": 1, "mode": "exact", "answers": ["museum", "the museum"] },
+    "9": { "part": 2, "points": 1, "mode": "exact", "answers": ["cafe", "café", "a cafe", "a café"] },
+    "10": { "part": 2, "points": 1, "mode": "exact", "answers": ["swimming", "go swimming"] },
+    "11": { "part": 3, "points": 1, "mode": "exact", "answers": ["A"] },
+    "12": { "part": 3, "points": 1, "mode": "exact", "answers": ["C"] },
+    "13": { "part": 3, "points": 1, "mode": "exact", "answers": ["F"] },
+    "14": { "part": 3, "points": 1, "mode": "exact", "answers": ["G"] },
+    "15": { "part": 3, "points": 1, "mode": "exact", "answers": ["E"] },
+    "16": { "part": 4, "points": 1, "mode": "exact", "answers": ["C"] },
+    "17": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] },
+    "18": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] },
+    "19": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+    "20": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+    "21": { "part": 5, "points": 1, "mode": "exact", "answers": ["red"] },
+    "22": { "part": 5, "points": 1, "mode": "exact", "answers": ["blue"] },
+    "23": { "part": 5, "points": 1, "mode": "exact", "answers": ["green"] },
+    "24": { "part": 5, "points": 1, "mode": "exact", "answers": ["cafe", "café"] },
+    "25": { "part": 5, "points": 1, "mode": "exact", "answers": ["purple"] }
+  }
+}

@@ -1,6 +1,82 @@
 // Generated from backend/writing-rubric.js; keep the scoring contracts identical.
 (function() {
 const PROFILES = {
+  "b2First": {
+  "examId": "brighton-b2-first-writing",
+  "level": "B2",
+  "choice": true,
+  "id": "b2First",
+  "tasks": [
+    {
+      "part": 1,
+      "partId": "part1",
+      "question": 1,
+      "label": "Part 1",
+      "taskType": "Essay",
+      "title": "Essay: learning beyond the classroom",
+      "targetReader": "Your English teacher",
+      "prompt": "In your English class, you have been discussing where young people learn most effectively. Your teacher has asked you to write an essay.\n\nIs it better for teenagers to learn about their local area through visits than through classroom lessons?\n\nNotes: remembering information; the cost of organising visits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 2,
+      "label": "Part 2",
+      "taskType": "Article",
+      "title": "Article: a useful mistake",
+      "targetReader": "Young readers of an English-language website",
+      "prompt": "You see this announcement on an English-language website for young people.\n\nA MISTAKE THAT TAUGHT YOU SOMETHING\n\nTell us about a mistake you made while trying something new. Explain what it taught you and give readers advice on how to deal with a similar situation.\n\nWrite your article.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 3,
+      "label": "Part 2",
+      "taskType": "Email",
+      "title": "Email: welcoming an exchange student",
+      "targetReader": "Your English-speaking friend Jamie",
+      "prompt": "You receive this email from your English-speaking friend Jamie.\n\nAn exchange student is coming to stay with me for a weekend. I could take them to a market or a small local festival. Which do you think they would enjoy more, and why? What else could I do to help them feel at home?\n\nWrite your email to Jamie.\n\nWrite your email.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 4,
+      "label": "Part 2",
+      "taskType": "Review",
+      "title": "Review: a place that tells a story",
+      "targetReader": "Readers of an English-language student magazine",
+      "prompt": "You see this announcement in an English-language student magazine.\n\nREVIEWS WANTED: PLACES WITH A STORY\n\nWrite a review of a museum, historic building or other local attraction. Explain what you learned there, say what could make the visit better, and tell us who you would recommend it to.\n\nWrite your review.",
+      "points": 20,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organisation",
+        "Language"
+      ]
+    }
+  ]
+},
   "b2v1": {
   "examId": "brighton-b2-writing-variation-1",
   "level": "B2",

@@ -1,0 +1,580 @@
+{
+  "examId": "brighton-b2-rue-practice-4",
+  "examTitle": "Brighton B2 Reading and Use of English Practice Test 4",
+  "maxScore": 70,
+  "totalQuestions": 52,
+  "normalization": {
+    "caseInsensitive": true,
+    "trimWhitespace": true,
+    "collapseInternalWhitespace": true,
+    "expandCommonContractionsForPart4": true
+  },
+  "parts": {
+    "1": {
+      "label": "Part 1",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "maxScore": 8
+    },
+    "2": {
+      "label": "Part 2",
+      "questions": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "maxScore": 8
+    },
+    "3": {
+      "label": "Part 3",
+      "questions": [
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "maxScore": 8
+    },
+    "4": {
+      "label": "Part 4",
+      "questions": [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "maxScore": 12
+    },
+    "5": {
+      "label": "Part 5",
+      "questions": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "maxScore": 12
+    },
+    "6": {
+      "label": "Part 6",
+      "questions": [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "maxScore": 12
+    },
+    "7": {
+      "label": "Part 7",
+      "questions": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "maxScore": 10
+    }
+  },
+  "answers": {
+    "1": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "2": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "3": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "4": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "5": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "6": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "7": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "8": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "9": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "been"
+      ]
+    },
+    "10": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "for"
+      ]
+    },
+    "11": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "has"
+      ]
+    },
+    "12": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "not"
+      ]
+    },
+    "13": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "to"
+      ]
+    },
+    "14": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "on"
+      ]
+    },
+    "15": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "how"
+      ]
+    },
+    "16": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "why"
+      ]
+    },
+    "17": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "popularity"
+      ]
+    },
+    "18": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "immediately"
+      ]
+    },
+    "19": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "carefully"
+      ]
+    },
+    "20": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "fitness"
+      ]
+    },
+    "21": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "pressure"
+      ]
+    },
+    "22": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "ability"
+      ]
+    },
+    "23": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "competitors"
+      ]
+    },
+    "24": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "encourage"
+      ]
+    },
+    "25": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "will be made to train"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "will be made"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "to train"
+          ]
+        }
+      ]
+    },
+    "26": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "provided i kept",
+        "provided that i kept"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "provided",
+            "provided that"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "i kept"
+          ]
+        }
+      ]
+    },
+    "27": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "i had told you",
+        "i'd told you"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "i had told",
+            "i'd told"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "you"
+          ]
+        }
+      ]
+    },
+    "28": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "succeeded in getting"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "succeeded in"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "getting"
+          ]
+        }
+      ]
+    },
+    "29": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "in spite of feeling"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "in spite of"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "feeling"
+          ]
+        }
+      ]
+    },
+    "30": {
+      "part": 4,
+      "points": 2,
+      "mode": "components",
+      "minWords": 2,
+      "maxWords": 5,
+      "answers": [
+        "is unlikely to come"
+      ],
+      "components": [
+        {
+          "points": 1,
+          "any": [
+            "is unlikely"
+          ]
+        },
+        {
+          "points": 1,
+          "any": [
+            "to come"
+          ]
+        }
+      ]
+    },
+    "31": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "D"
+      ]
+    },
+    "32": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "B"
+      ]
+    },
+    "33": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "A"
+      ]
+    },
+    "34": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "C"
+      ]
+    },
+    "35": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "B"
+      ]
+    },
+    "36": {
+      "part": 5,
+      "points": 2,
+      "answers": [
+        "C"
+      ]
+    },
+    "37": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "F"
+      ]
+    },
+    "38": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "D"
+      ]
+    },
+    "39": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "G"
+      ]
+    },
+    "40": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "A"
+      ]
+    },
+    "41": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "C"
+      ]
+    },
+    "42": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "E"
+      ]
+    },
+    "43": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "44": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "45": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "46": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "47": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "48": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "49": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "50": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "51": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "52": {
+      "part": 7,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    }
+  }
+}

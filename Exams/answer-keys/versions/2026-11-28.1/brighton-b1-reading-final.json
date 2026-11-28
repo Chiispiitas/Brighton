@@ -1,0 +1,340 @@
+{
+  "examId": "brighton-b1-reading-final",
+  "examTitle": "Brighton B1 Reading Final Exam",
+  "maxScore": 32,
+  "totalQuestions": 32,
+  "normalization": {
+    "caseInsensitive": true,
+    "trimWhitespace": true,
+    "collapseInternalWhitespace": true
+  },
+  "parts": {
+    "1": {
+      "label": "Part 1",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "maxScore": 5
+    },
+    "2": {
+      "label": "Part 2",
+      "questions": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "maxScore": 5
+    },
+    "3": {
+      "label": "Part 3",
+      "questions": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "maxScore": 5
+    },
+    "4": {
+      "label": "Part 4",
+      "questions": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "maxScore": 5
+    },
+    "5": {
+      "label": "Part 5",
+      "questions": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "maxScore": 6
+    },
+    "6": {
+      "label": "Part 6",
+      "questions": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "maxScore": 6
+    }
+  },
+  "answers": {
+    "1": {
+      "part": 1,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "2": {
+      "part": 1,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "A"
+      ]
+    },
+    "3": {
+      "part": 1,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "4": {
+      "part": 1,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "5": {
+      "part": 1,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "6": {
+      "part": 2,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "E"
+      ]
+    },
+    "7": {
+      "part": 2,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "8": {
+      "part": 2,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "9": {
+      "part": 2,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "G"
+      ]
+    },
+    "10": {
+      "part": 2,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "H"
+      ]
+    },
+    "11": {
+      "part": 3,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "12": {
+      "part": 3,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "A"
+      ]
+    },
+    "13": {
+      "part": 3,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "14": {
+      "part": 3,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "D"
+      ]
+    },
+    "15": {
+      "part": 3,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "16": {
+      "part": 4,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "17": {
+      "part": 4,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "E"
+      ]
+    },
+    "18": {
+      "part": 4,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "G"
+      ]
+    },
+    "19": {
+      "part": 4,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "A"
+      ]
+    },
+    "20": {
+      "part": 4,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "D"
+      ]
+    },
+    "21": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "22": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "A"
+      ]
+    },
+    "23": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "D"
+      ]
+    },
+    "24": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "B"
+      ]
+    },
+    "25": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "C"
+      ]
+    },
+    "26": {
+      "part": 5,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "A"
+      ]
+    },
+    "27": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "to"
+      ]
+    },
+    "28": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "of"
+      ]
+    },
+    "29": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "by",
+        "with"
+      ]
+    },
+    "30": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "out"
+      ]
+    },
+    "31": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "than"
+      ]
+    },
+    "32": {
+      "part": 6,
+      "points": 1,
+      "mode": "exact",
+      "answers": [
+        "to"
+      ]
+    }
+  }
+}
